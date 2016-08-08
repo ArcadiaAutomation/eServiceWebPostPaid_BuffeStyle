@@ -5,3 +5,4 @@ ${DialogClose}    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
 ${eServiceURL}    https://aiseservice.ais.co.th/eServiceWeb/
 ${btnService}     xpath=//*[@id="menu-17"]/span
 ${SummaryMessage}    xpath=//*[@id="txtAlertMessage"]
+${Language}       xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
