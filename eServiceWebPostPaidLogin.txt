@@ -3,10 +3,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          Resource/PageRepository/eServiceWebPostPaidLoginRepository.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
 Resource          ../LocalConfig.txt
+Resource          Resource/CommonKeywords/SmsGenericKeywords.txt
 
 *** Test Cases ***
 test
     [Tags]    test
+    WaitSms    iOS    1    3
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
