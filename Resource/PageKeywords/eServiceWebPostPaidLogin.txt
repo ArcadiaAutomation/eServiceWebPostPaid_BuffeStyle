@@ -2,6 +2,7 @@
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Library           ../../Library/GetSMSfromMOOD.py
 Library           ../../Library/getString.py
+Resource          ../PageRepository/eServiceWebPostPaidLoginRepository.txt
 
 *** Keywords ***
 Login
