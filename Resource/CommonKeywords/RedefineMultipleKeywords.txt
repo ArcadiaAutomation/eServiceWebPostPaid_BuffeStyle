@@ -1,0 +1,52 @@
+*** Settings ***
+Library           Selenium2Library
+Library           AppiumLibrary
+
+*** Keywords ***
+Click Web Element
+    [Arguments]    ${locator}
+    Selenium2Library.Click Element    ${locator}
+
+Click Mobile Element
+    [Arguments]    ${locator}
+    AppiumLibrary.Click Element    ${locator}
+
+Click Web Button
+    [Arguments]    ${locator}
+    Selenium2Library.Click Button    ${locator}
+
+Click Mobile Button
+    [Arguments]    ${index_or_name}
+    AppiumLibrary.Click Button    ${index_or_name}
+
+Input Web Text
+    [Arguments]    ${locator}    ${text}
+    Selenium2Library.Input Text    ${locator}    ${text}
+
+Input Mobile Text
+    [Arguments]    ${locator}    ${text}
+    AppiumLibrary.Input Text    ${locator}    ${text}
+
+Web Element Should Be Disabled
+    [Arguments]    ${locator}
+    Selenium2Library.Element Should Be Disabled    ${locator}
+
+Mobile Element Should Be Disabled
+    [Arguments]    ${locator}
+    AppiumLibrary.Element Should Be Disabled    ${locator}
+
+Web Element Should Be Enabled
+    [Arguments]    ${locator}
+    Selenium2Library.Element Should Be Enabled    ${locator}
+
+Mobile Element Should Be Enabled
+    [Arguments]    ${locator}
+    AppiumLibrary.Element Should Be Enabled    ${locator}
+
+Wait Web Until Page Contains Element
+    [Arguments]    ${locator}
+    Selenium2Library.Wait Until Page Contains Element    ${locator}
+
+Wait Mobile Until Page Contains Element
+    [Arguments]    ${locator}
+    AppiumLibrary.Wait Until Page Contains Element    ${locator}

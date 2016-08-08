@@ -1,3 +1,6 @@
+*** Settings ***
+Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
+
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
