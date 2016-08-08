@@ -1,2 +1,15 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
+Library           ../../Library/GetSMSfromMOOD.py
+Library           ../../Library/getString.py
+
+*** Keywords ***
+Login
+    [Arguments]    ${Number}    ${IPAppium}    ${SN}
+    Input Web Text    ${MobileNumber}    ${Number}
+    Click Web Element    ${GetOTP}
+    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
+    ${OTP}    GetOTPinSMS    ${SMSOTP}
+    Input Web Text    ${InputOTP}    ${OTP}
+    Click Web Element    ${OKOTP}
+    sleep    4
