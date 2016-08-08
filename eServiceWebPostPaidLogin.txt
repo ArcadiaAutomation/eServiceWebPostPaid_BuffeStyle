@@ -1,0 +1,74 @@
+*** Test Cases ***
+[F01-001]eServiceWeb-PO-Login-NumberNotComplete
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    090546798
+    Click Web Element    ${GetOTP}
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageNumberNotComplete}
+    Click Web Element    ${DialogClose}
+    Close Browser
+
+[F01-002]eServiceWeb-PO-Login-NumberDtac
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    0944835961
+    Click Web Element    ${GetOTP}
+    Wait Web Until Page Contains Element    ${Tooltip}
+    Element Text Should Be    ${Tooltip}    ${ERROR_MessageNumberDtac}
+    Close Browser
+
+[F01-003]eServiceWeb-PO-Login-OtpNotcomplete
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
+    Click Web Element    ${GetOTP}
+    Sleep    2
+    Input Web Text    ${InputOTP}    123
+    Element Should Not Be Visible    ${LoginWithOtp}
+    Close Browser
+
+[F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
+    Click Web Element    ${GetOTP}
+    Sleep    2
+    Input Web Text    ${InputOTP}    a
+    Element Text Should Be    ${DialogMessage}    ${ERROR_InputOtpWithCharacter}
+    Click Web Element    ${DialogClose}
+    Close Browser
+
+test
+    [Tags]    test
+
+[F01-004]eServiceWeb-PO-Login-InputWrongOtp
+
+[F01-005]eServiceWeb-PO-Login-NotInputOtp
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
+    Click Web Element    ${GetOTP}
+    Sleep    2
+    Element Should Not Be Visible    ${LoginWithOtp}
+    Close Browser
+
+[F01-007]eServiceWeb-PO-Login-CancelOtp
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
+    Click Web Element    ${GetOTP}
+    Sleep    2
+    Click Web Element    ${CancelOtp}
+    Element Text Should Be    ${MobileNumber}    ${EMPTY}
