@@ -1,0 +1,7 @@
+*** Settings ***
+Resource          ../LocalConfig.txt
+Resource          Resource/PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanRepository.txt
+Resource          Resource/PageRepository/eServiceWebPostPaidRepository.txt
+Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidApplyOrChangeMySuperPlanMessage.txt
+
+*** Test Cases ***

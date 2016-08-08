@@ -1,0 +1,11 @@
+*** Variables ***
+${MenuPackage}    xpath=//*[@id="menu-2"]
+${SubMenuMySuperPlan}    xpath=//*[@id="menu-107"]
+${MySuperPlanImage}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[5]/td/img
+${ConfirmMySuperPlan}    xpath=//*[@id="btn_ok"]
+${MySuperPlanDialogMessage}    xpath=//*[@id="alert_layer_msg"]
+${MainPacKage}    xpath=//*[@id="BV_step2"]/div[1]/table/tbody/tr[2]/td[1]/input
+${TopUpPacKage}    xpath=//*[@id="warpAllContent"]/div/div[6]/div[3]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input
+${PostPaidPackage}    xpath=//*[@id="warpAllContent"]/div/div[2]/div[2]/ul/li[1]/a/span[1]
+${OnTopacKage}    xpath=//*[@id="warpAllContent"]/div/div[6]/div[3]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input
+${OnTopPackageMenu}    xpath=//*[@id="t2"]/div

@@ -1,0 +1,3 @@
+*** Variables ***
+${ERROR_NotSelectMySuperPlanPackage}    Please select my Super Plan that you want.
+${ERROR_NotSelectMainPackage}    Please select Main Package that you want.

@@ -1,0 +1,3 @@
+*** Variables ***
+${ERROR_NotSelectMySuperPlanPackage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
+${ERROR_NotSelectMainPackage}    กรุณาเลือกแพ็กเกจหลักที่คุณต้องการ
