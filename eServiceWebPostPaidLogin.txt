@@ -1,7 +1,12 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
+Resource          Resource/PageRepository/eServiceWebPostPaidLoginRepository.txt
+Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
 
 *** Test Cases ***
+test
+    [Tags]    test
+
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
@@ -48,9 +53,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
     Element Text Should Be    ${DialogMessage}    ${ERROR_InputOtpWithCharacter}
     Click Web Element    ${DialogClose}
     Close Browser
-
-test
-    [Tags]    test
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
 
