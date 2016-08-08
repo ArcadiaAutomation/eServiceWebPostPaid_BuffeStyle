@@ -1,0 +1,7 @@
+*** Settings ***
+Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
+
+*** Keywords ***
+Select Language
+    [Arguments]    ${language}
+    Click Web Element    ${language}

@@ -2,7 +2,6 @@
 Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
-${Language}       xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
 ${MobileNumber}    id=textfield
 ${GetOTP}         id=btnLoginGetOtpMethod
 ${InputOTP}       //*[@id="inputOtpNumber"]

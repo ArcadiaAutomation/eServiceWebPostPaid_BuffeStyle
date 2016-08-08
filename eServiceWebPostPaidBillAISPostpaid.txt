@@ -1,6 +1,13 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
-Resource          Resource/PageRepository/eServiceWebPostPaidBillAISPostpaidRepository.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
+Resource          ../LocalConfig.txt
 
 *** Test Cases ***
+[S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Select Language    ${Language}
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium:3PO_1}    ${lo_adb:RUN_3PO_1}

@@ -1,2 +1,4 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidBillAISPostpaidRepository.txt
+Resource          eServiceWebPostPaidCommon.txt
