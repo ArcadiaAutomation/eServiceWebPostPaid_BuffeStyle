@@ -1,0 +1,2 @@
+*** Variables ***
+${ERROR_MessageNumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก

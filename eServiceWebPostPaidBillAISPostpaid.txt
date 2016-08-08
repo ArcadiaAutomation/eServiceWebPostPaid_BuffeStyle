@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
+Resource          Resource/PageRepository/eServiceWebPostPaidBillAISPostpaidRepository.txt
+Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
+
+*** Test Cases ***

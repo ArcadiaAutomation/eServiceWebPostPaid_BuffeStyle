@@ -1,0 +1,5 @@
+*** Settings ***
+Resource          eServiceWebPostPaidRepository.txt
+
+*** Variables ***
+${MobileNumber}    id=textfield

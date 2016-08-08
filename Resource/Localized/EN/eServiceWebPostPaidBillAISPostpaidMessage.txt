@@ -1,0 +1,2 @@
+*** Variables ***
+${ERROR_MessageNumberNotComplete}    Please specify a 10-digit mobile number.
