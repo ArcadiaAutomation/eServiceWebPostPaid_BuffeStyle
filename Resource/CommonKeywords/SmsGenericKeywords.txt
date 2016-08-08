@@ -1,0 +1,7 @@
+*** Settings ***
+Resource          SmsIosKeywords.txt
+Resource          SmsMoodKeywords.txt
+
+*** Keywords ***
+WaitSms
+    [Arguments]    ${os}    ${totalSms}    ${timeout}
