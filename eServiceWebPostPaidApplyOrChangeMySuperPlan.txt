@@ -4,6 +4,7 @@ Resource          Resource/PageRepository/eServiceWebPostPaidApplyOrChangeMySupe
 Resource          Resource/PageRepository/eServiceWebPostPaidRepository.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidApplyOrChangeMySuperPlanMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidCommon.txt
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
