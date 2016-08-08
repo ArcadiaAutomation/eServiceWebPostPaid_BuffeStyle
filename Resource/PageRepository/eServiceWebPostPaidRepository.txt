@@ -6,3 +6,8 @@ ${eServiceURL}    https://aiseservice.ais.co.th/eServiceWeb/
 ${btnService}     xpath=//*[@id="menu-17"]/span
 ${SummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${Language}       xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
+${Home}           xpath=//*[@id="menu-1"]
+${Package}        xpath=//*[@id="menu-2"]
+${YouBalanceAndCreditLimit}    xpath=//*[@id="menu-5"]
+${Payment/TopUp}    xpath=//*[@id="menu-77"]
+${BillAISPostPaid}    xpath=//*[@id="menu-73"]
