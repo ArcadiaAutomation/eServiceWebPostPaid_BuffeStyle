@@ -2,3 +2,12 @@
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidBillAISPostpaidRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
+
+*** Keywords ***
+Select Payment Type
+    [Arguments]    ${Payment}
+    Selenium2Library.Select From List    ${ddlPaymentType}    ${Payment}
+
+Select Card Name
+    [Arguments]    ${Card}
+    Selenium2Library.Select From List    ${ddlCardName}    ${Card}
