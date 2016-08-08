@@ -3,5 +3,22 @@ Resource          ../LocalConfig.txt
 Resource          Resource/PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanRepository.txt
 Resource          Resource/PageRepository/eServiceWebPostPaidRepository.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidApplyOrChangeMySuperPlanMessage.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 
 *** Test Cases ***
+[F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
+    Sleep    5
+    Click Web Element    ${MenuPackage}
+    Sleep    3
+    Click Web Element    ${SubMenuMySuperPlan}
+    Sleep    3
+    Click Image    ${MySuperPlanImage}
+    Sleep    3
+    Click Web Element    ${MainPacKage}
+    Sleep    3
+    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
