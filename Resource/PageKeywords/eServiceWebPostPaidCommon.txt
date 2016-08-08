@@ -1,7 +1,14 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 
 *** Keywords ***
 Select Language
     [Arguments]    ${language}
     Click Web Element    ${language}
+
+SelectMenu
+    [Arguments]    ${MenuName}    ${Submenu}='none'
+    Click Web Element    ${${MenuName}}
+    Sleep    2
+    Run Keyword If    '${Submenu}'!='none'    Click Web Element    ${${Submenu}}

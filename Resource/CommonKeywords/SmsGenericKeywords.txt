@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          SmsIosKeywords.txt
+Resource          SmsMoodKeywords.txt
+
+*** Keywords ***
+WaitSms
+    [Arguments]    ${os}    ${totalSms}    ${timeout}
+    Log    ${os}
+    Run Keyword If    '${os}' == 'iOS'    SmsIosKeywords.iosWaitSms     ${totalSms}    ${timeout}
+    Run Keyword If    '${os}' == 'Android'    SmsMoodKeywords.moodWaitSms     ${totalSms}    ${timeout}

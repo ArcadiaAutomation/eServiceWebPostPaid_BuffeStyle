@@ -23,3 +23,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCommon.txt
     Click Web Element    ${MainPacKage}
     Sleep    3
     Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
+
+testSelectMenu
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Select Language    ${Language}
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
+    Sleep    5
+    SelectMenu    Payment/TopUp    BillAISPostPaid

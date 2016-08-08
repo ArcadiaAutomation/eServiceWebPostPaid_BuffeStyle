@@ -1,0 +1,4 @@
+*** Keywords ***
+iosWaitSms
+    [Arguments]    ${totalSms}    ${timeout}
+    Log    Log from SMS iOS
