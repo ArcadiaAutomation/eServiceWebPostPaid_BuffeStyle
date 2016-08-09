@@ -1,0 +1,10 @@
+*** Variables ***
+${ERROR_NumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก
+${ERROR_MeesageVoiceRegister}    คุณได้สมัคร บริการต่อสายด้วยเสียงแล้ว
+${ERROR_MessageVoiceAdd/Edit}    คุณยังไม่ได้สมัคร บริการต่อสายด้วยเสียง
+${ERROR_MessageVoiceAdd_NoDataUpdate}    ไม่มีการแก้ไขข้อมูล
+${ERROR_MessageVoiceAdd_InsertMobile}    กรุณากรอกเบอร์โทรศัพท์
+${ERROR_MessageVoiceAdd_InsertName}    กรุณากรอกชื่อ
+${ERROR_MessageVoiceAdd_ThaiOnly}    กรุณากรอกเป็นภาษาไทยเท่านั้น
+${ERROR_MessageVoiceAdd_IncorrectSpell}    อา-ป้คำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
+${ERROR_MessageVoiceAdd_NumberOnly}    กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลขเท่านั้น

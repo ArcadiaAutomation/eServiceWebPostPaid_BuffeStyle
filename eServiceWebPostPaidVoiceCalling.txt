@@ -1,0 +1,166 @@
+*** Settings ***
+Resource          Resource/PageKeywords/eServiceWebPostPaidVoiceCalling.txt
+Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
+Resource          ../LocalConfig.txt
+
+*** Test Cases ***
+[F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Register}
+    sleep    2
+    ${CheckMessage}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
+    Run Keyword If    ${CheckMessage}    Element Text Should Be    ${SummaryMessage}
+    Run Keyword If    ${CheckMessage}=='Fail'    Register Voice
+
+[F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Close Browser
+
+[F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Cancel}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Close Browser
+
+[F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
+    Close Browser
+
+[F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
+    Close Browser
+
+[F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Input Web Text    ${txtServiceVoice_Spell1}    สม
+    Input Web Text    ${txtServiceVoice_Spell2}    ชาย
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Close Browser
+
+[F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Close Browser
+
+[F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Input Web Text    ${txtServiceVoice_Spell1}    s
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
+    Close Browser
+
+[F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
+    Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
+    Input Web Text    ${txtServiceVoice_Spell1}    อา
+    Input Web Text    ${txtServiceVoice_Spell2}    ป้
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
+    Close Browser
+
+[F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Sleep    3
+    Login    ${Number}    ${IPAppium}    ${SN}
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+    Input Web Text    ${txtServiceVoice_InsertMobile}    ส
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
+    Close Browser
