@@ -1,0 +1,10 @@
+*** Variables ***
+${ERROR_MessageSMSMMS_Destination}    กรุณาระบุ เบอร์ผู้รับ
+${ERROR_MessageSMSMMS_10digit}    คุณระบุหมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาระบุเป็นตัวเลข 10 หลักที่ถูกต้องอีกครั้ง
+${ERROR_MessageSMSMMS_NumberOnly}    กรุณาระบุเป็นตัวเลขเท่านั้น
+${ERROR_Message_THMorethan335}    กรุณาระบุข้อความไม่เกิน 335 ตัวอักษร
+${ERROR_PleaseMessage}    กรุณาระบุ ข้อความ
+${ERROR_Message_ENMornthan765}    กรุณาระบุข้อความไม่เกิน 765 ตัวอักษร
+${ERROR_Message_NumericOnly}    กรุณาระบุเป็นตัวเลขเท่านั้น
+${ERROR_Message_AfterToDay}    กรุณาระบุวันที่สำหรับตั้งเวลาการส่งมากกว่าวันที่ปัจจุบัน
+${ERROR_Morethan30Day}    กรุณาระบุวันที่ไม่เกิน 30 วันนับจากวันที่ปัจจุบัน

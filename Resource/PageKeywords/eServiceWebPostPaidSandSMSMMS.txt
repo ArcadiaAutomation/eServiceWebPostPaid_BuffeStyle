@@ -1,0 +1,4 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          ../PageRepository/eServiceWebPostPaidSandSMSMMS.txt
+Resource          eServiceWebPostPaidLogin.txt

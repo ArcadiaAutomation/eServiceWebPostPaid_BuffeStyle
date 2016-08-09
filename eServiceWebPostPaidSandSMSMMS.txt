@@ -1,0 +1,231 @@
+*** Settings ***
+Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidSandSMSMMS.txt
+Resource          ../LocalConfig.txt
+
+*** Test Cases ***
+[F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Close Browser
+
+[F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    09112
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Close Browser
+
+[F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
+    Close Browser
+
+[F07-212]eServiceWeb_PO_Service_SendSMS_NotFillAnyNumber_Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Web Text    ${InputSMS_Message}    Hello
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Close Browser
+
+[F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
+    Close Browser
+
+[F07-214]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Web Text    ${InputSMS_Message}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_THMorethan335}
+    Close Browser
+
+[F07-215]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Web Text    ${InputSMS_Message}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_ENMornthan765}
+    Close Browser
+
+[F07-216]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    09112
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Close Browser
+
+[F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${InputSMS_Message}    Hello
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Close Browser
+
+[F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_NumericOnly}
+    Close Browser
+
+[F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
+    Close Browser
+
+[F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${InputSMS_Message}    Hello
+    Select From List    ${Date_Future}    0
+    Select From List    ${Month_Future}    0
+    Select From List    ${Year_Future}    0
+    Select From List    ${Time_Future}    0
+    Select From List    ${Hrs_Future}    0
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+    Close Browser
+
+[F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${InputSMS_Message}    Hello
+    Select From List    ${Date_Future}    29
+    Select From List    ${Month_Future}    1
+    Select From List    ${Year_Future}    0
+    Select From List    ${Time_Future}    0
+    Select From List    ${Hrs_Future}    0
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+    Close Browser
