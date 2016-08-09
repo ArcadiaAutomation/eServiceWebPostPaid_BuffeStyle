@@ -1,5 +1,6 @@
 *** Settings ***
 Library           AppiumLibrary
+Resource          ../../MobileRepository/Android/SmsMoodRepository.txt
 
 *** Keywords ***
 mood Wait SMS
