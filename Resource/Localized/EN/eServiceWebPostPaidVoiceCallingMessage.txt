@@ -1,0 +1,10 @@
+*** Variables ***
+${ERROR_NumberNotComplete}    Please specify a 10-digit mobile number.
+${ERROR_MessageVoiceRegister}    คุณได้สมัคร บริการต่อสายด้วยเสียงแล้ว
+${ERROR_MessageVoiceAdd/Edit}    คุณยังไม่ได้สมัคร บริการต่อสายด้วยเสียง
+${ERROR_MessageVoiceAdd_NoDataUpdate}    No data has been updated.
+${ERROR_MessageVoiceAdd_InsertMobile}    Please insert mobile no.
+${ERROR_MessageVoiceAdd_InsertName}    Please insert name.
+${ERROR_MessageVoiceAdd_ThaiOnly}    Please insert thai only.
+${ERROR_MessageVoiceAdd_IncorrectSpell}    อา-ป้คำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
+${ERROR_MessageVoiceAdd_NumberOnly}    Please enter numerical data only.
