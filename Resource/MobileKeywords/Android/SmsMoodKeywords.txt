@@ -6,5 +6,7 @@ mood Wait SMS
     [Arguments]    ${totalSms}    ${timeout}
 
 mood Open SMS App
-    Open Application    ${REMOTE_URL}    platformName=Android    platformVersion=${PLATFORM_VERSION}    deviceName=192.168.58.101:5555    app=${APP}    automationName=appium
-    ...    appPackage=com.example.android.contactmanager
+    [Arguments]    ${remoteUrl}
+    Log    ${remoteUrl}
+    Open Application    http://${remoteUrl}/wd/hub    platformName=Android    platformVersion=5.0.2    udid=2a82ee4d    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
+    ...    deviceName=10.239.223.104:4723

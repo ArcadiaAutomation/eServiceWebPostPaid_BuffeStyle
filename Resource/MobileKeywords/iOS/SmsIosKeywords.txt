@@ -4,3 +4,7 @@ Library           AppiumLibrary
 *** Keywords ***
 iosWaitSms
     [Arguments]    ${totalSms}    ${timeout}
+
+ios Open SMS App
+    [Arguments]    ${remoteUrl}
+    Log    ${remoteUrl}

@@ -10,5 +10,6 @@ Wait SMS
     Run Keyword If    '${os}' == 'Android'    SmsMoodKeywords.moodWaitSms    ${totalSms}    ${timeout}
 
 Open SMS App
-    Run Keyword If    '${os}' == 'Android'
-    Run Keyword If    '${os}' == 'iOS'
+    [Arguments]    ${os}    ${remoteUrl}
+    Run Keyword If    '${os}' == 'Android'    mood Open SMS App    ${remoteUrl}
+    Run Keyword If    '${os}' == 'iOS'    ios Open SMS App    ${remoteUrl}
