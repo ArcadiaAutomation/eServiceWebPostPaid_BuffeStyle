@@ -20,3 +20,7 @@ Resource          ../LocalConfig.txt
     Select Window    url=${URLipayBangkokBank}
     ${ipay}    Get Location
     Close All Browsers
+
+TestRandom
+    ${Number}    Evaluate    random.randint(0,9)    random
+    log    ${Number}+'test'
