@@ -19,4 +19,4 @@ Resource          ../LocalConfig.txt
     sleep    5
     Select Window    url=${URLipayBangkokBank}
     ${ipay}    Get Location
-    Run Keyword If    ${ipay}!=${URLipayBangkokBank}    Fail
+    Close All Browsers
