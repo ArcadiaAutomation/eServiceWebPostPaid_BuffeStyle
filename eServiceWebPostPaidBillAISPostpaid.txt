@@ -11,3 +11,14 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Select Language    ${Language}
     Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium:3PO_1}    ${lo_adb:RUN_3PO_1}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    Credit Card
+    Select Card Name    MASTER
+    Click Web Element    ${btnOK}
+    sleep    7
+    ${ipay}    Get Location
+    log    ${ipay}
+    Comment    Select Window    ${URLipayBangkokBank}
+    Comment    ${ipay}    Get Location
+    Comment    log    ${ipay}
