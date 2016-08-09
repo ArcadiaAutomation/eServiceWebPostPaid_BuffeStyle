@@ -2,7 +2,7 @@
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidLoginRepository.txt
 Library           ../../Library/Mobile/Android/GetSMSfromMOOD.py
-Library           ../../Library/ShowText.py
+Library           ../../Library/Mobile/Android/getString.py
 
 *** Keywords ***
 Login

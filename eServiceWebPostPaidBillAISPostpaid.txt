@@ -16,9 +16,7 @@ Resource          ../LocalConfig.txt
     Select Payment Type    Credit Card
     Select Card Name    MASTER
     Click Web Element    ${btnOK}
-    sleep    7
+    sleep    5
+    Select Window    url=${URLipayBangkokBank}
     ${ipay}    Get Location
-    log    ${ipay}
-    Comment    Select Window    ${URLipayBangkokBank}
-    Comment    ${ipay}    Get Location
-    Comment    log    ${ipay}
+    Run Keyword If    ${ipay}!=${URLipayBangkokBank}    Fail
