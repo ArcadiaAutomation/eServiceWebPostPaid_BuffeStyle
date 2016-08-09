@@ -30,5 +30,4 @@ testSelectMenu
     Select Frame    ${MainIframe}
     Select Language    ${Language}
     Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
-    Sleep    5
     SelectMenu    Payment/TopUp    BillAISPostPaid
