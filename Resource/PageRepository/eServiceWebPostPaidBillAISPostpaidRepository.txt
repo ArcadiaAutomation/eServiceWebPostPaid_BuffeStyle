@@ -8,3 +8,5 @@ ${btnPayment2Another}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div
 ${ddlPaymentType}    xpath=//*[@id="select_box1"]/div/select
 ${ddlCardName}    xpath=//*[@id="select_box2"]/div/select
 ${URLipayBangkokBank}    https://ipay.bangkokbank.com/b2c/eng/payment/payForm2.jsp
+${btnOK}          xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div[3]/div[2]/div/a[1]/div
+${btnCancel}      xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div[3]/div[2]/div/a[2]/div
