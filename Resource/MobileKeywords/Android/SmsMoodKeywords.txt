@@ -1,0 +1,10 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+mood Wait SMS
+    [Arguments]    ${totalSms}    ${timeout}
+
+mood Open SMS App
+    Open Application    ${REMOTE_URL}    platformName=Android    platformVersion=${PLATFORM_VERSION}    deviceName=192.168.58.101:5555    app=${APP}    automationName=appium
+    ...    appPackage=com.example.android.contactmanager

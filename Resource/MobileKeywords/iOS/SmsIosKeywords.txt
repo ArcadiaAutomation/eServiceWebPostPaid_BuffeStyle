@@ -1,4 +1,6 @@
+*** Settings ***
+Library           AppiumLibrary
+
 *** Keywords ***
-moodWaitSms
+iosWaitSms
     [Arguments]    ${totalSms}    ${timeout}
-    Log    Log from SMS Mood

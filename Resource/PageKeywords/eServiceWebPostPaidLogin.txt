@@ -1,8 +1,8 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
-Library           ../../Library/GetSMSfromMOOD.py
-Library           ../../Library/getString.py
 Resource          ../PageRepository/eServiceWebPostPaidLoginRepository.txt
+Library           ../../Library/Mobile/Android/GetSMSfromMOOD.py
+Library           ../../Library/ShowText.py
 
 *** Keywords ***
 Login
