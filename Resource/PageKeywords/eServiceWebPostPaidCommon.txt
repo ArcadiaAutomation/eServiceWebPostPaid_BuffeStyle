@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
+Resource          ../PageVariable/eServiceWebPostPaidCommonVariable.txt
 
 *** Keywords ***
 Select Language
@@ -9,7 +10,7 @@ Select Language
 
 SelectMenu
     [Arguments]    @{ListOfMenu}
-    :FOR    ${Argument}    IN    @{ListOfMenu}
+    : FOR    ${Argument}    IN    @{ListOfMenu}
     \    Run Keyword If    '${Argument}'==''    Exit For Loop
     \    Sleep    5
     \    Click Web Element    ${${Argument}}

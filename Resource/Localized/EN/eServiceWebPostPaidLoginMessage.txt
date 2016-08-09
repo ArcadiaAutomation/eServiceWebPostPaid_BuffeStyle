@@ -11,3 +11,4 @@ ${ERROR_MessageVoiceAdd_InsertName}    Please insert name.
 ${ERROR_MessageVoiceAdd_ThaiOnly}    Please insert thai only.
 ${ERROR_MessageVoiceAdd_IncorrectSpell}    อา-ป้คำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
 ${ERROR_MessageVoiceAdd_NumberOnly}    Please enter numerical data only.
+${ERROR_MessageWrongOTP}    You have entered incorrect password. Please try again.

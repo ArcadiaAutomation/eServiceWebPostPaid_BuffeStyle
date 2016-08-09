@@ -57,6 +57,20 @@ test
     Close Browser
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Select Language    ${Language}
+    Input Web Text    ${MobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${GetOTP}
+    ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
+    ${OTP}    GetOTPinSMS    ${SMSOTP}
+    ${fakeOTP}    fakeOTP    ${OTP}
+    Input Web Text    ${InputOTP}    ${fakeOTP}
+    Click Web Element    ${OKOTP}
+    sleep    2
+    Element Should Be Visible    ${WrongOTP}
+    Close Browser
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}

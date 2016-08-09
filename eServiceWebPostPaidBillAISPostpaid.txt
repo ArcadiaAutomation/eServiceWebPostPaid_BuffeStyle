@@ -3,6 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../LocalConfig.txt
+Library           String
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
@@ -22,5 +23,4 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 TestRandom
-    ${Number}    Evaluate    random.randint(0,9)    random
-    log    ${Number}+'test'
+    WrongOTP    1234
