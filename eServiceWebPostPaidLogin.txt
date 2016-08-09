@@ -7,7 +7,7 @@ Resource          Resource/MobileKeywords/CommonMobileKeywords/SmsGenericKeyword
 *** Test Cases ***
 test
     [Tags]    test
-    Open SMS App    ${lo_adb:RUN_3PO_1_Platfrom_Name}    ${lo_adb:RUN_3PO_1_IPAppium}
+    Open SMS App    ${lo_adb:RUN_3PO_1_IPAppium}    ${lo_adb:RUN_3PO_1_Platfrom_Name}    ${lo_adb:RUN_3PO_1_Platfrom_Version}    ${lo_adb:RUN_3PO_1}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
