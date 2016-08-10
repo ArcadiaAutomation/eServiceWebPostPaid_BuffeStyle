@@ -11,13 +11,11 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${Language}
     Sleep    3
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Register}
-    sleep    2
+    Click_Voice_Register
     ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
     Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
     Run Keyword If    ${result}==False    Register_Voice
+    Cancel_Voice
     Close Browser
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
@@ -27,10 +25,8 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${Language}
     Sleep    3
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
-    sleep    2
+    Click_Voice_Add/Edit
+    Cancel_Voice
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
 
@@ -41,13 +37,11 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${Language}
     Sleep    3
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Cancel}
-    sleep    2
+    Click_Voice_Cancel
     ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
     Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Run Keyword If    ${result}==False    Cancel_Voice
+    Close Browser
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
