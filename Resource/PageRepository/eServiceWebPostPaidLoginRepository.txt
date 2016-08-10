@@ -2,10 +2,10 @@
 Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
-${MobileNumber}    id=textfield
-${GetOTP}         id=btnLoginGetOtpMethod
-${InputOTP}       //*[@id="inputOtpNumber"]
-${OKOTP}          //*[@id="lnkLoginLoginWithOtp"]
+${txtMobileNumber}    id=textfield
+${btnGetOTP}      id=btnLoginGetOtpMethod
+${txtInputOTP}    //*[@id="inputOtpNumber"]
+${btnOKOTP}       //*[@id="lnkLoginLoginWithOtp"]
 ${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
 ${Tooltip}        xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
 ${LoginWithOtp}    //*[@id="lnkLoginLoginWithOtp" and class="button_all bt_color_green_t" ]
