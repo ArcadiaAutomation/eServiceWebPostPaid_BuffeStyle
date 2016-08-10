@@ -30,8 +30,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     SelectMenu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    3
-    SelectMySuperPlanPostPaidPackage    tbXtraTalkMonthValue    ibPostPaidPackage735
-    SelectMySuperPlanPostPaidPackage    OnTopPackageMenu    OnTopacKage
+    SelectMySuperPlanPostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
+    SelectMySuperPlanMainPackage    MainPacKage250Min
+    SelectMySuperPlanOnTopPackage    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
 

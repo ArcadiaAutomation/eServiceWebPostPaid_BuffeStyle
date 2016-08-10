@@ -5,25 +5,25 @@ Resource          ../PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanR
 *** Keywords ***
 SelectMySuperPlanPostPaidPackage
     [Arguments]    ${PostpaidType}    ${PostpaidPackageName}
-    Sleep    5
-    Click Web Element    ${${PostpaidType} }
-    Wait Until Element Is Visible    ${${PostpaidPackageName}}
-    Click Web Element    ${${PostpaidPackageName}}
+    Wait Until Element Is Visible    ${tb${PostpaidType}}
+    Click Web Element    ${tb${PostpaidType} }
+    Wait Until Element Is Visible    ${ib${PostpaidPackageName}}
+    Click Web Element    ${ib${PostpaidPackageName}}
 
 ConfirmMySuperPlan
     Click Web Element    ${btnConfirmMySuperPlan}
 
 SelectMySuperPlanMainPackage
     [Arguments]    ${MainPackageName}
-    Wait Until Element Is Visible    ${${MainPackageName}}    10
-    Click Web Element    ${${MainPackageName}}
+    Sleep    2
+    Click Web Element    ${rb${MainPackageName}}
 
 SelectMySuperPlanOnTopPackage
     [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
-    Wait Until Element Is Visible    ${${OnTopPackageType}}
-    Click Web Element    ${${OnTopPackageType}}
-    Wait Until Element Is Visible    ${${PostpaidPackageName}}
-    Click Web Element    ${${PostpaidPackageName}}
+    Wait Until Element Is Visible    ${btn${OnTopPackageType}}
+    Click Web Element    ${btn${OnTopPackageType}}
+    Sleep    2
+    Click Web Element    ${cb${OnTopPackageName}}
 
 Enter MySuper Plan Page
     Wait Until Element Is Visible    ${imgMySuperPlanPage}
