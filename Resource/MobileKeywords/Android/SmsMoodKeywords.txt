@@ -5,14 +5,12 @@ Library           DateTime
 
 *** Keywords ***
 mood Wait SMS
-    [Arguments]    ${totalSms}    ${timeout}
-    Comment    ${startDate} =    Get Current Date    exclude_millis=true
-    Comment    ${startDate2} =    Get Current Date
-    Comment    Log    ${startDate}
-    Comment    Log    ${startDate2}
+    [Arguments]    ${totalSms}    ${timeout}    ${sender}
+    Log    ${sender}
     Log    ${timeout}
     ${timeout}=    Convert To Integer    ${timeout}
-    Wait Until Keyword Succeeds    ${timeout} s    1 s    mood Wait SMS All Sender
+    Run Keyword If    ${sender}==all    Wait Until Keyword Succeeds    ${timeout} s    1 s    mood Wait SMS All Sender    ${totalSms}
+    FAIL    Not implement specific sender...
 
 mood Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
@@ -21,12 +19,13 @@ mood Open SMS App
     ...    deviceName=${remoteUrl}
 
 mood Wait SMS All Sender
+    [Arguments]    ${totalSms}
     ${totalUnread}=    Set Variable    0
-    @{unreadElements}    Get Elements    //*[@resource-id='com.calea.echo:id/new_msg']
-    :FOR    ${eachUnread}    IN    @{unreadElements}
+    @{unreadElements}    Get Elements    ${lblUnreadNumber}
+    : FOR    ${eachUnread}    IN    @{unreadElements}
     \    Log    ${eachUnread}
     \    ${number}=    Convert To Integer    ${eachUnread.get_attribute('text')}
     \    Log    ${number}
     \    ${totalUnread}=    Evaluate    ${number} + ${totalUnread}
     \    Log    ${totalUnread}
-    [return]    ${False}
+    Run Keyword If    ${totalUnread} < ${totalSms}    FAIL    waiting more sms...
