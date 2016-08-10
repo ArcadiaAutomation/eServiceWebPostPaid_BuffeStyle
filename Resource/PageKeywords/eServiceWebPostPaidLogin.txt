@@ -5,16 +5,17 @@ Library           ../../Library/Mobile/Android/GetSMSfromMOOD.py
 Library           ../../Library/Mobile/Android/getString.py
 Resource          eServiceWebPostPaidCommon.txt
 Library           String
+Resource          ../../../LocalConfig.txt
 
 *** Keywords ***
 Login
     [Arguments]    ${Number}    ${IPAppium}    ${SN}
-    Input Web Text    ${MobileNumber}    ${Number}
-    Click Web Element    ${GetOTP}
-    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
+    Input Web Text    ${txtMobileNumber}    ${Number}
+    Click Web Element    ${btnGetOTP}
+    ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
     ${OTP}    GetOTPinSMS    ${SMSOTP}
-    Input Web Text    ${InputOTP}    ${OTP}
-    Click Web Element    ${OKOTP}
+    Input Web Text    ${txtInputOTP}    ${OTP}
+    Click Web Element    ${btnOKOTP}
     sleep    4
 
 fakeOTP

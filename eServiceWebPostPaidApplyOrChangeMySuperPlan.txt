@@ -11,15 +11,15 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    SelectMenu    mnuPackage    mnuApply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    3
     ConfirmMySuperPlan
     Sleep    2
-    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
 
 [F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
