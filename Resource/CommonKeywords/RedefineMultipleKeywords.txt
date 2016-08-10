@@ -50,3 +50,7 @@ Wait Web Until Page Contains Element
 Wait Mobile Until Page Contains Element
     [Arguments]    ${locator}
     AppiumLibrary.Wait Until Page Contains Element    ${locator}
+
+Get Web Text
+    [Arguments]    ${locator}
+    Selenium2Library.Get Text    ${locator}

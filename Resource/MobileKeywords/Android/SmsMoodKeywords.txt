@@ -1,13 +1,31 @@
 *** Settings ***
 Library           AppiumLibrary
 Resource          ../../MobileRepository/Android/SmsMoodRepository.txt
+Library           DateTime
 
 *** Keywords ***
 mood Wait SMS
-    [Arguments]    ${totalSms}    ${timeout}
+    [Arguments]    ${totalSms}    ${timeout}    ${sender}
+    Log    ${sender}
+    Log    ${timeout}
+    ${timeout}=    Convert To Integer    ${timeout}
+    Run Keyword If    ${sender}==all    Wait Until Keyword Succeeds    ${timeout} s    1 s    mood Wait SMS All Sender    ${totalSms}
+    FAIL    Not implement specific sender...
 
 mood Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
     Log    ${remoteUrl}
     Open Application    http://${remoteUrl}/wd/hub    platformName=${platformName}    platformVersion=${platformVersion}    udid=${udid}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
     ...    deviceName=${remoteUrl}
+
+mood Wait SMS All Sender
+    [Arguments]    ${totalSms}
+    ${totalUnread}=    Set Variable    0
+    @{unreadElements}    Get Elements    ${lblUnreadNumber}
+    : FOR    ${eachUnread}    IN    @{unreadElements}
+    \    Log    ${eachUnread}
+    \    ${number}=    Convert To Integer    ${eachUnread.get_attribute('text')}
+    \    Log    ${number}
+    \    ${totalUnread}=    Evaluate    ${number} + ${totalUnread}
+    \    Log    ${totalUnread}
+    Run Keyword If    ${totalUnread} < ${totalSms}    FAIL    waiting more sms...

@@ -3,6 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../LocalConfig.txt
+Library           String
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
@@ -10,7 +11,7 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Select Language    ${Language}
-    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium:3PO_1}    ${lo_adb:RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
     Select Payment Type    Credit Card
@@ -20,3 +21,6 @@ Resource          ../LocalConfig.txt
     Select Window    url=${URLipayBangkokBank}
     ${ipay}    Get Location
     Close All Browsers
+
+TestRandom
+    WrongOTP    1234

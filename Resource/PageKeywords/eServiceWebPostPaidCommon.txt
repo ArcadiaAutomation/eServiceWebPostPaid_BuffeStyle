@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
+Resource          ../PageVariable/eServiceWebPostPaidCommonVariable.txt
 
 *** Keywords ***
 Select Language

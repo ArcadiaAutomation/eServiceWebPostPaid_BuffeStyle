@@ -1,14 +1,14 @@
 *** Variables ***
-${MainIframe}     id=MainIframe
-${DialogMessage}    xpath=//*[@id="popup_detail"]/div[1]
-${DialogClose}    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
+${fraMainIframe}    id=MainIframe
+${lblDialogMessage}    xpath=//*[@id="popup_detail"]/div[1]
+${btnDialogClose}    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
 ${eServiceURL}    https://aiseservice.ais.co.th/eServiceWeb/
 ${btnService}     xpath=//*[@id="menu-17"]/span
-${SummaryMessage}    xpath=//*[@id="txtAlertMessage"]
-${Language}       xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
-${Home}           xpath=//*[@id="menu-1"]
-${Package}        xpath=//*[@id="menu-2"]
-${YouBalanceAndCreditLimit}    xpath=//*[@id="menu-5"]
-${Payment/TopUp}    xpath=//*[@id="menu-77"]
-${BillAISPostPaid}    xpath=//*[@id="menu-73"]
-${Apply/ChangeMySuperPlan}    xpath=//*[@id="menu-107"]
+${mnuApply/ChangeMySuperPlan}    xpath=//*[@id="menu-107"]
+${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
+${btnLanguage}    xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
+${mnuHome}        xpath=//*[@id="menu-1"]
+${mnuPackage}     xpath=//*[@id="menu-2"]
+${mnuYouBalanceAndCreditLimit}    xpath=//*[@id="menu-5"]
+${mnuPayment/TopUp}    xpath=//*[@id="menu-77"]
+${mnuBillAISPostPaid}    xpath=//*[@id="menu-73"]

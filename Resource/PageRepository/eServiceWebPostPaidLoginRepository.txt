@@ -5,8 +5,10 @@ Resource          eServiceWebPostPaidRepository.txt
 ${txtMobileNumber}    id=textfield
 ${btnGetOTP}      id=btnLoginGetOtpMethod
 ${txtInputOTP}    //*[@id="inputOtpNumber"]
-${OKOTP}          //*[@id="lnkLoginLoginWithOtp"]
 ${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
 ${ttMessage}      xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
 ${btnLoginConfirm}    //*[@id="lnkLoginLoginWithOtp" and class="button_all bt_color_green_t" ]
 ${btnCancelOtp}    xpath=//*[@id="lnkLoginRefresh"]
+${btnOKOTP}       //*[@id="lnkLoginLoginWithOtp"]
+${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
+${WrongOTP}       //*[@id="login_fill"]/div/div[5]/div[3]/div/div[2]

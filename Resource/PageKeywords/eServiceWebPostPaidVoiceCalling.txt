@@ -1,0 +1,49 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebPostPaidVoiceCalling.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
+
+*** Keywords ***
+Register_Voice
+    Wait Web Until Page Contains Element    ${btnVoice_Register}
+    Click Web Element    ${btnVoice_Register}
+    Wait Web Until Page Contains Element    ${btnVoice_Register_btnRegister}
+    Click Web Element    ${btnVoice_Register_btnRegister}
+    Wait Web Until Page Contains Element    ${btnVoice_RegisterConfirm}
+    Click Web Element    ${btnVoice_RegisterConfirm}
+    Wait Web Until Page Contains Element    ${btnVoice_Register}
+    Click Web Element    ${btnVoice_Register}
+    Wait Web Until Page Contains Element    ${SummaryMessage}
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MeesageVoiceRegister}
+
+Cancel_Voice
+    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
+    Click Web Element    ${btnVoice_Cancel}
+    Wait Web Until Page Contains Element    ${btnVoice_Confirm_Cancel}
+    Click Web Element    ${btnVoice_Confirm_Cancel}
+    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
+    Click Web Element    ${btnVoice_Cancel}
+    Wait Web Until Page Contains Element    ${SummaryMessage}
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+
+Click_Voice_Register
+    Wait Web Until Page Contains Element    ${btnService}
+    Click Web Element    ${btnService}
+    Wait Web Until Page Contains Element    ${btnVoice_Register}
+    Click Web Element    ${btnVoice_Register}
+    sleep    2
+
+Click_Voice_Add/Edit
+    Wait Web Until Page Contains Element    ${btnService}
+    Click Web Element    ${btnService}
+    Wait Web Until Page Contains Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
+    sleep    2
+
+Click_Voice_Cancel
+    Wait Web Until Page Contains Element    ${btnService}
+    Click Web Element    ${btnService}
+    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
+    Click Web Element    ${btnVoice_Cancel}
+    sleep    2
