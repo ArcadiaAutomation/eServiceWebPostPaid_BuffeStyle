@@ -4,11 +4,11 @@ Resource          eServiceWebPostPaidRepository.txt
 *** Variables ***
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
 ${btnOKSMSMMS}    //*[@id="btnServiceSendSMSMMSSubmit"]
-${ServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
-${InputSMS_Message}    xpath=//*[@id="SMSMessage"]
+${txtServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
+${txtInputSMS_Message}    xpath=//*[@id="SMSMessage"]
 ${btnSMS_Future}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[6]/div[1]/table/tbody/tr/td[1]/label
-${Date_Future}    xpath=//*[@id="ddlServiceSendSMSMMSDateSend"]
-${Month_Future}    xpath=//*[@id="ddlServiceSendSMSMMSMonthSend"]
-${Year_Future}    xpath=//*[@id="ddlServiceSendMMSSMSYearSend"]
-${Time_Future}    xpath=//*[@id="ddlServiceSendSMSMMSHourSend"]
-${Hrs_Future}     xpath=//*[@id="ddlServiceSendSMSMMSMinuteSend"]
+${lstDate_Future}    xpath=//*[@id="ddlServiceSendSMSMMSDateSend"]
+${lstMonth_Future}    xpath=//*[@id="ddlServiceSendSMSMMSMonthSend"]
+${lstYear_Future}    xpath=//*[@id="ddlServiceSendMMSSMSYearSend"]
+${lstTime_Future}    xpath=//*[@id="ddlServiceSendSMSMMSHourSend"]
+${lstHrs_Future}    xpath=//*[@id="ddlServiceSendSMSMMSMinuteSend"]

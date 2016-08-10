@@ -15,8 +15,8 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnVoice_Register}
     sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
-    Run Keyword If    ${result}==True    Element Text Should Be    ${SummaryMessage}    ${ERROR_MeesageVoiceRegister}
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
+    Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
     Run Keyword If    ${result}==False    Register_Voice
     Close Browser
 
@@ -31,7 +31,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
@@ -45,8 +45,8 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnVoice_Cancel}
     sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
-    Run Keyword If    ${result}==True    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
+    Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Run Keyword If    ${result}==False    Cancel_Voice
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
@@ -149,7 +149,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceVoice_Spell2}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
     Close Browser
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber

@@ -2,3 +2,10 @@
 Resource          eServiceWebPostPaidCommon.txt
 Resource          ../PageRepository/eServiceWebPostPaidSandSMSMMS.txt
 Resource          eServiceWebPostPaidLogin.txt
+
+*** Keywords ***
+Click_to_Service_SandSMSMMS
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
