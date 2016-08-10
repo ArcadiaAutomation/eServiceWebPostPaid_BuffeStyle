@@ -13,19 +13,19 @@ test
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    090546798
     Click Web Element    ${btnGetOTP}
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageNumberNotComplete}
-    Click Web Element    ${DialogClose}
+    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageNumberNotComplete}
+    Click Web Element    ${btnDialogClose}
     Close Browser
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    0944835961
     Click Web Element    ${btnGetOTP}
     Wait Web Until Page Contains Element    ${ttMessage}
@@ -35,8 +35,8 @@ test
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
@@ -47,27 +47,27 @@ test
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Input Web Text    ${txtInputOTP}    a
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageInputOtpWithCharacter}
-    Click Web Element    ${DialogClose}
+    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageInputOtpWithCharacter}
+    Click Web Element    ${btnDialogClose}
     Close Browser
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Select Language    ${Language}
-    Input Web Text    ${MobileNumber}    ${lo_RUN_3PO_1_Number}
-    Click Web Element    ${GetOTP}
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnGetOTP}
     ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
     ${OTP}    GetOTPinSMS    ${SMSOTP}
     ${fakeOTP}    fakeOTP    ${OTP}
-    Input Web Text    ${InputOTP}    ${fakeOTP}
+    Input Web Text    ${txtInputOTP}    ${fakeOTP}
     Click Web Element    ${btnOKOTP}
     sleep    2
     Element Should Be Visible    ${WrongOTP}
@@ -76,8 +76,8 @@ test
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
@@ -87,8 +87,8 @@ test
 [F01-007]eServiceWeb-PO-Login-CancelOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
