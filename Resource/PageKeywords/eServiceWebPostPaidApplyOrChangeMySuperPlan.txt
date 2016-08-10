@@ -1,0 +1,30 @@
+*** Settings ***
+Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanRepository.txt
+
+*** Keywords ***
+SelectMySuperPlanPostPaidPackage
+    [Arguments]    ${PostpaidType}    ${PostpaidPackageName}
+    Sleep    5
+    Click Web Element    ${${PostpaidType} }
+    Wait Until Element Is Visible    ${${PostpaidPackageName}}
+    Click Web Element    ${${PostpaidPackageName}}
+
+ConfirmMySuperPlan
+    Click Web Element    ${btnConfirmMySuperPlan}
+
+SelectMySuperPlanMainPackage
+    [Arguments]    ${MainPackageName}
+    Wait Until Element Is Visible    ${${MainPackageName}}    10
+    Click Web Element    ${${MainPackageName}}
+
+SelectMySuperPlanOnTopPackage
+    [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
+    Wait Until Element Is Visible    ${${OnTopPackageType}}
+    Click Web Element    ${${OnTopPackageType}}
+    Wait Until Element Is Visible    ${${PostpaidPackageName}}
+    Click Web Element    ${${PostpaidPackageName}}
+
+Enter MySuper Plan Page
+    Wait Until Element Is Visible    ${imgMySuperPlanPage}
+    Click Image    ${imgMySuperPlanPage}

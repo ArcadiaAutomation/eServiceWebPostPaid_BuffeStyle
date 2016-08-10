@@ -5,6 +5,7 @@ Resource          Resource/PageRepository/eServiceWebPostPaidRepository.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidApplyOrChangeMySuperPlanMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidCommon.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
@@ -12,22 +13,71 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCommon.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
-    Sleep    5
-    Click Web Element    ${MenuPackage}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Click Image    ${imgMySuperPlanPage}
     Sleep    3
-    Click Web Element    ${SubMenuMySuperPlan}
-    Sleep    3
-    Click Image    ${MySuperPlanImage}
-    Sleep    3
-    Click Web Element    ${MainPacKage}
-    Sleep    3
+    ConfirmMySuperPlan
+    Sleep    2
     Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
 
-testSelectMenu
+[F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
-    Select Language    ${Language}
-    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
-    SelectMenu    Payment/TopUp    BillAISPostPaid
+    Click Web Element    ${Language}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Click Image    ${MySuperPlanImage}
+    Sleep    3
+    Click Web Element    ${PostPaidPackage}
+    SelectMySuperPlanPostPaidPackage    OnTopPackageMenu    OnTopacKage
+    Sleep    2
+    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
+
+[F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Click Image    ${MySuperPlanImage}
+    Sleep    3
+    Click Web Element    ${PostPaidPackage}
+    SelectMySuperPlanMainPackage    MainPackage2200
+    SelectMySuperPlanPostPaidPackage    OnTopPackageMenu    OnTopacKage
+
+sutest
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Click Image    ${MySuperPlanImage}
+    SelectMySuperPlanPostPaidPackage    PostPaidPackage735
+    SelectMySuperPlanMainPackage    MainPackage2200
+    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_MainPackageExpensiveThanPostPaidPackage}
+
+test
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Enter MySuper Plan Page
+    SelectMySuperPlanPostPaidPackage    tbXtraTalkMonthValue    ibPostPaidPackage735
+    SelectMySuperPlanMainPackage    rbMainPacKage250Min
+    SelectMySuperPlanOnTopPackage    btnOnTopExtraTalkPackage    cbOnTopPackage80Bath
+
+testKey
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Enter MySuper Plan Page
+    SelectMySuperPlanPostPaidPackage    tbXtraTalkMonthValue    ibPostPaidPackage735

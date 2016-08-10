@@ -9,7 +9,7 @@ Select Language
 
 SelectMenu
     [Arguments]    @{ListOfMenu}
-    :FOR    ${Argument}    IN    @{ListOfMenu}
+    : FOR    ${Argument}    IN    @{ListOfMenu}
     \    Run Keyword If    '${Argument}'==''    Exit For Loop
-    \    Sleep    5
+    \    Wait Until Element Is Visible    ${${Argument}}    7
     \    Click Web Element    ${${Argument}}

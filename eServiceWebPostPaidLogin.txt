@@ -14,8 +14,8 @@ test
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    090546798
-    Click Web Element    ${GetOTP}
+    Input Web Text    ${txtMobileNumber}    090546798
+    Click Web Element    ${btnGetOTP}
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageNumberNotComplete}
     Click Web Element    ${DialogClose}
     Close Browser
@@ -25,10 +25,10 @@ test
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    0944835961
-    Click Web Element    ${GetOTP}
-    Wait Web Until Page Contains Element    ${Tooltip}
-    Element Text Should Be    ${Tooltip}    ${ERROR_MessageNumberDtac}
+    Input Web Text    ${txtMobileNumber}    0944835961
+    Click Web Element    ${btnGetOTP}
+    Wait Web Until Page Contains Element    ${ttMessage}
+    Element Text Should Be    ${ttMessage}    ${ERROR_MessageNumberDtac}
     Close Browser
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
@@ -36,11 +36,11 @@ test
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
-    Click Web Element    ${GetOTP}
+    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnGetOTP}
     Sleep    2
-    Input Web Text    ${InputOTP}    123
-    Element Should Not Be Visible    ${LoginWithOtp}
+    Input Web Text    ${txtInputOTP}    123
+    Element Should Not Be Visible    ${btnLoginConfirm}
     Close Browser
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
@@ -48,11 +48,11 @@ test
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
-    Click Web Element    ${GetOTP}
+    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnGetOTP}
     Sleep    2
-    Input Web Text    ${InputOTP}    a
-    Element Text Should Be    ${DialogMessage}    ${ERROR_InputOtpWithCharacter}
+    Input Web Text    ${txtInputOTP}    a
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageInputOtpWithCharacter}
     Click Web Element    ${DialogClose}
     Close Browser
 
@@ -63,10 +63,10 @@ test
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
-    Click Web Element    ${GetOTP}
+    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnGetOTP}
     Sleep    2
-    Element Should Not Be Visible    ${LoginWithOtp}
+    Element Should Not Be Visible    ${btnLoginConfirm}
     Close Browser
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
@@ -74,8 +74,9 @@ test
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
-    Click Web Element    ${GetOTP}
+    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnGetOTP}
     Sleep    2
-    Click Web Element    ${CancelOtp}
-    Element Text Should Be    ${MobileNumber}    ${EMPTY}
+    Click Web Element    ${btnCancelOtp}
+    Element Text Should Be    ${txtMobileNumber}    ${EMPTY}
+    Close Browser
