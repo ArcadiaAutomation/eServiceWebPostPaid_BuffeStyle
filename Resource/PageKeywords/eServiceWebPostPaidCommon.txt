@@ -12,5 +12,5 @@ SelectMenu
     [Arguments]    @{ListOfMenu}
     : FOR    ${Argument}    IN    @{ListOfMenu}
     \    Run Keyword If    '${Argument}'==''    Exit For Loop
-    \    Wait Until Element Is Visible    ${${Argument}}    7
-    \    Click Web Element    ${${Argument}}
+    \    Wait Until Element Is Visible    ${mnu${Argument}}    7
+    \    Click Web Element    ${mnu${Argument}}
