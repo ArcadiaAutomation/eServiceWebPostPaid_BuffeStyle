@@ -1,13 +1,32 @@
 *** Settings ***
 Library           AppiumLibrary
 Resource          ../../MobileRepository/Android/SmsMoodRepository.txt
+Library           DateTime
 
 *** Keywords ***
 mood Wait SMS
     [Arguments]    ${totalSms}    ${timeout}
+    Comment    ${startDate} =    Get Current Date    exclude_millis=true
+    Comment    ${startDate2} =    Get Current Date
+    Comment    Log    ${startDate}
+    Comment    Log    ${startDate2}
+    Log    ${timeout}
+    ${timeout}=    Convert To Integer    ${timeout}
+    Wait Until Keyword Succeeds    ${timeout} s    1 s    mood Wait SMS All Sender
 
 mood Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
     Log    ${remoteUrl}
     Open Application    http://${remoteUrl}/wd/hub    platformName=${platformName}    platformVersion=${platformVersion}    udid=${udid}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
     ...    deviceName=${remoteUrl}
+
+mood Wait SMS All Sender
+    ${totalUnread}=    Set Variable    0
+    @{unreadElements}    Get Elements    //*[@resource-id='com.calea.echo:id/new_msg']
+    :FOR    ${eachUnread}    IN    @{unreadElements}
+    \    Log    ${eachUnread}
+    \    ${number}=    Convert To Integer    ${eachUnread.get_attribute('text')}
+    \    Log    ${number}
+    \    ${totalUnread}=    Evaluate    ${number} + ${totalUnread}
+    \    Log    ${totalUnread}
+    [return]    ${False}

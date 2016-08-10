@@ -6,8 +6,8 @@ Resource          ../iOS/SmsIosKeywords.txt
 Wait SMS
     [Arguments]    ${os}    ${totalSms}    ${timeout}
     Log    ${os}
-    Run Keyword If    '${os}' == 'iOS'    SmsIosKeywords.iosWaitSms    ${totalSms}    ${timeout}
     Run Keyword If    '${os}' == 'Android'    SmsMoodKeywords.moodWaitSms    ${totalSms}    ${timeout}
+    Run Keyword If    '${os}' == 'iOS'    SmsIosKeywords.iosWaitSms    ${totalSms}    ${timeout}
 
 Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
