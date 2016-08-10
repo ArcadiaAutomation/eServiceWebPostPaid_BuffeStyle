@@ -14,4 +14,6 @@ ${btnServiceVoiceAdd/Edit}    xpath=//*[@id="menu-118"]
 ${btnServiceVoiceCancel}    xpath=//*[@id="menu-119"]
 ${btnServiceVoiceAdd/Edit(Save)}    id=btnVoiceCallSave
 ${btnVoice_Register_btnRegister}    //*[@id="btnVoiceCallingRegister"]
-${Voice_Confirm}    //*[@id="btnAction0"]/div
+${btnVoice_RegisterConfirm}    //*[@id="btnAction0"]/div
+${MessageConfrimCancel}    //*[@id="txtDetailCancelVoice"]
+${btnVoice_Confirm_Cancel}    //*[@id="btnCancelVoiceCalling"]/span

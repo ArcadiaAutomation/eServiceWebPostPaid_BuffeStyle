@@ -2,13 +2,23 @@
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidVoiceCalling.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
 
 *** Keywords ***
-Register Voice
-    [Arguments]    ${locatorRegister}    ${locatorConfirm}
+Register_Voice
     Wait Web Until Page Contains Element    ${btnVoice_Register_btnRegister}
     Click Web Element    ${btnVoice_Register_btnRegister}
-    Wait Web Until Page Contains Element    ${btnVoice_Register_btnRegister}
-    Click Web Element    ${btnVoice_Register_btnRegister}
+    Wait Web Until Page Contains Element    ${btnVoice_RegisterConfirm}
+    Click Web Element    ${btnVoice_RegisterConfirm}
+    Wait Web Until Page Contains Element    ${btnVoice_Register}
     Click Web Element    ${btnVoice_Register}
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceRegister}
+    Wait Web Until Page Contains Element    ${SummaryMessage}
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MeesageVoiceRegister}
+
+Cancel_Voice
+    Wait Web Until Page Contains Element    ${btnVoice_Confirm_Cancel}
+    Click Web Element    ${btnVoice_Confirm_Cancel}
+    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
+    Click Web Element    ${btnVoice_Cancel}
+    Wait Web Until Page Contains Element    ${SummaryMessage}
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}

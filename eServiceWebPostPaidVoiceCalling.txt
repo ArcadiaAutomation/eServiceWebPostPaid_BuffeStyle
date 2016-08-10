@@ -15,9 +15,10 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnVoice_Register}
     sleep    2
-    ${CheckMessage}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
-    Run Keyword If    ${CheckMessage}    Element Text Should Be    ${SummaryMessage}
-    Run Keyword If    ${CheckMessage}=='Fail'    Register Voice
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
+    Run Keyword If    ${result}==True    Element Text Should Be    ${SummaryMessage}    ${ERROR_MeesageVoiceRegister}
+    Run Keyword If    ${result}==False    Register_Voice
+    Close Browser
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -44,8 +45,9 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnVoice_Cancel}
     sleep    2
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
-    Close Browser
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
+    Run Keyword If    ${result}==True    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Run Keyword If    ${result}==False    Cancel_Voice
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
