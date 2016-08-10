@@ -10,3 +10,6 @@ ios Open SMS App
     [Arguments]    ${remoteUrl}
     Log    ${remoteUrl}
     FAIL    Not Implement...
+
+ios Read SMS
+    [Arguments]    ${sender}    ${totalSms}
