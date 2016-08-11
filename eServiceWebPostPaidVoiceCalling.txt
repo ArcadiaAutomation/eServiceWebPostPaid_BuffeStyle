@@ -162,3 +162,13 @@ Resource          ../LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
     Cancel_Voice
     Close Browser
+
+mactest
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Sleep    3
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    Close Browser
