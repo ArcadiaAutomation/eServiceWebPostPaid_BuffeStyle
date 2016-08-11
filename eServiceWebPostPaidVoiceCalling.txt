@@ -10,14 +10,12 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Register}
-    sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
-    Run Keyword If    ${result}==True    Element Text Should Be    ${SummaryMessage}    ${ERROR_MeesageVoiceRegister}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Voice_Register
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
+    Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
     Run Keyword If    ${result}==False    Register_Voice
+    Cancel_Voice
     Close Browser
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
@@ -26,12 +24,10 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
-    sleep    2
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Voice_Add/Edit
+    Cancel_Voice
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
@@ -40,14 +36,12 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Cancel}
-    sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${SummaryMessage}
-    Run Keyword If    ${result}==True    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Voice_Cancel
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
+    Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Run Keyword If    ${result}==False    Cancel_Voice
+    Close Browser
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -55,7 +49,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
@@ -71,7 +65,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
@@ -88,7 +82,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
@@ -106,7 +100,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
@@ -123,7 +117,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
@@ -138,7 +132,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
@@ -149,7 +143,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceVoice_Spell2}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
     Close Browser
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
@@ -158,7 +152,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Sleep    3
-    Login    ${Number}    ${IPAppium}    ${SN}
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnVoice_Add/Edit}

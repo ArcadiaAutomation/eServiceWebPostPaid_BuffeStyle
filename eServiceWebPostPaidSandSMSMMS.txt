@@ -9,11 +9,8 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
@@ -24,11 +21,8 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Input Web Text    ${ServiceSMSMMS_InsertNumber1}    09112
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
@@ -41,12 +35,9 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
     Close Browser
@@ -56,12 +47,9 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Web Text    ${InputSMS_Message}    Hello
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
+    Input Web Text    ${txtInputSMS_Message}    Hello
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -73,12 +61,9 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
@@ -89,12 +74,9 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Web Text    ${InputSMS_Message}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
+    Input Web Text    ${txtInputSMS_Message}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_THMorethan335}
     Close Browser
@@ -104,12 +86,9 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Web Text    ${InputSMS_Message}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
+    Input Web Text    ${txtInputSMS_Message}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_ENMornthan765}
     Close Browser
@@ -119,13 +98,10 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    09112
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
@@ -136,13 +112,10 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${InputSMS_Message}    Hello
+    Input Web Text    ${txtInputSMS_Message}    Hello
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -154,13 +127,10 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_NumericOnly}
     Close Browser
@@ -170,13 +140,10 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
@@ -187,19 +154,16 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
-    Input Web Text    ${InputSMS_Message}    Hello
-    Select From List    ${Date_Future}    0
-    Select From List    ${Month_Future}    0
-    Select From List    ${Year_Future}    0
-    Select From List    ${Time_Future}    0
-    Select From List    ${Hrs_Future}    0
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${txtInputSMS_Message}    Hello
+    Select From List    ${lstDate_Future}    0
+    Select From List    ${lstMonth_Future}    0
+    Select From List    ${lstYear_Future}    0
+    Select From List    ${lstTime_Future}    0
+    Select From List    ${lstHrs_Future}    0
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -211,21 +175,21 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${Number}    ${IPAppium}    ${SN}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
-    Input Web Text    ${InputSMS_Message}    Hello
-    Select From List    ${Date_Future}    29
-    Select From List    ${Month_Future}    1
-    Select From List    ${Year_Future}    0
-    Select From List    ${Time_Future}    0
-    Select From List    ${Hrs_Future}    0
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${txtInputSMS_Message}    Hello
+    Select From List    ${lstDate_Future}    29
+    Select From List    ${lstMonth_Future}    1
+    Select From List    ${lstYear_Future}    0
+    Select From List    ${lstTime_Future}    0
+    Select From List    ${lstHrs_Future}    0
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
     Close Browser
+
+TestMutti
+    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}

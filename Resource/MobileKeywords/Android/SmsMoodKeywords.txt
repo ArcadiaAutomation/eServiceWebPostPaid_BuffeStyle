@@ -1,13 +1,66 @@
 *** Settings ***
 Library           AppiumLibrary
 Resource          ../../MobileRepository/Android/SmsMoodRepository.txt
+Library           Collections
 
 *** Keywords ***
 mood Wait SMS
-    [Arguments]    ${totalSms}    ${timeout}
+    [Arguments]    ${totalSms}    ${timeout}    ${sender}
+    Log    ${sender}
+    Log    ${timeout}
+    ${timeout}=    Convert To Integer    ${timeout}
+    Run Keyword If    ${sender}==all    Wait Until Keyword Succeeds    ${timeout} s    1 s    mood Wait SMS All Sender    ${totalSms}
+    Run Keyword If    ${sender}!=all    FAIL    Not implement specific sender...
 
 mood Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
     Log    ${remoteUrl}
     Open Application    http://${remoteUrl}/wd/hub    platformName=${platformName}    platformVersion=${platformVersion}    udid=${udid}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
     ...    deviceName=${remoteUrl}
+
+mood Wait SMS All Sender
+    [Arguments]    ${totalSms}
+    ${totalUnread}=    Set Variable    0
+    @{unreadElements}    Get Elements    ${lblUnreadNumber}
+    : FOR    ${eachUnread}    IN    @{unreadElements}
+    \    Log    ${eachUnread}
+    \    ${number}=    Convert To Integer    ${eachUnread.get_attribute('text')}
+    \    Log    ${number}
+    \    ${totalUnread}=    Evaluate    ${number} + ${totalUnread}
+    \    Log    ${totalUnread}
+    Run Keyword If    ${totalUnread} < ${totalSms}    FAIL    waiting more sms...
+
+mood Read SMS
+    [Arguments]    ${sender}    ${totalSms}
+    Log    in Mood Read SMS
+    @{emptyList}=    Create List
+    @{messages}=    Create List
+    @{senderNameElements}    Get Elements    ${lblSenderName}
+    : FOR    ${senderNameElement}    IN    @{senderNameElements}
+    \    Log    ${senderNameElement}
+    \    ${senderName}=    Convert To String    ${senderNameElement.get_attribute('text')}
+    \    Log    ${senderName}
+    \    @{messages}=    Run Keyword If    '${senderName}' == '${sender}'    mood Collect SMS Message    ${senderNameElement}
+    \    Log    Test copy
+    \    Run Keyword If    @{messages} != @{emptyList}    Exit For Loop
+    \    Comment    Log Many    @{messages}
+    \    Comment    Run Keyword If    @{messages} != ${EMPTY}    Log    messages is not EMPTY
+    \    Comment    Run Keyword If    @{messages} == ${EMPTY}    Log    messages is EMPTY
+    Log    out from Mood Read SMS
+    [Return]    ${messages}
+
+mood Collect SMS Message
+    [Arguments]    ${senderElement}
+    Log    come in mood Collect SMS Message
+    Evaluate    '${senderElement.click()}'
+    sleep    3
+    @{messages}=    Create List
+    @{messageElements}=    Get Elements    //*[@resource-id='com.calea.echo:id/imm_text']
+    : FOR    ${messageElement}    IN    @{messageElements}
+    \    ${message}    Convert To String    ${messageElement.get_attribute('text')}
+    \    Append To List    ${messages}    ${message}
+    Log List    ${messages}
+    Reverse List    ${messages}
+    Log List    ${messages}
+    Log    out from mood Collect SMS
+    [Return]    ${messages}

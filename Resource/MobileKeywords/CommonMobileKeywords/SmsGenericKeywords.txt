@@ -4,10 +4,10 @@ Resource          ../iOS/SmsIosKeywords.txt
 
 *** Keywords ***
 Wait SMS
-    [Arguments]    ${os}    ${totalSms}    ${timeout}
+    [Arguments]    ${os}    ${totalSms}    ${timeout}    ${sender}=all
     Log    ${os}
-    Run Keyword If    '${os}' == 'iOS'    SmsIosKeywords.iosWaitSms    ${totalSms}    ${timeout}
-    Run Keyword If    '${os}' == 'Android'    SmsMoodKeywords.moodWaitSms    ${totalSms}    ${timeout}
+    Run Keyword If    '${os}' == 'Android'    mood Wait SMS    ${totalSms}    ${timeout}    ${sender}
+    Run Keyword If    '${os}' == 'iOS'    ios Wait SMS    ${totalSms}    ${timeout}    ${sender}
 
 Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
@@ -17,3 +17,12 @@ Open SMS App
     Log    ${udid}
     Run Keyword If    '${platformName}' == 'Android'    mood Open SMS App    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
     Run Keyword If    '${platformName}' == 'iOS'    ios Open SMS App    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
+
+Read SMS
+    [Arguments]    ${os}    ${sender}    ${totalSms}
+    Log    ${os}
+    @{messages}=    Create List
+    @{messages}=    Run Keyword If    '${os}' == 'Android'    mood Read SMS    ${sender}    ${totalSms}
+    Run Keyword If    '${os}' == 'iOS'    ios Read SMS
+    Log    out from Read SMS
+    [Return]    ${messages}
