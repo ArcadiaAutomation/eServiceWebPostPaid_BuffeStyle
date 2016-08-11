@@ -4,6 +4,7 @@ ${lblDialogMessage}    xpath=//*[@id="popup_detail"]/div[1]
 ${btnDialogClose}    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
 ${eServiceURL}    https://aiseservice.ais.co.th/eServiceWeb/
 ${btnService}     xpath=//*[@id="menu-17"]/span
+${mnuApply/ChangeMySuperPlan}    xpath=//*[@id="menu-107"]
 ${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${btnLanguage}    xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
 ${mnuHome}        xpath=//*[@id="menu-1"]
