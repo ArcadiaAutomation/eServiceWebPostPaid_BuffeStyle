@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../LocalConfig.txt
-Library           ../Library/AtlasAppium.py
+Library           Library/Mobile/Android/AtlasAppium.py
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
@@ -47,6 +47,6 @@ TestOpenAppMobile
     Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_mobile_number"]    ${App1}
     sleep    5
     Mobile Click Element    name=AIS    ${App2}
-    ${SMS}    Mobile Get Element Attribute Index    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]     text    1    ${App2}
+    ${SMS}    Mobile Get Element Attribute Index    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    1    ${App2}
     ${OTP}    Get OT Pin SMS    ${SMS}
     log    ${OTP}
