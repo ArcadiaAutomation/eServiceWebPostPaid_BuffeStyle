@@ -5,17 +5,24 @@ Library           ../../Library/Mobile/Android/GetSMSfromMOOD.py
 Library           ../../Library/Mobile/Android/getString.py
 Resource          eServiceWebPostPaidCommon.txt
 Library           String
+Resource          ../MobileKeywords/CommonMobileKeywords/SmsGenericKeywords.txt
 
 *** Keywords ***
 Login
-    [Arguments]    ${Number}    ${IPAppium}    ${SN}
-    Input Web Text    ${txtMobileNumber}    ${Number}
+    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${MobileNumber}
+    Input Web Text    ${txtMobileNumber}    ${MobileNumber}
     Click Web Element    ${btnGetOTP}
-    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
-    ${OTP}    GetOTPinSMS    ${SMSOTP}
-    Input Web Text    ${txtInputOTP}    ${OTP}
+    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
+    Wait SMS    ${PlatfromName}    1    ${lo_GeneralTimeOut}
+    ${messages}=    Read SMS    ${PlatfromName}    AIS    1
+    Log    @{messages}[0]
+    @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
+    Comment    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
+    Comment    ${OTP}    GetOTPinSMS    @{messages}[0]
+    Input Web Text    ${txtInputOTP}    @{OTP}[0]
     Click Web Element    ${btnOKOTP}
     sleep    4
+    Close Application
 
 fakeOTP
     [Arguments]    ${realOTP}

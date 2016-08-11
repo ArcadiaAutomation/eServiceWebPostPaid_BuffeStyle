@@ -9,9 +9,9 @@ test
     [Tags]    test
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
     Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    60
-    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    021014711    2
+    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
     Log List    ${messages}
-    ${temp}=    Set Variable    @{messages}[1]
+    ${temp}=    Set Variable    @{messages}[0]
     Log    ${temp}
     Log    Finish...
 

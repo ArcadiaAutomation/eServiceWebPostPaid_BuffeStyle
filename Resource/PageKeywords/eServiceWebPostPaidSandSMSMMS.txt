@@ -5,7 +5,7 @@ Resource          eServiceWebPostPaidLogin.txt
 
 *** Keywords ***
 Click_Service_SandSMSMMS
-    Click Web Element    ${btnService}
+    Click Web Element    ${mnuService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
     sleep    2
