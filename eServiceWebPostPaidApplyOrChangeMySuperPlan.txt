@@ -19,12 +19,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Sleep    3
     ConfirmMySuperPlan
     Sleep    2
-    Log To Console    Sleep after Finish
-    Log To Console    element locator: ${lblMySuperPlanDialogMessage}
     Element Should Be Visible    ${lblMySuperPlanDialogMessage}
-    Log To Console    Dailog messsage Visible:true
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
-    Log To Console    FinishTest
+    Close Browser
 
 eXample
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -40,6 +37,7 @@ eXample
     SelectMySuperPlanOnTopPackage    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
+    Close Browser
 
 [F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -53,6 +51,7 @@ eXample
     Click Web Element    ${PostPaidPackage}
     SelectMySuperPlanMainPackage    MainPackage2200
     SelectMySuperPlanPostPaidPackage    OnTopPackageMenu    OnTopacKage
+    Close Browser
 
 [F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -67,3 +66,4 @@ eXample
     SelectMySuperPlanOnTopPackage    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
+    Close Browser
