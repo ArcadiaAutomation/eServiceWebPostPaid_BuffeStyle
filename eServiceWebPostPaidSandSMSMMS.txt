@@ -7,111 +7,111 @@ Resource          ../LocalConfig.txt
 [F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
     Close Browser
 
 [F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    09112
+    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_10digit}
     Close Browser
 
 [F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
     Close Browser
 
 [F07-212]eServiceWeb_PO_Service_SendSMS_NotFillAnyNumber_Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Input Web Text    ${txtInputSMS_Message}    Hello
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
     Close Browser
 
 [F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_PleaseMessage}
     Close Browser
 
 [F07-214]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Input Web Text    ${txtInputSMS_Message}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_Message_THMorethan335}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_THMorethan335}
     Close Browser
 
 [F07-215]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Input Web Text    ${txtInputSMS_Message}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_Message_ENMornthan765}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_ENMornthan765}
     Close Browser
 
 [F07-216]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_10digit}
     Close Browser
 
 [F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
@@ -119,41 +119,41 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
     Close Browser
 
 [F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_Message_NumericOnly}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_NumericOnly}
     Close Browser
 
 [F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_PleaseMessage}
     Close Browser
 
 [F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
@@ -167,14 +167,14 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_AfterToDay}
     Close Browser
 
 [F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
     Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Click_Service_SandSMSMMS
     Click Web Element    ${btnSMS_Future}
@@ -188,8 +188,18 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_AfterToDay}
     Close Browser
 
 TestMutti
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    ${App1}    Open Application    http://10.239.223.71:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
+    ...    appActivity=com.calea.echo.MainActivity    alias=mood
+    Comment    ${App1}    Open Application    http://10.239.223.71:5000/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator
+    ...    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    AppiumLibrary.Click Element    xpath=(//android.widget.TextView[@text='AIS'])
+    Sleep    5
+    ${App2}    Open Application    http://10.239.223.71:4725/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.android.chrome
+    ...    appActivity=com.google.android.apps.chrome.Main    alias=aisapp
+    sleep    5
+    Log To Console    ${App1}
+    Switch Application    ${App2}

@@ -14,36 +14,35 @@ Register_Voice
     Click Web Element    ${btnVoice_RegisterConfirm}
     Wait Web Until Page Contains Element    ${btnVoice_Register}
     Click Web Element    ${btnVoice_Register}
-    Wait Web Until Page Contains Element    ${SummaryMessage}
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MeesageVoiceRegister}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
 
 Cancel_Voice
     Wait Web Until Page Contains Element    ${btnVoice_Cancel}
     Click Web Element    ${btnVoice_Cancel}
-    Wait Web Until Page Contains Element    ${btnVoice_Confirm_Cancel}
+    Sleep    2
     Click Web Element    ${btnVoice_Confirm_Cancel}
-    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
+    Sleep    2
     Click Web Element    ${btnVoice_Cancel}
-    Wait Web Until Page Contains Element    ${SummaryMessage}
-    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Sleep    2
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
 Click_Voice_Register
     Wait Web Until Page Contains Element    ${btnService}
     Click Web Element    ${btnService}
-    Wait Web Until Page Contains Element    ${btnVoice_Register}
+    Sleep    2
     Click Web Element    ${btnVoice_Register}
-    sleep    2
 
 Click_Voice_Add/Edit
     Wait Web Until Page Contains Element    ${btnService}
     Click Web Element    ${btnService}
-    Wait Web Until Page Contains Element    ${btnVoice_Add/Edit}
+    Sleep    2
     Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
 
 Click_Voice_Cancel
     Wait Web Until Page Contains Element    ${btnService}
     Click Web Element    ${btnService}
-    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
+    SLeep    2
     Click Web Element    ${btnVoice_Cancel}
     sleep    2

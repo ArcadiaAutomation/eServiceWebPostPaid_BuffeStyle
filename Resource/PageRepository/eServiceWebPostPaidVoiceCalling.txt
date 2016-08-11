@@ -5,7 +5,6 @@ Resource          eServiceWebPostPaidRepository.txt
 ${btnVoice_Register}    xpath=//*[@id="menu-117"]
 ${btnVoice_Add/Edit}    xpath=//*[@id="menu-118"]
 ${btnVoice_Cancel}    xpath=//*[@id="menu-119"]
-${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${txtServiceVoiceAddInputName}    //*[@id="txtVoiceCallEditName0"]
 ${txtServiceVoice_Spell1}    id=txtVoiceCallSpellNameEdit0
 ${txtServiceVoice_Spell2}    id=txtVoiceCallSpellNameEdit1
@@ -17,3 +16,4 @@ ${btnVoice_Register_btnRegister}    //*[@id="btnVoiceCallingRegister"]
 ${btnVoice_RegisterConfirm}    //*[@id="btnAction0"]/div
 ${txtMessageConfrimCancel}    //*[@id="txtDetailCancelVoice"]
 ${btnVoice_Confirm_Cancel}    //*[@id="btnCancelVoiceCalling"]/span
+${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]

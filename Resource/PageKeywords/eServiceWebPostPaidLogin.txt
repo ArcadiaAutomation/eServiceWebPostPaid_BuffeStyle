@@ -9,12 +9,12 @@ Library           String
 *** Keywords ***
 Login
     [Arguments]    ${Number}    ${IPAppium}    ${SN}
-    Input Web Text    ${MobileNumber}    ${Number}
-    Click Web Element    ${GetOTP}
+    Input Web Text    ${txtMobileNumber}    ${Number}
+    Click Web Element    ${btnGetOTP}
     ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
     ${OTP}    GetOTPinSMS    ${SMSOTP}
-    Input Web Text    ${InputOTP}    ${OTP}
-    Click Web Element    ${OKOTP}
+    Input Web Text    ${txtInputOTP}    ${OTP}
+    Click Web Element    ${btnOKOTP}
     sleep    4
 
 fakeOTP
@@ -24,3 +24,13 @@ fakeOTP
     \    Run Keyword If    '${realOTP}'!='${fakeOTP}'    Exit For Loop
     \    ${fakeOTP}    Generate Random String    4    [NUMBERS]
     [Return]    ${fakeOTP}
+
+App
+    [Arguments]    ${IPAppium}    ${SN}
+    ${SMSOTP}    Get SM Sfrom Mood    AIS3G    ${IPAppium}    1    ${SN}
+    ${OTP}    GetOTPinSMS    ${SMSOTP}
+
+Appa
+    [Arguments]    ${IPAppium}    ${SN}
+    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
+    ${OTP}    GetOTPinSMS    ${SMSOTP}
