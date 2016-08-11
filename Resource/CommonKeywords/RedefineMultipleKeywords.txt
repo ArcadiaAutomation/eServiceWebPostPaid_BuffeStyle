@@ -1,6 +1,6 @@
 *** Settings ***
-Library           Selenium2Library
-Library           ../../../Library/AtlasAppium.py
+Library           Selenium2Library    run_on_failure=Selenium2Library.Capture Page Screenshot
+Library           AppiumLibrary    run_on_failure=AppiumLibrary.Capture Page Screenshot
 
 *** Keywords ***
 Click Web Element
@@ -8,8 +8,8 @@ Click Web Element
     Selenium2Library.Click Element    ${locator}
 
 Click Mobile Element
-    [Arguments]    ${locator}    ${driver}
-    AtlasAppium.Click Element    ${locator}    ${driver}
+    [Arguments]    ${locator}
+    AppiumLibrary.Click Element    ${locator}
 
 Click Web Button
     [Arguments]    ${locator}

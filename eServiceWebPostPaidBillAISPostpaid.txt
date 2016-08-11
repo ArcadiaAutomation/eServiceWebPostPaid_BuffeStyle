@@ -23,8 +23,8 @@ Library           ../Library/AtlasAppium.py
     Close All Browsers
 
 TestOpenAppMobile
-    ${driver1}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
-    ...    appActivity=com.calea.echo.MainActivity    udid=9201176364de23eb
+    ${driver1}    Mobile Open Application    http://10.239.123.129:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     ${driver2}    Mobile Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    udid=0123456789ABCDEF
     log    ${driver1}
@@ -32,12 +32,21 @@ TestOpenAppMobile
     Mobile Click Element    name=AIS
     Mobile Set Network Connection Status    1    ${driver2}
 
-TestSwitchApp
-    ${App1}    Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    udid=9201176364de23eb    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
-    sleep    5
-    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
-    ${App2}    Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+[S01-001]eServiceMobile-PO-Login
+    ${App1}    Mobile Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
+    ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    udid=9201176364de23eb
     sleep    5
-    Switch Application    ${App1}
+    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
+    sleep    5
+    Comment    Mobile Set Network Connection Status    6
+    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_mobile_number"]    0613851334    ${App1}
+    Mobile Hide Keyboard    ${App1}
+    sleep    2
+    Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_mobile_number"]    ${App1}
+    sleep    5
+    Mobile Click Element    name=AIS    ${App2}
+    ${SMS}    Mobile Get Element Attribute Index    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]     text    1    ${App2}
+    ${OTP}    Get OT Pin SMS    ${SMS}
+    log    ${OTP}
