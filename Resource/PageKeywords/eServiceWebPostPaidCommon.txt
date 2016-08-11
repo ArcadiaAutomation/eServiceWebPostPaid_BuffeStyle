@@ -14,3 +14,4 @@ SelectMenu
     \    Run Keyword If    '${Argument}'==''    Exit For Loop
     \    Wait Until Element Is Visible    ${mnu${Argument}}    7
     \    Click Web Element    ${mnu${Argument}}
+    \    \    Wait Web Until Page Contains Element

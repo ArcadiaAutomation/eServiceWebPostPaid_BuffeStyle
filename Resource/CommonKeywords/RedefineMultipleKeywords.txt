@@ -1,6 +1,5 @@
 *** Settings ***
 Library           Selenium2Library
-Library           ../../../Library/AtlasAppium.py
 
 *** Keywords ***
 Click Web Element
