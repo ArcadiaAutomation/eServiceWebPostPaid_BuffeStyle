@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
 Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../LocalConfig.txt
-Library           String
+Library           ../Library/AtlasAppium.py
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
@@ -18,9 +18,26 @@ Library           String
     Select Card Name    MASTER
     Click Web Element    ${btnOK}
     sleep    5
-    Select Window    url=${URLipayBangkokBank}
+    Select Window    url=${urlIpayBangkokBank}
     ${ipay}    Get Location
     Close All Browsers
 
-TestRandom
-    WrongOTP    1234
+TestOpenAppMobile
+    ${driver1}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ...    appActivity=com.calea.echo.MainActivity    udid=9201176364de23eb
+    ${driver2}    Mobile Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ...    appActivity=com.calea.echo.MainActivity    udid=0123456789ABCDEF
+    log    ${driver1}
+    log    ${driver2}
+    Mobile Click Element    name=AIS
+    Mobile Set Network Connection Status    1    ${driver2}
+
+TestSwitchApp
+    ${App1}    Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    udid=9201176364de23eb    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
+    sleep    5
+    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    ${App2}    Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ...    appActivity=com.calea.echo.MainActivity    udid=9201176364de23eb
+    sleep    5
+    Switch Application    ${App1}
