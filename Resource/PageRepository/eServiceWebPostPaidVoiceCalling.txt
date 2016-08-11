@@ -2,18 +2,15 @@
 Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
-${btnVoice_Register}    xpath=//*[@id="menu-117"]
-${btnVoice_Add/Edit}    xpath=//*[@id="menu-118"]
-${btnVoice_Cancel}    xpath=//*[@id="menu-119"]
-${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${txtServiceVoiceAddInputName}    //*[@id="txtVoiceCallEditName0"]
 ${txtServiceVoice_Spell1}    id=txtVoiceCallSpellNameEdit0
 ${txtServiceVoice_Spell2}    id=txtVoiceCallSpellNameEdit1
 ${txtServiceVoice_InsertMobile}    //*[@id="txtVoiceCallPhoneNoEdit0"]
 ${btnServiceVoiceAdd/Edit}    xpath=//*[@id="menu-118"]
 ${btnServiceVoiceCancel}    xpath=//*[@id="menu-119"]
-${btnServiceVoiceAdd/Edit(Save)}    id=btnVoiceCallSave
-${btnVoice_Register_btnRegister}    //*[@id="btnVoiceCallingRegister"]
-${btnVoice_RegisterConfirm}    //*[@id="btnAction0"]/div
+${btnServiceVoiceAdd/Edit(Save)}    //*[@id="btnVoiceCallSave"]/span
+${btnRegister}    //*[@id="btnVoiceCallingRegister"]
+${btnRegisterConfirm}    //*[@id="btnAction0"]/div
 ${txtMessageConfrimCancel}    //*[@id="txtDetailCancelVoice"]
-${btnVoice_Confirm_Cancel}    //*[@id="btnCancelVoiceCalling"]/span
+${btnCancel_confrim}    //*[@id="btnCancelVoiceCalling"]/span
+${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
