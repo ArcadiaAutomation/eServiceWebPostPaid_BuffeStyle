@@ -267,6 +267,33 @@ class AtlasAppium(AppiumLibrary):
         except:
             raise AssertionError("Attribute '%s' is not valid for element '%s'" % (attribute, locator))
 
+    def mobile_get_elements_attribute(self, locator, attribute, application_driver_atlas=""):
+        """Get element attribute using given attribute: name, value,...
+
+        Examples:
+
+        | Get Element Attribute | locator | name |
+        | Get Element Attribute | locator | value |
+        """
+        if application_driver_atlas != "":
+            elements = self._element_find_atlas(locator, False, True, application_driver_atlas)
+        else:
+            elements = self._element_find(locator, False, True)
+        ele_len = len(elements)
+        if ele_len == 0:
+            raise AssertionError("Element '%s' could not be found" % locator)
+        elif ele_len > 1:
+            self._info("CAUTION: '%s' matched %s elements - using the first element only" % (locator, len(elements)))
+
+        try:
+            attr_val = []
+            for num in range(ele_len-1, 0, -1):
+                attr_val.append(elements[num].get_attribute(attribute))
+            self._info("Element '%s' attribute '%s' " % (locator, attribute))
+            return attr_val
+        except:
+            raise AssertionError("Attribute '%s' is not valid for element '%s'" % (attribute, locator))
+
     def mobile_get_element_attribute_index(self, locator, attribute, index, application_driver_atlas=""):
         """Get element attribute using given attribute: name, value,...
 
@@ -286,7 +313,7 @@ class AtlasAppium(AppiumLibrary):
             self._info("CAUTION: '%s' matched %s elements - using the first element only" % (locator, len(elements)))
 
         try:
-            attr_val = elements[len(elements) - index].get_attribute(attribute)
+            attr_val = elements[ele_len - int(index)].get_attribute(attribute)
             self._info("Element '%s' attribute '%s' value '%s' " % (locator, attribute, attr_val))
             return attr_val
         except:
