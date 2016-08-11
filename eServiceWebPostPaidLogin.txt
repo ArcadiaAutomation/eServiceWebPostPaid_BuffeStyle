@@ -11,6 +11,8 @@ test
     Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    60
     ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    021014711    2
     Log List    ${messages}
+    ${temp}=    Set Variable    @{messages}[1]
+    Log    ${temp}
     Log    Finish...
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
