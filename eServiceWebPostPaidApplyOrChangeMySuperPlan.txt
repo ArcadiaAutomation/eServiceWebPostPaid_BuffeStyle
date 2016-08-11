@@ -21,7 +21,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
 
-[F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
+eXample
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -49,44 +49,16 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     SelectMySuperPlanMainPackage    MainPackage2200
     SelectMySuperPlanPostPaidPackage    OnTopPackageMenu    OnTopacKage
 
-sutest
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${MySuperPlanImage}
-    SelectMySuperPlanPostPaidPackage    PostPaidPackage735
-    SelectMySuperPlanMainPackage    MainPackage2200
-    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_MainPackageExpensiveThanPostPaidPackage}
-
-test
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
-    Enter MySuper Plan Page
-    SelectMySuperPlanPostPaidPackage    tbXtraTalkMonthValue    ibPostPaidPackage735
-    SelectMySuperPlanMainPackage    rbMainPacKage250Min
-    SelectMySuperPlanOnTopPackage    btnOnTopExtraTalkPackage    cbOnTopPackage80Bath
-
-testKey
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
-    Enter MySuper Plan Page
-    SelectMySuperPlanPostPaidPackage    tbXtraTalkMonthValue    ibPostPaidPackage735
-
-testSelectMenu
+[F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Package    Apply/ChangeMySuperPlan
+    Click Image    ${imgMySuperPlanPage}
+    Sleep    3
+    SelectMySuperPlanPostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
+    SelectMySuperPlanOnTopPackage    OnTopExtraTalkPackage    OnTopPackage80Bath
+    Sleep    2
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
