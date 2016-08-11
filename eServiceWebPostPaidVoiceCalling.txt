@@ -69,7 +69,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -86,7 +86,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    สม
     Input Web Text    ${txtServiceVoice_Spell2}    ชาย
@@ -104,7 +104,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -121,7 +121,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    s
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
@@ -136,7 +136,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
@@ -156,7 +156,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    ส
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
