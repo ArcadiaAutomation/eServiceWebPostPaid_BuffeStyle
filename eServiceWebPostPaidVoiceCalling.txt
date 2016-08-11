@@ -52,12 +52,11 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    Log To Console    picachu
     SelectMenu    Service    Voice_Add/Edit
-    Sleep    2
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
+    Click Web Element    ${btnClose_Dialog}
     Cancel_Voice
     Close Browser
 
@@ -69,12 +68,13 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
+    Click Web Element    ${btnClose_Dialog}
     Cancel_Voice
     Close Browser
 
@@ -86,15 +86,15 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    สม
     Input Web Text    ${txtServiceVoice_Spell2}    ชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Click Web Element    ${btnClose_Dialog}
     Cancel_Voice
-    Close Browser
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -104,12 +104,13 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Click Web Element    ${btnClose_Dialog}
     Cancel_Voice
     Close Browser
 
@@ -121,10 +122,11 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    s
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
+    Click Web Element    ${btnClose_Dialog}
     Cancel_Voice
     Close Browser
 
@@ -136,14 +138,14 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
     Input Web Text    ${txtServiceVoice_Spell1}    อา
     Input Web Text    ${txtServiceVoice_Spell2}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    sleep    2
+    Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
     Cancel_Voice
     Close Browser
@@ -156,19 +158,10 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Voice_Add/Edit
+    SelectMenu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    ส
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
+    Click Web Element    ${btnClose_Dialog}
     Cancel_Voice
-    Close Browser
-
-mactest
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Register_Voice
     Close Browser
