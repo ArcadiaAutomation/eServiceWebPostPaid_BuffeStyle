@@ -1,24 +1,25 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanRepository.txt
+Resource          ../../../LocalConfig.txt
 
 *** Keywords ***
-SelectMySuperPlanPostPaidPackage
+Select MySuperPlan PostPaidPackage
     [Arguments]    ${PostpaidType}    ${PostpaidPackageName}
     Wait Until Element Is Visible    ${tb${PostpaidType}}
     Click Web Element    ${tb${PostpaidType} }
     Wait Until Element Is Visible    ${ib${PostpaidPackageName}}
     Click Web Element    ${ib${PostpaidPackageName}}
 
-ConfirmMySuperPlan
-    Click Web Element    ${btnConfirmMySuperPlan}
+Confirm MySuperPlan
+    Click Web Element    ${btn Confirm MySuperPlan}
 
-SelectMySuperPlanMainPackage
+Select MySuperPlan MainPackage
     [Arguments]    ${MainPackageName}
     Sleep    2
     Click Web Element    ${rb${MainPackageName}}
 
-SelectMySuperPlanOnTopPackage
+Select MySuperPlan OnTopPackage
     [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
     Wait Until Element Is Visible    ${btn${OnTopPackageType}}
     Click Web Element    ${btn${OnTopPackageType}}
@@ -28,3 +29,7 @@ SelectMySuperPlanOnTopPackage
 Enter MySuper Plan Page
     Wait Until Element Is Visible    ${imgMySuperPlanPage}
     Click Image    ${imgMySuperPlanPage}
+
+Cancel Register MySuperPlan
+    Input Web Text    ${txt Confirm Email}    ${lo_3PO_Email}
+    Click Web Button    //*[@id="btn_cancel"]

@@ -47,6 +47,13 @@ TestOpenAppMobile
     Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_mobile_number"]    ${App1}
     sleep    5
     Mobile Click Element    name=AIS    ${App2}
-    ${SMS}    Mobile Get Element Attribute Index    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    1    ${App2}
-    ${OTP}    Get OT Pin SMS    ${SMS}
-    log    ${OTP}
+    sleep    5
+    Comment    ${SMS}    Mobile Get Element Attribute Index    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    1    ${App2}
+    Comment    ${OTP}    Get OT Pin SMS    ${SMS}
+    Comment    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    ${OTP}    ${App1}
+    @{SMS}    Mobile Get Elements Attribute    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    ${App2}
+    Log    @{SMS}[0]
+    ${OTP}    Get OT Pin SMS    ${SMS}[0]
+    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    ${OTP}    ${App1}
+    Mobile Hide Keyboard    ${App1}
+    Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
