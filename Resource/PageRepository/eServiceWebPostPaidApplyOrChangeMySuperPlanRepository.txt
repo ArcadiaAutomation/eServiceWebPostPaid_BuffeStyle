@@ -1,7 +1,7 @@
 *** Variables ***
 ${imgMySuperPlanPage}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[5]/td/img
 ${btnConfirmMySuperPlan}    xpath=//*[@id="btn_ok"]
-${lblMySuperPlanDialogMessage}    xpath=//*[@id="alert_layer_msg"]
+${lblMySuperPlanDialogMessage}    xpath=/html/body/div[1]/div/div[2]/table/tbody/tr[2]/td/div
 ${rbMainPacKage250Min}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div[2]/div/div[4]/div[1]/table/tbody/tr[2]/td[1]/input
 ${ibPostPaidPackage735}    xpath=//*[@id="warpAllContent"]/div/div[2]/div[2]/ul/li[1]/a/span[1]
 ${cbOnTopPackage80Bath}    xpath=//*[@id="warpAllContent"]/div/div[6]/div[3]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input
