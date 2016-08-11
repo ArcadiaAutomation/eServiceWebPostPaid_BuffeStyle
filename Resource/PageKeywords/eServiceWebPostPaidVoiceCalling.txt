@@ -6,43 +6,34 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage
 
 *** Keywords ***
 Register_Voice
-    Wait Web Until Page Contains Element    ${btnVoice_Register}
-    Click Web Element    ${btnVoice_Register}
-    Wait Web Until Page Contains Element    ${btnVoice_Register_btnRegister}
-    Click Web Element    ${btnVoice_Register_btnRegister}
-    Wait Web Until Page Contains Element    ${btnVoice_RegisterConfirm}
-    Click Web Element    ${btnVoice_RegisterConfirm}
-    Wait Web Until Page Contains Element    ${btnVoice_Register}
-    Click Web Element    ${btnVoice_Register}
-    Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
+    SelectMenu    Service    Voice_Register
+    Log To Console    SSSSSSSSSSSSSSSs
+    Sleep    2
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
+    Sleep    2
+    Run Keyword If    ${result}==False    Sub_Register
+    Run Keyword If    ${result}==True    Go_Home
+    Sleep    2
 
 Cancel_Voice
-    Wait Web Until Page Contains Element    ${btnVoice_Cancel}
-    Click Web Element    ${btnVoice_Cancel}
+    SelectMenu    Service    Voice_Cancel
     Sleep    2
-    Click Web Element    ${btnVoice_Confirm_Cancel}
+    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
     Sleep    2
-    Click Web Element    ${btnVoice_Cancel}
+    Run Keyword If    ${result}==False    Sub_Cancel
+    Run Keyword If    ${result}==True    Go_Home
     Sleep    2
-    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
-Click_Voice_Register
-    Wait Web Until Page Contains Element    ${btnService}
-    Click Web Element    ${btnService}
+Sub_Register
+    Wait Web Until Page Contains Element    ${btnRegister}
+    Click Web Element    ${btnRegister}
     Sleep    2
-    Click Web Element    ${btnVoice_Register}
+    Wait Web Until Page Contains Element    ${btnRegisterConfirm}
+    Click Web Element    ${btnRegisterConfirm}
 
-Click_Voice_Add/Edit
-    Wait Web Until Page Contains Element    ${btnService}
-    Click Web Element    ${btnService}
-    Sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
-    sleep    2
+Go_Home
+    Click Web Element    ${mnuHome}
 
-Click_Voice_Cancel
-    Wait Web Until Page Contains Element    ${btnService}
-    Click Web Element    ${btnService}
-    SLeep    2
-    Click Web Element    ${btnVoice_Cancel}
-    sleep    2
+Sub_Cancel
+    Wait Web Until Page Contains Element    ${btnCancel_confrim}
+    Click Web Element    ${btnCancel_confrim}

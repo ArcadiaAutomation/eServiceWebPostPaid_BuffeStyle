@@ -10,12 +10,11 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click_Voice_Register
-    Sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
-    Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
-    Run Keyword If    ${result}==False    Register_Voice
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Service    Voice_Register
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
     Cancel_Voice
     Close Browser
 
@@ -25,10 +24,9 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click_Voice_Add/Edit
-    Sleep    2
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Cancel_Voice
+    SelectMenu    Service    Voice_Add/Edit
     Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
@@ -39,12 +37,11 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click_Voice_Cancel
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Cancel_Voice
+    SelectMenu    Service    Voice_Cancel
     Sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
-    Run Keyword If    ${result}==True    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
-    Run Keyword If    ${result}==False    Cancel_Voice
+    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
@@ -53,10 +50,10 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    Sleep    2
-    Click_Voice_Add/Edit
+    Log To Console    picachu
+    SelectMenu    Service    Voice_Add/Edit
     Sleep    2
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
@@ -70,15 +67,15 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
+    Cancel_Voice
     Close Browser
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
@@ -87,16 +84,16 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    สม
     Input Web Text    ${txtServiceVoice_Spell2}    ชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Cancel_Voice
     Close Browser
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
@@ -105,15 +102,15 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Cancel_Voice
     Close Browser
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
@@ -122,13 +119,13 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    s
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
+    Cancel_Voice
     Close Browser
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
@@ -137,10 +134,9 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
@@ -149,6 +145,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
+    Cancel_Voice
     Close Browser
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
@@ -157,11 +154,11 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnVoice_Add/Edit}
+    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Register_Voice
+    SelectMenu    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    ส
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
+    Cancel_Voice
     Close Browser

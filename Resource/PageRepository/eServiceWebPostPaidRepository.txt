@@ -3,7 +3,7 @@ ${fraMainIframe}    id=MainIframe
 ${lblDialogMessage}    xpath=//*[@id="popup_detail"]/div[1]
 ${btnDialogClose}    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
 ${eServiceURL}    https://aiseservice.ais.co.th/eServiceWeb/
-${btnService}     xpath=//*[@id="menu-17"]/span
+${mnuService}     xpath=//*[@id="menu-17"]
 ${mnuApply/ChangeMySuperPlan}    xpath=//*[@id="menu-107"]
 ${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${btnLanguage}    xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
@@ -12,3 +12,7 @@ ${mnuPackage}     xpath=//*[@id="menu-2"]
 ${mnuYouBalanceAndCreditLimit}    xpath=//*[@id="menu-5"]
 ${mnuPayment/TopUp}    xpath=//*[@id="menu-77"]
 ${mnuBillAISPostPaid}    xpath=//*[@id="menu-73"]
+${mnuSMSMMS}      xpath=//*[@id="menu-20"]
+${mnuVoice_Register}    xpath=//*[@id="menu-117"]
+${mnuVoice_Add/Edit}    xpath=//*[@id="menu-118"]
+${mnuVoice_Cancel}    xpath=//*[@id="menu-119"]
