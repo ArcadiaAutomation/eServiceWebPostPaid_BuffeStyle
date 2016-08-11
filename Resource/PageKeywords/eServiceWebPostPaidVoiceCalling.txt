@@ -8,32 +8,32 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage
 Register_Voice
     SelectMenu    Service    Voice_Register
     Log To Console    SSSSSSSSSSSSSSSs
-    Sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
-    Sleep    2
-    Run Keyword If    ${result}==False    Sub_Register
-    Run Keyword If    ${result}==True    Go_Home
-    Sleep    2
+    ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}    2
+    Log To Console    ${result}
+    Run Keyword If    '${result}'=='False'    Sub_Register
+    Run Keyword If    '${result}'=='True'    SelectMenu    Service
 
 Cancel_Voice
     SelectMenu    Service    Voice_Cancel
-    Sleep    2
-    ${result}    Run Keyword And Return Status    Element Should Be Visible    ${txtSummaryMessage}
-    Sleep    2
-    Run Keyword If    ${result}==False    Sub_Cancel
-    Run Keyword If    ${result}==True    Go_Home
-    Sleep    2
+    ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}
+    Run Keyword If    '${result}'=='False'    Sub_Cancel
+    Run Keyword If    '${result}'=='True'    Go_Home
 
 Sub_Register
     Wait Web Until Page Contains Element    ${btnRegister}
     Click Web Element    ${btnRegister}
-    Sleep    2
+    Log To Console    RRRRRRRRRRRRRRR
     Wait Web Until Page Contains Element    ${btnRegisterConfirm}
     Click Web Element    ${btnRegisterConfirm}
+    Log To Console    RRRRRRUUUUUUUUUUU
 
 Go_Home
     Click Web Element    ${mnuHome}
+    Log To Console    HHHHHHHHHHHH
 
 Sub_Cancel
     Wait Web Until Page Contains Element    ${btnCancel_confrim}
     Click Web Element    ${btnCancel_confrim}
+
+Check_Message
+    Element Should Be Visible    ${txtSummaryMessage}
