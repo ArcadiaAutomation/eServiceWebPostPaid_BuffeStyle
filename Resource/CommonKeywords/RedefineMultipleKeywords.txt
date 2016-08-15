@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library    run_on_failure=Selenium2Library.Capture Page Screenshot
-Library           AppiumLibrary    run_on_failure=AppiumLibrary.Capture Page Screenshot
+Library           ../../Library/Mobile/Android/AtlasAppium.py
 
 *** Keywords ***
 Click Web Element

@@ -71,7 +71,7 @@ test
     Click Web Element    ${btnGetOTP}
     ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
     ${OTP}    GetOTPinSMS    ${SMSOTP}
-    ${fakeOTP}    fakeOTP    ${OTP}
+    ${fakeOTP}    Fake OTP    ${OTP}
     Input Web Text    ${txtInputOTP}    ${fakeOTP}
     Click Web Element    ${btnOKOTP}
     sleep    2
