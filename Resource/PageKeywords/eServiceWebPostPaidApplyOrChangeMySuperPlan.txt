@@ -33,3 +33,6 @@ Enter MySuper Plan Page
 Cancel Register MySuperPlan
     Input Web Text    ${txt Confirm Email}    ${lo_3PO_Email}
     Click Web Button    //*[@id="btn_cancel"]
+
+Cancel MySuperPlan
+    Click Web Button    ${btn Cancel MySuperPlan}

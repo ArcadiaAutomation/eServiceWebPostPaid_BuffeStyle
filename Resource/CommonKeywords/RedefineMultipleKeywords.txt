@@ -54,3 +54,9 @@ Wait Mobile Until Page Contains Element
 Get Web Text
     [Arguments]    ${locator}
     Selenium2Library.Get Text    ${locator}
+
+MobileSwitchApp
+    [Arguments]    ${AppName}
+    AppiumLibrary.Press Keycode    187
+    sleep    2
+    Click Mobile Element    xpath=(//android.widget.TextView[@text='${AppName}'])
