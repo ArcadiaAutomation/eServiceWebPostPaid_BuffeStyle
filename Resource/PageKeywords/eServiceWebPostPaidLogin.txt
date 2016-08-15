@@ -24,7 +24,7 @@ Login
     sleep    4
     Close Application
 
-fakeOTP
+Fake OTP
     [Arguments]    ${realOTP}
     ${fakeOTP}    Generate Random String    4    [NUMBERS]
     : FOR    ${INDEX}    IN RANGE    1    ${MAXIMUMLOOP}

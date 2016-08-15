@@ -8,16 +8,27 @@ class AtlasAppium(AppiumLibrary):
     # create a new keyword called "get application instance"
     # Public, element lookups
     def mobile_get_driver_instance(self):
+        """return current session Appium.
+        """
         return self._current_application()
 
     def mobile_set_driver_instance(self, application_driver_atlas):
+        """set current session Appium.
+        |application_driver_atlas=${session}|
+        """
         self._cache.current = application_driver_atlas
 
     def mobile_open_application(self, remote_url, alias=None, **kwargs):
+        """Connect to mobile and open application
+        |remote_url=http://10.239.223.84/wd/hub|alias=None|cap|
+        """
         AppiumLibrary.open_application(self, remote_url, alias, **kwargs)
         return self._current_application()
 
     def mobile_click_element(self, locator, application_driver_atlas=""):
+        """Click element on mobile.
+        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
+        """
         self._info("Clicking mobile element '%s'." % locator)
         if application_driver_atlas != "":
             self._element_find_atlas(locator, True, True, application_driver_atlas).click()
@@ -27,7 +38,7 @@ class AtlasAppium(AppiumLibrary):
     def mobile_clear_text(self, locator, application_driver_atlas=""):
         """Clears the text field identified by `locator`.
 
-        See `introduction` for details about locating elements.
+        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
         """
         self._info("Clear text field '%s'" % locator)
         if application_driver_atlas != "":
@@ -38,7 +49,8 @@ class AtlasAppium(AppiumLibrary):
     def mobile_input_text(self, locator, text, application_driver_atlas=""):
         """Types the given `text` into text field identified by `locator`.
 
-         See `introduction` for details about locating elements.
+        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
+        See `introduction` for details about locating elements.
         """
         self._info("Typing text '%s' into text field '%s'" % (text, locator))
         if application_driver_atlas != "":
@@ -48,6 +60,8 @@ class AtlasAppium(AppiumLibrary):
 
     def mobile_input_password(self, locator, text, application_driver_atlas=""):
         """Types the given password into text field identified by `locator`.
+
+        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
 
         Difference between this keyword and `Input Text` is that this keyword
         does not log the given password. See `introduction` for details about
@@ -85,28 +99,8 @@ class AtlasAppium(AppiumLibrary):
                                  "but did not" % locator)
         self._info("Element '%s' is disabled ." % locator)
 
-    def mobile_element_name_should_be(self, locator, expected, application_driver_atlas=""):
-        if application_driver_atlas != "":
-            element = self._element_find_atlas(locator, True, True, application_driver_atlas)
-        else:
-            element = self._element_find(locator, True, True)
-        if expected != element.get_attribute('name'):
-            raise AssertionError("Element '%s' name should be '%s' "
-                                 "but it is '%s'." % (locator, expected, element.get_attribute('name')))
-        self._info("Element '%s' name is '%s' " % (locator, expected))
-
-    def mobile_element_value_should_be(self, locator, expected, application_driver_atlas=""):
-        if application_driver_atlas != "":
-            element = self._element_find_atlas(locator, True, True, application_driver_atlas)
-        else:
-            element = self._element_find(locator, True, True)
-        if expected != element.get_attribute('value'):
-            raise AssertionError("Element '%s' value should be '%s' "
-                                 "but it is '%s'." % (locator, expected, element.get_attribute('value')))
-        self._info("Element '%s' value is '%s' " % (locator, expected))
-
-    def mobile_element_should_be_enabled(self, locator, loglevel='INFO', application_driver_atlas=""):
-        """Verifies that element identified with locator is disabled.
+    def atlas_element_should_be_enabled(self, locator, loglevel='INFO', application_driver_atlas=""):
+        """Verifies that element identified with locator is enabled.
 
         Key attributes for arbitrary elements are `id` and `name`. See
         `introduction` for details about locating elements.
@@ -120,6 +114,36 @@ class AtlasAppium(AppiumLibrary):
             raise AssertionError("Element '%s' should be enabled "
                                  "but did not" % locator)
         self._info("Element '%s' is enabled ." % locator)
+
+    def mobile_element_name_should_be(self, locator, expected, application_driver_atlas=""):
+        """Verifies that element's name identified with locator is equal 'expected'.
+
+        Key attributes for arbitrary elements are `id` and `name`. See
+        `introduction` for details about locating elements.
+        """
+        if application_driver_atlas != "":
+            element = self._element_find_atlas(locator, True, True, application_driver_atlas)
+        else:
+            element = self._element_find(locator, True, True)
+        if expected != element.get_attribute('name'):
+            raise AssertionError("Element '%s' name should be '%s' "
+                                 "but it is '%s'." % (locator, expected, element.get_attribute('name')))
+        self._info("Element '%s' name is '%s' " % (locator, expected))
+
+    def mobile_element_value_should_be(self, locator, expected, application_driver_atlas=""):
+        """Verifies that element's value identified with locator is equal 'expected'.
+
+        Key attributes for arbitrary elements are `id` and `name`. See
+        `introduction` for details about locating elements.
+        """
+        if application_driver_atlas != "":
+            element = self._element_find_atlas(locator, True, True, application_driver_atlas)
+        else:
+            element = self._element_find(locator, True, True)
+        if expected != element.get_attribute('value'):
+            raise AssertionError("Element '%s' value should be '%s' "
+                                 "but it is '%s'." % (locator, expected, element.get_attribute('value')))
+        self._info("Element '%s' value is '%s' " % (locator, expected))
 
     def mobile_element_attribute_should_match(self, locator, attr_name, match_pattern, regexp=False,
                                               application_driver_atlas=""):
