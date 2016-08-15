@@ -97,7 +97,7 @@ eXample
     Click Image    ${img MySuperPlan Page}
     Sleep    2
     Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select MySuperPlan MainPackage    MainPacKage250Min
+    Select MySuperPlan MainPackage    Main PacKage 250 Min
     Cancel MySuperPlan
     Sleep    2
     Element Text Should Be    ${lbl Sum Money }    0
