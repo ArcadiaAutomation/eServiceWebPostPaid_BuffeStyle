@@ -3,8 +3,8 @@ ${img MySuperPlan Page}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div
 ${btn Confirm MySuperPlan}    xpath=//*[@id="btn_ok"]
 ${lbl MySuperPlan DialogMessage}    xpath=/html/body/div[1]/div/div[2]/table/tbody/tr[2]/td/div
 ${rb MainPacKage 250 Min}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div[2]/div/div[4]/div[1]/table/tbody/tr[2]/td[1]/input
-${ib PostPaidPackage 735}    xpath=//*[@id="warpAllContent"]/div/div[2]/div[2]/ul/li[1]/a/span[1]
-${cb OnTopPackage 80 Bath}    xpath=//*[@id="warpAllContent"]/div/div[6]/div[3]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input
+${ib PostPaid Package 735 Bath}    xpath=//*[@id="warpAllContent"]/div/div[2]/div[2]/ul/li[1]/a/span[1]
+${cb OnTop Package 80 Bath}    xpath=//*[@id="warpAllContent"]/div/div[6]/div[3]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input
 ${btn OnTopExtraTalk Package}    xpath=//*[@id="t2"]/div
 ${rb MainPackage 2200 Min}    xpath=//*[@id="BV_step2"]/div[1]/table/tbody/tr[8]/td[1]/input
 ${tb XtraTalk MonthValue}    xpath=//*[@id="xtra_menu_tab1"]

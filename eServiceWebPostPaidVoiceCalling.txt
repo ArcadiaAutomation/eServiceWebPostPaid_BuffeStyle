@@ -12,7 +12,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Register
+    Select Menu    Service    Voice_Register
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
     Cancel_Voice
@@ -26,7 +26,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Cancel_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
@@ -39,7 +39,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Cancel_Voice
-    SelectMenu    Service    Voice_Cancel
+    Select Menu    Service    Voice_Cancel
     Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
     Close Browser
@@ -52,7 +52,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
@@ -68,7 +68,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -86,7 +86,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    สม
     Input Web Text    ${txtServiceVoice_Spell2}    ชาย
@@ -104,7 +104,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -122,7 +122,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_Spell1}    s
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
@@ -138,7 +138,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
@@ -158,7 +158,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     Register_Voice
-    SelectMenu    Service    Voice_Add/Edit
+    Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoice_InsertMobile}    ส
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}

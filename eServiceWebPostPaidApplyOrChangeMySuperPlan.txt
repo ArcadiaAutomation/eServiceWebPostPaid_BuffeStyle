@@ -14,7 +14,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    3
     Confirm MySuperPlan
@@ -29,7 +29,7 @@ eXample
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    3
     Select MySuperPlan PostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
@@ -45,10 +45,10 @@ eXample
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select MySuperPlan PostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
+    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
     Select MySuperPlan MainPackage    MainPackage2200Min
     Sleep    5
     Element Text Should Be    ${lbl MySuperPlan DialogMessage}    ${ERROR_MainPackageExpensiveThanPostPaidPackage}
@@ -61,11 +61,11 @@ eXample
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    3
-    Select MySuperPlan PostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
-    Select MySuperPlan OnTopPackage    OnTopExtraTalkPackage    OnTopPackage80Bath
+    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select MySuperPlan OnTopPackage    OnTopExtraTalk Package    OnTop Package 80 Bath
     Sleep    2
     Element Text Should Be    ${lbl MySuperPlan DialogMessage}    ${ERROR_NotSelectMainPackage}
     Close Browser
@@ -76,11 +76,11 @@ eXample
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select MySuperPlan PostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
-    Select MySuperPlan MainPackage    MainPacKage250Min
+    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select MySuperPlan MainPackage    MainPacKage 250 Min
     Confirm MySuperPlan
     Sleep    2
     Element Should Be Visible    ${lbl Accept Rule}
@@ -93,11 +93,11 @@ eXample
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    SelectMenu    Package    Apply/ChangeMySuperPlan
+    Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select MySuperPlan PostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
-    Select MySuperPlan MainPackage    MainPacKage250Min
+    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select MySuperPlan MainPackage    Main PacKage 250 Min
     Cancel MySuperPlan
     Sleep    2
     Element Text Should Be    ${lbl Sum Money }    0

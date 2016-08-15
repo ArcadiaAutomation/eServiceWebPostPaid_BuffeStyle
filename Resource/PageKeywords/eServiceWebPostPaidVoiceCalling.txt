@@ -6,15 +6,15 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage
 
 *** Keywords ***
 Register_Voice
-    SelectMenu    Service    Voice_Register
+    Select Menu    Service    Voice_Register
     Log To Console    SSSSSSSSSSSSSSSs
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}    2
     Log To Console    ${result}
     Run Keyword If    '${result}'=='False'    Sub_Register
-    Run Keyword If    '${result}'=='True'    SelectMenu    Service
+    Run Keyword If    '${result}'=='True'    Select Menu    Service
 
 Cancel_Voice
-    SelectMenu    Service    Voice_Cancel
+    Select Menu    Service    Voice_Cancel
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}
     Run Keyword If    '${result}'=='False'    Sub_Cancel
     Run Keyword If    '${result}'=='True'    Go_Home

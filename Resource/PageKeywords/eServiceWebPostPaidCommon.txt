@@ -8,7 +8,7 @@ Select Language
     [Arguments]    ${language}
     Click Web Element    ${language}
 
-SelectMenu
+Select Menu
     [Arguments]    @{ListOfMenu}
     : FOR    ${Argument}    IN    @{ListOfMenu}
     \    Run Keyword If    '${Argument}'==''    Exit For Loop
