@@ -10,7 +10,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Register
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
@@ -24,7 +24,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Cancel_Voice
     Select Menu    Service    Voice_Add/Edit
     Sleep    2
@@ -37,7 +37,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Cancel_Voice
     Select Menu    Service    Voice_Cancel
     Sleep    2
@@ -50,7 +50,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -66,7 +66,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
@@ -84,7 +84,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
@@ -102,7 +102,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
@@ -120,7 +120,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
@@ -136,7 +136,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
@@ -156,7 +156,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Sleep    3
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register_Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
