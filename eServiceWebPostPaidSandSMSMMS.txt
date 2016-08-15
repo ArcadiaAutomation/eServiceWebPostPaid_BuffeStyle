@@ -207,8 +207,11 @@ TestMutti
     Press Keycode    KEYCODE_APP_SWITCH
 
 Sw
-    ${App1}    Open Application    http://10.239.223.71:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
+    ${App1}    Open Application    http://192.168.1.37:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    alias=mood
     AppiumLibrary.Click Element    xpath=(//android.widget.TextView[@text='AIS'])
-    AppiumLibrary.Press Keycode
-    App
+    ${App2}    Open Application    http://192.168.1.37:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.android.settings
+    ...    appActivity=com.android.settings.Settings    alias=Settings
+    AppiumLibrary.Press Keycode    187
+    sleep    2
+    Click Mobile Element    xpath=(//android.widget.TextView[@text='mood'])
