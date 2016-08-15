@@ -2,13 +2,12 @@
 Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
-${txtMobileNumber}    id=textfield
-${btnGetOTP}      id=btnLoginGetOtpMethod
-${txtInputOTP}    //*[@id="inputOtpNumber"]
-${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
-${ttMessage}      xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
-${btnLoginConfirm}    //*[@id="lnkLoginLoginWithOtp" and class="button_all bt_color_green_t" ]
-${btnCancelOtp}    xpath=//*[@id="lnkLoginRefresh"]
-${btnOKOTP}       //*[@id="lnkLoginLoginWithOtp"]
-${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
-${WrongOTP}       //*[@id="login_fill"]/div/div[5]/div[3]/div/div[2]
+${txt MobileNumber}    id=textfield
+${btn Get OTP}    id=btnLoginGetOtpMethod
+${txt Input OTP}    //*[@id="inputOtpNumber"]
+${MainPage Customer Number}    xpath=//*[@id="sideinnerTop"]/div[2]
+${tt Message}     xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
+${btn Login Confirm}    //*[@id="lnkLoginLoginWithOtp" and class="button_all bt_color_green_t" ]
+${btn Cance lOtp}    xpath=//*[@id="lnkLoginRefresh"]
+${btn OK OTP}     //*[@id="lnkLoginLoginWithOtp"]
+${Wrong OTP}      //*[@id="login_fill"]/div/div[5]/div[3]/div/div[2]
