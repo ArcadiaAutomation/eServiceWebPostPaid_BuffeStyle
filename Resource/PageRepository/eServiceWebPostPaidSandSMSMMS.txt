@@ -3,7 +3,7 @@ Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
-${btnOKSMSMMS}    //*[@id="btnServiceSendSMSMMSSubmit"]
+${btnOKSMSMMS}    xpath=//*[@id="btnServiceSendSMSMMSSubmit"]
 ${txtServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
 ${txtInputSMS_Message}    xpath=//*[@id="SMSMessage"]
 ${btnSMS_Future}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[6]/div[1]/table/tbody/tr/td[1]/label
