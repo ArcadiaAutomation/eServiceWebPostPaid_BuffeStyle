@@ -17,7 +17,7 @@ Resource          ../LocalConfig.txt
     sleep    5
     Select Window    url=${urlIpayBangkokBank}
     ${ipay}    Get Location
-    Run Keyword if      '${ipay}' != '${urlIpayBangkokBank}' \     Fail
+    Run Keyword if    '${ipay}' != '${urlIpayBangkokBank}'     Fail
     Close All Browsers
 
 TestOpenAppMobile
@@ -48,8 +48,8 @@ TestOpenAppMobile
     sleep    5
     @{SMS}    AISAppium Get Elements Attribute    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    ${App2}
     Log    @{SMS}[0]
-    ${OTP}    Get OT Pin SMS    ${SMS}[0]
-    AISAppium Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    ${OTP}    ${App1}
+    @{OTP}=    Get Regexp Matches    @{SMS}[0]    \\d\\d\\d\\d
+    AISAppium Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    @{OTP}[0]    ${App1}
     AISAppium Hide Keyboard    ${App1}
     AISAppium Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
 
