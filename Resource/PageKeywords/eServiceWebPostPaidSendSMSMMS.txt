@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
-Resource          ../PageRepository/eServiceWebPostPaidSandSMSMMSRepository.txt
+Resource          ../PageRepository/eServiceWebPostPaidSendSMSMMSRepository.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 
