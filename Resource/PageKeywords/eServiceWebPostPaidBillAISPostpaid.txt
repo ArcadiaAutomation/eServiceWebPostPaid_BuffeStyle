@@ -1,7 +1,8 @@
 *** Settings ***
-Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidBillAISPostpaidRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 
 *** Keywords ***
 Select Payment Type

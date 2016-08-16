@@ -1,6 +1,5 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
-Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
 Resource          ../LocalConfig.txt
 
 *** Test Cases ***

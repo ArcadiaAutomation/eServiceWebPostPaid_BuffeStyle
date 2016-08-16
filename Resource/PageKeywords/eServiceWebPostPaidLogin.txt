@@ -2,7 +2,7 @@
 Resource          ../PageRepository/eServiceWebPostPaidLoginRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
 Library           String
-Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/SmsGenericKeywords.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
 
 *** Keywords ***
 Login
