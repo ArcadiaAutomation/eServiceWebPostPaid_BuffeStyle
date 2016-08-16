@@ -35,12 +35,12 @@ TestOpenAppMobile
     ${App1}    Mobile Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
     ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
-    ...    appActivity=com.calea.echo.MainActivity    udid=2a82ee4d
+    ...    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
     sleep    5
     Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
     sleep    5
     Comment    Mobile Set Network Connection Status    6    ${App1}
-    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_mobile_number"]    0613851339    ${App1}
+    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_mobile_number"]    0613851273    ${App1}
     Mobile Hide Keyboard    ${App1}
     sleep    5
     Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_mobile_number"]    ${App1}
@@ -62,3 +62,14 @@ Test AtlasAppium Function
     sleep    5
     Mobile Element Name Should Be    xpath=//*[@text="My Profile"]    My Profile
     Atlas Element Should Be Enabled    xpath=//*[@text="My Profile"]
+
+TestInfo
+    ${App1}    Mobile Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
+    ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ...    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
+    sleep    5
+    Log    ${App1.driver}
+    Log    ${App2.index}
+    Mobile Click Element    name=AIS
+    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}

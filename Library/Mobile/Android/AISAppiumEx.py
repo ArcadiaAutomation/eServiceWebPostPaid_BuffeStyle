@@ -5,7 +5,7 @@ from AtlasInfo import AtlasInfo
 
 
 # create new class that inherits from AppiumLibrary
-class AtlasAppium(AppiumLibrary):
+class AISAppiumEx(AppiumLibrary):
     # create a new keyword called "get application instance"
     # Public, element lookups
     def mobile_get_driver_instance(self):
@@ -27,19 +27,6 @@ class AtlasAppium(AppiumLibrary):
         driver = self._current_application()
         oAppiumInfo = AtlasInfo(index, alias, driver, remote_url)
         return oAppiumInfo
-
-    def test_Info(self, oAppiumInfo):
-        print oAppiumInfo.driver
-
-    def test_mobile_click_element(self, locator, oAppiumInfo=None):
-        """Click element on mobile.
-        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
-        """
-        self._info("test Clicking mobile element '%s'." % locator)
-        if oAppiumInfo is not None:
-            self._element_find_atlas(locator, True, True, oAppiumInfo.driver).click()
-        else:
-            self._element_find(locator, True, True).click()
 
     def mobile_click_element(self, locator, oAppiumInfo=None):
         """Click element on mobile.

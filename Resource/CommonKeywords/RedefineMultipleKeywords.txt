@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library    run_on_failure=Selenium2Library.Capture Page Screenshot
-Library           ../../Library/Mobile/Android/AtlasAppium.py
+Library           ../../Library/Mobile/Android/AISAppiumEx.py
 
 *** Keywords ***
 Click Web Element
@@ -31,17 +31,9 @@ Web Element Should Be Disabled
     [Arguments]    ${locator}
     Selenium2Library.Element Should Be Disabled    ${locator}
 
-Mobile Element Should Be Disabled
-    [Arguments]    ${locator}
-    AppiumLibrary.Element Should Be Disabled    ${locator}
-
 Web Element Should Be Enabled
     [Arguments]    ${locator}
     Selenium2Library.Element Should Be Enabled    ${locator}
-
-Mobile Element Should Be Enabled
-    [Arguments]    ${locator}
-    AppiumLibrary.Element Should Be Enabled    ${locator}
 
 Wait Web Until Page Contains Element
     [Arguments]    ${locator}
