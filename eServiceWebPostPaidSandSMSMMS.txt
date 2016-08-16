@@ -22,7 +22,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    09112
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -36,7 +36,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
     Close Browser
@@ -48,7 +48,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Input Web Text    ${txtInputSMS_Message}    Hello
+    Input Web Text    ${txtInputSMSMessage}    Hello
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -62,7 +62,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_PleaseMessage}
@@ -75,7 +75,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Input Web Text    ${txtInputSMS_Message}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
+    Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_THMorethan335}
     Close Browser
@@ -87,7 +87,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Input Web Text    ${txtInputSMS_Message}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+    Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_ENMornthan765}
     Close Browser
@@ -99,8 +99,8 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
+    Click Web Element    ${btnSMSFuture}
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    09112
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_10digit}
@@ -113,8 +113,8 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${txtInputSMS_Message}    Hello
+    Click Web Element    ${btnSMSFuture}
+    Input Web Text    ${txtInputSMSMessage}    Hello
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -128,8 +128,8 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
+    Click Web Element    ${btnSMSFuture}
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_NumericOnly}
     Close Browser
@@ -141,8 +141,8 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
+    Click Web Element    ${btnSMSFuture}
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_PleaseMessage}
@@ -155,14 +155,14 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
-    Input Web Text    ${txtInputSMS_Message}    Hello
-    Select From List    ${lstDate_Future}    0
-    Select From List    ${lstMonth_Future}    0
-    Select From List    ${lstYear_Future}    0
-    Select From List    ${lstTime_Future}    0
-    Select From List    ${lstHrs_Future}    0
+    Click Web Element    ${btnSMSFuture}
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Input Web Text    ${txtInputSMSMessage}    Hello
+    Select From List    ${lstDateFuture}    0
+    Select From List    ${lstMonthFuture}    0
+    Select From List    ${lstYearFuture}    0
+    Select From List    ${lstTimeFuture}    0
+    Select From List    ${lstHrsFuture}    0
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -176,14 +176,14 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
     SelectMenu    Service    SMSMMS
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
-    Input Web Text    ${txtInputSMS_Message}    Hello
-    Select From List    ${lstDate_Future}    29
-    Select From List    ${lstMonth_Future}    1
-    Select From List    ${lstYear_Future}    0
-    Select From List    ${lstTime_Future}    0
-    Select From List    ${lstHrs_Future}    0
+    Click Web Element    ${btnSMSFuture}
+    Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Input Web Text    ${txtInputSMSMessage}    Hello
+    Select From List    ${lstDateFuture}    29
+    Select From List    ${lstMonthFuture}    1
+    Select From List    ${lstYearFuture}    0
+    Select From List    ${lstTimeFuture}    0
+    Select From List    ${lstHrsFuture}    0
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2

@@ -159,7 +159,7 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    Service    Voice_Add/Edit
     sleep    2
-    Input Web Text    ${txtServiceVoice_InsertMobile}    ส
+    Input Web Text    ${txtServiceVoiceInsertMobile}    ส
     Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
