@@ -9,7 +9,7 @@ Resource          ../MobileKeywords/CommonMobileKeywords/SmsGenericKeywords.txt
 
 *** Keywords ***
 Login
-    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${txtMobileNumber}
+    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${MobileNumber}
     Input Web Text    ${txtMobileNumber}    ${MobileNumber}
     Click Web Element    ${btnGetOTP}
     Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}

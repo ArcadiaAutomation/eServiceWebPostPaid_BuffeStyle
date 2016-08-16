@@ -3,7 +3,7 @@ Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
 ${txtServiceVoiceAddInputName}    //*[@id="txtVoiceCallEditName0"]
-${txtServiceVoice_Spell1}    id=txtVoiceCallSpellNameEdit0
+${txtServiceVoiceSpell1}    id=txtVoiceCallSpellNameEdit0
 ${txtServiceVoice_Spell2}    id=txtVoiceCallSpellNameEdit1
 ${txtServiceVoice_InsertMobile}    xpath=//*[@id="txtVoiceCallPhoneNoEdit0"]
 ${btnServiceVoiceAdd/Edit}    xpath=//*[@id="menu-118"]
