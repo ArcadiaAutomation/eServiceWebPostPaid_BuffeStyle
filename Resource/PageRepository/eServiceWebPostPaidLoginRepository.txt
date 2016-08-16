@@ -1,5 +1,4 @@
 *** Settings ***
-Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
 ${txtMobileNumber}    xpath=//*[@id="textfield"]
