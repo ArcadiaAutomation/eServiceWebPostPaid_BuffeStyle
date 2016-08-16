@@ -11,7 +11,7 @@ Resource          ../AisRobotBuffet/Common/Keywords/RedefineMultipleKeywords.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${img MySuperPlan Page}
+    Click Image    ${imgMySuperPlanPage}
     Sleep    3
     Confirm My Super Plan
     Sleep    2
