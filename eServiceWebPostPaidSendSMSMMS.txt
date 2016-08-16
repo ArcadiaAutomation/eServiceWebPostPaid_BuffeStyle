@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          Resource/PageKeywords/eServiceWebPostPaidSandSMSMMS.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidSendSMSMMS.txt
 Resource          ../LocalConfig.txt
 
 *** Test Cases ***
