@@ -30,7 +30,7 @@ Enter MySuperPlan Page
     Wait Until Element Is Visible    ${imgMySuperPlanPage}
     Click Image    ${imgMySuperPlanPage}
 
-Cancel Register MySuperPlan
+Cancel Register
     Input Web Text    ${txt Confirm Email}    ${lo_3PO_Email}
     Click Web Button    //*[@id="btn_cancel"]
 
