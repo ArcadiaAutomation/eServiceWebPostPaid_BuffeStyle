@@ -4,7 +4,7 @@ Resource          ../PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanR
 Resource          ../../../LocalConfig.txt
 
 *** Keywords ***
-Select MySuperPlan PostPaidPackage
+Select PostPaid Package
     [Arguments]    ${PostpaidType}    ${PostpaidPackageName}
     Wait Until Element Is Visible    ${tb${PostpaidType}}
     Click Web Element    ${tb${PostpaidType} }
@@ -14,19 +14,19 @@ Select MySuperPlan PostPaidPackage
 Confirm MySuperPlan
     Click Web Element    ${btn Confirm MySuperPlan}
 
-Select MySuperPlan MainPackage
+Select Main Package
     [Arguments]    ${MainPackageName}
     Sleep    2
     Click Web Element    ${rb${MainPackageName}}
 
-Select MySuperPlan OnTopPackage
+Select OnTop Package
     [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
     Wait Until Element Is Visible    ${btn${OnTopPackageType}}
     Click Web Element    ${btn${OnTopPackageType}}
     Sleep    2
     Click Web Element    ${cb${OnTopPackageName}}
 
-Enter MySuper Plan Page
+Enter MySuperPlan Page
     Wait Until Element Is Visible    ${imgMySuperPlanPage}
     Click Image    ${imgMySuperPlanPage}
 
