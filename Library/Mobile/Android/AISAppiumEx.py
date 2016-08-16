@@ -8,18 +8,18 @@ from AtlasInfo import AtlasInfo
 class AISAppiumEx(AppiumLibrary):
     # create a new keyword called "get application instance"
     # Public, element lookups
-    def mobile_get_driver_instance(self):
+    def aisappium_get_driver_instance(self):
         """return current session Appium.
         """
         return self._current_application()
 
-    def mobile_set_driver_instance(self, oAppiumInfo):
+    def aisappium_set_driver_instance(self, oAppiumInfo):
         """set current session Appium.
-        |application_driver_atlas=${session}|
+        |oAppiumInfo=${AppInfo}|
         """
         self._cache.current = oAppiumInfo.driver
 
-    def mobile_open_application(self, remote_url, alias=None, **kwargs):
+    def aisappium_open_application(self, remote_url, alias=None, **kwargs):
         """Connect to mobile and open application
         |remote_url=http://10.239.223.84/wd/hub|alias=None|cap|
         """
@@ -28,9 +28,9 @@ class AISAppiumEx(AppiumLibrary):
         oAppiumInfo = AtlasInfo(index, alias, driver, remote_url)
         return oAppiumInfo
 
-    def mobile_click_element(self, locator, oAppiumInfo=None):
+    def aisappium_click_element(self, locator, oAppiumInfo=None):
         """Click element on mobile.
-        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
+        |locator=xpath=//*[@id="id123"]|oAppiumInfo=${AppInfo}
         """
         self._info("Clicking mobile element '%s'." % locator)
         if oAppiumInfo is not None:
@@ -38,10 +38,10 @@ class AISAppiumEx(AppiumLibrary):
         else:
             self._element_find(locator, True, True).click()
 
-    def mobile_clear_text(self, locator, oAppiumInfo=None):
+    def aisappium_clear_text(self, locator, oAppiumInfo=None):
         """Clears the text field identified by `locator`.
 
-        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
+        |locator=xpath=//*[@id="id123"]|oAppiumInfo=${AppInfo}
         """
         self._info("Clear text field '%s'" % locator)
         if oAppiumInfo is not None:
@@ -49,10 +49,10 @@ class AISAppiumEx(AppiumLibrary):
         else:
             self._element_clear_text_by_locator(locator)
 
-    def mobile_input_text(self, locator, text, oAppiumInfo=None):
+    def aisappium_input_text(self, locator, text, oAppiumInfo=None):
         """Types the given `text` into text field identified by `locator`.
 
-        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
+        |locator=xpath=//*[@id="id123"]|oAppiumInfo=${AppInfo}
         See `introduction` for details about locating elements.
         """
         self._info("Typing text '%s' into text field '%s'" % (text, locator))
@@ -61,10 +61,10 @@ class AISAppiumEx(AppiumLibrary):
         else:
             self._element_input_text_by_locator(locator, text)
 
-    def mobile_input_password(self, locator, text, oAppiumInfo=None):
+    def aisappium_input_password(self, locator, text, oAppiumInfo=None):
         """Types the given password into text field identified by `locator`.
 
-        |locator=xpath=//*[@id="id123"]|application_driver_atlas=${session}
+        |locator=xpath=//*[@id="id123"]|oAppiumInfo=${AppInfo}
 
         Difference between this keyword and `Input Text` is that this keyword
         does not log the given password. See `introduction` for details about
@@ -76,7 +76,7 @@ class AISAppiumEx(AppiumLibrary):
         else:
             self._element_input_text_by_locator(locator, text)
 
-    def mobile_hide_keyboard(self, oAppiumInfo=None, key_name=None):
+    def aisappium_hide_keyboard(self, oAppiumInfo=None, key_name=None):
         """Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
         a particular key, ex. `Done`. In Android, no parameters are used.
         """
@@ -86,7 +86,7 @@ class AISAppiumEx(AppiumLibrary):
             driver = self._current_application()
         driver.hide_keyboard(key_name)
 
-    def mobile_element_should_be_disabled(self, locator, loglevel='INFO', oAppiumInfo=None):
+    def aisappium_element_should_be_disabled(self, locator, loglevel='INFO', oAppiumInfo=None):
         """Verifies that element identified with locator is disabled.
 
         Key attributes for arbitrary elements are `id` and `name`. See
@@ -102,7 +102,7 @@ class AISAppiumEx(AppiumLibrary):
                                  "but did not" % locator)
         self._info("Element '%s' is disabled ." % locator)
 
-    def atlas_element_should_be_enabled(self, locator, loglevel='INFO', oAppiumInfo=None):
+    def aisappium_element_should_be_enabled(self, locator, loglevel='INFO', oAppiumInfo=None):
         """Verifies that element identified with locator is enabled.
 
         Key attributes for arbitrary elements are `id` and `name`. See
@@ -118,7 +118,7 @@ class AISAppiumEx(AppiumLibrary):
                                  "but did not" % locator)
         self._info("Element '%s' is enabled ." % locator)
 
-    def mobile_element_name_should_be(self, locator, expected, oAppiumInfo=None):
+    def aisappium_element_name_should_be(self, locator, expected, oAppiumInfo=None):
         """Verifies that element's name identified with locator is equal 'expected'.
 
         Key attributes for arbitrary elements are `id` and `name`. See
@@ -133,7 +133,7 @@ class AISAppiumEx(AppiumLibrary):
                                  "but it is '%s'." % (locator, expected, element.get_attribute('name')))
         self._info("Element '%s' name is '%s' " % (locator, expected))
 
-    def mobile_element_value_should_be(self, locator, expected, oAppiumInfo=None):
+    def aisappium_element_value_should_be(self, locator, expected, oAppiumInfo=None):
         """Verifies that element's value identified with locator is equal 'expected'.
 
         Key attributes for arbitrary elements are `id` and `name`. See
@@ -148,7 +148,7 @@ class AISAppiumEx(AppiumLibrary):
                                  "but it is '%s'." % (locator, expected, element.get_attribute('value')))
         self._info("Element '%s' value is '%s' " % (locator, expected))
 
-    def mobile_element_attribute_should_match(self, locator, attr_name, match_pattern, regexp=False,
+    def aisappium_element_attribute_should_match(self, locator, attr_name, match_pattern, regexp=False,
                                               oAppiumInfo=None):
         """Verify that an attribute of an element matches the expected criteria.
 
@@ -232,7 +232,7 @@ class AISAppiumEx(AppiumLibrary):
         #                         "but it was '%s'." % (locator, attr_name, expected, element.get_attribute(attr_name)))
         self._info("Element '%s' attribute '%s' is '%s' " % (locator, attr_name, match_pattern))
 
-    def mobile_set_network_connection_status(self, connectionStatus, oAppiumInfo=None):
+    def aisappium_set_network_connection_status(self, connectionStatus, oAppiumInfo=None):
         """Sets the network connection Status.
 
         Android only.
@@ -251,7 +251,7 @@ class AISAppiumEx(AppiumLibrary):
             driver = self._current_application()
         return driver.set_network_connection(int(connectionStatus))
 
-    def mobile_get_elements(self, locator, first_element_only=False, fail_on_error=True, oAppiumInfo=None):
+    def aisappium_get_elements(self, locator, first_element_only=False, fail_on_error=True, oAppiumInfo=None):
         """Return elements that match the search criteria
 
         The element is identified by _locator_. See `introduction` for details
@@ -269,7 +269,7 @@ class AISAppiumEx(AppiumLibrary):
             element = self._element_find(locator, first_element_only, fail_on_error)
         return element
 
-    def mobile_get_element_attribute(self, locator, attribute, oAppiumInfo=None):
+    def aisappium_get_element_attribute(self, locator, attribute, oAppiumInfo=None):
         """Get element attribute using given attribute: name, value,...
 
         Examples:
@@ -294,7 +294,7 @@ class AISAppiumEx(AppiumLibrary):
         except:
             raise AssertionError("Attribute '%s' is not valid for element '%s'" % (attribute, locator))
 
-    def mobile_get_elements_attribute(self, locator, attribute, oAppiumInfo=None):
+    def aisappium_get_elements_attribute(self, locator, attribute, oAppiumInfo=None):
         """Get element attribute using given attribute: name, value,...
 
         Examples:
@@ -321,7 +321,7 @@ class AISAppiumEx(AppiumLibrary):
         except:
             raise AssertionError("Attribute '%s' is not valid for element '%s'" % (attribute, locator))
 
-    def mobile_get_element_attribute_index(self, locator, attribute, index, oAppiumInfo=None):
+    def aisappium_get_element_attribute_index(self, locator, attribute, index, oAppiumInfo=None):
         """Get element attribute using given attribute: name, value,...
 
         Examples:
@@ -346,7 +346,7 @@ class AISAppiumEx(AppiumLibrary):
         except:
             raise AssertionError("Attribute '%s' is not valid for element '%s'" % (attribute, locator))
 
-    def mobile_get_element_location(self, locator, oAppiumInfo=None):
+    def aisappium_get_element_location(self, locator, oAppiumInfo=None):
         """Get element location
 
         Key attributes for arbitrary elements are `id` and `name`. See
@@ -360,7 +360,7 @@ class AISAppiumEx(AppiumLibrary):
         self._info("Element '%s' location: %s " % (locator, element_location))
         return element_location
 
-    def mobile_get_element_size(self, locator, oAppiumInfo=None):
+    def aisappium_get_element_size(self, locator, oAppiumInfo=None):
         """Get element size
 
         Key attributes for arbitrary elements are `id` and `name`. See
