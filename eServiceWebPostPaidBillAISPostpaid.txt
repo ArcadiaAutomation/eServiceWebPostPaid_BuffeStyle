@@ -4,7 +4,7 @@ Resource          ../LocalConfig.txt
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -22,7 +22,7 @@ Resource          ../LocalConfig.txt
 TestOpenAppMobile
     ${driver1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=9201176364de23eb
-    ${driver2}    AISAppium Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ${driver2}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    udid=0123456789ABCDEF
     log    ${driver1}
     log    ${driver2}
@@ -51,15 +51,6 @@ TestOpenAppMobile
     AISAppium Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    ${OTP}    ${App1}
     AISAppium Hide Keyboard    ${App1}
     AISAppium Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
-
-Test AtlasAppium Function
-    ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
-    AISAppium Set Network Connection Status    4    ${App1}
-    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
-    sleep    5
-    AISAppium Element Name Should Be    xpath=//*[@text="My Profile"]    My Profile
-    AISAppium Element Should Be Enabled    xpath=//*[@text="My Profile"]
 
 TestInfo
     ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice

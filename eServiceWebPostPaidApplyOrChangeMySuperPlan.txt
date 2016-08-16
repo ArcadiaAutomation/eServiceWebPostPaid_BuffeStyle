@@ -14,8 +14,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Sleep    3
     Confirm MySuperPlan
     Sleep    2
-    Element Should Be Visible    ${lbl MySuperPlan DialogMessage}
-    Element Text Should Be    ${lbl MySuperPlan DialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
+    Element Should Be Visible    ${lblMySuperPlanDialogMessage}
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
     Close Browser
 
 eXample
