@@ -32,9 +32,9 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    3
-    Select MySuperPlan PostPaidPackage    XtraTalkMonthValue    PostPaidPackage735
-    Select MySuperPlan MainPackage    MainPacKage250Min
-    Select MySuperPlan OnTopPackage    OnTopExtraTalkPackage    OnTopPackage80Bath
+    Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735
+    Select Main Package    MainPacKage250Min
+    Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
     Close Browser
@@ -48,8 +48,8 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select MySuperPlan MainPackage    MainPackage2200Min
+    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select Main Package    MainPackage2200Min
     Sleep    5
     Element Text Should Be    ${lbl MySuperPlan DialogMessage}    ${ERROR_MainPackageExpensiveThanPostPaidPackage}
     Sleep    2
@@ -64,8 +64,8 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    3
-    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select MySuperPlan OnTopPackage    OnTopExtraTalk Package    OnTop Package 80 Bath
+    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select OnTop Package    OnTopExtraTalk Package    OnTop Package 80 Bath
     Sleep    2
     Element Text Should Be    ${lbl MySuperPlan DialogMessage}    ${ERROR_NotSelectMainPackage}
     Close Browser
@@ -79,8 +79,8 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select MySuperPlan MainPackage    MainPacKage 250 Min
+    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select Main Package    MainPacKage 250 Min
     Confirm MySuperPlan
     Sleep    2
     Element Should Be Visible    ${lbl Accept Rule}
@@ -96,8 +96,8 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select MySuperPlan PostPaidPackage    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select MySuperPlan MainPackage    Main PacKage 250 Min
+    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select Main Package    Main PacKage 250 Min
     Cancel MySuperPlan
     Sleep    2
     Element Text Should Be    ${lbl Sum Money }    0

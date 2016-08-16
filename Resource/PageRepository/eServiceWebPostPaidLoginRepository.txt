@@ -2,7 +2,7 @@
 Resource          eServiceWebPostPaidRepository.txt
 
 *** Variables ***
-${txt MobileNumber}    id=textfield
+${txt Mobile Number}    id=textfield
 ${btn Get OTP}    id=btnLoginGetOtpMethod
 ${txt Input OTP}    //*[@id="inputOtpNumber"]
 ${MainPage Customer Number}    xpath=//*[@id="sideinnerTop"]/div[2]
