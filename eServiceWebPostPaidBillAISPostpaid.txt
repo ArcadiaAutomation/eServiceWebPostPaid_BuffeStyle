@@ -19,6 +19,7 @@ Resource          ../LocalConfig.txt
     sleep    5
     Select Window    url=${urlIpayBangkokBank}
     ${ipay}    Get Location
+    Run Keyword if      '${ipay}' != '${urlIpayBangkokBank}' \     Fail
     Close All Browsers
 
 TestOpenAppMobile
