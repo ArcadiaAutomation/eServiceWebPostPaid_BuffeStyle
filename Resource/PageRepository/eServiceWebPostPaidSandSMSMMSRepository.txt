@@ -3,11 +3,11 @@
 *** Variables ***
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
 ${btnOKSMSMMS}    xpath=//*[@id="btnServiceSendSMSMMSSubmit"]
-${txtServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
-${txtInputSMS_Message}    xpath=//*[@id="SMSMessage"]
-${btnSMS_Future}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[6]/div[1]/table/tbody/tr/td[1]/label
-${lstDate_Future}    xpath=//*[@id="ddlServiceSendSMSMMSDateSend"]
-${lstMonth_Future}    xpath=//*[@id="ddlServiceSendSMSMMSMonthSend"]
-${lstYear_Future}    xpath=//*[@id="ddlServiceSendMMSSMSYearSend"]
-${lstTime_Future}    xpath=//*[@id="ddlServiceSendSMSMMSHourSend"]
-${lstHrs_Future}    xpath=//*[@id="ddlServiceSendSMSMMSMinuteSend"]
+${txtServiceSMSMMSInsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
+${txtInputSMSMessage}    xpath=//*[@id="SMSMessage"]
+${btnSMSFuture}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[6]/div[1]/table/tbody/tr/td[1]/label
+${lstDateFuture}    xpath=//*[@id="ddlServiceSendSMSMMSDateSend"]
+${lstMonthFuture}    xpath=//*[@id="ddlServiceSendSMSMMSMonthSend"]
+${lstYearFuture}    xpath=//*[@id="ddlServiceSendMMSSMSYearSend"]
+${lstTimeFuture}    xpath=//*[@id="ddlServiceSendSMSMMSHourSend"]
+${lstHrsFuture}    xpath=//*[@id="ddlServiceSendSMSMMSMinuteSend"]
