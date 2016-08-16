@@ -1,5 +1,4 @@
 *** Settings ***
-Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidSandSMSMMS.txt
 Resource          ../LocalConfig.txt
 
@@ -207,12 +206,12 @@ TestMutti
     Press Keycode    KEYCODE_APP_SWITCH
 
 Sw
-    ${App1}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
+    ${App1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    alias=mood
     sleep    5
-    Mobile Click Element    xpath=(//android.widget.TextView[@text='AIS'])
-    ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.ais.mimo.eservice
+    AISAppium \ Click Element    xpath=(//android.widget.TextView[@text='AIS'])
+    ${App2}    AISAppium \ Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    alias=Settings    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
-    AtlasAppium.Press Keycode    187
+    AISAppiumEX.Press Keycode    187
     sleep    5
-    Mobile Click Element    xpath=(//android.widget.TextView[@text='AIS App'])
+    AISAppium Click Element    xpath=(//android.widget.TextView[@text='AIS App'])

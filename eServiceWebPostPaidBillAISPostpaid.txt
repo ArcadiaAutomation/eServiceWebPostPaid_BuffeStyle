@@ -1,12 +1,10 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
-Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
-Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../LocalConfig.txt
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -19,57 +17,49 @@ Resource          ../LocalConfig.txt
     sleep    5
     Select Window    url=${urlIpayBangkokBank}
     ${ipay}    Get Location
+    Run Keyword if      '${ipay}' != '${urlIpayBangkokBank}' \     Fail
     Close All Browsers
 
 TestOpenAppMobile
-    ${driver1}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ${driver1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=9201176364de23eb
-    ${driver2}    Mobile Open Application    http://10.239.223.84:4725/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ${driver2}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    udid=0123456789ABCDEF
     log    ${driver1}
     log    ${driver2}
-    Mobile Click Element    name=AIS
-    Mobile Set Network Connection Status    1    ${driver2}
+    AISAppium Click Element    name=AIS
+    AISAppium Set Network Connection Status    1    ${driver2}
 
 [S01-001]eServiceMobile-PO-Login
-    ${App1}    Mobile Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
-    ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
     sleep    5
-    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
+    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
     sleep    5
     Comment    Mobile Set Network Connection Status    6    ${App1}
-    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_mobile_number"]    0613851273    ${App1}
-    Mobile Hide Keyboard    ${App1}
+    AISAppium Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_mobile_number"]    0613851273    ${App1}
+    AISAppium Hide Keyboard    ${App1}
     sleep    5
-    Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_mobile_number"]    ${App1}
+    AISAppium Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_mobile_number"]    ${App1}
     sleep    5
-    Mobile Click Element    name=AIS    ${App2}
+    AISAppium Click Element    name=AIS    ${App2}
     sleep    5
-    @{SMS}    Mobile Get Elements Attribute    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    ${App2}
+    @{SMS}    AISAppium Get Elements Attribute    xpath=//*[@resource-id="com.calea.echo:id/imm_text"]    text    ${App2}
     Log    @{SMS}[0]
     ${OTP}    Get OT Pin SMS    ${SMS}[0]
-    Mobile Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    ${OTP}    ${App1}
-    Mobile Hide Keyboard    ${App1}
-    Mobile Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
-
-Test AtlasAppium Function
-    ${App1}    Mobile Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
-    Mobile Set Network Connection Status    4    ${App1}
-    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
-    sleep    5
-    Mobile Element Name Should Be    xpath=//*[@text="My Profile"]    My Profile
-    Atlas Element Should Be Enabled    xpath=//*[@text="My Profile"]
+    AISAppium Input Text    xpath=//*[@resource-id="com.ais.mimo.eservice:id/edt_otp_number"]    ${OTP}    ${App1}
+    AISAppium Hide Keyboard    ${App1}
+    AISAppium Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
 
 TestInfo
-    ${App1}    Mobile Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
-    ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
     sleep    5
     Log    ${App1.driver}
     Log    ${App2.index}
-    Mobile Click Element    name=AIS
-    Mobile Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
+    AISAppium Click Element    name=AIS
+    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
