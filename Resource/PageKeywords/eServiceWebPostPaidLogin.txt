@@ -1,11 +1,8 @@
 *** Settings ***
-Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidLoginRepository.txt
-Library           ../../Library/Mobile/Android/GetSMSfromMOOD.py
-Library           ../../Library/Mobile/Android/getString.py
 Resource          eServiceWebPostPaidCommon.txt
 Library           String
-Resource          ../MobileKeywords/CommonMobileKeywords/SmsGenericKeywords.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/SmsGenericKeywords.txt
 
 *** Keywords ***
 Login

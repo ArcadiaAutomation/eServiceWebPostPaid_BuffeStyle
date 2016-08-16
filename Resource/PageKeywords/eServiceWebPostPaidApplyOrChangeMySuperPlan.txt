@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidApplyOrChangeMySuperPlanRepository.txt
-Resource          ../../../LocalConfig.txt
+Resource          eServiceWebPostPaidCommon.txt
 
 *** Keywords ***
 Select PostPaid Package
