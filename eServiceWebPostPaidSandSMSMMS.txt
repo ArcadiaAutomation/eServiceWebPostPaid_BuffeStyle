@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidSandSMSMMS.txt
 Resource          ../LocalConfig.txt
 
 *** Test Cases ***
-[F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
+[F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -16,7 +16,7 @@ Resource          ../LocalConfig.txt
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
     Close Browser
 
-[F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
+[F07-210]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -30,7 +30,7 @@ Resource          ../LocalConfig.txt
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_10digit}
     Close Browser
 
-[F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
+[F07-211]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -42,7 +42,7 @@ Resource          ../LocalConfig.txt
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
     Close Browser
 
-[F07-212]eServiceWeb_PO_Service_SendSMS_NotFillAnyNumber_Immediate
+[F07-212]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}

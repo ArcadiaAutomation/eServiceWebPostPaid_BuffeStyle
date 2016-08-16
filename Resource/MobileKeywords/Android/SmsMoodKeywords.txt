@@ -16,7 +16,7 @@ mood Wait SMS
 mood Open SMS App
     [Arguments]    ${remoteUrl}    ${platformName}    ${platformVersion}    ${udid}
     Log    In mood Open SMS App
-    AtlasAppium.Open Application    http://${remoteUrl}/wd/hub    platformName=${platformName}    platformVersion=${platformVersion}    udid=${udid}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
+    AISAppiumEx.Open Application    http://${remoteUrl}/wd/hub    platformName=${platformName}    platformVersion=${platformVersion}    udid=${udid}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
     ...    deviceName=${remoteUrl}
     Log    Out mood Open SMS App
 
@@ -24,7 +24,7 @@ mood Wait SMS All Sender
     [Arguments]    ${totalSms}
     Comment    Log    In mood Wait SMS All Sender
     ${totalUnread}=    Set Variable    0
-    @{unreadElements}    AtlasAppium.Get Elements    ${lblUnreadNumber}
+    @{unreadElements}    AISAppiumEx.Get Elements    ${lblUnreadNumber}
     : FOR    ${eachUnread}    IN    @{unreadElements}
     \    ${number}=    Convert To Integer    ${eachUnread.get_attribute('text')}
     \    ${totalUnread}=    Evaluate    ${number} + ${totalUnread}
@@ -36,7 +36,7 @@ mood Read SMS
     Log    In Mood Read SMS
     @{emptyList}=    Create List
     @{messages}=    Create List
-    @{senderNameElements}    AtlasAppium.Get Elements    ${lblSenderName}
+    @{senderNameElements}    AISAppiumEx.Get Elements    ${lblSenderName}
     : FOR    ${senderNameElement}    IN    @{senderNameElements}
     \    ${senderName}=    Convert To String    ${senderNameElement.get_attribute('text')}
     \    @{messages}=    Run Keyword If    '${senderName}' == '${sender}'    mood Collect SMS Message    ${senderNameElement}    ${totalSms}
@@ -53,7 +53,7 @@ mood Collect SMS Message
     ${totalSms}=    Convert To Integer    ${totalSms}
     ${counter}=    Set Variable    0
     @{messages}=    Create List
-    @{messageElements}=    AtlasAppium.Get Elements    ${lblTextMessage}
+    @{messageElements}=    AISAppiumEx.Get Elements    ${lblTextMessage}
     Convert To List    ${messageElements}
     Reverse List    ${messageElements}
     : FOR    ${messageElement}    IN    @{messageElements}

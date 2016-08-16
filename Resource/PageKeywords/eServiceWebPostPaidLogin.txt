@@ -14,6 +14,7 @@ Login
     Click Web Element    ${btnGetOTP}
     Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Wait SMS    ${PlatfromName}    1    ${lo_GeneralTimeOut}
+    sleep    2
     ${messages}=    Read SMS    ${PlatfromName}    AIS    1
     Log    @{messages}[0]
     @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
@@ -22,7 +23,7 @@ Login
     Input Web Text    ${txtInputOTP}    @{OTP}[0]
     Click Web Element    ${btnOKOTP}
     sleep    4
-    AtlasAppium.Close Application
+    AISAppiumEx.Close Application
 
 Fake OTP
     [Arguments]    ${realOTP}
