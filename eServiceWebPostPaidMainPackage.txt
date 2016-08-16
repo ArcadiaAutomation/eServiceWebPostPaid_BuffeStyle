@@ -1,7 +1,6 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidCommon.txt
 Resource          ../LocalConfig.txt
-Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 
 *** Test Cases ***
 13

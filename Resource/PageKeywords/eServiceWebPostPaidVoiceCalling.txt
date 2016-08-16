@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
-Resource          ../PageRepository/eServiceWebPostPaidVoiceCalling.txt
+Resource          ../PageRepository/eServiceWebPostPaidVoiceCallingRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
 
 *** Keywords ***

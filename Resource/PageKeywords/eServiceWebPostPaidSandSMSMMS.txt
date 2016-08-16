@@ -1,7 +1,8 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
-Resource          ../PageRepository/eServiceWebPostPaidSandSMSMMS.txt
+Resource          ../PageRepository/eServiceWebPostPaidSandSMSMMSRepository.txt
 Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 
 *** Keywords ***
 Click_Service_SandSMSMMS

@@ -1,5 +1,4 @@
 *** Settings ***
-Resource          Resource/Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidSandSMSMMS.txt
 Resource          ../LocalConfig.txt
 

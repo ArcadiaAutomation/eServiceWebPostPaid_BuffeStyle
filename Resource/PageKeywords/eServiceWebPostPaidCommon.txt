@@ -1,7 +1,8 @@
 *** Settings ***
-Resource          ../CommonKeywords/RedefineMultipleKeywords.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          ../PageVariable/eServiceWebPostPaidCommonVariable.txt
+Resource          ../../../AisRobotBuffet/Common/Keywords/RedefineMultipleKeywords.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/SmsGenericKeywords.txt
 
 *** Keywords ***
 Select Language
