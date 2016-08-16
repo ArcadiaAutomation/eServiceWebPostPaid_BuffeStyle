@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
+Resource          ../AisRobotBuffet/Common/Keywords/RedefineMultipleKeywords.txt
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
@@ -12,7 +13,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    3
-    Confirm MySuperPlan
+    Confirm My SuperPlan
     Sleep    2
     Element Should Be Visible    ${lblMySuperPlanDialogMessage}
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
@@ -76,7 +77,7 @@ eXample
     Sleep    2
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
     Select Main Package    MainPacKage 250 Min
-    Confirm MySuperPlan
+    Confirm My SuperPlan
     Sleep    2
     Element Should Be Visible    ${lbl Accept Rule}
     Sleep    3
@@ -93,7 +94,7 @@ eXample
     Sleep    2
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
     Select Main Package    Main PacKage 250 Min
-    Cancel MySuperPlan
+    Cancel My SuperPlan
     Sleep    2
     Element Text Should Be    ${lbl Sum Money }    0
     Close Browser

@@ -12,7 +12,7 @@ Select PostPaid Package
     Wait Until Element Is Visible    ${ib${PostpaidPackageName}}
     Click Web Element    ${ib${PostpaidPackageName}}
 
-Confirm MySuperPlan
+Confirm My SuperPlan
     Click Web Element    ${btn Confirm MySuperPlan}
 
 Select Main Package
@@ -27,7 +27,7 @@ Select OnTop Package
     Sleep    2
     Click Web Element    ${cb${OnTopPackageName}}
 
-Enter MySuperPlan Page
+Enter My SuperPlan Page
     Wait Until Element Is Visible    ${imgMySuperPlanPage}
     Click Image    ${imgMySuperPlanPage}
 
@@ -35,5 +35,5 @@ Cancel Register
     Input Web Text    ${txt Confirm Email}    ${lo_3PO_Email}
     Click Web Button    //*[@id="btn_cancel"]
 
-Cancel MySuperPlan
+Cancel My SuperPlan
     Click Web Button    ${btn Cancel MySuperPlan}
