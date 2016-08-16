@@ -8,12 +8,22 @@ Resource          Resource/MobileKeywords/CommonMobileKeywords/SmsGenericKeyword
 test
     [Tags]    test
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    60
-    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
-    Log List    ${messages}
-    ${temp}=    Set Variable    @{messages}[0]
-    Log    ${temp}
-    Log    Finish...
+    Comment    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    60
+    Comment    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Comment    Log List    ${messages}
+    Comment    ${temp}=    Set Variable    @{messages}[0]
+    Comment    Log    ${temp}
+    Comment    Log    Finish...
+    Comment    ${app1}=    Open Application    http://10.239.223.104:4725/wd/hub    platformName=Android    platformVersion=5.0.2    udid=2a82ee4d
+    ...    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    deviceName=10.239.223.104:4723
+    Comment    sleep    3
+    Comment    AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    Comment    sleep    3
+    Comment    ${app2}=    Open Application    http://10.239.223.104:4723/wd/hub    platformName=Android    platformVersion=5.0.2    udid=2a82ee4d
+    ...    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity    deviceName=10.239.223.104:4723
+    Comment    sleep    5
+    Comment    Switch Application    ${app1}
+    Comment    sleep    3
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -49,19 +59,6 @@ test
     Element Should Not Be Visible    ${btnLoginConfirm}
     Close Browser
 
-[F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
-    Click Web Element    ${btnGetOTP}
-    Sleep    2
-    Input Web Text    ${txtInputOTP}    a
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageInputOtpWithCharacter}
-    Click Web Element    ${btnDialogClose}
-    Close Browser
-
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
@@ -69,9 +66,13 @@ test
     Select Language    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
-    ${OTP}    GetOTPinSMS    ${SMSOTP}
-    ${fakeOTP}    fakeOTP    ${OTP}
+    Comment    ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
+    Comment    ${OTP}    GetOTPinSMS    ${SMSOTP}
+    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
+    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
+    ${fakeOTP}=    Fake OTP    @{OTP}[0]
     Input Web Text    ${txtInputOTP}    ${fakeOTP}
     Click Web Element    ${btnOKOTP}
     sleep    2
@@ -87,6 +88,19 @@ test
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Element Should Not Be Visible    ${btnLoginConfirm}
+    Close Browser
+
+[F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnGetOTP}
+    Sleep    2
+    Input Web Text    ${txtInputOTP}    a
+    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageInputOtpWithCharacter}
+    Click Web Element    ${btnDialogClose}
     Close Browser
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp

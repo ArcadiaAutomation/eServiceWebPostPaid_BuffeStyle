@@ -9,8 +9,8 @@ Resource          ../LocalConfig.txt
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
@@ -22,7 +22,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
@@ -36,7 +36,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
@@ -48,7 +48,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInputSMS_Message}    Hello
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
@@ -62,7 +62,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -75,7 +75,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInputSMS_Message}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_THMorethan335}
@@ -87,7 +87,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInputSMS_Message}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_ENMornthan765}
@@ -99,7 +99,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    09112
     Click Web Element    ${btnOKSMSMMS}
@@ -113,7 +113,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtInputSMS_Message}    Hello
     sleep    2
@@ -128,7 +128,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    ส
     sleep    2
@@ -141,7 +141,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
@@ -155,7 +155,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Input Web Text    ${txtInputSMS_Message}    Hello
@@ -176,7 +176,7 @@ Resource          ../LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Service    SMSMMS
+    SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMS_Future}
     Input Web Text    ${txtServiceSMSMMS_InsertNumber1}    0923026951
     Input Web Text    ${txtInputSMS_Message}    Hello
@@ -207,16 +207,12 @@ TestMutti
     Press Keycode    KEYCODE_APP_SWITCH
 
 Sw
-    ${App1}    Open Application    http://10.239.223.119:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
+    ${App1}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
     ...    appActivity=com.calea.echo.MainActivity    alias=mood
-    AppiumLibrary.Click Element    xpath=(//android.widget.TextView[@text='AIS'])
-    ${App2}    Open Application    http://10.239.223.119:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.ais.mimo.eservice
+    sleep    5
+    Mobile Click Element    xpath=(//android.widget.TextView[@text='AIS'])
+    ${App2}    Mobile Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    alias=Settings    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
-    MobileSwitchApp    mood
-
-*** Keywords ***
-MobileSwitchApp
-    [Arguments]    ${AppName}
-    AppiumLibrary.Press Keycode    187
-    sleep    2
-    Click Mobile Element    xpath=(//android.widget.TextView[@text='${AppName}'])
+    AtlasAppium.Press Keycode    187
+    sleep    5
+    Mobile Click Element    xpath=(//android.widget.TextView[@text='AIS App'])

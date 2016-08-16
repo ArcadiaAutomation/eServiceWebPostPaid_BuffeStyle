@@ -22,9 +22,9 @@ Login
     Input Web Text    ${txtInputOTP}    @{OTP}[0]
     Click Web Element    ${btnOKOTP}
     sleep    4
-    Close Application
+    AtlasAppium.Close Application
 
-fakeOTP
+Fake OTP
     [Arguments]    ${realOTP}
     ${fakeOTP}    Generate Random String    4    [NUMBERS]
     : FOR    ${INDEX}    IN RANGE    1    ${MAXIMUMLOOP}
