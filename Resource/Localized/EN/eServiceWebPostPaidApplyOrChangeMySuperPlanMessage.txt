@@ -1,4 +1,4 @@
 *** Variables ***
-${ERROR_NotSelectMySuperPlanPackage}    Please select my Super Plan that you want.
-${ERROR_NotSelectMainPackage}    Please select Main Package that you want.
-${ERROR_MainPackageExpensiveThanPostPaidPackage}    You can have negative balance of not more than 200 Baht. Please select other package.
+${NotSelectMySuperPlanPackage}    Please select my Super Plan that you want.
+${NotSelectMainPackage}    Please select Main Package that you want.
+${MainPackageExpensiveThanPostPaidPackage}    You can have negative balance of not more than 200 Baht. Please select other package.

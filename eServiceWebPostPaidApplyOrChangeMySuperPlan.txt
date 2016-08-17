@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    ${/}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -43,7 +43,7 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    2
-    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
+    Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPackage2200Min
     Sleep    5
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_MainPackageExpensiveThanPostPaidPackage}
@@ -60,9 +60,9 @@ eXample
     Click Image    ${img MySuperPlan Page}
     Sleep    3
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select OnTop Package    OnTopExtraTalk Package    OnTop Package 80 Bath
+    Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
-    Element Text Should Be    ${lbl MySuperPlan DialogMessage}    ${ERROR_NotSelectMainPackage}
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
     Close Browser
 
 [F03-011]eServiceWeb-PO-MysuperPlan-NotAcceptMySuperPlanRule
@@ -75,7 +75,7 @@ eXample
     Click Image    ${img MySuperPlan Page}
     Sleep    2
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
-    Select Main Package    MainPacKage 250 Min
+    Select Main Package    MainPacKage250Min
     Confirm My Super Plan
     Sleep    2
     Element Should Be Visible    ${lblAcceptRule}
@@ -91,8 +91,8 @@ eXample
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    2
-    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select Main Package    Main PacKage 250 Min
+    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735Bath
+    Select Main Package    MainPacKage250Min
     Cancel My Super Plan
     Sleep    2
     Element Text Should Be    ${lblSumMoney }    0

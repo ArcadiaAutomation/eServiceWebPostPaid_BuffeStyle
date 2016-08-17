@@ -1,4 +1,4 @@
 *** Variables ***
-${ERROR_NotSelectMySuperPlanPackage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
-${ERROR_NotSelectMainPackage}    กรุณาเลือกแพ็กเกจหลักที่คุณต้องการ
-${ERROR_MainPackageExpensiveThanPostPaidPackage}    มูลค่าเงินคงเหลือติดลบได้ไม่เกิน 200 บาท\nกรุณาเลือกแพ็กเกจอื่น
+${NotSelectMySuperPlanPackage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
+${NotSelectMainPackage}    กรุณาเลือกแพ็กเกจหลักที่คุณต้องการ
+${MainPackageExpensiveThanPostPaidPackage}    มูลค่าเงินคงเหลือติดลบได้ไม่เกิน 200 บาท\nกรุณาเลือกแพ็กเกจอื่น

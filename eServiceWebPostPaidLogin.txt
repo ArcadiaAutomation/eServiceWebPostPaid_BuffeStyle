@@ -52,10 +52,10 @@ test
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
+    Sleep    5
+    Input Web Text    ${txtInputOTP}    1234
+    Selenium2Library.Element Should Be Visible    ${btnOKOTPDisable}
     Sleep    2
-    Input Web Text    ${txtInputOTP}    123
-    Element Should Be Visible    ${btnOKOTPDisable}
-    comment    read sms
     Close Browser
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
