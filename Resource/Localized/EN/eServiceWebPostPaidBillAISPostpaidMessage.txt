@@ -8,3 +8,5 @@ ${SiamCommercialBank}    Siam Commercial Bank (SCB)
 ${UnitedOverseaBank}    United Oversea Bank (UOB)
 ${KrungsriayudhyaBank}    Krungsriayudhya (BAY)
 ${ThaiMilitaryBank}    Thai Military Bank (TMB)
+${MessageNotSelectPaymentType}    Please select type to make a payment
+${MessageNotSelectCardType}    Please select card type

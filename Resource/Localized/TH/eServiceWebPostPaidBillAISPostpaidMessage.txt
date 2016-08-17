@@ -8,3 +8,5 @@ ${SiamCommercialBank}    ธนาคารไทยพาณิชย์
 ${UnitedOverseaBank}    ธนาคารยูโอบี
 ${KrungsriayudhyaBank}    ธนาคารกรุงศรีอยุธยา
 ${ThaiMilitaryBank}    ธนาคารทหารไทย
+${MessageNotSelectPaymentType}    กรุณาเลือกช่องทางการชำระ
+${MessageNotSelectCardType}    กรุณาเลือกประเภทบัตร
