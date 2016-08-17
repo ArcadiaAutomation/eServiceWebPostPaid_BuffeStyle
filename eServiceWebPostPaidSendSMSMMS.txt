@@ -31,7 +31,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-211]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -43,7 +43,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-212]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -57,7 +57,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -71,7 +71,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-214]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -84,7 +84,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-215]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -97,7 +97,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-216]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Future
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -111,7 +111,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -126,7 +126,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -139,7 +139,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -153,7 +153,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -174,7 +174,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -193,21 +193,6 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
-
-TestMutti
-    ${App1}    Open Application    http://10.239.223.71:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
-    ...    appActivity=com.calea.echo.MainActivity    alias=mood
-    Comment    ${App1}    Open Application    http://10.239.223.71:5000/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator
-    ...    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
-    AppiumLibrary.Click Element    xpath=(//android.widget.TextView[@text='AIS'])
-    Press Keycode    KEYCODE_APP_SWITCH
-    Sleep    5
-    ${App2}    Open Application    http://10.239.223.71:4725/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator1    appPackage=com.android.chrome
-    ...    appActivity=com.google.android.apps.chrome.Main    alias=aisapp
-    sleep    5
-    Log To Console    ${App1}
-    Switch Application    ${App2}
-    Press Keycode    KEYCODE_APP_SWITCH
 
 Sw
     ${App1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo

@@ -4,7 +4,7 @@ Resource          ../LocalConfig.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -18,7 +18,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -31,7 +31,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -44,7 +44,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -60,7 +60,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -78,7 +78,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -96,7 +96,7 @@ Resource          ../LocalConfig.txt
     Cancel Voice
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -114,7 +114,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -130,7 +130,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -150,7 +150,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
