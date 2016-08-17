@@ -38,4 +38,3 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNewNumber.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    s
     Element Should Contain    ${lblDialogMessage}    ${MessageNumbericOnly}
-    Close Browser
