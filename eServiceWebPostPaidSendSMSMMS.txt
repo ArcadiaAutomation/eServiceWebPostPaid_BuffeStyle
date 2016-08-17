@@ -4,7 +4,7 @@ Resource          ../LocalConfig.txt
 
 *** Test Cases ***
 [F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -17,7 +17,7 @@ Resource          ../LocalConfig.txt
     Close Browser
 
 [F07-210]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Immediate
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -63,6 +63,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
+    Wait Web Until Page Contains Element    ${txtServiceSMSMMSInsertNumber1}
     Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -76,6 +77,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
+    Wait Web Until Page Contains Element    ${txtInputSMSMessage}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_THMorethan335}
@@ -88,6 +90,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
+    Wait Web Until Page Contains Element    ${txtInputSMSMessage}
     Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_ENMornthan765}

@@ -3,7 +3,7 @@
 *** Variables ***
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
 ${btnOKSMSMMS}    xpath=//*[@id="btnServiceSendSMSMMSSubmit"]
-${txtServiceSMSMMSInsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
+${txtServiceSMSMMSInsertNumber1}    xapth=//*[@id="txtServiceSendSMSMMSReceivedNumber0"]
 ${txtInputSMSMessage}    xpath=//*[@id="SMSMessage"]
 ${btnSMSFuture}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[6]/div[1]/table/tbody/tr/td[1]/label
 ${lstDateFuture}    xpath=//*[@id="ddlServiceSendSMSMMSDateSend"]
