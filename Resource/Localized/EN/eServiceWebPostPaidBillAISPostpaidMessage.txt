@@ -1,2 +1,10 @@
 *** Variables ***
-${ERROR_MessageNumberNotComplete}    Please specify a 10-digit mobile number.
+${CreditCard}     Credit Card
+${DebitCard}      Debit Card
+${DirectDebit}    Direct Debit
+${KrungthaiBank}    Krungthai (KTC)
+${ThanachartBank}    Thanachart Bank
+${SiamCommercialBank}    Siam Commercial Bank (SCB)
+${UnitedOverseaBank}    United Oversea Bank (UOB)
+${KrungsriayudhyaBank}    Krungsriayudhya (BAY)
+${ThaiMilitaryBank}    Thai Military Bank (TMB)

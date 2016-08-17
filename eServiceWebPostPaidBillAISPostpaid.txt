@@ -11,13 +11,163 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
-    Select Payment Type    Credit Card
+    Select Payment Type    ${CreditCard}
     Select Card Name    MASTER
     Click Web Element    ${btnOK}
     sleep    5
     Select Window    url=${urlIpayBangkokBank}
-    ${ipay}    Get Location
-    Run Keyword if    '${ipay}' != '${urlIpayBangkokBank}'     Fail
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
+    Close All Browsers
+
+[S05-002]eServiceWeb-PO-BillAISPostpaid-PayWithVISAcard
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${CreditCard}
+    Select Card Name    VISA
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlIpayBangkokBank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
+    Close All Browsers
+
+[S05-003]eServiceWeb-PO-BillAISPostpaid-PayWithAMEXcard
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${CreditCard}
+    Select Card Name    AMEX
+    Click Web Element    ${btnOK}
+    sleep    5
+    Element Should Be Visible    ${imgAMEXCard}
+    Close All Browsers
+
+[S05-004]eServiceWeb-PO-BillAISPostpaid-PayWithDebitcard
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DebitCard}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlIpayBangkokBank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
+    Close All Browsers
+
+[S05-005]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-KTC
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DirectDebit}
+    Select Card Name    ${KrungthaiBank}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlKTBbank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlKTBbank}'    Fail
+    Close All Browsers
+
+[S05-006]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThanachartBank
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DirectDebit}
+    Select Card Name    ${ThanachartBank}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlThanachartBank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlThanachartBank}'    Fail
+    Close All Browsers
+
+[S05-007]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-SCB
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DirectDebit}
+    Select Card Name    ${SiamCommercialBank}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlSCBbank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlSCBbank}'    Fail
+    Close All Browsers
+
+[S05-008]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-UOB
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DirectDebit}
+    Select Card Name    ${UnitedOverseaBank}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlUOBbank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlUOBbank}'    Fail
+    Close All Browsers
+
+[S05-009]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-Krungsriayudhya
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DirectDebit}
+    Select Card Name    ${KrungsriayudhyaBank}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlKrungsriBank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlKrungsriBank}'    Fail
+    Close All Browsers
+
+[S05-010]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThaiMilitaryBank
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Select Payment Type    ${DirectDebit}
+    Select Card Name    ${ThaiMilitaryBank}
+    Click Web Element    ${btnOK}
+    sleep    5
+    Select Window    url=${urlTMBbank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlTMBbank}'    Fail
     Close All Browsers
 
 TestOpenAppMobile
@@ -30,7 +180,7 @@ TestOpenAppMobile
     AISAppium Click Element    name=AIS
     AISAppium Set Network Connection Status    1    ${driver2}
 
-[S01-001]eServiceMobile-PO-Login
+TesteServiceMobile-PO-Login
     ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
     ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo

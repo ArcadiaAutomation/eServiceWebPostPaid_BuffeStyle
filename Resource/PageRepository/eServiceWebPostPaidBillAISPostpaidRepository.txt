@@ -9,3 +9,10 @@ ${ddlCardName}    xpath=//*[@id="select_box2"]/div/select
 ${urlIpayBangkokBank}    https://ipay.bangkokbank.com/b2c/eng/payment/payForm2.jsp
 ${btnOK}          xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div[3]/div[2]/div/a[1]/div
 ${btnCancel}      xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div[3]/div[2]/div/a[2]/div
+${imgAMEXCard}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div[3]/div/img
+${urlTMBbank}     https://www.tmbdirect.com/tmb/kdw1.10.5#_frmIBPreLogin
+${urlKrungsriBank}    https://www.krungsri.com/bank/th/krungsrionline-landing.html
+${urlUOBbank}     https://pib.uobthailand.com/PIBLogin/appmanager/Login/Public?lang=th_TH
+${urlSCBbank}     https://www.scbeasy.com/v1.4/site/presignon/index.asp
+${urlThanachartBank}    https://retailib.thanachartbank.co.th/retail/Login.do?action=form&lang=th_TH
+${urlKTBbank}     https://www.ktbnetbank.com/consumer/

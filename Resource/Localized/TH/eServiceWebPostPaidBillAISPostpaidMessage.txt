@@ -1,2 +1,10 @@
 *** Variables ***
-${ERROR_MessageNumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก
+${CreditCard}     บัตรเครดิต
+${DebitCard}      บัตรเดบิต
+${DirectDebit}    หักบัญชีธนาคาร
+${KrungthaiBank}    ธนาคารกรุงไทย
+${ThanachartBank}    ธนาคารธนชาต
+${SiamCommercialBank}    ธนาคารไทยพาณิชย์
+${UnitedOverseaBank}    ธนาคารยูโอบี
+${KrungsriayudhyaBank}    ธนาคารกรุงศรีอยุธยา
+${ThaiMilitaryBank}    ธนาคารทหารไทย
