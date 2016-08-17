@@ -64,8 +64,6 @@ test
     Select Language    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Comment    ${SMSOTP}    GetSMSfromMood    AIS    ${lo_RUN_3PO_1_IPAppium}    1    ${lo_RUN_3PO_1}
-    Comment    ${OTP}    GetOTPinSMS    ${SMSOTP}
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
     Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
     ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
@@ -75,6 +73,7 @@ test
     Click Web Element    ${btnOKOTP}
     sleep    2
     Element Should Be Visible    ${WrongOTP}
+    AISAppiumEx.Close All Applications
     Close Browser
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp

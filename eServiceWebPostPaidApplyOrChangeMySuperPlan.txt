@@ -1,7 +1,6 @@
 *** Settings ***
 Resource          ../LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
-Resource          ../AisRobotBuffet/Common/Keywords/RedefineMultipleKeywords.txt
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
