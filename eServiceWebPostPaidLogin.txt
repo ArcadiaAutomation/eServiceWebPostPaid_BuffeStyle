@@ -54,7 +54,8 @@ test
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Input Web Text    ${txtInputOTP}    123
-    Element Should Not Be Visible    ${btnLoginConfirm}
+    Element Should Be Visible    ${btnOKOTPDisable}
+    comment    read sms
     Close Browser
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
