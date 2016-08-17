@@ -5,7 +5,7 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 
 *** Keywords ***
-Click Service SandSMSMMS
+Click Service SendSMSMMS
     Click Web Element    ${mnuService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
