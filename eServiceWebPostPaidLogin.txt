@@ -1,11 +1,12 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../LocalConfig.txt
+Library           pabot.PabotLib
 
 *** Test Cases ***
 test
     [Tags]    test
-    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
+    Comment    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
     Comment    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    60
     Comment    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
     Comment    Log List    ${messages}
