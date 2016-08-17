@@ -13,7 +13,7 @@ Resource          ../LocalConfig.txt
     Wait Web Until Page Contains Element    ${btnOKSMSMMS}
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
 
 [F07-210]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Immediate
@@ -27,7 +27,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
 
 [F07-211]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Immediate
@@ -39,7 +39,7 @@ Resource          ../LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtServiceSMSMMSInsertNumber1}    ส
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
+    Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
 
 [F07-212]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Immediate
@@ -53,7 +53,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
 
 [F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
@@ -67,7 +67,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_PleaseMessage}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
     Close Browser
 
 [F07-214]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Immediate
@@ -80,7 +80,7 @@ Resource          ../LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtInputSMSMessage}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_THMorethan335}
+    Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan335}
     Close Browser
 
 [F07-215]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Immediate
@@ -93,7 +93,7 @@ Resource          ../LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtInputSMSMessage}
     Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_ENMornthan765}
+    Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan765}
     Close Browser
 
 [F07-216]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Future
@@ -107,7 +107,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceSMSMMSInsertNumber1}    09112
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
 
 [F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
@@ -122,7 +122,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
 
 [F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
@@ -135,7 +135,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtServiceSMSMMSInsertNumber1}    ส
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_NumericOnly}
+    Element Should Contain    ${lblDialogMessage}    ${MessageNumericOnly}
     Close Browser
 
 [F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
@@ -149,7 +149,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceSMSMMSInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_PleaseMessage}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
     Close Browser
 
 [F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
@@ -170,7 +170,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_AfterToDay}
+    Element Should Contain    ${lblDialogMessage}    ${MessageEnterAfterToDay}
     Close Browser
 
 [F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
@@ -191,7 +191,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
-    Element Should Contain    ${lblDialogMessage}    ${ERROR_Message_AfterToDay}
+    Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
 
 TestMutti

@@ -13,7 +13,7 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    Service    Voice_Register
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MeesageVoiceRegister}
+    Element Text Should Be    ${txtSummaryMessage}    ${MeesageRegister}
     Cancel Voice
     Close Browser
 
@@ -27,7 +27,7 @@ Resource          ../LocalConfig.txt
     Cancel Voice
     Select Menu    Service    Voice_Add/Edit
     Sleep    2
-    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
@@ -40,7 +40,7 @@ Resource          ../LocalConfig.txt
     Cancel Voice
     Select Menu    Service    Voice_Cancel
     Sleep    2
-    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
@@ -54,7 +54,7 @@ Resource          ../LocalConfig.txt
     Select Menu    Service    Voice_Add/Edit
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageNoDataUpdate}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
     Close Browser
@@ -72,7 +72,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertMobile}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
     Close Browser
@@ -91,7 +91,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceVoiceSpell2}    ชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
 
@@ -108,7 +108,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
     Close Browser
@@ -124,7 +124,7 @@ Resource          ../LocalConfig.txt
     Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceSpell1}    s
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageThaiOnly}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
     Close Browser
@@ -145,7 +145,7 @@ Resource          ../LocalConfig.txt
     Input Web Text    ${txtServiceVoiceSpell2}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     Sleep    2
-    Element Text Should Be    ${txtSummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     Cancel Voice
     Close Browser
 
@@ -160,7 +160,7 @@ Resource          ../LocalConfig.txt
     Select Menu    Service    Voice_Add/Edit
     sleep    2
     Input Web Text    ${txtServiceVoiceInsertMobile}    ส
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageNumberOnly}
     Click Web Element    ${btnCloseDialog}
     Cancel Voice
     Close Browser

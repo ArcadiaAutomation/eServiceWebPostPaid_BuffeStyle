@@ -1,10 +1,10 @@
 *** Variables ***
-${ERROR_MessageSMSMMS_Destination}    Please enter destination number(s).
-${ERROR_MessageSMSMMS_10digit}    The number you have entered in invalid. Please check the number and enter a 10-digit mobile number again.
-${ERROR_MessageSMSMMS_NumberOnly}    Please enter numerical data only.
-${ERROR_PleaseMessage}    Please enter your message.
-${ERROR_Message_THMorethan335}    Please enter the message you would like to send (maximum 335 characters).
-${ERROR_Message_ENMornthan765}    Please enter the message you would like to send (maximum 765 characters).
-${ERROR_Message_NumericOnly}    Please enter numeric data only.
-${ERROR_Message_AfterToDay}    Please enter a date which is after today's date.
-${ERROR_Morethan30Day}    Please enter a date which is not more than 30 days from now.
+${MessageDestinationNotInput}    Please enter destination number(s).
+${MessageInvalid10digit}    The number you have entered in invalid. Please check the number and enter a 10-digit mobile number again.
+${MessageNumberOnly}    Please enter numerical data only.
+${MessagePleaseInputMessage}    Please enter your message.
+${MessageTHMorethan335}    Please enter the message you would like to send (maximum 335 characters).
+${MessageENMornthan765}    Please enter the message you would like to send (maximum 765 characters).
+${MessageNumericOnly}    Please enter numeric data only.
+${MessageEnterAfterToDay}    Please enter a date which is after today's date.
+${MessageMorethan30Day}    Please enter a date which is not more than 30 days from now.
