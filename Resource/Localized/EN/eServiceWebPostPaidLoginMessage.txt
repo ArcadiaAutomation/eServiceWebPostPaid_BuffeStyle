@@ -1,6 +1,6 @@
 *** Variables ***
-${ERROR_MessageNumberNotComplete}    Please specify a 10-digit mobile number.
-${ERROR_MessageNumberDtac}    The number must be an AIS mobile number only. Please enter a new number.
-${ERROR_MessageInputOtpWithCharacter}    Please enter numerical data only.
-${ERROR_MessageNotSelectMySuperPlanPacKage}    Please select my Super Plan that you want.
-${ERROR_MessageWrongOTP}    You have entered incorrect password. Please try again.
+${MessageNumberNotComplete}    Please specify a 10-digit mobile number.
+${MessageNumberDtac}    The number must be an AIS mobile number only. Please enter a new number.
+${MessageInputOtpWithCharacter}    Please enter numerical data only.
+${MessageNotSelectMySuperPlanPacKage}    Please select my Super Plan that you want.
+${MessageWrongOTP}    You have entered incorrect password. Please try again.

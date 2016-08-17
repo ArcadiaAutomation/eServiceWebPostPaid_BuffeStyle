@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    ${/}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -15,7 +15,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Confirm My Super Plan
     Sleep    2
     Element Should Be Visible    ${lblMySuperPlanDialogMessage}
-    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMySuperPlanPackage}
     Close Browser
 
 eXample
@@ -35,7 +35,7 @@ eXample
     Close Browser
 
 [F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -46,12 +46,12 @@ eXample
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPackage2200Min
     Sleep    5
-    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_MainPackageExpensiveThanPostPaidPackage}
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${MainPackageExpensiveThanPostPaidPackage}
     Sleep    2
     Close Browser
 
 [F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -62,17 +62,17 @@ eXample
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
     Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
-    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
+    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMainPackage}
     Close Browser
 
 [F03-011]eServiceWeb-PO-MysuperPlan-NotAcceptMySuperPlanRule
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${img MySuperPlan Page}
+    Click Image    ${imgMySuperPlanPage}
     Sleep    2
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPacKage250Min
@@ -83,13 +83,13 @@ eXample
     Close Browser
 
 [F03-012]eServiceWeb-PO-MysuperPlan-CancelMySuperPlan
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${img MySuperPlan Page}
+    Click Image    ${imgMySuperPlanPage}
     Sleep    2
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735Bath
     Select Main Package    MainPacKage250Min

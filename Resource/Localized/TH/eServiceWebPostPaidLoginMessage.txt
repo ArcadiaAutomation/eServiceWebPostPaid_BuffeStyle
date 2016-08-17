@@ -1,6 +1,6 @@
 *** Variables ***
-${ERROR_MessageNumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก
-${ERROR_MessageNumberDtac}    บริการนี้สำหรับลูกค้าเอไอเอสเท่านั้น กรุณาระบุหมายเลขเอไอเอสใหม่อีกครั้ง
-${ERROR_MessageInputOtpWithCharacter}    กรุณาระบุเป็นตัวเลขเท่านั้น
-${ERROR_MessageNotSelectMySuperPlanPacKage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
-${ERROR_MessageWrongOTP}    รหัสผ่านไม่ถูกต้อง กรุณาระบุใหม่อีกครั้ง
+${MessageNumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก
+${MessageNumberDtac}    บริการนี้สำหรับลูกค้าเอไอเอสเท่านั้น กรุณาระบุหมายเลขเอไอเอสใหม่อีกครั้ง
+${MessageInputOtpWithCharacter}    กรุณาระบุเป็นตัวเลขเท่านั้น
+${MessageNotSelectMySuperPlanPacKage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
+${MessageWrongOTP}    รหัสผ่านไม่ถูกต้อง กรุณาระบุใหม่อีกครั้ง

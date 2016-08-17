@@ -24,42 +24,46 @@ test
     Comment    sleep    3
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    090546798
     Click Web Element    ${btnGetOTP}
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageNumberNotComplete}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageNumberNotComplete}
     Click Web Element    ${btnDialogClose}
     Close Browser
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    0944835961
     Click Web Element    ${btnGetOTP}
     Wait Web Until Page Contains Element    ${ttMessage}
-    Element Text Should Be    ${ttMessage}    ${ERROR_MessageNumberDtac}
+    Element Text Should Be    ${ttMessage}    ${MessageNumberDtac}
     Close Browser
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    5
-    Input Web Text    ${txtInputOTP}    1234
+    Input Web Text    ${txtInputOTP}    123
     Selenium2Library.Element Should Be Visible    ${btnOKOTPDisable}
     Sleep    2
     Close Browser
+    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
+    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    sleep    2
+    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -78,18 +82,18 @@ test
     Close Browser
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
-    Element Should Not Be Visible    ${btnLoginConfirm}
+    Element Should Not Be Visible    ${btnOKOTP}
     Close Browser
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -97,12 +101,12 @@ test
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Input Web Text    ${txtInputOTP}    a
-    Element Text Should Be    ${lblDialogMessage}    ${ERROR_MessageInputOtpWithCharacter}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
     Close Browser
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
