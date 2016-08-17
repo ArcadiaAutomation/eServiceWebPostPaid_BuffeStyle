@@ -1,0 +1,41 @@
+*** Settings ***
+Resource          ../LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidNewNumber.txt
+
+*** Test Cases ***
+[F07-264]eServiceWeb-PO-Service-NewNumber-NoFillAny
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${btnOK}
+    Click Web Element    ${btnOK}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseEnterNumber}
+    Close Browser
+
+[F07-265]eServiceWeb-PO-Service-NewNumber-CannotChangNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${txtNumber1}
+    Input Web Text    ${txtNumber1}    09242606060
+    Click Web Element    ${btnOK}
+    Element Should Contain    ${lblDialogMessage}    ${MessageNumberNotCorrect}
+    Close Browser
+
+[F07-266]eServiceWeb-PO-Service-NewNumber-FillCharacterInPhoneNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${txtNumber1}
+    Input Web Text    ${txtNumber1}    s
+    Element Should Contain    ${lblDialogMessage}    ${MessageNumbericOnly}
+    Close Browser

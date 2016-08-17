@@ -1,0 +1,4 @@
+*** Variables ***
+${MessagePleaseEnterNumber}    กรุณาระบุหมายเลขโทรศัพท์ที่คุณต้องการแจ้ง
+${MessageNumberNotCorrect}    คุณระบุหมายเลขโทรศัพท์ไม่ถูกต้อง
+${MessageNumbericOnly}    กรุณาระบุเป็นตัวเลขเท่านั้น

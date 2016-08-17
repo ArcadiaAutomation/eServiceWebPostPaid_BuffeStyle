@@ -1,2 +1,2 @@
 *** Variables ***
-${MAXIMUMLOOP}    1000000
+${MaximumLoop}    1000000
