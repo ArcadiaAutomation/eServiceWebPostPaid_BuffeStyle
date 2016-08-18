@@ -3,7 +3,7 @@
 *** Variables ***
 ${txtMobileNumber}    xpath=//*[@id="textfield"]
 ${btnGetOTP}      id=btnLoginGetOtpMethod
-${txtInputOTP}    //*[@id="inputOtpNumber"]
+${txtInputOTP}    xpath=//*[@id="inputOtpNumber"]
 ${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
 ${ttMessage}      xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
 ${btnOKOTPDisable}    xpath=//*[@id="lnkLoginLoginWithOtp" and @class="button_all bt_color_green_t disabled"]
