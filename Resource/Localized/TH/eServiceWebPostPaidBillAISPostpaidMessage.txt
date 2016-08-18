@@ -10,3 +10,9 @@ ${KrungsriayudhyaBank}    ธนาคารกรุงศรีอยุธย
 ${ThaiMilitaryBank}    ธนาคารทหารไทย
 ${MessageNotSelectPaymentType}    กรุณาเลือกช่องทางการชำระ
 ${MessageNotSelectCardType}    กรุณาเลือกประเภทบัตร
+${MessageNotSelectBank}    กรุณาเลือกธนาคาร
+${MessageNotInput10digit}    หมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาตรวจสอบและระบุใหม่อีกครั้ง
+${MessageInputChar}    กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลขเท่านั้น
+${MessageInputZeroAmount}    กรุณาระบุจำนวนเงินที่ต้องการชำระ
+${MessageInputPrepaidNumber}    หมายเลขที่คุณระบุเป็นหมายเลขในระบบเติมเงิน\nหากคุณต้องการเติมเงินให้ให้หมายเลขนี้ คลิกที่นี่
+${MessageNotInputSelfNumber}    หมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาตรวจสอบและระบุใหม่อีกครั้ง

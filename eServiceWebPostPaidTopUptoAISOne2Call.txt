@@ -1,0 +1,5 @@
+*** Settings ***
+Resource          Resource/PageKeywords/eServiceWebPostPaidTopUptoAISOne2Call.txt
+Resource          ../LocalConfig.txt
+
+*** Test Cases ***

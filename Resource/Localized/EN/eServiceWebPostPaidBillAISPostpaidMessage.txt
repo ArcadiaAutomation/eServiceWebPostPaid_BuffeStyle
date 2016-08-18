@@ -10,3 +10,9 @@ ${KrungsriayudhyaBank}    Krungsriayudhya (BAY)
 ${ThaiMilitaryBank}    Thai Military Bank (TMB)
 ${MessageNotSelectPaymentType}    Please select type to make a payment
 ${MessageNotSelectCardType}    Please select card type
+${MessageNotSelectBank}    Please select bank
+${MessageNotInput10digit}    You have entered incorrect phone number. Please check and try again.
+${MessageInputChar}    Please enter numerical data only.
+${MessageInputZeroAmount}    Please enter the amount you wish to payment.
+${MessageInputPrepaidNumber}    Destination number you have entered is One-2-Call! number.\nIf you want to top up please click here.
+${MessageNotInputSelfNumber}    You have entered incorrect phone number. Please check and try again.

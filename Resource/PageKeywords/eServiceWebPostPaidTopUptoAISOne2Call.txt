@@ -1,0 +1,5 @@
+*** Settings ***
+Resource          ../PageRepository/eServiceWebPostPaidTopUptoAISOne2CallRepository.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidTopUptoAISOne2CallMessage.txt

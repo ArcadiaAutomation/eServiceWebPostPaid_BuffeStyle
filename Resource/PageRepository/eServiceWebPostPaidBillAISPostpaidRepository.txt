@@ -18,5 +18,5 @@ ${urlThanachartBank}    https://retailib.thanachartbank.co.th/retail/Login.do?ac
 ${urlKTBbank}     https://www.ktbnetbank.com/consumer/
 ${txtDestinationNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div[1]/div[2]/input
 ${btnComfirmDesNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div
-${lbNotSelectPaymentType}    xpath=//*[@id="popup_detail"]/div[1]
-${lbNotSelectCardType}    xpath=//*[@id="popup_detail"]/div[1]
+${lbPopUpDialog}    xpath=//*[@id="popup_detail"]/div[1]
+${lbInputPrepaid}    xpath=//*[@id="txtAlertMessage"]/div

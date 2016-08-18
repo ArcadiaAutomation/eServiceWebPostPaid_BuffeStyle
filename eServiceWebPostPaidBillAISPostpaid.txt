@@ -4,15 +4,16 @@ Resource          ../LocalConfig.txt
 
 *** Test Cases ***
 [F05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnOK}
-    ${msg}    Get Text    ${lbNotSelectPaymentType}
+    ${msg}    Get Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageNotSelectPaymentType}'    Fail
     Close All Browsers
 
@@ -24,10 +25,103 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Click Web Element    ${btnOK}
-    ${msg}    Get Text    ${lbNotSelectCardType}
+    ${msg}    Get Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageNotSelectCardType}'    Fail
+    Close All Browsers
+
+[F05-003]eServiceWeb-PO-BillAISPostpaid-NotSelectBank
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Input Web Text    ${txtAmount}    1000
+    Select Payment Type    ${DirectDebit}
+    Click Web Element    ${btnOK}
+    ${msg}    Get Text    ${lbPopUpDialog}
+    Run Keyword if    '${msg}' != '${MessageNotSelectBank}'    Fail
+    Close All Browsers
+
+[F05-004]eServiceWeb-PO-BillAISPostpaid-InputZeroAmount
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Input Web Text    ${txtAmount}    0
+    Select Payment Type    ${CreditCard}
+    Select Card Name    VISA
+    Click Web Element    ${btnOK}
+    ${msg}    Get Text    ${lbPopUpDialog}
+    Run Keyword if    '${msg}' != '${MessageInputZeroAmount}'    Fail
+    Close All Browsers
+
+[F05-005]eServiceWeb-PO-BillAISPostpaid-Payment2Another-NotInput10digitNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Click Web Element    ${btnPayment2Another}
+    Input Web Text    ${txtDestinationNumber}    092302694
+    Click Web Element    ${btnComfirmDesNumber}
+    ${msg}    Get Text    ${lbPopUpDialog}
+    Run Keyword if    '${msg}' != '${MessageNotInput10digit}'    Fail
+    Close All Browsers
+
+[F05-006]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputChar
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Click Web Element    ${btnPayment2Another}
+    Input Web Text    ${txtDestinationNumber}    061a
+    ${msg}    Get Text    ${lbPopUpDialog}
+    Run Keyword if    '${msg}' != '${MessageInputChar}'    Fail
+    Close All Browsers
+
+[F05-007]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputPrepaidNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Click Web Element    ${btnPayment2Another}
+    Input Web Text    ${txtDestinationNumber}    0932015586
+    Click Web Element    ${btnComfirmDesNumber}
+    sleep    5
+    ${msg}    Get Text    ${lbInputPrepaid}
+    Run Keyword if    """${msg}""" != """${MessageInputPrepaidNumber}"""    Fail
+    Close All Browsers
+
+[F05-008]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputSelfNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Payment/Topup    BillAISPostpaid
+    sleep    5
+    Click Web Element    ${btnPayment2Another}
+    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_1_Number}
+    Click Web Element    ${btnComfirmDesNumber}
+    sleep    5
+    ${msg}    Get Text    ${lbPopUpDialog}
+    Run Keyword if    """${msg}""" != """${MessageNotInput10digit}"""    Fail
     Close All Browsers
 
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
@@ -38,6 +132,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    MASTER
     Click Web Element    ${btnOK}
@@ -55,6 +150,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
     Click Web Element    ${btnOK}
@@ -72,6 +168,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
     Click Web Element    ${btnOK}
@@ -87,6 +184,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DebitCard}
     Click Web Element    ${btnOK}
     sleep    5
@@ -103,6 +201,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungthaiBank}
     Click Web Element    ${btnOK}
@@ -120,6 +219,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThanachartBank}
     Click Web Element    ${btnOK}
@@ -137,6 +237,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${SiamCommercialBank}
     Click Web Element    ${btnOK}
@@ -154,6 +255,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${UnitedOverseaBank}
     Click Web Element    ${btnOK}
@@ -171,6 +273,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungsriayudhyaBank}
     Click Web Element    ${btnOK}
@@ -188,6 +291,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThaiMilitaryBank}
     Click Web Element    ${btnOK}
@@ -205,6 +309,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -226,6 +331,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -245,6 +351,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -266,6 +373,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -286,6 +394,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -307,6 +416,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -328,6 +438,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -349,6 +460,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -370,6 +482,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -391,6 +504,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     sleep    5
+    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
