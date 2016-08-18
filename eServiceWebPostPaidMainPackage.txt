@@ -10,4 +10,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidMainPackage.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Select Menu    Package    MainPackage
+    Selenium2Library.Wait Until Element Is Visible    ${btnChangePackConfirm}
     Click Web Element    ${btnChangePackConfirm}
+    Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
+    Close Browser

@@ -1,0 +1,2 @@
+*** Variables ***
+${NotSelectPackage}    กรุณาเลือกแพ็กเกจที่ต้องการ

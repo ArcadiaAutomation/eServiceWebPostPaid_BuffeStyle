@@ -1,0 +1,2 @@
+*** Variables ***
+${NotSelectPackage}    Please select the package that you want.
