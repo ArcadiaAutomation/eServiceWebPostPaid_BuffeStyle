@@ -2,9 +2,11 @@
 ${NumberNotComplete}    Please specify a 10-digit mobile number.
 ${MessageRegister}    คุณได้สมัคร บริการต่อสายด้วยเสียงแล้ว
 ${MessageNotRegister}    คุณยังไม่ได้สมัคร บริการต่อสายด้วยเสียง
-${MessageVoiceNoDataUpdate}    No data has been updated.
+${MessageNoDataUpdate}    No data has been updated.
 ${MessagePleaseInsertMobile}    Please insert mobile no.
 ${MessagePleaseInsertName}    Please insert name.
 ${MessageThaiOnly}    Please insert thai only.
-${MessageIncorrectSpell}    อา-ป้คำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
+${MessageIncorrectSpell}    อา-ป้\nคำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
 ${MessageNumberOnly}    Please enter numerical data only.
+${MessageCancelComplete}    คุณได้ยกเลิกบริการเรียบร้อยแล้ว
+${MessageRegisterComplete}    สมัครบริการเรียบร้อยแล้ว\nต้องการฝากเบอร์คนสนิท กด "ตกลง"

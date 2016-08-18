@@ -8,3 +8,5 @@ ${MessagePleaseInsertName}    กรุณากรอกชื่อ
 ${MessageThaiOnly}    กรุณากรอกเป็นภาษาไทยเท่านั้น
 ${MessageIncorrectSpell}    อา-ป้\nคำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
 ${MessageNumberOnly}    กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลขเท่านั้น
+${MessageCancelComplete}    คุณได้ยกเลิกบริการเรียบร้อยแล้ว
+${MessageRegisterComplete}    สมัครบริการเรียบร้อยแล้ว\nต้องการฝากเบอร์คนสนิท กด "ตกลง"

@@ -3,7 +3,7 @@
 *** Variables ***
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
 ${btnOKSMSMMS}    xpath=//*[@id="btnServiceSendSMSMMSSubmit"]
-${txtServiceSMSMMSInsertNumber1}    xapth=//*[@id="txtServiceSendSMSMMSReceivedNumber0"]
+${txtServiceSMSMMSInsertNumber1}    xpath=//*[@id="txtServiceSendSMSMMSReceivedNumber0"]
 ${txtInputSMSMessage}    xpath=//*[@id="SMSMessage"]
 ${btnSMSFuture}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[6]/div[1]/table/tbody/tr/td[1]/label
 ${lstDateFuture}    xpath=//*[@id="ddlServiceSendSMSMMSDateSend"]
@@ -11,3 +11,6 @@ ${lstMonthFuture}    xpath=//*[@id="ddlServiceSendSMSMMSMonthSend"]
 ${lstYearFuture}    xpath=//*[@id="ddlServiceSendMMSSMSYearSend"]
 ${lstTimeFuture}    xpath=//*[@id="ddlServiceSendSMSMMSHourSend"]
 ${lstHrsFuture}    xpath=//*[@id="ddlServiceSendSMSMMSMinuteSend"]
+${btnMMS}         xpath=//*[@id="btnServiceSendMMS"]
+${btnChooseFile}    xpath=//*[@id="btnServiceSendSMSMMSUploadImage"]
+${btnMMSFuture}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div[7]/div[1]/table/tbody/tr/td[1]/label

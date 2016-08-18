@@ -11,6 +11,8 @@ ${btnServiceVoiceAdd/Edit(Save)}    xpath=//*[@id="btnVoiceCallSave"]
 ${btnRegister}    xpath=//*[@id="btnVoiceCallingRegister"]
 ${btnRegisterConfirm}    xpath=//*[@id="btnAction0"]
 ${txtMessageConfrimCancel}    xpath=//*[@id="txtDetailCancelVoice"]
-${btnCancel_confrim}    xpath=//*[@id="btnCancelVoiceCalling"]
-${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]
-${btnCloseDialog}    xpath=//*[@id="bg_popup-inner"]/table/tbody/tr/td/div/div[2]/a/div/div
+${btnCancelConfrim}    xpath=//*[@id="btnCancelVoiceCalling"]
+${txtSummaryMessage}    xpath=//*[@id="txtAlertMessage"]/div
+${btnRegisterBack}    xpath=//*[@id="btnAction0"]
+${btnDialogClose}    xpath=//*[@id="bg_popup-inner"]/table/tbody/tr/td/div/div[2]/a/div/div
+${btnRegisterOK}    xpath=//*[@id="btnAction0"]/div

@@ -1,10 +1,14 @@
 *** Variables ***
 ${MessageDestinationNotInput}    Please enter destination number(s).
 ${MessageInvalid10digit}    The number you have entered in invalid. Please check the number and enter a 10-digit mobile number again.
-${MessageNumberOnly}    Please enter numerical data only.
+${MessageNumberOnly}    Please enter numeric data only.
 ${MessagePleaseInputMessage}    Please enter your message.
 ${MessageTHMorethan335}    Please enter the message you would like to send (maximum 335 characters).
 ${MessageENMornthan765}    Please enter the message you would like to send (maximum 765 characters).
 ${MessageNumericOnly}    Please enter numeric data only.
 ${MessageEnterAfterToDay}    Please enter a date which is after today's date.
 ${MessageMorethan30Day}    Please enter a date which is not more than 30 days from now.
+${MessageTHMorethan1000}    Please enter the message you would like to send (maximum 1000 characters).
+${MessageENMorethan1000}    Please enter the message you would like to send (maximum 1000 characters).
+${MessageFileInvalid}    Wrong file format. Please browse the image *.jpg , *.jpeg , *.gif again.
+${MessagePleaseInputMessageImage}    Please enter your message or select an image for your MMS sending

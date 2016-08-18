@@ -7,11 +7,10 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage
 *** Keywords ***
 Register Voice
     Select Menu    Service    Voice_Register
-    Log To Console    SSSSSSSSSSSSSSSs
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}    2
     Log To Console    ${result}
     Run Keyword If    '${result}'=='False'    Sub Register
-    Run Keyword If    '${result}'=='True'    Select Menu    Service
+    Run Keyword If    '${result}'=='True'    Click Web Element    ${btnRegisterBack}
 
 Cancel Voice
     Select Menu    Service    Voice_Cancel
@@ -22,18 +21,18 @@ Cancel Voice
 Sub Register
     Wait Web Until Page Contains Element    ${btnRegister}
     Click Web Element    ${btnRegister}
-    Log To Console    RRRRRRRRRRRRRRR
     Wait Web Until Page Contains Element    ${btnRegisterConfirm}
     Click Web Element    ${btnRegisterConfirm}
-    Log To Console    RRRRRRUUUUUUUUUUU
 
 Go Home
     Click Web Element    ${mnuHome}
     Log To Console    HHHHHHHHHHHH
 
 Sub Cancel
-    Wait Web Until Page Contains Element    ${btnCancel_confrim}
-    Click Web Element    ${btnCancel_confrim}
+    Wait Web Until Page Contains Element    ${btnCancelConfrim}
+    Click Web Element    ${btnCancelConfrim}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
 
 Check Message
     Element Should Be Visible    ${txtSummaryMessage}

@@ -11,7 +11,7 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Register
+    Select Menu    Service    VoiceRegister
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MeesageRegister}
     Cancel Voice
@@ -25,8 +25,9 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Cancel Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    Service    VoiceAdd/Edit
     Sleep    2
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
 
@@ -38,8 +39,9 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Cancel Voice
-    Select Menu    Service    Voice_Cancel
+    Select Menu    Service    VoiceCancel
     Sleep    2
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
 
@@ -51,11 +53,13 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    VoiceAdd/Edit
+    Wait Web Until Page Contains Element    ${btnServiceVoiceAdd/Edit(Save)}
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessageNoDataUpdate}
-    Click Web Element    ${btnCloseDialog}
+    Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -67,13 +71,14 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
     sleep    2
+    Select Menu    VoiceAdd/Edit
+    Wait Web Until Page Contains Element    ${txtServiceVoiceAddInputName}
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertMobile}
-    Click Web Element    ${btnCloseDialog}
+    Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -85,14 +90,15 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    VoiceAdd/Edit
     sleep    2
+    Wait Web Until Page Contains Element    ${txtServiceVoiceSpell1}
     Input Web Text    ${txtServiceVoiceSpell1}    สม
     Input Web Text    ${txtServiceVoiceSpell2}    ชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
-    Click Web Element    ${btnCloseDialog}
+    Click Web Element    ${btnDialogClose}
     Cancel Voice
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
@@ -103,13 +109,14 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    VoiceAdd/Edit
     sleep    2
-    Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
+    Wait Web Until Page Contains Element    ${txtServiceVoiceInsertMobile}
+    Input Web Text    ${txtServiceVoiceInsertMobile}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
-    Click Web Element    ${btnCloseDialog}
+    Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -121,11 +128,12 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    VoiceAdd/Edit
     sleep    2
+    Wait Web Until Page Contains Element    ${txtServiceVoiceSpell1}
     Input Web Text    ${txtServiceVoiceSpell1}    s
     Element Text Should Be    ${lblDialogMessage}    ${MessageThaiOnly}
-    Click Web Element    ${btnCloseDialog}
+    Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -137,10 +145,11 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    VoiceAdd/Edit
     sleep    2
+    Wait Web Until Page Contains Element    ${txtServiceVoiceAddInputName}
     Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
-    Input Web Text    ${txtServiceVoice_InsertMobile}    0930208945
+    Input Web Text    ${txtServiceVoiceInsertMobile}    0930208945
     Input Web Text    ${txtServiceVoiceSpell1}    อา
     Input Web Text    ${txtServiceVoiceSpell2}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -157,10 +166,11 @@ Resource          ../LocalConfig.txt
     Sleep    3
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
-    Select Menu    Service    Voice_Add/Edit
+    Select Menu    VoiceAdd/Edit
     sleep    2
+    Wait Web Until Page Contains Element    ${txtServiceVoiceInsertMobile}
     Input Web Text    ${txtServiceVoiceInsertMobile}    ส
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberOnly}
-    Click Web Element    ${btnCloseDialog}
+    Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
