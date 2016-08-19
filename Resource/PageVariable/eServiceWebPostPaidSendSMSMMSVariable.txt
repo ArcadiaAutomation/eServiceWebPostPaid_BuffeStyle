@@ -1,3 +1,5 @@
 *** Variables ***
 ${Messageสวัสดี}    สวัสดี
-${MessageActual}    @{MessageActual}[0]
+${Hour}           12
+${Minute}         20
+${MessageMMS}     MMS

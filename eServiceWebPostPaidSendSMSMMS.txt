@@ -24,7 +24,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    09112
+    Web Input Text At    ${txtInsertNumber1}    09112
     sleep    2
     Web Click At    ${btnOKSMSMMS}
     sleep    2
@@ -39,7 +39,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ส
+    Web Input Text At    ${txtInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
@@ -67,7 +67,7 @@ Resource          ../LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
@@ -108,7 +108,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnSMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    09112
+    Web Input Text At    ${txtInsertNumber1}    09112
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
@@ -139,7 +139,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnSMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ส
+    Web Input Text At    ${txtInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumericOnly}
     Close Browser
@@ -153,7 +153,7 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnSMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
@@ -168,13 +168,13 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnSMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Input Text At    ${txtInputSMSMessage}    Hello
     Select From List    ${lstDateFuture}    0
     Select From List    ${lstMonthFuture}    0
     Select From List    ${lstYearFuture}    0
-    Select From List    ${lstTimeFuture}    0
-    Select From List    ${lstHrsFuture}    0
+    Select From List    ${lstHourFuture}    0
+    Select From List    ${lstMinuteFuture}    0
     sleep    2
     Web Click At    ${btnOKSMSMMS}
     sleep    2
@@ -190,13 +190,13 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnSMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Input Text At    ${txtInputSMSMessage}    Hello
     Select From List    ${lstDateFuture}    29
     Select From List    ${lstMonthFuture}    1
     Select From List    ${lstYearFuture}    0
-    Select From List    ${lstTimeFuture}    0
-    Select From List    ${lstHrsFuture}    0
+    Select From List    ${lstHourFuture}    0
+    Select From List    ${lstMinuteFuture}    0
     sleep    2
     Web Click At    ${btnOKSMSMMS}
     sleep    2
@@ -214,7 +214,7 @@ Sw
     sleep    5
     AISAppium Click Element    xpath=(//android.widget.TextView[@text='AIS App'])
 
-EN_[F07-222]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Future
+[F07-222]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -227,7 +227,7 @@ EN_[F07-222]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Future
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan335}
     Close Browser
 
-EN_[F07-223]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Future
+[F07-223]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -240,7 +240,7 @@ EN_[F07-223]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Future
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan765}
     Close Browser
 
-EN_[F07-224]eServiceWeb-PO-Service-SendMMS-NoFillAny-Immediate
+[F07-224]eServiceWeb-PO-Service-SendMMS-NoFillAny-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -253,7 +253,7 @@ EN_[F07-224]eServiceWeb-PO-Service-SendMMS-NoFillAny-Immediate
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
 
-EN_[F07-225]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Immediate
+[F07-225]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -261,13 +261,13 @@ EN_[F07-225]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Immediate
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    09112
+    Web Input Text At    ${txtInsertNumber1}    09112
     sleep    2
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
 
-EN_[F07-226]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Immediate
+[F07-226]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -275,12 +275,12 @@ EN_[F07-226]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Immediate
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ส
+    Web Input Text At    ${txtInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
 
-EN_[F07-227]eServiceWeb-PO-Service-SendMMS-NoFillAnyNumber-Immediate
+[F07-227]eServiceWeb-PO-Service-SendMMS-NoFillAnyNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -295,7 +295,7 @@ EN_[F07-227]eServiceWeb-PO-Service-SendMMS-NoFillAnyNumber-Immediate
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
 
-EN_[F07-228]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Immediate
+[F07-228]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -303,13 +303,13 @@ EN_[F07-228]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Immediate
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessageImage}
     Close Browser
 
-EN_[F07-229]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Immediate
+[F07-229]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -322,7 +322,7 @@ EN_[F07-229]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Immediate
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan1000}
     Close Browser
 
-TH_[F07-230]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Immediate
+[F07-230]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -335,7 +335,7 @@ TH_[F07-230]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Immediate
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan1000}
     Close Browser
 
-TH_[F07-231]eServiceWeb-PO-Service-SendMMS-FileInvalid-Immediate
+[F07-231]eServiceWeb-PO-Service-SendMMS-FileInvalid-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -349,7 +349,7 @@ TH_[F07-231]eServiceWeb-PO-Service-SendMMS-FileInvalid-Immediate
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
 
-TH_[F07-232]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Future
+[F07-232]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -358,13 +358,13 @@ TH_[F07-232]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Future
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
     Web Click At    ${btnMMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    09112
+    Web Input Text At    ${txtInsertNumber1}    09112
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
 
-TH_[F07-233]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Future
+[F07-233]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -373,11 +373,11 @@ TH_[F07-233]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Future
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
     Web Click At    ${btnMMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ส
+    Web Input Text At    ${txtInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
 
-TH_[F07-234]eServiceWeb-PO-Service-SendMMS-NotFillAnyNumber-Future
+[F07-234]eServiceWeb-PO-Service-SendMMS-NotFillAnyNumber-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -393,7 +393,7 @@ TH_[F07-234]eServiceWeb-PO-Service-SendMMS-NotFillAnyNumber-Future
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
 
-TH_[F07-235]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Future
+[F07-235]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -402,13 +402,13 @@ TH_[F07-235]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Future
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
     Web Click At    ${btnMMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessageImage}
     Close Browser
 
-TH_[F07-236]eServiceWeb-PO-Service-SendMMS-BeforeToDay-Future
+[F07-236]eServiceWeb-PO-Service-SendMMS-BeforeToDay-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -417,20 +417,20 @@ TH_[F07-236]eServiceWeb-PO-Service-SendMMS-BeforeToDay-Future
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
     Web Click At    ${btnMMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Input Text At    ${txtInputSMSMessage}    Hello
     Select From List    ${lstDateFuture}    0
     Select From List    ${lstMonthFuture}    0
     Select From List    ${lstYearFuture}    0
-    Select From List    ${lstTimeFuture}    0
-    Select From List    ${lstHrsFuture}    0
+    Select From List    ${lstHourFuture}    0
+    Select From List    ${lstMinuteFuture}    0
     sleep    2
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageEnterAfterToDay}
     Close Browser
 
-TH_[F07-237]eServiceWeb-PO-Service-SendMMS-MoreThan30DayFromNow-Future
+[F07-237]eServiceWeb-PO-Service-SendMMS-MoreThan30DayFromNow-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -439,20 +439,20 @@ TH_[F07-237]eServiceWeb-PO-Service-SendMMS-MoreThan30DayFromNow-Future
     SelectMenu    Service    SMSMMS
     Web Click At    ${btnMMS}
     Web Click At    ${btnMMSFuture}
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    0923026951
+    Web Input Text At    ${txtInsertNumber1}    0923026951
     Web Input Text At    ${txtInputSMSMessage}    Hello
     Select From List    ${lstDateFuture}    29
     Select From List    ${lstMonthFuture}    1
     Select From List    ${lstYearFuture}    0
-    Select From List    ${lstTimeFuture}    0
-    Select From List    ${lstHrsFuture}    0
+    Select From List    ${lstHourFuture}    0
+    Select From List    ${lstMinuteFuture}    0
     sleep    2
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
 
-TH_[F07-238]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Future
+[F07-238]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -466,7 +466,7 @@ TH_[F07-238]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Future
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan1000}
     Close Browser
 
-TH_[F07-239]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Future
+[F07-239]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -480,7 +480,7 @@ TH_[F07-239]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Future
     Element Should Contain    ${lblDialogMessage}    ${MessageENMorethan1000}
     Close Browser
 
-TH_[F07-240]eServiceWeb-PO-Service-SendMMS-FileInvalid-Future
+[F07-240]eServiceWeb-PO-Service-SendMMS-FileInvalid-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -496,26 +496,226 @@ TH_[F07-240]eServiceWeb-PO-Service-SendMMS-FileInvalid-Future
     Close Browser
 
 Verify SMS
-    Get SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_2}    ${lo_SenderName}
-    Verify SMS    ${Messageสวัสดี}
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    MMS
 
-[S07-180]eServiceWeb-PO-Service-SendSMS-SendOneNumber
+[S07-180]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Immediate
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInsertNumber2}    ${lo_RUN_3PO_2_Number}
     Web Input Text At    ${txtInputSMSMessage}    สวัสดี
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessage}    1
     Element Should Contain    ${ldlTotalMoney}    1
+    Element Should Contain    ${ldlFutureMessage}    ${ImmediateSmsMms}
     Web Click At    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
-    sleep    5
-    Get SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_2_}    ${lo_SenderName}    ${Messageสวัสดี}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageSMSOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    Close Browser
+
+[S07-181]eServiceWeb-PO-Service-SendSMS-SendMorethanOneNumber-Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInsertNumber2}    ${lo_RUN_3PO_3_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    2
+    Element Should Contain    ${ldlTotalMoney}    2
+    Element Should Contain    ${ldlFutureMessage}    ${ImmediateSmsMms}
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    sleep    2
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName}    ${Messageสวัสดี}
+    Close Browser
+
+[S07-182]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Click At    ${btnSMSFuture}
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Select From List    ${lstDateFuture}    19
+    Select From List    ${lstMonthFuture}    ${Month}
+    Select From List    ${lstYearFuture}    ${Year}
+    Select From List    ${lstHourFuture}    ${Hour}
+    Select From List    ${lstMinuteFuture}    ${Minute}
+    sleep    2
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    1
+    Element Should Contain    ${ldlTotalMoney}    2
+    Element Should Contain    ${ldlFutureMessage}    ${FutureSMS}
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageSMSOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    Close Browser
+
+[S07-182]eServiceWeb-PO-Service-SendSMS-SendMorethanOneNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Click At    ${btnSMSFuture}
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInsertNumber2}    ${lo_RUN_3PO_3_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Select From List    ${lstDateFuture}    19
+    Select From List    ${lstMonthFuture}    ${Month}
+    Select From List    ${lstYearFuture}    ${Year}
+    Select From List    ${lstHourFuture}    ${Hour}
+    Select From List    ${lstMinuteFuture}    ${Minute}
+    sleep    2
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    2
+    Element Should Contain    ${ldlTotalMoney}    4
+    Element Should Contain    ${ldlFutureMessage}    ${FutureSMS}
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    sleep    2
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    Close Browser
+
+[S07-184]eServiceWeb-PO-Service-SendMMS-SendOneNumber-Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Click At    ${btnMMS}
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    1
+    Element Should Contain    ${ldlTotalMoney}    3
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
+    Close Browser
+
+[S07-185]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Immediate
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Click At    ${btnMMS}
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInsertNumber2}    ${lo_RUN_3PO_3_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    2
+    Element Should Contain    ${ldlTotalMoney}    6
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
+    sleep    2
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
+    Close Browser
+
+[S07-186]eServiceWeb-PO-Service-SendMMS-SendOneNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Click At    ${btnMMS}
+    Web Click At    ${btnMMSFuture}
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
+    Select From List    ${lstDateFuture}    19
+    Select From List    ${lstMonthFuture}    ${Month}
+    Select From List    ${lstYearFuture}    ${Year}
+    Select From List    ${lstHourFuture}    ${Hour}
+    Select From List    ${lstMinuteFuture}    ${Minute}
+    sleep    2
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    1
+    Element Should Contain    ${ldlTotalMoney}    6
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
+    Close Browser
+
+[S07-187]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Future
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Web Click At    ${btnMMS}
+    Web Click At    ${btnMMSFuture}
+    Web Input Text At    ${txtInsertNumber1}    ${lo_RUN_3PO_2_Number}
+    Web Input Text At    ${txtInsertNumber2}    ${lo_RUN_3PO_3_Number}
+    Web Input Text At    ${txtInputSMSMessage}    สวัสดี
+    Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
+    Select From List    ${lstDateFuture}    19
+    Select From List    ${lstMonthFuture}    ${Month}
+    Select From List    ${lstYearFuture}    ${Year}
+    Select From List    ${lstHourFuture}    ${Hour}
+    Select From List    ${lstMinuteFuture}    ${Minute}
+    sleep    2
+    Web Click At    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
+    Element Should Contain    ${ldlTotalMessage}    2
+    Element Should Contain    ${ldlTotalMoney}    12
+    Web Click At    ${btnConfrimSendSMS}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
+    sleep    30
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
+    sleep    2
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
     Close Browser

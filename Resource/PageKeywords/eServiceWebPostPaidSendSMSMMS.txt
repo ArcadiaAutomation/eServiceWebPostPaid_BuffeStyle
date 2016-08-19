@@ -6,12 +6,6 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.t
 Resource          ../PageVariable/eServiceWebPostPaidSendSMSMMSVariable.txt
 
 *** Keywords ***
-Click Service SendSMSMMS
-    Click Web Element    ${mnuService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-
 Web Click At
     [Arguments]    ${locator}
     Wait Web Until Page Contains Element    ${locator}
@@ -24,17 +18,16 @@ Web Input Text At
     Input Web Text    ${locator}    ${text}
     sleep    1
 
-Get SMS
-    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${SenderName}
-    sleep    2
+Get and Verify SMS Mood
+    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${SenderName}    ${MessageExpect}
+    sleep    15
     Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Wait SMS    ${PlatfromName}    1    ${lo_GeneralTimeOut}
-    sleep    2
+    sleep    5
     @{messages}=    Read SMS    ${PlatfromName}    ${SenderName}    1
     Log To Console    @{messages}[0]
     ${MessageActual}    Set Variable    @{messages}[0]
-
-Verify SMS
-    [Arguments]    ${MessageExpect}
     sleep    2
-    Run Keyword If    '${MessageExpect}'== '${MessageActual}'    AISAppiumEx.Close Application
+    ${result}    Run Keyword And Return If    '${MessageExpect}'== '${MessageActual}'    AISAppiumEx.Close Application
+    Log To Console    ${MessageExpect}
+    Log To Console    ${result}
