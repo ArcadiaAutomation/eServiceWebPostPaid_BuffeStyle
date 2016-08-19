@@ -3,6 +3,8 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidVoiceCallingRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
+Resource          eServiceWebPostPaidSendSMSMMS.txt
+Resource          ../PageVariable/eServiceWebPostPaidVoiceCallingVariable.txt
 
 *** Keywords ***
 Register Voice
@@ -26,13 +28,9 @@ Sub Register
 
 Go Home
     Click Web Element    ${mnuHome}
-    Log To Console    HHHHHHHHHHHH
 
 Sub Cancel
     Wait Web Until Page Contains Element    ${btnCancelConfrim}
     Click Web Element    ${btnCancelConfrim}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
-
-Check Message
-    Element Should Be Visible    ${txtSummaryMessage}

@@ -54,12 +54,11 @@ Resource          ../LocalConfig.txt
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    Wait Web Until Page Contains Element    ${btnServiceVoiceAdd/Edit(Save)}
-    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessageNoDataUpdate}
-    Click Web Element    ${btnDialogClose}
+    Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -73,12 +72,11 @@ Resource          ../LocalConfig.txt
     Register Voice
     sleep    2
     Select Menu    VoiceAdd/Edit
-    Wait Web Until Page Contains Element    ${txtServiceVoiceAddInputName}
-    Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
-    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Web Input Text At    ${txtInputName1}    สมชาย
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertMobile}
-    Click Web Element    ${btnDialogClose}
+    Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -92,9 +90,9 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
-    Wait Web Until Page Contains Element    ${txtServiceVoiceSpell1}
-    Input Web Text    ${txtServiceVoiceSpell1}    สม
-    Input Web Text    ${txtServiceVoiceSpell2}    ชาย
+    Wait Web Until Page Contains Element    ${txtSpell1(1)}
+    Input Web Text    ${txtSpell1(1)}    สม
+    Input Web Text    ${txtSpell1(2)}    ชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
@@ -111,12 +109,11 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
-    Wait Web Until Page Contains Element    ${txtServiceVoiceInsertMobile}
-    Input Web Text    ${txtServiceVoiceInsertMobile}    0930208945
-    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Web Input Text At    ${txtInsertMobile1}    0930208945
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
-    Click Web Element    ${btnDialogClose}
+    Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -130,10 +127,9 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
-    Wait Web Until Page Contains Element    ${txtServiceVoiceSpell1}
-    Input Web Text    ${txtServiceVoiceSpell1}    s
+    Web Input Text At    ${txtSpell1(1)}    s
     Element Text Should Be    ${lblDialogMessage}    ${MessageThaiOnly}
-    Click Web Element    ${btnDialogClose}
+    Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
 
@@ -147,12 +143,10 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
-    Wait Web Until Page Contains Element    ${txtServiceVoiceAddInputName}
-    Input Web Text    ${txtServiceVoiceAddInputName}    สมชาย
-    Input Web Text    ${txtServiceVoiceInsertMobile}    0930208945
-    Input Web Text    ${txtServiceVoiceSpell1}    อา
-    Input Web Text    ${txtServiceVoiceSpell2}    ป้
-    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Web Input Text At    ${txtInputName1}    สมชาย
+    Web Input Text At    ${txtInsertMobile1}    0930208945
+    Web Input Text At    ${txtSpell1(1)}    อา
+    Web Input Text At    ${txtSpell1(2)}    ป้
     Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     Cancel Voice
@@ -168,9 +162,110 @@ Resource          ../LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
-    Wait Web Until Page Contains Element    ${txtServiceVoiceInsertMobile}
-    Input Web Text    ${txtServiceVoiceInsertMobile}    ส
+    Web Input Text At    ${txtInsertMobile1}    ส
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberOnly}
-    Click Web Element    ${btnDialogClose}
+    Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
+
+[S07-173]eServiceWeb-PO-Service-VoiceCalling-RegisterVoiceCalling
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Sleep    3
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Register Voice
+    sleep    15
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSRegisterVoiceCalling}
+    Cancel Voice
+    Close Browser
+
+[S07-174]eServiceWeb-PO-Service-VoiceCalling-NotRegisterEditData
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Sleep    3
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Select Menu    Service    VoiceAdd/Edit
+    sleep    2
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
+
+[S07-175]eServiceWeb-PO-Service-VoiceCalling-AddDataOneNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Sleep    3
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Register Voice
+    Select Menu    VoiceAdd/Edit
+    sleep    2
+    Input Web Text    ${txtInputName1}    โตโน่
+    Input Web Text    ${txtInsertMobile1}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtSpell1(1)}    โต
+    Input Web Text    ${txtSpell1(2)}    โน่
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
+    Sleep    2
+    Web Click At    ${btnEditDataConfirm}
+    sleep    2
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
+    sleep    15
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
+    Cancel Voice
+    Close Browser
+
+[S07-176]eServiceWeb-PO-Service-VoiceCalling-AddDataMorethanOneNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Sleep    3
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Register Voice
+    Select Menu    VoiceAdd/Edit
+    sleep    2
+    Input Web Text    ${txtInputName1}    โตโน่
+    Input Web Text    ${txtInsertMobile1}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtSpell1(1)}    โต
+    Input Web Text    ${txtSpell1(2)}    โน่
+    Input Web Text    ${txtInputName2}    มาม่า
+    Input Web Text    ${txtInsertMobile2}    ${lo_RUN_3PO_3_Number}
+    Input Web Text    ${txtSpell2(1)}    มา
+    Input Web Text    ${txtSpell2(2)}    ม่า
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
+    Sleep    2
+    Web Click At    ${btnEditDataConfirm}
+    sleep    2
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
+    sleep    15
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataComfirmMorethanOneNumber}
+    Cancel Voice
+
+[S07-177]eServiceWeb-PO-Service-VoiceCalling-EditDataOneNumber
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Sleep    3
+    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Register Voice
+    Select Menu    VoiceAdd/Edit
+    sleep    2
+    Input Web Text    ${txtInputName1}    โตโน่
+    Input Web Text    ${txtInsertMobile1}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtSpell1(1)}    โต
+    Input Web Text    ${txtSpell1(2)}    โน่
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
+    Sleep    2
+    Web Click At    ${btnEditDataConfirm}
+    sleep    2
+    Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
+    sleep    15
+    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
+    Cancel Voice
+    Close Browser
+
+[S07-178]eServiceWeb-PO-Service-VoiceCalling-EditDataMorethanOneNumber
