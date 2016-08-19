@@ -61,9 +61,8 @@ test
     Sleep    2
     Close Browser
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
-    sleep    2
-    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
+    AISAppiumEx.Close All Applications
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -92,8 +91,11 @@ test
     Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
-    Selenium2Library.Element Should Be Visible    ${btnOKOTPDisable}
+    Element Should Be Visible    ${btnOKOTPDisable}
     Close Browser
+    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
+    Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
+    AISAppiumEx.Close All Applications
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -108,9 +110,8 @@ test
     Click Web Element    ${btnDialogClose}
     Close Browser
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
-    sleep    2
-    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
+    AISAppiumEx.Close All Applications
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -124,6 +125,5 @@ test
     Element Text Should Be    ${txtMobileNumber}    ${EMPTY}
     Close Browser
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
-    sleep    2
-    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
+    AISAppiumEx.Close All Applications
