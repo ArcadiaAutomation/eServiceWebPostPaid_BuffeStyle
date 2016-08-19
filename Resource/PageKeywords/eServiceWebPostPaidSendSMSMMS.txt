@@ -26,12 +26,13 @@ Web Input Text At
 
 Get SMS
     [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${SenderName}
+    sleep    2
     Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Wait SMS    ${PlatfromName}    1    ${lo_GeneralTimeOut}
     sleep    2
-    ${messages}=    Read SMS    ${PlatfromName}    ${SenderName}    1
+    @{messages}=    Read SMS    ${PlatfromName}    ${SenderName}    1
     Log To Console    @{messages}[0]
-    ${MessageActual}    Set Variable    @{message}[0]
+    ${MessageActual}    Set Variable    @{messages}[0]
 
 Verify SMS
     [Arguments]    ${MessageExpect}

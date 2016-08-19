@@ -496,7 +496,7 @@ TH_[F07-240]eServiceWeb-PO-Service-SendMMS-FileInvalid-Future
     Close Browser
 
 Verify SMS
-    Get SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}    ${lo_SenderName}
+    Get SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_2}    ${lo_SenderName}
     Verify SMS    ${Messageสวัสดี}
 
 [S07-180]eServiceWeb-PO-Service-SendSMS-SendOneNumber
@@ -506,7 +506,7 @@ Verify SMS
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Service    SMSMMS
-    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ${lo_RUN_3PO_1_Number_2}
+    Web Input Text At    ${txtServiceSMSMMSInsertNumber1}    ${lo_RUN_3PO_2_Number}
     Web Input Text At    ${txtInputSMSMessage}    สวัสดี
     Web Click At    ${btnOKSMSMMS}
     sleep    2
@@ -517,5 +517,5 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
     sleep    5
-    Get SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_udid2}    ${lo_SenderName}    ${Messageสวัสดี}
+    Get SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_2_}    ${lo_SenderName}    ${Messageสวัสดี}
     Close Browser
