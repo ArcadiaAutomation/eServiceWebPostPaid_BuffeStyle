@@ -23,6 +23,8 @@ test
     Comment    sleep    5
     Comment    Switch Application    ${app1}
     Comment    sleep    3
+    ${#device_name}=    Set Variable    Test
+    Log    ${#device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
