@@ -29,13 +29,3 @@ Fake OTP
     \    Run Keyword If    '${realOTP}'!='${fakeOTP}'    Exit For Loop
     \    ${fakeOTP}    Generate Random String    4    [NUMBERS]
     [Return]    ${fakeOTP}
-
-App
-    [Arguments]    ${IPAppium}    ${SN}
-    ${SMSOTP}    Get SM Sfrom Mood    AIS3G    ${IPAppium}    1    ${SN}
-    ${OTP}    GetOTPinSMS    ${SMSOTP}
-
-Appa
-    [Arguments]    ${IPAppium}    ${SN}
-    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
-    ${OTP}    GetOTPinSMS    ${SMSOTP}

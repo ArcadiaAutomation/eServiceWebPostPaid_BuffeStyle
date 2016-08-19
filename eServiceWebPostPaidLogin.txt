@@ -1,14 +1,19 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
-Resource          ../LocalConfig.txt
-Library           pabot.PabotLib
+Resource          ../Config/GeneralConfig.txt
 
 *** Test Cases ***
 test
     [Tags]    test
-    Comment    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Comment    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    60
-    Comment    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    lo_3PO_1
+    ${items}=    Get Dictionary Items    ${local_config_data}
+    : FOR    ${key}    ${value}    IN    @{items}
+    \    Log    ${key} : ${value}
+    \    Set Test Variable    ${${key}}    ${value}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
+    Comment    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    60
+    Comment    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
     Comment    Log List    ${messages}
     Comment    ${temp}=    Set Variable    @{messages}[0]
     Comment    Log    ${temp}
@@ -23,8 +28,8 @@ test
     Comment    sleep    5
     Comment    Switch Application    ${app1}
     Comment    sleep    3
-    ${#device_name}=    Set Variable    Test
-    Log    ${#device_name}
+    Comment    ${#device_name}=    Set Variable    Test
+    Comment    Log    ${#device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -53,28 +58,28 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    5
     Input Web Text    ${txtInputOTP}    123
     Element Should Be Visible    ${btnOKOTPDisable}
     Sleep    2
     Close Browser
-    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
     sleep    2
-    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
-    ${messages}=    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
     @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
     ${fakeOTP}=    Fake OTP    @{OTP}[0]
     Input Web Text    ${txtInputOTP}    ${fakeOTP}
@@ -89,7 +94,7 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Selenium2Library.Element Should Be Visible    ${btnOKOTPDisable}
@@ -100,30 +105,30 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    5
     Input Web Text    ${txtInputOTP}    a
     Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
     sleep    2
-    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_RUN_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Click Web Element    ${btnCancelOtp}
     Element Text Should Be    ${txtMobileNumber}    ${EMPTY}
     Close Browser
-    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Wait SMS    ${lo_RUN_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
     sleep    2
-    Read SMS    ${lo_RUN_3PO_1_Platfrom_Name}    AIS    1
+    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1

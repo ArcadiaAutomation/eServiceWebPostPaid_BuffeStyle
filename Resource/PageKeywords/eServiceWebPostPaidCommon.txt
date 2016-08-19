@@ -3,6 +3,7 @@ Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          ../PageVariable/eServiceWebPostPaidCommonVariable.txt
 Resource          ../../../AisRobotBuffet/Common/Keywords/RedefineMultipleKeywords.txt
 Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/SmsGenericKeywords.txt
+Library           ../../../AisRobotBuffet/Library/General/ParallelConfigLibrary.py
 
 *** Keywords ***
 Select Language
