@@ -1,0 +1,3 @@
+*** Variables ***
+${Messageสวัสดี}    สวัสดี
+${MessageActual}    @{MessageActual}[0]

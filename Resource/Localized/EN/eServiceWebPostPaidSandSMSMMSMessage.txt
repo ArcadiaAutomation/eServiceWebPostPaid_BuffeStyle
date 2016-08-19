@@ -12,3 +12,4 @@ ${MessageTHMorethan1000}    Please enter the message you would like to send (max
 ${MessageENMorethan1000}    Please enter the message you would like to send (maximum 1000 characters).
 ${MessageFileInvalid}    Wrong file format. Please browse the image *.jpg , *.jpeg , *.gif again.
 ${MessagePleaseInputMessageImage}    Please enter your message or select an image for your MMS sending
+${MessageSendSMSOneNumberComplete}    Your message has been sent to\n0613851334\nas of your request. Thank You.
