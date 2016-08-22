@@ -10,7 +10,10 @@ test
     : FOR    ${key}    ${value}    IN    @{items}
     \    Log    ${key} : ${value}
     \    Set Test Variable    ${${key}}    ${value}
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Log    ${lo_3PO_1_SN}
+    Log    @{lo_3PO_1_ExampleList}[1]
+    Log    &{lo_3PO_1_ExampleDic}[name1]
+    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
     Comment    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    60
     Comment    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
