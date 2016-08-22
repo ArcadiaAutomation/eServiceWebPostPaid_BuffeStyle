@@ -22,4 +22,4 @@ test
     Sleep    5
     Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
 
-[F03-014]eServiceWeb-PO-MainPackage-xxxxx
+[F03-013-2]eServiceWeb-PO-OnTopPackage-NotSelectPackage
