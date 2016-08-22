@@ -1,20 +1,18 @@
 *** Settings ***
+Test Teardown
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../Config/GeneralConfig.txt
 
 *** Test Cases ***
 test
     [Tags]    test
-    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    lo_3PO_1
-    ${items}=    Get Dictionary Items    ${local_config_data}
-    : FOR    ${key}    ${value}    IN    @{items}
-    \    Log    ${key} : ${value}
-    \    Set Test Variable    ${${key}}    ${value}
-    Log    ${lo_3PO_1_SN}
-    Log    @{lo_3PO_1_ExampleList}[1]
-    Log    &{lo_3PO_1_ExampleDic}[name1]
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Comment    Log    ${lo_3PO_1_SN}
+    Comment    Log    @{lo_3PO_1_ExampleList}[1]
+    Comment    Log    &{lo_3PO_1_ExampleDic}[name1]
     Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
-    Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
+    Comment    Release Virtual Local Config    ${gn_local_config_file_path}    ${lo_3PO_1_#device_name}
     Comment    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    60
     Comment    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
     Comment    Log List    ${messages}
@@ -33,6 +31,7 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
