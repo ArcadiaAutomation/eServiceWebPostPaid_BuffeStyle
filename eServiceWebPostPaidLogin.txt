@@ -134,3 +134,37 @@ test
     Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
     Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
     Close All Applications
+
+TestPararell1
+    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    lo_3PO_1
+    ${items}=    Get Dictionary Items    ${local_config_data}
+    : FOR    ${key}    ${value}    IN    @{items}
+    \    Log    ${key} : ${value}
+    \    Set Test Variable    ${${key}}    ${value}
+    Log    'Lock Now'
+    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    sleep    10
+    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    sleep    10
+    AISAppium Click Element    name=My Profile
+    Comment    Mobile Set Network Connection Status    6    ${App1}
+    Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
+    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
+
+TestPararell2
+    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    lo_3PO_1
+    ${items}=    Get Dictionary Items    ${local_config_data}
+    : FOR    ${key}    ${value}    IN    @{items}
+    \    Log    ${key} : ${value}
+    \    Set Test Variable    ${${key}}    ${value}
+    Log    ${lo_3PO_1_IPAppium}
+    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    sleep    5
+    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    sleep    5
+    AISAppium Click Element    name=Package
+    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
