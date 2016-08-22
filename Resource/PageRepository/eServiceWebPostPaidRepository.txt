@@ -18,3 +18,4 @@ ${mnuVoiceAdd/Edit}    xpath=//*[@id="menu-118"]
 ${mnuVoiceCancel}    xpath=//*[@id="menu-119"]
 ${mnuMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuNewNumber}    xpath=//*[@id="menu-24"]/span
+${mnuOnTopPackage}    xpath=//*[@id="menu-74"]

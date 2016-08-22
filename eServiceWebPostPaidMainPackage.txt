@@ -9,11 +9,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidMainPackage.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    Select Menu    Package    MainPackage
-    Selenium2Library.Wait Until Element Is Visible    ${btnChangePackConfirm}
-    Click Web Element    ${btnChangePackConfirm}
-    Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
-    Close Browser
+    Select Menu    Package    OnTopPackage
+    Click Web Element    xpath=//*[@id="ddlChangPackGroupA"]
+    Select From List By Value    "2"
+    Comment    Selenium2Library.Wait Until Element Is Visible    ${btnChangePackConfirm}
+    Comment    Click Web Element    ${btnChangePackConfirm}
+    Comment    Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
+    Comment    Close Browser
 
 test
     Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
