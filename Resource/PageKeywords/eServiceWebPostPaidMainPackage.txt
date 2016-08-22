@@ -1,5 +1,0 @@
-*** Settings ***
-Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidMainPackageMessage.txt
-Resource          eServiceWebPostPaidCommon.txt
-Resource          eServiceWebPostPaidLogin.txt
-Resource          ../PageRepository/eServiceWebPostPaidMainPackageRepository.txt
