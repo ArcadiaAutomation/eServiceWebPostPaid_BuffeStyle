@@ -4,6 +4,7 @@ Resource          ../LocalConfig.txt
 
 *** Test Cases ***
 [F05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -18,6 +19,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-002]eServiceWeb-PO-BillAISPostpaid-NotSelectCardType
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -33,6 +35,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-003]eServiceWeb-PO-BillAISPostpaid-NotSelectBank
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -48,6 +51,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-004]eServiceWeb-PO-BillAISPostpaid-InputZeroAmount
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -64,6 +68,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-005]eServiceWeb-PO-BillAISPostpaid-Payment2Another-NotInput10digitNumber
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -79,6 +84,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-006]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputChar
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -93,6 +99,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-007]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputPrepaidNumber
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -109,6 +116,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [F05-008]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputSelfNumber
+    [Tags]    fail
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -125,6 +133,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -143,6 +152,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-002]eServiceWeb-PO-BillAISPostpaid-PayWithVISAcard
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -161,6 +171,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-003]eServiceWeb-PO-BillAISPostpaid-PayWithAMEXcard
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -177,6 +188,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-004]eServiceWeb-PO-BillAISPostpaid-PayWithDebitcard
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -194,6 +206,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-005]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-KTC
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -212,6 +225,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-006]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThanachartBank
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -230,6 +244,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-007]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-SCB
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -248,6 +263,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-008]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-UOB
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -266,6 +282,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-009]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-Krungsriayudhya
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -284,6 +301,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-010]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThaiMilitaryBank
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -302,6 +320,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-011]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withMASTER
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -324,6 +343,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-012]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withAMEX
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -344,6 +364,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-013]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withVISA
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -366,6 +387,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-014]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withDebit
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -387,6 +409,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-015]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-KTC
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -409,6 +432,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-016]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-ThanachartBank
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -431,6 +455,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-017]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-SCB
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -453,6 +478,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-018]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-UOB
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -475,6 +501,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-019]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-Krungsriayudhya
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -497,6 +524,7 @@ Resource          ../LocalConfig.txt
     Close All Browsers
 
 [S05-020]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-ThaiMilitaryBank
+    [Tags]    success
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
