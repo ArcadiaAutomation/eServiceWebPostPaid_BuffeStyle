@@ -7,7 +7,7 @@ Resource          ../Config/GeneralConfig.txt
 test
     [Tags]    test
     Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     Comment    Log    ${lo_3PO_1_SN}
     Comment    Log    @{lo_3PO_1_ExampleList}[1]
     Comment    Log    &{lo_3PO_1_ExampleDic}[name1]
@@ -31,7 +31,7 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
