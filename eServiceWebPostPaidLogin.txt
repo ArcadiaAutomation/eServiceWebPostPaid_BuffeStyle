@@ -34,7 +34,9 @@ test
     [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Take And Define Virtual Local Configuration    ${local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -43,9 +45,12 @@ test
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberNotComplete}
     Click Web Element    ${btnDialogClose}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${local_config_file_path}    @{#list_device_name}
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Take And Define Virtual Local Configuration    ${local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -54,6 +59,7 @@ test
     Wait Web Until Page Contains Element    ${ttMessage}
     Element Text Should Be    ${ttMessage}    ${MessageNumberDtac}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${local_config_file_path}    @{#list_device_name}
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
