@@ -151,11 +151,12 @@ test
 TestPararell1
     [Tags]    TestP
     Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     log    ${lo_3PO_1_IPAppium}
     log    ${lo_3PO_1_Platfrom_Name}
     log    ${lo_3PO_1_Platfrom_Version}
     log    ${lo_3PO_1_SN}
+    log    ${TEST_NAME}
     ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
     sleep    10
@@ -166,12 +167,12 @@ TestPararell1
     Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
     Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
 
 TestPararell2
     [Tags]    TestP
     Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     log    ${lo_3PO_1_IPAppium}
     log    ${lo_3PO_1_Platfrom_Name}
     log    ${lo_3PO_1_Platfrom_Version}
@@ -186,12 +187,12 @@ TestPararell2
     Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
     Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
 
 TestPararell3
     [Tags]    TestP
     Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     log    ${lo_3PO_1_IPAppium}
     log    ${lo_3PO_1_Platfrom_Name}
     log    ${lo_3PO_1_Platfrom_Version}
@@ -206,4 +207,4 @@ TestPararell3
     Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
     Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
