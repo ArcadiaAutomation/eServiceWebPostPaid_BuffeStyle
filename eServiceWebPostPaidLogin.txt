@@ -34,9 +34,7 @@ test
     [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -45,12 +43,10 @@ test
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberNotComplete}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -59,9 +55,11 @@ test
     Wait Web Until Page Contains Element    ${ttMessage}
     Element Text Should Be    ${ttMessage}    ${MessageNumberDtac}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -73,9 +71,10 @@ test
     Element Should Be Visible    ${btnOKOTPDisable}
     Sleep    2
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
     AISAppiumEx.Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -97,6 +96,8 @@ test
     Close Browser
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -106,25 +107,29 @@ test
     Sleep    2
     Element Should Be Visible    ${btnOKOTPDisable}
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
     AISAppiumEx.Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
+    Select Language    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Sleep    5
+    Wait Until Element Is Enabled    ${txtInputOTP}
     Input Web Text    ${txtInputOTP}    a
     Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
     AISAppiumEx.Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -140,6 +145,7 @@ test
     Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
     Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
     Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 TestPararell1
     [Tags]    TestP
