@@ -132,17 +132,18 @@ test
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Sleep    2
     Click Web Element    ${btnCancelOtp}
     Element Text Should Be    ${txtMobileNumber}    ${EMPTY}
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
+    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
     Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
     Close All Applications
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
