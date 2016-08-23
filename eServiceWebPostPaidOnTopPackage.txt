@@ -34,10 +34,6 @@ test
     Wait Until Element Is Visible    ${ddlXtraPack}
     Select From List By Value    ${ddlXtraPack}    0
     Wait Until Element Is Visible    ${btnChangePackConfirm}
-    Input Web Text    ${txtFriendNumber1}    0613851273
-    Comment    Click Web Element    ${chkSelectPackage3Number0.5Bath}
-    Comment    Click Web Element    ${btnChangePackConfirm}
-    Comment    Wait Until Element Is Visible    ${lblDialogMessage}
-    Comment    Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
-    Comment    sleep    1
-    Comment    Close Browser
+    Input Web Text    ${txtFriendNumber1}    0613851334
+    Click Web Element    ${chkSelectPackage3Number0.5Bath}
+    Click Web Element    ${btnChangePackConfirm}
