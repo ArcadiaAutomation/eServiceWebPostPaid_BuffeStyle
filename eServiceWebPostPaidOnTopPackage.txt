@@ -1,5 +1,4 @@
 *** Settings ***
-Resource          ../LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidOnTopPackage.txt
 
 *** Test Cases ***
