@@ -243,6 +243,7 @@ Resource          ../LocalConfig.txt
     sleep    15
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataComfirmMorethanOneNumber}
     Cancel Voice
+    Close Browser
 
 [S07-177]eServiceWeb-PO-Service-VoiceCalling-EditDataOneNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -263,9 +264,16 @@ Resource          ../LocalConfig.txt
     Web Click At    ${btnEditDataConfirm}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
-    sleep    15
-    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
-    Cancel Voice
-    Close Browser
+    Select Menu    VoiceAdd/Edit
+    Web Click At    ${btnEditData}
+    sleep    2
+    Input Web Text    ${txtInputName1}    โตโน่
+    Input Web Text    ${txtInsertMobile1}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtSpell1(1)}    โต
+    Input Web Text    ${txtSpell1(2)}    โน่
+    Web Click At    ${btnServiceVoiceAdd/Edit(Save)}
+    Sleep    2
+    Web Click At    ${btnEditDataConfirm}
+    sleep    2
 
 [S07-178]eServiceWeb-PO-Service-VoiceCalling-EditDataMorethanOneNumber
