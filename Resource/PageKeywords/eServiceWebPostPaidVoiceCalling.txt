@@ -12,21 +12,20 @@ Register Voice
     Log To Console    ${result}
     Run Keyword If    '${result}'=='False'    Sub Register
     Run Keyword If    '${result}'=='True'    Click Web Element    ${btnRegisterBack}
+    sleep    1
 
 Cancel Voice
     Select Menu    Service    Voice_Cancel
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}
     Run Keyword If    '${result}'=='False'    Sub Cancel
-    Run Keyword If    '${result}'=='True'    Go Home
+    Run Keyword If    '${result}'=='True'    Select Menu    Service
+    sleep    1
 
 Sub Register
     Wait Web Until Page Contains Element    ${btnRegister}
     Click Web Element    ${btnRegister}
     Wait Web Until Page Contains Element    ${btnRegisterConfirm}
     Click Web Element    ${btnRegisterConfirm}
-
-Go Home
-    Click Web Element    ${mnuHome}
 
 Sub Cancel
     Wait Web Until Page Contains Element    ${btnCancelConfrim}

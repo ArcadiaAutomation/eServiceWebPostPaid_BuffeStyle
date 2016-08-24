@@ -615,7 +615,7 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -641,9 +641,8 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
-    sleep    2
-    Get and Verify SMS Mood    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -675,7 +674,7 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -708,9 +707,8 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
-    sleep    2
-    Get and Verify SMS Mood    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -737,7 +735,7 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -764,8 +762,9 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
-    Get and Verify SMS Mood    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
+    sleep    30
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
+    mood Verify SMS    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -798,7 +797,7 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
+    mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
@@ -832,7 +831,7 @@ Verify SMS
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
     sleep    30
-    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
-    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
+    mood Verify SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
+    mood Verify SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}

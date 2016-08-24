@@ -17,7 +17,7 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${txtSummaryMessage}    ${MeesageRegister}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -33,7 +33,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -49,7 +49,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -68,7 +68,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -88,7 +88,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -109,7 +109,7 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
     Cancel Voice
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -129,7 +129,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -147,7 +147,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -168,7 +168,7 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -186,7 +186,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnDialogClose}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-173]eServiceWeb-PO-Service-VoiceCalling-RegisterVoiceCalling
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -196,12 +196,13 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Cancel Voice
     Register Voice
-    sleep    15
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSRegisterVoiceCalling}
+    sleep    35
+    mood Verify SMS    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSRegisterVoiceCalling}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-174]eServiceWeb-PO-Service-VoiceCalling-NotRegisterEditData
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -215,7 +216,7 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-175]eServiceWeb-PO-Service-VoiceCalling-AddDataOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -225,6 +226,7 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Cancel Voice
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
@@ -233,15 +235,15 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtSpell1(1)}    โต
     Input Web Text    ${txtSpell1(2)}    โน่
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    Sleep    2
+    sleep    1
     Click Web Element    ${btnEditDataConfirm}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
-    sleep    15
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
+    mood Verify SMS    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-176]eServiceWeb-PO-Service-VoiceCalling-AddDataMorethanOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -251,6 +253,7 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Cancel Voice
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
@@ -267,11 +270,11 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnEditDataConfirm}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
-    sleep    15
-    Get and Verify SMS Mood    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataComfirmMorethanOneNumber}
+    sleep    5
+    mood Verify SMS    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataComfirmMorethanOneNumber}
     Cancel Voice
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-177]eServiceWeb-PO-Service-VoiceCalling-EditDataOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -281,6 +284,7 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Cancel Voice
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
@@ -291,6 +295,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     Click Web Element    ${btnEditDataConfirm}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     Select Menu    VoiceAdd/Edit
     Click Web Element    ${btnEditData}
@@ -305,7 +310,9 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${ldlDisplayName1}    แตงโม
     Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
     Element Text Should Be    ${ldlDisplayNumber1}    ${lo_RUN_3PO_2_Number}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    Cancel Voice
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-178]eServiceWeb-PO-Service-VoiceCalling-EditDataMorethanOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -315,7 +322,7 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-241]eServiceWeb-PO-Service-VoiceCalling-CallScreeningRegister
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -331,7 +338,7 @@ Resource          ../Config/LocalConfig.txt
     Sleep    3
     Click Web Element    ${btnCancelCallScreenRegister}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-242]eServiceWeb-PO-Service-VoiceCalling-CallScreeningRegisterComfirm
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -347,7 +354,7 @@ Resource          ../Config/LocalConfig.txt
     Sleep    1
     Click Web Element    ${btnCallScreeningStatusRegister}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-243]eServiceWeb-PO-Service-VoiceCalling-CallScreeningRegisterNotNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -363,7 +370,7 @@ Resource          ../Config/LocalConfig.txt
     Sleep    1
     Click Web Element    ${btnConfirmWelcomeCalls}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-244]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputText
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -380,7 +387,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInputNumberMoblie}    Test
     Sleep    2
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-245]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputMyNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -398,7 +405,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnAddNumber}
     Sleep    2
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-246]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputFalseNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -416,7 +423,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnAddNumber}
     Sleep    2
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F7-247]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputFalseFormat
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
@@ -434,7 +441,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnAddNumber}
     Sleep    2
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F7-248]eServiceWeb-PO-Service-VoiceCalling-CallScreeningSelectStatus
     Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
@@ -451,4 +458,4 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnCallScreeningStatusRegister}
     Sleep    2
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
