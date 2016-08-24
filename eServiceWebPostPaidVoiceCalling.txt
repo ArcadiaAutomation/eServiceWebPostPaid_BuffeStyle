@@ -16,6 +16,7 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${txtSummaryMessage}    ${MeesageRegister}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -30,6 +31,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -44,6 +46,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -61,6 +64,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -79,6 +83,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -98,6 +103,7 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
     Cancel Voice
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -116,6 +122,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -132,6 +139,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -151,6 +159,7 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -167,6 +176,7 @@ Resource          ../Config/LocalConfig.txt
     Web Click At    ${btnDialogClose}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-173]eServiceWeb-PO-Service-VoiceCalling-RegisterVoiceCalling
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -180,6 +190,7 @@ Resource          ../Config/LocalConfig.txt
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSRegisterVoiceCalling}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-174]eServiceWeb-PO-Service-VoiceCalling-NotRegisterEditData
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -192,6 +203,7 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-175]eServiceWeb-PO-Service-VoiceCalling-AddDataOneNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -216,6 +228,7 @@ Resource          ../Config/LocalConfig.txt
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-176]eServiceWeb-PO-Service-VoiceCalling-AddDataMorethanOneNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -244,6 +257,7 @@ Resource          ../Config/LocalConfig.txt
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_AIS3G}    ${SMSEditDataComfirmMorethanOneNumber}
     Cancel Voice
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-177]eServiceWeb-PO-Service-VoiceCalling-EditDataOneNumber
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -275,6 +289,7 @@ Resource          ../Config/LocalConfig.txt
     Sleep    2
     Web Click At    ${btnEditDataConfirm}
     sleep    2
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-178]eServiceWeb-PO-Service-VoiceCalling-EditDataMorethanOneNumber
 
@@ -325,6 +340,7 @@ Resource          ../Config/LocalConfig.txt
     Sleep    1
     Web Click At    ${btnConfirmWelcomeCalls}
     Close Browser
+<<<<<<< HEAD
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
 [F07-244]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputText
@@ -414,3 +430,5 @@ Resource          ../Config/LocalConfig.txt
     Sleep    2
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+=======
+>>>>>>> origin/master

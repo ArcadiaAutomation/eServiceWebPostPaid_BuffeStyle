@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidBillAISPostpaid.txt
 Resource          ../LocalConfig.txt
+Resource          ../Config/GeneralConfig.txt
 
 *** Test Cases ***
 [F05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
@@ -10,7 +11,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnOK}
     ${msg}    Get Text    ${lbPopUpDialog}
@@ -24,7 +24,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Click Web Element    ${btnOK}
@@ -39,7 +38,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Click Web Element    ${btnOK}
@@ -54,7 +52,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    0
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
@@ -70,7 +67,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    092302694
     Click Web Element    ${btnComfirmDesNumber}
@@ -85,7 +81,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    061a
     ${msg}    Get Text    ${lbPopUpDialog}
@@ -99,7 +94,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    0932015586
     Click Web Element    ${btnComfirmDesNumber}
@@ -115,7 +109,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_1_Number}
     Click Web Element    ${btnComfirmDesNumber}
@@ -131,7 +124,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    MASTER
@@ -149,7 +141,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
@@ -167,7 +158,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
@@ -183,7 +173,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DebitCard}
     Click Web Element    ${btnOK}
@@ -200,7 +189,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungthaiBank}
@@ -218,7 +206,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThanachartBank}
@@ -236,7 +223,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${SiamCommercialBank}
@@ -254,7 +240,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${UnitedOverseaBank}
@@ -272,7 +257,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungsriayudhyaBank}
@@ -290,7 +274,6 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThaiMilitaryBank}
@@ -308,12 +291,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${CreditCard}
     Select Card Name    MASTER
     Click Web Element    ${btnOK}
@@ -330,12 +311,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
     Click Web Element    ${btnOK}
@@ -350,12 +329,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
     Click Web Element    ${btnOK}
@@ -372,12 +349,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DebitCard}
     Click Web Element    ${btnOK}
     sleep    5
@@ -393,12 +368,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungthaiBank}
     Click Web Element    ${btnOK}
@@ -415,12 +388,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThanachartBank}
     Click Web Element    ${btnOK}
@@ -437,12 +408,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${SiamCommercialBank}
     Click Web Element    ${btnOK}
@@ -459,12 +428,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${UnitedOverseaBank}
     Click Web Element    ${btnOK}
@@ -481,12 +448,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungsriayudhyaBank}
     Click Web Element    ${btnOK}
@@ -503,12 +468,10 @@ Resource          ../LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    sleep    5
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThaiMilitaryBank}
     Click Web Element    ${btnOK}

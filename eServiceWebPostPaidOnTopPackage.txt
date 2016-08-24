@@ -50,4 +50,4 @@ test
     Log To Console    ${text}
     Comment    Element Text Should Be    xpath=//*[@id="tbSelectedPackageStepFour" and @class="ng-binding"]    dfgfdg
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
