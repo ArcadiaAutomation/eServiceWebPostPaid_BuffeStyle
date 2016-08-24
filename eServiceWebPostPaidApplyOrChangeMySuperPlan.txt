@@ -1,25 +1,23 @@
 *** Settings ***
-Resource          ../Config/GeneralConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
-    Sleep    3
     Confirm My Super Plan
-    Sleep    2
-    Element Should Be Visible    ${lblMySuperPlanDialogMessage}
+    Web Element Should Be Visible    ${lblMySuperPlanDialogMessage}
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMySuperPlanPackage}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
 eXample
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
