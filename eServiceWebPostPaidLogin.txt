@@ -1,7 +1,7 @@
 *** Settings ***
 Test Teardown
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
-Resource          ../Config/GeneralConfig.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 test

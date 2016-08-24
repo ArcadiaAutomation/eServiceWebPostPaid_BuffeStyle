@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          ../Config/GeneralConfig.txt
+Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
 
 *** Test Cases ***
