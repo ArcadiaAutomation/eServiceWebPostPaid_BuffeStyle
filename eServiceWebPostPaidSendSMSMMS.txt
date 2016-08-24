@@ -5,6 +5,8 @@ Resource          ../LocalConfig.txt
 *** Test Cases ***
 [F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -15,9 +17,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-210]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -30,9 +35,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-211]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -43,9 +51,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-212]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -58,9 +69,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -72,9 +86,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-214]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -85,9 +102,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan335}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-215]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Immediate
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -98,9 +118,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan765}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-216]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Future
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -113,9 +136,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -129,9 +155,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -143,9 +172,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumericOnly}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -158,9 +190,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -180,9 +215,12 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageEnterAfterToDay}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
     [Tags]    sms
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -202,6 +240,7 @@ Resource          ../LocalConfig.txt
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 Sw
     ${App1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=4.2.2    deviceName=Android Emulator    appPackage=com.calea.echo
@@ -215,6 +254,8 @@ Sw
     AISAppium Click Element    xpath=(//android.widget.TextView[@text='AIS App'])
 
 [F07-222]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -226,8 +267,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan335}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-223]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -239,8 +283,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan765}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-224]eServiceWeb-PO-Service-SendMMS-NoFillAny-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -252,8 +299,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-225]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -266,8 +316,11 @@ Sw
     Web Click At    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-226]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -279,8 +332,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-227]eServiceWeb-PO-Service-SendMMS-NoFillAnyNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -294,8 +350,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-228]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -308,8 +367,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessageImage}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-229]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -321,8 +383,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan1000}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-230]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -334,8 +399,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan1000}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-231]eServiceWeb-PO-Service-SendMMS-FileInvalid-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -348,8 +416,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-232]eServiceWeb-PO-Service-SendMMS-NotCompletNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -363,8 +434,11 @@ Sw
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-233]eServiceWeb-PO-Service-SendMMS-FillCharacterInPhoneNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -376,8 +450,11 @@ Sw
     Web Input Text At    ${txtInsertNumber1}    ส
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-234]eServiceWeb-PO-Service-SendMMS-NotFillAnyNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -392,8 +469,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-235]eServiceWeb-PO-Service-SendMMS-NotFillMessage-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -407,8 +487,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessageImage}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-236]eServiceWeb-PO-Service-SendMMS-BeforeToDay-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -429,8 +512,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageEnterAfterToDay}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-237]eServiceWeb-PO-Service-SendMMS-MoreThan30DayFromNow-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -451,8 +537,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-238]eServiceWeb-PO-Service-SendMMS-FillCharacterTHMorethan1000-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -465,8 +554,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan1000}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-239]eServiceWeb-PO-Service-SendMMS-FillCharacterENMorethan1000-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -479,8 +571,11 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageENMorethan1000}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [F07-240]eServiceWeb-PO-Service-SendMMS-FileInvalid-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -494,11 +589,14 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 Verify SMS
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    MMS
 
 [S07-180]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -519,8 +617,11 @@ Verify SMS
     sleep    30
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-181]eServiceWeb-PO-Service-SendSMS-SendMorethanOneNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -544,8 +645,11 @@ Verify SMS
     sleep    2
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName}    ${Messageสวัสดี}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-182]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -573,8 +677,11 @@ Verify SMS
     sleep    30
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-182]eServiceWeb-PO-Service-SendSMS-SendMorethanOneNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -605,8 +712,11 @@ Verify SMS
     sleep    2
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-184]eServiceWeb-PO-Service-SendMMS-SendOneNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -629,8 +739,11 @@ Verify SMS
     sleep    30
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-185]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Immediate
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -656,8 +769,11 @@ Verify SMS
     sleep    2
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-186]eServiceWeb-PO-Service-SendMMS-SendOneNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -686,8 +802,11 @@ Verify SMS
     sleep    30
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
 
 [S07-187]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Future
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -719,3 +838,4 @@ Verify SMS
     sleep    2
     Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}

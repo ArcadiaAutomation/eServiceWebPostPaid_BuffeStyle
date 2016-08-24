@@ -22,3 +22,13 @@ ${txtSpell2(1)}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[2]/div/
 ${txtSpell2(2)}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[2]/div/div/div/div[1]/div[2]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div/div/table/tbody/tr[2]/td[3]/div/div[2]/div/input
 ${txtInsertMobile2}    xpath=//*[@id="txtVoiceCallPhoneNoEdit1"]
 ${btnEditData}    xpath=//*[@id="btnVoiceCallEdit"]/div
+${txtInputNumberMoblie}    xpath=//*[@id="txtCallScreeningNewNumber"]
+${mnuCallScreening}    xpath=//*[@id="menu-19"]/span
+${btnCallScreeningRegisterConfirm}    xpath=//*[@id="btnCallScreeningRegistration"]
+${btnCancelCallScreenRegister}    xpath=//*[@id="btnAction1"]/div
+${btnSelectStatusInactive}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div[3]/div/div[2]/div[2]/div[1]/label
+${btnCallScreeningStatusRegister}    xpath=//*[@id="btnCallScreeningSave"]
+${tabWelcomeCalls}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div[2]/table/tbody/tr/td[2]
+${btnConfirmWelcomeCalls}    xpath=//*[@id="btnCallScreeningWhiteListSubmit"]
+${btnAddNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div[4]/div/div[2]/div/div[1]/div[2]/div[2]/a
+${btnSelectStatusActive}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div[3]/div/div[2]/div[1]/div[1]/label
