@@ -20,10 +20,3 @@ ${mnuMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuNewNumber}    xpath=//*[@id="menu-24"]/span
 ${mnuOnTopPackage}    xpath=//*[@id="menu-74"]
 ${mnuTopUptoAISOne2Call}    xpath=//*[@id="menu-71"]
-${mnuCallScreening}    xpath=//*[@id="menu-19"]/span
-${btnCallScreeningRegisterConfirm}    xpath=//*[@id="btnCallScreeningRegistration"]
-${btnCancelCallScreenRegister}    xpath=//*[@id="btnAction1"]/div
-${btnSelectStatusInactive}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div[3]/div/div[2]/div[2]/div[1]/label
-${btnCallScreeningStatusRegister}    xpath=//*[@id="btnCallScreeningSave"]
-${tabWelcomeCalls}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div[2]/table/tbody/tr/td[2]/div
-${btnConfirmWelcomeCalls}    xpath=//*[@id="btnCallScreeningWhiteListSubmit"]
