@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidVoiceCalling.txt
-Resource          ../Config/GeneralConfig.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
