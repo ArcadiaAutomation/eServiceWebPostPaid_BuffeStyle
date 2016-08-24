@@ -1,0 +1,4 @@
+*** Variables ***
+${btnConfirmPerferCancelSMS}    xpath=//*[@id="panelGeneralSuppressMSG"]/div[2]/a[1]
+${btnNotGetSMS}    xpath=//*[@id="panelSMSNonAIS"]/div/div/div[4]/label
+${btnNotGetSMSfromAIS}    xpath=//*[@id="panelAISSendSMSAllContent"]/div[2]/div/div[4]/label

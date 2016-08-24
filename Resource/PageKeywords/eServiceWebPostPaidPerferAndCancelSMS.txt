@@ -1,0 +1,5 @@
+*** Settings ***
+Resource          ../PageRepository/eServiceWebPostPaidPerferAndCancelSMSRepository.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
