@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidVoiceCalling.txt
-Resource          ../Config/GeneralConfig.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
@@ -318,7 +318,7 @@ Resource          ../Config/GeneralConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
 [F07-241]eServiceWeb-PO-Service-VoiceCalling-CallScreeningRegister
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
     @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
     Maximize Browser Window
@@ -331,10 +331,10 @@ Resource          ../Config/GeneralConfig.txt
     Sleep    3
     Click Web Element    ${btnCancelCallScreenRegister}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
 [F07-242]eServiceWeb-PO-Service-VoiceCalling-CallScreeningRegisterComfirm
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
     @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
     Maximize Browser Window
@@ -347,10 +347,10 @@ Resource          ../Config/GeneralConfig.txt
     Sleep    1
     Click Web Element    ${btnCallScreeningStatusRegister}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
 
 [F07-243]eServiceWeb-PO-Service-VoiceCalling-CallScreeningRegisterNotNumber
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
     @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
     Maximize Browser Window
@@ -363,3 +363,92 @@ Resource          ../Config/GeneralConfig.txt
     Sleep    1
     Click Web Element    ${btnConfirmWelcomeCalls}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+
+[F07-244]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputText
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Sleep    3
+    Web Click At    ${tabWelcomeCalls}
+    Sleep    1
+    Input Web Text    ${txtInputNumberMoblie}    Test
+    Sleep    2
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+
+[F07-245]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputMyNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Sleep    3
+    Web Click At    ${tabWelcomeCalls}
+    Sleep    1
+    Input Web Text    ${txtInputNumberMoblie}    ${lo_3PO_1_Number}
+    Web Click At    ${btnAddNumber}
+    Sleep    2
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+
+[F07-246]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputFalseNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Sleep    3
+    Web Click At    ${tabWelcomeCalls}
+    Sleep    1
+    Input Web Text    ${txtInputNumberMoblie}    999999999
+    Web Click At    ${btnAddNumber}
+    Sleep    2
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+
+[F7-247]eServiceWeb-PO-Service-VoiceCalling-CallScreeningInputFalseFormat
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Sleep    3
+    Web Click At    ${tabWelcomeCalls}
+    Sleep    1
+    Input Web Text    ${txtInputNumberMoblie}    02
+    Web Click At    ${btnAddNumber}
+    Sleep    2
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+
+[F7-248]eServiceWeb-PO-Service-VoiceCalling-CallScreeningSelectStatus
+    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
+    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Sleep    3
+    Web Click At    ${btnSelectStatusActive}
+    Sleep    1
+    Web Click At    ${btnCallScreeningStatusRegister}
+    Sleep    2
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}

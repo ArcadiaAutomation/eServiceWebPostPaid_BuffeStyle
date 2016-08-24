@@ -19,7 +19,7 @@ Login
     Input Web Text    ${txtInputOTP}    @{OTP}[0]
     Click Web Element    ${btnOKOTP}
     sleep    4
-    AISAppiumEx.Close Application
+    Close Application
 
 Fake OTP
     [Arguments]    ${realOTP}
