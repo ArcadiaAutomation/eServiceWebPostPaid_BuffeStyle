@@ -9,11 +9,13 @@ test
     Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
 
 [F03-013]eServiceWeb-PO-OnTopPackage-NotSelectPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
     Wait Until Element Is Visible    ${ddlXtraPack}
     Select From List By Value    ${ddlXtraPack}    2
@@ -23,31 +25,27 @@ test
     Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
     sleep    1
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-014]eServiceWeb-PO-OnTopPackage-RegisterDuplicatePackage
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_SN}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
     Wait Until Element Is Visible    ${ddlXtraPack}
     Select From List By Value    ${ddlXtraPack}    0
     Wait Until Element Is Visible    ${btnChangePackConfirm}
     Input Web Text    ${txtFriendNumber1}    0613851334
-    Sleep    5
     Click Web Element    ${chkSelectPackage3Number0.5Bath}
-    Sleep    5
     Click Web Element    ${btnChangePackConfirm}
-    Sleep    2
     Click Web Element    xpath=//*[@id="btnChangePackConfirmDate"]/div
-    Sleep    5
     Click Web Element    xpath=//*[@id="btnChangePackConfirmPackDate"]
-    Sleep    5
-    ${text}=    Get Text    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]
-    Log To Console    ${text}
-    Comment    Element Text Should Be    xpath=//*[@id="tbSelectedPackageStepFour" and @class="ng-binding"]    dfgfdg
+    Comment    ${text}=    Get Text    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]
+    Comment    Log To Console    ${text}
+    Web Element Text Should Be    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]    ygjyghjgj
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
