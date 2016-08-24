@@ -3,7 +3,6 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidVoiceCallingRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
-Resource          eServiceWebPostPaidSendSMSMMS.txt
 Resource          ../PageVariable/eServiceWebPostPaidVoiceCallingVariable.txt
 
 *** Keywords ***

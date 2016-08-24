@@ -22,3 +22,10 @@ ${txtSpell2(1)}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[2]/div/
 ${txtSpell2(2)}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[2]/div/div/div/div[1]/div[2]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div/div/table/tbody/tr[2]/td[3]/div/div[2]/div/input
 ${txtInsertMobile2}    xpath=//*[@id="txtVoiceCallPhoneNoEdit1"]
 ${btnEditData}    xpath=//*[@id="btnVoiceCallEdit"]/div
+${btnBack}        xpath=//*[@id="btnCloseFn"]/div
+${ldlDisplayName1}    xpath=//*[@id="txtVoiceCallNumberName0"]
+${ldlDisplaySpell1}    xpath=//*[@id="txtVoiceCallNumberSpellWords0"]
+${ldlDisplayNumber1}    xpath=//*[@id="txtVoiceCallPhoneNo0"]
+${ldlDisplayName2}    xpath=//*[@id="txtVoiceCallNumberName1"]
+${ldlDisplaySpell2}    xpath=//*[@id="txtVoiceCallNumberSpellWords1"]
+${ldlDisplayNumber2}    xpath=//*[@id="txtVoiceCallPhoneNo1"]
