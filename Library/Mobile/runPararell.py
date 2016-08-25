@@ -39,12 +39,14 @@ def get_tests(suite):
     for t in suite.tests:
         yield t
 
+
 def get_test_suites(suite):
     for s in suite.suites:
         for test_suite in get_test_suites(s):
             yield test_suite
     if suite.tests:
         yield suite
+
 
 def get_available_test_suites(source):
     settings = RobotSettings()

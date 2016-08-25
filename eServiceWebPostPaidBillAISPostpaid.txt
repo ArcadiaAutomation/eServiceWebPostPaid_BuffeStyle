@@ -15,7 +15,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnOK}
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageNotSelectPaymentType}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -33,7 +33,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Click Web Element    ${btnOK}
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageNotSelectCardType}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -51,7 +51,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Click Web Element    ${btnOK}
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageNotSelectBank}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -70,7 +70,7 @@ Resource          ../Config/LocalConfig.txt
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
     Click Web Element    ${btnOK}
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageInputZeroAmount}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -88,7 +88,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    092302694
     Click Web Element    ${btnComfirmDesNumber}
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageNotInput10digit}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -105,7 +105,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    061a
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    '${msg}' != '${MessageInputChar}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -123,7 +123,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    0932015586
     Click Web Element    ${btnComfirmDesNumber}
-    ${msg}    Get Text    ${lbInputPrepaid}
+    ${msg}    Get Web Text    ${lbInputPrepaid}
     Run Keyword if    """${msg}""" != """${MessageInputPrepaidNumber}"""    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -141,7 +141,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    ${msg}    Get Text    ${lbPopUpDialog}
+    ${msg}    Get Web Text    ${lbPopUpDialog}
     Run Keyword if    """${msg}""" != """${MessageNotInput10digit}"""    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
