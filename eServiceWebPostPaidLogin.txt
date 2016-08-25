@@ -1,20 +1,20 @@
 *** Settings ***
 Test Teardown
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
-Resource          ../Config/GeneralConfig.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 test
     [Tags]    test
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
-    Comment    Log    ${lo_3PO_1_SN}
-    Comment    Log    @{lo_3PO_1_ExampleList}[1]
-    Comment    Log    &{lo_3PO_1_ExampleDic}[name1]
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
-    Comment    Release Virtual Local Config    ${gn_local_config_file_path}    ${lo_3PO_1_#device_name}
-    Comment    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    60
-    Comment    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    Log    ${virtual_3PO_1_SN}
+    Comment    Log    @{virtual_3PO_1_ExampleList}[1]
+    Comment    Log    &{virtual_3PO_1_ExampleDic}[name1]
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Comment    Release Virtual Local Config    ${lo_local_config_file_path}    ${virtual_3PO_1_#device_name}
+    Comment    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Comment    ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Comment    Log List    ${messages}
     Comment    ${temp}=    Set Variable    @{messages}[0]
     Comment    Log    ${temp}
@@ -31,12 +31,10 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -45,12 +43,10 @@ test
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberNotComplete}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -59,118 +55,133 @@ test
     Wait Web Until Page Contains Element    ${ttMessage}
     Element Text Should Be    ${ttMessage}    ${MessageNumberDtac}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    @{#list_device_name}
+    [Teardown]
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    5
     Input Web Text    ${txtInputOTP}    123
     Element Should Be Visible    ${btnOKOTPDisable}
     Sleep    2
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
-    Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
-    AISAppiumEx.Close All Applications
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
-    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
-    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
+    Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
     ${fakeOTP}=    Fake OTP    @{OTP}[0]
     Input Web Text    ${txtInputOTP}    ${fakeOTP}
     Click Web Element    ${btnOKOTP}
     sleep    2
     Element Should Be Visible    ${WrongOTP}
-    AISAppiumEx.Close All Applications
-    Close Browser
+    Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Element Should Be Visible    ${btnOKOTPDisable}
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
-    Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     AISAppiumEx.Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    5
     Input Web Text    ${txtInputOTP}    a
     Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
-    Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     AISAppiumEx.Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
     Click Web Element    ${btnCancelOtp}
     Element Text Should Be    ${txtMobileNumber}    ${EMPTY}
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
-    Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 TestPararell1
-    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    lo_3PO_1
+    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    virtual_3PO_1
     ${items}=    Get Dictionary Items    ${local_config_data}
     : FOR    ${key}    ${value}    IN    @{items}
     \    Log    ${key} : ${value}
     \    Set Test Variable    ${${key}}    ${value}
     Log    'Lock Now'
-    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    ${driver1}    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${virtual_3PO_1_SN}
     sleep    10
     AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     sleep    10
     AISAppium Click Element    name=My Profile
     Comment    Mobile Set Network Connection Status    6    ${App1}
-    Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
-    Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
+    Comment    Log    http://${virtual_3PO_1_IPAppium}/wd/hub
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Release Virtual Local Config    ${local_config_file_path}    ${virtual_3PO_1_#device_name}
 
 TestPararell2
-    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    lo_3PO_1
+    &{local_config_data}=    Wait Until Keyword Succeeds    30 s    1 s    Take Virtual Local Config    ${local_config_file_path}    virtual_3PO_1
     ${items}=    Get Dictionary Items    ${local_config_data}
     : FOR    ${key}    ${value}    IN    @{items}
     \    Log    ${key} : ${value}
     \    Set Test Variable    ${${key}}    ${value}
-    Log    ${lo_3PO_1_IPAppium}
-    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    Log    ${virtual_3PO_1_IPAppium}
+    ${driver1}    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${virtual_3PO_1_SN}
     sleep    5
     AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     sleep    5
     AISAppium Click Element    name=Package
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
-    Release Virtual Local Config    ${local_config_file_path}    ${lo_3PO_1_#device_name}
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Release Virtual Local Config    ${local_config_file_path}    ${virtual_3PO_1_#device_name}
