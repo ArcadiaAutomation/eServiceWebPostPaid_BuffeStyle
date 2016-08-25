@@ -1,2 +1,4 @@
 *** Variables ***
 ${NotSelectPackage}    กรุณาเลือกแพ็กเกจที่ต้องการ
+${messageRegisterDuplicate}    หมายเลขของคุณใช้งานแพ็กเกจนี้อยู่แล้ว\nไม่สามารถสมัครซ้ำได้
+${messageInputNumberLessThan10Digit}    หมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาระบุใหม่อีกครั้ง

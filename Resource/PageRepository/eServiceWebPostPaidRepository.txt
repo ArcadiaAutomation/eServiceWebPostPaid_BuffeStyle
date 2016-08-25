@@ -20,3 +20,5 @@ ${mnuMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuNewNumber}    xpath=//*[@id="menu-24"]/span
 ${mnuOnTopPackage}    xpath=//*[@id="menu-74"]
 ${mnuTopUptoAISOne2Call}    xpath=//*[@id="menu-71"]
+${mnuCallScreening}    xpath=//*[@id="menu-19"]/span
+${mnuPerferAndCancelSMS}    xpath=//*[@id="menu-22"]/span

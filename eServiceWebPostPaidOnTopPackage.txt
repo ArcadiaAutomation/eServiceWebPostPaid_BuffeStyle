@@ -1,5 +1,6 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidOnTopPackage.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 test
@@ -8,31 +9,55 @@ test
     Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
 
 [F03-013]eServiceWeb-PO-OnTopPackage-NotSelectPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
-    Wait Until Element Is Visible    ${ddlXtraPack}
-    Select From List By Value    ${ddlXtraPack}    2
-    Wait Until Element Is Visible    ${btnChangePackConfirm}
+    Select From Web List By Value    ${ddlXtraPack}    2
     Click Web Element    ${btnChangePackConfirm}
     Wait Until Element Is Visible    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
-    sleep    1
+    Web Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-14
+[F03-014]eServiceWeb-PO-OnTopPackage-RegisterDuplicatePackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
-    Wait Until Element Is Visible    ${ddlXtraPack}
-    Select From List By Value    ${ddlXtraPack}    0
-    Wait Until Element Is Visible    ${btnChangePackConfirm}
+    Select From Web List By Value    ${ddlXtraPack}    0
     Input Web Text    ${txtFriendNumber1}    0613851334
     Click Web Element    ${chkSelectPackage3Number0.5Bath}
+    Comment    Click Web Element    ${btnChangePackConfirm}
+    Comment    Click Web Element    ${btnChangePackConfirm2}
+    Comment    Click Web Element    ${btnChangePackConfirm3}
+    Comment    Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+15
+
+16
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    OnTopPackage
+    Select From Web List By Value    ${ddlXtraPack}    0
+    Input Web Text    ${txtFriendNumber1}    093201558
+    Click Web Element    ${chkSelectPackage3Number0.5Bath}
     Click Web Element    ${btnChangePackConfirm}
+    Comment    Web Element Text Should Be    ${lblDialogMessage}
+
+17
