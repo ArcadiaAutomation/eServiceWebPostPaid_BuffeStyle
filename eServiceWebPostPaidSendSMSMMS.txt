@@ -571,7 +571,7 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageENMorethan1000}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-240]eServiceWeb-PO-Service-SendMMS-FileInvalid-Future
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -589,10 +589,14 @@ Sw
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 Verify SMS
-    Get and Verify SMS Mood    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    MMS
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    mood Verify SMS    ${virtual_3PO_1_Platfrom_Name}    2    AIS3G    ${Cancel}    ${Register}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-180]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Immediate
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -617,7 +621,7 @@ Verify SMS
     sleep    30
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-181]eServiceWeb-PO-Service-SendSMS-SendMorethanOneNumber-Immediate
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -644,7 +648,7 @@ Verify SMS
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     mood Verify SMS    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-182]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Future
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -676,7 +680,7 @@ Verify SMS
     sleep    30
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-182]eServiceWeb-PO-Service-SendSMS-SendMorethanOneNumber-Future
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -710,7 +714,7 @@ Verify SMS
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     mood Verify SMS    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-184]eServiceWeb-PO-Service-SendMMS-SendOneNumber-Immediate
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -737,7 +741,7 @@ Verify SMS
     sleep    30
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-185]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Immediate
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -766,7 +770,7 @@ Verify SMS
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
     mood Verify SMS    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_SN}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${lo_SenderName_SMS}    ${Messageสวัสดี}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-186]eServiceWeb-PO-Service-SendMMS-SendOneNumber-Future
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -799,7 +803,7 @@ Verify SMS
     sleep    30
     mood Verify SMS    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_SN}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${lo_SenderName_SMS}    ${MessageMMS}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S07-187]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Future
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -834,4 +838,4 @@ Verify SMS
     mood Verify SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_2_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${MessageMMS}
     mood Verify SMS    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_3_}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_SenderName_MMS}    ${Messageสวัสดี}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

@@ -1,40 +1,122 @@
 *** Settings ***
-Resource          ../LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidNewNumber.txt
+Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F07-264]eServiceWeb-PO-Service-NewNumber-NoFillAny
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NewNumber
     Wait Web Until Page Contains Element    ${btnOK}
     Click Web Element    ${btnOK}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseEnterNumber}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-265]eServiceWeb-PO-Service-NewNumber-CannotChangNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NewNumber
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    09242606060
     Click Web Element    ${btnOK}
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberNotCorrect}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F07-266]eServiceWeb-PO-Service-NewNumber-FillCharacterInPhoneNumber
+[F07-266]eServiceWeb-PO-Service-NewNumber-FillCharacterInNumberFrom
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${txtNumberFrom}
+    Input Web Text    ${txtNumberFrom}    s
+    Element Should Contain    ${lblDialogMessage}    ${MessageNumbericalOnly}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-267]eServiceWeb-PO-Service-NewNumber-NoFilltxtFrom
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NewNumber
     Wait Web Until Page Contains Element    ${txtNumber1}
-    Input Web Text    ${txtNumber1}    s
-    Element Should Contain    ${lblDialogMessage}    ${MessageNumbericOnly}
+    Input Web Text    ${txtNumber1}    0924260606
+    Input Web Text    ${txtNumberFrom}    0922222222
+    Click Web Element    ${btnOK}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseYourName}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-268]eServiceWeb-PO-Service-NewNumber-NotSelectMessage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${txtNumber1}
+    Input Web Text    ${txtNumber1}    0924260606
+    Input Web Text    ${txtNumberFrom}    0922222222
+    Input Web Text    ${txtFromName}    มานี
+    Click Web Element    ${btnOK}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseSelectMessage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-269]eServiceWeb-PO-Service-NewNumber-NotSelectFile
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${txtNumber1}
+    Input Web Text    ${txtNumber1}    0924260606
+    Input Web Text    ${txtNumberFrom}    0922222222
+    Input Web Text    ${txtFromName}    มานี
+    Click Web Element    ${btnSelectFile}
+    Click Web Element    ${btnOK}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseSelectFile}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-270]eServiceWeb-PO-Service-NewNumber-NotSelectFileXls
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Web Until Page Contains Element    ${txtNumber1}
+    Input Web Text    ${txtNumber1}    0924260606
+    Input Web Text    ${txtNumberFrom}    0922222222
+    Input Web Text    ${txtFromName}    มานี
+    Click Web Element    ${btnSelectFile}
+    Choose File    ${btnChooseFile}    D:/LocalConfig/Test.txt
+    Element Should Contain    ${lblDialogMessage}    ${MessageSelectFileXls}
+    Close Browser

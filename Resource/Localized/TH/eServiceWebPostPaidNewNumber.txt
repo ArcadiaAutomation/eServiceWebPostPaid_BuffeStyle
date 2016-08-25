@@ -2,3 +2,8 @@
 ${MessagePleaseEnterNumber}    กรุณาระบุหมายเลขโทรศัพท์ที่คุณต้องการแจ้ง
 ${MessageNumberNotCorrect}    คุณระบุหมายเลขโทรศัพท์ไม่ถูกต้อง
 ${MessageNumbericOnly}    กรุณาระบุเป็นตัวเลขเท่านั้น
+${MessageNumbericalOnly}    กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลขเท่านั้น
+${MessagePleaseYourName}    กรุณาระบุชื่อผู้ส่ง
+${MessagePleaseSelectMessage}    กรุณาเลือกรูปแบบข้อความที่ต้องการส่ง
+${MessagePleaseSelectFile}    กรุณาเลือกไฟล์ที่คุณต้องการอัพโหลด
+${MessageSelectFileXls}    กรุณาเลือกไฟล์ Excel (*.xls) เพื่ออัพโหลด
