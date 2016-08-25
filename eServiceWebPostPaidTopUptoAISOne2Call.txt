@@ -1,60 +1,105 @@
 *** Settings ***
 Resource          Resource/PageKeywords/eServiceWebPostPaidTopUptoAISOne2Call.txt
-Resource          ../LocalConfig.txt
+Resource          ../Config/LocalConfig.txt
+
+*** Variables ***
+${aa}             You have topped up 100.00 bath and your new balance is 577.03 bath and valid until 09/07/2017.
+${bb}             You would like to top up to ${virtual_3PO_1_SN} number for 100.00 B.\nThe fee of change is 2 baht (excluding VAT).\nPlease click "OK" to confirm the transaction\n\nBeware !\nPlease do not top up to the stranger.
+${cc}             You would like to top up to
+${dd}             number for 100.00 B.
 
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithVISA
+    [Tags]    fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
-    sleep    5
     Click Web Element    ${rdoCreditCard}
     Select From List    ${ddlCardType}    VISA
-    Input Web Text    ${txtDestinationNumber}    0932015586
+    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
     Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
-    sleep    5
-    Select Window    url=${urlIpayBangkokBank}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S05-002]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithMASTER
+    [Tags]    fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
-    sleep    5
     Click Web Element    ${rdoCreditCard}
     Select From List    ${ddlCardType}    MASTER
-    Input Web Text    ${txtDestinationNumber}    0932015586
+    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
     Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
-    sleep    5
-    Select Window    url=${urlIpayBangkokBank}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[S05-003]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithMASTER
+[S05-003]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithDebit
+    [Tags]    fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
-    sleep    5
     Click Web Element    ${rdoDebitCard}
-    Input Web Text    ${txtDestinationNumber}    0932015586
+    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
     Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
-    sleep    5
-    Select Window    url=${urlIpayBangkokBank}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+test
+    Log    ${A}
+    @{B}=    Get Regexp Matches    ${A}    123
+    Run Keyword If    @{B}!=${EMPTY}    fail
+
+[S05-004]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithAISTopUp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    TopUptoAISOne2Call
+    Click Web Element    ${rdoAISTopUp}
+    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citation}
+    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Select From List    ${ddlTopUpAmount}    100
+    Click Web Element    ${btnOK}
+    Comment    Element Text Should Be    ${lbComfirmTopUp2DesNumber}    ${MessageComfirmDesNumber}
+    ${ActualMsg}    Get Web Text    ${lbComfirmTopUp2DesNumber}
+    ${ExpectMsg}=    Replace String    ${ExpectComfirmMsg}    [desNumber]    ${virtual_3PE_1_Number}
+    Run Keyword If    """${ActualMsg}"""!="""${ExpectMsg}"""    fail
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+*** Keywords ***
+TEst
+    [Arguments]    ${Number}
