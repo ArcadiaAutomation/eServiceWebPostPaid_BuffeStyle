@@ -5,7 +5,3 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidOnTopPackageRepository.txt
 
 *** Keywords ***
-Select From Web List By Value
-    [Arguments]    ${locator}    ${Value}
-    Wait Until Element Is Visible    ${locator}
-    Select From List By Value    ${locator}    ${Value}

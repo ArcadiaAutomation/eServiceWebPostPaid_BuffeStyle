@@ -4,3 +4,4 @@ ${MessageRegisterDuplicate}    You are currently using the selected package.Plea
 ${MessageInputFriendNumberLessThan10Digit}    You have entered is incorrect mobile number. Please try again.
 ${MessageInputFriendNumberWithCharacter}    Please enter numerical data only.
 ${MessageInputFriendNumberWithDtacNumber}    Please specify your AIS mobile number.
+${MessageRegisterDuplicateXtraNetPackage}    You are currently using the selected package.Please select a new package again.
