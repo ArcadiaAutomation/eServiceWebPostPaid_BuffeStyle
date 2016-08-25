@@ -6,15 +6,15 @@ Resource          ../Config/LocalConfig.txt
 *** Test Cases ***
 test
     [Tags]    test
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
-    Comment    Log    ${lo_3PO_1_SN}
-    Comment    Log    @{lo_3PO_1_ExampleList}[1]
-    Comment    Log    &{lo_3PO_1_ExampleDic}[name1]
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
-    Comment    Release Virtual Local Config    ${gn_local_config_file_path}    ${lo_3PO_1_#device_name}
-    Comment    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    60
-    Comment    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    Log    ${virtual_3PO_1_SN}
+    Comment    Log    @{virtual_3PO_1_ExampleList}[1]
+    Comment    Log    &{virtual_3PO_1_ExampleDic}[name1]
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Comment    Release Virtual Local Config    ${lo_local_config_file_path}    ${virtual_3PO_1_#device_name}
+    Comment    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Comment    ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Comment    Log List    ${messages}
     Comment    ${temp}=    Set Variable    @{messages}[0]
     Comment    Log    ${temp}
@@ -31,12 +31,10 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    @{#list_device_name}=    Create List    ${lo_3PO_1_#device_name}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -60,42 +58,45 @@ test
     [Teardown]
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    lo_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Sleep    5
     Input Web Text    ${txtInputOTP}    123
     Element Should Be Visible    ${btnOKOTPDisable}
     Sleep    2
     Close Browser
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
-    Clear All Unread SMS    ${lo_3PO_1_Platfrom_Name}
-    AISAppiumEx.Close All Applications
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close All Applications
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    ${lo_3PO_1_Number}
+    Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1}
-    Wait SMS    ${lo_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
-    ${messages}=    Read SMS    ${lo_3PO_1_Platfrom_Name}    AIS    1
+    Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
+    ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
     ${fakeOTP}=    Fake OTP    @{OTP}[0]
     Input Web Text    ${txtInputOTP}    ${fakeOTP}
     Click Web Element    ${btnOKOTP}
     sleep    2
     Element Should Be Visible    ${WrongOTP}
-    AISAppiumEx.Close All Applications
-    Close Browser
+    Close All Applications
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -147,7 +148,7 @@ test
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
-    AppiumLibrary.Close All Applications
+    Close All Applications
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 TestPararell1

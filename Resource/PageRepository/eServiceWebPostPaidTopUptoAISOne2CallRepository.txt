@@ -6,9 +6,10 @@ ${rdoCreditCard}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[
 ${rdoDebitCard}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/span/div
 ${rdoAISTopUp}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[2]/div[3]/span/div
 ${ddlCardType}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[3]/div/div/div[2]/div[1]/span/div/div[1]/select
-${txtPinCard}     xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[3]/div/div/div[2]/div/input
+${txtIDCitation}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[3]/div/div/div[2]/div/input
 ${txtDestinationNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[5]/div/input
 ${ddlTopUpAmount}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[2]/div[7]/div/span/div/div[1]/select
 ${btnOK}          xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[4]/div/a[1]
 ${btnCancel}      xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[4]/div/a[2]
 ${urlIpayBangkokBank}    https://ipay.bangkokbank.com/b2c/eng/payment/payForm2.jsp
+${lbComfirmTopUp2DesNumber}    xpath=//*[@id="txtAlertMessage"]/div

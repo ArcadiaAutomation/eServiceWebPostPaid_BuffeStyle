@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          ../PageVariable/eServiceWebPostPaidCommonVariable.txt
-Resource          ../../../AisRobotBuffet/Common/Keywords/RedefineMultipleKeywords.txt
+Resource          ../../../AisRobotBuffet/Common/Keywords/RedefineKeywords.txt
 Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/SmsGenericKeywords.txt
 Library           ../../../AisRobotBuffet/Library/General/ParallelConfigLibrary.py
 Resource          ../../../AisRobotBuffet/Common/Keywords/ParallelLocalConfigKeyWord.txt

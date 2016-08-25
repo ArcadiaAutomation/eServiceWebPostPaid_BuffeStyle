@@ -1,0 +1,2 @@
+*** Variables ***
+${ExpectComfirmMsg}    You would like to top up to [desNumber] number for 100.00 B.\nThe fee of change is 2 baht (excluding VAT).\nPlease click "OK" to confirm the transaction\n\nBeware !\nPlease do not top up to the stranger.

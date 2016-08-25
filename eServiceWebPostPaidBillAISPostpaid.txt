@@ -123,7 +123,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    0932015586
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     ${msg}    Get Text    ${lbInputPrepaid}
     Run Keyword if    """${msg}""" != """${MessageInputPrepaidNumber}"""    Fail
     Close All Browsers
@@ -142,7 +141,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    sleep    5
     ${msg}    Get Text    ${lbPopUpDialog}
     Run Keyword if    """${msg}""" != """${MessageNotInput10digit}"""    Fail
     Close All Browsers
@@ -386,7 +384,7 @@ Resource          ../Config/LocalConfig.txt
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
     Click Web Element    ${btnOK}
-    Wait Until Element Is Visible    ${imgAMEXCard}
+    Wait Until Element Is Visible    ${imgAMEXCard}    10
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 

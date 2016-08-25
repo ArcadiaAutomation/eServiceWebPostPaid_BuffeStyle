@@ -1,3 +1,4 @@
 *** Variables ***
 ${NotSelectPackage}    Please select the package that you want.
-${messageRegisterDuplicate}    ${EMPTY}
+${messageRegisterDuplicate}    You are currently using the selected package.Please select a new package again.
+${messageInputNumberLessThan10Digit}    หมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาระบุใหม่อีกครั้ง

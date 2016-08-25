@@ -28,6 +28,14 @@ class AISAppiumEx(AppiumLibrary):
         oAppiumInfo = AtlasInfo(index, alias, driver, remote_url)
         return oAppiumInfo
 
+    def aisappium_close_application(self, oAppiumInfo=None):
+        """set current session Appium.
+        |oAppiumInfo=${AppInfo}|
+        """
+        self._cache.current = oAppiumInfo.driver
+        self._debug('Closing application with session id %s' % self._current_application().session_id)
+        self._cache.close()
+
     def aisappium_click_element(self, locator, oAppiumInfo=None):
         """Click element on mobile.
         |locator=xpath=//*[@id="id123"]|oAppiumInfo=${AppInfo}

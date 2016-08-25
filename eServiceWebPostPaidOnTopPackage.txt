@@ -17,13 +17,10 @@ test
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
-    Wait Until Element Is Visible    ${ddlXtraPack}
-    Select From List By Value    ${ddlXtraPack}    2
-    Wait Until Element Is Visible    ${btnChangePackConfirm}
+    Select From Web List By Value    ${ddlXtraPack}    2
     Click Web Element    ${btnChangePackConfirm}
     Wait Until Element Is Visible    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
-    sleep    1
+    Web Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -36,16 +33,31 @@ test
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
-    Wait Until Element Is Visible    ${ddlXtraPack}
-    Select From List By Value    ${ddlXtraPack}    0
-    Wait Until Element Is Visible    ${btnChangePackConfirm}
+    Select From Web List By Value    ${ddlXtraPack}    0
     Input Web Text    ${txtFriendNumber1}    0613851334
     Click Web Element    ${chkSelectPackage3Number0.5Bath}
     Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    xpath=//*[@id="btnChangePackConfirmDate"]/div
-    Click Web Element    xpath=//*[@id="btnChangePackConfirmPackDate"]
-    Comment    ${text}=    Get Text    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]
-    Comment    Log To Console    ${text}
-    Web Element Text Should Be    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]    ygjyghjgj
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+15
+
+16
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    OnTopPackage
+    Select From Web List By Value    ${ddlXtraPack}    0
+    Input Web Text    ${txtFriendNumber1}    093201558
+    Click Web Element    ${chkSelectPackage3Number0.5Bath}
+    Click Web Element    ${btnChangePackConfirm}
+    Comment    Web Element Text Should Be    ${lblDialogMessage}
+
+17
