@@ -14,3 +14,7 @@ ${tabBlockCalls}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2
 ${btnConfirmBlockCalls}    xpath=//*[@id="btnCallScreeningBlackListSubmit"]
 ${btnAddNumberBlock}    xpath=//*[@id="btnCallScreeningAddBlackList"]
 ${txtInputNumberMobileBlock}    xpath=//*[@id="txtCallScreeningOnlyNumberNewNumber"]
+${btnCloseCallScreeningDialog}    xpath=//*[@id="btnAlertConfirm"]/div
+${btnConfirmCallScreeningDialog}    xpath=//*[@id="btnAction0"]/div
+${btnBackToCallScreeningDialog}    xpath=//*[@id="btnCloseFn"]/div
+${txtDialogConfirmCallScreening}    xpath=//*[@id="txtAlertMessage"]/div

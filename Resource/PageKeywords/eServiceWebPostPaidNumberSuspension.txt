@@ -1,0 +1,5 @@
+*** Settings ***
+Resource          ../PageRepository/eServiceWebPostPaidNumberSuspensionRepository.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebPostPaidRepository.txt

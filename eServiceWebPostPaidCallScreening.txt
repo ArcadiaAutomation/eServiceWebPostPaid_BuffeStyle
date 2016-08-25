@@ -17,7 +17,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F07-242]eServiceWeb-PO-Service-CallScreening-RegisterInactiveComfirm
+[F07-242]eServiceWeb-PO-Service-CallScreening-RegisterInactiveConfirm
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
@@ -26,6 +26,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
+    Set Status Inaction Welcome Calls
+    Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnCallScreeningStatusRegister}
     Close Browser
@@ -101,6 +103,22 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabWelcomeCalls}
     Input Web Text    ${txtInputNumberMobile}    02
     Click Web Element    ${btnAddNumber}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-248]eServiceWeb-PO-Service-CallScreening-RegisterActiveConfirm
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Set Status Active Welcome Calls
+    Click Web Element    ${btnSelectStatusInactive}
+    Click Web Element    ${btnSelectStatusActive}
+    Click Web Element    ${btnCallScreeningStatusRegister}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 

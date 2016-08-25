@@ -1,0 +1,110 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
+
+*** Test Cases ***
+[F07-256]eServiceWeb-PO-Service-ConfirmNotInputDate
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NumberSuspension
+    Click Web Element    ${btnConfirmSuspension}
+    Click Web Element    ${btnCloseDialogSuspension}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-257]eServiceWeb-PO-Service-ConfirmNotReason
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NumberSuspension
+    Click Web Element    ${btnImmediatelySuspension}
+    Click Web Element    ${btnConfirmSuspension}
+    Click Web Element    ${btnCloseDialogSuspension}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-258]eServiceWeb-PO-Service-ConfirmNotInputDateReconnect
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NumberSuspension
+    Click Web Element    ${btnStartSuspensionFrom}
+    Click Web Element    ${txtInputSuspensionDate}
+    Click Web Element    ${btnDateCalendarSuspensionTomorrow}
+    sleep    1
+    Click Web Element    ${btnConfirmSuspension}
+    Click Web Element    ${btnCloseDialogSuspension}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-259]eServiceWeb-PO-Service-ConfirmInputDateYesterdayReconnect
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NumberSuspension
+    Click Web Element    ${btnImmediatelySuspension}
+    Click Web Element    ${btnSelectReasonSuspension}
+    Click Web Element    ${btnItemReasonSuspension}
+    Click Web Element    ${txtInputReconnectDate}
+    Click Web Element    ${btnDateCalendarSuspensionYesterday}
+    sleep    1
+    Click Web Element    ${btnConfirmSuspension}
+    Click Web Element    ${btnCloseDialogSuspension}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-261]eServiceWeb-PO-Service-ConfirmNotInputDateSuspend
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NumberSuspension
+    Click Web Element    ${btnStartSuspensionFrom}
+    Click Web Element    ${txtInputReconnectDate}
+    Click Web Element    ${btnDateCalendarReconnectTomorrow}
+    sleep    1
+    Click Web Element    ${btnConfirmSuspension}
+    Click Web Element    ${btnCloseDialogSuspension}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F07-262]eServiceWeb-PO-Service-ConfirmInputDateYesterdaySuspend
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NumberSuspension
+    Click Web Element    ${btnImmediatelySuspension}
+    Click Web Element    ${btnSelectReasonSuspension}
+    Click Web Element    ${btnItemReasonSuspension}
+    Click Web Element    ${txtInputReconnectDate}
+    Click Web Element    ${btnDateCalendarReconnectYesterday}
+    sleep    1
+    Click Web Element    ${btnConfirmSuspension}
+    sleep    2
+    Click Web Element    ${btnCloseDialogSuspension}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
