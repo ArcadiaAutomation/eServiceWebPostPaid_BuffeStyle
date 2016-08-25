@@ -4,3 +4,5 @@ ${ddlXtraPack}    xpath=//*[@id="ddlChangPackGroupA"]
 ${txtFriendNumber1}    xpath=//*[@id="txtApplySpecialNoValue0"]
 ${chkSelectPackage3Number0.5Bath}    xpath=//*[@id="trManagePackList3"]/td[5]/label
 ${tbSelectPackageStep4}    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]
+${btnChangePackConfirm2}    xpath=//*[@id="btnChangePackConfirmDate"]/div
+${btnChangePackConfirm3}    xpath=//*[@id="btnChangePackConfirmPackDate"]
