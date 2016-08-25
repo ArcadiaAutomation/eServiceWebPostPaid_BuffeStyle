@@ -1,0 +1,10 @@
+*** Variables ***
+${TopedUpSuccess}    You have topped up.*
+${ExpectComfirmMsg}    คุณต้องการเติมเงินให้หมายเลข [desNumber] จำนวน 100.00 บาท\nค่าธรรมเนียมการทำรายการนี้ 2 บาท (ไม่รวมVAT)\nกรุณากดปุ่ม "ตกลง" เพื่อยืนยันการทำรายการ\n\nระวังมิจฉาชีพ !\nโปรดอย่าทำการเติมเงินให้กับบุคคลที่ท่านไม่รู้จัก
+${MessageNotSelectCardType}    กรุณาเลือกประเภทบัตร
+${MessageInputCharToIDCitation}    หมายเลขบัตรประจำตัวที่คุณระบุไม่ตรงกับข้อมูลที่เคยให้ไว้กับบริษัท\nกรุณาระบุใหม่อีกครั้ง
+${MessageInputNotCompleteIDCitation}    หมายเลขบัตรประจำตัวที่คุณระบุไม่ตรงกับข้อมูลที่เคยให้ไว้กับบริษัท\nกรุณาระบุใหม่อีกครั้ง
+${MessageInputCharToDesNumber}    กรุณาระบุเป็นตัวเลขเท่านั้น
+${MessageInputDesNumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก
+${MessageInputNotAISNumber}    คุณไม่สามารถเติมเงินได้ เนื่องจากหมายเลขปลายทางไม่ได้อยู่ในระบบ
+${MessageInputAISPostpaidNumber}    คุณไม่สามารถเติมเงินได้ เนื่องจากหมายเลขปลายทางไม่ได้อยู่ในระบบ One-2-Call!
