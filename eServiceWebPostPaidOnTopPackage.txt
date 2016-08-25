@@ -36,11 +36,11 @@ test
     Select From Web List By Value    ${ddlXtraPack}    0
     Input Web Text    ${txtFriendNumber1}    0613851334
     Click Web Element    ${chkSelectPackage3Number0.5Bath}
-    Comment    Click Web Element    ${btnChangePackConfirm}
-    Comment    Click Web Element    ${btnChangePackConfirm2}
-    Comment    Click Web Element    ${btnChangePackConfirm3}
-    Comment    Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
-    Comment    Close Browser
+    Click Web Element    ${btnChangePackConfirm}
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 15
