@@ -3,11 +3,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidOnTopPackage.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-test
-    Open SMS App    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1}
-    Sleep    5
-    Clear All Unread SMS    ${lo_RUN_3PO_1_Platfrom_Name}
-
 [F03-013]eServiceWeb-PO-OnTopPackage-NotSelectPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -43,9 +38,26 @@ test
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-15
+[F03-015]eServiceWeb-PO-OnTopPackage-RegisterXtratalkPackageFriendNumberDtac
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    OnTopPackage
+    Select From Web List By Value    ${ddlXtraPack}    0
+    Input Web Text    ${txtFriendNumber1}    0944835961
+    Click Web Element    ${chkSelectPackage3Number0.5Bath}
+    Click Web Element    ${btnChangePackConfirm}
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Web Element Text Should Be    ${tbSelectPackageStep4}    ${MessageInputFriendNumberWithDtacNumber}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-16
+[F03-016]eServiceWeb-PO-OnTopPackage-RegisterXtratalkPackageFriendNumberLessThan10Digit
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -58,6 +70,23 @@ test
     Input Web Text    ${txtFriendNumber1}    093201558
     Click Web Element    ${chkSelectPackage3Number0.5Bath}
     Click Web Element    ${btnChangePackConfirm}
-    Comment    Web Element Text Should Be    ${lblDialogMessage}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputFriendNumberLessThan10Digit}
+    Click Web Element    ${btnDialogClose}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-17
+[F03-017]eServiceWeb-PO-OnTopPackage-RegisterXtratalkPackageFriendNumberWithCharacter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    OnTopPackage
+    Select From Web List By Value    ${ddlXtraPack}    0
+    Input Web Text    ${txtFriendNumber1}    a
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputFriendNumberWithCharacter}
+    Click Web Element    ${btnDialogClose}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
