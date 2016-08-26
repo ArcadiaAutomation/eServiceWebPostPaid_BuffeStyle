@@ -6,7 +6,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
 [F07-256]eServiceWeb-PO-Service-ConfirmNotInput
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -20,7 +20,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
 [F07-257]eServiceWeb-PO-Service-ConfirmNotReason
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -42,18 +42,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NumberSuspension
     Click Web Element    ${btnStartSuspensionFrom}
-<<<<<<< HEAD
-    ${date}=    Get Current Date    result_format=%d/%m/%Y
-    Log    ${date}
-    Press Key    ${txtInputSuspensionDate}    //13
-    Input Web Text    ${txtInputSuspensionDate}    ${date}
-    sleep    2
-    Click Web Element    ${txtMenuSuspension}
-    sleep    3
+    Check Local Time
     Click Web Element    ${btnConfirmSuspension}
     sleep    2
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
 =======
     Comment    ${date}=    Get Current Date    result_format=%d/%m/%Y
     Comment    Log    ${date}
@@ -78,13 +73,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Comment    sleep    2
     Comment    Click Web Element    ${btnCloseDialogSuspension}
     Comment    Close Browser
->>>>>>> origin/master
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-259]eServiceWeb-PO-Service-ConfirmInputDateYesterdayReconnect
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -104,7 +97,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
 [F07-261]eServiceWeb-PO-Service-ConfirmNotInputDateSuspend
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -122,7 +115,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
 [F07-262]eServiceWeb-PO-Service-ConfirmInputDateYesterdaySuspend
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}

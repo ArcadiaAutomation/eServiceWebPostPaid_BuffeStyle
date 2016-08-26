@@ -11,15 +11,21 @@ Check Local Time
     Run Keyword If    '${ar_LANG}'=='EN'    Get Date Tomorrow EN
 
 Get Date Tomorrow TH
-    Log    Time TH
-    ${yyyy}    ${mm}    ${dd}    Get Time    year, day, month
-    Input Web Text    ${txtInputSuspensionDate}    ${dd}/${mm}/${yyyy}
+    Log    Time EN
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${addDate}=    Add Time To Date    ${date}    1 days    result_format=%d/%m/%Y
+    Log    ${addDate}
+    Press Key    ${txtInputSuspensionDate}    \\\13
+    Clear Element Text    ${txtInputSuspensionDate}
+    Input Web Text    ${txtInputSuspensionDate}    ${addDate}
     sleep    1
 
 Get Date Tomorrow EN
     Log    Time EN
-    ${date}=    Get Current Date    result_format=%d/%m/%Y
-    Log    ${date}
-    Input Web Text    ${txtInputSuspensionDate}    ${date}
-    sleep    2
-    Click Web Element    ${txtMenuSuspension}
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${addDate}=    Add Time To Date    ${date}    1 days    result_format=%d/%m/%Y
+    Log    ${addDate}
+    Press Key    ${txtInputSuspensionDate}    \\\13
+    Clear Element Text    ${txtInputSuspensionDate}
+    Input Web Text    ${txtInputSuspensionDate}    ${addDate}
+    sleep    1
