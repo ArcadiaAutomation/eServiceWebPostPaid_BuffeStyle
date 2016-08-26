@@ -15,8 +15,9 @@ ${btnMMS}         xpath=//*[@id="btnServiceSendMMS"]
 ${btnChooseFile}    xpath=//*[@id="btnServiceSendSMSMMSUploadImage"]
 ${btnMMSFuture}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div[7]/div[1]/table/tbody/tr/td[1]/label
 ${ldlMessageBeforeSendSMS}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/textarea
-${ldlTotalMessage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[3]/td[2]
-${ldlTotalMoney}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[3]/td[3]
+${ldlTotalMessage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td[2]
+${ldlTotalMoney}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td[3]
 ${btnConfrimSendSMS}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[3]/div/div/a[1]
 ${txtInsertNumber2}    xpath=//*[@id="txtServiceSendSMSMMSReceivedNumber1"]
 ${ldlFutureMessage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[2]/div[2]/span/span[1]
+${ldlImmediaMessage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[2]/div[2]/span

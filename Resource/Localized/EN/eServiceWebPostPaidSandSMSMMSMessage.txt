@@ -12,11 +12,11 @@ ${MessageTHMorethan1000}    Please enter the message you would like to send (max
 ${MessageENMorethan1000}    Please enter the message you would like to send (maximum 1000 characters).
 ${MessageFileInvalid}    Wrong file format. Please browse the image *.jpg , *.jpeg , *.gif again.
 ${MessagePleaseInputMessageImage}    Please enter your message or select an image for your MMS sending
-${MessageSendSMSOneNumberComplete}    Your message has been sent to\n${lo_3PO_2_Number}\nas of your request. Thank You.
-${MessageSendSMSMorethanOneNumberComplete}    Your message has been sent to\n${lo_3PO_2_Number}, ${lo_3PO_3_Number}\nas of your request. Thank You.
+${MessageSendSMSOneNumberComplete}    Your message has been sent to\n[3PO_2_Number]\nas of your request. Thank You.
+${MessageSendSMSMorethanOneNumberComplete}    Your message has been sent to\n[3PO_2_Number], [3PO_3_Number]\nas of your request. Thank You.
 ${Year}           2016
 ${Month}          August
 ${FutureSMS}      Future SMS
 ${ImmediateSmsMms}    Instant SMS
-${MessageMMSOneNumberComplete}    Your MMS are send successfully to mobile number\n${lo_3PO_2_Number}\nThank you for using our service.
-${MessageMMSMorethanOneNumberComplete}    Your MMS are send successfully to mobile number\n${lo_3PO_2_Number}, ${lo_3PO_3_Number}\nThank you for using our service.
+${MessageMMSOneNumberComplete}    Your MMS are send successfully to mobile number\n[3PO_2_Number]\nThank you for using our service.
+${MessageMMSMorethanOneNumberComplete}    Your MMS are send successfully to mobile number\n[3PO_2_Number], [3PO_3_Number]\nThank you for using our service.
