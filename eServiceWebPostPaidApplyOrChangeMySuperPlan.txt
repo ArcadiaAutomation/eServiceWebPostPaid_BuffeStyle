@@ -3,64 +3,46 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
 
 *** Test Cases ***
-eXample
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_Number}    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${imgMySuperPlanPage}
-    Sleep    3
-    Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735
-    Select Main Package    MainPacKage250Min
-    Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
-    Sleep    2
-    Web Element Should Be Visible    ${lblMySuperPlanDialogMessage}
-    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    @{#list_device_name}
-
 [F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    Apply/ChangeMySuperPlan
+    Click Web Image    ${imgMySuperPlanPage}
+    Confirm My Super Plan
+    Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMySuperPlanPackage}
+    Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
-    Sleep    3
-    Confirm My Super Plan
-    Sleep    2
-    Element Should Be Visible    ${lblMySuperPlanDialogMessage}
-    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMySuperPlanPackage}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${imgMySuperPlanPage}
     Sleep    2
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPackage2200Min
-    Sleep    5
-    Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${MainPackageExpensiveThanPostPaidPackage}
-    Sleep    2
-    Close Browser
+    Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${MainPackageExpensiveThanPostPaidPackage}
+    Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
     Sleep    3
@@ -68,14 +50,17 @@ eXample
     Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMainPackage}
-    Close Browser
+    Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-011]eServiceWeb-PO-MysuperPlan-NotAcceptMySuperPlanRule
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    2
@@ -84,15 +69,17 @@ eXample
     Confirm My Super Plan
     Sleep    2
     Element Should Be Visible    ${lblAcceptRule}
-    Sleep    3
-    Close Browser
+    Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-012]eServiceWeb-PO-MysuperPlan-CancelMySuperPlan
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${lo_RUN_3PO_1_IPAppium}    ${lo_RUN_3PO_1}    ${lo_RUN_3PO_1_Platfrom_Name}    ${lo_RUN_3PO_1_Platfrom_Version}    ${lo_RUN_3PO_1_Number}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
     Sleep    2
@@ -101,4 +88,5 @@ eXample
     Cancel My Super Plan
     Sleep    2
     Element Text Should Be    ${lblSumMoney }    0
-    Close Browser
+    Close All Browsers
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
