@@ -7,3 +7,6 @@ ${MessagePleaseYourName}    Please enter your name.
 ${MessagePleaseSelectMessage}    Please select message before goint to next step.
 ${MessagePleaseSelectFile}    Please select the file you would like to upload.
 ${MessageSelectFileXls}    Please select the Excel file (*.xls) you would like to upload
+${MessageBeforeSendOneNumber}    เอ้ changes mobile number from 0922222222 to [3PO_1_Number]
+${MessageAfterSendOneNumber}    Do you have any additional new mobile number to add into your list?
+${PageNewNumber}    New Number Announcement Service

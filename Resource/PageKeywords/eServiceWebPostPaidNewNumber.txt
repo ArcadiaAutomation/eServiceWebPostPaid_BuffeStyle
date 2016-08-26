@@ -3,3 +3,4 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidNewNumber.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidNewNumber.txt
+Resource          ../PageVariable/eServiceWebPostPaidNewNumberVariable.txt
