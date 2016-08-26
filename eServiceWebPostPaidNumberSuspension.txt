@@ -35,7 +35,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
 [F07-258]eServiceWeb-PO-Service-ConfirmNotInputDateReconnect
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${virtual_3PO_1_IPSelenium}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -44,9 +44,22 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnStartSuspensionFrom}
     Comment    ${date}=    Get Current Date    result_format=%d/%m/%Y
     Comment    Log    ${date}
-    Input Web Text    ${txtInputSuspensionDate}    26/08/2016
+    Click Web Element    ${txtInputSuspensionDate}
+    Comment    Clear Element Text    ${txtInputSuspensionDate}
+    Comment    Selenium2Library.Input Text    ${txtInputSuspensionDate}    26/08/2016
+    Press Key    ${txtInputSuspensionDate}    2
+    Press Key    ${txtInputSuspensionDate}    7
+    Press Key    ${txtInputSuspensionDate}    /
+    Press Key    ${txtInputSuspensionDate}    0
+    Press Key    ${txtInputSuspensionDate}    8
+    Press Key    ${txtInputSuspensionDate}    /
+    Press Key    ${txtInputSuspensionDate}    2
+    Press Key    ${txtInputSuspensionDate}    0
+    Press Key    ${txtInputSuspensionDate}    1
+    Press Key    ${txtInputSuspensionDate}    6
+    Press Key    ${txtInputSuspensionDate}    \\13
     Comment    sleep    2
-    Comment    Click Web Element    ${txtMenuSuspension}
+    Click Web Element    ${txtMenuSuspension}
     Comment    sleep    3
     Comment    Click Web Element    ${btnConfirmSuspension}
     Comment    sleep    2

@@ -1,5 +1,5 @@
 *** Variables ***
-${ExpectComfirmMsg}    You would like to top up to [desNumber] number for 100.00 B.\nThe fee of change is 2 baht (excluding VAT).\nPlease click "OK" to confirm the transaction\n\nBeware !\nPlease do not top up to the stranger.
+${ExpectTempMsg}    You would like to top up to [desNumber] number for 100.00 B.\nThe fee of change is 2 baht (excluding VAT).\nPlease click "OK" to confirm the transaction\n\nBeware !\nPlease do not top up to the stranger.
 ${TopedUpSuccess}    You have topped up.*
 ${MessageNotSelectCardType}    Please select the type of card.
 ${MessageInputCharToIDCitation}    The national ID card number you have entered is not the same as the one you previously provided.\nPlease enter again.
