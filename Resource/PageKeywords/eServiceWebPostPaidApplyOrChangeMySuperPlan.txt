@@ -7,9 +7,7 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidApplyOrChangeMySupe
 *** Keywords ***
 Select PostPaid Package
     [Arguments]    ${PostpaidType}    ${PostpaidPackageName}
-    Wait Until Element Is Visible    ${tb${PostpaidType}}
     Click Web Element    ${tb${PostpaidType} }
-    Wait Until Element Is Visible    ${ib${PostpaidPackageName}}
     Click Web Element    ${ib${PostpaidPackageName}}
 
 Confirm My Super Plan
@@ -17,15 +15,15 @@ Confirm My Super Plan
 
 Select Main Package
     [Arguments]    ${MainPackageName}
-    Sleep    2
-    Click Web Element    ${rb${MainPackageName}}
+    Wait Web Until Page Contains Element    ${rb${MainPackageName}}
+    Selenium2Library.Click Element    ${rb${MainPackageName}}
 
 Select OnTop Package
     [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
-    Wait Until Element Is Visible    ${btn${OnTopPackageType}}
-    Click Web Element    ${btn${OnTopPackageType}}
-    Sleep    2
-    Click Web Element    ${cb${OnTopPackageName}}
+    Wait Web Until Page Contains Element    ${btn${OnTopPackageType}}
+    Selenium2Library.Click Element    ${btn${OnTopPackageType}}
+    Wait Web Until Page Contains Element    ${cb${OnTopPackageName}}
+    Selenium2Library.Click Element    ${cb${OnTopPackageName}}
 
 Enter My Super Plan Page
     Wait Until Element Is Visible    ${imgMySuperPlanPage}

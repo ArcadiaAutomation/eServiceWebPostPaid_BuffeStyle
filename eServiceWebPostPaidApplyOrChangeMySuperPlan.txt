@@ -27,8 +27,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${imgMySuperPlanPage}
-    Sleep    2
+    Click Web Image    ${imgMySuperPlanPage}
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPackage2200Min
     Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${MainPackageExpensiveThanPostPaidPackage}
