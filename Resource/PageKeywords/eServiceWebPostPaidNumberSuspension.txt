@@ -6,14 +6,6 @@ Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Library           C:/Python27/Lib/site-packages/robot/libraries/DateTime.py
 
 *** Keywords ***
-Get Date Tomorrow EN
-    Log    Time EN
-    ${date}=    Get Current Date    result_format=%d/%m/%Y
-    Log    ${date}
-    Input Web Text    ${txtInputSuspensionDate}    ${date}
-    sleep    2
-    Click Web Element    ${txtMenuSuspension}
-
 Check Local Time
     Run Keyword If    '${ar_LANG}'=='TH'    Get Date Tomorrow TH
     Run Keyword If    '${ar_LANG}'=='EN'    Get Date Tomorrow EN
@@ -23,3 +15,11 @@ Get Date Tomorrow TH
     ${yyyy}    ${mm}    ${dd}    Get Time    year, day, month
     Input Web Text    ${txtInputSuspensionDate}    ${dd}/${mm}/${yyyy}
     sleep    1
+
+Get Date Tomorrow EN
+    Log    Time EN
+    ${date}=    Get Current Date    result_format=%d/%m/%Y
+    Log    ${date}
+    Input Web Text    ${txtInputSuspensionDate}    ${date}
+    sleep    2
+    Click Web Element    ${txtMenuSuspension}
