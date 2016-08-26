@@ -1,0 +1,5 @@
+*** Settings ***
+Resource          ../PageRepository/eServiceWebPostPaidUtilityRepository.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidUtilityMessage.txt

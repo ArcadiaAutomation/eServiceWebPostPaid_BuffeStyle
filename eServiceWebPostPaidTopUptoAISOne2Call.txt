@@ -85,27 +85,25 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
     Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
-    Comment    Element Text Should Be    ${lbComfirmTopUp2DesNumber}    ${MessageComfirmDesNumber}
     ${ActualMsg}    Get Web Text    ${lbComfirmTopUp2DesNumber}
-    ${ExpectMsg}=    Replace String    ${ExpectComfirmMsg}    [desNumber]    ${virtual_3PE_1_Number}
+    ${ExpectMsg}=    Replace String    ${ExpectTempMsg}    [desNumber]    ${virtual_3PE_1_Number}
     Run Keyword If    """${ActualMsg}"""!="""${ExpectMsg}"""    fail
     Click Web Element    ${btnConfirmTopuptoDesNumber}
     Open SMS App    ${virtual_3PE_1_IPAppium}    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_Platfrom_Version}    ${virtual_3PE_1_SN}
     Wait SMS    ${virtual_3PE_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{TopUpActualMsg}=    Read SMS    ${virtual_3PE_1_Platfrom_Name}    AIS    1
-    Should Match Regexp    @{TopUpActualMsg}[0]    ${TopedUpSuccess}
+    @{TopUpDesActualMsg}=    Read SMS    ${virtual_3PE_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{TopUpDesActualMsg}[0]    ${TopedUpSuccess}
     Close Application
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_Platfrom_Version}    ${virtual_3PE_1_SN}
-    Wait SMS    ${virtual_3PE_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{TopUpActualMsg}=    Read SMS    ${virtual_3PE_1_Platfrom_Name}    AIS    1
-    Should Match Regexp    @{TopUpActualMsg}[0]    ${TopedUpSuccess}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{TopUpSrcActualMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{TopUpSrcActualMsg}[0]    ${TopedUpSuccess}
     Close Application
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F05-191]eServiceWeb-PO-TopUptoAISOne2Call-NotSelectCard
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -122,8 +120,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-192]eServiceWeb-PO-TopUptoAISOne2Call-InputCharToIDCitation
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -141,8 +138,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-193]eServiceWeb-PO-TopUptoAISOne2Call-InputNotCompleteIDCitation
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -160,8 +156,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-194]eServiceWeb-PO-TopUptoAISOne2Call-InputCharToDesNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -176,8 +171,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-195]eServiceWeb-PO-TopUptoAISOne2Call-InputNotCompleteDesNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -193,8 +187,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-196]eServiceWeb-PO-TopUptoAISOne2Call-InputNotAISNumberToDesNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -211,8 +204,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-197]eServiceWeb-PO-TopUptoAISOne2Call-InputAISPostpaidNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}

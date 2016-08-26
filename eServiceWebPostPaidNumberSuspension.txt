@@ -42,6 +42,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NumberSuspension
     Click Web Element    ${btnStartSuspensionFrom}
+<<<<<<< HEAD
     ${date}=    Get Current Date    result_format=%d/%m/%Y
     Log    ${date}
     Press Key    ${txtInputSuspensionDate}    //13
@@ -53,6 +54,31 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     sleep    2
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
+=======
+    Comment    ${date}=    Get Current Date    result_format=%d/%m/%Y
+    Comment    Log    ${date}
+    Click Web Element    ${txtInputSuspensionDate}
+    Comment    Clear Element Text    ${txtInputSuspensionDate}
+    Comment    Selenium2Library.Input Text    ${txtInputSuspensionDate}    26/08/2016
+    Press Key    ${txtInputSuspensionDate}    2
+    Press Key    ${txtInputSuspensionDate}    7
+    Press Key    ${txtInputSuspensionDate}    /
+    Press Key    ${txtInputSuspensionDate}    0
+    Press Key    ${txtInputSuspensionDate}    8
+    Press Key    ${txtInputSuspensionDate}    /
+    Press Key    ${txtInputSuspensionDate}    2
+    Press Key    ${txtInputSuspensionDate}    0
+    Press Key    ${txtInputSuspensionDate}    1
+    Press Key    ${txtInputSuspensionDate}    6
+    Press Key    ${txtInputSuspensionDate}    \\13
+    Comment    sleep    2
+    Click Web Element    ${txtMenuSuspension}
+    Comment    sleep    3
+    Comment    Click Web Element    ${btnConfirmSuspension}
+    Comment    sleep    2
+    Comment    Click Web Element    ${btnCloseDialogSuspension}
+    Comment    Close Browser
+>>>>>>> origin/master
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F07-259]eServiceWeb-PO-Service-ConfirmInputDateYesterdayReconnect
