@@ -12,6 +12,8 @@ test
     Comment    Log    @{virtual_3PO_1_ExampleList}[1]
     Comment    Log    &{virtual_3PO_1_ExampleDic}[name1]
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Sleep    3
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Comment    Release Virtual Local Config    ${lo_local_config_file_path}    ${virtual_3PO_1_#device_name}
     Comment    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
     Comment    ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
