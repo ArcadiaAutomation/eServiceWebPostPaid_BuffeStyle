@@ -600,13 +600,6 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-Verify SMS
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${Virtual_3PO_1_#timestamp}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    2    AIS3G    ${Cancel}    ${Register}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
-
 [S07-180]eServiceWeb-PO-Service-SendSMS-SendOneNumber-Immediate
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
@@ -631,7 +624,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
-    sleep    30
+    sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
@@ -664,7 +657,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSMorethanOneNumberComplete}
-    sleep    30
+    sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -699,7 +692,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
-    sleep    150
+    sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
@@ -735,7 +728,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
-    sleep    30
+    sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -769,7 +762,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
-    sleep    30
+    sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageMMS}
     Close Browser
@@ -804,7 +797,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
-    sleep    30
+    sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -840,7 +833,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
-    sleep    30
+    sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageMMS}
     Close Browser
@@ -877,7 +870,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
-    sleep    30
+    sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${lo_RUN_3PO_2_Platfrom_Name}    ${lo_RUN_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}

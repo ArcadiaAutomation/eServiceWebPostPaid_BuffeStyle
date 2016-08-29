@@ -13,6 +13,22 @@ Time Send in Future
     Log    ${Hour}
     ${Minute}    Get Current Date    result_format=%M
     Log    ${Minute}
+    ${MinuteNew}    Set Variable    01
+    Run Keyword If    ${Minute}>59    Input Time New    ${Hour}    ${MinuteNew}
+    ...    ELSE    Input Time    ${Hour}    ${Minute}
+
+Input Time
+    [Arguments]    ${Hour}    ${Minute}
     ${Minute}    Evaluate    ${Minute}+2
+    ${aMinute}=    Set Variable    ${Minute}
+    ${ShowMinute}=    Convert To String    ${aMinute}
     Select From List    ${lstHourFuture}    ${Hour}
-    Select From List    ${lstMinuteFuture}    ${Minute}
+    Select From List    ${lstMinuteFuture}    ${ShowMinute}
+
+Input Time New
+    [Arguments]    ${Hour}    ${MinuteNew}
+    ${HourNew}    Evaluate    ${Hour}+1
+    ${aHourNew}=    Set Variable    ${HourNew}
+    ${ShowHourNew}=    Convert To String    ${aHourNew}
+    Select From List    ${lstHourFuture}    ${ShowHourNew}
+    Select From List    ${lstMinuteFuture}    ${MinuteNew}
