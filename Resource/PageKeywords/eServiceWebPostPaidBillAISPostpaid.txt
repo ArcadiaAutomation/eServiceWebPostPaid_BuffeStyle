@@ -8,9 +8,10 @@ Resource          ../PageVariable/eServiceWebPostPaidBillAISPostpaidVariable.txt
 *** Keywords ***
 Select Payment Type
     [Arguments]    ${Payment}
-    Wait Until Element Is Visible    ${ddlPaymentType}
+    Wait Until Element Is Visible    ${ddlPaymentType}    10
     Selenium2Library.Select From List    ${ddlPaymentType}    ${Payment}
 
 Select Card Name
     [Arguments]    ${Card}
+    Wait Until Element Is Visible    ${ddlCardName}    10
     Selenium2Library.Select From List    ${ddlCardName}    ${Card}

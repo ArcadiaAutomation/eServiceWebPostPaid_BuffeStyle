@@ -85,9 +85,10 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
     Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
-    ${ActualMsg}    Get Web Text    ${lbComfirmTopUp2DesNumber}
+    Comment    ${ActualMsg}    Get Web Text    ${lbComfirmTopUp2DesNumber}
     ${ExpectMsg}=    Replace String    ${ExpectTempMsg}    [desNumber]    ${virtual_3PE_1_Number}
-    Run Keyword If    """${ActualMsg}"""!="""${ExpectMsg}"""    fail
+    Web Element Text Should Be    ${lbComfirmTopUp2DesNumber}    ${ExpectMsg}
+    Comment    Run Keyword If    """${ActualMsg}"""!="""${ExpectMsg}"""    fail
     Click Web Element    ${btnConfirmTopuptoDesNumber}
     Open SMS App    ${virtual_3PE_1_IPAppium}    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_Platfrom_Version}    ${virtual_3PE_1_SN}
     Wait SMS    ${virtual_3PE_1_Platfrom_Name}    1    ${lo_parallel_timeout}
