@@ -6,15 +6,11 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.t
 Resource          ../PageVariable/eServiceWebPostPaidSendSMSMMSVariable.txt
 
 *** Keywords ***
-Get and Verify SMS Mood
-    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${SenderName}    ${MessageExpect}
-    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
-    Wait SMS    ${PlatfromName}    1    ${lo_GeneralTimeOut}
-    @{messages}=    Read SMS    ${PlatfromName}    ${SenderName}    1
-    Log To Console    @{messages}[0]
-    ${MessageActual}    Set Variable    @{messages}[0]
-    sleep    2
-    ${result}    Run Keyword And Return If    '${MessageExpect}'== '${MessageActual}'    AISAppiumEx.Close Application
-    ...    ELSE    AISAppiumEx.Close Application
-    Log    ${MessageExpect}
-    Log    ${result}
+Time Send in Future
+    ${Hour}    Get Current Date    result_format=%H
+    Log    ${Hour}
+    ${Minute}    Get Current Date    result_format=%M
+    Log    ${Minute}
+    ${Minute}    Evaluate    ${Minute}+2
+    Select From List    ${lstHourFuture}    ${Hour}
+    Select From List    ${lstMinuteFuture}    ${Minute}
