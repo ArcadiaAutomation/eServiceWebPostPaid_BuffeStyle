@@ -2,18 +2,20 @@
 Test Teardown
 Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../Config/LocalConfig.txt
+Library           robot.api
+Library           robot.conf.settings
 
 *** Test Cases ***
 test
     [Tags]    test
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Comment    Log    ${virtual_3PO_1_SN}
-    Comment    Log    @{virtual_3PO_1_ExampleList}[1]
-    Comment    Log    &{virtual_3PO_1_ExampleDic}[name1]
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Sleep    3
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Comment    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    Comment    Log    ${virtual_3PO_1_SN}
+    Comment    Comment    Log    @{virtual_3PO_1_ExampleList}[1]
+    Comment    Comment    Log    &{virtual_3PO_1_ExampleDic}[name1]
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Comment    Sleep    3
+    Comment    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Comment    Release Virtual Local Config    ${lo_local_config_file_path}    ${virtual_3PO_1_#device_name}
     Comment    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
     Comment    ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
