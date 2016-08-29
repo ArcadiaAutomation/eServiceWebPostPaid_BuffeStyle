@@ -4,17 +4,31 @@ Resource          ../PageRepository/eServiceWebPostPaidSendSMSMMSRepository.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          ../PageVariable/eServiceWebPostPaidSendSMSMMSVariable.txt
+Library           ../../../AisRobotBuffet/Library/General/DateTime.py
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
 
 *** Keywords ***
-Get and Verify SMS Mood
-    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${SenderName}    ${MessageExpect}
-    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
-    Wait SMS    ${PlatfromName}    1    ${lo_GeneralTimeOut}
-    @{messages}=    Read SMS    ${PlatfromName}    ${SenderName}    1
-    Log To Console    @{messages}[0]
-    ${MessageActual}    Set Variable    @{messages}[0]
-    sleep    2
-    ${result}    Run Keyword And Return If    '${MessageExpect}'== '${MessageActual}'    AISAppiumEx.Close Application
-    ...    ELSE    AISAppiumEx.Close Application
-    Log    ${MessageExpect}
-    Log    ${result}
+Time Send in Future
+    ${Hour}    Get Current Date    result_format=%H
+    Log    ${Hour}
+    ${Minute}    Get Current Date    result_format=%M
+    Log    ${Minute}
+    ${MinuteNew}    Set Variable    01
+    Run Keyword If    ${Minute}>59    Input Time New    ${Hour}    ${MinuteNew}
+    ...    ELSE    Input Time    ${Hour}    ${Minute}
+
+Input Time
+    [Arguments]    ${Hour}    ${Minute}
+    ${Minute}    Evaluate    ${Minute}+2
+    ${aMinute}=    Set Variable    ${Minute}
+    ${ShowMinute}=    Convert To String    ${aMinute}
+    Select From List    ${lstHourFuture}    ${Hour}
+    Select From List    ${lstMinuteFuture}    ${ShowMinute}
+
+Input Time New
+    [Arguments]    ${Hour}    ${MinuteNew}
+    ${HourNew}    Evaluate    ${Hour}+1
+    ${aHourNew}=    Set Variable    ${HourNew}
+    ${ShowHourNew}=    Convert To String    ${aHourNew}
+    Select From List    ${lstHourFuture}    ${ShowHourNew}
+    Select From List    ${lstMinuteFuture}    ${MinuteNew}

@@ -3,29 +3,47 @@ Resource          ../PageRepository/eServiceWebPostPaidNumberSuspensionRepositor
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
-Library           C:/Python27/Lib/site-packages/robot/libraries/DateTime.py
+Library           ../../../AisRobotBuffet/Library/General/DateTime.py
 
 *** Keywords ***
-Check Local Time
-    Run Keyword If    '${ar_LANG}'=='TH'    Get Date Tomorrow TH
-    Run Keyword If    '${ar_LANG}'=='EN'    Get Date Tomorrow EN
+Check Local Time Tomorrow
+    ${result}    Run Keyword If    '${ar_LANG}'=='TH'    Get Date Tomorrow TH
+    ...    ELSE    Get Date Tomorrow EN
+    [Return]    ${result}
 
 Get Date Tomorrow TH
-    Log    Time EN
+    Log    Time TH
     ${date}    Get Current Date    result_format=%Y/%m/%d
-    ${addDate}=    Add Time To Date    ${date}    1 days    result_format=%d/%m/%Y
-    Log    ${addDate}
-    Press Key    ${txtInputSuspensionDate}    \\\13
-    Clear Element Text    ${txtInputSuspensionDate}
-    Input Web Text    ${txtInputSuspensionDate}    ${addDate}
-    sleep    1
+    ${dateTime}    Convert Date    ${date}    datetime
+    ${yearTH}    Evaluate    ${dateTime.year}+543
+    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
+    Log    ${dateTomorrow}${yearTH}
+    [Return]    ${dateTomorrow}${yearTH}
 
 Get Date Tomorrow EN
     Log    Time EN
     ${date}    Get Current Date    result_format=%Y/%m/%d
-    ${addDate}=    Add Time To Date    ${date}    1 days    result_format=%d/%m/%Y
-    Log    ${addDate}
-    Press Key    ${txtInputSuspensionDate}    \\\13
-    Clear Element Text    ${txtInputSuspensionDate}
-    Input Web Text    ${txtInputSuspensionDate}    ${addDate}
-    sleep    1
+    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/%Y
+    Log    ${dateTomorrow}
+    [Return]    ${dateTomorrow}
+
+Check Local Time Yesterday
+    ${result}    Run Keyword If    '${ar_LANG}'=='TH'    Get Date Yesterday TH
+    ...    ELSE    Get Date Yesterday EN
+    [Return]    ${result}
+
+Get Date Yesterday TH
+    Log    Time TH
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${dateTime}    Convert Date    ${date}    datetime
+    ${yearTH}    Evaluate    ${dateTime.year}+543
+    ${dateYesterday}    Add Time To Date    ${date}    -1 day    result_format=%d/%m/
+    Log    ${dateYesterday}${yearTH}
+    [Return]    ${dateYesterday}${yearTH}
+
+Get Date Yesterday EN
+    Log    Time EN
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${dateYesterday}    Add Time To Date    ${date}    -1 day    result_format=%d/%m/%Y
+    Log    ${dateYesterday}
+    [Return]    ${dateYesterday}
