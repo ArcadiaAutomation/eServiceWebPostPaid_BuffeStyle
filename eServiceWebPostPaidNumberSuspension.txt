@@ -105,7 +105,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Input Web Text    ${txtInputSuspensionDate}    ${dateSuspension}
     sleep    1
     Click Web Element    ${btnConfirmSuspension}
-    sleep    2
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
