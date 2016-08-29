@@ -40,39 +40,17 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    ${dateSuspension}    Check Local Time Tomorrow
     Select Menu    Service    NumberSuspension
     Click Web Element    ${btnStartSuspensionFrom}
-    Check Local Time
+    Press Key    ${txtInputSuspensionDate}    \\\13
+    Clear Element Text    ${txtInputSuspensionDate}
+    Input Web Text    ${txtInputSuspensionDate}    ${dateSuspension}
+    sleep    1
     Click Web Element    ${btnConfirmSuspension}
-    sleep    2
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
-
-=======
-    Comment    ${date}=    Get Current Date    result_format=%d/%m/%Y
-    Comment    Log    ${date}
-    Click Web Element    ${txtInputSuspensionDate}
-    Comment    Clear Element Text    ${txtInputSuspensionDate}
-    Comment    Selenium2Library.Input Text    ${txtInputSuspensionDate}    26/08/2016
-    Press Key    ${txtInputSuspensionDate}    2
-    Press Key    ${txtInputSuspensionDate}    7
-    Press Key    ${txtInputSuspensionDate}    /
-    Press Key    ${txtInputSuspensionDate}    0
-    Press Key    ${txtInputSuspensionDate}    8
-    Press Key    ${txtInputSuspensionDate}    /
-    Press Key    ${txtInputSuspensionDate}    2
-    Press Key    ${txtInputSuspensionDate}    0
-    Press Key    ${txtInputSuspensionDate}    1
-    Press Key    ${txtInputSuspensionDate}    6
-    Press Key    ${txtInputSuspensionDate}    \\13
-    Comment    sleep    2
-    Click Web Element    ${txtMenuSuspension}
-    Comment    sleep    3
-    Comment    Click Web Element    ${btnConfirmSuspension}
-    Comment    sleep    2
-    Comment    Click Web Element    ${btnCloseDialogSuspension}
-    Comment    Close Browser
 
 [F07-259]eServiceWeb-PO-Service-ConfirmInputDateYesterdayReconnect
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -86,8 +64,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnImmediatelySuspension}
     Click Web Element    ${btnSelectReasonSuspension}
     Click Web Element    ${btnItemReasonSuspension}
-    Click Web Element    ${txtInputReconnectDate}
-    Click Web Element    ${btnDateCalendarSuspensionYesterday}
+    ${dateReconnect}    Check Local Time Yesterday
+    Press Key    ${txtInputReconnectDate}    \\\13
+    Clear Element Text    ${txtInputReconnectDate}
+    Input Web Text    ${txtInputReconnectDate}    ${dateReconnect}
     sleep    1
     Click Web Element    ${btnConfirmSuspension}
     Click Web Element    ${btnCloseDialogSuspension}
@@ -104,9 +84,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NumberSuspension
     Click Web Element    ${btnStartSuspensionFrom}
-    Click Web Element    ${txtInputReconnectDate}
-    Click Web Element    ${btnDateCalendarReconnectTomorrow}
-    sleep    1
     Click Web Element    ${btnConfirmSuspension}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
@@ -121,11 +98,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NumberSuspension
-    Click Web Element    ${btnImmediatelySuspension}
-    Click Web Element    ${btnSelectReasonSuspension}
-    Click Web Element    ${btnItemReasonSuspension}
-    Click Web Element    ${txtInputReconnectDate}
-    Click Web Element    ${btnDateCalendarReconnectYesterday}
+    Click Web Element    ${btnStartSuspensionFrom}
+    ${dateSuspension}    Check Local Time Yesterday
+    Press Key    ${txtInputSuspensionDate}    \\\13
+    Clear Element Text    ${txtInputSuspensionDate}
+    Input Web Text    ${txtInputSuspensionDate}    ${dateSuspension}
     sleep    1
     Click Web Element    ${btnConfirmSuspension}
     sleep    2
