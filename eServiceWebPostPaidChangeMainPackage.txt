@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidChangeMainPackage.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[S03-021]eServiceWeb-PO-ChangeMainPackage-ISWOP
+[S03-021]Test-eServiceWeb-PO-ChangeMainPackage-DefaultPackage-Temp
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -12,5 +12,9 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    ChangeMainPackage
-    Select Package    Xtra Talk    Other Packages
+    Select Package    Xtra Talk    Basic Package
+    Click Web Element    ${rdo850Voice1150Mins}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangMAinPackage}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
