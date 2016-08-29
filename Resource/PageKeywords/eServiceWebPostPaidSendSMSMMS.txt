@@ -4,6 +4,8 @@ Resource          ../PageRepository/eServiceWebPostPaidSendSMSMMSRepository.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          ../PageVariable/eServiceWebPostPaidSendSMSMMSVariable.txt
+Library           ../../../AisRobotBuffet/Library/General/DateTime.py
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
 
 *** Keywords ***
 Time Send in Future

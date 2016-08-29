@@ -688,8 +688,7 @@ Verify SMS
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInsertNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
-    Select From List    ${lstHourFuture}    ${Hour}
-    Select From List    ${lstMinuteFuture}    ${Minute}
+    Time Send in Future
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -700,7 +699,7 @@ Verify SMS
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
-    sleep    30
+    sleep    150
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
@@ -725,8 +724,7 @@ Verify SMS
     Input Web Text    ${txtInsertNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtInsertNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
-    Select From List    ${lstHourFuture}    ${Hour}
-    Select From List    ${lstMinuteFuture}    ${Minute}
+    Time Send in Future
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -832,8 +830,7 @@ Verify SMS
     Input Web Text    ${txtInsertNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
-    Select From List    ${lstHourFuture}    ${Hour}
-    Select From List    ${lstMinuteFuture}    ${Minute}
+    Time Send in Future
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -870,8 +867,7 @@ Verify SMS
     Input Web Text    ${txtInsertNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
-    Select From List    ${lstHourFuture}    ${Hour}
-    Select From List    ${lstMinuteFuture}    ${Minute}
+    Time Send in Future
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
@@ -891,9 +887,14 @@ Verify SMS
 
 test
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
-    ${MessageSendSMSOneNumberComplete}    Replace String    ${MessageSendSMSOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
-    ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "66${SenderName}"
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    udid=${virtual_3PO_1_SN}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
+    ...    deviceName=${virtual_3PO_1_IPAppium}
+    sleep    1
+    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    udid=${virtual_3PO_1_SN}    appPackage=com.sec.android.app.popupcalculator    appActivity=com.sec.android.app.popupcalculator.Calculator
+    ...    deviceName=${virtual_3PO_1_IPAppium}
+    sleep    2
+    Switch App    ${virtual_3PO_1_Platfrom_Name}    mood
+    sleep    2
+    Press Keycode    128
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
