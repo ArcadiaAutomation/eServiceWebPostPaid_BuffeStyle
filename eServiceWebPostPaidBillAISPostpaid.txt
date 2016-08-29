@@ -445,7 +445,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungthaiBank}
@@ -468,7 +468,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThanachartBank}
@@ -491,7 +491,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${SiamCommercialBank}
@@ -515,7 +515,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${UnitedOverseaBank}
@@ -538,7 +538,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungsriayudhyaBank}
@@ -561,7 +561,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThaiMilitaryBank}
@@ -606,12 +606,13 @@ TesteServiceMobile-PO-Login
     AISAppium Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
 
 TestInfo
-    ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
-    ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
-    ...    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
-    sleep    5
-    Log    ${App1.driver}
-    Log    ${App2.index}
-    AISAppium Click Element    name=AIS
-    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
+    Comment    ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any
+    ...    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
+    Comment    ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any
+    ...    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
+    Comment    sleep    5
+    Comment    Log    ${App1.driver}
+    Comment    Log    ${App2.index}
+    Comment    AISAppium Click Element    name=AIS
+    Comment    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
+    log    ${CURDIR}

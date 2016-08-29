@@ -1,0 +1,13 @@
+*** Settings ***
+Resource          ../PageRepository/eServiceWebPostPaidChangeMainPackageRepository.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidChangeMainPackageMessage.txt
+
+*** Keywords ***
+Select Package
+    [Arguments]    ${MainPackage}    ${SubSetPackage}
+    Wait Until Element Is Visible    ${ddlMainPackage}
+    Selenium2Library.Select From List    ${ddlMainPackage}    ${MainPackage}
+    Wait Until Element Is Visible    ${ddlSubSetMainPackage}
+    Selenium2Library.Select From List    ${ddlSubSetMainPackage}    ${SubSetPackage}

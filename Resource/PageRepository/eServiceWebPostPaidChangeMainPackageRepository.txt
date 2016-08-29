@@ -1,0 +1,9 @@
+*** Variables ***
+${titleChangeMainPackage}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[1]/div[1]
+${ddlMainPackage}    xpath=//*[@id="ddlChangPackGroupA"]
+${ddlSubSetMainPackage}    xpath=//*[@id="ddlChangPackGroupB"]
+${rdoISWOPNonStop399}    xpath=//*[@id="lbPackage_P15110495"]
+${rdoISWOPNonStop599}    xpath=//*[@id="lbPackage_P15110496"]
+${rdoISWOPNonStop799}    xpath=//*[@id="lbPackage_P15110497"]
+${rdoISWOPNonStop999}    xpath=//*[@id="lbPackage_P15110498"]
+${btnConfirmPackage}    xpath=//*[@id="btnChangePackConfirm"]
