@@ -198,9 +198,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Cancel Voice
     Register Voice
-    sleep    35
+    @{MessageExpect}    Create List    ${SMSRegisterVoiceCalling}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${SMSRegisterVoiceCalling}
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    @{MessageExpect}    50
     Cancel Voice
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -242,8 +242,9 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
+    @{MessageExpect}    Create List    ${SMSEditDataConfirmOneNumber}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${SMSEditDataConfirm}
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    @{MessageExpect}    30
     Cancel Voice
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -274,8 +275,9 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     sleep    5
+    @{MessageExpect}    Create List    ${SMSEditDataComfirmMorethanOneNumber}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${SMSEditDataComfirmMorethanOneNumber}
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    @{MessageExpect}    30
     Cancel Voice
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
