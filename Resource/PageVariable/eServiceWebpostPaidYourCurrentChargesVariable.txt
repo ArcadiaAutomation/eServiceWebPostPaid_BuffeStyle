@@ -2,3 +2,5 @@
 ${CIDLessThan13Digit}    433599504902
 ${WrongCID}       4335995049022
 ${CharacterSet}    QWERTY
+${BeginLoop}      0
+${EndLoop}        3

@@ -71,12 +71,10 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    YourCurrentCharges
-    :FOR    ${INDEX}    IN RANGE    0    3
+    : FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
     \    Input Citizen ID    ${WrongCID}
     \    Confirm Citizen ID
-    \    Wait Web Until Page Contains Element    ${btnConfirmWrongCID}
-    \    Selenium2Library.Click Element    ${btnConfirmWrongCID}
-    \    Comment    Run Keyword If    ${INDEX}<2    Click Web Element    ${btnConfirmWrongCID}    ElSE IF
-    \    ...    ${INDEX}>2    Click Web Element
-    Close All Browsers
+    \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
+    \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
+    \    Log    Index='${INDEX}'
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
