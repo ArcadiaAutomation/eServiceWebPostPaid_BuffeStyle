@@ -3,6 +3,7 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebpostPaidUsageDetailHistoryRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebpostPaidUsageDetailHistoryMessage.txt
+Resource          ../PageVariable/eServiceWebpostPaidUsageDetailHistoryVariable.txt
 
 *** Keywords ***
 Input Citizen ID
@@ -17,3 +18,12 @@ Verify login Citizen ID
 Confirm Citizen ID
     Wait Web Until Page Contains Element    ${btnConfirmCitizenId}
     Click Web Element    ${btnConfirmCitizenId}
+
+Select Bill Cycle
+    Click Web Element    ${rdbBillCycle}
+
+Clear Call CheckBox
+    Click Web Element    ${chkVoiceCall}
+
+Confirm Filter Usage Detail
+    Click Web Element    ${btnConfirmFilterUsageDetail}

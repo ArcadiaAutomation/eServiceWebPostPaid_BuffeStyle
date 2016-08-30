@@ -1,5 +1,8 @@
 *** Variables ***
 ${txtCitizenId}    xpath=//*[@id="textfield"]
-${btnConfirmCitizenId}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[2]/div/a/div
-${YourCurrentChargesDialogMessage}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div
-${btnConfirmWrongCID}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[2]/a/div
+${btnConfirmCitizenId}    //*[@id="main"]/div[2]/section/div/div[3]/div[1]/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[2]/div/a/div
+${YourCurrentChargesDialogMessage}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[1]/div/div/div[2]/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div
+${btnConfirmWrongCID}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[1]/div/div/div[2]/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[2]/a/div
+${rdbBillCycle}    xpath=//*[@id="rdoCdrInvoice0"]
+${chkVoiceCall}    xpath=//*[@id="chkCdrVoice5"]
+${btnConfirmFilterUsageDetail}    xpath=//*[@id="btnCdrConfirm"]
