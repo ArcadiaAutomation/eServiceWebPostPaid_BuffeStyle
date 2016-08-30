@@ -4,6 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
 Resource          ../Config/LocalConfig.txt
 Library           robot.api
 Library           robot.conf.settings
+Library           DateTime
 
 *** Test Cases ***
 test
@@ -35,6 +36,7 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
+    ${date} =    Add Time To Date    2014-05-28 12:05:03.111    7 days
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
