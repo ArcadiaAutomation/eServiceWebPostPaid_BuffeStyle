@@ -24,3 +24,4 @@ ${mnuCallScreening}    xpath=//*[@id="menu-19"]/span
 ${mnuPerferAndCancelSMS}    xpath=//*[@id="menu-22"]/span
 ${mnuNumberSuspension}    xpath=//*[@id="menu-21"]/span
 ${mnuYourCurrentCharges}    xpath=//*[@id="menu-72"]
+${mnuUsageDetailHistory}    xpath=//*[@id="menu-7"]

@@ -2,4 +2,4 @@
 ${messageInputCIDLessThan13Digit}    The national ID card number you have entered is not the same as the one you previously provided.\nPlease enter again.
 ${messageInputWrongCID}    The national ID card number you have entered is not the same as the one you previously provided.\nPlease enter again.
 ${messageNotInputCID}    Please enter Card Number.
-${messageWrongInputCIDThan3Time}    ${EMPTY}
+${messageWrongInputCIDThan3Time}    You have entered incorrect national ID card number more than three times. Please sign out and try again later.

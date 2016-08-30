@@ -1,0 +1,19 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebpostPaidUsageDetailHistoryRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebpostPaidUsageDetailHistoryMessage.txt
+
+*** Keywords ***
+Input Citizen ID
+    [Arguments]    ${Text}
+    Input Web Text    ${txtCitizenId}    ${Text}
+
+Verify login Citizen ID
+    [Arguments]    ${locator}    ${Text}
+    Selenium2Library.Wait Until Page Contains Element    ${locator}
+    Element Text Should Be    ${locator}    ${Text}
+
+Confirm Citizen ID
+    Wait Web Until Page Contains Element    ${btnConfirmCitizenId}
+    Click Web Element    ${btnConfirmCitizenId}

@@ -76,5 +76,5 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     \    Confirm Citizen ID
     \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
-    \    Log    Index='${INDEX}'
+    Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
