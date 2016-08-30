@@ -12,3 +12,4 @@ ${btnDateCalendarSuspensionYesterday}    xpath=//*[@id="ui-datepicker-div"]/tabl
 ${btnDateCalendarReconnectTomorrow}    xpath=//*[@id="ui-datepicker-div"]/table/tbody/tr[4]/td[6]/a
 ${btnDateCalendarReconnectYesterday}    xpath=//*[@id="ui-datepicker-div"]/table/tbody/tr[4]/td[4]/a
 ${txtMenuSuspension}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div/div[2]/div[2]/div/div[1]
+${txtNotInputDateDialog}    xpath=//*[@id="popup_detail"]/div[1]

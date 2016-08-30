@@ -2,3 +2,8 @@
 ${btnConfirmPerferCancelSMS}    xpath=//*[@id="panelGeneralSuppressMSG"]/div[2]/a[1]
 ${btnNotGetSMS}    xpath=//*[@id="panelSMSNonAIS"]/div/div/div[4]/label
 ${btnNotGetSMSfromAIS}    xpath=//*[@id="panelAISSendSMSAllContent"]/div[2]/div/div[4]/label
+${txtConfirmDialog}    xpath=//*[@id="popup_detail"]/div[1]
+${btnGetSMS}      xpath=//*[@id="panelSMSNonAIS"]/div/div/div[1]/label
+${btnGetSMSfromAIS}    xpath=//*[@id="panelAISSendSMSAllContent"]/div[2]/div/div[1]/label
+${btnCloseDialog}    xpath=//*[@id="btnCloseFn"]/div
+${txtDetailSuspensionDialog}    xpath=//*[@id="txtAlertMessage"]/div

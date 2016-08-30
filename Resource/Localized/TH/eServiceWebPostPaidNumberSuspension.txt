@@ -1,0 +1,2 @@
+*** Variables ***
+${notInputDateSuspension}    Please enter the date you would like to suspend the service.

@@ -1,0 +1,2 @@
+*** Variables ***
+${notInputDateSuspension}    กรุณาระบุวันที่ต้องการระงับบริการชั่วคราว
