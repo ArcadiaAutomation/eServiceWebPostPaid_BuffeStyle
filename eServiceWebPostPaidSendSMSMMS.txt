@@ -624,7 +624,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    60
     Close Browser
@@ -657,7 +657,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSMorethanOneNumberComplete}
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    60
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -693,7 +693,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
     sleep    180
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    15
     Close Browser
@@ -730,7 +730,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
     sleep    180
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    15
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -764,7 +764,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    60
     Close Browser
@@ -799,7 +799,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    60
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -836,7 +836,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
     sleep    180
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    15
     Close Browser
@@ -874,7 +874,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
     sleep    180
-    @{MessageExpect}    Create dict    ${Messageสวัสดี}
+    @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${lo_RUN_3PO_2_Platfrom_Name}    ${lo_RUN_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    @{MessageExpect}    15
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
