@@ -5,10 +5,10 @@ Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          ../PageRepository/eServiceWebPostPaidCallScreeningRepository.txt
 
 *** Keywords ***
-Set Status Inaction Welcome Calls
+Set Status Inactive Welcome Calls
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnCallScreeningStatusRegister}
-    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtDialogConfirmCallScreening}    2
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSummaryMessage}    2
     Log To Console    ${result}
     Run Keyword If    '${result}'=='False'    Click Web Element    ${btnCloseCallScreeningDialog}
     Run Keyword If    '${result}'=='True'    Confirm Status
@@ -16,7 +16,7 @@ Set Status Inaction Welcome Calls
 Set Status Active Welcome Calls
     Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnCallScreeningStatusRegister}
-    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtDialogConfirmCallScreening}    2
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSummaryMessage}    2
     Log To Console    ${result}
     Run Keyword If    '${result}'=='False'    Click Web Element    ${btnCloseCallScreeningDialog}
     Run Keyword If    '${result}'=='True'    Confirm Status
