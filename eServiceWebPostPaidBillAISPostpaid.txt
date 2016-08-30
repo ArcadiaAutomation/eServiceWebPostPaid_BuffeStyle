@@ -15,8 +15,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnOK}
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    '${msg}' != '${MessageNotSelectPaymentType}'    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotSelectPaymentType}
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -33,8 +32,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Click Web Element    ${btnOK}
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    '${msg}' != '${MessageNotSelectCardType}'    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotSelectCardType}
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -51,8 +49,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Click Web Element    ${btnOK}
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    '${msg}' != '${MessageNotSelectBank}'    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotSelectBank}
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -70,8 +67,7 @@ Resource          ../Config/LocalConfig.txt
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
     Click Web Element    ${btnOK}
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    '${msg}' != '${MessageInputZeroAmount}'    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageInputZeroAmount}
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -88,8 +84,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    092302694
     Click Web Element    ${btnComfirmDesNumber}
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    '${msg}' != '${MessageNotInput10digit}'    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotInput10digit}
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -105,8 +100,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    061a
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    '${msg}' != '${MessageInputChar}'    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageInputChar}
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -123,8 +117,9 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    0932015586
     Click Web Element    ${btnComfirmDesNumber}
-    ${msg}    Get Web Text    ${lbInputPrepaid}
-    Run Keyword if    """${msg}""" != """${MessageInputPrepaidNumber}"""    Fail
+    Web Element Text Should Be    ${lbInputPrepaid}    ${MessageInputPrepaidNumber}
+    Comment    ${msg}    Get Web Text    ${lbInputPrepaid}
+    Comment    Run Keyword if    """${msg}""" != """${MessageInputPrepaidNumber}"""    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -141,8 +136,9 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnComfirmDesNumber}
-    ${msg}    Get Web Text    ${lbPopUpDialog}
-    Run Keyword if    """${msg}""" != """${MessageNotInput10digit}"""    Fail
+    Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotInput10digit}
+    Comment    ${msg}    Get Web Text    ${lbPopUpDialog}
+    Comment    Run Keyword if    """${msg}""" != """${MessageNotInput10digit}"""    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -200,7 +196,10 @@ Resource          ../Config/LocalConfig.txt
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
     Click Web Element    ${btnOK}
-    Wait Until Element Is Visible    ${imgAMEXCard}    10
+    Comment    Wait Until Element Is Visible    ${imgAMEXCard}    10
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -346,7 +345,6 @@ Resource          ../Config/LocalConfig.txt
 [S05-011]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withMASTER
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -354,9 +352,8 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${CreditCard}
     Select Card Name    MASTER
@@ -377,14 +374,15 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
     Click Web Element    ${btnOK}
-    Wait Until Element Is Visible    ${imgAMEXCard}    10
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -398,9 +396,8 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
@@ -421,9 +418,8 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_RUN_3PO_2_Number}
+    Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
     Select Payment Type    ${DebitCard}
     Click Web Element    ${btnOK}
@@ -443,7 +439,6 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
@@ -466,7 +461,6 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
@@ -489,7 +483,6 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
@@ -513,7 +506,6 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
@@ -536,7 +528,6 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
@@ -559,7 +550,6 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
-    Input Web Text    ${txtAmount}    1000
     Click Web Element    ${btnPayment2Another}
     Input Web Text    ${txtDestinationNumber}    ${Number_3PO}
     Click Web Element    ${btnComfirmDesNumber}
@@ -573,6 +563,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 TestOpenAppMobile
+    [Tags]    test
     ${driver1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=9201176364de23eb
     ${driver2}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
@@ -583,6 +574,7 @@ TestOpenAppMobile
     AISAppium Set Network Connection Status    1    ${driver2}
 
 TesteServiceMobile-PO-Login
+    [Tags]    test
     ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
     ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
     ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
@@ -606,6 +598,7 @@ TesteServiceMobile-PO-Login
     AISAppium Click Element    xpath=//*[@resource-id="com.ais.mimo.eservice:id/btn_submit_password"]    ${App1}
 
 TestInfo
+    [Tags]    test
     Comment    ${App1}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any
     ...    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
     Comment    ${App2}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any

@@ -1,0 +1,3 @@
+*** Variables ***
+${notInputChange}    Please specify the service you would like to change.
+${confirmPerferCancelSMS}    SMS ข่าวสารโฆษณาที่ส่งจากเอไอเอส\n\nSMS ทั้งหมดที่ส่งจากเอไอเอส\n\nการเปลี่ยนแปลงข้อมูล จะดำเนินการเรียบร้อยภายใน 24 ชั่วโมง

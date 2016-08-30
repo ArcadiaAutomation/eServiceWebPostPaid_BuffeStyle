@@ -1,0 +1,6 @@
+*** Variables ***
+${notInputDateSuspension}    Please enter the date you would like to suspend the service.
+${notInputReason}    Please select the reason of your service suspension.
+${notInputDateReconnect}    Please select reconnect date.
+${inputDateSuspensionYesterday}    Please select suspend date greather than today.
+${inputDateReconnectYesterday}    Please select suspend date greather than today.

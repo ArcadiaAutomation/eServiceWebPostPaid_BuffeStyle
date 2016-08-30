@@ -4,6 +4,7 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Library           ../../../AisRobotBuffet/Library/General/DateTime.py
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidNumberSuspension.txt
 
 *** Keywords ***
 Check Local Time Tomorrow
