@@ -6,7 +6,7 @@ Resource          ../Config/LocalConfig.txt
 [F05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -17,12 +17,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotSelectPaymentType}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-002]eServiceWeb-PO-BillAISPostpaid-NotSelectCardType
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -34,12 +34,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotSelectCardType}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-003]eServiceWeb-PO-BillAISPostpaid-NotSelectBank
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -51,12 +51,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotSelectBank}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-004]eServiceWeb-PO-BillAISPostpaid-InputZeroAmount
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -69,12 +69,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Web Element Text Should Be    ${lbPopUpDialog}    ${MessageInputZeroAmount}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-005]eServiceWeb-PO-BillAISPostpaid-Payment2Another-NotInput10digitNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -86,12 +86,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnComfirmDesNumber}
     Web Element Text Should Be    ${lbPopUpDialog}    ${MessageNotInput10digit}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-006]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputChar
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -102,12 +102,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtDestinationNumber}    061a
     Web Element Text Should Be    ${lbPopUpDialog}    ${MessageInputChar}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-007]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputPrepaidNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -121,12 +121,12 @@ Resource          ../Config/LocalConfig.txt
     Comment    ${msg}    Get Web Text    ${lbInputPrepaid}
     Comment    Run Keyword if    """${msg}""" != """${MessageInputPrepaidNumber}"""    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [F05-008]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputSelfNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -140,12 +140,12 @@ Resource          ../Config/LocalConfig.txt
     Comment    ${msg}    Get Web Text    ${lbPopUpDialog}
     Comment    Run Keyword if    """${msg}""" != """${MessageNotInput10digit}"""    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-001]eServiceWeb-PO-BillAISPostpaid-PayWithMASTERcard
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -160,12 +160,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-002]eServiceWeb-PO-BillAISPostpaid-PayWithVISAcard
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -180,12 +180,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-003]eServiceWeb-PO-BillAISPostpaid-PayWithAMEXcard
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -201,12 +201,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-004]eServiceWeb-PO-BillAISPostpaid-PayWithDebitcard
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -220,12 +220,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-005]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-KTC
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -240,12 +240,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlKTBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-006]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThanachartBank
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -260,12 +260,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlThanachartBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-007]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-SCB
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -280,12 +280,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlSCBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-008]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-UOB
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -300,12 +300,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlUOBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-009]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-Krungsriayudhya
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -320,12 +320,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlKrungsriBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-010]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThaiMilitaryBank
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -340,12 +340,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlTMBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-011]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withMASTER
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -362,12 +362,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-012]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withAMEX
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -384,12 +384,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-013]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withVISA
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -406,12 +406,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-014]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withDebit
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -427,12 +427,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-015]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-KTC
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -449,12 +449,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlKTBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-016]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-ThanachartBank
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -471,12 +471,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlThanachartBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-017]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-SCB
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -494,12 +494,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlSCBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-018]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-UOB
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -516,12 +516,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlUOBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-019]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-Krungsriayudhya
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -538,12 +538,12 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlKrungsriBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 [S05-020]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-ThaiMilitaryBank
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -560,7 +560,7 @@ Resource          ../Config/LocalConfig.txt
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlTMBbank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#Dict_device_name}
 
 TestOpenAppMobile
     [Tags]    test
