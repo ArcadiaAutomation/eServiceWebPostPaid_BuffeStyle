@@ -1,2 +1,6 @@
 *** Variables ***
-${notInputDateSuspension}    Please enter the date you would like to suspend the service.
+${notInputDateSuspension}    กรุณาระบุวันที่ต้องการระงับบริการชั่วคราว
+${notInputReason}    กรุณาระบุเหตุผลที่ระงับบริการ
+${notInputDateReconnect}    กรุณาระบุวันที่เปิดบริการ
+${inputDateSuspensionYesterday}    กรุณาระบุวันที่ ที่มากกว่าวันปัจจุบัน
+${inputDateReconnectYesterday}    กรุณาระบุวันที่ ที่มากกว่าวันปัจจุบัน
