@@ -14,7 +14,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Select Menu    Service    PerferAndCancelSMS
     Click Web Element    ${btnConfirmPerferCancelSMS}
     Web Element Text Should Be    ${txtConfirmDialog}    ${notInputChange}
-    sleep    2
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -32,7 +31,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Comment    not Input Reason in this case
     Click Web Element    ${btnConfirmPerferCancelSMS}
     Web Element Text Should Be    ${txtDetailSuspensionDialog}    ${confirmPerferCancelSMS}
-    sleep    2
     Click Web Element    ${btnCloseDialog}
     Click Web Element    ${btnGetSMS}
     Click Web Element    ${btnGetSMSfromAIS}
