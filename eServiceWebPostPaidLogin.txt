@@ -35,6 +35,7 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
+    ${CURDIR}/Dog.jpg
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete

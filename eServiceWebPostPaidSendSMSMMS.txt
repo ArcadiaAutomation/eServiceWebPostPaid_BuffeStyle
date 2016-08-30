@@ -594,7 +594,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnMMSFuture}
     Wait Web Until Page Contains Element    ${btnChooseFile}
-    Choose File    ${btnChooseFile}    D:/LocalConfig/Test.txt
+    Choose File    ${btnChooseFile}    ${NotFilePicture}
     sleep    2
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
@@ -626,7 +626,7 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
     sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -659,9 +659,9 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSMorethanOneNumberComplete}
     sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -694,7 +694,7 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSOneNumberComplete}
     sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -730,9 +730,9 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
     sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -764,7 +764,7 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
     sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageMMS}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageMMS}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -799,9 +799,9 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
     sleep    45
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -835,7 +835,7 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSOneNumberComplete}
     sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageMMS}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageMMS}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -859,7 +859,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInsertNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtInsertNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
-    Choose File    ${btnChooseFile}    D:/ArcadiaAtlas/Robot/Dog.jpg
+    Choose File    ${btnChooseFile}    ${PathPictureMMS}
     Time Send in Future
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
@@ -872,22 +872,24 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
     sleep    180
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${lo_RUN_3PO_2_Platfrom_Name}    ${lo_RUN_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
-    mood Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
+    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${Messageสวัสดี}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 test
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    udid=${virtual_3PO_1_SN}    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
-    ...    deviceName=${virtual_3PO_1_IPAppium}
-    sleep    1
-    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    udid=${virtual_3PO_1_SN}    appPackage=com.sec.android.app.popupcalculator    appActivity=com.sec.android.app.popupcalculator.Calculator
-    ...    deviceName=${virtual_3PO_1_IPAppium}
-    sleep    2
-    Switch App    ${virtual_3PO_1_Platfrom_Name}    mood
-    sleep    2
-    Press Keycode    128
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Service    SMSMMS
+    Click Web Element    ${btnMMS}
+    Click Web Element    ${btnMMSFuture}
+    Wait Web Until Page Contains Element    ${btnChooseFile}
+    Log    ${PathPictureMMS}
+    Choose File    ${btnChooseFile}    ${PathPictureMMS}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

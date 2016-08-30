@@ -1,3 +1,5 @@
 *** Variables ***
 ${MessageSendComplete}    ขณะนี้คุณเอ้ได้เปลี่ยนเบอร์จาก0922222222เป็น[3PO_1_Number]แล้ว
 ${PageMain}       ยินดีต้อนรับ
+${TestFileFail}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidSendSMSMMS\\TestFail.txt
+${FileExcelMobileNo.OneNumber}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidNewNumber\\MobileNoOneNumber.xls

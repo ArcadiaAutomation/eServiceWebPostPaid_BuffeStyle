@@ -3,3 +3,5 @@ ${Messageสวัสดี}    สวัสดี
 ${MessageMMS}     MMS
 ${Cancel}         คุณได้ยกเลิกบริการ *144 ต่อสายด้วยเสียง
 ${Register}       คุณสมัครบริการต่อสายด้วยเสียงเรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
+${PathPictureMMS}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidSendSMSMMS\\Dog.jpg
+${NotFilePicture}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidSendSMSMMS\\TestFail.txt

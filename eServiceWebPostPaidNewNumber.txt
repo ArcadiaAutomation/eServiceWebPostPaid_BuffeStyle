@@ -78,7 +78,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    0924260606
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    มานี
+    Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnOK}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseSelectMessage}
     Close Browser
@@ -96,7 +96,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    0924260606
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    มานี
+    Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnSelectFile}
     Click Web Element    ${btnOK}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseSelectFile}
@@ -113,11 +113,10 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NewNumber
     Wait Web Until Page Contains Element    ${txtNumber1}
-    Input Web Text    ${txtNumber1}    0924260606
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    มานี
+    Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnSelectFile}
-    Choose File    ${btnChooseFile}    D:/LocalConfig/Test.txt
+    Choose File    ${btnChooseFile}    ${TestFileFail}
     Element Should Contain    ${lblDialogMessage}    ${MessageSelectFileXls}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
@@ -228,3 +227,49 @@ Resource          ../Config/LocalConfig.txt
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
     mood Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    1    ${SenderName}    ${MessageSendComplete}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+[S07-212]eServiceWeb-PO-Service-NewNumber-SelectFileOneNumber-Formal
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
+    ${SenderName}    Set Variable    "66${SenderName}"
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    NewNumber
+    Wait Until Element Is Visible    ${btnSelectFile}
+    Click Web Element    ${btnSelectFile}
+    Choose File    ${btnChooseFile}    ${FileExcelMobileNo.OneNumber}
+    Input Web Text    ${txtNumberFrom}    0922222222
+    Input Web Text    ${txtFromName}    เอ้
+    Click Web Element    ${btnFormal}
+    Select From List    ${ldlSelectMessage}    1
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
+    Element Should Contain    ${ldlCheckMessageBeforeSend}    ${MessageBeforeSendFormal}
+    Click Web Element    ${btnConfirmSend}
+    Wait Web Until Page Contains Element    ${ldlCheckMessageAfterSend}
+    Element Should Contain    ${ldlCheckMessageAfterSend}    ${MessageAfterSend}
+    Click Web Element    ${btnNotWantAdd}
+    Wait Web Until Page Contains Element    ${ldlPageMain}
+    Element Should Contain    ${ldlPageMain}    ${PageMain}
+    sleep    30
+    Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
+    mood Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    1    ${SenderName}    ${MessageSendComplete}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+
+Excel
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Log To Console    ${CURDIR}
+    Open Excel    ${FileExcelMobileNo.OneNumber}
+    Put String To Cell    Test1    2    2    ${virtual_3PO_1_Number}
+    Save Excel    MobileNoOneNumber.xls
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
