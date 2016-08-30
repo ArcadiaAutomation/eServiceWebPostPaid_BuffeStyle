@@ -742,7 +742,7 @@ Resource          ../Config/LocalConfig.txt
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageMMSOneNumberComplete}    Replace String    ${MessageMMSOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "${SenderName}@M"
+    ${SenderName}    Set Variable    "66${SenderName}@M"
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -776,7 +776,7 @@ Resource          ../Config/LocalConfig.txt
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_3_Number]    ${virtual_3PO_3_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "${SenderName}@M"
+    ${SenderName}    Set Variable    "66${SenderName}@M"
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -811,7 +811,7 @@ Resource          ../Config/LocalConfig.txt
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageMMSOneNumberComplete}    Replace String    ${MessageMMSOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "${SenderName}@M"
+    ${SenderName}    Set Variable    "66${SenderName}@M"
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -847,7 +847,7 @@ Resource          ../Config/LocalConfig.txt
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_3_Number]    ${virtual_3PO_3_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "${SenderName}@M"
+    ${SenderName}    Set Variable    "66${SenderName}@M"
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
