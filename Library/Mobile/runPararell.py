@@ -19,17 +19,21 @@ def parallel_execution():
     path = sys.argv[1]+'\\'+sys.argv[2]
     suite = TestSuiteBuilder().build(path)
     tests = suite.tests
-    #for i in range(3, sys.argv.__len__()):
+    #for test in range(3, sys.argv.__len__()):
     for test in tests:
-        run_name.append(test)
+         run_name.append(str(test))
+    print run_name
+    pool = Pool(processes=11)
+    pool.map(run, run_name)
+    # pool.map(run, ['test', '[F01-001]eServiceWeb-PO-Login-NumberNotComplete', '[F01-002]eServiceWeb-PO-Login-NumberDtac',
+    #                '[F01-003]eServiceWeb-PO-Login-OtpNotcomplete',
+    #                '[F01-004]eServiceWeb-PO-Login-InputWrongOtp', '[F01-005]eServiceWeb-PO-Login-NotInputOtp',
+    #                '[F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter', '[F01-007]eServiceWeb-PO-Login-CancelOtp',
+    #                'TestPararell1', 'TestPararell2', 'TestPararell3'])
 
-    if __name__ == "__main__":
-        pool = Pool(processes=sys.argv.__len__() - 3)
-        pool.map(run, run_name)
 
 if __name__ == "__main__":
-     parallel_execution()
-
+    parallel_execution()
 
 
 

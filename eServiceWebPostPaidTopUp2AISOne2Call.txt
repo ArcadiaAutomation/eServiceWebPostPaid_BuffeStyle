@@ -5,7 +5,7 @@ Resource          ../Config/LocalConfig.txt
 *** Variables ***
 
 *** Test Cases ***
-[S05-001]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithVISA
+[S05-001]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithVISA
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
@@ -27,7 +27,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[S05-002]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithMASTER
+[S05-002]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithMASTER
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
@@ -49,7 +49,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[S05-003]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithDebit
+[S05-003]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithDebit
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
@@ -70,7 +70,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[S05-004]eServiceWeb-PO-TopUptoAISOne2Call-TopUpWithAISTopUp
+[S05-004]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithAISTopUp
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
@@ -101,9 +101,10 @@ Resource          ../Config/LocalConfig.txt
     @{TopUpSrcActualMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{TopUpSrcActualMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-191]eServiceWeb-PO-TopUptoAISOne2Call-NotSelectCard
+[F05-191]eServiceWeb-PO-TopUp2AISOne2Call-NotSelectCard
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -121,7 +122,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-192]eServiceWeb-PO-TopUptoAISOne2Call-InputCharToIDCitation
+[F05-192]eServiceWeb-PO-TopUp2AISOne2Call-InputCharToIDCitation
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -140,7 +141,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-193]eServiceWeb-PO-TopUptoAISOne2Call-InputNotCompleteIDCitation
+[F05-193]eServiceWeb-PO-TopUp2AISOne2Call-InputNotCompleteIDCitation
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -159,7 +160,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-194]eServiceWeb-PO-TopUptoAISOne2Call-InputCharToDesNumber
+[F05-194]eServiceWeb-PO-TopUp2AISOne2Call-InputCharToDesNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -175,7 +176,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-195]eServiceWeb-PO-TopUptoAISOne2Call-InputNotCompleteDesNumber
+[F05-195]eServiceWeb-PO-TopUp2AISOne2Call-InputNotCompleteDesNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -192,7 +193,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-196]eServiceWeb-PO-TopUptoAISOne2Call-InputNotAISNumberToDesNumber
+[F05-196]eServiceWeb-PO-TopUp2AISOne2Call-InputNotAISNumberToDesNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -210,7 +211,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
-[F05-197]eServiceWeb-PO-TopUptoAISOne2Call-InputAISPostpaidNumber
+[F05-197]eServiceWeb-PO-TopUp2AISOne2Call-InputAISPostpaidNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
