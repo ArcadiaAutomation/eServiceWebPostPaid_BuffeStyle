@@ -14,6 +14,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Select Menu    Service    CallScreening
     Click Web Element    ${btnCallScreeningRegisterConfirm}
     Click Web Element    ${btnCancelCallScreenRegister}
+    Comment    can not test again
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -30,6 +31,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnCallScreeningStatusRegister}
+    Web Element Text Should Be    ${txtAlertDialog}    ${notChangeStatusCallScreening}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -43,7 +45,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
     Click Web Element    ${tabWelcomeCalls}
-    Click Web Element    ${btnConfirmWelcomeCalls}
+    Click Web Element    ${btnAddNumber}
+    Web Element Text Should Be    ${txtAlertDialog}    ${notInputNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -58,6 +61,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Select Menu    Service    CallScreening
     Click Web Element    ${tabWelcomeCalls}
     Input Web Text    ${txtInputNumberMobile}    Test
+    Web Element Text Should Be    ${txtAlertDialog}    ${inputText}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -73,6 +77,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabWelcomeCalls}
     Input Web Text    ${txtInputNumberMobile}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnAddNumber}
+    Web Element Text Should Be    ${txtAlertDialog}    ${inputOwnNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -88,6 +93,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabWelcomeCalls}
     Input Web Text    ${txtInputNumberMobile}    999999999
     Click Web Element    ${btnAddNumber}
+    Web Element Text Should Be    ${txtAlertDialog}    ${inputWrongNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -103,6 +109,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabWelcomeCalls}
     Input Web Text    ${txtInputNumberMobile}    02
     Click Web Element    ${btnAddNumber}
+    Web Element Text Should Be    ${txtAlertDialog}    ${notInputCompleteNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -119,6 +126,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnCallScreeningStatusRegister}
+    Web Element Text Should Be    ${txtAlertDialog}    ${notChangeStatusCallScreening}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -133,6 +141,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Select Menu    Service    CallScreening
     Click Web Element    ${tabBlockCalls}
     Click Web Element    ${btnConfirmBlockCalls}
+    Web Element Text Should Be    ${txtAlertDialog}    ${notInputNumberBlock}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -147,6 +156,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Select Menu    Service    CallScreening
     Click Web Element    ${tabBlockCalls}
     Input Web Text    ${txtInputNumberMobileBlock}    Test
+    Web Element Text Should Be    ${txtAlertDialog}    ${inputText}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -162,6 +172,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabBlockCalls}
     Input Web Text    ${txtInputNumberMobileBlock}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnAddNumberBlock}
+    Web Element Text Should Be    ${txtAlertDialog}    ${inputOwnNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -177,6 +188,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabBlockCalls}
     Input Web Text    ${txtInputNumberMobileBlock}    999999999
     Click Web Element    ${btnAddNumberBlock}
+    Web Element Text Should Be    ${txtAlertDialog}    ${inputWrongNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
@@ -192,5 +204,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${tabBlockCalls}
     Input Web Text    ${txtInputNumberMobileBlock}    02
     Click Web Element    ${btnAddNumberBlock}
+    Web Element Text Should Be    ${txtAlertDialog}    ${notInputCompleteNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

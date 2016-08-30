@@ -3,6 +3,7 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          ../PageRepository/eServiceWebPostPaidCallScreeningRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCallScreening.txt
 
 *** Keywords ***
 Set Status Inactive Welcome Calls

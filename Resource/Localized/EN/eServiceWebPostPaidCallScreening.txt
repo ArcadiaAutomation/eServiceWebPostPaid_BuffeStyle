@@ -1,0 +1,8 @@
+*** Variables ***
+${notChangeStatusCallScreening}    Please, Change you setting of Call Screening service. Try again
+${notInputNumber}    Please enter the destination number for Welcome Calls list.
+${inputText}      Please enter numerical data only.
+${inputOwnNumber}    Please enter other phone number, except your own number.
+${inputWrongNumber}    Please enter a valid phone number (9-digit format for a fixed line number OR 10-digit format for a mobile number).
+${notInputCompleteNumber}    The mobile phone number is entered incorrectly.
+${notInputNumberBlock}    Please enter the destination number for Blocked Calls list.

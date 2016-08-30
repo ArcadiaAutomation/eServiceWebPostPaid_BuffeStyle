@@ -18,3 +18,4 @@ ${btnCloseCallScreeningDialog}    xpath=//*[@id="btnAlertConfirm"]/div
 ${btnConfirmCallScreeningDialog}    xpath=//*[@id="btnAction0"]/div
 ${btnBackToCallScreeningDialog}    xpath=//*[@id="btnCloseFn"]/div
 ${txtDialogConfirmCallScreening}    xpath=//*[@id="txtAlertMessage"]/div
+${txtAlertDialog}    xpath=//*[@id="popup_detail"]/div[1]
