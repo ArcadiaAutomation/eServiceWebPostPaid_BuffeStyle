@@ -15,7 +15,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Input Citizen ID    ${CIDLessThan13Digit}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-020]eServiceWeb-PO-YourCurrentCharge-WrongCID
@@ -30,7 +30,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Input Citizen ID    ${WrongCID}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-021]eServiceWeb-PO-YourCurrentCharge-InputCIDWithCharacter
@@ -45,7 +45,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Input Citizen ID    ${CharacterSet}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-022]eServiceWeb-PO-YourCurrentCharge-NotInputCID
@@ -59,7 +59,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Select Menu    YouBalanceAndCreditLimit    YourCurrentCharges
     Confirm Citizen ID
     Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-023]eServiceWeb-PO-YourCurrentCharge-InputWrongCID3Time
@@ -76,5 +76,5 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     \    Confirm Citizen ID
     \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

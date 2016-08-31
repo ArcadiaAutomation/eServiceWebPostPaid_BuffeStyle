@@ -15,7 +15,7 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Value    ${ddlXtraPack}    2
     Click Web Element    ${btnChangePackConfirm}
     Web Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-014]eServiceWeb-PO-OnTopPackage-RegisterDuplicateXtraTalkPackage
@@ -34,7 +34,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-015]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
@@ -60,7 +60,7 @@ Resource          ../Config/LocalConfig.txt
     Comment    Click Web Element    ${btnChangePackConfirm3}
     Comment    Web Element Text Should Be    ${tbSelectPackageStep4}    ${MessageInputFriendNumberWithDtacNumber}
     Comment    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-016]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberLessThan10Digit
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -77,7 +77,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnChangePackConfirm}
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputFriendNumberLessThan10Digit}
     Click Web Element    ${btnDialogClose}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-017]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberWithCharacter
@@ -93,7 +93,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtFriendNumber1}    a
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputFriendNumberWithCharacter}
     Click Web Element    ${btnDialogClose}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-018]eServiceWeb-PO-OnTopPackage-RegisteDuplicaterXtraNetPackage
@@ -111,5 +111,5 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Web Element Text Should Be    ${lblSelectPackageResult}    ${MessageRegisterDuplicateXtraNetPackage}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

@@ -15,7 +15,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Input Citizen ID    ${CIDLessThan13Digit}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-025]eServiceWeb-PO-UsageDetailHistory-InputWrongCID
@@ -30,7 +30,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Input Citizen ID    ${WrongCID}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-026]eServiceWeb-PO-UsageDetailHistory-InputCIDWithCharacter
@@ -45,7 +45,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Input Citizen ID    ${CharacterSet}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-027]eServiceWeb-PO-UsageDetailHistory-NotInputCID
@@ -59,7 +59,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
     Confirm Citizen ID
     Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-028]eServiceWeb-PO-UsageDetailHistory-InputWrongCID3Time
@@ -77,7 +77,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
     \    log    'INDEX='${INDEX}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F04-029]eServiceWeb-PO-UsageDetailHistory-NotSelectUsageDetailFilter
@@ -95,5 +95,5 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Clear Call CheckBox
     Confirm Filter Usage Detail
     Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectFilter}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

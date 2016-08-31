@@ -15,7 +15,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Click Web Image    ${imgMySuperPlanPage}
     Confirm My Super Plan
     Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMySuperPlanPackage}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
@@ -31,7 +31,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPackage2200Min
     Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${MainPackageExpensiveThanPostPaidPackage}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
@@ -49,7 +49,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
     Sleep    2
     Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMainPackage}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-011]eServiceWeb-PO-MysuperPlan-NotAcceptMySuperPlanRule
@@ -68,7 +68,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Confirm My Super Plan
     Sleep    2
     Element Should Be Visible    ${lblAcceptRule}
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-012]eServiceWeb-PO-MysuperPlan-CancelMySuperPlan
@@ -87,5 +87,5 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Cancel My Super Plan
     Sleep    2
     Element Text Should Be    ${lblSumMoney }    0
-    Close All Browsers
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

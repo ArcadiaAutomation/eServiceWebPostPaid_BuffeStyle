@@ -108,7 +108,7 @@ test
     Close Browser
     sleep    2
     Close Application
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
     [Tags]    Fail
