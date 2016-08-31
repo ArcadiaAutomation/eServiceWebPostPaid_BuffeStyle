@@ -38,6 +38,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-015]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
+    [Tags]    Package Must Not Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -45,15 +46,19 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    OnTopPackage
-    Select From Web List By Value    ${ddlXtraPack}    0
-    Input Web Text    ${txtFriendNumber1}    0944835961
-    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
-    Web Element Text Should Be    ${tbSelectPackageStep4}    ${MessageInputFriendNumberWithDtacNumber}
-    Close All Browsers
+    Select Menu    Package    CancelOnTopPackage
+    ${OnTopPackageName}=    Get Web Text    ${lblOnTopPackageName}
+    log    ${OnTopPackageName}
+    Comment    Run Keyword If    '${OnTopPackageName}'=
+    Comment    Select Menu    Package    OnTopPackage
+    Comment    Select From Web List By Value    ${ddlXtraPack}    0
+    Comment    Input Web Text    ${txtFriendNumber1}    0944835961
+    Comment    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
+    Comment    Click Web Element    ${btnChangePackConfirm}
+    Comment    Click Web Element    ${btnChangePackConfirm2}
+    Comment    Click Web Element    ${btnChangePackConfirm3}
+    Comment    Web Element Text Should Be    ${tbSelectPackageStep4}    ${MessageInputFriendNumberWithDtacNumber}
+    Comment    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-016]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberLessThan10Digit

@@ -8,3 +8,4 @@ ${btnChangePackConfirm2}    xpath=//*[@id="btnChangePackConfirmDate"]/div
 ${btnChangePackConfirm3}    xpath=//*[@id="btnChangePackConfirmPackDate"]
 ${chkSelectXtraNetPackage4G488Bath}    xpath=//*[@id="lbPackage_P16011359"]
 ${lblSelectPackageResult}    xpath=//*[@id="lbSelectedPackageResult"]
+${lblOnTopPackageName}    xpath=//*[@id="lbPackageName"]
