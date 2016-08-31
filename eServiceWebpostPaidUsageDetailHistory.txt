@@ -16,7 +16,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-025]eServiceWeb-PO-UsageDetailHistory-InputWrongCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -31,7 +31,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-026]eServiceWeb-PO-UsageDetailHistory-InputCIDWithCharacter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -46,7 +46,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-027]eServiceWeb-PO-UsageDetailHistory-NotInputCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -60,7 +60,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-028]eServiceWeb-PO-UsageDetailHistory-InputWrongCID3Time
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -78,7 +78,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
     \    log    'INDEX='${INDEX}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-029]eServiceWeb-PO-UsageDetailHistory-NotSelectUsageDetailFilter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -96,4 +96,4 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Filter Usage Detail
     Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectFilter}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
