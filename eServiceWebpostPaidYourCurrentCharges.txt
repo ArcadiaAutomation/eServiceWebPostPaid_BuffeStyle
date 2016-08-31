@@ -16,7 +16,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-020]eServiceWeb-PO-YourCurrentCharge-WrongCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -31,7 +31,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-021]eServiceWeb-PO-YourCurrentCharge-InputCIDWithCharacter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -46,7 +46,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-022]eServiceWeb-PO-YourCurrentCharge-NotInputCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -60,7 +60,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-023]eServiceWeb-PO-YourCurrentCharge-InputWrongCID3Time
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -77,4 +77,4 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
