@@ -208,7 +208,7 @@ Resource          ../Config/LocalConfig.txt
     Register Voice
     @{MessageExpect}    Create List    ${SMSRegisterVoiceCalling}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    50
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    60
     Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -285,9 +285,9 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     sleep    5
-    @{MessageExpect}    Create List    ${SMSEditDataComfirmMorethanOneNumber}    .*
+    @{MessageExpect}    Create List    ${SMSEditDataComfirmMorethanOneNumber}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_SenderName_AIS3G}    ${MessageExpect}    30
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_SenderName_AIS3G}    ${MessageExpect}    60
     Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
