@@ -4,6 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
 
 *** Test Cases ***
 [F07-241]eServiceWeb-PO-Service-CallScreening-Register
+    [Tags]    NotRegister
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -17,9 +18,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnCancelCallScreenRegister}
     Web Element Text Should Be    ${txtCheckConfirmRegister}    ${checkConfirm}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-242]eServiceWeb-PO-Service-CallScreening-RegisterInactiveConfirm
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -35,9 +37,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnCallScreeningStatusRegister}
     Web Element Text Should Be    ${txtAlertDialog}    ${notChangeStatusCallScreening}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-243]eServiceWeb-PO-Service-CallScreening-WelcomeCallsNotNumber
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -50,9 +53,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumber}
     Web Element Text Should Be    ${txtAlertDialog}    ${notInputNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-244]eServiceWeb-PO-Service-CallScreening-WelcomeCallsInputText
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -65,9 +69,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Input Web Text    ${txtInputNumberMobile}    Test
     Web Element Text Should Be    ${txtAlertDialog}    ${inputText}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-245]eServiceWeb-PO-Service-CallScreening-WelcomeCallsInputMyNumber
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -81,9 +86,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumber}
     Web Element Text Should Be    ${txtAlertDialog}    ${inputOwnNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-246]eServiceWeb-PO-Service-CallScreening-WelcomeCallsInputFalseNumber
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -97,9 +103,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumber}
     Web Element Text Should Be    ${txtAlertDialog}    ${inputWrongNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-247]eServiceWeb-PO-Service-CallScreening-WelcomeCallsInputFalseFormat
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -113,9 +120,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumber}
     Web Element Text Should Be    ${txtAlertDialog}    ${notInputCompleteNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-248]eServiceWeb-PO-Service-CallScreening-RegisterActiveConfirm
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -130,9 +138,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnCallScreeningStatusRegister}
     Web Element Text Should Be    ${txtAlertDialog}    ${notChangeStatusCallScreening}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-249]eServiceWeb-PO-Service-CallScreening-BlockCallsNotNumber
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -145,9 +154,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnConfirmBlockCalls}
     Web Element Text Should Be    ${txtAlertDialog}    ${notInputNumberBlock}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-250]eServiceWeb-PO-Service-CallScreening-BlockCallsWelcomeCallsInputText
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -160,9 +170,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Input Web Text    ${txtInputNumberMobileBlock}    Test
     Web Element Text Should Be    ${txtAlertDialog}    ${inputText}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-251]eServiceWeb-PO-Service-CallScreening-BlockCallsInputMyNumber
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -176,9 +187,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumberBlock}
     Web Element Text Should Be    ${txtAlertDialog}    ${inputOwnNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-252]eServiceWeb-PO-Service-CallScreening-BlockCallsInputFalseNumber
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -192,9 +204,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumberBlock}
     Web Element Text Should Be    ${txtAlertDialog}    ${inputWrongNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-253]eServiceWeb-PO-Service-CallScreening-BlockCallsInputFalseFormat
+    [Tags]    Register
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -208,4 +221,4 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnAddNumberBlock}
     Web Element Text Should Be    ${txtAlertDialog}    ${notInputCompleteNumber}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
