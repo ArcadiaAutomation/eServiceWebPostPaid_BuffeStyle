@@ -49,7 +49,8 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    CancelOnTopPackage
     ${OnTopPackageName}=    Get Web Text    ${lblOnTopPackageName}
     log    ${OnTopPackageName}
-    Comment    Run Keyword If    '${OnTopPackageName}'=
+    log    ${CallAIS3Number}
+    Comment    Run Keyword If    '${OnTopPackageName}'='${CallAIS3Number}'    Log    I FINE TY
     Comment    Select Menu    Package    OnTopPackage
     Comment    Select From Web List By Value    ${ddlXtraPack}    0
     Comment    Input Web Text    ${txtFriendNumber1}    0944835961
