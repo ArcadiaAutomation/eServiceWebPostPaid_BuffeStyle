@@ -6,3 +6,4 @@ ${inputOwnNumber}    Please enter other phone number, except your own number.
 ${inputWrongNumber}    Please enter a valid phone number (9-digit format for a fixed line number OR 10-digit format for a mobile number).
 ${notInputCompleteNumber}    The mobile phone number is entered incorrectly.
 ${notInputNumberBlock}    Please enter the destination number for Blocked Calls list.
+${checkConfirm}    Call Screening service allows you to set your own Welcome Calls list and Blocked Calls list,\neach of which you can add up to 20 numbers. Whether you are in Thailand or abroad,\nCall Screening service can help you stay comfortable with only the calls you wish be in touch with.
