@@ -15,7 +15,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnConfirmPerferCancelSMS}
     Web Element Text Should Be    ${txtConfirmDialog}    ${notInputChange}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-255]eServiceWeb-PO-Service-CancelSMSnotReason
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -36,4 +36,4 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnGetSMSfromAIS}
     Click Web Element    ${btnConfirmPerferCancelSMS}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
