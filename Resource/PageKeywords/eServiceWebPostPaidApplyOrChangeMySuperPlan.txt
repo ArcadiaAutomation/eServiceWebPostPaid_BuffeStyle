@@ -15,6 +15,7 @@ Confirm My Super Plan
 
 Select Main Package
     [Arguments]    ${MainPackageName}
+    Sleep    1
     Wait Web Until Page Contains Element    ${rb${MainPackageName}}
     Selenium2Library.Click Element    ${rb${MainPackageName}}
 
@@ -22,6 +23,7 @@ Select OnTop Package
     [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
     Wait Web Until Page Contains Element    ${btn${OnTopPackageType}}
     Selenium2Library.Click Element    ${btn${OnTopPackageType}}
+    sleep	    3
     Wait Web Until Page Contains Element    ${cb${OnTopPackageName}}
     Selenium2Library.Click Element    ${cb${OnTopPackageName}}
 

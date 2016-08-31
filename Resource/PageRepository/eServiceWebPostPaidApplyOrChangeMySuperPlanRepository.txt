@@ -6,7 +6,7 @@ ${rbMainPacKage250Min}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/
 ${ibPostPaidPackage735Bath}    xpath=//*[@id="warpAllContent"]/div/div[2]/div[2]/ul/li[1]/a/span[1]
 ${cbOnTopPackage80Bath}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div[2]/div/div[6]/div[3]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input
 ${btnOnTopExtraTalkPackage}    xpath=//*[@id="t2"]/div
-${rbMainPackage2200Min}    xpath=//*[@id="BV_step2"]/div[1]/table/tbody/tr[8]/td[1]/input
+${rbMainPackage2200Min}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div[2]/div/div[4]/div[1]/table/tbody/tr[8]/td[1]/input
 ${tbXtraTalkMonthValue}    xpath=//*[@id="xtra_menu_tab1"]
 ${txtConfirmEmail}    xpath=//*[@id="text_behind_mail2"]
 ${btnCancelRegisterMySuperPlan}    xpath=//*[@id="btn_cancel"]
