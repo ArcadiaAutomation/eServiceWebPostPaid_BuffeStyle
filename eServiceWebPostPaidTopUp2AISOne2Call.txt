@@ -9,7 +9,7 @@ Resource          ../Config/LocalConfig.txt
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -19,19 +19,19 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${rdoCreditCard}
     Select From List    ${ddlCardType}    VISA
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [S05-002]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithMASTER
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -41,19 +41,19 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${rdoCreditCard}
     Select From List    ${ddlCardType}    MASTER
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [S05-003]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithDebit
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -62,19 +62,19 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoDebitCard}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlIpayBangkokBank}'    Fail
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [S05-004]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithAISTopUp
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -84,7 +84,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${rdoAISTopUp}
     Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citation}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Comment    ${ActualMsg}    Get Web Text    ${lbComfirmTopUp2DesNumber}
     ${ExpectMsg}=    Replace String    ${ExpectTempMsg}    [desNumber]    ${virtual_3PE_1_Number}
@@ -102,12 +102,13 @@ Resource          ../Config/LocalConfig.txt
     Should Match Regexp    @{TopUpSrcActualMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-191]eServiceWeb-PO-TopUp2AISOne2Call-NotSelectCard
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -116,16 +117,17 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoCreditCard}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Element Text Should Be    ${popupMessage}    ${MessageNotSelectCardType}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-192]eServiceWeb-PO-TopUp2AISOne2Call-InputCharToIDCitation
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -135,16 +137,17 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${rdoAISTopUp}
     Input Web Text    ${txtIDCitation}    a
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputCharToIDCitation}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-193]eServiceWeb-PO-TopUp2AISOne2Call-InputNotCompleteIDCitation
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -154,16 +157,16 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${rdoAISTopUp}
     Input Web Text    ${txtIDCitation}    123456
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
-    Select From List    ${ddlTopUpAmount}    100
+    Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputNotCompleteIDCitation}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-194]eServiceWeb-PO-TopUp2AISOne2Call-InputCharToDesNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -174,12 +177,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtDestinationNumber}    a
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${popupMessage}    ${MessageInputCharToDesNumber}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-195]eServiceWeb-PO-TopUp2AISOne2Call-InputNotCompleteDesNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -191,12 +194,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${popupMessage}    ${MessageInputDesNumberNotComplete}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-196]eServiceWeb-PO-TopUp2AISOne2Call-InputNotAISNumberToDesNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -209,12 +212,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputNotAISNumber}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
 [F05-197]eServiceWeb-PO-TopUp2AISOne2Call-InputAISPostpaidNumber
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#Dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -227,4 +230,4 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputAISPostpaidNumber}
     Close All Browsers
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
