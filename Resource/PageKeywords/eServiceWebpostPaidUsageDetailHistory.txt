@@ -22,8 +22,15 @@ Confirm Citizen ID
 Select Bill Cycle
     Click Web Element    ${rdbBillCycle}
 
-Clear Call CheckBox
+Clear View All Call Filter
     Click Web Element    ${chkVoiceCall}
 
 Confirm Filter Usage Detail
     Click Web Element    ${btnConfirmFilterUsageDetail}
+
+Clear View All InternetAndValueAdd Filter
+    Click Web Element    ${chkViewAllInternetAndValueAdd}
+
+Select Usage Detail Tab
+    [Arguments]    ${TabName}
+    Click Web Element    ${tb${TabName}}
