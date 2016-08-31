@@ -15,9 +15,10 @@ Register Voice
     sleep    1
 
 Cancel Voice
+    [Arguments]    ${TotalSMS}
     Select Menu    Service    Voice_Cancel
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}
-    Run Keyword If    '${result}'=='False'    Sub Cancel
+    Run Keyword If    '${result}'=='False'    Sub Cancel    ${TotalSMS}
     Run Keyword If    '${result}'=='True'    Select Menu    Service
     sleep    1
 
@@ -28,7 +29,15 @@ Sub Register
     Click Web Element    ${btnRegisterConfirm}
 
 Sub Cancel
+    [Arguments]    ${TotalSMS}
+    Log    Sub Cancel
     Wait Web Until Page Contains Element    ${btnCancelConfrim}
     Click Web Element    ${btnCancelConfrim}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Log    ${TotalSMS}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    50
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close Browser

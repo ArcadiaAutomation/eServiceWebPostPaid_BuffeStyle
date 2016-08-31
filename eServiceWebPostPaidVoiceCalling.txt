@@ -6,6 +6,7 @@ Resource          ../Config/LocalConfig.txt
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -16,9 +17,8 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageRegister}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -28,7 +28,6 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Select Menu    Service    VoiceAdd/Edit
     Sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
@@ -44,7 +43,6 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Select Menu    Service    VoiceCancel
     Sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
@@ -55,6 +53,7 @@ Resource          ../Config/LocalConfig.txt
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -68,13 +67,13 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessageNoDataUpdate}
     Click Web Element    ${btnDialogClose}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -89,13 +88,13 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertMobile}
     Click Web Element    ${btnDialogClose}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -112,13 +111,13 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -133,13 +132,13 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -152,13 +151,13 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessageThaiOnly}
     Click Web Element    ${btnDialogClose}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -175,13 +174,13 @@ Resource          ../Config/LocalConfig.txt
     Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -194,27 +193,25 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberOnly}
     Click Web Element    ${btnDialogClose}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [S07-173]eServiceWeb-PO-Service-VoiceCalling-RegisterVoiceCalling
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    1
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Register Voice
     @{MessageExpect}    Create List    ${SMSRegisterVoiceCalling}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    50
+    Wait and Get SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    50
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [S07-174]eServiceWeb-PO-Service-VoiceCalling-NotRegisterEditData
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -225,7 +222,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    VoiceAdd/Edit
-    sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
@@ -234,16 +230,13 @@ Resource          ../Config/LocalConfig.txt
 [S07-175]eServiceWeb-PO-Service-VoiceCalling-AddDataOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    1
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Register Voice
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    sleep    10
-    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Select Menu    VoiceAdd/Edit
     sleep    2
     Input Web Text    ${txtInputName1}    โตโน่
@@ -258,21 +251,20 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     @{MessageExpect}    Create List    ${SMSEditDataConfirmOneNumber}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    30
+    Wait and Get SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_SenderName_AIS3G}    ${MessageExpect}    60
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [S07-176]eServiceWeb-PO-Service-VoiceCalling-AddDataMorethanOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    1
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Register Voice
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     sleep    10
@@ -293,23 +285,22 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     sleep    5
-    @{MessageExpect}    Create List    ${SMSEditDataComfirmMorethanOneNumber}
+    @{MessageExpect}    Create List    ${SMSEditDataComfirmMorethanOneNumber}    .*
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    30
+    Wait and Get SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_SenderName_AIS3G}    ${MessageExpect}    30
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [S07-177]eServiceWeb-PO-Service-VoiceCalling-EditDataOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
@@ -336,19 +327,18 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
     Element Text Should Be    ${ldlDisplayNumber1}    ${lo_3PO_2_Number}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [S07-178]eServiceWeb-PO-Service-VoiceCalling-EditDataMorethanOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Cancel Voice
     Register Voice
     Select Menu    VoiceAdd/Edit
     sleep    2
@@ -389,13 +379,13 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${ldlDisplaySpell2}    ไว-ไว
     Element Text Should Be    ${ldlDisplayNumber2}    ${lo_3PO_2_Number}
     Select Menu    Home
-    Cancel Voice
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
 
 [S07-179]eServiceWeb-PO-Service-VoiceCalling-CancelVoiceCalling
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    1
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -407,5 +397,5 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnCancelConfrim}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
+    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#dict_device_name}
