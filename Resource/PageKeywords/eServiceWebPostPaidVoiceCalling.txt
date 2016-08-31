@@ -16,7 +16,7 @@ Register Voice
 
 Cancel Voice
     [Arguments]    ${TotalSMS}
-    Select Menu    Service    Voice_Cancel
+    Select Menu    Voice_Cancel
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}
     Run Keyword If    '${result}'=='False'    Sub Cancel    ${TotalSMS}
     Run Keyword If    '${result}'=='True'    Select Menu    Service

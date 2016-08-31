@@ -16,7 +16,6 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Service    VoiceRegister
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageRegister}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -66,7 +65,6 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessageNoDataUpdate}
     Click Web Element    ${btnDialogClose}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -87,7 +85,6 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertMobile}
     Click Web Element    ${btnDialogClose}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -110,7 +107,6 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -131,7 +127,6 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -150,7 +145,6 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtSpell1(1)}    s
     Element Text Should Be    ${lblDialogMessage}    ${MessageThaiOnly}
     Click Web Element    ${btnDialogClose}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -173,7 +167,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     Sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -192,7 +185,6 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInsertMobile1}    ส
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberOnly}
     Click Web Element    ${btnDialogClose}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -206,7 +198,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
-    Select Menu    Home
     @{MessageExpect}    Create List    ${SMSRegisterVoiceCalling}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    60
@@ -249,7 +240,6 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
-    Select Menu    Home
     @{MessageExpect}    Create List    ${SMSEditDataConfirmOneNumber}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_SenderName_AIS3G}    ${MessageExpect}    60
@@ -281,7 +271,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnEditDataConfirm}
     sleep    2
     Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
-    Select Menu    Home
     @{MessageExpect}    Create List    ${SMSEditDataComfirmMorethanOneNumber}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_SenderName_AIS3G}    ${MessageExpect}    60
@@ -322,7 +311,6 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${ldlDisplayName1}    แตงโม
     Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
     Element Text Should Be    ${ldlDisplayNumber1}    ${lo_3PO_2_Number}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -374,14 +362,12 @@ Resource          ../Config/LocalConfig.txt
     Element Text Should Be    ${ldlDisplayName2}    ไวไว
     Element Text Should Be    ${ldlDisplaySpell2}    ไว-ไว
     Element Text Should Be    ${ldlDisplayNumber2}    ${lo_3PO_2_Number}
-    Select Menu    Home
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-179]eServiceWeb-PO-Service-VoiceCalling-CancelVoiceCalling
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    ${TotalSMS}    Set Variable    1
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -393,5 +379,10 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnCancelConfrim}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
-    [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
-    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Log    ${TotalSMS}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
