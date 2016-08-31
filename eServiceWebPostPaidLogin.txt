@@ -83,7 +83,7 @@ test
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
     [Tags]    Fail
@@ -127,7 +127,7 @@ test
     Close Browser
     Sleep    5
     Close Application
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
     [Tags]    Fail
@@ -147,7 +147,7 @@ test
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
     [Tags]    Fail
@@ -165,7 +165,7 @@ test
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 TestPararell1
     [Tags]    TestP
