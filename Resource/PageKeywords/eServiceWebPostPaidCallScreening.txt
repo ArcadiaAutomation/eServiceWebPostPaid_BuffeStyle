@@ -25,3 +25,12 @@ Set Status Active Welcome Calls
 Confirm Status
     Click Web Element    ${btnConfirmCallScreeningDialog}
     Click Web Element    ${btnBackToCallScreeningDialog}
+
+Check Register
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCheckConfirmRegister}    5
+    Log To Console    ${result}
+    Run Keyword If    '${result}'=='True'    Confirm Register
+
+Confirm Register
+    Click Web Element    ${btnCallScreeningRegisterConfirm}
+    Click Web Element    ${btnConfirmCallscreenRegister}
