@@ -44,7 +44,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${img MySuperPlan Page}
-    Sleep    3
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
     Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
     Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMainPackage}
@@ -61,11 +60,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
-    Sleep    2
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPacKage250Min
     Confirm My Super Plan
-    Sleep    2
+    Wait Web Until Page Contains Element    ${lblAcceptRule}
     Element Should Be Visible    ${lblAcceptRule}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
@@ -80,11 +78,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    Apply/ChangeMySuperPlan
     Click Image    ${imgMySuperPlanPage}
-    Sleep    2
     Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735Bath
     Select Main Package    MainPacKage250Min
     Cancel My Super Plan
-    Sleep    2
+    Wait Until Element Is Visible    ${lblSumMoney }
     Element Text Should Be    ${lblSumMoney }    0
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
