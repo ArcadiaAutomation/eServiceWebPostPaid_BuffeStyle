@@ -1,0 +1,19 @@
+*** Settings ***
+Resource          Resource/PageKeywords/eServiceWebpostPaidYourBalanceHistory.txt
+Resource          ../Config/LocalConfig.txt
+
+*** Test Cases ***
+[F04-033]eServiceWeb-PO-YourBalanceHistory-InputCIDLessThan13Digit
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    433599504902
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

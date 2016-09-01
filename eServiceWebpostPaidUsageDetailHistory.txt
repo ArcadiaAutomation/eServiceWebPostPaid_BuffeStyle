@@ -117,7 +117,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-31
+[F04-031]eServiceWeb-PO-UsageDetailHistory-NotSelectMySuperPlanUsageDetailFilter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -131,5 +131,24 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Bill Cycle
     Select Usage Detail Tab    MySuperPlan
     Confirm Filter Usage Detail
-    Web Element Text Should Be    ${txtSummaryMessage}    ${messageNotSelectMySuperPlanFilter}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Web Element Text Should Be    ${lblUsageDetailHistorySummaryMessage}    ${messageNotSelectMySuperPlanFilter}
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-032]eServiceWeb-PO-UsageDetailHistory-NotSelectGraphUsageDetailFilter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    GraphTop5
+    Confirm Filter Usage Detail
+    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectGraphFilter}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

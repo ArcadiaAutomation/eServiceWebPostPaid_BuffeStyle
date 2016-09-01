@@ -10,3 +10,5 @@ ${tbCallDetail}    xpath=//*[@id="callDetail"]
 ${tbInternetAndValueAddedService}    xpath=//*[@id="internetSMSMMS"]
 ${chkViewAllInternetAndValueAdd}    xpath=//*[@id="chkCdrVas5"]
 ${tbMySuperPlan}    xpath=//*[@id="typeNONBOS"]
+${lblUsageDetailHistorySummaryMessage}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div/div/div/div/div/div[1]/div[1]/div
+${tbGraphTop5}    xpath=//*[@id="graphPresenting"]
