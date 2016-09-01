@@ -7,9 +7,10 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
 *** Keywords ***
 Login
     [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${MobileNumber}
+    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Input Web Text    ${txtMobileNumber}    ${MobileNumber}
     Click Web Element    ${btnGetOTP}
-    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
+    Comment    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Wait SMS    ${PlatfromName}    1    ${lo_parallel_timeout}
     ${messages}=    Read SMS    ${PlatfromName}    AIS    1
     Log    @{messages}[0]
