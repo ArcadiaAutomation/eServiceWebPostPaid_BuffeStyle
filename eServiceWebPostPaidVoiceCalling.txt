@@ -32,6 +32,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
+    Sleep    5
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
