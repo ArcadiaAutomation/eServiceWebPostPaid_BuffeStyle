@@ -16,5 +16,4 @@ Verify Login Citizen ID
     Element Text Should Be    ${locator}    ${Text}
 
 Confirm Citizen ID
-    Wait Web Until Page Contains Element    ${btnConfirmCitizenId}
     Click Web Element    ${btnConfirmCitizenId}

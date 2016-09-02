@@ -12,8 +12,69 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
-    Input Citizen ID    433599504902
+    Input Citizen ID    ${CIDLessThan13Digit}
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-034]eServiceWeb-PO-YourBalanceHistory-InputWrongCID
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    ${WrongCID}
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-035]eServiceWeb-PO-YourBalanceHistory-InputCIDWithCharacter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    ${CharacterSet}
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-036]eServiceWeb-PO-YourBalanceHistory-NotInputCID
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-037]eServiceWeb-PO-YourBalanceHistory-inputWrongCID3Time
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    :FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
+    \    Input Citizen ID    ${WrongCID}
+    \    Confirm Citizen ID
+    \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
+    \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
