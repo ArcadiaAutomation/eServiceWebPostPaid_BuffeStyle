@@ -38,6 +38,6 @@ Sub Cancel
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Log    ${TotalSMS}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    100
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    120
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
