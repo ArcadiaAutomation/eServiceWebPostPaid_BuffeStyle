@@ -369,6 +369,7 @@ Resource          ../Config/LocalConfig.txt
 [S07-179]eServiceWeb-PO-Service-VoiceCalling-CancelVoiceCalling
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${TotalSMS}    Set Variable    2
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -382,7 +383,7 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Log    ${TotalSMS}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    60
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    120
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
