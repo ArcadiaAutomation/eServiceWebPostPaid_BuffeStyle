@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
 
 *** Test Cases ***
 [F07-254]eServiceWeb-PO-Service-PreferAndCancelSMSnotChange
-    [Tags]    test
+    [Tags]
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
