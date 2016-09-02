@@ -1,3 +1,3 @@
 *** Variables ***
-${notInputChange}    Please specify the service you would like to
+${notInputChange}    Please specify the service you would like to change.
 ${confirmPerferCancelSMS}    SMS Ad & Information from AIS\n\nAll SMS from AIS :\n\nYour preference change on receiving updated\nwill be effective within 24 hours.
