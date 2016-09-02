@@ -13,23 +13,20 @@ Select PostPaid Package
 Confirm My Super Plan
     Click Web Element    ${btnConfirmMySuperPlan}
 
-Select Main Package
-    [Arguments]    ${MainPackageName}
-    Sleep    1
-    Wait Web Until Page Contains Element    ${rb${MainPackageName}}
-    Selenium2Library.Click Element    ${rb${MainPackageName}}
-
 Select OnTop Package
     [Arguments]    ${OnTopPackageType}    ${OnTopPackageName}
-    Wait Web Until Page Contains Element    ${btn${OnTopPackageType}}
-    Selenium2Library.Click Element    ${btn${OnTopPackageType}}
-    sleep	    3
-    Wait Web Until Page Contains Element    ${cb${OnTopPackageName}}
-    Selenium2Library.Click Element    ${cb${OnTopPackageName}}
+    Click Web Element    ${btn${OnTopPackageType}}
+    Click Web Element    ${cb${OnTopPackageName}}
+    Comment    Wait Web Until Page Contains Element    ${btn${OnTopPackageType}}
+    Comment    Selenium2Library.Click Element    ${btn${OnTopPackageType}}
+    Comment    sleep    3
+    Comment    Wait Web Until Page Contains Element    ${cb${OnTopPackageName}}
+    Comment    Selenium2Library.Click Element    ${cb${OnTopPackageName}}
 
 Enter My Super Plan Page
-    Wait Until Element Is Visible    ${imgMySuperPlanPage}
-    Click Image    ${imgMySuperPlanPage}
+    Click Web Image    ${imgMySuperPlanPage}
+    Comment    Wait Until Element Is Visible    ${imgMySuperPlanPage}
+    Comment    Click Image    ${imgMySuperPlanPage}
 
 Cancel Register
     Input Web Text    ${txtConfirmEmail}    ${lo_3PO_Email}
@@ -37,3 +34,7 @@ Cancel Register
 
 Cancel My Super Plan
     Click Web Button    ${btnCancelMySuperPlan}
+
+Select Main Package
+    [Arguments]    ${MainPackageName}
+    Click Web Element    ${rb${MainPackageName}}
