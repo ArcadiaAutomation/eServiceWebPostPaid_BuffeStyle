@@ -554,16 +554,33 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#Dict_device_name}
 
-TestOpenAppMobile
+TestOpenAppMobile1
     [Tags]    test
-    ${driver1}    AISAppium Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=9201176364de23eb
-    ${driver2}    AISAppium Open Application    http://10.239.223.84:4724/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
-    ...    appActivity=com.calea.echo.MainActivity    udid=0123456789ABCDEF
+    ${driver1}    AISAppium Open Application    http://10.239.223.84:4444/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=8f65cc76
+    Comment    ${driver2}    AISAppium Open Application    http://10.239.223.84:4444/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any
+    ...    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
     log    ${driver1}
+    Comment    log    ${driver2}
+    Comment    AISAppium Click Element    name=AIS    ${driver2}
+    Comment    AISAppium Set Network Connection Status    1    ${driver2}
+    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${driver1}
+    sleep    5
+    Close Application
+
+TestOpenAppMobile2
+    [Tags]    test
+    Comment    ${driver1}    AISAppium Open Application    http://10.239.223.84:4444/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any
+    ...    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=8f65cc76
+    ${driver2}    AISAppium Open Application    http://10.239.223.84:4444/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo
+    ...    appActivity=com.calea.echo.MainActivity    udid=4d00643b4828a0df
+    Comment    log    ${driver1}
+    sleep    10
     log    ${driver2}
-    AISAppium Click Element    name=AIS
-    AISAppium Set Network Connection Status    1    ${driver2}
+    AISAppium Click Element    name=AIS    ${driver2}
+    Comment    AISAppium Set Network Connection Status    1    ${driver2}
+    sleep    5
+    Close Application
 
 TesteServiceMobile-PO-Login
     [Tags]    test

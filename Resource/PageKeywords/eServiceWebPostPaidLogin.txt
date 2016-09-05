@@ -9,7 +9,7 @@ Login
     [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${MobileNumber}
     Input Web Text    ${txtMobileNumber}    ${MobileNumber}
     Click Web Element    ${btnGetOTP}
-    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
+    ${AtlasInfo}    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Wait SMS    ${PlatfromName}    1    ${lo_parallel_timeout}
     ${messages}=    Read SMS    ${PlatfromName}    AIS    1
     Log    @{messages}[0]
@@ -19,7 +19,7 @@ Login
     Input Web Text    ${txtInputOTP}    @{OTP}[0]
     Click Web Element    ${btnOKOTP}
     sleep    4
-    Close SMS App    ${PlatfromName}     ${SN}
+    Close SMS App    ${PlatfromName}    ${SN}    ${AtlasInfo}
 
 Fake OTP
     [Arguments]    ${realOTP}
