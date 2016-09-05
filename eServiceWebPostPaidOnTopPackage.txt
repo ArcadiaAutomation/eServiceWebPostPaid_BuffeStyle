@@ -16,7 +16,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnChangePackConfirm}
     Web Element Text Should Be    ${lblDialogMessage}    ${NotSelectPackage}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-014]eServiceWeb-PO-OnTopPackage-RegisterDuplicateXtraTalkPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -35,7 +35,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnChangePackConfirm3}
     Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-015]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
     [Tags]    Package Must Not Register
@@ -78,7 +78,7 @@ Resource          ../Config/LocalConfig.txt
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputFriendNumberLessThan10Digit}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-017]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberWithCharacter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -94,7 +94,7 @@ Resource          ../Config/LocalConfig.txt
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputFriendNumberWithCharacter}
     Click Web Element    ${btnDialogClose}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-018]eServiceWeb-PO-OnTopPackage-RegisteDuplicaterXtraNetPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -112,4 +112,4 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnChangePackConfirm3}
     Web Element Text Should Be    ${lblSelectPackageResult}    ${MessageRegisterDuplicateXtraNetPackage}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

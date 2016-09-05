@@ -7,10 +7,37 @@ Resource          ../PageRepository/eServiceWebPostPaidGeneralInformationReposit
 
 *** Keywords ***
 Edit Name And LastName
-    [Arguments]    ${Name}    ${LastName}
+    [Arguments]    ${Name}=${empty}    ${LastName}=${empty}
     Wait Until Element Is Visible    ${txtCustomerName}
-    Clear Text    ${txtCustomerName}
+    Clear Element Text    ${txtCustomerName}
     Selenium2Library.Input Text    ${txtCustomerName}    ${Name}
     Wait Until Element Is Visible    ${txtCustomerLastName}
-    Clear Text    ${txtCustomerLastName}
+    Clear Element Text    ${txtCustomerLastName}
     Selenium2Library.Input Text    ${txtCustomerLastName}    ${LastName}
+
+Confirm Edit
+    Click Web Element    ${btnConfirmEdit}
+
+Edit Email Address
+    [Arguments]    ${Email}=${empty}
+    Wait Until Element Is Visible    ${txtEmailAddress}
+    Clear Element Text    ${txtEmailAddress}
+    Selenium2Library.Input Text    ${txtEmailAddress}    ${Email}
+
+Edit Phone Number
+    [Arguments]    ${HomeTel}=${empty}    ${WorkTel}=${empty}    ${OtherTel}=${empty}
+    Wait Until Element Is Visible    ${txtHomeTel}
+    Clear Element Text    ${txtHomeTel}
+    Selenium2Library.Input Text    ${txtHomeTel}    ${HomeTel}
+    Wait Until Element Is Visible    ${txtOfficeTel}
+    Clear Element Text    ${txtOfficeTel}
+    Selenium2Library.Input Text    ${txtOfficeTel}    ${WorkTel}
+    Wait Until Element Is Visible    ${txtOtherTel}
+    Clear Element Text    ${txtOtherTel}
+    Selenium2Library.Input Text    ${txtOtherTel}    ${OtherTel}
+
+Cancel Edit
+    Click Web Element    ${btnCancelEdit}
+
+Edit Your Address
+    Click Web Element    ${btnEditYouAddress}

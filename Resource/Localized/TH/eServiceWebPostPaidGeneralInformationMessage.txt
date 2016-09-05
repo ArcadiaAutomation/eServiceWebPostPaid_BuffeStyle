@@ -1,0 +1,6 @@
+*** Variables ***
+${MessageNotInputNameAndSurName}    กรุณากรอกชื่อและนามสกุล
+${MessageNotInputEmail}    กรุณากรอกอีเมล
+${MessageInputWrongEmail}    รูปแบบอีเมลไม่ถูกต้อง
+${MessageNotInputTelNumber}    กรุณากรอกเบอร์โทรศัพท์ที่บ้านหรือที่ทำงานอย่างใดอย่างหนึ่ง
+${lblGeneralInformation}    ข้อมูลทั่วไป
