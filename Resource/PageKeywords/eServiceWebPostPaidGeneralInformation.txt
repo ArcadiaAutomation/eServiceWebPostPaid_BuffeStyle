@@ -38,6 +38,3 @@ Edit Phone Number
 
 Cancel Edit
     Click Web Element    ${btnCancelEdit}
-
-Edit Your Address
-    Click Web Element    ${btnEditYouAddress}

@@ -1,5 +1,9 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
+
 *** Test Cases ***
-[F09-276]eServiceWeb-PO-GeneralInformation-EditYourAddress
+[F09-276]eServiceWeb-PO-YourAddress-EditNameAndSurName
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -9,4 +13,24 @@
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
+    Edit Name And SurName
+    Confirm Edit
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotInputNameAndSurName}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F09-277]eServiceWeb-PO-YourAddress-NotSelectProvince
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourAddress
+    Edit Your Address
+    Edit Name And SurName    I am Miracle 10K Naja
+    Select Province    ${ddlProvince}    Please select Province.
+    Confirm Edit
+    Comment    Web Element Text Should Be
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
