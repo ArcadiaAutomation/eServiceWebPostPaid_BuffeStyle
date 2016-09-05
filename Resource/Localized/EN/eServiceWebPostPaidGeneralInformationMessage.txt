@@ -1,0 +1,6 @@
+*** Variables ***
+${MessageNotInputNameAndSurName}    Please enter your name and surname.
+${MessageNotInputEmail}    Please enter your E-Mail.
+${MessageInputWrongEmail}    Your E-Mail format is incorrect.
+${MessageNotInputTelNumber}    Please enter either your home number or office number.
+${lblGeneralInformation}    General Information

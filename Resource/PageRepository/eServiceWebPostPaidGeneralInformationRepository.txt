@@ -1,4 +1,12 @@
 *** Variables ***
 ${btnEditGeneralnformation}    xpath=//*[@id="edit"]/div
-${txtCustomerName}    xpath=//*[@id="txtNameInfo"]
+${txtCustomerName}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/div/input
 ${txtCustomerLastName}    xpath=//*[@id="txtLastNameInfo"]
+${btnConfirmEdit}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div/a[1]/div
+${txtEmailAddress}    xpath=//*[@id="txtEmailInfo"]
+${txtHomeTel}     xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[4]/div[2]/div/input
+${txtOfficeTel}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[4]/div[3]/div/input
+${txtOtherTel}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[5]/div[2]/div/input
+${btnCancelEdit}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div/a[2]/div
+${lblDisplay}     xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[1]
+${btnEditYouAddress}    xpath=//*[@id="edit"]/div
