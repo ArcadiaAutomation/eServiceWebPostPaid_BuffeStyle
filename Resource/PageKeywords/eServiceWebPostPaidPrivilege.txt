@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidPrivilegeMessage.txt
+Resource          ../PageRepository/eServiceWebPostPaidPrivilegeRepository.txt

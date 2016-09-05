@@ -30,3 +30,6 @@ ${mnuCurrentPackage}    xpath=//*[@id="menu-3"]/span
 ${mnuYourBalanceHistory}    xpath=//*[@id="menu-6"]
 ${mnuGeneralInformation}    xpath=//*[@id="menu-29"]
 ${mnuYourPersonalInformation}    xpath=//*[@id="menu-27"]
+${mnuPrivilege}    xpath=//*[@id="menu-9"]
+${mnuEspeciallyforYou}    xpath=//*[@id="menu-10"]
+${mnuAISCustomers}    xpath=//*[@id="menu-11"]
