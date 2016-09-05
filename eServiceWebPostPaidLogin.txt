@@ -136,7 +136,7 @@ test
     Select Language    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Wait Until Element Is Enabled    ${txtInputOTP}
+    Wait Until Element Is Enabled    ${txtInputOTP}    30
     Input Web Text    ${txtInputOTP}    a
     Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
