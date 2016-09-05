@@ -1,9 +1,9 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
-Resource          ../PageRepository/eServiceWebPostPaidSendSMSMMSRepository.txt
+Resource          ../PageRepository/eServiceWebPostPaidSendSmsMmsRepository.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
-Resource          ../PageVariable/eServiceWebPostPaidSendSMSMMSVariable.txt
+Resource          ../PageVariable/eServiceWebPostPaidSendSmsMmsVariable.txt
 Library           ../../../AisRobotBuffet/Library/General/DateTime.py
 Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
 
