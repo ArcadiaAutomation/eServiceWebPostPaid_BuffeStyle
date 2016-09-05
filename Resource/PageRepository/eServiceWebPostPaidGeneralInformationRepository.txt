@@ -1,0 +1,4 @@
+*** Variables ***
+${btnEditGeneralnformation}    xpath=//*[@id="edit"]/div
+${txtCustomerName}    xpath=//*[@id="txtNameInfo"]
+${txtCustomerLastName}    xpath=//*[@id="txtLastNameInfo"]

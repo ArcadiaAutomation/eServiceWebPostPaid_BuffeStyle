@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../PageKeywords/eServiceWebPostPaidCommon.txt
+Resource          ../PageKeywords/eServiceWebPostPaidLogin.txt
+Resource          ../PageVariable/eServiceWebPostPaidGeneralInformationVariable.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidGeneralInformationMessage.txt
+Resource          ../PageRepository/eServiceWebPostPaidGeneralInformationRepository.txt
+
+*** Keywords ***
+Edit Name And LastName
+    [Arguments]    ${Name}    ${LastName}
+    Wait Until Element Is Visible    ${txtCustomerName}
+    Clear Text    ${txtCustomerName}
+    Selenium2Library.Input Text    ${txtCustomerName}    ${Name}
+    Wait Until Element Is Visible    ${txtCustomerLastName}
+    Clear Text    ${txtCustomerLastName}
+    Selenium2Library.Input Text    ${txtCustomerLastName}    ${LastName}

@@ -3,7 +3,3 @@ ${messageInputCIDLessThan13Digit}    The national ID card number you have entere
 ${messageInputWrongCID}    The national ID card number you have entered is not the same as the one you previously provided.\nPlease enter again.
 ${messageNotInputCID}    Please enter Card Number.
 ${messageWrongInputCIDThan3Time}    You have entered incorrect national ID card number more than three times. Please sign out and try again later.
-${messageNotSelectCallFilter}    Please select at least 1 item for your call detail viewing selection.
-${messageNotSelectInternetFilter}    Please select least 1 item of value added services to view the usage detail.
-${messageNotSelectMySuperPlanFilter}    We cannot find the information from the criteria you have specified.
-${messageNotSelectGraphFilter}    Please select at least 1 item to view your top 5 usage graphs

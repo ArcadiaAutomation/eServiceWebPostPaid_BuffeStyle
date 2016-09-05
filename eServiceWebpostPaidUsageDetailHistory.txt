@@ -16,7 +16,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-025]eServiceWeb-PO-UsageDetailHistory-InputWrongCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -31,7 +31,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-026]eServiceWeb-PO-UsageDetailHistory-InputCIDWithCharacter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -46,7 +46,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-027]eServiceWeb-PO-UsageDetailHistory-NotInputCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -60,7 +60,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-028]eServiceWeb-PO-UsageDetailHistory-InputWrongCID3Time
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -78,9 +78,9 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
     \    log    'INDEX='${INDEX}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F04-029]eServiceWeb-PO-UsageDetailHistory-NotSelectUsageDetailFilter
+[F04-029]eServiceWeb-PO-UsageDetailHistory-NotSelectCallUsageDetailFilter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -92,8 +92,63 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Input Citizen ID    ${CitizenID}
     Confirm Citizen ID
     Select Bill Cycle
-    Clear Call CheckBox
+    Clear View All Call Filter
     Confirm Filter Usage Detail
-    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectFilter}
+    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectCallFilter}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-030]eServiceWeb-PO-UsageDetailHistory-NotSelectInternetAndValueAddServiceUsageDetailFilter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    InternetAndValueAddedService
+    Clear View All InternetAndValueAdd Filter
+    Confirm Filter Usage Detail
+    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectInternetFilter}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-031]eServiceWeb-PO-UsageDetailHistory-NotSelectMySuperPlanUsageDetailFilter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    MySuperPlan
+    Confirm Filter Usage Detail
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Web Element Text Should Be    ${lblUsageDetailHistorySummaryMessage}    ${messageNotSelectMySuperPlanFilter}
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-032]eServiceWeb-PO-UsageDetailHistory-NotSelectGraphUsageDetailFilter
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    GraphTop5
+    Confirm Filter Usage Detail
+    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectGraphFilter}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

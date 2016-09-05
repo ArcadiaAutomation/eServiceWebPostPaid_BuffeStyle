@@ -1,10 +1,9 @@
 *** Settings ***
+Resource          Resource/PageKeywords/eServiceWebpostPaidYourBalanceHistory.txt
 Resource          ../Config/LocalConfig.txt
-Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperPlan.txt
 
 *** Test Cases ***
-[F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
-    [Tags]
+[F04-033]eServiceWeb-PO-YourBalanceHistory-InputCIDLessThan13Digit
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -12,15 +11,14 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Web Image    ${imgMySuperPlanPage}
-    Confirm My Super Plan
-    Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMySuperPlanPackage}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    ${CIDLessThan13Digit}
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputCIDLessThan13Digit}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMainPackage
-    [Tags]
+[F04-034]eServiceWeb-PO-YourBalanceHistory-InputWrongCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -28,16 +26,14 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${img MySuperPlan Page}
-    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735 Bath
-    Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
-    Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${NotSelectMainPackage}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    ${WrongCID}
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F03-010]eServiceWeb-PO-MysuperPlan-SelectMainpackageExpensiveThanPostpaidPackage
-    [Tags]
+[F04-035]eServiceWeb-PO-YourBalanceHistory-InputCIDWithCharacter
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -45,16 +41,14 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Web Image    ${imgMySuperPlanPage}
-    Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
-    Select Main Package    MainPackage2200Min
-    Web Element Text Should Be    ${lblMySuperPlanDialogMessage}    ${MainPackageExpensiveThanPostPaidPackage}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    ${CharacterSet}
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${YourCurrentChargesDialogMessage}    ${messageInputWrongCID}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F03-011]eServiceWeb-PO-MysuperPlan-NotAcceptMySuperPlanRule
-    [Tags]
+[F04-036]eServiceWeb-PO-YourBalanceHistory-NotInputCID
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -62,18 +56,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${imgMySuperPlanPage}
-    Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
-    Select Main Package    MainPacKage250Min
-    Confirm My Super Plan
-    Wait Web Until Page Contains Element    ${lblAcceptRule}
-    Element Should Be Visible    ${lblAcceptRule}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Confirm Citizen ID
+    Verify Login Citizen ID    ${lblDialogMessage}    ${messageNotInputCID}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F03-012]eServiceWeb-PO-MysuperPlan-CancelMySuperPlan
-    [Tags]
+[F04-037]eServiceWeb-PO-YourBalanceHistory-inputWrongCID3Time
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -81,12 +70,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    Apply/ChangeMySuperPlan
-    Click Image    ${imgMySuperPlanPage}
-    Select PostPaid Package    XtraTalk MonthValue    PostPaidPackage735Bath
-    Select Main Package    MainPacKage250Min
-    Cancel My Super Plan
-    Wait Until Element Is Visible    ${lblSumMoney }
-    Element Text Should Be    ${lblSumMoney }    0
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    :FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
+    \    Input Citizen ID    ${WrongCID}
+    \    Confirm Citizen ID
+    \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
+    \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

@@ -4,3 +4,4 @@ ${MessageNumberDtac}    The number must be an AIS mobile number only. Please ent
 ${MessageInputOtpWithCharacter}    Please enter numerical data only.
 ${MessageNotSelectMySuperPlanPacKage}    Please select my Super Plan that you want.
 ${MessageWrongOTP}    You have entered incorrect password. Please try again.
+${MessageNotInputOTP}    Please enter your password.

@@ -1,9 +1,9 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
-Resource          ../PageRepository/eServiceWebpostPaidYourCurrentChargesRepository.txt
-Resource          ../Localized/${ar_LANG}/eServiceWebpostPaidYourCurrentChargesMessage.txt
-Resource          ../PageVariable/eServiceWebpostPaidYourCurrentChargesVariable.txt
+Resource          ../PageRepository/eServiceWebpostPaidYourBalanceHistoryRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebpostPaidYourBalanceHistoryMessage.txt
+Resource          ../PageVariable/eServiceWebpostPaidYourBalanceHistoryVariable.txt
 
 *** Keywords ***
 Input Citizen ID

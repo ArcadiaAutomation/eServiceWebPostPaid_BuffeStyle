@@ -75,10 +75,8 @@ test
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Sleep    5
     Input Web Text    ${txtInputOTP}    123
     Element Should Be Visible    ${btnOKOTPDisable}
-    Sleep    2
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
@@ -120,12 +118,11 @@ test
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Sleep    2
-    Element Should Be Visible    ${btnOKOTPDisable}
+    Click Web Element    ${btnOKOTPNotInputText}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotInputOTP}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close Browser
-    Sleep    5
     Close Application
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
