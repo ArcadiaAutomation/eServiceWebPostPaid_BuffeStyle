@@ -210,7 +210,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
-    Click Web Element    ${btnFormal}
+    Click Web Element    ${btnInformal}
     Select From list    ${ldlSelectMessage}    1
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
@@ -221,6 +221,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
+    Remove File    ${FileMobileNo}
     sleep    30
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
@@ -264,6 +265,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
+    Remove File    ${FileMobileNo}
     sleep    30
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
@@ -278,9 +280,10 @@ Excel
     Log    ${FileExcelOriginal}
     Open Excel    ${FileExcelOriginal}
     Log    Open passed
-    Put String To Cell    Test1    1    1    ${virtual_3PO_1_Number}
+    Put String To Cell    Sheet1    1    1    ${virtual_3PO_1_Number}
     Log    Put Pass
     Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
+    Comment    Save Excel    FileMobileNo.xls
     Log    Save excel passed
     sleep    2
     Comment    Remove File    ${FileMobileNo}
@@ -321,7 +324,7 @@ Test
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
-    Click Web Element    ${btnFormal}
+    Click Web Element    ${btnInformal}
     Select From list    ${ldlSelectMessage}    1
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
