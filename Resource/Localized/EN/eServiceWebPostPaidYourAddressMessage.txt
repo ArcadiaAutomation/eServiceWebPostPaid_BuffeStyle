@@ -1,0 +1,2 @@
+*** Variables ***
+${MessageNotInputNameAndSurName}    Please enter your First - Last Name.

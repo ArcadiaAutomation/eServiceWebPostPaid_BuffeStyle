@@ -4,4 +4,4 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidNewNumber.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidNewNumberMessage.txt
 Resource          ../PageVariable/eServiceWebPostPaidNewNumberVariable.txt
-Library           ExcelLibrary
+Library           ../../Library/ExcelLibrary/ExcelLibrary.py

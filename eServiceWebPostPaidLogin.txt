@@ -40,7 +40,7 @@ test
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    [Tags]    Fail
+    [Tags]    Fail    ptest
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -53,7 +53,7 @@ test
     [Teardown]
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    [Tags]    Fail
+    [Tags]    Fail    ptest
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -166,61 +166,61 @@ test
 
 TestPararell1
     [Tags]    TestP
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
-    log    ${lo_3PO_1_IPAppium}
-    log    ${lo_3PO_1_Platfrom_Name}
-    log    ${lo_3PO_1_Platfrom_Version}
-    log    ${lo_3PO_1_SN}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    log    ${virtual_3PO_1_IPAppium}
+    log    ${virtual_3PO_1_Platfrom_Name}
+    log    ${virtual_3PO_1_Platfrom_Version}
+    log    ${virtual_3PO_1_SN}
     log    ${TEST_NAME}
-    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    ${driver1}    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${virtual_3PO_1_SN}
     sleep    10
     AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     sleep    10
     AISAppium Click Element    name=My Profile
     Comment    Mobile Set Network Connection Status    6    ${App1}
-    Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Comment    Log    http://${virtual_3PO_1_IPAppium}/wd/hub
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 TestPararell2
     [Tags]    TestP
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
-    log    ${lo_3PO_1_IPAppium}
-    log    ${lo_3PO_1_Platfrom_Name}
-    log    ${lo_3PO_1_Platfrom_Version}
-    log    ${lo_3PO_1_SN}
-    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    log    ${virtual_3PO_1_IPAppium}
+    log    ${virtual_3PO_1_Platfrom_Name}
+    log    ${virtual_3PO_1_Platfrom_Version}
+    log    ${virtual_3PO_1_SN}
+    ${driver1}    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${virtual_3PO_1_SN}
     sleep    10
     AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     sleep    10
     AISAppium Click Element    name=Package
     Comment    Mobile Set Network Connection Status    6    ${App1}
-    Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Comment    Log    http://${virtual_3PO_1_IPAppium}/wd/hub
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 TestPararell3
     [Tags]    TestP
-    Take And Define Virtual Local Configuration    ${gn_local_config_file_path}    lo_3PO_1    ${gn_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${lo_3PO_1_#device_name}=${lo_3PO_1_#timestamp}
-    log    ${lo_3PO_1_IPAppium}
-    log    ${lo_3PO_1_Platfrom_Name}
-    log    ${lo_3PO_1_Platfrom_Version}
-    log    ${lo_3PO_1_SN}
-    ${driver1}    AISAppium Open Application    http://${lo_3PO_1_IPAppium}/wd/hub    platformName=${lo_3PO_1_Platfrom_Name}    platformVersion=${lo_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
-    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${lo_3PO_1_SN}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    log    ${virtual_3PO_1_IPAppium}
+    log    ${virtual_3PO_1_Platfrom_Name}
+    log    ${virtual_3PO_1_Platfrom_Version}
+    log    ${virtual_3PO_1_SN}
+    ${driver1}    AISAppium Open Application    http://${virtual_3PO_1_IPAppium}/wd/hub    platformName=${virtual_3PO_1_Platfrom_Name}    platformVersion=${virtual_3PO_1_Platfrom_Version}    deviceName= any    appPackage=com.ais.mimo.eservice
+    ...    appActivity=com.nextzy.allforone.view.DummyActivity    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=${virtual_3PO_1_SN}
     sleep    10
     AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     sleep    10
     AISAppium Click Element    name=FAQ
     Comment    Mobile Set Network Connection Status    6    ${App1}
-    Comment    Log    http://${lo_3PO_1_IPAppium}/wd/hub
-    Comment    Open SMS App    ${lo_3PO_1_IPAppium}    ${lo_3PO_1_Platfrom_Name}    ${lo_3PO_1_Platfrom_Version}    ${lo_3PO_1_SN}
+    Comment    Log    http://${virtual_3PO_1_IPAppium}/wd/hub
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     AISAppiumEx.Close All Applications
-    [Teardown]    Release Virtual Local Configurations    ${gn_local_config_file_path}    &{#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}

@@ -1,0 +1,33 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
+
+*** Test Cases ***
+[S10-225]eServiceWeb-PO-Privileges-EspeciallyforYou
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Privilege    EspeciallyforYou
+    Wait Web Until Page Contains Element    ${ldlRoamingServices}
+    Element Should Contain    ${ldlRoamingServices}    ${MessageRoamingServices}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S10-226]eServiceWeb-PO-Privileges-AISCustomers
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Privilege    AISCustomers
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlPrivilegeAISCustomers}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlPrivilegeAISCustomers}'    Fail
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

@@ -1,0 +1,22 @@
+*** Settings ***
+Resource          eServiceWebPostPaidLogin.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          ../PageRepository/eServiceWebPostPaidYourAddressRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourAddressMessage.txt
+
+*** Keywords ***
+Edit Your Address
+    Click Web Element    ${btnEditYouAddress}
+
+Edit Name And SurName
+    [Arguments]    ${NameAndSurName}=${empty}
+    Wait Until Element Is Visible    ${txtNameAndSurName}
+    Clear Element Text    ${txtNameAndSurName}
+    Selenium2Library.Input Text    ${txtNameAndSurName}    ${NameAndSurName}
+
+Select Province
+    [Arguments]    ${locator}    ${label}
+    Select From Web List By Label    ${locator}     ${label}
+
+Confirm Edit
+    Click Web Element    ${btnConfirmEdit}

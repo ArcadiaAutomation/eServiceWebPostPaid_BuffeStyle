@@ -210,7 +210,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
-    Click Web Element    ${btnFormal}
+    Click Web Element    ${btnInformal}
     Select From list    ${ldlSelectMessage}    1
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
@@ -273,20 +273,21 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 Excel
-    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Comment    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Comment    ${NumberOne}    Convert To String    ${virtual_3PO_1_Number}
-    Comment    Log To Console    ${CURDIR}
-    Comment    Log    ${FileExcelOriginal}
-    Comment    Open Excel    ${FileExcelOriginal}
-    Comment    Log    Open passed
-    Comment    Put String To Cell    Test1    1    1    ${virtual_3PO_1_Number}
-    Comment    Log    Put Pass
-    Comment    Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
-    Comment    Log    Save excel passed
-    Comment    sleep    2
-    Remove File    ${FileMobileNo}
-    [Teardown]
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${NumberOne}    Convert To String    ${virtual_3PO_1_Number}
+    Log To Console    ${CURDIR}
+    Log    ${FileExcelOriginal}
+    Open Excel    ${FileExcelOriginal}
+    Log    Open passed
+    Put String To Cell    Sheet1    1    1    ${virtual_3PO_1_Number}
+    Log    Put Pass
+    Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
+    Comment    Save Excel    FileMobileNo.xls
+    Log    Save excel passed
+    sleep    2
+    Comment    Remove File    ${FileMobileNo}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 Test
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -323,7 +324,7 @@ Test
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
-    Click Web Element    ${btnFormal}
+    Click Web Element    ${btnInformal}
     Select From list    ${ldlSelectMessage}    1
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
