@@ -3,6 +3,7 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          ../PageRepository/eServiceWebPostPaidYourAddressRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourAddressMessage.txt
+Resource          ../PageVariable/eServiceWebPostPaidYourAddressVariable.txt
 
 *** Keywords ***
 Edit Your Address
@@ -16,7 +17,7 @@ Edit Name And SurName
 
 Select Province
     [Arguments]    ${locator}    ${label}
-    Select From Web List By Label    ${locator}     ${label}
+    Select From Web List By Label    ${locator}    ${label}
 
 Confirm Edit
     Click Web Element    ${btnConfirmEdit}

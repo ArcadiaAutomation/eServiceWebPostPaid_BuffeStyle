@@ -1,2 +1,3 @@
 *** Variables ***
 ${MessageNotInputNameAndSurName}    กรุณากรอกชื่อ-นามสกุล
+${MessageNotSelectProvince}    กรุณาเลือกจังหวัด

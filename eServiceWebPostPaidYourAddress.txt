@@ -30,7 +30,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
     Edit Name And SurName    I am Miracle 10K Naja
-    Select Province    ${ddlProvince}    Please select Province.
+    Select Province    ${ddlProvince}    ${PleaseSelectProvince${ar_LANG}}
     Confirm Edit
-    Comment    Web Element Text Should Be
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotSelectProvince}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
