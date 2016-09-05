@@ -14,6 +14,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
     Select Menu    Privilege    EspeciallyforYou
     Wait Web Until Page Contains Element    ${ldlRoamingServices}
     Element Should Contain    ${ldlRoamingServices}    ${MessageRoamingServices}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S10-226]eServiceWeb-PO-Privileges-AISCustomers
@@ -28,4 +29,5 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlPrivilegeAISCustomers}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlPrivilegeAISCustomers}'    Fail
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
