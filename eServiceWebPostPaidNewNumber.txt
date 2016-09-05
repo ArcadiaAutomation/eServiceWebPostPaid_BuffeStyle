@@ -221,6 +221,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
+    Remove File    ${FileMobileNo}
     sleep    30
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
@@ -264,6 +265,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
+    Remove File    ${FileMobileNo}
     sleep    30
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
@@ -271,20 +273,20 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 Excel
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    ${NumberOne}    Convert To String    ${virtual_3PO_1_Number}
-    Log To Console    ${CURDIR}
-    Log    ${FileExcelOriginal}
-    Open Excel    ${FileExcelOriginal}
-    Log    Open passed
-    Put String To Cell    Test1    1    1    ${virtual_3PO_1_Number}
-    Log    Put Pass
-    Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
-    Log    Save excel passed
-    sleep    2
-    Comment    Remove File    ${FileMobileNo}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Comment    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    ${NumberOne}    Convert To String    ${virtual_3PO_1_Number}
+    Comment    Log To Console    ${CURDIR}
+    Comment    Log    ${FileExcelOriginal}
+    Comment    Open Excel    ${FileExcelOriginal}
+    Comment    Log    Open passed
+    Comment    Put String To Cell    Test1    1    1    ${virtual_3PO_1_Number}
+    Comment    Log    Put Pass
+    Comment    Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
+    Comment    Log    Save excel passed
+    Comment    sleep    2
+    Remove File    ${FileMobileNo}
+    [Teardown]
 
 Test
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
