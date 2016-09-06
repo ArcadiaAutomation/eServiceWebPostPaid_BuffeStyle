@@ -1,2 +1,5 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidCallingMelodyRepository.txt
