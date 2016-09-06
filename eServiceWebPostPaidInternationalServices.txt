@@ -1,0 +1,75 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices.txt
+
+*** Test Cases ***
+[F07-263]eServiceWeb-PO-Service-InternationalCall
+    [Tags]    pass
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    InternationalCall
+    Click Web Element    ${btnOK}
+    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseSelectService}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S07-205]eServiceWeb-PO-Service-ActiveAllInternationalCall
+    [Tags]    pass
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    InternationalCall
+    Click Web Element    ${btnActiveRoaming}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Should Contain    ${lblDialogMessage}    ${MessageOpenAllInternationalCall}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S07-206]eServiceWeb-PO-Service-InactiveIRActiveIDD
+    [Tags]    pass
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    InternationalCall
+    Click Web Element    ${btnActiveInternationCall}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
+    Select Menu    Home
+    sleep    20
+    [Teardown]    Run Keywords    InactiveInternationalCall
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S07-207]eServiceWeb-PO-Service-ActiveIRInactiveIDD
+    [Documentation]    Message in dialog You cannot cancellation international call service
+    ...    because you currently have international roaming service. "
+    ...    " \ Please cancel it first, and then cancel international call service again. \ Have
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    ActiveInternationalCall
+    Select Menu    Service    InternationalCall
+    Click Web Element    ${btnInactiveInternationalCall}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Should Contain    ${lblDialogMessage}    ${MessageConnotCancelService}
+    Select Menu    Home
+    sleep    20
+    [Teardown]    Run Keywords    InactiveInternationalCall
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

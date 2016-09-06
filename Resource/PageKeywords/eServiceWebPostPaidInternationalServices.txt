@@ -1,0 +1,28 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidInternationalServicesRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidInternationalServicesMessage.txt
+
+*** Keywords ***
+InactiveInternationalCall
+    Select Menu    Service    InternationalCall
+    Click Web Element    ${btnInactiveRoaming}
+    Click Web Element    ${btnInactiveInternationalCall}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
+    Close Browser
+
+ActiveInternationalCall
+    Select Menu    Service    InternationalCall
+    Click Web Element    ${btnActiveRoaming}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Should Contain    ${lblDialogMessage}    ${MessageOpenAllInternationalCall}
+    Click Web Element    ${btnClose}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
+    Select Menu    Home
+    Sleep    20

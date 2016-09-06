@@ -3,7 +3,7 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidCallingMelody.txt
 
 *** Test Cases ***
-[S07-188]eServiceWeb-PO-CallingMelody
+[S07-188]eServiceWeb-PO-Service-CallingMelody
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}

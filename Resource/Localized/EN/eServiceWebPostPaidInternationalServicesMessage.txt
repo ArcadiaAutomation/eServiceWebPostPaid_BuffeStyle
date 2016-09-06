@@ -1,0 +1,5 @@
+*** Variables ***
+${MessagePleaseSelectService}    Please specify the service you would like to change.
+${MessageOpenAllInternationalCall}    As IR service requires IDD, system will activate IDD service so that you can enjoy IR service as requested.
+${MessageConfrimSMS}    You will receive a confirmation SMS\nwhen the transaction is completed shortly.\nThank you.
+${MessageConnotCancelService}    You cannot cancellation international call service\nbecause you currently have international roaming service. Please cancel it first, and then cancel international call service again.

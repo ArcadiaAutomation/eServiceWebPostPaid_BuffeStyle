@@ -36,3 +36,4 @@ ${mnuAISCustomers}    xpath=//*[@id="menu-11"]
 ${mnuYourAddress}    xpath=//*[@id="menu-30"]
 ${mnuYourBillMedia}    xpath=//*[@id="menu-33"]
 ${mnuCallingMelody}    xpath=//*[@id="menu-18"]
+${mnuInternationalCall}    xpath=//*[@id="menu-23"]/span
