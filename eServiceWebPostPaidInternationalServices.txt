@@ -49,7 +49,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
     Select Menu    Home
-    sleep    20
+    sleep    30
     [Teardown]    Run Keywords    InactiveInternationalCall
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -70,6 +70,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageConnotCancelService}
     Select Menu    Home
-    sleep    20
+    sleep    30
     [Teardown]    Run Keywords    InactiveInternationalCall
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

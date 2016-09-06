@@ -6,3 +6,4 @@ ${btnActiveInternationCall}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/d
 ${mnuInternationalCall}    xpath=//*[@id="menu-23"]
 ${btnOK}          xpath=//*[@id="btnInternationalOk"]
 ${btnClose}       xpath=//*[@id="btnCloseFn"]/div
+${btnCloseConfrimSMS}    xpath=//*[@id="btnAlertConfirm"]/div/div
