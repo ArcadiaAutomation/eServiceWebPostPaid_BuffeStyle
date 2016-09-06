@@ -73,14 +73,15 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
+    sleep    5
     Input Web Text    ${txtInputOTP}    123
     Element Should Be Visible    ${btnOKOTPDisable}
-    Close Browser
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
-    Close All Applications
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
@@ -91,21 +92,18 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_GeneralTimeOut}
     ${messages}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d
     ${fakeOTP}=    Fake OTP    @{OTP}[0]
     Input Web Text    ${txtInputOTP}    ${fakeOTP}
     Click Web Element    ${btnOKOTP}
-    sleep    2
-    Element Should Be Visible    ${WrongOTP}
-    sleep    2
+    Web Element Should Be Visible    ${WrongOTP}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
-    sleep    2
-    Close Application
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
@@ -116,14 +114,14 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Click Web Element    ${btnOKOTPNotInputText}
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotInputOTP}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
-    Close Application
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
@@ -134,16 +132,16 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Wait Until Element Is Enabled    ${txtInputOTP}    30
     Input Web Text    ${txtInputOTP}    a
     Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
-    Close Browser
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
-    AISAppiumEx.Close All Applications
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
@@ -154,14 +152,14 @@ test
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Input Web Text    ${txtMobileNumber}    ${virtual_3PO_1_Number}
     Click Web Element    ${btnGetOTP}
     Click Web Element    ${btnCancelOtp}
     Element Text Should Be    ${txtMobileNumber}    ${EMPTY}
-    Close Browser
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
-    Close All Applications
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 TestPararell1
