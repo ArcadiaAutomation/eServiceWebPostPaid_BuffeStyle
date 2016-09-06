@@ -7,3 +7,4 @@ ${btnGetSMS}      xpath=//*[@id="panelSMSNonAIS"]/div/div/div[1]/label
 ${btnGetSMSfromAIS}    xpath=//*[@id="panelAISSendSMSAllContent"]/div[2]/div/div[1]/label
 ${btnCloseDialog}    xpath=//*[@id="btnCloseFn"]/div
 ${txtDetailSuspensionDialog}    xpath=//*[@id="txtAlertMessage"]/div
+${btnCloseDialogNotChange}    xpath=//*[@id="btnAlertConfirm"]/div/div
