@@ -9,3 +9,4 @@ Edit Billing Information
     Click Web Element    ${btnEditBillingInformation}
 
 Confirm Edit
+    Click Web Element    ${btnConfirmEdit}

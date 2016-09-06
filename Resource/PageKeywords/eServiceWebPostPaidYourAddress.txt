@@ -30,4 +30,4 @@ Select District And SubDistrict
 
 Select PostCode
     [Arguments]    ${labelPostCode}=${empty}
-    Run Keyword If    '${labelDistrict}'!='${empty}'    Select From Web List By Label    ${ddlPostCode}    ${labelPostCode}
+    Run Keyword If    '${labelPostCode}'!='${empty}'    Select From Web List By Label    ${ddlPostCode}    ${labelPostCode}

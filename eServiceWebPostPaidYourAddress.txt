@@ -30,7 +30,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
     Edit Name And SurName    I am Miracle 10K Naja
-    Select Province     ${PleaseSelectProvince${ar_LANG}}
+    Select Province    ${PleaseSelectProvince${ar_LANG}}
     Confirm Edit
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotSelectProvince}
     Close Browser
@@ -47,7 +47,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
     Edit Name And SurName    Mr.Miracle GGWP
-    Select Province     กรุงเทพ
+    Select Province    กรุงเทพ
     Select District And SubDistrict    ${PleaseSelectDistrict${ar_LANG}}
     Confirm Edit
     Web Element Text Should Be    ${lblDialogMessage}    ${MessagenotSelectDistrict}
@@ -65,7 +65,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
     Edit Name And SurName    Mr.Miracle GGWP
-    Select Province     กรุงเทพ
+    Select Province    กรุงเทพ
     Select District And SubDistrict    บางรัก    ${PleaseSelectSubDistrict${ar_LANG}}
     Confirm Edit
     Web Element Text Should Be    ${lblDialogMessage}    ${MessagenotSelectSubDistrict}
@@ -83,10 +83,23 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
     Edit Name And SurName    Mr.Miracle GGWP
-    Select Province     กรุงเทพ
+    Select Province    กรุงเทพ
     Select District And SubDistrict    บางรัก    สีลม
     Select PostCode    ${PleaseSelectPostCode${ar_LANG}}
     Confirm Edit
     Web Element Text Should Be    ${lblDialogMessage}    ${MessagenotSelectPostCode}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S09-218]eServiceWeb-PO-YourAddress-VerifyYourAddress
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourAddress
+    Web Element Text Should Be    ${lblYourAddressDisplayText}    ${YouAddress${ar_LANG}}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

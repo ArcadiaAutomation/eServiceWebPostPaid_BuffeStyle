@@ -8,4 +8,4 @@ ${txtHomeTel}     xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[
 ${txtOfficeTel}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[4]/div[3]/div/input
 ${txtOtherTel}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[5]/div[2]/div/input
 ${btnCancelEdit}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/div/a[2]/div
-${lblDisplay}     xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[1]
+${lblGeneralInformationDisplayText}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[1]

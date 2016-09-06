@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourBillMedia.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[F09-282]eServiceWeb-PO-YourBillMedia-NotInputEmailAddress(MenuNotFoung)
+[F09-282]eServiceWeb-PO-YourBillMedia-NotInputEmailAddress(MenuNotFound)
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
