@@ -1,0 +1,2 @@
+*** Variables ***
+${MessageNotEditBillingInformation}    No data has been updated.

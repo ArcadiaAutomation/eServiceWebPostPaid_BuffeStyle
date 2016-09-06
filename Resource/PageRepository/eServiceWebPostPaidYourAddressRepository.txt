@@ -3,3 +3,6 @@ ${btnEditYouAddress}    xpath=//*[@id="edit"]/div
 ${txtNameAndSurName}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/div/input
 ${ddlProvince}    xpath=//*[@id="txtProfileProvinceCode province"]
 ${btnConfirmEdit}    xpath=//*[@id="updateAddress"]/div
+${ddlDistrict}    xpath=//*[@id="txtProfileCityCode amphur"]
+${ddlSubDistrict}    xpath=//*[@id="tumbol"]
+${ddlPostCode}    xpath//*[@id="txtZipCodeProfileEdit zipcode"]
