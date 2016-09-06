@@ -9,6 +9,7 @@ Login
     [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${MobileNumber}
     Input Web Text    ${txtMobileNumber}    ${MobileNumber}
     Click Web Element    ${btnGetOTP}
+    Sleep    10
     ${AtlasInfo}    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Wait SMS    ${PlatfromName}    1    ${lo_parallel_timeout}
     ${messages}=    Read SMS    ${PlatfromName}    AIS    1
