@@ -655,8 +655,8 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKSMSMMS}
     Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
-    Element Should Contain    ${ldlTotalMessage}    2
-    Element Should Contain    ${ldlTotalMoney}    2
+    Element Should Contain    ${ldlTotalMessageMorethanOne}    2
+    Element Should Contain    ${ldlTotalMoneyMorethanOne}    2
     Element Should Contain    ${ldlImmediaMessage}    ${ImmediateSmsMms}
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
@@ -728,8 +728,8 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
-    Element Should Contain    ${ldlTotalMessage}    2
-    Element Should Contain    ${ldlTotalMoney}    4
+    Element Should Contain    ${ldlTotalMessageMorethanOne}    2
+    Element Should Contain    ${ldlTotalMoneyMorethanOne}    4
     Element Should Contain    ${ldlFutureMessage}    ${FutureSMS}
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
@@ -800,8 +800,8 @@ Resource          ../Config/LocalConfig.txt
     sleep    2
     Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
-    Element Should Contain    ${ldlTotalMessage}    2
-    Element Should Contain    ${ldlTotalMoney}    6
+    Element Should Contain    ${ldlTotalMessageMorethanOne}    2
+    Element Should Contain    ${ldlTotalMoneyMorethanOne}    6
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}
@@ -876,8 +876,8 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
-    Element Should Contain    ${ldlTotalMessage}    2
-    Element Should Contain    ${ldlTotalMoney}    12
+    Element Should Contain    ${ldlTotalMessageMorethanOne}    2
+    Element Should Contain    ${ldlTotalMoneyMorethanOne}    12
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageMMSMorethanOneNumberComplete}

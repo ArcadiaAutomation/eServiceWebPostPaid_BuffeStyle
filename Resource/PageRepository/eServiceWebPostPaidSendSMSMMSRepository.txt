@@ -21,3 +21,5 @@ ${btnConfrimSendSMS}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[
 ${txtInsertNumber2}    xpath=//*[@id="txtServiceSendSMSMMSReceivedNumber1"]
 ${ldlFutureMessage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[2]/div[2]/span/span[1]
 ${ldlImmediaMessage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[2]/div[2]/span
+${ldlTotalMessageMorethanOne}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[3]/td[2]
+${ldlTotalMoneyMorethanOne}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[3]/td[3]
