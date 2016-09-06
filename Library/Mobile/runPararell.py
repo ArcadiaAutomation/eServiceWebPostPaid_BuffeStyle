@@ -19,8 +19,8 @@ def call_script(run_dir, robot_test_suite, tag, lang, browser, run_name):
     # command = "robot -t " + run_name + " -d " + dir_path + " -o output" + run_name + " -r report" + run_name \
     #           + " -l log" + run_name + " -v ar_LANG:" + LANG + " -v ar_BROWSER:" + BROWSER + " -i " + tag + " " \
     #           + robot_test_suite
-    command = "robot -t " + run_name + " -d " + run_dir + " -o output" + run_name + " -r report" + run_name \
-              + " -l log" + run_name + " -v ar_LANG:" + lang + " -v ar_BROWSER:" + browser + " -i " + tag + " " \
+    command = "robot -t " + run_name + " -d " + run_dir + " -o output" + run_name + lang + " -r report" + run_name + lang \
+              + " -l log" + run_name + lang + " -v ar_LANG:" + lang + " -v ar_BROWSER:" + browser + " -i " + tag + " " \
                 + robot_test_suite
     print "command is a " + command
     os.system(command)
