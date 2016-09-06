@@ -1,0 +1,21 @@
+*** Variables ***
+${txtCheckPrivilege}    xpath=//*[@id="txtPrivilegeStatusHead"]
+${txtCheckTimeService}    xpath=//*[@id="txtMobileServiceYearHead"]
+${txtCheckEmail}    xpath=//*[@id="txtEmailAddressHead"]
+${txtCheckLastTimeLogin}    xpath=//*[@id="txtLastLoginHead"]
+${txtCheckTotalBalance}    xpath=//*[@id="boxpay"]/div[2]/div[1]/table/tbody/tr/td[2]/span[1]
+${txtCheckOutStandingBalance}    xpath=//*[@id="boxpay"]/div[2]/div[2]/table/tbody/tr/td[2]/span[1]
+${btnPay}         xpath=//*[@id="btnBillPay"]
+${txtCheckBillPostPaid}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[1]/div
+${txtCheckCurrentPackage}    xpath=//*[@id="boxpage"]/div[2]/div[1]/div/div/span
+${txtCheckCurrentUsage}    xpath=//*[@id="boxuse"]/div[2]/div/div[1]/div/div/span
+${txtCheckUsageItem}    xpath=//*[@id="txtMessageHeader"]
+${btnDetailCurrentUsage}    xpath=//*[@id="linkMoreDetail"]
+${txtCheckCurrentCharge}    xpath=//*[@id="spnCqsHeader"]
+${txtCheckCloudStorage}    xpath=//*[@id="txtHeaderCloudPlus"]/span
+${btnRegisterFree}    xpath=//*[@id="btnViewOrRegisterCloud"]/div/span
+${btnDetailCurrentPackage}    xpath=//*[@id="linkDetailPackage"]/span
+${txtCheckYourCurrentPackage}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div[1]/div/div/div
+${txtCheckMainPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
+${txtCheckOnTopPackage}    xpath=//*[@id="panelCurrentPack1"]/div/div[1]/span
+${urlAISCloud}    https://www.aiscloudplus.com/user/register/?mobileno=0613851339

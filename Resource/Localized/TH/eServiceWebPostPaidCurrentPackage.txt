@@ -6,3 +6,5 @@ ${txtCheckDetailNextPackage}    แพ็กเกจหลัก
 ${txtCheckDetailOnTopNextPackage}    แพ็กเสริม
 ${smsCheckChangeOnTopPackageMidNightSale}    แพ็กเสริมเหมา เหมา Midnight Sale ค่าบริการ 5บาท โทรฟรีเบอร์ AIS 00:00-11:00น. ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม08/09/2016 00:00 ถึง 08/09/2016 23:59
 ${txtCheckDetailPackage}    399 บ/เดือน เน็ตต่อเนื่อง 2GB + AIS WiFi
+${txtMainPackage}    แพ็กเกจเล่นเน็ต
+${txtSubPackage}    Net SIM

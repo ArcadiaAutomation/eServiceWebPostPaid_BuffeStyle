@@ -4,7 +4,6 @@ Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCurrentPackage.txt
-Resource          eServiceWebPostPaidChangeMainPackage.txt
 
 *** Keywords ***
 Check Detail Package
@@ -14,3 +13,10 @@ Check Detail Package
 Check Detail NextPackage
     Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
     Web Element Text Should Be    ${txtOnTopNextPackage}    ${txtCheckDetailOnTopNextPackage}
+
+Select Package
+    [Arguments]    ${MainPackage}    ${SubPackage}
+    Wait Until Element Is Visible    ${ddlMainPackage}
+    Selenium2Library.Select From List    ${ddlMainPackage}    ${MainPackage}
+    Wait Until Element Is Visible    ${ddlSubPackage}
+    Selenium2Library.Select From List    ${ddlSubPackage}    ${SubPackage}

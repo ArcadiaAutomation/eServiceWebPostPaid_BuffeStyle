@@ -70,7 +70,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Menu    Package    CurrentPackage
     Check Detail Package
     Click Web Element    ${btnChangeMainPackage}
-    Select Package    Xtra Net    Net SIM
+    Select Package    ${txtMainPackage}    ${txtSubPackage}
     Click Web Element    ${btnSelectPackageNet2GBandAISWiFi}
     Click Web Element    ${btnConfirmPackage}
     Click Web Element    ${btnSelectNextDay}
@@ -124,8 +124,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    CurrentPackage
-    Web Element Text Should Be    ${txtMainPackage}    ${txtCheckDetailMainPackage}
-    Web Element Text Should Be    ${txtOnTopPackage}    ${txtCheckDetailOnTopPackage}
+    Check Detail Package
     Click Web Element    ${btnChangeOnTopPackage}
     Click Web Element    ${btnSubPackageBox}
     Click Web Element    ${btnSubPackageItem}
@@ -141,4 +140,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnNextPackage}
     Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S03-015]eServiceWeb-PO-Package-ChangeOnTopPackage-NextDay
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S03-016]eServiceWeb-PO-Package-ChangeOnTopPackage-Immediately
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

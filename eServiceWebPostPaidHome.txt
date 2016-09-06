@@ -1,0 +1,45 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
+
+*** Test Cases ***
+[S02-003]eServiceWeb-PO-Service-Home-VerifyPage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Home
+    Web Element Text Should Be    ${txtCheckPrivilege}    ${txtPrivilege}
+    Web Element Text Should Be    ${txtCheckTimeService}    ${txtTimeService}
+    Web Element Text Should Be    ${txtCheckEmail}    ${txtEmail}
+    Web Element Text Should Be    ${txtCheckLastTimeLogin}    ${txtLastTimeLogin}
+    Web Element Text Should Be    ${txtCheckTotalBalance}    ${txtTotalBalance}
+    Web Element Text Should Be    ${txtCheckOutStandingBalance}    ${txtOutStandingBalance}
+    Click Web Element    ${btnPay}
+    Web Element Text Should Be    ${txtCheckBillPostPaid}    ${txtBillPostPaid}
+    Select Menu    Home
+    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
+    Web Element Text Should Be    ${txtCheckCurrentUsage}    ${txtCurrentUsage}
+    Check Element Usage Internet
+    Check Element Usage Call
+    Check Element Usage SMS
+    Check Element Usage MMS
+    Click Web Element    ${btnDetailCurrentUsage}
+    Web Element Text Should Be    ${txtCheckCurrentCharge}    ${txtCurrentCharge}
+    Select Menu    Home
+    Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Click Web Element    ${btnRegisterFree}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlAISCloud}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlAISCloud}'    Fail
+    Select Frame    ${fraMainIframe}
+    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
+    Click Web Element    ${btnDetailCurrentPackage}
+    Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
+    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
+    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

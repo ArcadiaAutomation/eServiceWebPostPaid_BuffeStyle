@@ -1,0 +1,19 @@
+*** Variables ***
+${txtPrivilege}    Type of privilege
+${txtTimeService}    Mobile service year
+${txtEmail}       E-Mail
+${txtLastTimeLogin}    The last time login
+${txtTotalBalance}    Total Balance (฿)
+${txtOutStandingBalance}    Outstanding Balance (฿)
+${txtBillPostPaid}    Bill AIS Postpaid
+${txtCurrentPackage}    Your current package
+${txtCurrentUsage}    Your current usages
+${txtInternet}    Internet (ส่วนเกิน)
+${txtCall}        โทร
+${txtSMS}         SMS
+${txtMMS}         MMS
+${txtCurrentCharge}    Your Current Charges (Unbilled)
+${txtCloudStorage}    Your Cloud+ storage
+${txtYourCurrentPackage}    Your Current Package
+${txtMainPackage}    Main Package
+${txtOnTopPackage}    On-Top Package
