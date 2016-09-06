@@ -53,7 +53,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    150
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    Sleep    5
+    Sleep    15
     [Teardown]    Run Keywords    InactiveInternationalCall
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -75,6 +75,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Wait Web Until Page Contains Element    ${btnCloseConfrim}
     Click Web Element    ${btnCloseConfrim}
     Select Menu    Home
-    Sleep    5
+    Sleep    15
     [Teardown]    Run Keywords    InactiveInternationalCall
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
