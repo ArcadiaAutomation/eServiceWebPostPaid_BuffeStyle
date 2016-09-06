@@ -11,8 +11,6 @@ InactiveInternationalCall
     Click Web Element    ${btnInactiveRoaming}
     Click Web Element    ${btnInactiveInternationalCall}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
     Close Browser
 
 ActiveInternationalCall
@@ -25,4 +23,4 @@ ActiveInternationalCall
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
     Select Menu    Home
-    Sleep    30
+    Sleep    60
