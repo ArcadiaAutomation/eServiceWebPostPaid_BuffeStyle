@@ -4,6 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
 
 *** Test Cases ***
 [S10-225]eServiceWeb-PO-Privileges-EspeciallyforYou
+    [Documentation]    Sim must have Especially forYou 0613851334
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}

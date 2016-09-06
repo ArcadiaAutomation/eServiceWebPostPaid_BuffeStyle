@@ -49,7 +49,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
     Select Menu    Home
-    sleep    60
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    150
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Sleep    5
     [Teardown]    Run Keywords    InactiveInternationalCall
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -68,8 +72,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnInactiveInternationalCall}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageConnotCancelService}
+    Wait Web Until Page Contains Element    ${btnCloseConfrim}
+    Click Web Element    ${btnCloseConfrim}
     Select Menu    Home
-    sleep    60
+    Sleep    5
     [Teardown]    Run Keywords    InactiveInternationalCall
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

@@ -11,16 +11,25 @@ InactiveInternationalCall
     Click Web Element    ${btnInactiveRoaming}
     Click Web Element    ${btnInactiveInternationalCall}
     Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    150
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
 
 ActiveInternationalCall
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnActiveRoaming}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageOpenAllInternationalCall}
-    Click Web Element    ${btnCloseConfrimSMS}
+    Click Web Element    ${btnCloseConfrim}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
     Select Menu    Home
-    Sleep    60
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    150
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Sleep    5
