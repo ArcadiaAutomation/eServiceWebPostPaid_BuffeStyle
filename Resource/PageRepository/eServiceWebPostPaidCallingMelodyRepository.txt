@@ -1,0 +1,2 @@
+*** Variables ***
+${urlCallingMelody}    https://digital.ais.co.th/all-categories/calling-melody

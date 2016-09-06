@@ -27,14 +27,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    PerferAndCancelSMS
+    Check Status
     Click Web Element    ${btnNotGetSMS}
     Click Web Element    ${btnNotGetSMSfromAIS}
     Comment    not Input Reason in this case
     Click Web Element    ${btnConfirmPerferCancelSMS}
     Web Element Text Should Be    ${txtDetailSuspensionDialog}    ${confirmPerferCancelSMS}
     Click Web Element    ${btnCloseDialog}
-    Click Web Element    ${btnGetSMS}
-    Click Web Element    ${btnGetSMSfromAIS}
-    Click Web Element    ${btnConfirmPerferCancelSMS}
+    Set Status
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
