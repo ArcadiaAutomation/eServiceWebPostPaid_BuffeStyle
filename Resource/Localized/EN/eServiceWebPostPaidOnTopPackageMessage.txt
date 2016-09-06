@@ -7,3 +7,15 @@ ${MessageInputFriendNumberWithDtacNumber}    Please specify your AIS mobile numb
 ${MessageRegisterDuplicateXtraNetPackage}    You are currently using the selected package.Please select a new package again.
 ${CallAIS3Number}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)
 ${ActualOnTopPackageMsg}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
+${MessageSuperWifi}    Your AIS SUPER WiFi.*
+${AISSUPERWiFi}    99 B/30days: AIS SUPER WiFi 20GB
+${XtraNet}        Xtra Net
+${Wifi}           Wifi
+${XtraPack}       Xtra Pack
+${MaoMaoCombo}    Mao Mao Combo
+${InternetMonthly}    Internet Monthly
+${XtraTalk}       Xtra Talk
+${MaoMao}         Mao Mao
+${MonthlyPackage}    Monthly package
+${4GInternet488}    4G Internet on-top package 488B. 4G Internet 5GB
+${100BFreeStaSun}    100 B./Mth: Free AIS call Sat-Sun

@@ -11,3 +11,17 @@ Select Package
     Selenium2Library.Select From List    ${ddlMainTypePackage}    ${MainType}
     Wait Until Element Is Visible    ${ddlSubTypePackage}    10
     Selenium2Library.Select From List    ${ddlSubTypePackage}    ${SubType}
+
+Cancel On-Top Package
+    [Arguments]    ${PackageExp}
+    Click Web Element    ${mnuCancelOnTopPackage}
+    Wait Until Element Is Visible    ${PackageName}
+    @{Packages}    Get Webelements    ${PackageName}
+    : FOR    ${index}    IN RANGE    0    10
+    \    ${PackageNameAct}    Get Text    @{Packages}[${index}]
+    \    Run Keyword If    '${PackageNameAct}'=='${PackageExp}'    Exit For Loop
+    @{CheckBox}    Get Webelements    ${chkPackage}
+    Click Web Element    @{CheckBox}[${index}]
+    Click Web Element    ${btnCancelPack}
+    Click Web Element    ${ConfirmCancelPack}
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${ActualOnTopPackageMsg}

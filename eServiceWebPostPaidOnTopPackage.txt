@@ -4,6 +4,7 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F03-013]eServiceWeb-PO-OnTopPackage-NotSelectPackage
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -19,6 +20,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-014]eServiceWeb-PO-OnTopPackage-RegisterDuplicateXtraTalkPackage
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -38,7 +40,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-015]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
-    [Tags]    Package Must Not Register
+    [Tags]    Package Must Not Register    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -63,6 +65,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-016]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberLessThan10Digit
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -81,6 +84,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-017]eServiceWeb-PO-OnTopPackage-RegisterXtraTalkPackageFriendNumberWithCharacter
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -97,6 +101,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F03-018]eServiceWeb-PO-OnTopPackage-RegisteDuplicaterXtraNetPackage
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -115,17 +120,24 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [S03-029]eServiceWeb-PO-OnTopPackage-XtraTalkMonthlyPackage
+    [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
+    ...
+    ...
+    ...    _*BUG!!!!!!!*_ ไม่มี SMS ส่งมา (ทำ work around โดยการเปลี่ยน on top package)
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Xtra Talk    Monthly package
-    Click Web Element    ${chk100BCallWithInAIS150Mins}
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MonthlyPackage}
+    Click Web Element    ${chk100BFreeAISCallStaSun}
     Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoNextBillingCycle}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
@@ -133,20 +145,28 @@ Resource          ../Config/LocalConfig.txt
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Cancel On-Top Package    ${100BFreeStaSun}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-030]eServiceWeb-PO-OnTopPackage-XtraTalkMaoMao
+    [Documentation]    *สมัครแล้วไม่สามารถยกเลิกได้* มีผล 24 ชั่วโมง
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Xtra Talk    Mao Mao
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MaoMao}
     Click Web Element    ${chkMaoMaoMidnightSaleOnTopPackage5B}
     Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoNextBillingCycle}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
@@ -154,20 +174,25 @@ Resource          ../Config/LocalConfig.txt
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-031]eServiceWeb-PO-OnTopPackage-XtraNetInternetMonthly
+    [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Xtra Net    Internet Monthly
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraNet}    ${InternetMonthly}
     Click Web Element    ${chk4GInternetOnTopPackage488B}
     Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoNextBillingCycle}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
@@ -175,20 +200,59 @@ Resource          ../Config/LocalConfig.txt
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Cancel On-Top Package    ${4GInternet488}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-032]eServiceWeb-PO-OnTopPackage-XtraNetWifi
+    [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Xtra Net    Wifi
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraNet}    ${Wifi}
     Click Web Element    ${chkAisSuperWifi20GB}
     Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoNextBillingCycle}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    2
+    Comment    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${MessageSuperWifi}
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Cancel On-Top Package    ${AISSUPERWiFi}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-033]eServiceWeb-PO-OnTopPackage-XtraTalkAndNetMaoMaoCombo
+    [Documentation]    *สมัครแล้วไม่สามารถยกเลิกได้* มีผล 24 ชั่วโมง
+    [Tags]    success
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraPack}    ${MaoMaoCombo}
+    Click Web Element    ${chkMaoMaoComboOnTopPackage55B}
+    Click Web Element    ${btnChangePackConfirm}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
@@ -196,4 +260,5 @@ Resource          ../Config/LocalConfig.txt
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
