@@ -608,6 +608,7 @@ Resource          ../Config/LocalConfig.txt
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageSendSMSOneNumberComplete}    Replace String    ${MessageSendSMSOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
+    ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
