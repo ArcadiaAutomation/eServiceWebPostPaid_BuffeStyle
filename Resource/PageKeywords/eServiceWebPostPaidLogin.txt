@@ -7,10 +7,9 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
 *** Keywords ***
 Login
     [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}    ${MobileNumber}
-    ${AtlasInfo}    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
+    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
     Input Web Text    ${txtMobileNumber}    ${MobileNumber}
     Click Web Element    ${btnGetOTP}
-    Sleep    10
     Wait SMS    ${PlatfromName}    1    ${lo_parallel_timeout}
     ${messages}=    Read SMS    ${PlatfromName}    AIS    1
     Log    @{messages}[0]
@@ -19,7 +18,6 @@ Login
     Comment    ${OTP}    GetOTPinSMS    @{messages}[0]
     Input Web Text    ${txtInputOTP}    @{OTP}[0]
     Click Web Element    ${btnOKOTP}
-    sleep    4
     Close SMS App    ${PlatfromName}    ${SN}
 
 Fake OTP
