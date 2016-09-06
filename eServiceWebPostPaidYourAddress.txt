@@ -30,7 +30,63 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
     Edit Name And SurName    I am Miracle 10K Naja
-    Select Province    ${ddlProvince}    Please select Province.
+    Select Province     ${PleaseSelectProvince${ar_LANG}}
     Confirm Edit
-    Comment    Web Element Text Should Be
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotSelectProvince}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F09-278]eServiceWeb-PO-YourAddress-NotSelectDistrict
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourAddress
+    Edit Your Address
+    Edit Name And SurName    Mr.Miracle GGWP
+    Select Province     กรุงเทพ
+    Select District And SubDistrict    ${PleaseSelectDistrict${ar_LANG}}
+    Confirm Edit
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagenotSelectDistrict}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F09-279]eServiceWeb-PO-YourAddress-NotSelectSubDistrict
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourAddress
+    Edit Your Address
+    Edit Name And SurName    Mr.Miracle GGWP
+    Select Province     กรุงเทพ
+    Select District And SubDistrict    บางรัก    ${PleaseSelectSubDistrict${ar_LANG}}
+    Confirm Edit
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagenotSelectSubDistrict}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F09-280]eServiceWeb-PO-YourAddress-NotSelectPostCode
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourAddress
+    Edit Your Address
+    Edit Name And SurName    Mr.Miracle GGWP
+    Select Province     กรุงเทพ
+    Select District And SubDistrict    บางรัก    สีลม
+    Select PostCode    ${PleaseSelectPostCode${ar_LANG}}
+    Confirm Edit
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagenotSelectPostCode}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

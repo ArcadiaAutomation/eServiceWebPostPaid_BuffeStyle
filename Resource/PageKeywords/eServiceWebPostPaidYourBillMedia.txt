@@ -1,0 +1,11 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebPostPaidYourBillMediaRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourBillMediaMessage.txt
+
+*** Keywords ***
+Edit Billing Information
+    Click Web Element    ${btnEditBillingInformation}
+
+Confirm Edit

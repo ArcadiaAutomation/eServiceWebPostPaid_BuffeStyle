@@ -1,0 +1,9 @@
+*** Variables ***
+${PleaseSelectProvinceTH}    กรุณาเลือกจังหวัด
+${PleaseSelectProvinceEN}    Please select Province.
+${PleaseSelectSubDistrictTH}    กรุณาเลือกตำบล/แขวง
+${PleaseSelectSubDistrictEN}    Please select Sub-District.
+${PleaseSelectDistrictTH}    กรุณาเลือกอำเภอ/เขต
+${PleaseSelectDistrictEN}    Please select District.
+${PleaseSelectPostCodeTH}    กรุณาเลือกรหัสไปรษณีย์
+${PleaseSelectPostCodeEN}    Please select Postal Code.

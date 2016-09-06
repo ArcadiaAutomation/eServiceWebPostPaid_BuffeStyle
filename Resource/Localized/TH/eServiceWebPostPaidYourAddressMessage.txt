@@ -1,2 +1,6 @@
 *** Variables ***
 ${MessageNotInputNameAndSurName}    กรุณากรอกชื่อ-นามสกุล
+${MessageNotSelectProvince}    กรุณาเลือกจังหวัด
+${MessagenotSelectDistrict}    กรุณาเลือกอำเภอ/เขต
+${MessagenotSelectSubDistrict}    กรุณาเลือกตำบล/แขวง
+${MessagenotSelectPostCode}    กรุณาเลือกรหัสไปรษณีย์

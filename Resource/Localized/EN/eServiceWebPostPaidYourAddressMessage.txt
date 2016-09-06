@@ -1,2 +1,6 @@
 *** Variables ***
 ${MessageNotInputNameAndSurName}    Please enter your First - Last Name.
+${MessageNotSelectProvince}    Please select Province.
+${MessagenotSelectDistrict}    Please select District.
+${MessagenotSelectSubDistrict}    Please select Sub-District.
+${MessagenotSelectPostCode}    Please select Postal Code.

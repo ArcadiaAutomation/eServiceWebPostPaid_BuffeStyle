@@ -3,6 +3,7 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          ../PageRepository/eServiceWebPostPaidYourAddressRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourAddressMessage.txt
+Resource          ../PageVariable/eServiceWebPostPaidYourAddressVariable.txt
 
 *** Keywords ***
 Edit Your Address
@@ -15,8 +16,18 @@ Edit Name And SurName
     Selenium2Library.Input Text    ${txtNameAndSurName}    ${NameAndSurName}
 
 Select Province
-    [Arguments]    ${locator}    ${label}
-    Select From Web List By Label    ${locator}     ${label}
+    [Arguments]    ${labelProvince}=${empty}
+    Run Keyword If    '${labelProvince}'!='${empty}'    Select From Web List By Label    ${ddlProvince}    ${labelProvince}
+    Comment    Run Keyword If    '${labelDistrict}'!='${empty}'    Select From Web List By Label    ${ddlDistrict}    ${labelDistrict}
 
 Confirm Edit
     Click Web Element    ${btnConfirmEdit}
+
+Select District And SubDistrict
+    [Arguments]    ${labelDistrict}=${empty}    ${labelSubDistrict}=${empty}
+    Run Keyword If    '${labelDistrict}'!='${empty}'    Select From Web List By Label    ${ddlDistrict}    ${labelDistrict}
+    Run Keyword If    '${labelSubDistrict}'!='${empty}'    Select From Web List By Label    ${ddlSubDistrict}    ${labelSubDistrict}
+
+Select PostCode
+    [Arguments]    ${labelPostCode}=${empty}
+    Run Keyword If    '${labelDistrict}'!='${empty}'    Select From Web List By Label    ${ddlPostCode}    ${labelPostCode}

@@ -1,0 +1,3 @@
+*** Variables ***
+${btnEditBillingInformation}    xpath=//*[@id="edit"]/div
+${btnConfirmEdit}    xpath=//*[@id="updateBillingMedia"]/div

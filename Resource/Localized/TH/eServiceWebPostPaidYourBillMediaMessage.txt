@@ -1,0 +1,2 @@
+*** Variables ***
+${MessageNotEditBillingInformation}    ไม่มีการแก้ไขข้อมูล

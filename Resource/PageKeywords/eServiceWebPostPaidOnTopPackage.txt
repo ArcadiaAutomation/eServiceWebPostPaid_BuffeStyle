@@ -5,3 +5,9 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidOnTopPackageRepository.txt
 
 *** Keywords ***
+Select Package
+    [Arguments]    ${MainType}    ${SubType}
+    Wait Until Element Is Visible    ${ddlMainTypePackage}    10
+    Selenium2Library.Select From List    ${ddlMainTypePackage}    ${MainType}
+    Wait Until Element Is Visible    ${ddlSubTypePackage}    10
+    Selenium2Library.Select From List    ${ddlSubTypePackage}    ${SubType}

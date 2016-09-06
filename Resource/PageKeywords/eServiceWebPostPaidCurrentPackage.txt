@@ -4,3 +4,13 @@ Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCurrentPackage.txt
+Resource          eServiceWebPostPaidChangeMainPackage.txt
+
+*** Keywords ***
+Check Detail Package
+    Web Element Text Should Be    ${txtMainPackage}    ${txtCheckDetailMainPackage}
+    Web Element Text Should Be    ${txtOnTopPackage}    ${txtCheckDetailOnTopPackage}
+
+Check Detail NextPackage
+    Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
+    Web Element Text Should Be    ${txtOnTopNextPackage}    ${txtCheckDetailOnTopNextPackage}

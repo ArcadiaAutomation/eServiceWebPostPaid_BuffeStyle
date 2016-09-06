@@ -1,10 +1,9 @@
 *** Settings ***
+Resource          Resource/PageKeywords/eServiceWebPostPaidYourBillMedia.txt
 Resource          ../Config/LocalConfig.txt
-Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.txt
 
 *** Test Cases ***
-[F07-254]eServiceWeb-PO-Service-PreferAndCancelSMSnotChange
-    [Tags]
+[F09-282]eServiceWeb-PO-YourBillMedia-NotInputEmailAddress(MenuNotFoung)
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -12,13 +11,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    PerferAndCancelSMS
-    Click Web Element    ${btnConfirmPerferCancelSMS}
-    Web Element Text Should Be    ${txtConfirmDialog}    ${notInputChange}
-    Close Browser
+    Select Menu    YourPersonalInformation    YourBillMedia
+    Edit Billing Information
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F07-255]eServiceWeb-PO-Service-CancelSMSnotReason
+[F09-283]eServiceWeb-PO-YourBillMedia-NotEditBillingInformation
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -26,14 +23,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    PerferAndCancelSMS
-    Check Status
-    Click Web Element    ${btnNotGetSMS}
-    Click Web Element    ${btnNotGetSMSfromAIS}
-    Comment    not Input Reason in this case
-    Click Web Element    ${btnConfirmPerferCancelSMS}
-    Web Element Text Should Be    ${txtDetailSuspensionDialog}    ${confirmPerferCancelSMS}
-    Click Web Element    ${btnCloseDialog}
-    Set Status
+    Select Menu    YourPersonalInformation    YourBillMedia
+    Edit Billing Information
+    Confirm Edit
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotEditBillingInformation}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
