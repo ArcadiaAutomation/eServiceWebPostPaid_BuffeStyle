@@ -2,5 +2,3 @@
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
-Resource          ../PageRepository/eServiceWebPostPaidAISCouldRepository.txt
-Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidAISCouldMessage.txt
