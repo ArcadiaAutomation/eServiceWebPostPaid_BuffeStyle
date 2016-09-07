@@ -1,11 +1,9 @@
 *** Settings ***
 Resource          ../Config/LocalConfig.txt
-Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidLuckyNumber.txt
 
 *** Test Cases ***
-[S10-225]eServiceWeb-PO-Privileges-EspeciallyforYou
-    [Documentation]    Sim must have Especially forYou 0613851334
-    [Tags]    success
+[S08-215]
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -13,15 +11,15 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Privilege    EspeciallyforYou
-    Click Web Element    ${btnRoamingServices}
-    Wait Web Until Page Contains Element    ${lblHeadrDialogMessage}
-    Web Element Text Should Be    ${lblHeadrDialogMessage}    ${MessageRoamingServices}
+    Select Menu    Service    AISCould
+    ${urlAISCould}    Set Variable    https://www.aiscloudplus.com/user/register/?mobileno=${virtual_3PO_1_Number}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlAISCould}
+    ${currentURL}    Get Location
+    Run Keyword if    '${currentURL}' != '${urlAISCould}'    Fail
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S10-226]eServiceWeb-PO-Privileges-AISCustomers
-    [Tags]    success
+[S08-216]eServiceWeb-PO-Service-LuckyNumberYourSelf
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -29,9 +27,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPrivilege.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Privilege    AISCustomers
-    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlPrivilegeAISCustomers}
-    ${currentURL}    Get Location
-    Run Keyword if    '${currentURL}' != '${urlPrivilegeAISCustomers}'    Fail
+    Select Menu    LuckyNumber
+    Click Web Element    ${btnLuckyNumberOfYour}
+    Wait Web Until Page Contains Element    ${ldlStepSelectLuckyNumber}
+    Element Should Contain    ${ldlStepSelectLuckyNumber}    ${MessageStepSelectLuckyNumber}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

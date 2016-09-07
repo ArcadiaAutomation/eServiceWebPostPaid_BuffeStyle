@@ -11,7 +11,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Home
     Web Element Text Should Be    ${txtCheckPrivilege}    ${txtPrivilege}
     Web Element Text Should Be    ${txtCheckTimeService}    ${txtTimeService}
     Web Element Text Should Be    ${txtCheckEmail}    ${txtEmail}
@@ -35,11 +34,81 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlAISCloud}
     ${currentURL}    Get Location
     Run Keyword if    '${currentURL}' != '${urlAISCloud}'    Fail
-    Select Frame    ${fraMainIframe}
     Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
     Click Web Element    ${btnDetailCurrentPackage}
     Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
     Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
     Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S02-004]eServiceWeb-PO-Service-Home-SelectCurrentPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Home
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S02-005]eServiceWeb-PO-Service-Home-SelectCurrentUsage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Web Element Text Should Be    ${txtCheckCurrentUsage}    ${txtCurrentUsage}
+    Check Element Usage Internet
+    Check Element Usage Call
+    Check Element Usage SMS
+    Check Element Usage MMS
+    Click Web Element    ${btnDetailCurrentUsage}
+    Web Element Text Should Be    ${txtCheckCurrentCharge}    ${txtCurrentCharge}
+    Input Web Text    ${txtInputIDCard}    D230625574116
+    Click Web Element    ${btnConfirmIDCard}
+    Web Element Text Should Be    ${txtCheckYourBalance}    ${txtYourBalance}
+    Web Element Text Should Be    ${txtCheckSummary}    ${txtSummary}
+    Web Element Text Should Be    ${txtCheckUsageDetail}    ${txtUsageDetail}
+    Web Element Text Should Be    ${txtCheckVoiceCharge}    ${txtVoiceCharge}
+    Web Element Text Should Be    ${txtCheckInternetCharge}    ${txtInternetCharge}
+    Web Element Text Should Be    ${txtCheckValueAddService}    ${txtValueAddService}
+    Click Web Element    ${btnPreviousBill}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S02-006]eServiceWeb-PO-Service-Home-SelectAISCloud
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Click Web Element    ${btnRegisterFree}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=AIS Cloud+ | สมัครเข้าใช้งาน
+    ${urlAISCloud}    Set Variable    https://www.aiscloudplus.con
+    Log    ${urlAISCloud}
+    ${currentURL}    Get Location
+    Log    ${currentURL}
+    Comment    Should Be Equal    ${urlAISCloud}.*    ${currentURL}
+    Comment    Run Keyword if    '${currentURL}' != '${urlAISCloud}'    Fail
+    Should Match Regexp    ${currentURL}    ${urlAISCloud}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S02-008]eServiceWeb-PO-Service-Home-Pay
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Click Web Element    ${btnPay}
+    Web Element Text Should Be    ${txtCheckBillPostPaid}    ${txtBillPostPaid}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

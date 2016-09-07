@@ -18,4 +18,15 @@ ${btnDetailCurrentPackage}    xpath=//*[@id="linkDetailPackage"]/span
 ${txtCheckYourCurrentPackage}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div[1]/div/div/div
 ${txtCheckMainPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
 ${txtCheckOnTopPackage}    xpath=//*[@id="panelCurrentPack1"]/div/div[1]/span
-${urlAISCloud}    https://www.aiscloudplus.com/user/register/?mobileno=0613851339
+${urlAISCloud}    https://www.aiscloudplus.com\.*
+${txtInputIDCard}    xpath=//*[@id="textfield"]
+${btnConfirmIDCard}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[2]/div/a/div
+${txtCheckYourBalance}    xpath=//*[@id="lblCqsHeadCurrent"]
+${txtCheckPhoneNumber}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[1]/tbody/tr/td[1]/span
+${txtCheckYourPackage}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[2]/tbody/tr/td[1]/span
+${txtCheckSummary}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[4]/tbody/tr/td[1]/span
+${txtCheckUsageDetail}    xpath=//*[@id="inBoxScroll"]/div/div/div[1]/table/tbody/tr/td[1]
+${txtCheckVoiceCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[3]/div/table/tbody/tr/td[1]/span
+${txtCheckInternetCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[5]/div/table/tbody/tr/td[1]/span
+${txtCheckValueAddService}    xpath=//*[@id="inBoxScroll"]/div/div/div[7]/div/table/tbody/tr/td[1]/span
+${btnPreviousBill}    xpath=//*[@id="btnCqsPreviousBill"]/div/span

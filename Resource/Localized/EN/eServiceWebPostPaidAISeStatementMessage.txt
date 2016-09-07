@@ -1,0 +1,6 @@
+*** Variables ***
+${MessageHeadPage}    AIS eStatement
+${MessageTerms}    Terms & Conditions
+${MessageBillingInformation}    Billing Information
+${MessageConfrim}    Your bill media has been successfully changed.
+${MessageNotEdit}    No data has been updated.

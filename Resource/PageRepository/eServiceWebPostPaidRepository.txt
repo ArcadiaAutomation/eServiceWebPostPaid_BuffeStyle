@@ -38,3 +38,6 @@ ${mnuYourBillMedia}    xpath=//*[@id="menu-33"]
 ${mnuCallingMelody}    xpath=//*[@id="menu-18"]
 ${mnuInternationalCall}    xpath=//*[@id="menu-23"]/span
 ${mnuAutomaticPaymentViaCreditCard}    xpath=//*[@id="menu-1225"]
+${mnuAISeStatement}    xpath=//*[@id="menu-79"]
+${mnuAISCould}    xpath=//*[@id="menu-127"]
+${mnuLuckyNumber}    xpath=//*[@id="menu-126"]
