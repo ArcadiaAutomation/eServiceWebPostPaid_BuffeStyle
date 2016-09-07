@@ -1,2 +1,2 @@
 *** Variables ***
-${MessageRoamingServices}    อุ่นใจทุกการเดินทางต่างประเทศ\.*
+${MessageRoamingServices}    อุ่นใจทุกการเดินทางต่างประเทศ
