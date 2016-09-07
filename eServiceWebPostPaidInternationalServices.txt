@@ -72,6 +72,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnInactiveInternationalCall}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Should Contain    ${lblDialogMessage}    ${MessageConnotCancelService}
     Wait Web Until Page Contains Element    ${btnCloseConfrim}
     Click Web Element    ${btnCloseConfrim}
     Select Menu    Home
