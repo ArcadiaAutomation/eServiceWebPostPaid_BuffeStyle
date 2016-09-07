@@ -17,3 +17,11 @@ ${txtCloudStorage}    พื้นที่ใช้งาน Cloud+
 ${txtYourCurrentPackage}    แพ็กเกจปัจจุบันของคุณ
 ${txtMainPackage}    แพ็กเกจหลัก
 ${txtOnTopPackage}    แพ็กเสริม
+${txtYourBalance}    รายละเอียดแพ็กเกจ และค่าใช้บริการรอบปัจจุบันของคุณ
+${txtPhoneNumber}    หมายเลขโทรศัพท์
+${txtYourPackage}    แพ็กเกจของคุณ
+${txtSummary}     ค่าใช้บริการรอบปัจจุบัน
+${txtUsageDetail}    รายละเอียดการใช้งาน
+${txtVoiceCharge}    ค่าโทร
+${txtInternetCharge}    ค่า Internet
+${txtValueAddService}    ค่าบริการเสริม

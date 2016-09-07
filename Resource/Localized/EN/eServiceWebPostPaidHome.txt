@@ -17,3 +17,11 @@ ${txtCloudStorage}    Your Cloud+ storage
 ${txtYourCurrentPackage}    Your Current Package
 ${txtMainPackage}    Main Package
 ${txtOnTopPackage}    On-Top Package
+${txtYourBalance}    Your current package and balance
+${txtPhoneNumber}    Mobile
+${txtYourPackage}    Your Promotion
+${txtSummary}     Summary
+${txtUsageDetail}    Usage detail
+${txtVoiceCharge}    Voice Charges
+${txtInternetCharge}    Internet Charges
+${txtValueAddService}    Value-Added Services (VAS)
