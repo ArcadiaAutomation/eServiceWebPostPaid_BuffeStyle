@@ -2,7 +2,7 @@
 
 *** Variables ***
 ${headerBillAIS}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[1]/div
-${txtAmount}      xpath=//*[@id="txtBILL3GIsSuspendCredit"]
+${txtAmount}      xpath=(//*[@id="txtBILL3GIsSuspendCredit"] | //*[@id="inBoxScroll"]/div/div[2]/div/div/div/table/tbody/tr/td[2]/div/input)
 ${btnPayment2Another}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div[1]/div[2]/div/div
 ${ddlPaymentType}    xpath=//*[@id="select_box1"]/div/select
 ${ddlCardName}    xpath=//*[@id="select_box2"]/div/select

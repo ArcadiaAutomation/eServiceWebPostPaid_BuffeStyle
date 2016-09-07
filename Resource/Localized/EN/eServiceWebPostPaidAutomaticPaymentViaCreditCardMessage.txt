@@ -1,0 +1,6 @@
+*** Variables ***
+${urlPciPage}     https\://payweb\.ais\.co\.th/pPay/WebServlet.*EN
+${MessageBillingCycle}    Billing cycle
+${MessageCreditCardPaymentCycle}    Credit card payment cycle
+${MessageWarning}    *Credit card payment cycle can be adjusted based on holiday period in each month. You will receive SMS notify of your credit card payment in every billing cycle.
+${MessageLinkToPciDss}    Please continue PCI DSS page\n(Payment Card Industry Data Security Standard)

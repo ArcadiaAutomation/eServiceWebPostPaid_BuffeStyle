@@ -1,0 +1,12 @@
+*** Variables ***
+${btnRegister}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/a
+${lbBillingCycle}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[2]/div/div[1]/div/div[1]
+${lbCreditCardPaymentCycle}    xpath=//*[@id="lblAutoTopupDetailCreditCardPaymentCycle"]
+${btnOkServiceDetail}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[4]/div/a[1]
+${btnCancelServiceDetail}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[4]/div/a[2]
+${lbAutoTopUpDetailBillingCycle}    xpath=//*[@id="lblAutoTopupDetailBillingCycleText"]
+${btnAgreeTermsOfService}    xpath=//*[@id="btnConfirm0"]
+${btnCancelTermsOfService}    xpath=//*[@id="btnConfirm1"]
+${lbMsgLinkToPciDss}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[4]/div/b
+${lbWarningMessage}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[3]/div
+${titlePayWeb}    AIS eService บริการออนไลน์ จัดการทุกเรื่องง่ายๆ ได้ 24 ชม.

@@ -1,0 +1,30 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidAutomaticPaymentViaCreditCard.txt
+
+*** Test Cases ***
+[S05-160]eServiceWeb-PO-BillAISPostpaid-RegisterToPayWithCreditCard
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    AutomaticPaymentViaCreditCard
+    Click Web Element    ${btnRegister}
+    Element Text Should Be    ${lbWarningMessage}    ${MessageWarning}
+    Element Text Should Be    ${lbBillingCycle}    ${MessageBillingCycle}
+    Element Text Should Be    ${lbCreditCardPaymentCycle}    ${MessageCreditCardPaymentCycle}
+    Click Web Element    ${btnOkServiceDetail}
+    Click Web Element    ${btnAgreeTermsOfService}
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbMsgLinkToPciDss}    ${MessageLinkToPciDss}
+    sleep    5
+    @{ListWindows}    List Windows
+    Log    @{ListWindows}[0]
+    Log    @{ListWindows}[1]
+    Select Window    @{ListWindows}[1]
+    ${currentURL}    Get Location
+    Should Match Regexp    ${currentURL}    ${urlPciPage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
