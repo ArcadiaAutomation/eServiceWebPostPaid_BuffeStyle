@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidLuckyNumberRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidLuckyNumberMessage.txt

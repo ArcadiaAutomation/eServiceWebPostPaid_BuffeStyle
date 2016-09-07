@@ -1,0 +1,29 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctionKeywords.txt
+Resource          ../PageRepository/eServiceWebPostPaidAISeStatementRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidAISeStatementMessage.txt
+
+*** Keywords ***
+SelectLanguageBill
+    Run Keyword If    '${ar_LANG}'=='TH'    Set English
+    ...    ELSE    Set Thai
+
+Set Thai
+    ${Lang}    Set Variable    ภาษาไทย
+    Select From List    ${lstLanguage}    0
+
+Set English
+    ${Lang}    Set Variable    English
+    Select From List    ${lstLanguage}    1
+
+LangTH
+    ${Language}    Get Text    ${lstLanguage}
+    Run Keyword If    '${Language}'=='ภาษาไทย'     Set English
+    ...    ELSE    Set Thai
+
+LangEN
+    ${Language}    Get Text    ${lstLanguage}
+    Run Keyword If    '${Language}'=='Thai'    Set English
+    ...    ELSE    Set Thai

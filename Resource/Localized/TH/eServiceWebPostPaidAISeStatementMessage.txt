@@ -1,0 +1,6 @@
+*** Variables ***
+${MessageHeadPage}    AIS eStatement
+${MessageTerms}    เงื่อนไขบริการ
+${MessageBillingInformation}    ข้อมูลใบแจ้งค่าใช้บริการ
+${MessageConfrim}    ดำเนินการแก้ไขช่องทางการรับใบแจ้งค่าใช้บริการเรียบร้อย
+${MessageNotEdit}    ไม่มีการแก้ไขข้อมูล
