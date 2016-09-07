@@ -31,14 +31,21 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Select Menu    Home
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
     Click Web Element    ${btnRegisterFree}
-    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlAISCloud}
+    Comment    ${WindowMainTitle}=    Get Title
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
     ${currentURL}    Get Location
-    Run Keyword if    '${currentURL}' != '${urlAISCloud}'    Fail
-    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
-    Click Web Element    ${btnDetailCurrentPackage}
-    Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
-    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
-    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
+    Should Match Regexp    ${currentURL}    ${urlAISCloud}
+    Wait Until Element Is Visible    ${btnRegisterAISCloud}
+    Comment    Close Window
+    Select Window    url=https://eservice.ais.co.th/eServiceWeb/
+    ${currentURL}    Get Location
+    log    ${currentURL}
+    Click Web Element    ${btnRegisterFree}
+    Comment    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
+    Comment    Click Web Element    ${btnDetailCurrentPackage}
+    Comment    Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
+    Comment    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
+    Comment    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -90,14 +97,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
     Click Web Element    ${btnRegisterFree}
-    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=AIS Cloud+ | สมัครเข้าใช้งาน
-    ${urlAISCloud}    Set Variable    https://www.aiscloudplus.con
-    Log    ${urlAISCloud}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
     ${currentURL}    Get Location
     Log    ${currentURL}
-    Comment    Should Be Equal    ${urlAISCloud}.*    ${currentURL}
-    Comment    Run Keyword if    '${currentURL}' != '${urlAISCloud}'    Fail
     Should Match Regexp    ${currentURL}    ${urlAISCloud}
+    Wait Until Element Is Visible    ${btnRegisterAISCloud}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-008]eServiceWeb-PO-Service-Home-Pay
