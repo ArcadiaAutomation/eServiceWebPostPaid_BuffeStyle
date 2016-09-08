@@ -1064,9 +1064,20 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-123]eServiceWeb-PO-Insurance-NotRegisterMPay
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${ldlRegisterMPay}
+    Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S05-130]eServiceWeb-PO-Insurance-BangkokLifeAssurance
+[S05-124]eServiceWeb-PO-Insurance-BangkokLifeAssurance
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1079,8 +1090,476 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokLifeAssurance}
-    Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${ldlService1}    ${Ref.No.1Bangkok}
+    Element Text Should Be    ${ldlService2}    ${Ref.No.2Bangkok}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-125]eServiceWeb-PO-Insurance-BangkokInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${BangkokInsurance}
+    Element Text Should Be    ${ldlService1}    ${PolicyNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-126]eServiceWeb-PO-Insurance-RVP
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${RVP}
+    Element Text Should Be    ${ldlService1}    ${CustomerNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-127]eServiceWeb-PO-Insurance-ChaoPhaYaInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ChaoPhaYaInsurance}
+    Element Text Should Be    ${ldlService1}    ${ReferenceNo.2.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-128]eServiceWeb-PO-Insurance-CIGNAInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${CIGNAInsurance}
+    Element Text Should Be    ${ldlService1}    ${CustomerNo.CIGNA}
+    Element Text Should Be    ${ldlService2}    ${ReferenceNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-129]eServiceWeb-PO-Insurance-DhipayaLifeAssurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${DhipayaLifeAssurance}
+    Element Text Should Be    ${ldlService1}    ${Ref.No.1}
+    Element Text Should Be    ${ldlService2}    ${Ref.No.2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-130]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(BillPayment)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(BillPayment)}
+    Element Text Should Be    ${ldlService1}    ${TQMRef.No.1}
+    Element Text Should Be    ${ldlService2}    ${TQMRef.No.2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-131]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(PID)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(PID)}
+    Element Text Should Be    ${ldlService1}    ${PersonalIDCustomer}
+    Element Text Should Be    ${ldlService2}    ${MobileNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-132]eServiceWeb-PO-Insurance-TQMInsuranceBroker(BillPayment)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(BillPayment)}
+    Element Text Should Be    ${ldlService1}    ${TQMRef.No.1}
+    Element Text Should Be    ${ldlService2}    ${TQMRef.No.2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-133]eServiceWeb-PO-Insurance-TQMInsuranceBroker(PID)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(PID)}
+    Element Text Should Be    ${ldlService1}    ${PersonalIDCustomer}}
+    Element Text Should Be    ${ldlService2}    ${MobileNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-135]eServiceWeb-PO-Insurance-ThaiLife
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ThaiLife}
+    Element Text Should Be    ${ldlService1}    ${PolicyNo.}
+    Element Text Should Be    ${ldlService2}    ${IDCardNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-134]eServiceWeb-PO-Insurance-ThaiCardifLifeAssurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ThaiCardifLifeAssurance}
+    Element Text Should Be    ${ldlService1}    ${CustomerNo./Ref.No.1}
+    Element Text Should Be    ${ldlService2}    ${CardifRef.No.2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-136]eServiceWeb-PO-Insurance-OceanLifeInsurance(BillPayment)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(BillPayment)}
+    Element Text Should Be    ${ldlService1}    ${REF.NO1}
+    Element Text Should Be    ${ldlService2}    ${REF.NO2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-137]eServiceWeb-PO-Insurance-OceanLifeInsurance(MicroInsurance)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(MicroInsurance)}
+    Element Text Should Be    ${ldlService1}    ${PersonalID}
+    Element Text Should Be    ${ldlService2}    ${PhoneNumber}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-138]eServiceWeb-PO-Insurance-ThaipiboonInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ThaipiboonInsurance}
+    Element Text Should Be    ${ldlService1}    ${CustomerNumber.}
+    Element Text Should Be    ${ldlService2}    ${ProductNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-139]eServiceWeb-PO-Insurance-ThanachartInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ThanachartInsurance}
+    Element Text Should Be    ${ldlService1}    ${ThanachartRef.No.1}
+    Element Text Should Be    ${ldlService2}    ${ThanachartRef.No.2}
+    Element Text Should Be    ${ldlService3}    ${PhoneNumber}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-140]eServiceWeb-PO-Insurance-Prudential
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${Prudential}
+    Element Text Should Be    ${ldlService1}    ${RefNo.(121878)}
+    Element Text Should Be    ${ldlService2}    ${PolicyNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-141]eServiceWeb-PO-Insurance-FalconInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${FalconInsurance}
+    Element Text Should Be    ${ldlService1}    ${RefNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-142]eServiceWeb-PO-Insurance-MuangThaiLife(Premium)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Premium)}
+    Element Text Should Be    ${ldlService1}    ${POLICY}
+    Element Text Should Be    ${ldlService2}    ${TEL}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-143]eServiceWeb-PO-Insurance-MuangThaiLife(Loan)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Loan)}
+    Element Text Should Be    ${ldlService1}    ${POLICY}
+    Element Text Should Be    ${ldlService2}    ${TEL}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-144]eServiceWeb-PO-Insurance-MuangThaiLife(APL)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(APL)}
+    Element Text Should Be    ${ldlService1}    ${POLICY}
+    Element Text Should Be    ${ldlService2}    ${TEL}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-145]eServiceWeb-PO-Insurance-MuangThaiInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
+    Element Text Should Be    ${ldlService1}    ${MuangThaiRef.No.1}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-146]eServiceWeb-PO-Insurance-SynMunKongInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance}
+    Element Text Should Be    ${ldlService1}    ${BillNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-147]eServiceWeb-PO-Insurance-ACEInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ACEInsurance}
+    Element Text Should Be    ${ldlService1}    ${Ref.1}
+    Element Text Should Be    ${ldlService2}    ${Ref.2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-148]eServiceWeb-PO-Insurance-FWDLifeInsurance
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${FWDLifeInsurance}
+    Element Text Should Be    ${ldlService1}    ${FWDCustomerNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-149]eServiceWeb-PO-Insurance-AIA
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${AIA}
+    Element Text Should Be    ${ldlService1}    ${CustomerNo./RefNo.1}
+    Element Text Should Be    ${ldlService2}    ${DueDate}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

@@ -30,3 +30,41 @@ ${MessagePleaseFillDetails} 	กรุณาระบุรายละเอี
 ${MessagePleaseRefillmCASH}		จำนวนเงินใน mCASH ไม่พอ กรุณาตรวจสอบยอดหรือเติมเงินก่อนใช้บริการ
 ${MessagePleaseTryAgain}		ขออภัยค่ะ ไม่สามารถทำรายการได้ในขณะนี้
 ${MessageSorryPleaseTryAgain}		ขออภัย ระบบไม่สามารถให้บริการได้ในขณะนี้ กรุณาเข้าใช้บริการใหม่อีกครั้ง
+${Ref.No.1Bangkok}		เลขที่สัญญา
+${Ref.No.2Bangkok}		เลขที่อ้างอิง
+${PolicyNo.}	เลขที่กรมธรรม์
+${Amount(baht)}		จำนวนเงินที่ต้องการชำระ (บาท)
+${CustomerNo.}		รหัสตัวแทน
+${ReferenceNo.2.}		รหัสตัวแทน
+${ReferenceNo.}		เลขที่อ้างอิง
+${PersonalIDCustomer}		เลขบัตรประชาชนของลูกค้า
+${MobileNo.}		เบอร์โทรศัพท์ลูกค้า
+${CustomerNo.CIGNA}		รหัสลูกค้า 6 หลักสุดท้าย
+${Ref.No.1}		หมายเลขอ้างอิง 1
+${Ref.No.2}		หมายเลขอ้างอิง 2
+${TQMRef.No.1}		เลขที่อ้างอิง(Ref.No1)
+${TQMRef.No.2}		เลขที่อ้างอิง(Ref.No2)
+${CustomerNo./Ref.No.1}		หมายเลขอ้างอิง
+${CardifRef.No.2}		เลขที่ลูกค้า
+${IDCardNo.}		หมายเลขบัตรประชาชน
+${REF.NO1}		REF. NO 1
+${REF.NO2}		REF. NO 2
+${PersonalID}		เลขบัตรประจำตัวประชาชน
+${PhoneNumber}		เบอร์โทรศัพท์
+${CustomerNumber.}		รหัสลูกค้า
+${ProductNo.}		รหัสสินค้า
+${ThanachartRef.No.1}		เลขที่อ้างอิง 1 (Ref.No.1)
+${ThanachartRef.No.2}		เลขที่อ้างอิง 2 (Ref.No.2)
+${PhoneNumber}		เบอร์โทรศัพท์ของลูกค้า
+${RefNo.(121878)}		รหัสอ้างอิง (ระบุ 121878)
+${RefNo.}		หมายเลขอ้างอิง
+${POLICY}		เลขที่กรมธรรม์
+${TEL}		เบอร์โทรศัพท์ที่ติดต่อได้
+${MuangThaiRef.No.1}		Ref.No.1
+${BillNo.}		เลขที่กรมธรรม์
+${Ref.1}		เลขกรมธรรม์ (Ref.1)
+${Ref.2}		หมายเลขอ้างอิง (Ref.2)
+${FWDCustomerNo.}		หมายเลขอ้างอิง
+${CustomerNo./RefNo.1}		หมายเลขอ้างอิง(เลขที่กรมธรรม์)
+${DueDate}		วันถึงกำหนดชำระ (ดดววปป) ค.ศ.
+${RegisterMPay}		สมัครบริการ mPAY

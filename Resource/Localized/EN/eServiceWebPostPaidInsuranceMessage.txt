@@ -30,3 +30,40 @@ ${MessagePleaseFillDetails}            Please fill in completed details of the p
 ${MessagePleaseRefillmCASH}		Your mCASH is not sufficient, please refill your mCASH before making transaction.
 ${MessagePleaseTryAgain}		The service in temporary unavailable , please try again later.
 ${MessageSorryPleaseTryAgain}		Sorry, the service is unaviable at the moment. Please try again.
+${Ref.No.1angkok}		Ref. No.1
+${Ref.No.2angkok}		Ref. No.2
+${PolicyNo.angkok}	Policy No.
+${Amount(baht)}		Amount (baht)
+${CustomerNo.}		Customer No.
+${ReferenceNo.2.}		Reference No.2.
+${ReferenceNo.}		Reference No.
+${PersonalID}		Personal ID
+${MobileNo.}		Mobile No.
+${Ref.No.1}		Ref. No.1
+${Ref.No.2}		Ref. No.2
+${TQMRef.No.1}		Ref. No.1
+${TQMRef.No.2}		Ref. No.2
+${CustomerNo./Ref.No.1}		Customer No./Ref.No.1
+${CardifRef.No.2}		Ref.No.2
+${IDCardNo.}		ID Card No.
+${REF.NO1}		REF. NO 1
+${REF.NO2}		REF. NO 2
+${PersonalID		Personal ID
+${PhoneNumber}		Phone Number
+${CustomerNumber.}		Customer No.
+${ProductNo.}		Product No.
+${ThanachartRef.No.1}		Ref.No.1
+${ThanachartRef.No.2}		Ref.No.2
+${PhoneNumber}		Phone Number
+${RefNo.(121878)}		Ref No.(121878)
+${RefNo.}		Ref No.
+${POLICY}		POLICY
+${TEL}		TEL.
+${MuangThaiRef.No.1}		Ref.No.1
+${BillNo.}		Bill No.
+${Ref.1}		Ref.1
+${Ref.2}		Ref.2
+${FWDCustomerNo.}		Customer No.
+${CustomerNo./RefNo.1}		Customer No./Ref No.1
+${DueDate}		Due date
+${RegisterMPay}		mPAY register
