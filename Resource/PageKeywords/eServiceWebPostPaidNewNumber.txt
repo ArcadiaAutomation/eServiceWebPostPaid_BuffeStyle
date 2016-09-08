@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
-Resource          ../PageRepository/eServiceWebPostPaidNewNumber.txt
+Resource          ../PageRepository/eServiceWebPostPaidNewNumberRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidNewNumberMessage.txt
 Resource          ../PageVariable/eServiceWebPostPaidNewNumberVariable.txt
 Library           ../../Library/ExcelLibrary/ExcelLibrary.py

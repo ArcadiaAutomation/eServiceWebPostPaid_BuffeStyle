@@ -5,3 +5,4 @@ ${btnTerms}       xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]
 ${ldlHeadTerms}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div/div[2]/div/div[1]/div[1]
 ${lstLanguage}    xpath=//*[@id="selectBillLanguage"]
 ${btnOK}          xpath=//*[@id="updateBillingMedia"]/div
+${btnCloseDialog}    xpath=//*[@id="btnAlertConfirm"]/div/div

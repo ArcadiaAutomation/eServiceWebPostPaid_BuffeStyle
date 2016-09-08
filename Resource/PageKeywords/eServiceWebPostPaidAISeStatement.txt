@@ -7,23 +7,13 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidAISeStatementMessag
 
 *** Keywords ***
 SelectLanguageBill
-    Run Keyword If    '${ar_LANG}'=='TH'    Set English
-    ...    ELSE    Set Thai
-
-Set Thai
-    ${Lang}    Set Variable    ภาษาไทย
+    Wait Web Until Page Contains Element    ${lstLanguage}
     Select From List    ${lstLanguage}    0
+    Click Web Element    ${btnOK}
+    ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}
+    Run Keyword If    '${result}'=='True'    SetEnglish
 
-Set English
-    ${Lang}    Set Variable    English
+SetEnglish
+    Click Web Element    ${btnCloseDialog}
     Select From List    ${lstLanguage}    1
-
-LangTH
-    ${Language}    Get Text    ${lstLanguage}
-    Run Keyword If    '${Language}'=='ภาษาไทย'     Set English
-    ...    ELSE    Set Thai
-
-LangEN
-    ${Language}    Get Text    ${lstLanguage}
-    Run Keyword If    '${Language}'=='Thai'    Set English
-    ...    ELSE    Set Thai
+    Click Web Element    ${btnOK}

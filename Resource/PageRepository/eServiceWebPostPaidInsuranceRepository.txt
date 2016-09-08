@@ -1,0 +1,4 @@
+*** Variables ***
+${txtPINCode}     xpath=//*[@id="txtMPayServicePinCode"]
+${btnOKPINCode}    xpath=//*[@id="btnMPayServiceLogin"]
+${lstMPayServiceList}    xpath=//*[@id="ddlMPayServiceList"]

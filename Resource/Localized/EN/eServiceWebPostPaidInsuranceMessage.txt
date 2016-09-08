@@ -1,0 +1,15 @@
+*** Variables ***
+${BangkokLifeAssurance}    Bangkok Life Assurance
+${BangkokInsurance}    Bangkok Insurance
+${RVP}            RVP
+${ChaoPhaYaInsurance}    ChaoPhaYa Insurance
+${CIGNAInsurance}    CIGNA Insurance
+${DhipayaLifeAssurance}    Dhipaya Life Assurance
+${TQMLifeInsuranceBroker(BillPayment)}    TQM Life Insurance Broker (Bill Payment)
+${TQMLifeInsuranceBroker(PID)}    TQM Life Insurance Broker (PID)
+${TQMInsuranceBroker(BillPayment)}    TQM Insurance Broker (Bill Payment)
+${TQMInsuranceBroker(PID)}    TQM Insurance Broker (PID)
+${ThaiCardifLifeAssurance}    Thai Cardif Life Assurance
+${ThaiLife}       Thai Life
+${OceanLifeInsurance(BillPayment)}    Ocean Life Insurance (Bill Payment)
+${OceanLifeInsurance(MicroInsurance)}    Ocean Life Insurance (Micro Insurance)
