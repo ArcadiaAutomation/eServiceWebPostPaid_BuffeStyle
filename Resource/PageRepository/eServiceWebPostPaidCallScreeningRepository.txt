@@ -17,7 +17,13 @@ ${btnAddNumberBlock}    xpath=//*[@id="btnCallScreeningAddBlackList"]
 ${txtInputNumberMobileBlock}    xpath=//*[@id="txtCallScreeningOnlyNumberNewNumber"]
 ${btnCloseCallScreeningDialog}    xpath=//*[@id="btnAlertConfirm"]/div
 ${btnConfirmCallScreeningDialog}    xpath=//*[@id="btnAction0"]/div
-${btnBackToCallScreeningDialog}    xpath=//*[@id="btnCloseFn"]/div
+${btnBackToCallScreeningDialog}    xpath=//*[@id="btnCloseFn"]
 ${txtDialogConfirmCallScreening}    xpath=//*[@id="txtAlertMessage"]/div
 ${txtAlertDialog}    xpath=//*[@id="popup_detail"]/div[1]
 ${txtCheckConfirmRegister}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div[2]/div/div/div/div/div[1]
+${txtWelcomeCallsNumberAdd}    xpath=//*[@id="txtCallScreeningWhiteListNumber0"]
+${txtWelcomeCallsNumberAddMore}    xpath=//*[@id="txtCallScreeningWhiteListNumber1"]
+${btnRemoveNumberWelcomeCalls}    xpath=//*[@id="btnCallScreeningWhiteListNumberRemove0"]
+${txtBlockCallsNumberAdd}    xpath=//*[@id="txtCallScreeningBlackListNumberList0"]
+${txtBlockCallsNumberAddMore}    xpath=//*[@id="txtCallScreeningBlackListNumberList1"]
+${btnRemoveNumberBlockCalls}    xpath=//*[@id="btnCallScreeningBlackListNumberRemove0"]

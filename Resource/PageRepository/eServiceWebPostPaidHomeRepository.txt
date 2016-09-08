@@ -9,6 +9,7 @@ ${btnPay}         xpath=//*[@id="btnBillPay"]
 ${txtCheckBillPostPaid}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[1]/div
 ${txtCheckCurrentPackage}    xpath=//*[@id="boxpage"]/div[2]/div[1]/div/div/span
 ${txtCheckCurrentUsage}    xpath=//*[@id="boxuse"]/div[2]/div/div[1]/div/div/span
+${txtCheckUsageInternet}    xpath=//*[@id="txtMessageHeaderNotTitle"]
 ${txtCheckUsageItem}    xpath=//*[@id="txtMessageHeader"]
 ${btnDetailCurrentUsage}    xpath=//*[@id="linkMoreDetail"]
 ${txtCheckCurrentCharge}    xpath=//*[@id="spnCqsHeader"]
@@ -33,3 +34,4 @@ ${btnPreviousBill}    xpath=//*[@id="btnCqsPreviousBill"]/div/span
 ${btnRegisterAISCloud}    xpath=//*[@id="register_btn"]/div[1]
 ${titleEService}    AIS eService บริการออนไลน์ ที่ให้คุณจัดการทุกเรื่องได้ง่ายๆ แค่คลิก ตลอด 24 ชั่วโมง
 ${titleAISCloud}    AIS Cloud+ | สมัครเข้าใช้งาน
+${urlMainWindow}    https://eservice.ais.co.th/eServiceWeb/

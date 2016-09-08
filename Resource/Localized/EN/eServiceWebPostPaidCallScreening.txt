@@ -8,3 +8,13 @@ ${notInputCompleteNumber}    The mobile phone number is entered incorrectly.
 ${notInputNumberBlock}    Please, Change your setting of Blocked Call. Try again
 ${checkConfirm}    Call Screening service allows you to set your own Welcome Calls list and Blocked Calls list,\neach of which you can add up to 20 numbers. Whether you are in Thailand or abroad,\nCall Screening service can help you stay comfortable with only the calls you wish be in touch with.
 ${smsCheckCallScreening}    คุณใช้"เลือกรับสาย"ได้แล้ว เพื่อกำหนดสายรับ-ไม่รับ โทร*189 (3บ./นาที)
+${txtConfirmWelcomeCallScreening}    Your request has been successfully completed.\nThank you.
+${txtConfirmDetailNumberOne}    Your have 1 number(s) in Welcome Calls List\n1. 0924260606\nPlease click "OK" to confirm your choice of status.
+${txtConfirmDetailNumberTwo}    Your have 2 number(s) in Welcome Calls List\n1. 0924260606\n2. 0817112144\nPlease click "OK" to confirm your choice of status.
+${txtConfirmRemoveWelcomeCallSreening}    Transaction processed sucessfully.\nThank you for using our service.
+${txtConfirmDetailBlockNumberOne}    Your have 1 number(s) in Blocked Calls list\n1. 0924260605\nPlease click "OK" to confirm your choice of status.
+${txtComfirmDetailBlockNumberTwo}    Your have 2 number(s) in Blocked Calls list\n1. 0924260605\n2. 0817112145\nPlease click "OK" to confirm your choice of status.
+${txtConfirmBlockCallScreening}    Your request has been successfully completed.\nThank you.
+${txtConfirmRemoveBlockCallScreening}    Transaction processed sucessfully.\nThank you for using our service.
+${txtChangeStatusActiveWelcomeCalls}    You would like to change your status to Active Welcome Calls. \nOnly the numbers in the Welcome Calls List can contact you. \nAre you sure you want to change your status to Active \nWelcome Calls?
+${txtChangeStatusInactiveWelcomeCalls}    You would like to change your status to Inactive Welcome \nCalls. All incoming calls, except the calls from Blocked Calls \nlist, will be able to contact you. Are you sure you want to \nchange your status to Inactive Welcome Calls?

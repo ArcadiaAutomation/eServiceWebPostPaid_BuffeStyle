@@ -3,7 +3,7 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
 
 *** Test Cases ***
-[S02-003]eServiceWeb-PO-Service-Home-VerifyPage
+[S02-003]eServiceWeb-PO-Home-VerifyPage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -22,7 +22,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Select Menu    Home
     Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
     Web Element Text Should Be    ${txtCheckCurrentUsage}    ${txtCurrentUsage}
-    Check Element Usage Internet
+    Web Element Text Should Be    ${txtCheckUsageInternet}    ${txtUsageInternet}
     Check Element Usage Call
     Check Element Usage SMS
     Check Element Usage MMS
@@ -31,25 +31,22 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Select Menu    Home
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
     Click Web Element    ${btnRegisterFree}
-    Comment    ${WindowMainTitle}=    Get Title
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
     ${currentURL}    Get Location
     Should Match Regexp    ${currentURL}    ${urlAISCloud}
     Wait Until Element Is Visible    ${btnRegisterAISCloud}
-    Comment    Close Window
-    Select Window    url=https://eservice.ais.co.th/eServiceWeb/
-    ${currentURL}    Get Location
-    log    ${currentURL}
-    Click Web Element    ${btnRegisterFree}
-    Comment    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
-    Comment    Click Web Element    ${btnDetailCurrentPackage}
-    Comment    Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
-    Comment    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
-    Comment    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
+    Close Window
+    Select Window    url=${urlMainWindow}
+    Select Frame    ${fraMainIframe}
+    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
+    Click Web Element    ${btnDetailCurrentPackage}
+    Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
+    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
+    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S02-004]eServiceWeb-PO-Service-Home-SelectCurrentPackage
+[S02-004]eServiceWeb-PO-Home-SelectCurrentPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -57,10 +54,15 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Home
+    Web Element Text Should Be    ${txtCheckCurrentPackage}    ${txtCurrentPackage}
+    Click Web Element    ${btnDetailCurrentPackage}
+    Web Element Text Should Be    ${txtCheckYourCurrentPackage}    ${txtYourCurrentPackage}
+    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
+    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S02-005]eServiceWeb-PO-Service-Home-SelectCurrentUsage
+[S02-005]eServiceWeb-PO-Home-SelectCurrentUsage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -87,7 +89,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S02-006]eServiceWeb-PO-Service-Home-SelectAISCloud
+[S02-006]eServiceWeb-PO-Home-SelectAISCloud
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -105,7 +107,25 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S02-008]eServiceWeb-PO-Service-Home-Pay
+[S02-007]eServiceWeb-PO-Home-CloudStorage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Click Web Element    ${btnRegisterFree}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
+    ${currentURL}    Get Location
+    Log    ${currentURL}
+    Should Match Regexp    ${currentURL}    ${urlAISCloud}
+    Wait Until Element Is Visible    ${btnRegisterAISCloud}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S02-008]eServiceWeb-PO-Home-Pay
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}

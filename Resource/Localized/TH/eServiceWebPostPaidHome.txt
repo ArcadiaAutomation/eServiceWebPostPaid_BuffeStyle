@@ -8,7 +8,7 @@ ${txtOutStandingBalance}    ยอดค้างชําระ (บ.)
 ${txtBillPostPaid}    ค่าบริการบิลเอไอเอส รายเดือน
 ${txtCurrentPackage}    แพ็กเกจปัจจุบันและบริการเสริม
 ${txtCurrentUsage}    การใช้งานรอบปัจจุบัน
-${txtInternet}    Internet (ส่วนเกิน)
+${txtUsageInternet}    Internet
 ${txtCall}        โทร
 ${txtSMS}         SMS
 ${txtMMS}         MMS
