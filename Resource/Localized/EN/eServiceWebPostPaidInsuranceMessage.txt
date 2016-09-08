@@ -11,5 +11,22 @@ ${TQMInsuranceBroker(BillPayment)}    TQM Insurance Broker (Bill Payment)
 ${TQMInsuranceBroker(PID)}    TQM Insurance Broker (PID)
 ${ThaiCardifLifeAssurance}    Thai Cardif Life Assurance
 ${ThaiLife}       Thai Life
-${OceanLifeInsurance(BillPayment)}    Ocean Life Insurance (Bill Payment)
-${OceanLifeInsurance(MicroInsurance)}    Ocean Life Insurance (Micro Insurance)
+${OceanLifeInsurance(BillPayment)}    Ocean Life Insurance(Bill Payment)
+${OceanLifeInsurance(MicroInsurance)}    Ocean Life Insurance(Micro Insurance)
+${ThaipiboonInsurance}    Thaipiboon Insurance
+${ThanachartInsurance}    Thanachart Insurance
+${Prudential}     Prudential
+${FalconInsurance}    Falcon Insurance
+${MuangThaiLife(Premium)}    Muang Thai Life (Premium)
+${MuangThaiLife(Loan)}    Muang Thai Life (Loan)
+${MuangThaiLife(APL)}    Muang Thai Life (APL)
+${MuangThaiInsurance}    Muang Thai Insurance
+${SynMunKongInsurance}    Syn Mun Kong Insurance
+${ACEInsurance}    ACE Insurance
+${FWDLifeInsurance}    FWD Life Insurance
+${AIA}            AIA
+${MessageCodeIncorrect}    The referrence code is incorrect, please try again.
+${MessagePleaseFillDetails}            Please fill in completed details of the problem so that we could provide you with the quickest resolution possible.
+${MessagePleaseRefillmCASH}		Your mCASH is not sufficient, please refill your mCASH before making transaction.
+${MessagePleaseTryAgain}		The service in temporary unavailable , please try again later.
+${MessageSorryPleaseTryAgain}		Sorry, the service is unaviable at the moment. Please try again.

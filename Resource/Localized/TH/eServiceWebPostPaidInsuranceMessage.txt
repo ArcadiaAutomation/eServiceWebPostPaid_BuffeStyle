@@ -1,15 +1,32 @@
 *** Variables ***
 ${BangkokLifeAssurance}    กรุงเทพประกันชีวิต
-${BangkokInsurance}    ${EMPTY}
-${RVP}            ${EMPTY}
-${ChaoPhaYaInsurance}    ${EMPTY}
-${CIGNAInsurance}    ${EMPTY}
-${DhipayaLifeAssurance}    ${EMPTY}
-${TQM Life Insurance Broker (Bill Payment)}    ${EMPTY}
-${TQMLifeInsuranceBroker(PID)}    TQM Life Insurance Broker (PID)
-${TQMInsuranceBroker(BillPayment)}    TQM Insurance Broker (Bill Payment)
-${TQMInsuranceBroker(PID)}    TQM Insurance Broker (PID)
-${ThaiCardifLifeAssurance}    ${EMPTY}
-${ThaiLife}       ${EMPTY}
-${OceanLifeInsurance(BillPayment)}    ${EMPTY}
-${OceanLifeInsurance(MicroInsurance)}    Ocean Life Insurance (Micro Insurance)
+${BangkokInsurance}    กรุงเทพประกันภัย
+${RVP}            กลางคุ้มครองผู้ประสบภัยจากรถ
+${ChaoPhaYaInsurance}    เจ้าพระยาประกันภัย
+${CIGNAInsurance}    ซิกน่าประกันภัย
+${DhipayaLifeAssurance}    ทิพยประกันชีวิต
+${TQM Life Insurance Broker (Bill Payment)}    ทีคิวเอ็ม ไลฟ์ อินชัวร์รันส์ โบรคเกอร์ (ชำระด้วยใบแจ้งหนี้)
+${TQMLifeInsuranceBroker(PID)}    ทีคิวเอ็ม ไลฟ์ อินชัวร์รันส์ โบรคเกอร์ (ชำระด้วยเลขบัตรประชาชน)
+${TQMInsuranceBroker(BillPayment)}    ทีคิวเอ็ม อินชัวร์รันส์ โบรคเกอร์ (ชำระด้วยใบแจ้งหนี้)
+${TQMInsuranceBroker(PID)}    ทีคิวเอ็ม อินชัวร์รันส์ โบรคเกอร์ (ชำระด้วยเลขบัตรประชาชน)
+${ThaiCardifLifeAssurance}    ไทยคาร์ดิฟ ประกันชีวิต
+${ThaiLife}       ไทยประกันชีวิต
+${OceanLifeInsurance(BillPayment)}    ไทยสมุทรประกันชีวิต(ชำระด้วยใบแจ้งหนี้)
+${OceanLifeInsurance(MicroInsurance)}    ไทยสมุทรประกันชีวิต(Micro Insurance)
+${ThaipiboonInsurance}    ไทยไพบูลย์ประกันภัย
+${ThanachartInsurance}    ธนชาตประกันภัย
+${Prudential}     พรูเด็นเชียล ประกันชีวิต
+${FalconInsurance}    ฟอลคอนประกันภัย
+${MuangThaiLife(Premium)}    เมืองไทยประกันชีวิต (ชำระค่าเบี้ยประกัน)
+${MuangThaiLife(Loan)}    เมืองไทยประกันชีวิต (ชำระเงินกู้ตามสิทธิกรมธรรม์)
+${MuangThaiLife(APL)}    เมืองไทยประกันชีวิต (ชำระเงินกู้อัตโนมัติ)
+${MuangThaiInsurance}    เมืองไทยประกันภัย
+${SynMunKongInsurance}    สินมั่นคงประกันภัย
+${ACEInsurance}    เอซ อินชัวรันซ์
+${FWDLifeInsurance}    เอฟดับบลิวดี ประกันชีวิต
+${AIA}            เอไอเอ
+${MessageCodeIncorrect}    เลขที่อ้างอิงของคุณไม่ถูกต้อง กรุณาทำรายการใหม่อีกครั้งค่ะ
+${MessagePleaseFillDetails} 	กรุณาระบุรายละเอียดที่ต้องการให้ตรวจสอบให้ครบถ้วน
+${MessagePleaseRefillmCASH}		จำนวนเงินใน mCASH ไม่พอ กรุณาตรวจสอบยอดหรือเติมเงินก่อนใช้บริการ
+${MessagePleaseTryAgain}		ขออภัยค่ะ ไม่สามารถทำรายการได้ในขณะนี้
+${MessageSorryPleaseTryAgain}		ขออภัย ระบบไม่สามารถให้บริการได้ในขณะนี้ กรุณาเข้าใช้บริการใหม่อีกครั้ง
