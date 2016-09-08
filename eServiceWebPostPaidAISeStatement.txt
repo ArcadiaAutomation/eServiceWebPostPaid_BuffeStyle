@@ -35,7 +35,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAISeStatement.txt
     Wait Web Until Page Contains Element    ${ldlHeadPage}
     Element Should Contain    ${ldlHeadPage}    ${MessageBillingInformation}
     SelectLanguageBill
-    Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Should Contain    ${txtSummaryMessage}    ${MessageConfrim}
     Close Browser
