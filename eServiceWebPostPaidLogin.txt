@@ -5,10 +5,12 @@ Resource          ../Config/LocalConfig.txt
 Library           robot.api
 Library           robot.conf.settings
 Library           DateTime
+Library           ExcelLibrary
 
 *** Test Cases ***
 test
     [Tags]    test
+    &{#list_device_name}=    Create Dictionary
     Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Comment    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Comment    Log    ${virtual_3PO_1_SN}
@@ -36,7 +38,11 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
-    ${date} =    Add Time To Date    2014-05-28 12:05:03.111    7 days
+    Open Excel    D:\\FileMobileNoOriginal.xls
+    Get Workbook Values
+    Put String To Cell    Sheet1    1    1    0912222222
+    Put String To Cell    Sheet1    1    2    0912222223
+    Save Excel    D:\\new.xls
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
