@@ -70,14 +70,14 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Payment/TopUp    Insurance    ${txtMPayServiceCurrency}
+    Select Menu    Payment/TopUp    Insurance
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokInsurance}
     Wait Web Until Page Contains Element    ${txtMPayService1}
     Input Web Text    ${txtMPayService1}    1111111111
-    Input Web Text    ${txtMPayServiceCurrency}    10
+    Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
@@ -117,11 +117,15 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${RVP}
     Input Web Text    ${txtMPayService1}    1111111111111111
-    Input Web Text    ${txtMPayServiceCurrency}    10
+    Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-135]eServiceWeb-PO-Insurance-ChaoPhaYaInsurance-NotInput
@@ -157,7 +161,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ChaoPhaYaInsurance}
     Input Web Text    ${txtMPayService1}    1111111111111111
-    Input Web Text    ${txtMPayServiceCurrency}    10
+    Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
@@ -198,11 +202,15 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${CIGNAInsurance}
     Input Web Text    ${txtMPayService1}    1111111111111
     Input Web Text    ${txtMPayService2}    111111111111111111
-    Input Web Text    ${txtMPayServiceCurrency}    10
+    Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-139]eServiceWeb-PO-Insurance-DhipayaLifeAssurance-NotInput
@@ -239,11 +247,15 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${DhipayaLifeAssurance}
     Input Web Text    ${txtMPayService1}    1111111111111
     Input Web Text    ${txtMPayService2}    111111111
-    Input Web Text    ${txtMPayServiceCurrency}    10
+    Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-141]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(BillPayment)-NotInput
@@ -285,6 +297,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-143]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(PID)-NotInput
@@ -326,6 +342,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-145]eServiceWeb-PO-Insurance-TQMInsuranceBroker(BillPayment)-NotInput
@@ -367,6 +387,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-147]eServiceWeb-PO-Insurance-TQMInsuranceBroker(PID)-NotInput
@@ -408,6 +432,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-149]eServiceWeb-PO-Insurance-ThaiCardifLifeAssurance-NotInput
@@ -425,7 +453,7 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiCardifLifeAssurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -531,6 +559,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-155]eServiceWeb-PO-Insurance-OceanLifeInsurance(MicroInsurance)-NotInput
@@ -613,6 +645,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-159]eServiceWeb-PO-Insurance-ThanachartInsurance-NotInput
@@ -655,6 +691,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-161]eServiceWeb-PO-Insurance-Prudential-NotInput
@@ -753,7 +793,7 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Premium)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -777,6 +817,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-167]eServiceWeb-PO-Insurance-MuangThaiLife(Loan)-NotInput
@@ -818,6 +862,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-169]eServiceWeb-PO-Insurance-MuangThaiLife(APL)-NotInput
@@ -850,6 +898,7 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Payment/TopUp    Insurance
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
     Input Web Text    ${txtMPayService1}    1111111111
     Input Web Text    ${txtMPayService2}    0923334444
     Input Web Text    ${txtMPayServiceCurrency}    500
@@ -859,6 +908,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-171]eServiceWeb-PO-Insurance-MuangThaiInsurance-NotInput
@@ -873,7 +926,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance} \
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
@@ -891,14 +944,19 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Payment/TopUp    Insurance
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
     Input Web Text    ${txtMPayService1}    1111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance} \
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-173]eServiceWeb-PO-Insurance-SynMunKongInsurance-NotInput
@@ -913,7 +971,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance} \
+    Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
@@ -932,13 +990,17 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance} \
+    Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance}
     Input Web Text    ${txtMPayService1}    1111111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-175]eServiceWeb-PO-Insurance-ACEInsurance-NotInput
@@ -980,6 +1042,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-177]eServiceWeb-PO-Insurance-FWDLifeInsurance-NotInput

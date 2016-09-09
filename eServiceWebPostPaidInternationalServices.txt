@@ -12,6 +12,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    InactiveInternationalCall
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnOK}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseSelectService}
@@ -54,8 +55,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Sleep    15
-    [Teardown]    Run Keywords    InactiveInternationalCall
-    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+    InactiveInternationalCall
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-207]eServiceWeb-PO-Service-ActiveIRInactiveIDD
     [Documentation]    Message in dialog You cannot cancellation international call service
@@ -77,5 +79,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Click Web Element    ${btnCloseConfrim}
     Select Menu    Home
     Sleep    15
-    [Teardown]    Run Keywords    InactiveInternationalCall
-    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+     InactiveInternationalCall
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

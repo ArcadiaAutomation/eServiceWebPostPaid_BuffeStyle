@@ -246,7 +246,8 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Service    NewNumber
     Open Excel    ${FileExcelOriginal}
     Log    Open passed
-    Put String To Cell    Test1    1    1    ${virtual_3PO_2_Number}
+    Get Workbook Values
+    Put String To Cell    Sheet1    1    1    ${virtual_3PO_2_Number}
     Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
     Log    Save excel passed
     Wait Until Element Is Visible    ${btnSelectFile}
@@ -280,6 +281,7 @@ Excel
     Log    ${FileExcelOriginal}
     Open Excel    ${FileExcelOriginal}
     Log    Open passed
+    Get Workbook Values
     Put String To Cell    Sheet1    1    1    ${virtual_3PO_1_Number}
     Log    Put Pass
     Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
@@ -300,7 +302,7 @@ Test
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S07-213]eServiceWeb-PO-Service-NewNumber-SelectFileOneNumber-Informal
+[S07-213]eServiceWeb-PO-Service-NewNumber-SelectFileMorethanOneNumber-Informal
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}
@@ -317,7 +319,9 @@ Test
     Select Menu    Service    NewNumber
     Open Excel    ${FileExcelOriginal}
     Log    Open passed
-    Put String To Cell    Test1    1    1    ${virtual_3PO_2_Number}
+    Get Workbook Values
+    Put String To Cell    Sheet1    1    1    ${virtual_3PO_2_Number}
+    Put String To Cell    Sheet1    1    2    ${virtual_3PO_3_Number}
     Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
     Log    Save excel passed
     Wait Web Until Page Contains Element    ${txtNumber1}
