@@ -21,6 +21,7 @@ InactiveInternationalCall
     Sleep    15
 
 ActiveInternationalCall
+    [Arguments]    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnActiveRoaming}
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}    10

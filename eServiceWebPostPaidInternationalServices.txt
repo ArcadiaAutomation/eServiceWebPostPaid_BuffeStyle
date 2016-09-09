@@ -71,7 +71,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    ActiveInternationalCall
+    ActiveInternationalCall    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnInactiveInternationalCall}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
