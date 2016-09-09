@@ -128,7 +128,7 @@ Resource          ../Config/LocalConfig.txt
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "66${SenderName}"
+    ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -150,9 +150,9 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageNewNumber}
     Element Should Contain    ${ldlPageNewNumber}    ${PageNewNumber}
-    sleep    30
+    @{MessageExpect}    Create List    ${MessageSendComplete}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -163,7 +163,7 @@ Resource          ../Config/LocalConfig.txt
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "66${SenderName}"
+    ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -185,9 +185,9 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
-    sleep    30
+    @{MessageExpect}    Create List    ${MessageSendComplete}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -199,7 +199,7 @@ Resource          ../Config/LocalConfig.txt
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "66${SenderName}"
+    ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -222,11 +222,11 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
     Remove File    ${FileMobileNo}
-    sleep    30
+    @{MessageExpect}    Create List    ${MessageSendComplete}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
-    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}    1    ${SenderName}    ${MessageExpect}    30
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -237,7 +237,7 @@ Resource          ../Config/LocalConfig.txt
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "66${SenderName}"
+    ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -267,39 +267,10 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
     Remove File    ${FileMobileNo}
-    sleep    30
+    @{MessageExpect}    Create List    ${MessageSendComplete}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
-Excel
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    ${NumberOne}    Convert To String    ${virtual_3PO_1_Number}
-    Log To Console    ${CURDIR}
-    Log    ${FileExcelOriginal}
-    Open Excel    ${FileExcelOriginal}
-    Log    Open passed
-    Get Workbook Values
-    Put String To Cell    Sheet1    1    1    ${virtual_3PO_1_Number}
-    Log    Put Pass
-    Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
-    Comment    Save Excel    FileMobileNo.xls
-    Log    Save excel passed
-    sleep    2
-    Comment    Remove File    ${FileMobileNo}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
-Test
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    ${TotalSMS}    Set Variable    2
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-213]eServiceWeb-PO-Service-NewNumber-SelectFileMorethanOneNumber-Informal
@@ -310,7 +281,7 @@ Test
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
-    ${SenderName}    Set Variable    "66${SenderName}"
+    ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -325,7 +296,6 @@ Test
     Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
     Log    Save excel passed
     Wait Web Until Page Contains Element    ${txtNumber1}
-    Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnInformal}
@@ -339,9 +309,9 @@ Test
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
-    sleep    30
+    @{MessageExpect}    Create List    ${MessageSendComplete}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
-    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
-    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}    1    ${SenderName}    ${MessageSendComplete}
+    Wait and Verify SMS    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}    1    ${SenderName}    ${MessageExpect}    30
     Close Browser
