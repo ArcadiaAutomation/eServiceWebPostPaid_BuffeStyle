@@ -7,7 +7,7 @@ ${TextChannel}    ช่องทางการชำระ
 ${TextRequestOfCopyReceipt}    ขอสำเนาใบ\nเสร็จรับเงิน
 ${TextNoBillHistory}    ไม่พบข้อมูลประวัติชำระค่าบริการ
 ${MessageNotRegisterMpay}    คุณยังไม่ได้สมัครบริการ mPAY
-${TextNoTopUpHistory}    ไม่พบข้อมูล
+${TextNoTopUpHistory}    ไม่พบข้อมูล123
 ${TextTopUpDate}    วันที่เติมเงิน
 ${TextTopUpAmount}    จำนวนเงิน\n(บาท)
 ${TextTypeOfTopUp}    ประเภทการเติมเงิน
