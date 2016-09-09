@@ -40,17 +40,21 @@ Confirm Register
     Click Web Element    ${btnBackToCallScreeningDialog}
 
 Clear Number Block Calls
-    Click Web Element    ${tabBlockCalls}
-    Click Web Element    ${btnRemoveNumberBlockCalls}
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnRemoveNumberBlockCalls}    2
+    \    Run Keyword If    '${result}'=='False'    Exit For Loop
+    \    Click Web Element    ${btnRemoveNumberBlockCalls}
+    Log    ${index}
     Click Web Element    ${btnConfirmBlockCalls}
     Click Web Element    ${btnConfirmCallScreeningDialog}
     Click Web Element    ${btnBackToCallScreeningDialog}
 
 Clear Number Welcome Calls
-    @{txtWelcomeCallNumber}    Get Webelements    xpath=//*[@class="mpay_input ng-pristine ng-valid"]
-    Comment    @{btnRemoveNumberWelcomeCallNumber}    Get Webelements    xpath=//*[@class="button_all color_orange1 l_gap10 btn_mini"]
-    :FOR    ${index}    IN RANGE    0    19
-    \    Run Keyword If    @{txtWelcomeCallNumber}[${index}]==NULL    Exit For Loop
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnRemoveNumberWelcomeCalls}    2
+    \    Run Keyword If    '${result}'=='False'    Exit For Loop
+    \    Click Web Element    ${btnRemoveNumberWelcomeCalls}
+    Log    ${index}
     Click Web Element    ${btnConfirmWelcomeCalls}
     Click Web Element    ${btnConfirmCallScreeningDialog}
     Click Web Element    ${btnBackToCallScreeningDialog}
@@ -65,6 +69,34 @@ Add Number Two
 
 Verify List Number Welcome Calls
     @{txtWelcomeCallNumber}    Get Webelements    xpath=//*[@class="mpay_input ng-pristine ng-valid"]
-    :FOR    ${index}    IN RANGE    0    19
-    \    Run Keyword If    @{txtWelcomeCallNumber}[${index}]    Exit For Loop
+    : FOR    ${index}    IN RANGE    0    20
+    \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    @{txtWelcomeCallNumber}[${index}]    1
+    \    Run Keyword If    '${result}'=='False'    Exit For Loop
     Log    ${index}
+
+Remove One Number
+    Click Web Element    ${btnRemoveNumberWelcomeCalls}
+    Click Web Element    ${btnConfirmWelcomeCalls}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+
+Add Block Number One
+    Input Web Text    ${txtInputNumberMobileBlock}    0924260605
+    Click Web Element    ${btnAddNumberBlock}
+
+Add Block Number Two
+    Input Web Text    ${txtInputNumberMobileBlock}    0817112145
+    Click Web Element    ${btnAddNumberBlock}
+
+Verify List Number Block Calls
+    @{txtBlockCallNumber}    Get Webelements    xpath=//*[@class="mpay_input ng-pristine ng-valid"]
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    @{txtBlockCallNumber}[${index}]    1
+    \    Run Keyword If    '${result}'=='False'    Exit For Loop
+    Log    ${index}
+
+Remove One Number Block
+    Click Web Element    ${btnRemoveNumberBlockCalls}
+    Click Web Element    ${btnConfirmBlockCalls}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Click Web Element    ${btnBackToCallScreeningDialog}
