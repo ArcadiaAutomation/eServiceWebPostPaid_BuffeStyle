@@ -25,9 +25,6 @@ ActiveInternationalCall
     Click Web Element    ${btnActiveRoaming}
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}    10
     Run Keyword If    '${result}'=='True'    Click Web Element    ${btnCloseConfrim}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageOpenAllInternationalCall}
-    Click Web Element    ${btnCloseConfrim}
     Click Web Element    ${btnOK}
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}    10
     Log To Console    ${result}
