@@ -140,7 +140,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnFormal}
-    Select From list    ${ldlSelectMessage}    1
+    Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
     Element Should Contain    ${ldlCheckMessageBeforeSend}    ${MessageBeforeSendFormal}
@@ -175,7 +175,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnFormal}
-    Select From list    ${ldlSelectMessage}    1
+    Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
     Element Should Contain    ${ldlCheckMessageBeforeSend}    ${MessageBeforeSendFormal}
@@ -197,7 +197,7 @@ Resource          ../Config/LocalConfig.txt
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
-    ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${MessageSendCompleteInformal}    Replace String    ${MessageSendCompleteInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
     ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -208,10 +208,11 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Service    NewNumber
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
+    Input Web Text    ${txtNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnInformal}
-    Select From list    ${ldlSelectMessage}    1
+    Select From List    ${ddlSelectMessageInformal}    ${SelectMessageInformal}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
     Element Should Contain    ${ldlCheckMessageBeforeSend}    ${MessageBeforeSendInformal}
@@ -222,7 +223,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
     Remove File    ${FileMobileNo}
-    @{MessageExpect}    Create List    ${MessageSendComplete}
+    @{MessageExpect}    Create List    ${MessageSendCompleteInformal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
@@ -256,7 +257,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnFormal}
-    Select From list    ${ldlSelectMessage}    1
+    Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
     Element Should Contain    ${ldlCheckMessageBeforeSend}    ${MessageBeforeSendFormal}
@@ -279,7 +280,7 @@ Resource          ../Config/LocalConfig.txt
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
-    ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${MessageSendCompleteInformal}    Replace String    ${MessageSendCompleteInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${SenderName}    Get Substring    ${virtual_3PO_1_Number}    1    10
     ${SenderName}    Set Variable    66${SenderName}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -295,11 +296,13 @@ Resource          ../Config/LocalConfig.txt
     Put String To Cell    Sheet1    1    2    ${virtual_3PO_3_Number}
     Save Excel Current Directory    FileMobileNo.xls    ${PathFileExcelMobileNo}
     Log    Save excel passed
-    Wait Web Until Page Contains Element    ${txtNumber1}
+    Wait Until Element Is Visible    ${btnSelectFile}
+    Click Web Element    ${btnSelectFile}
+    Choose File    ${btnChooseFile}    ${FileMobileNo}
     Input Web Text    ${txtNumberFrom}    0922222222
     Input Web Text    ${txtFromName}    เอ้
     Click Web Element    ${btnInformal}
-    Select From list    ${ldlSelectMessage}    1
+    Select From List    ${ddlSelectMessageInformal}    ${SelectMessageInformal}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${ldlCheckMessageBeforeSend}
     Element Should Contain    ${ldlCheckMessageBeforeSend}    ${MessageBeforeSendInformal}
@@ -309,7 +312,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
-    @{MessageExpect}    Create List    ${MessageSendComplete}
+    @{MessageExpect}    Create List    ${MessageSendCompleteInformal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${SenderName}    ${MessageExpect}    30
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
