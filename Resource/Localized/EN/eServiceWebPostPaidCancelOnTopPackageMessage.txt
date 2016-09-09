@@ -1,0 +1,7 @@
+*** Variables ***
+${MessageNoPackage}    Your mobile number doesn't have Xtra On-Top Package,\nor the Xtra On-Top Package you're using cannot be cancelled.
+${XtraTalk}       Xtra Talk
+${MonthlyPackage}    Monthly package
+${ActualOnTopPackageMsg}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
+${MessageCancelPackageSuccess}    You will get a confirmation SMS when the transaction is completed shortly.
+${PackageExp}     100 B./Mth: Free AIS call Sat-Sun

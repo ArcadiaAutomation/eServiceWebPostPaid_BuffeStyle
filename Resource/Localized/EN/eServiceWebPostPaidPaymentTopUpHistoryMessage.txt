@@ -1,0 +1,8 @@
+*** Variables ***
+${TextReceiptNo}    Receipt No.
+${TextPaymentDate}    Payment Date
+${TextAmount}     Amount\n(Baht)
+${TextTypeOfPayment}    Type of payment
+${TextChannel}    Channel
+${TextRequestOfCopyReceipt}    Request of\nCopy Receipt
+${TextNoBillHistory}    Data not found.

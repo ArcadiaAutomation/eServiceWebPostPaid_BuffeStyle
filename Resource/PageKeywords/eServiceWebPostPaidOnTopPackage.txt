@@ -24,4 +24,4 @@ Cancel On-Top Package
     Click Web Element    @{CheckBox}[${index}]
     Click Web Element    ${btnCancelPack}
     Click Web Element    ${ConfirmCancelPack}
-    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${ActualOnTopPackageMsg}
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${MessageCancelPackageSuccess}

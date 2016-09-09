@@ -19,3 +19,4 @@ ${MaoMao}         เหมา เหมา
 ${MonthlyPackage}    แบบต่อเนื่องทุกเดือน
 ${4GInternet488}    แพ็กเสริม 4G Internet 488บ. 4G 5GB
 ${100BFreeStaSun}    100 บ/ด: โทร AIS ฟรี วันเสาร์-อาทิตย์
+${MessageCancelPackageSuccess}    กำลังดำเนินการ กรุณารอรับ SMS ยืนยันการยกเลิก

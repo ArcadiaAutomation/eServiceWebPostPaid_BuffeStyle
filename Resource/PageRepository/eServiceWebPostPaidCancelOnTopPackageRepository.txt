@@ -1,0 +1,17 @@
+*** Variables ***
+${lbPackageName}    xpath=//*[@id="lbPackageName"]
+${chkPackage}     xpath=//*[@class="checkbox-label color_orange2"]
+${btnCancelPack}    xpath=//*[@id="btnCancelPack"]
+${ConfirmCancelPack}    xpath=//*[@id="btnCancelPackApplyChange"]/div
+${lbCancelPackage}    xpath=//*[@id="txtCancelPackStepThreeResult0"]
+${lbNoPackageToCancel}    xpath=//*[@id="panelCancelPack"]/div[2]/div[2]/div/div/div
+${chk100BFreeAISCallStaSun}    xpath=//*[@id="lbPackage_P12041403"]
+${btnChangePackConfirm}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[4]/div[1]/div[2]/div/div[2]/div/a/div
+${btnChangePackConfirm2}    xpath=//*[@id="btnChangePackConfirmDate"]/div
+${btnChangePackConfirm3}    xpath=//*[@id="btnChangePackConfirmPackDate"]
+${rdoNextBillingCycle}    xpath=//*[@id="lbChkManagePackNextBilling"]
+${rdoNextDay}     xpath=//*[@id="lbChkManagePackNextDay"]
+${rdoImmediately}    xpath=//*[@id="lbChkManagePackImmediately"]
+${ChangingStatusMsg}    xpath=//*[@id="lbSelectedPackageResult"]
+${ddlMainTypePackage}    xpath=//*[@id="ddlChangPackGroupA"]
+${ddlSubTypePackage}    xpath=//*[@id="ddlChangPackGroupB"]

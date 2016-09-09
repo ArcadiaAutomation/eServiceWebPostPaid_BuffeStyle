@@ -1,0 +1,8 @@
+*** Variables ***
+${TextReceiptNo}    เลขที่ใบเสร็จรับเงิน
+${TextPaymentDate}    วันที่ชำระเงิน
+${TextAmount}     จำนวนเงิน\n(บาท)
+${TextTypeOfPayment}    ประเภทการชำระ
+${TextChannel}    ช่องทางการชำระ
+${TextRequestOfCopyReceipt}    ขอสำเนาใบ\nเสร็จรับเงิน
+${TextNoBillHistory}    ไม่พบข้อมูลประวัติชำระค่าบริการ

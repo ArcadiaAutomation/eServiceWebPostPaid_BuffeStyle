@@ -1,0 +1,29 @@
+*** Settings ***
+Resource          ../PageRepository/eServiceWebPostPaidCancelOnTopPackageRepository.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCancelOnTopPackageMessage.txt
+
+*** Keywords ***
+Select Package
+    [Arguments]    ${MainType}    ${SubType}
+    Wait Until Element Is Visible    ${ddlMainTypePackage}    10
+    Selenium2Library.Select From List    ${ddlMainTypePackage}    ${MainType}
+    Wait Until Element Is Visible    ${ddlSubTypePackage}    10
+    Selenium2Library.Select From List    ${ddlSubTypePackage}    ${SubType}
+
+Set Default On Top Package
+    SelectMenu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MonthlyPackage}
+    Click Web Element    ${chk100BFreeAISCallStaSun}
+    Click Web Element    ${btnChangePackConfirm}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Click Web Element    ${mnuPackage}

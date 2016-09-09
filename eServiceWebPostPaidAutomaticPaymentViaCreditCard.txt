@@ -27,4 +27,5 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAutomaticPaymentViaCr
     ${currentURL}    Get Location
     Should Match Regexp    ${currentURL}    ${urlPciPage}
     Close Browser
+    @{LIST}    Get Webelements    xpath=//*[@class="mpay_input ng-pristine ng-valid"]
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

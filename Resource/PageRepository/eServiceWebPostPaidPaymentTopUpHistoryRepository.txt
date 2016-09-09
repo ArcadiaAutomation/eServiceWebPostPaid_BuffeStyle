@@ -1,0 +1,15 @@
+*** Variables ***
+${btnAISBill}     xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div/table/tbody/tr/td[1]/div
+${btnUtilityAndOtherServices}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div/table/tbody/tr/td[2]/div
+${btnAISOne2CallTopUp}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div/table/tbody/tr/td[3]/div
+${lbHeaderReceiptNo}    xpath=//*[@id="lblPayBillHistoryHeaderReceive"]
+${lbHeaderPaymentDate}    xpath=//*[@id="lblPayBillHistoryHeaderDueDate"]
+${lbHeaderAmount}    xpath=//*[@id="lblPayBillHistoryHeaderAmount"]
+${lbHeaderTypeOfPayment}    xpath=//*[@id="lblPayBillHistoryHeaderMethod"]
+${lbHeaderChannel}    xpath=//*[@id="lblPayBillHistoryHeaderChannel"]
+${lbHeaderRequestOfCopyReceipt}    xpath=//*[@id="lblPayBillHistoryHeaderReques"]
+${lbNoBillHistory}    xpath=//*[@id="lblPayBillHistoryNoData"]
+${lbAlertMessage}    xpath=//*[@id="txtAlertMessage"]
+${btnApplyMpay}    xpath=//*[@id="btnBack"]/div
+${ddlTopUpHistoryMount}    xpath=//*[@id="ddlTopupHistoryMonth"]
+${btnSelectMount}    xpath=//*[@id="btnTopupHistorySelectedMonth"]/div
