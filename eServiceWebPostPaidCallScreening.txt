@@ -234,12 +234,14 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Select Menu    Service    CallScreening
     Click Web Element    ${tabWelcomeCalls}
     Add Number One
+    Verify List Number Welcome Calls
     Click Web Element    ${btnConfirmWelcomeCalls}
     Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberOne}
     Click Web Element    ${btnConfirmCallScreeningDialog}
     Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmWelcomeCallScreening}
     Click Web Element    ${btnBackToCallScreeningDialog}
-    Clear One Number Welcome Calls
+    Clear Number Welcome Calls
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S07-193]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-AddNumberMore
