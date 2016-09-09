@@ -1,3 +1,8 @@
 *** Variables ***
 ${notInputChange}    Please specify the service you would like to change.
-${confirmPerferCancelSMS}    SMS Ad & Information from AIS\n\nAll SMS from AIS :\n\nYour preference change on receiving updated\nwill be effective within 24 hours.
+${confirmPerferCancelSMS}    SMS Ad & Information from content providers other than AIS\n\nYour preference change on receiving updated\nwill be effective within 24 hours.\nSMS Ad & Information from AIS\n\nAll SMS from AIS :\n\nYour preference change on receiving updated\nwill be effective within 24 hours.
+${txtCurrentSubscriptions}    Your current SMS subscription:
+${txtDetailSMSSubscriptions}    SMS subscription with fee not found.
+${txtSMSSubscription}    ขออภัยค่ะ ไม่สามารถใช้บริการได้ในขณะนี้ กรุณาใช้บริการใหม่ภายหลัง
+${txtConfirmPreferNotGetSMS}    SMS Ad & Information from content providers other than AIS\n\nYour preference change on receiving updated\nwill be effective within 24 hours.
+${txtGetSomeSMSfromAIS}    SMS Ad & Information from AIS\n\nPrivileges\n\nYour preference change on receiving updated\nwill be effective within 24 hours.\nNew Products & Services\n\nour preference change on receiving updated \nwill be effective within 24 hours.\nEvents & Activities\n\nYour preference change on receiving updated\nYour preference change on receiving updated

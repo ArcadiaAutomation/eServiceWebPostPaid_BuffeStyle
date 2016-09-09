@@ -25,3 +25,5 @@ ${txtUsageDetail}    Usage detail
 ${txtVoiceCharge}    Voice Charges
 ${txtInternetCharge}    Internet Charges
 ${txtValueAddService}    Value-Added Services (VAS)
+${txtViewAISCloud}    View
+${txtRegisterCloud}    Register

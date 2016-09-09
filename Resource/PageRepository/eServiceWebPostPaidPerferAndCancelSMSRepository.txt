@@ -8,3 +8,14 @@ ${btnGetSMSfromAIS}    xpath=//*[@id="panelAISSendSMSAllContent"]/div[2]/div/div
 ${btnCloseDialog}    xpath=//*[@id="btnCloseFn"]/div
 ${txtDetailSuspensionDialog}    xpath=//*[@id="txtAlertMessage"]/div
 ${btnCloseDialogNotChange}    xpath=//*[@id="btnAlertConfirm"]/div/div
+${tabSubscriptions}    xpath=//*[@id="panelCancelSMS"]/table/tbody/tr/td[2]
+${tabSmsAd}       xpath=//*[@id="panelCancelSMS"]/table/tbody/tr/td[1]/div
+${txtCheckCurrentSubscriptions}    xpath=//*[@id="divCancelSMSSubscriptionPartnerTab2"]
+${txtCheckDetailSMSSubscriptions}    xpath=//*[@id="divCancelSMSSubscriptionTab2Header2"]
+${btnDetailMore}    xpath=//*[@id="lnkCancelSMSSubscriptionMassage2Link"]/span
+${inputTextSenderSMSSubscription}    xpath=//*[@id="txtaCancelSMSOtherNewProvider"]
+${btnAddSenderSMSSubscription}    xpath=//*[@id="btnCancelSMSOtherAddProvider"]
+${btnConfirmSMSSubscription}    xpath=//*[@id="btnCancelSMSOtherCancelOtherSubscription"]
+${btnNotGetSMSfromAISPrivileges}    xpath=//*[@id="panelSMSPrivilege"]/div[2]/div/div[4]/label
+${btnNotGetSMSfromAISnewProduct}    xpath=//*[@id="panelAISSendSMSEvent"]/div[2]/div/div[4]/label
+${btnNotGetSMSfromAISevent}    xpath=//*[@id="panelAISSendSMSMobileLife"]/div[2]/div/div[4]/label

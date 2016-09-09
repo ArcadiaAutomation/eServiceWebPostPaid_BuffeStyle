@@ -90,6 +90,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-006]eServiceWeb-PO-Home-SelectAISCloud
+    [Tags]    NotRegsiterCloudAIS
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -98,16 +99,17 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Web Element Text Should Be    ${btnRegisterFree}    ${txtRegisterCloud}
     Click Web Element    ${btnRegisterFree}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
     ${currentURL}    Get Location
     Log    ${currentURL}
-    Should Match Regexp    ${currentURL}    ${urlAISCloud}
-    Wait Until Element Is Visible    ${btnRegisterAISCloud}
+    Run Keyword If    '${currentURL}'!='${${urlAISCloud}}${virtual_3PO_1_Number}'    Fail
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-007]eServiceWeb-PO-Home-CloudStorage
+    [Tags]    RegisterCloudAIS
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -116,12 +118,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Web Element Text Should Be    ${btnRegisterFree}    ${txtViewAISCloud}
     Click Web Element    ${btnRegisterFree}
-    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
+    Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloudLogin}
     ${currentURL}    Get Location
     Log    ${currentURL}
-    Should Match Regexp    ${currentURL}    ${urlAISCloud}
-    Wait Until Element Is Visible    ${btnRegisterAISCloud}
+    Run Keyword If    '${currentURL}'!='${urlAISCloudLogin}${virtual_3PO_1_Number}'    Fail
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -136,4 +138,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Click Web Element    ${btnPay}
     Web Element Text Should Be    ${txtCheckBillPostPaid}    ${txtBillPostPaid}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+test
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    ${result}=    Set Variable    https://www.aiscloudplus.com/?mobileno=${virtual_3PO_1_Number}
+    Log    ${result}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

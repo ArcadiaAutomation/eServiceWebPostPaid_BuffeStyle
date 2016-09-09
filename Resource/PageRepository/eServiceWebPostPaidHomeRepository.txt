@@ -19,7 +19,7 @@ ${btnDetailCurrentPackage}    xpath=//*[@id="linkDetailPackage"]
 ${txtCheckYourCurrentPackage}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div[1]/div/div/div
 ${txtCheckMainPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
 ${txtCheckOnTopPackage}    xpath=//*[@id="panelCurrentPack1"]/div/div[1]/span
-${urlAISCloud}    https://www.aiscloudplus.com
+${urlAISCloud}    https://www.aiscloudplus.com/?mobileno=
 ${txtInputIDCard}    xpath=//*[@id="textfield"]
 ${btnConfirmIDCard}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[2]/div/a/div
 ${txtCheckYourBalance}    xpath=//*[@id="lblCqsHeadCurrent"]
@@ -35,3 +35,5 @@ ${btnRegisterAISCloud}    xpath=//*[@id="register_btn"]/div[1]
 ${titleEService}    AIS eService บริการออนไลน์ ที่ให้คุณจัดการทุกเรื่องได้ง่ายๆ แค่คลิก ตลอด 24 ชั่วโมง
 ${titleAISCloud}    AIS Cloud+ | สมัครเข้าใช้งาน
 ${urlMainWindow}    https://eservice.ais.co.th/eServiceWeb/
+${titleAISCloudLogin}    AIS Cloud+ | เข้าสู่ระบบ
+${urlAISCloudLogin}    https://www.aiscloudplus.com/?mobileno=
