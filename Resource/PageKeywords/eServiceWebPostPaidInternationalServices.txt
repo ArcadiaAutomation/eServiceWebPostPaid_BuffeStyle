@@ -32,6 +32,7 @@ ActiveInternationalCall
     Run Keyword If    '${result}'=='False'    Clear SMS International    2    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
     ...    ${virtual_3PO_1_SN}
     ...    ELSE    Click Web Element    ${btnCloseConfrim}
+    Select Menu    Home
     Sleep    15
 
 Clear SMS International
