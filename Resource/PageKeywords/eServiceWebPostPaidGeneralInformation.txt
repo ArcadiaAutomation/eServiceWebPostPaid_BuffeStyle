@@ -10,10 +10,10 @@ Edit Name And LastName
     [Arguments]    ${Name}=${empty}    ${LastName}=${empty}
     Wait Until Element Is Visible    ${txtCustomerName}
     Clear Element Text    ${txtCustomerName}
-    Selenium2Library.Input Text    ${txtCustomerName}    ${Name}
+    Run Keyword If    '${Name}'!='${empty}'    Selenium2Library.Input Text    ${txtCustomerName}    ${Name}
     Wait Until Element Is Visible    ${txtCustomerLastName}
     Clear Element Text    ${txtCustomerLastName}
-    Selenium2Library.Input Text    ${txtCustomerLastName}    ${LastName}
+    Run Keyword If    '${LastName}'!='${empty}'    Selenium2Library.Input Text    ${txtCustomerLastName}    ${LastName}
 
 Confirm Edit
     Click Web Element    ${btnConfirmEdit}
@@ -38,3 +38,16 @@ Edit Phone Number
 
 Cancel Edit
     Click Web Element    ${btnCancelEdit}
+
+Edit General Information
+    Click Web Element    ${btnEditGeneralnformation}
+
+Set Defualt General Information
+    Click Web Element    ${btnBack}
+    Edit General Information
+    Edit Name And LastName    testerAIS2    retset
+    Edit Email Address    tester@h.com
+    Edit Phone Number    0923164588    0987654321
+    Confirm Edit
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Close Browser

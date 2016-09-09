@@ -4,3 +4,5 @@ ${MessageNotInputEmail}    Please enter your E-Mail.
 ${MessageInputWrongEmail}    Your E-Mail format is incorrect.
 ${MessageNotInputTelNumber}    Please enter either your home number or office number.
 ${lblGeneralInformation}    General Information
+${MessageEditSuccess}    Your general information has been successfully changed.
+${MessageEditNotSuccess}    Sorry, the service is temporarily unavailable at the moment. We apologize for the inconvenience. Please try again later.

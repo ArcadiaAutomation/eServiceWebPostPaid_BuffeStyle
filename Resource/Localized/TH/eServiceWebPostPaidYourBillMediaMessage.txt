@@ -1,2 +1,5 @@
 *** Variables ***
 ${MessageNotEditBillingInformation}    ไม่มีการแก้ไขข้อมูล
+${MessageNotInputEmailAddress}    กรุณากรอก E-mail ที่รับใบแจ้งค่าใช้บริการ
+${MessageEditSuccess}    ดำเนินการแก้ไขช่องทางการรับใบแจ้งค่าใช้บริการเรียบร้อย
+${MessageSuccessSelectSMS}    ดำเนินการแก้ไขช่องทางการรับใบแจ้งค่าใช้บริการเรียบร้อย

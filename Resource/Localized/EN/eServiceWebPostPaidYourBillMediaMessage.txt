@@ -1,2 +1,5 @@
 *** Variables ***
 ${MessageNotEditBillingInformation}    No data has been updated.
+${MessageNotInputEmailAddress}    Please enter the e-mail address you wish to receive your AIS e-Statement.
+${MessageEditSuccess}    Your bill media has been successfully changed.
+${MessageSuccessSelectSMS}    Your bill media has been successfully changed.

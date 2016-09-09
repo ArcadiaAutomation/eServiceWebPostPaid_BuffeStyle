@@ -89,7 +89,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S09-217]eServiceWeb-PO-GeneralInformation-VerifyGeneralInformation
+[S09-217]eServiceWeb-PO-GeneralInformation-EditGeneralInformation
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -99,5 +99,11 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    GeneralInformation
     Web Element Text Should Be    ${lblGeneralInformationDisplayText}    ${GeneralInformation${ar_LANG}}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    Edit General Information
+    Edit Name And LastName    testerAIS23F    ais132
+    Edit Email Address    yyyggg_123@g.com
+    Edit Phone Number    0124567891    0123456789    0987654321
+    Confirm Edit
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageEditSuccess}
+    [Teardown]    Run Keywords    Set Defualt General Information
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

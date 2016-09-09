@@ -10,7 +10,7 @@ Edit Your Address
     Click Web Element    ${btnEditYouAddress}
 
 Edit Name And SurName
-    [Arguments]    ${NameAndSurName}=${empty}
+    [Arguments]    ${NameAndSurName}
     Wait Until Element Is Visible    ${txtNameAndSurName}
     Clear Element Text    ${txtNameAndSurName}
     Selenium2Library.Input Text    ${txtNameAndSurName}    ${NameAndSurName}
@@ -31,3 +31,75 @@ Select District And SubDistrict
 Select PostCode
     [Arguments]    ${labelPostCode}=${empty}
     Run Keyword If    '${labelPostCode}'!='${empty}'    Select From Web List By Label    ${ddlPostCode}    ${labelPostCode}
+
+Edit House Number
+    [Arguments]    ${HouseNumber}
+    Wait Until Element Is Visible    ${txtHouseNumber}
+    Clear Element Text    ${txtHouseNumber}
+    Selenium2Library.Input Text    ${txtHouseNumber}    ${HouseNumber}
+
+Edit Mooban
+    [Arguments]    ${Mooban}
+    Wait Until Element Is Visible    ${txtMooban}
+    Clear Element Text    ${txtMooban}
+    Selenium2Library.Input Text    ${txtMooban}    ${Mooban}
+
+Edit Room
+    [Arguments]    ${Room}
+    Wait Until Element Is Visible    ${txtRoom}
+    Clear Element Text    ${txtRoom}
+    Selenium2Library.Input Text    ${txtRoom}    ${Room}
+
+Edit Floor
+    [Arguments]    ${Floor}
+    Wait Until Element Is Visible    ${txtFloor}
+    Clear Element Text    ${txtFloor}
+    Selenium2Library.Input Text    ${txtFloor}    ${Floor}
+
+Edit Building
+    [Arguments]    ${Building}
+    Wait Until Element Is Visible    ${txtBuilding}
+    Clear Element Text    ${txtBuilding}
+    Selenium2Library.Input Text    ${txtBuilding}    ${Building}
+
+Edit Soi
+    [Arguments]    ${Soi}
+    Wait Until Element Is Visible    ${txtSoi}
+    Clear Element Text    ${txtSoi}
+    Selenium2Library.Input Text    ${txtSoi}    ${Soi}
+
+Edit Street
+    [Arguments]    ${Street}
+    Wait Until Element Is Visible    ${txtStreet}
+    Clear Element Text    ${txtStreet}
+    Selenium2Library.Input Text    ${txtStreet}    ${Street}
+
+Clear NameAndSurName
+    Wait Until Element Is Visible    ${txtNameAndSurName}
+    Clear Element Text    ${txtNameAndSurName}
+
+Confirm Edit Information Dailog Message
+    Click Web Element    ${btnConfirmDailog}
+
+Back To Your Address
+    Click Web Element    ${btnBack}
+
+Set Default Your Address
+    Back To Your Address
+    Web Element Text Should Be    ${lblYourAddressDisplayText}    ${YouAddress${ar_LANG}}
+    Edit Your Address
+    Edit Name And SurName    คุณSANDEndtwoEnd Testคุณวิมาลาจรรยางาม
+    Edit House Number    414
+    Edit Mooban    120
+    Edit Room    -
+    Edit Floor    17
+    Edit Building    อาคาร อินทัช
+    Edit Soi    -
+    Edit Street    พหลโยธิน
+    Select Province    กรุงเทพ
+    Select District And SubDistrict    พญาไท    สามเสนใน
+    Select PostCode    10400
+    Confirm Edit
+    Confirm Edit Information Dailog Message
+    Back To Your Address
+    Close Browser

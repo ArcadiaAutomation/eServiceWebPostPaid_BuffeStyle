@@ -1,0 +1,7 @@
+*** Variables ***
+${EnglishLanguageEN}    English
+${EnglishLanguageTH}    ภาษาอังกฤษ
+${ThaiLanguageEN}    Thai
+${ThaiLanguageTH}    ภาษาไทย
+${EstatementText}    AIS eStatement (SMS&Email)
+${RecieveSMSNumber}    0613851273

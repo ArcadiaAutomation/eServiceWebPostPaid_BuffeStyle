@@ -3,6 +3,7 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebPostPaidYourBillMediaRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourBillMediaMessage.txt
+Resource          ../PageVariable/eServiceWebPostPaidYourBillMediaVariable.txt
 
 *** Keywords ***
 Edit Billing Information
@@ -10,3 +11,36 @@ Edit Billing Information
 
 Confirm Edit
     Click Web Element    ${btnConfirmEdit}
+
+Edit Email Address
+    [Arguments]    ${EmailAddress}
+    Wait Web Until Page Contains Element    ${txtEmailAddress}
+    Clear Element Text    ${txtEmailAddress}
+    Comment    Run Keyword If    '${EmailAddress}'!='${empty}'    Input Web Text    ${txtEmailAddress}    ${EmailAddress}
+    Input Web Text    ${txtEmailAddress}    ${EmailAddress}
+
+Edit Bill Media Preference
+    [Arguments]    ${preferenceDetail}
+    Select From Web List By Label    ${ddlBillMediaPreference}    ${preferenceDetail}
+
+Edit Bill Language
+    [Arguments]    ${Language}
+    Select From Web List By Label    ${ddlBillLanguage}    ${Language}
+
+Edit Mobile Number For Monthly SMS Notification
+    [Arguments]    ${MobileNumber}
+    Select From Web List By Label    ${ddlBillMobileNo}    ${MobileNumber}
+
+Clear Email Address
+    Wait Web Until Page Contains Element    ${txtEmailAddress}
+    Clear Element Text    ${txtEmailAddress}
+
+Set Default Your Bill Media
+    Click Web Element    ${btnBack}
+    Edit Billing Information
+    Comment    Edit Bill Media Preference
+    Edit Bill Language    ${EnglishLanguage${ar_LANG}}
+    Edit Email Address    tester23_A@ais.com
+    Confirm Edit
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Close Browser

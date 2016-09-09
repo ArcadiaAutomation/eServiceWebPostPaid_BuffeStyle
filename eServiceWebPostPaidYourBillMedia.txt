@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourBillMedia.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[F09-282]eServiceWeb-PO-YourBillMedia-NotInputEmailAddress(MenuNotFound)
+[F09-282]eServiceWeb-PO-YourBillMedia-NotInputEmailAddress
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -13,6 +13,10 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourBillMedia
     Edit Billing Information
+    Clear Email Address
+    Confirm Edit
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotInputEmailAddress}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F09-283]eServiceWeb-PO-YourBillMedia-NotEditBillingInformation
@@ -27,5 +31,60 @@ Resource          ../Config/LocalConfig.txt
     Edit Billing Information
     Confirm Edit
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotEditBillingInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S09-220]eServiceWeb-PO-YourBillMedia-EditYourBillMedia
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourBillMedia
+    Edit Billing Information
+    Comment    Edit Bill Media Preference
+    Edit Bill Language    ${ThaiLanguage${ar_LANG}}
+    Edit Email Address    HelloWorld@ais.com
+    Confirm Edit
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageEditSuccess}
+    [Teardown]    Run Keywords    Set Default Your Bill Media
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S09-222]eServiceWeb-PO-YourBillMedia-VerifyYourBillMedia
+    [Tags]    FixSMSNo
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourBillMedia
+    Wait Until Element Is Visible    ${YouBillMediaDisplayText}
+    Element Should Be Visible    ${YouBillMediaDisplayText}
+    Element Should Be Visible    ${txtBillMediaPreferenceDisable}
+    Selenium2Library.Element Should Be Disabled    ${txtBillMediaPreferenceDisable}
+    Selenium2Library.Element Should Be Disabled    ${txtPreferenceStatementLangDisable}
+    Element Should Be Visible    ${txtPreferenceStatementLangDisable}
+    Element Should Be Visible    ${btnEditBillingInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S09-224]eServiceWeb-PO-YourBillMedia-EditMobileNumberSMSNotification
+    [Tags]    FixSMSNo
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YourPersonalInformation    YourBillMedia
+    Edit Billing Information
+    Edit Mobile Number For Monthly SMS Notification    ${RecieveSMSNumber}
+    Confirm Edit
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageSuccessSelectSMS}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
