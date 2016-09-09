@@ -7,29 +7,39 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidInternationalServic
 
 *** Keywords ***
 InactiveInternationalCall
+    [Arguments]    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnInactiveRoaming}
     Click Web Element    ${btnInactiveInternationalCall}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}    10
+    Log To Console    ${result}
+    Run Keyword If    '${result}'=='False'    Clear SMS International    1    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    ...    ${virtual_3PO_1_SN}
+    ...    ELSE    Click Web Element    ${btnCloseConfrim}
     Select Menu    Home
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    150
-    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Sleep    15
 
 ActiveInternationalCall
     Select Menu    Service    InternationalCall
     Click Web Element    ${btnActiveRoaming}
+    ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}    10
+    Run Keyword If    '${result}'=='True'    Click Web Element    ${btnCloseConfrim}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageOpenAllInternationalCall}
     Click Web Element    ${btnCloseConfrim}
     Click Web Element    ${btnOK}
+    ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${lblDialogMessage}    10
+    Log To Console    ${result}
+    Run Keyword If    '${result}'=='False'    Clear SMS International    2    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    ...    ${virtual_3PO_1_SN}
+    ...    ELSE    Click Web Element    ${btnCloseConfrim}
+    Sleep    15
+
+Clear SMS International
+    [Arguments]    ${TotalSMS}    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Should Contain    ${txtSummaryMessage}    ${MessageConfrimSMS}
-    Select Menu    Home
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    2    150
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    150
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    Sleep    15
