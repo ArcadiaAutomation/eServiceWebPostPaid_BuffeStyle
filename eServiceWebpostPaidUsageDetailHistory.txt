@@ -152,3 +152,43 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Filter Usage Detail
     Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectGraphFilter}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-040]eServiceWeb-PO-UsageDetailHistory-VerifyUsageDetailHistoryPage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${CitizenID}
+    Confirm Citizen ID
+    Verify Usage Detail History Page
+    Select Billing Cycle From Previous Month    2
+    Select Usage Detail Tab    InternetAndValueAddedService
+    Comment    Clear View All InternetAndValueAdd Filter
+    Comment    Select View Internet Condition
+    Comment    Confirm Filter Usage Detail
+    Comment    Print Usage Detail History    1
+    Comment    Verify Usage Detail History PDF
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-041]eServiceWeb-PO-UsageDetailHistory-VerifySpecificConditionCallDetail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${CitizenID}
+    Confirm Citizen ID
+    Verify Usage Detail History Page
+    Select Billing Cycle From Previous Month    2
+    Select Usage Detail Tab    CallDetail
+    Clear View All Call Filter
+    Select View Call Condition
+    Confirm Filter Usage Detail
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
