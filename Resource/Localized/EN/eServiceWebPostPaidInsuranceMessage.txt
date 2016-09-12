@@ -31,8 +31,8 @@ ${MessagePleaseRefillmCASH}		Your mCASH is not sufficient, please refill your mC
 ${MessagePleaseTryAgain}		The service in temporary unavailable , please try again later.
 ${MessageSorryPleaseTryAgain}		Sorry, the service is unaviable at the moment. Please try again.
 ${MessageSorryPleaseTryAgainNewline}		Sorry, the service is unaviable at the moment.\nPlease try again.
-${Ref.No.1angkok}		Ref. No.1
-${Ref.No.2angkok}		Ref. No.2
+${Ref.No.1Bangkok}		Ref. No.1
+${Ref.No.2Bangkok}		Ref. No.2
 ${PolicyNo.angkok}	Policy No.
 ${Amount(baht)}		Amount (baht)
 ${CustomerNo.}		Customer No.
@@ -69,3 +69,4 @@ ${CustomerNo./RefNo.1}		Customer No./Ref No.1
 ${DueDate}		Due date
 ${RegisterMPay}		mPAY register
 ${NumberPhone}		Mobile Number
+${PolicyNo.}		Policy No.
