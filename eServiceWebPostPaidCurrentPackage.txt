@@ -3,147 +3,92 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 
 *** Test Cases ***
-[S03-009]eServiceWeb-PO-Package-ShowDetailCurrentPackage
+[S03-011]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-NextBill
+    [Tags]    CannotSelectPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
+    Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    CurrentPackage
-    Check Detail Package
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S03-010]eServiceWeb-PO-Package-ShowDetailNextPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    CurrentPackage
-    Check Detail Package
-    Click Web Element    ${btnNextPackage}
-    Check Detail NextPackage
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S03-011]eServiceWeb-PO-Package-ChangeMainPackage-NextBill
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    CurrentPackage
-    Check Detail Package
+    SelectMenu    Package    CurrentPackage
+    Check Detail CurrentPackage
     Click Web Element    ${btnChangeMainPackage}
-    Select Package    Xtra Net    Net SIM
-    Click Web Element    ${btnSelectPackageNet2GBandAISWiFi}
+    Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
+    Click Web Element    ${rdo399NET2GB}
     Click Web Element    ${btnConfirmPackage}
-    Click Web Element    ${btnSelectNextBill}
-    Click Web Element    ${btnConfirmChangeDuringBill}
-    Click Web Element    ${btnConfirmBillCycle}
-    Web Element Text Should Be    ${txtConfirmChangeMainPackage}    ${txtCheckDetailPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmDialog}
+    Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangeMainPackage}
-    @{MessageExpect}    Create List    ${smsCheckChangePackageNet2GB}
+    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    AIS    ${MessageExpect}    150
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    3
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Click Web Element    ${btnBackToCurrentPackage}
-    Click Web Element    ${btnNextPackage}
-    Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
+    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-012]eServiceWeb-PO-Package-ChangeMainPackage-NextDay
+[S03-012]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-NextDay
+    [Tags]    CannotSelectPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
+    Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    CurrentPackage
-    Check Detail Package
+    SelectMenu    Package    CurrentPackage
+    Check Detail CurrentPackage
     Click Web Element    ${btnChangeMainPackage}
-    Select Package    ${txtMainPackage}    ${txtSubPackage}
-    Click Web Element    ${btnSelectPackageNet2GBandAISWiFi}
+    Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
+    Click Web Element    ${rdo399NET2GB}
     Click Web Element    ${btnConfirmPackage}
-    Click Web Element    ${btnSelectNextDay}
-    Click Web Element    ${btnConfirmChangeDuringBill}
-    Click Web Element    ${btnConfirmBillCycle}
-    Web Element Text Should Be    ${txtConfirmChangeMainPackage}    ${txtCheckDetailPackage}
+    Click Web Element    ${btnPackageNextDay}
+    Click Web Element    ${btnConfirmDialog}
+    Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangeMainPackage}
-    @{MessageExpect}    Create List    ${smsCheckChangePackageNet2GB}
+    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    AIS    ${MessageExpect}    150
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    3
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Click Web Element    ${btnBackToCurrentPackage}
-    Click Web Element    ${btnNextPackage}
-    Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
+    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-013]eServiceWeb-PO-Package-ChangeMainPackage-Immediately
+[S03-013]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-Immediately
+    [Tags]    CannotSelectPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
+    Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    CurrentPackage
-    Check Detail Package
+    SelectMenu    Package    CurrentPackage
+    Check Detail CurrentPackage
     Click Web Element    ${btnChangeMainPackage}
-    Select Package    Xtra Net    Net SIM
-    Click Web Element    ${btnSelectPackageNet2GBandAISWiFi}
+    Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
+    Click Web Element    ${rdo399NET2GB}
     Click Web Element    ${btnConfirmPackage}
-    Click Web Element    ${btnSelectImmediately}
-    Click Web Element    ${btnConfirmChangeDuringBill}
-    Click Web Element    ${btnConfirmBillCycle}
-    Web Element Text Should Be    ${txtConfirmChangeMainPackage}    ${txtCheckDetailPackage}
+    Click Web Element    ${btnPackageImmediately}
+    Click Web Element    ${btnConfirmDialog}
+    Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangeMainPackage}
-    @{MessageExpect}    Create List    ${smsCheckChangePackageNet2GB}
+    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    AIS    ${MessageExpect}    150
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    3
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Click Web Element    ${btnBackToCurrentPackage}
-    Click Web Element    ${btnNextPackage}
-    Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
+    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S03-014]eServiceWeb-PO-Package-ChangeOnTopPackage-NextBill
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    CurrentPackage
-    Check Detail Package
-    Click Web Element    ${btnChangeOnTopPackage}
-    Click Web Element    ${btnSubPackageBox}
-    Click Web Element    ${btnSubPackageItem}
-    Click Web Element    ${btnSelectOnTopPackageMidNightSale}
-    Click Web Element    ${btnConfirmPackage}
-    Click Web Element    ${btnSelectNextBill}
-    Click Web Element    ${btnConfirmBillCycle}
-    Click Web Element    ${btnConfirmAllElement}
-    @{MessageExpect}    Create List    ${smsCheckChangeOnTopPackageMidNightSale}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    1    AIS    ${MessageExpect}    30
-    Click Web Element    ${btnBackToCurrentPackage}
-    Click Web Element    ${btnNextPackage}
-    Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S03-015]eServiceWeb-PO-Package-ChangeOnTopPackage-NextDay
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S03-016]eServiceWeb-PO-Package-ChangeOnTopPackage-Immediately
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

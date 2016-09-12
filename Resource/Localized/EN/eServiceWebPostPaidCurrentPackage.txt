@@ -1,10 +1,11 @@
 *** Variables ***
-${txtCheckDetailMainPackage}    Main Package
-${txtCheckDetailOnTopPackage}    On-Top Package
-${smsCheckChangePackageNet2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB จากนั้นใช้ความเร็วสูงสุดที่ 128Kbps และ AIS WiFi ไม่จำกัด, ส่วนเกิน โทร/VDO Call นาทีละ 1.5 บ., SMS 3บ.,MMS 6บ.เริ่ม08/09/2016 00:00 ถึง 07/09/2017 23:59
+${txtMainPackage}    Main Package
+${txtOnTopPackage}    On-Top Package
+${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB
 ${txtCheckDetailNextPackage}    Main Package
 ${txtCheckDetailOnTopNextPackage}    On-Top Package
 ${smsCheckChangeOnTopPackageMidNightSale}    แพ็กเสริมเหมา เหมา Midnight Sale ค่าบริการ 5บาท โทรฟรีเบอร์ AIS 00:00-11:00น. ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม08/09/2016 00:00 ถึง 08/09/2016 23:59
 ${txtCheckDetailPackage}    399B/month Internet Non-Stop 2GB + AIS WiFi
-${txtMainPackage}    Xtra Net
-${txtSubPackage}    Net SIM
+${txtSelectMainPackage}    Xtra Net
+${txtSelectSubPackage}    Net SIM
+${txtCurrentPackage}    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed
