@@ -3,3 +3,13 @@ ${txtCitizenId}    xpath=//*[@id="textfield"]
 ${btnConfirmCitizenId}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[2]/div/a/div
 ${YourCurrentChargesDialogMessage}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div
 ${btnConfirmWrongCID}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div[1]/div/div[2]/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[2]/a/div
+${lblYourCurrentChargeDisplayText}    xpath=//*[@id="spnCqsHeader"]
+${panelYourCurrentPackAndBalance}    xpath=//*[@id="lblCqsHeadCurrent"]
+${panelUsageDetail}    xpath=//*[@id="inBoxScroll"]/div/div/div[1]
+${btnPreviosBillCycle}    xpath=//*[@id="btnCqsPreviousBill"]/div
+${btnCurrentBillCycle}    xpath=//*[@id="btnCqsCurrentBill"]/div
+${lblMobileNumber}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[1]/tbody/tr/td[2]/div/div
+${lblMobile}      xpath=//*[@id="divCqsChargeSummaryTable"]/table[1]/tbody/tr/td[1]/span
+${lblInvoiceDate}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[3]/tbody/tr/td[1]/span
+${lblSummary}     xpath=//*[@id="divCqsChargeSummaryTable"]/table[4]/tbody/tr/td[1]/span
+${panelYourPreviousBalance}    xpath=//*[@id="lblCqsHeadPrevious"]

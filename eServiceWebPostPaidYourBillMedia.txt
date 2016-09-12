@@ -62,13 +62,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourBillMedia
-    Wait Until Element Is Visible    ${YouBillMediaDisplayText}
-    Element Should Be Visible    ${YouBillMediaDisplayText}
-    Element Should Be Visible    ${txtBillMediaPreferenceDisable}
-    Selenium2Library.Element Should Be Disabled    ${txtBillMediaPreferenceDisable}
-    Selenium2Library.Element Should Be Disabled    ${txtPreferenceStatementLangDisable}
-    Element Should Be Visible    ${txtPreferenceStatementLangDisable}
-    Element Should Be Visible    ${btnEditBillingInformation}
+    Web Element Should Be Visible    ${YouBillMediaDisplayText}
+    Web Element Should Be Visible    ${txtBillMediaPreferenceDisable}
+    Web Element Should Be Disabled    ${txtBillMediaPreferenceDisable}
+    Web Element Should Be Disabled    ${txtPreferenceStatementLangDisable}
+    Web Element Should Be Visible    ${txtPreferenceStatementLangDisable}
+    Web Element Should Be Visible    ${btnEditBillingInformation}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 

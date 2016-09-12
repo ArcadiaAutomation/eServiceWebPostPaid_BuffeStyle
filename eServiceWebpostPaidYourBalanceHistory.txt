@@ -71,10 +71,28 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
-    :FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
+    : FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
     \    Input Citizen ID    ${WrongCID}
     \    Confirm Citizen ID
     \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
+    \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[F04-039]eServiceWeb-PO-YourBalanceHistory-VerifyYourBalanceHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Verify View Statement Icon
+    Select View Statement    1
+    Web Element Should Be Visible    ${PdfStatement}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
