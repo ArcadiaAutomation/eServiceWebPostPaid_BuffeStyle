@@ -9,3 +9,5 @@ ${txtCheckDetailPackage}    399B/month Internet Non-Stop 2GB + AIS WiFi
 ${txtSelectMainPackage}    Xtra Net
 ${txtSelectSubPackage}    Net SIM
 ${txtCurrentPackage}    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed
+${txtSelectOnTopPackage}    Xtra Talk
+${txtSelectOnTopSubPackage}    Mao Mao

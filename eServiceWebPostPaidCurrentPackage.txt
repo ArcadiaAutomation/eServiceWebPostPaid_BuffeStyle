@@ -21,7 +21,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnPackageNextBill}
     Click Web Element    ${btnConfirmDialog}
     Click Web Element    ${btnConfirmEffective}
-    Click Web Element    ${btnConfirmChangeMainPackage}
+    Click Web Element    ${btnConfirmChangePackage}
     @{MessageExpect}    Create List    ${smsCheck399NET2GB}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -51,7 +51,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnPackageNextDay}
     Click Web Element    ${btnConfirmDialog}
     Click Web Element    ${btnConfirmEffective}
-    Click Web Element    ${btnConfirmChangeMainPackage}
+    Click Web Element    ${btnConfirmChangePackage}
     @{MessageExpect}    Create List    ${smsCheck399NET2GB}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -81,7 +81,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnPackageImmediately}
     Click Web Element    ${btnConfirmDialog}
     Click Web Element    ${btnConfirmEffective}
-    Click Web Element    ${btnConfirmChangeMainPackage}
+    Click Web Element    ${btnConfirmChangePackage}
     @{MessageExpect}    Create List    ${smsCheck399NET2GB}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -90,5 +90,34 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Click Web Element    ${btnBackToCurrentPackage}
     Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-014]eServiceWeb-PO-CurrentPackage-ChangeOnTopPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${3PO_1#device_name}=${3PO_1#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${3PO_1_IPAppium}    ${3PO_1_SN}    ${3PO_1_Platfrom_Name}    ${3PO_1_Platfrom_Version}    ${3PO_1_Number}
+    SelectMenu    Package    CurrentPackage
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeOnTopPackage}
+    Select Package    ${txtSelectOnTopPackage}    ${txtSelectOnTopSubPackage}
+    Click Web Element    ${rdoMaoMaoMidNight5B}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextDay}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
+    Open SMS App    ${3PO_1_IPAppium}    ${3PO_1_Platfrom_Name}    ${3PO_1_Platfrom_Version}    ${3PO_1_SN}
+    Wait SMS    ${3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${3PO_1_Platfrom_Name}    AIS    3
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
+    Close SMS App    ${3PO_1_Platfrom_Name}    ${3PO_1_SN}
+    Click Web Element    ${btnBackToCurrentPackage}
+    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
+    Click Web Element    ${txtCheckMainPackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

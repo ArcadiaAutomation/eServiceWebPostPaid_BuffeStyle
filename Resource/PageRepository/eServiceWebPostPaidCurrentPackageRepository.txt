@@ -8,9 +8,11 @@ ${btnPacageNextBill}    xpath=//*[@id="lbChkManagePackNextBilling"]
 ${btnPackageNextDay}    xpath=//*[@id="lbChkManagePackNextDay"]
 ${btnPackageImmediately}    xpath=//*[@id="lbChkManagePackImmediately"]
 ${btnConfirmEffective}    xpath=//*[@id="btnChangePackConfirmDate"]/div
-${btnConfirmChangeMainPackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
+${btnConfirmChangePackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
 ${btnConfirmDialog}    xpath=//*[@id="btnConfirm0"]
 ${ddlMainPackage}    xpath=//*[@id="ddlChangPackGroupA"]
 ${ddlSubPackage}    xpath=//*[@id="ddlChangPackGroupB"]
 ${btnBackToCurrentPackage}    xpath=//*[@id="currentPackage"]/div
 ${txtCheckCurrentPackage}    xpath=//*[@id="txtPackDescription0"]
+${btnChangeOnTopPackage}    xpath=//*[@id="registerPackage"]/div
+${rdoMaoMaoMidNight5B}    xpath=//*[@id="lbPackage_P15053382"]
