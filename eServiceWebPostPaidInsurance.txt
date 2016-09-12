@@ -1506,7 +1506,7 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ThanachartInsurance}
     Element Text Should Be    ${ldlService1}    ${ThanachartRef.No.1}
     Element Text Should Be    ${ldlService2}    ${ThanachartRef.No.2}
-    Element Text Should Be    ${ldlService3}    ${PhoneNumber}
+    Element Text Should Be    ${ldlService3}    ${PhoneNumberOfCustomer}
     Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -1630,6 +1630,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-146]eServiceWeb-PO-Insurance-SynMunKongInsurance
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1702,6 +1703,6 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${AIA}
     Element Text Should Be    ${ldlService1}    ${CustomerNo./RefNo.1}
     Element Text Should Be    ${ldlService2}    ${DueDate}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Element Text Should Be    ${ldlService3}    ${NumberPhone}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

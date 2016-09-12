@@ -50,7 +50,7 @@ ${IDCardNo.}		ID Card No.
 ${REF.NO1}		REF. NO 1
 ${REF.NO2}		REF. NO 2
 ${PersonalID		Personal ID
-${PhoneNumber}		Phone Number
+${PhoneNumberOfCustomer}		Phone Number
 ${CustomerNumber.}		Customer No.
 ${ProductNo.}		Product No.
 ${ThanachartRef.No.1}		Ref.No.1
@@ -68,3 +68,4 @@ ${FWDCustomerNo.}		Customer No.
 ${CustomerNo./RefNo.1}		Customer No./Ref No.1
 ${DueDate}		Due date
 ${RegisterMPay}		mPAY register
+${NumberPhone}		Mobile Number
