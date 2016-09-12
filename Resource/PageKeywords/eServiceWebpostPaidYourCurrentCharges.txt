@@ -10,10 +10,28 @@ Input Citizen ID
     [Arguments]    ${Text}
     Input Web Text    ${txtCitizenId}    ${Text}
 
-Verify Login Citizen ID
-    [Arguments]    ${locator}    ${Text}
-    Selenium2Library.Wait Until Page Contains Element    ${locator}
-    Element Text Should Be    ${locator}    ${Text}
+Verify Your Current Charge Page
+    Web Element Should Be Visible    ${lblYourCurrentChargeDisplayText}
+    Web Element Text Should Be    ${lblYourCurrentChargeDisplayText}    ${YourCurrentChargeDisplayText}
+    Web Element Should Be Visible    ${panelYourCurrentPackAndBalance}
+    Web Element Text Should Be    ${panelYourCurrentPackAndBalance}    ${YourCurrentPackAndBalanceText}
+    Web Element Should Be Visible    ${lblMobile}
+    Web Element Should Be Visible    ${lblMobileNumber}
+    Web Element Should Be Visible    ${panelUsageDetail}
+    Web Element Should Be Visible    ${btnPreviosBillCycle}
+    Web Element Should Be Visible    ${btnCurrentBillCycle}
+    Web Element Should Be Visible    ${lblInvoiceDate}
+    Web Element Should Be Visible    ${lblSummary}
 
 Confirm Citizen ID
     Click Web Element    ${btnConfirmCitizenId}
+
+Verify Previous Billing Cycle
+    Web Element Should Be Visible    ${panelYourPreviousBalance}
+    Web Element Should Be Visible    ${lblMobile}
+    Web Element Should Be Visible    ${lblMobileNumber}
+    Web Element Should Be Visible    ${lblInvoiceDate}
+    Web Element Should Be Visible    ${lblSummary}
+    Web Element Should Be Visible    ${btnPreviosBillCycle}
+    Web Element Should Be Visible    ${btnCurrentBillCycle}
+    Web Element Should Be Visible    ${panelUsageDetail}

@@ -25,3 +25,5 @@ ${txtUsageDetail}    รายละเอียดการใช้งาน
 ${txtVoiceCharge}    ค่าโทร
 ${txtInternetCharge}    ค่า Internet
 ${txtValueAddService}    ค่าบริการเสริม
+${txtViewAISCloud}    ดูข้อมูล
+${txtRegisterCloud}    สมัครฟรี

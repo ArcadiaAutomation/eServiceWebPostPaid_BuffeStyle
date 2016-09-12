@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPaymentTopUpHistory.t
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[S05-164]eServiceWeb-PO-PaymentTopUpHistory-NoBillHistory
+[F05-198]eServiceWeb-PO-PaymentTopUpHistory-NotSelectMonthInAISOne2CallTopUp
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -12,4 +12,92 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Click Web Element    ${btnAISOne2CallTopUp}
+    Wait Until Element Is Visible    ${ddlTopUpHistoryMount}
+    Select From List By Index    ${ddlTopUpHistoryMount}    0
+    Click Web Element    ${btnSelectMount}
+    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotSelectMonth}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-164]eServiceWeb-PO-PaymentTopUpHistory-GeneralVerify
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Web Element Text Should Be    ${lbHeaderReceiptNo}    ${TextReceiptNo}
+    Web Element Text Should Be    ${lbHeaderPaymentDate}    ${TextPaymentDate}
+    Web Element Text Should Be    ${lbHeaderAmount}    ${TextAmount}
+    Web Element Text Should Be    ${lbHeaderTypeOfPayment}    ${TextTypeOfPayment}
+    Web Element Text Should Be    ${lbHeaderChannel}    ${TextChannel}
+    Web Element Text Should Be    ${lbHeaderRequestOfCopyReceipt}    ${TextRequestOfCopyReceipt}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-165]eServiceWeb-PO-PaymentTopUpHistory-NoBillHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Web Element Text Should Be    ${lbHeaderRequestOfCopyReceipt}    ${TextRequestOfCopyReceipt}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-166]eServiceWeb-PO-PaymentTopUpHistory-NotRegisterMpay
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Click Web Element    ${btnUtilityAndOtherServices}
+    Web Element Text Should Be    ${lbAlertMessage}    ${MessageNotRegisterMpay}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-168]eServiceWeb-PO-PaymentTopUpHistory-TopUpHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Click Web Element    ${btnAISOne2CallTopUp}
+    Wait Until Element Is Visible    ${ddlTopUpHistoryMount}
+    Select From List By Index    ${ddlTopUpHistoryMount}    2
+    Click Web Element    ${btnSelectMount}
+    Web Element Text Should Be    ${lbHeaderTopUpDate}    ${TextTopUpDate}
+    Web Element Text Should Be    ${lbHeaderTopUpAmount}    ${TextTopUpAmount}
+    Web Element Text Should Be    ${lbHeaderTypeOfTopUp}    ${TextTypeOfTopUp}
+    Web Element Text Should Be    ${lbHeaderTopUpToAIS}    ${TextTopUpToAIS}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-169]eServiceWeb-PO-PaymentTopUpHistory-NoTopUpHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Click Web Element    ${btnAISOne2CallTopUp}
+    Wait Until Element Is Visible    ${ddlTopUpHistoryMount}
+    Select From List By Index    ${ddlTopUpHistoryMount}    1
+    Click Web Element    ${btnSelectMount}
+    Web Element Text Should Be    ${lbNoTopUpHistory}    ${TextNoTopUpHistory}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

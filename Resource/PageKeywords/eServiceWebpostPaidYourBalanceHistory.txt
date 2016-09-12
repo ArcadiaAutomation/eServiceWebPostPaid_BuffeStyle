@@ -17,3 +17,18 @@ Verify Login Citizen ID
 
 Confirm Citizen ID
     Click Web Element    ${btnConfirmCitizenId}
+
+Verify View Statement Icon
+    Web Element Should Be Visible    //*[@id="iconPDFZIP_green0"]
+
+Select View Statement
+    [Arguments]    ${previousMonthNumber}
+    ${index}=    Evaluate    ${previousMonthNumber}-1
+    Click Web Element    xpath=//*[@id="iconPDFZIP_green${index}"]
+
+Verify Your Balance History Page
+    Web Element Should Be Visible
+    Web Element Should Be Visible
+    Web Element Should Be Visible
+    Web Element Should Be Visible
+    Web Element Should Be Visible

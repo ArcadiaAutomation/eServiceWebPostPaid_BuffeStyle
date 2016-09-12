@@ -4,7 +4,7 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F05-129]eServiceWeb-PO-Insurance-BangkokLifeAssurance-NotInput
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -19,12 +19,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokLifeAssurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-130]eServiceWeb-PO-Insurance-BangkokLifeAssurance-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -41,12 +41,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-131]eServiceWeb-PO-Insurance-BangkokInsurance-NotInput
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -61,12 +61,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-132]eServiceWeb-PO-Insurance-BangkokInsurance-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -84,12 +84,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-133]eServiceWeb-PO-Insurance-RVP-NotInput
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -104,12 +104,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${RVP}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-134]eServiceWeb-PO-Insurance-RVP-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -126,7 +126,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -135,7 +135,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-135]eServiceWeb-PO-Insurance-ChaoPhaYaInsurance-NotInput
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -155,7 +155,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-136]eServiceWeb-PO-Insurance-ChaoPhaYaInsurance-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -172,12 +172,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-137]eServiceWeb-PO-Insurance-CIGNAInsurance-NotInput
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -192,12 +192,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${CIGNAInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-138]eServiceWeb-PO-Insurance-CIGNAInsurance-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -215,7 +215,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -224,7 +224,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-139]eServiceWeb-PO-Insurance-DhipayaLifeAssurance-NotInput
-    [Tags]    fail
+    [Tags]    fail1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -239,12 +239,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${DhipayaLifeAssurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-140]eServiceWeb-PO-Insurance-DhipayaLifeAssurance-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -262,7 +262,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -271,7 +271,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-141]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(BillPayment)-NotInput
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -291,7 +291,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-142]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(BillPayment)-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -309,7 +309,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -318,7 +318,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-143]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(PID)-NotInput
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -333,12 +333,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(PID)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-144]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(PID)-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -356,7 +356,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -365,7 +365,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-145]eServiceWeb-PO-Insurance-TQMInsuranceBroker(BillPayment)-NotInput
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -380,12 +380,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(BillPayment)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-146]eServiceWeb-PO-Insurance-TQMInsuranceBroker(BillPayment)-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -403,7 +403,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -412,7 +412,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-147]eServiceWeb-PO-Insurance-TQMInsuranceBroker(PID)-NotInput
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -427,12 +427,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(PID)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-148]eServiceWeb-PO-Insurance-TQMInsuranceBroker(PID)-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -450,7 +450,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -459,7 +459,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-149]eServiceWeb-PO-Insurance-ThaiCardifLifeAssurance-NotInput
-    [Tags]    fail
+    [Tags]    fail2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -479,7 +479,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-150]eServiceWeb-PO-Insurance-ThaiCardifLifeAssurance-InputNotComplete
-    [Tags]    fail
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -497,11 +497,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseTryAgain}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseTryAgain}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-151]eServiceWeb-PO-Insurance-ThaiLife-NotInput
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -516,11 +517,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiLife}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-152]eServiceWeb-PO-Insurance-ThaiLife-InputNotComplete
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -538,11 +540,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseTryAgain}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseTryAgain}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-153]eServiceWeb-PO-Insurance-OceanLifeInsurance(BillPayment)-NotInput
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -557,11 +560,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(BillPayment)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-154]eServiceWeb-PO-Insurance-OceanLifeInsurance(BillPayment)-InputNotComplete
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -579,7 +583,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -588,6 +592,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-155]eServiceWeb-PO-Insurance-OceanLifeInsurance(MicroInsurance)-NotInput
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -602,11 +607,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(MicroInsurance)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-156]eServiceWeb-PO-Insurance-OceanLifeInsurance(MicroInsurance)-InputNotComplete
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -624,11 +630,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageSorryPleaseTryAgain}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageSorryPleaseTryAgain}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-157]eServiceWeb-PO-Insurance-ThaipiboonInsurance-NotInput
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -643,11 +650,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaipiboonInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-158]eServiceWeb-PO-Insurance-ThaipiboonInsurance-InputNotComplete
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -665,7 +673,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -674,6 +682,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-159]eServiceWeb-PO-Insurance-ThanachartInsurance-NotInput
+    [Tags]    fail3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -688,11 +697,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ThanachartInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-160]eServiceWeb-PO-Insurance-ThanachartInsurance-InputNotComplete
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -711,7 +721,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -720,6 +730,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-161]eServiceWeb-PO-Insurance-Prudential-NotInput
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -734,11 +745,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${Prudential}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-162]eServiceWeb-PO-Insurance-Prudential-InputNotComplete
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -756,11 +768,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-163]eServiceWeb-PO-Insurance-FalconInsurance-NotInput
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -775,11 +788,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${FalconInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-164]eServiceWeb-PO-Insurance-FalconInsurance-InputNotComplete
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -796,11 +810,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-165]eServiceWeb-PO-Insurance-MuangThaiLife(Premium)-NotInput
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -820,6 +835,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-166]eServiceWeb-PO-Insurance-MuangThaiLife(Premium)-InputNotComplete
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -837,7 +853,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -846,6 +862,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-167]eServiceWeb-PO-Insurance-MuangThaiLife(Loan)-NotInput
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -860,11 +877,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Loan)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-168]eServiceWeb-PO-Insurance-MuangThaiLife(Loan)-InputNotComplete
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -882,7 +900,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -891,6 +909,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-169]eServiceWeb-PO-Insurance-MuangThaiLife(APL)-NotInput
+    [Tags]    fail4
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -905,11 +924,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(APL)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-170]eServiceWeb-PO-Insurance-MuangThaiLife(APL)-InputNotComplete
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -921,14 +941,13 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(APL)}
     Input Web Text    ${txtMPayService1}    1111111111
     Input Web Text    ${txtMPayService2}    0923334444
     Input Web Text    ${txtMPayServiceCurrency}    500
-    Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(APL)}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -937,6 +956,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-171]eServiceWeb-PO-Insurance-MuangThaiInsurance-NotInput
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -951,11 +971,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-172]eServiceWeb-PO-Insurance-MuangThaiInsurance-InputNotComplete
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -967,13 +988,12 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtPINCode}
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
     Input Web Text    ${txtMPayService1}    1111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
-    Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -982,6 +1002,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-173]eServiceWeb-PO-Insurance-SynMunKongInsurance-NotInput
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1001,6 +1022,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-174]eServiceWeb-PO-Insurance-SynMunKongInsurance-InputNotComplete
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1017,7 +1039,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -1026,6 +1048,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-175]eServiceWeb-PO-Insurance-ACEInsurance-NotInput
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1040,11 +1063,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ACEInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-176]eServiceWeb-PO-Insurance-ACEInsurance-InputNotComplete
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1062,7 +1086,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -1071,6 +1095,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-177]eServiceWeb-PO-Insurance-FWDLifeInsurance-NotInput
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1085,11 +1110,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${FWDLifeInsurance}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-178]eServiceWeb-PO-Insurance-FWDLifeInsurance-InputNotComplete
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1106,11 +1132,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-179]eServiceWeb-PO-Insurance-AIA-NotInput
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1125,11 +1152,12 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${AIA}
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-180]eServiceWeb-PO-Insurance-AIA-InputNotComplete
+    [Tags]    fail5
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1147,11 +1175,12 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService3}    0923334455
     Click Web Element    ${btnOK}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Should Contain    ${lblDialogMessage}    ${MessageSorryPleaseTryAgain}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageSorryPleaseTryAgainNewline}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-123]eServiceWeb-PO-Insurance-NotRegisterMPay
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1166,6 +1195,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-124]eServiceWeb-PO-Insurance-BangkokLifeAssurance
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1184,6 +1214,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-125]eServiceWeb-PO-Insurance-BangkokInsurance
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1202,6 +1233,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-126]eServiceWeb-PO-Insurance-RVP
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1220,6 +1252,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-127]eServiceWeb-PO-Insurance-ChaoPhaYaInsurance
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1238,6 +1271,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-128]eServiceWeb-PO-Insurance-CIGNAInsurance
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1257,6 +1291,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-129]eServiceWeb-PO-Insurance-DhipayaLifeAssurance
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1276,6 +1311,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-130]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(BillPayment)
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1295,6 +1331,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-131]eServiceWeb-PO-Insurance-TQMLifeInsuranceBroker(PID)
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1314,6 +1351,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-132]eServiceWeb-PO-Insurance-TQMInsuranceBroker(BillPayment)
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1333,6 +1371,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-133]eServiceWeb-PO-Insurance-TQMInsuranceBroker(PID)
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1352,6 +1391,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-135]eServiceWeb-PO-Insurance-ThaiLife
+    [Tags]    success1
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1371,6 +1411,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-134]eServiceWeb-PO-Insurance-ThaiCardifLifeAssurance
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1390,6 +1431,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-136]eServiceWeb-PO-Insurance-OceanLifeInsurance(BillPayment)
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1409,6 +1451,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-137]eServiceWeb-PO-Insurance-OceanLifeInsurance(MicroInsurance)
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1428,6 +1471,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-138]eServiceWeb-PO-Insurance-ThaipiboonInsurance
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1447,6 +1491,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-139]eServiceWeb-PO-Insurance-ThanachartInsurance
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1467,6 +1512,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-140]eServiceWeb-PO-Insurance-Prudential
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1486,6 +1532,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-141]eServiceWeb-PO-Insurance-FalconInsurance
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1504,6 +1551,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-142]eServiceWeb-PO-Insurance-MuangThaiLife(Premium)
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1523,6 +1571,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-143]eServiceWeb-PO-Insurance-MuangThaiLife(Loan)
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1542,6 +1591,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-144]eServiceWeb-PO-Insurance-MuangThaiLife(APL)
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1561,6 +1611,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-145]eServiceWeb-PO-Insurance-MuangThaiInsurance
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1597,6 +1648,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-147]eServiceWeb-PO-Insurance-ACEInsurance
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1616,6 +1668,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-148]eServiceWeb-PO-Insurance-FWDLifeInsurance
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -1634,6 +1687,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-149]eServiceWeb-PO-Insurance-AIA
+    [Tags]    success3
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}

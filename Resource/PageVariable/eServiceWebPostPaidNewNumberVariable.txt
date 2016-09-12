@@ -5,3 +5,4 @@ ${TestFileFail}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidSendSMSMMS\\TestF
 ${FileExcelOriginal}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidNewNumber\\FileMobileNoOriginal.xls
 ${PathFileExcelMobileNo}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidNewNumber
 ${FileMobileNo}    ${CURDIR}\\..\\PageFile\\eServiceWebPostPaidNewNumber\\FileMobileNo.xls
+${MessageSendCompleteInformal}    เบอร์0922222222เบื่อแล้วนะตอนนี้ใช้เบอร์[3PO_1_Number]ช่วยเซฟกันหน่อยนะ

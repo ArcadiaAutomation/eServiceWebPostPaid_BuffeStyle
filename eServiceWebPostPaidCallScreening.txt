@@ -223,129 +223,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S07-192]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-AddOneNumber
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabWelcomeCalls}
-    Add Number One
-    Click Web Element    ${btnConfirmWelcomeCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberOne}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmWelcomeCallScreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Clear One Number Welcome Calls
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S07-193]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-AddNumberMore
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabWelcomeCalls}
-    Input Web Text    ${txtInputNumberMobile}    0817112144
-    Click Web Element    ${btnAddNumber}
-    Wait Until Element Is Visible    ${txtWelcomeCallsNumberAddMore}
-    Click Web Element    ${btnConfirmWelcomeCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberTwo}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmWelcomeCallScreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S07-194]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-RemoveNumber
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabWelcomeCalls}
-    Click Web Element    ${btnRemoveNumberWelcomeCalls}
-    Wait Until Element Is Visible    ${txtWelcomeCallsNumberAdd}
-    Click Web Element    ${btnConfirmWelcomeCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberOne}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmRemoveWelcomeCallSreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S07-195]eServiceWeb-PO-Service-CallScreening-BlockCalls-AddNumber
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabBlockCalls}
-    Clear Number Block Calls
-    Input Web Text    ${txtInputNumberMobileBlock}    0924260605
-    Click Web Element    ${btnAddNumberBlock}
-    Wait Until Element Is Visible    ${txtBlockCallsNumberAdd}
-    Click Web Element    ${btnConfirmBlockCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailBlockNumberOne}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmBlockCallScreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S07-196]eServiceWeb-PO-Service-CallScreening-BlockCalls-AddNumberMore
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabBlockCalls}
-    Input Web Text    ${txtInputNumberMobileBlock}    0817112145
-    Click Web Element    ${btnAddNumberBlock}
-    Wait Until Element Is Visible    ${txtBlockCallsNumberAddMore}
-    Click Web Element    ${btnConfirmBlockCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtComfirmDetailBlockNumberTwo}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmBlockCallScreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[S07-197]eServiceWeb-PO-Service-CallScreening-BlockCalls-RemoveNumber
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabBlockCalls}
-    Click Web Element    ${btnRemoveNumberBlockCalls}
-    Wait Until Element Is Visible    ${txtBlockCallsNumberAdd}
-    Click Web Element    ${btnConfirmBlockCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailBlockNumberOne}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmRemoveBlockCallScreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
 [S07-189]eServiceWeb-PO-Service-CallScreening-Register
     [Tags]    NotBeRegister
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -359,6 +236,23 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Check Register
     Confirm Register
     Close Browser
+
+[S07-190]eServiceWeb-PO-Service-CallScreening-RegisterActiveWelcomeCalls
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Set Status Inactive Welcome Calls
+    Click Web Element    ${btnSelectStatusActive}
+    Click Web Element    ${btnCallScreeningStatusRegister}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtChangeStatusActiveWelcomeCalls}
+    Confirm Status
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S07-191]eServiceWeb-PO-Service-CallScreening-RegisterInactiveWelcomeCalls
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -377,7 +271,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S07-190]eServiceWeb-PO-Service-CallScreening-RegisterActiveWelcomeCalls
+[S07-192]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-AddOneNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -386,10 +280,126 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
-    Set Status Inactive Welcome Calls
-    Click Web Element    ${btnSelectStatusActive}
-    Click Web Element    ${btnCallScreeningStatusRegister}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtChangeStatusActiveWelcomeCalls}
-    Confirm Status
+    Click Web Element    ${tabWelcomeCalls}
+    Add Number One
+    Verify List Number Welcome Calls
+    Click Web Element    ${btnConfirmWelcomeCalls}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberOne}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmWelcomeCallScreening}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+    Clear Number Welcome Calls
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S07-193]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-AddTwoNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Click Web Element    ${tabWelcomeCalls}
+    Add Number One
+    Add Number Two
+    Verify List Number Welcome Calls
+    Click Web Element    ${btnConfirmWelcomeCalls}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberTwo}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmWelcomeCallScreening}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+    Clear Number Welcome Calls
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S07-194]eServiceWeb-PO-Service-CallScreening-WelcomeCalls-RemoveNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Click Web Element    ${tabWelcomeCalls}
+    Add Number One
+    Add Number Two
+    Verify List Number Welcome Calls
+    Click Web Element    ${btnConfirmWelcomeCalls}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailNumberTwo}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmWelcomeCallScreening}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+    Remove One Number
+    sleep    2
+    Clear Number Welcome Calls
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S07-195]eServiceWeb-PO-Service-CallScreening-BlockCalls-AddNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Click Web Element    ${tabBlockCalls}
+    Add Block Number One
+    Verify List Number Block Calls
+    Click Web Element    ${btnConfirmBlockCalls}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmDetailBlockNumberOne}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmBlockCallScreening}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+    Clear Number Block Calls
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S07-196]eServiceWeb-PO-Service-CallScreening-BlockCalls-AddNumberMore
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Click Web Element    ${tabBlockCalls}
+    Add Block Number One
+    Add Block Number Two
+    Verify List Number Block Calls
+    Click Web Element    ${btnConfirmBlockCalls}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtComfirmDetailBlockNumberTwo}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmBlockCallScreening}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+    Clear Number Block Calls
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S07-197]eServiceWeb-PO-Service-CallScreening-BlockCalls-RemoveNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Service    CallScreening
+    Click Web Element    ${tabBlockCalls}
+    Add Block Number One
+    Add Block Number Two
+    Verify List Number Block Calls
+    Click Web Element    ${btnConfirmBlockCalls}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtComfirmDetailBlockNumberTwo}
+    Click Web Element    ${btnConfirmCallScreeningDialog}
+    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmBlockCallScreening}
+    Click Web Element    ${btnBackToCallScreeningDialog}
+    Remove One Number Block
+    Clear Number Block Calls
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

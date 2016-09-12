@@ -6,3 +6,10 @@ ${TextTypeOfPayment}    Type of payment
 ${TextChannel}    Channel
 ${TextRequestOfCopyReceipt}    Request of\nCopy Receipt
 ${TextNoBillHistory}    Data not found.
+${MessageNotRegisterMpay}    You are not a mPAY subscriber.
+${TextNoTopUpHistory}    Data not found.
+${TextTopUpDate}    Top Up Date
+${TextTopUpAmount}    Amount\n(Baht)
+${TextTypeOfTopUp}    Type of top up
+${TextTopUpToAIS}    Top up to AIS\nOne-2-Call! number
+${MessageNotSelectMonth}    please select month

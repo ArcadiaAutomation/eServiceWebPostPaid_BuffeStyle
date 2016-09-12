@@ -30,6 +30,7 @@ ${MessagePleaseFillDetails} 	กรุณาระบุรายละเอี
 ${MessagePleaseRefillmCASH}		จำนวนเงินใน mCASH ไม่พอ กรุณาตรวจสอบยอดหรือเติมเงินก่อนใช้บริการ
 ${MessagePleaseTryAgain}		ขออภัยค่ะ ไม่สามารถทำรายการได้ในขณะนี้
 ${MessageSorryPleaseTryAgain}		ขออภัย ระบบไม่สามารถให้บริการได้ในขณะนี้ กรุณาเข้าใช้บริการใหม่อีกครั้ง
+${MessageSorryPleaseTryAgainNewline}		ขออภัย ระบบไม่สามารถให้บริการได้ในขณะนี้\nกรุณาเข้าใช้บริการใหม่อีกครั้ง
 ${Ref.No.1Bangkok}		เลขที่สัญญา
 ${Ref.No.2Bangkok}		เลขที่อ้างอิง
 ${PolicyNo.}	เลขที่กรมธรรม์
