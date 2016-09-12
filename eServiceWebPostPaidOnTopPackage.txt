@@ -119,6 +119,39 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
+[S03-020]eServiceWeb-PO-OnTopPackage-XtraTalkMonthlyPackage-SpecialNumber
+    [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
+    ...
+    ...
+    ...    _*BUG!!!!!!!*_ ไม่มี SMS ส่งมา (ทำ work around โดยการเปลี่ยน on top package)
+    [Tags]    success
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MonthlyPackage}
+    Click Web Element    ${chk100BCall50stSpecialNumber}
+    Input Web Text    ${txtSpecialNumber1}    ${lo_AIS_Number}
+    Click Web Element    ${btnChangePackConfirm}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Cancel On-Top Package    ${100BCall3AISNumber50st}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
 [S03-029]eServiceWeb-PO-OnTopPackage-XtraTalkMonthlyPackage
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
     ...
