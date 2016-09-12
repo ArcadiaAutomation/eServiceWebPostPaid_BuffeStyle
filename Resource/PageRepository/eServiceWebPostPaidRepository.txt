@@ -10,7 +10,7 @@ ${btnLanguage}    xpath=//*[@ng-click="langService.setLang('${ar_LANG}')"]
 ${mnuHome}        xpath=//*[@id="menu-1"]
 ${mnuPackage}     xpath=//*[@id="menu-2"]
 ${mnuYouBalanceAndCreditLimit}    xpath=//*[@id="menu-5"]
-${mnuPayment/TopUp}    xpath=//*[@id="menu-77"]
+${mnuPayment/TopUp}    xpath=//*[@id="menu-77" or @id="menu-38"]    # PE use menu 38
 ${mnuBillAISPostPaid}    xpath=//*[@id="menu-73"]
 ${mnuSMSMMS}      xpath=//*[@id="menu-20"]
 ${mnuVoiceRegister}    xpath=//*[@id="menu-117"]
@@ -43,3 +43,4 @@ ${mnuAISCould}    xpath=//*[@id="menu-127"]
 ${mnuLuckyNumber}    xpath=//*[@id="menu-126"]
 ${mnuInsurance}    xpath=//*[@id="menu-92"]
 ${mnuPaymentTopUpHistory}    xpath=//*[@id="menu-70"]
+${mnuUtility}     xpath=//*[@id="menu-87"]    # PE use menu 87
