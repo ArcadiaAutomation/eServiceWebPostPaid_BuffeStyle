@@ -56,12 +56,12 @@ ${CustomerNumber.}		รหัสลูกค้า
 ${ProductNo.}		รหัสสินค้า
 ${ThanachartRef.No.1}		เลขที่อ้างอิง 1 (Ref.No.1)
 ${ThanachartRef.No.2}		เลขที่อ้างอิง 2 (Ref.No.2)
-${PhoneNumber}		เบอร์โทรศัพท์ของลูกค้า
+${PhoneNumberOfCustomer}		เบอร์โทรศัพท์ของลูกค้า
 ${RefNo.(121878)}		รหัสอ้างอิง (ระบุ 121878)
 ${RefNo.}		หมายเลขอ้างอิง
 ${POLICY}		เลขที่กรมธรรม์
 ${TEL}		เบอร์โทรศัพท์ที่ติดต่อได้
-${MuangThaiRef.No.1}		Ref.No.1
+${MuangThaiRef.No.1}		Ref.No. 1
 ${BillNo.}		เลขที่กรมธรรม์
 ${Ref.1}		เลขกรมธรรม์ (Ref.1)
 ${Ref.2}		หมายเลขอ้างอิง (Ref.2)
@@ -69,3 +69,4 @@ ${FWDCustomerNo.}		หมายเลขอ้างอิง
 ${CustomerNo./RefNo.1}		หมายเลขอ้างอิง(เลขที่กรมธรรม์)
 ${DueDate}		วันถึงกำหนดชำระ (ดดววปป) ค.ศ.
 ${RegisterMPay}		สมัครบริการ mPAY
+${NumberPhone}		หมายเลขโทรศัพท์

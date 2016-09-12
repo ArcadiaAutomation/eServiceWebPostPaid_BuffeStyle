@@ -101,20 +101,21 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourAddress
     Web Element Text Should Be    ${lblYourAddressDisplayText}    ${YouAddress${ar_LANG}}
-    Element Should Be Visible    ${txtNameAndSurName}
-    Element Should Be Visible    ${txtHouseNumber}
-    Element Should Be Visible    ${txtMooban}
-    Element Should Be Visible    ${txtRoom}
-    Element Should Be Visible    ${txtFloor}
-    Element Should Be Visible    ${txtBuilding}
-    Element Should Be Visible    ${txtSoi}
-    Element Should Be Visible    ${txtStreet}
-    Selenium2Library.Element Should Be Enabled    ${ddlProvince}
-    Selenium2Library.Element Should Be Enabled    ${ddlDistrict}
-    Selenium2Library.Element Should Be Enabled    ${ddlSubDistrict}
-    Selenium2Library.Element Should Be Enabled    ${ddlPostCode}
-    Element Should Be Visible    ${btnEditYouAddress}
-    Close Browser
+    Click Web Element    ${btnEditYouAddress}
+    Web Element Should Be Visible    ${txtNameAndSurName}
+    Web Element Should Be Visible    ${txtHouseNumber}
+    Web Element Should Be Visible    ${txtMooban}
+    Web Element Should Be Visible    ${txtRoom}
+    Web Element Should Be Visible    ${txtFloor}
+    Web Element Should Be Visible    ${txtBuilding}
+    Web Element Should Be Visible    ${txtSoi}
+    Web Element Should Be Visible    ${txtStreet}
+    Web Element Should Be Visible    ${ddlProvince}
+    Web Element Should Be Visible    ${ddlDistrict}
+    Web Element Should Be Visible    ${ddlSubDistrict}
+    Web Element Should Be Visible    ${ddlPostCode}
+    Comment    Web Element Should Be Visible    ${btnEditYouAddress}
+    Comment    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S09-221]eServiceWeb-PO-YourAddress-EditYourAddress
