@@ -3,6 +3,38 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 
 *** Test Cases ***
+[S03-009]eServiceWeb-PO-CurrentPackage-CheckCurrentPackage
+    [Tags]    CurrentPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-010]eServiceWeb-PO-CurrentPackage-CheckNextPackage
+    [Tags]    NaxtPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
 [S03-011]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-NextBill
     [Tags]    CannotSelectPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
@@ -13,6 +45,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
     Check Detail CurrentPackage
     Click Web Element    ${btnChangeMainPackage}
     Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
@@ -43,6 +76,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
     Check Detail CurrentPackage
     Click Web Element    ${btnChangeMainPackage}
     Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
@@ -73,6 +107,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
     Check Detail CurrentPackage
     Click Web Element    ${btnChangeMainPackage}
     Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
@@ -102,19 +137,19 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
     Check Detail CurrentPackage
-    Comment    Click Web Element    ${btnChangeOnTopPackage}
-    Comment    Select Package    ${txtSelectOnTopPackageXtraTalk}    ${txtSelectOnTopSubPackageMaoMao}
-    Comment    Click Web Element    ${rdoMaoMaoMidNight5B}
-    Comment    Click Web Element    ${btnConfirmPackage}
-    Comment    Click Web Element    ${btnPackageNextDay}
-    Comment    Click Web Element    ${btnConfirmEffective}
-    Comment    Click Web Element    ${btnConfirmChangePackage}
-    Comment    @{MessageExpect}    Create List    ${smsCheckMaoMaoMidNight5B}
-    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Comment    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    3    AIS    ${MessageExpect}
-    ...    150
-    Comment    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnChangeOnTopPackage}
+    Select Package    ${txtSelectOnTopPackageXtraTalk}    ${txtSelectOnTopSubPackageMaoMao}
+    Click Web Element    ${rdoMaoMaoMidNight5B}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextDay}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    @{MessageExpect}    Create List    ${smsCheckMaoMaoMidNight5B}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    3    AIS    ${MessageExpect}    150
+    Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
     Close Browser
@@ -129,6 +164,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
     Check Detail CurrentPackage
     Click Web Element    ${btnChangeOnTopPackage}
     Select Package    ${txtSelectOnTopPackageXtraPack}    ${txtSelectOnTopSubPackageMaoMaoCombo}
@@ -155,6 +191,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    CurrentPackage
+    Click Web Element    ${btnCurrentPackage}
     Check Detail CurrentPackage
     Click Web Element    ${btnChangeOnTopPackage}
     Select Package    ${txtSelectOnTopPackageXtraNet}    ${txtSelectOnTopSubPackageWifi}
