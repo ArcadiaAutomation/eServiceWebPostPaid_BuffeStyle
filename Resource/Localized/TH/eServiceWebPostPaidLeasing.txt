@@ -1,0 +1,4 @@
+${KTBLEASING}		กรุงไทยธุรกิจลีสซิ่ง
+${NissanLeasing}		นิสสัน ลีสซิ่ง
+${ToyotaLeasing}		โตโยต้า ลีสซิ่ง
+${AmanahLeasing}		อะมานะฮ์ ลิสซิ่ง

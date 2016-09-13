@@ -1,0 +1,2 @@
+*** Variables ***
+${AirnetNumber}    เลขที่แอร์เน็ต
