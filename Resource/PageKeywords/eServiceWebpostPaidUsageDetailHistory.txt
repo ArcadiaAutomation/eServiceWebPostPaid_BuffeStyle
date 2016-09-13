@@ -62,3 +62,25 @@ Verify Usage Detail History PDF
 
 Select View Call Condition
     Click Web Element    ${chkCallViewByUsageDate}
+
+Select View Internet And Value Added Service By Condition
+    [Arguments]    ${ConditionNumber}
+    ${Number}    Evaluate    ${ConditionNumber}-1
+    Click Web Element    xpath=//*[@id="chkCdrVas${Number}"]
+
+Verify Internet And Value Added Service Page
+    Web Element Should Be Visible    ${tbAllViewDetail}
+    Comment    Web Element Should Be Visible    ${tbValueAddedService}
+    Comment    Web Element Should Be Visible    ${tbInternet}
+
+Select View Graph Top 5 By Condition
+    [Arguments]    ${menuIndex}
+    ${Index}=    Evaluate    ${menuIndex}-1
+    Click Web Element    xpath=//*[@id="chkCdrGraph${index}"]
+
+VerifyCreditLimit
+    Web Element Should Be Visible    ${lblYourCreditLimitDisplayText}
+    Web Element Should Be Visible    ${lblYourCreditLimit}
+    Web Element Should Be Visible    ${lblYourOutStanndingBalance}
+    Web Element Should Be Visible    ${lblYourUnbilledUsage}
+    Web Element Should Be Visible    ${lblYourRemainCreditBalance}

@@ -22,3 +22,11 @@ ${btnPrintSpecificDetail}    xpath=//*[@id="popup_detail_element"]/div[2]/div/di
 ${btnConfirmPrint}    xpath=//*[@id="btnConfirmation"]/div
 ${chkCallViewByUsageDate}    xpath=//*[@id="chkCdrVoice0"]
 ${FormPDF}        xpath=//*[@id="plugin"]
+${tbValueAddedService}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div[1]
+${tbInternet}     xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div[2]
+${tbAllViewDetail}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div
+${lblYourCreditLimitDisplayText}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[1]/div/div
+${lblYourCreditLimit}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[1]
+${lblYourOutStanndingBalance}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[2]
+${lblYourUnbilledUsage}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[3]
+${lblYourRemainCreditBalance}    xpath=//*[@id="data1"]/div[2]/div[2]/div/div[4]
