@@ -71,7 +71,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Web Element Text Should Be    ${txtCheckCurrentUsage}    ${txtCurrentUsage}
-    Check Element Usage Internet
+    Web Element Text Should Be    ${txtCheckUsageInternet}    ${txtUsageInternet}
     Check Element Usage Call
     Check Element Usage SMS
     Check Element Usage MMS

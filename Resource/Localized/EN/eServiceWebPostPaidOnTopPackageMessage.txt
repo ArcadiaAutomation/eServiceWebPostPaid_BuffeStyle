@@ -20,3 +20,4 @@ ${MonthlyPackage}    Monthly package
 ${4GInternet488}    4G Internet on-top package 488B. 4G Internet 5GB
 ${100BFreeStaSun}    100 B./Mth: Free AIS call Sat-Sun
 ${MessageCancelPackageSuccess}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
+${100BCall3AISNumber50st}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)

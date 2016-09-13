@@ -1,0 +1,2 @@
+*** Variables ***
+${MessageNotSelectPayment}    กรุณาเลือกรายการที่ต้องการชำระ

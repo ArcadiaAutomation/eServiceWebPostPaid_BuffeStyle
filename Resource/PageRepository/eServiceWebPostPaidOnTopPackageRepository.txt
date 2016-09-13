@@ -26,3 +26,7 @@ ${chkPackage}     xpath=//*[@class="checkbox-label color_orange2"]
 ${btnCancelPack}    xpath=//*[@id="btnCancelPack"]
 ${ConfirmCancelPack}    xpath=//*[@id="btnCancelPackApplyChange"]/div
 ${lbCancelPackage}    xpath=//*[@id="txtCancelPackStepThreeResult0"]
+${chk100BCall50stSpecialNumber}    xpath=//*[@id="lbPackage_P12041515"]
+${txtSpecialNumber1}    xpath=//*[@id="txtApplySpecialNoValue0"]
+${txtSpecialNumber2}    xpath=//*[@id="txtApplySpecialNoValue1"]
+${txtSpecialNumber3}    xpath=//*[@id="txtApplySpecialNoValue2"]

@@ -131,6 +131,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnAddSenderSMSSubscription}
     Comment    not Input Reason in this case
     Click Web Element    ${btnConfirmSMSSubscription}
-    Web Element Text Should Be    ${txtDetailSuspensionDialog}    ${txtSMSSubscription}
+    Web Element Text Should Be    ${txtDetailSuspensionDialog}    ${txtSMSSubscriptionNew}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
