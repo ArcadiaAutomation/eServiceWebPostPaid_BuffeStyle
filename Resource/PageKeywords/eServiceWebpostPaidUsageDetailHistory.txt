@@ -48,6 +48,7 @@ Verify Usage Detail History Page
     Web Element Should Be Visible    ${lblCurrentChargeDetail}
     Web Element Should Be Visible    ${lblCurrentChargesAmount}
     Web Element Should Be Visible    ${lblOutStandingBalanceAmount}
+    Web Element Should Be Visible    ${tbAllViewTypeAndCondition}
 
 Print Usage Detail History
     [Arguments]    ${printType}
@@ -77,10 +78,3 @@ Select View Graph Top 5 By Condition
     [Arguments]    ${menuIndex}
     ${Index}=    Evaluate    ${menuIndex}-1
     Click Web Element    xpath=//*[@id="chkCdrGraph${index}"]
-
-VerifyCreditLimit
-    Web Element Should Be Visible    ${lblYourCreditLimitDisplayText}
-    Web Element Should Be Visible    ${lblYourCreditLimit}
-    Web Element Should Be Visible    ${lblYourOutStanndingBalance}
-    Web Element Should Be Visible    ${lblYourUnbilledUsage}
-    Web Element Should Be Visible    ${lblYourRemainCreditBalance}

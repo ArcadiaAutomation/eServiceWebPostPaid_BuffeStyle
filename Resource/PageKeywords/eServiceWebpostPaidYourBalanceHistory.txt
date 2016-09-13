@@ -20,6 +20,7 @@ Confirm Citizen ID
 
 Verify Your Balance History Display
     Web Element Should Be Visible    ${YourBalanceHistoryDisplayText}
+    Web Element Should Be Visible    ${tbYourBalanceHistoryDetail}
 
 Select View Statement
     [Arguments]    ${previousMonthNumber}

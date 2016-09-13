@@ -13,3 +13,6 @@ ${btnCancelRegisterMySuperPlan}    xpath=//*[@id="btn_cancel"]
 ${lblAcceptRule}    xpath=//*[@id="warpAllContent"]/div[4]/div[2]/table/tbody/tr/td[2]
 ${btnCancelMySuperPlan}    xpath=//*[@id="btn_cancel"]
 ${lblSumMoney}    xpath=//*[@id="sumMoney"]
+${imgAdvertise}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[1]/td/img
+${imgDetail}      xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[2]/td/img
+${imgProcessStep}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[4]/td/img
