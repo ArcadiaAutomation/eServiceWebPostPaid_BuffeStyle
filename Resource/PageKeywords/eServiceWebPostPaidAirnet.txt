@@ -5,4 +5,4 @@ Resource          ../../../AisRobotBuffet/Mobile/Generic/Keywords/GeneralFunctio
 Resource          ../PageRepository/eServiceWebPostPaidAirnetRepository.txt
 Resource          eServiceWebPostPaidAirnet.txt
 Resource          eServiceWebPostPaidInsurance.txt
-Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidInsuranceMessage.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidAirnetMessage.txt
