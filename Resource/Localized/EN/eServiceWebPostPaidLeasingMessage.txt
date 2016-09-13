@@ -1,0 +1,13 @@
+*** Variables ***
+${KTBLEASING}     KTB LEASING
+${NissanLeasing}    Nissan Leasing
+${ToyotaLeasing}    Toyota Leasing
+${AmanahLeasing}    Amanah Leasing
+${Ref.No.1}       Ref.No.1
+${Ref.No.2}       Ref.No.2
+${NisRef.1}       Ref.1
+${Ref.2 (8 last digits)}    Ref.2 (8 last digits)
+${TOCustomer No.}    Customer No.
+${TOReference No.}    Reference No.
+${AREF.1}         REF.1
+${AREF.2}         REF.2

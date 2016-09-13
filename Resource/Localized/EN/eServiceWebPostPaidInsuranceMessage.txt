@@ -42,8 +42,8 @@ ${PersonalID}		Personal ID
 ${MobileNo.}		Mobile No.
 ${Ref.No.1}		Ref. No.1
 ${Ref.No.2}		Ref. No.2
-${TQMRef.No.1}		Ref. No.1
-${TQMRef.No.2}		Ref. No.2
+${TQMRef.No.1}		Ref.No1
+${TQMRef.No.2}		Ref.No2
 ${CustomerNo./Ref.No.1}		Customer No./Ref.No.1
 ${CardifRef.No.2}		Ref.No.2
 ${IDCardNo.}		ID Card No.
@@ -70,3 +70,7 @@ ${DueDate}		Due date
 ${RegisterMPay}		mPAY register
 ${NumberPhone}		Mobile Number
 ${PolicyNo.}		Policy No.
+${CustomerNo.CIGNA}		Customer No.
+${PersonalIDCustomer}		Personal ID
+${Ref.No.1Dip}		Ref No.1
+${Ref.No.2Dip}		Ref No.2

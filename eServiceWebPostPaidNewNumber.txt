@@ -5,7 +5,7 @@ Resource          ../Config/LocalConfig.txt
 *** Test Cases ***
 [F07-264]eServiceWeb-PO-Service-NewNumber-NoFillAny
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -21,7 +21,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-265]eServiceWeb-PO-Service-NewNumber-CannotChangNumber
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -38,7 +38,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-266]eServiceWeb-PO-Service-NewNumber-FillCharacterInNumberFrom
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -54,7 +54,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-267]eServiceWeb-PO-Service-NewNumber-NoFilltxtFrom
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -72,7 +72,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-268]eServiceWeb-PO-Service-NewNumber-NotSelectMessage
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -91,7 +91,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-269]eServiceWeb-PO-Service-NewNumber-NotSelectFile
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -111,7 +111,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-270]eServiceWeb-PO-Service-NewNumber-NotSelectFileXls
     [Tags]    failNN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -129,8 +129,8 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-209]eServiceWeb-PO-Service-NewNumber-OneNumber-Formal-Want
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
@@ -164,8 +164,8 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-210]eServiceWeb-PO-Service-NewNumber-OneNumber-Formal-NotWant
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
@@ -199,9 +199,9 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-211]eServiceWeb-PO-Service-NewNumber-MoreThanOneNumber-Informal-NotWant
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO_3=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendCompleteInformal}    Replace String    ${MessageSendCompleteInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
@@ -239,8 +239,8 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-212]eServiceWeb-PO-Service-NewNumber-SelectFileOneNumber-Formal
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
@@ -282,9 +282,9 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-213]eServiceWeb-PO-Service-NewNumber-SelectFileMorethanOneNumber-Informal
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO_3=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendCompleteInformal}    Replace String    ${MessageSendCompleteInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
