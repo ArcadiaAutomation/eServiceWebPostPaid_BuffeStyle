@@ -1,0 +1,2 @@
+*** Variables ***
+${MessageNotSelectPayment}    Please select payment.

@@ -5,15 +5,20 @@ Resource          ../Config/LocalConfig.txt
 *** Test Cases ***
 [F05-050]eServiceWeb-PO-Utility-NotCompleteInformation
     [Documentation]    Pending
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    mPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    Utility
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Input Web Text    ${txtPINmpay}    1111
+    Click Web Element    ${btnMPayLogin}
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotSelectPayment}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-051]eServiceWeb-PO-Utility-NotCompleteInformation
     [Documentation]    Pending

@@ -13,3 +13,7 @@ ${lblMobile}      xpath=//*[@id="divCqsChargeSummaryTable"]/table[1]/tbody/tr/td
 ${lblInvoiceDate}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[3]/tbody/tr/td[1]/span
 ${lblSummary}     xpath=//*[@id="divCqsChargeSummaryTable"]/table[4]/tbody/tr/td[1]/span
 ${panelYourPreviousBalance}    xpath=//*[@id="lblCqsHeadPrevious"]
+${lblCurrentDomesticCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[7]
+${lblCurrentChargeBeforeVAT}    xpath=//*[@id="inBoxScroll"]/div/div/div[8]
+${lblCurrentChargesVAT}    xpath=//*[@id="inBoxScroll"]/div/div/div[9]
+${lblTotalCurrentcharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[10]
