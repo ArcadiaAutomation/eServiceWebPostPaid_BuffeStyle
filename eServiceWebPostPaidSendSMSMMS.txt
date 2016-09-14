@@ -14,7 +14,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -30,9 +30,8 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInsertNumber1}    09112
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -48,7 +47,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInsertNumber1}    ส
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -64,9 +63,8 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInputSMSMessage}    Hello
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -83,7 +81,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -99,7 +97,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan335}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -115,7 +113,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Service    SMSMMS
     Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan765}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -133,7 +131,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInsertNumber1}    09112
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -150,9 +148,8 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInputSMSMessage}    Hello
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -169,7 +166,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInsertNumber1}    ส
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageNumericOnly}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -187,7 +184,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -210,9 +207,8 @@ Resource          ../Config/LocalConfig.txt
     Select From list    ${lstYearFuture}    0
     Select From list    ${lstHourFuture}    0
     Select From list    ${lstMinuteFuture}    0
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageEnterAfterToDay}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -235,9 +231,8 @@ Resource          ../Config/LocalConfig.txt
     Select From list    ${lstYearFuture}    0
     Select From list    ${lstHourFuture}    0
     Select From list    ${lstMinuteFuture}    0
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -254,7 +249,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan335}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -271,7 +266,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnSMSFuture}
     Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageENMornthan765}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -288,7 +283,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -305,9 +300,8 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnMMS}
     Input Web Text    ${txtInsertNumber1}    09112
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -324,7 +318,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnMMS}
     Input Web Text    ${txtInsertNumber1}    ส
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -341,9 +335,8 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnMMS}
     Input Web Text    ${txtInputSMSMessage}    Hello
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -361,7 +354,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Input Web Text    ${txtInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessageImage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -378,7 +371,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnMMS}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดีสวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดีสวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan1000}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -395,7 +388,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Service    SMSMMS
     Click Web Element    ${btnMMS}
     Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageENMorethan1000}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -413,7 +406,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Wait Web Until Page Contains Element    ${btnChooseFile}
     Choose File    ${btnChooseFile}    D:/LocalConfig/Test.txt
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -431,9 +424,8 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnMMSFuture}
     Input Web Text    ${txtInsertNumber1}    09112
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageInvalid10digit}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -451,7 +443,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnMMSFuture}
     Input Web Text    ${txtInsertNumber1}    ส
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageNumberOnly}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -469,9 +461,8 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnMMSFuture}
     Input Web Text    ${txtInputSMSMessage}    Hello
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageDestinationNotInput}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -490,7 +481,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMSFuture}
     Input Web Text    ${txtInsertNumber1}    0923026951
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessagePleaseInputMessageImage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -514,9 +505,8 @@ Resource          ../Config/LocalConfig.txt
     Select From list    ${lstYearFuture}    0
     Select From list    ${lstHourFuture}    0
     Select From list    ${lstMinuteFuture}    0
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageEnterAfterToDay}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -540,9 +530,8 @@ Resource          ../Config/LocalConfig.txt
     Select From list    ${lstYearFuture}    0
     Select From list    ${lstHourFuture}    0
     Select From list    ${lstMinuteFuture}    0
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageMorethan30Day}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -560,7 +549,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnMMSFuture}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดีสวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดีสวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี สวัสดี
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageTHMorethan1000}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -578,7 +567,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMS}
     Click Web Element    ${btnMMSFuture}
     Input Web Text    ${txtInputSMSMessage}    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageENMorethan1000}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -597,7 +586,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnMMSFuture}
     Wait Web Until Page Contains Element    ${btnChooseFile}
     Choose File    ${btnChooseFile}    ${NotFilePicture}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Should Contain    ${lblDialogMessage}    ${MessageFileInvalid}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -687,9 +676,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInsertNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Time Send in Future
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessage}    1
     Element Should Contain    ${ldlTotalMoney}    2
@@ -724,9 +712,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInsertNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Time Send in Future
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessageMorethanOne}    2
     Element Should Contain    ${ldlTotalMoneyMorethanOne}    4
@@ -761,7 +748,6 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Choose File    ${btnChooseFile}    ${PathPictureMMS}
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
     Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessage}    1
@@ -797,7 +783,6 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Choose File    ${btnChooseFile}    ${PathPictureMMS}
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
     Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessageMorethanOne}    2
@@ -833,9 +818,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Choose File    ${btnChooseFile}    ${PathPictureMMS}
     Time Send in Future
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessage}    1
     Element Should Contain    ${ldlTotalMoney}    6
@@ -872,9 +856,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInputSMSMessage}    สวัสดี
     Choose File    ${btnChooseFile}    ${PathPictureMMS}
     Time Send in Future
-    sleep    2
     Click Web Element    ${btnOKSMSMMS}
-    sleep    2
+    Wait Web Until Page Contains Element    ${ldlMessageBeforeSendSMS}
     Element Should Contain    ${ldlMessageBeforeSendSMS}    สวัสดี
     Element Should Contain    ${ldlTotalMessageMorethanOne}    2
     Element Should Contain    ${ldlTotalMoneyMorethanOne}    12

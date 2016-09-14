@@ -30,7 +30,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    VoiceAdd/Edit
-    Sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
@@ -47,7 +46,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    VoiceCancel
-    Sleep    2
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
@@ -66,7 +64,6 @@ Resource          ../Config/LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    sleep    2
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessageNoDataUpdate}
     Click Web Element    ${btnDialogClose}
@@ -88,7 +85,6 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    VoiceAdd/Edit
     Input Web Text    ${txtInputName1}    สมชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    sleep    2
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertMobile}
     Click Web Element    ${btnDialogClose}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
@@ -106,12 +102,11 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    sleep    2
     Wait Web Until Page Contains Element    ${txtSpell1(1)}
     Input Web Text    ${txtSpell1(1)}    สม
     Input Web Text    ${txtSpell1(2)}    ชาย
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
@@ -129,10 +124,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    sleep    2
     Input Web Text    ${txtInsertMobile1}    0930208945
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseInsertName}
     Click Web Element    ${btnDialogClose}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
@@ -150,8 +144,8 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    sleep    2
     Input Web Text    ${txtSpell1(1)}    s
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessageThaiOnly}
     Click Web Element    ${btnDialogClose}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
@@ -169,13 +163,12 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    sleep    2
     Input Web Text    ${txtInputName1}    สมชาย
     Input Web Text    ${txtInsertMobile1}    0930208945
     Input Web Text    ${txtSpell1(1)}    อา
     Input Web Text    ${txtSpell1(2)}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    Sleep    2
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -192,8 +185,8 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    sleep    2
     Input Web Text    ${txtInsertMobile1}    ส
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessageNumberOnly}
     Click Web Element    ${btnDialogClose}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
@@ -243,7 +236,6 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Register Voice
     Select Menu    VoiceAdd/Edit
-    sleep    2
     Input Web Text    ${txtInputName1}    โตโน่
     Input Web Text    ${txtInsertMobile1}    ${lo_3PO_2_Number}
     Input Web Text    ${txtSpell1(1)}    โต
@@ -358,11 +350,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtInsertMobile2}    ${lo_3PO_2_Number}
     Input Web Text    ${txtSpell2(1)}    ไว
     Input Web Text    ${txtSpell2(2)}    ไว
-    sleep    2
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    sleep    2
     Click Web Element    ${btnEditDataConfirm}
-    sleep    2
     Click Web Element    ${btnBack}
     Wait Web Until Page Contains Element    ${ldlDisplayName1}
     Element Text Should Be    ${ldlDisplayName1}    แตงโม
