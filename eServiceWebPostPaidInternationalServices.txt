@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
 
 *** Test Cases ***
 [F07-263]eServiceWeb-PO-Service-InternationalCall
-    [Tags]    pass
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -19,7 +19,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-205]eServiceWeb-PO-Service-ActiveAllInternationalCall
-    [Tags]    pass
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -36,7 +36,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-206]eServiceWeb-PO-Service-InactiveIRActiveIDD
-    [Tags]    pass
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -64,6 +64,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidInternationalServices
     [Documentation]    Message in dialog You cannot cancellation international call service
     ...    because you currently have international roaming service. "
     ...    " \ Please cancel it first, and then cancel international call service again. \ Have
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}

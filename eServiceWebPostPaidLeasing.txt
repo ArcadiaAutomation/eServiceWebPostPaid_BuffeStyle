@@ -4,6 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
 
 *** Test Cases ***
 [F05-181]eServiceWeb-PO-Leasing-KTBLeasing-NotInput
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -23,6 +24,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-182]eServiceWeb-PO-Leasing-KTBLeasing-InputNotComplete
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -50,6 +52,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-183]eServiceWeb-PO-Leasing-NissanLeasing-NotInput
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -69,6 +72,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-184]eServiceWeb-PO-Leasing-NissanLeasing-InputNotComplete
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -92,6 +96,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-185]eServiceWeb-PO-Leasing-ToyotaLeasing-NotInput
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -111,6 +116,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-186]eServiceWeb-PO-Leasing-ToyotaLeasing-InputNotComplete
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -138,6 +144,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-187]eServiceWeb-PO-Leasing-AmanahLeasing-NotInput
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -157,6 +164,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-188]eServiceWeb-PO-Leasing-AmanahLeasing-InputNotComplete
+    [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -184,6 +192,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-150]eServiceWeb-PO-Leasing-UnregistermPay
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    UnregistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -198,6 +207,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-151]eServiceWeb-PO-Leasing-KTBLeasing
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -217,6 +227,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-152]eServiceWeb-PO-Leasing-NissanLeasing
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -236,6 +247,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-153]eServiceWeb-PO-Leasing-ToyotaLeasing
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -255,6 +267,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-154]eServiceWeb-PO-Leasing-AmanahLeasing
+    [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
