@@ -1,0 +1,13 @@
+*** Variables ***
+${KTBLEASING}     กรุงไทยธุรกิจลีสซิ่ง
+${NissanLeasing}    นิสสัน ลีสซิ่ง
+${ToyotaLeasing}    โตโยต้า ลีสซิ่ง
+${AmanahLeasing}    อะมานะฮ์ ลิสซิ่ง
+${Ref.No.1}       Ref.No.1
+${Ref.No.2}       Ref.No.2
+${NisRef.1}       Ref. 1 (เลขที่สัญญา)
+${Ref.2 (8 last digits)}    Ref. 2 (เลขที่ลูกค้า 8 หลักสุดท้าย)
+${TOCustomer No.}    Customer No.
+${TOReference No.}    Reference No.
+${AREF.1}         REF.1
+${AREF.2}         REF.2

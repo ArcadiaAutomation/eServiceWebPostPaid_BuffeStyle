@@ -18,12 +18,14 @@ Verify Login Citizen ID
 Confirm Citizen ID
     Click Web Element    ${btnConfirmCitizenId}
 
-Verify View Statement Icon
-    Web Element Should Be Visible    //*[@id="iconPDFZIP_green0"]
+Verify Your Balance History Display
+    Web Element Should Be Visible    ${YourBalanceHistoryDisplayText}
+    Web Element Should Be Visible    ${tbYourBalanceHistoryDetail}
 
 Select View Statement
     [Arguments]    ${previousMonthNumber}
     ${index}=    Evaluate    ${previousMonthNumber}-1
+    Comment    Log To Console    hello=${index}
     Click Web Element    xpath=//*[@id="iconPDFZIP_green${index}"]
 
 Verify Your Balance History Page

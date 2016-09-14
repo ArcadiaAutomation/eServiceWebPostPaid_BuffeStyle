@@ -3,6 +3,7 @@ Resource          ../PageRepository/eServiceWebPostPaidChangeMainPackageReposito
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidChangeMainPackageMessage.txt
+Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 
 *** Keywords ***
 Select Package

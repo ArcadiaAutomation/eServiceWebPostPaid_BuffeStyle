@@ -40,7 +40,7 @@ Confirm Register
     Click Web Element    ${btnBackToCallScreeningDialog}
 
 Clear Number Block Calls
-    :FOR    ${index}    IN RANGE    0    20
+    : FOR    ${index}    IN RANGE    0    20
     \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnRemoveNumberBlockCalls}    2
     \    Run Keyword If    '${result}'=='False'    Exit For Loop
     \    Click Web Element    ${btnRemoveNumberBlockCalls}
@@ -50,7 +50,7 @@ Clear Number Block Calls
     Click Web Element    ${btnBackToCallScreeningDialog}
 
 Clear Number Welcome Calls
-    :FOR    ${index}    IN RANGE    0    20
+    : FOR    ${index}    IN RANGE    0    20
     \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnRemoveNumberWelcomeCalls}    2
     \    Run Keyword If    '${result}'=='False'    Exit For Loop
     \    Click Web Element    ${btnRemoveNumberWelcomeCalls}
@@ -90,7 +90,7 @@ Add Block Number Two
 
 Verify List Number Block Calls
     @{txtBlockCallNumber}    Get Webelements    xpath=//*[@class="mpay_input ng-pristine ng-valid"]
-    :FOR    ${index}    IN RANGE    0    20
+    : FOR    ${index}    IN RANGE    0    20
     \    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    @{txtBlockCallNumber}[${index}]    1
     \    Run Keyword If    '${result}'=='False'    Exit For Loop
     Log    ${index}

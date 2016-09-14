@@ -7,3 +7,5 @@ ${PdfStatement}    xpath=//*[@id="view-pdf"]/embed
 ${lblItem}        xpath=//*[@id="tdHistoryLabelInvoice"]/div
 ${lblPaymentDueDate}    xpath=//*[@id="tdHistoryLabelDuedate"]/div
 ${lblTotal}       xpath=//*[@id="tdHistoryLabelBalance"]/div
+${YourBalanceHistoryDisplayText}    xpath=//*[@id="txtHistoryHeader"]
+${tbYourBalanceHistoryDetail}    xpath=//*[@id="tbHistoryInvoices"]

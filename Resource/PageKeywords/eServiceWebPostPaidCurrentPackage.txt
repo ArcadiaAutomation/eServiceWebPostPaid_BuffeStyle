@@ -11,8 +11,11 @@ Check Detail CurrentPackage
     Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
 
 Check Detail NextPackage
-    Web Element Text Should Be    ${txtNextPackage}    ${txtCheckDetailNextPackage}
-    Web Element Text Should Be    ${txtOnTopNextPackage}    ${txtCheckDetailOnTopNextPackage}
+    @{checkPackage[0]}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCheckNextPackage}    2
+    @{checkPackage[1]}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCheckNextOnTopPackage}    2
+    :FOR    ${var}    IN RANGE    2
+    \    Run Keyword If    '@{checkPackage}[${var}]'=='True'    Exit For Loop
+    \    \    \    //*[@id="panelCurrentPack0"]
 
 Select Package
     [Arguments]    ${MainPackage}    ${SubPackage}

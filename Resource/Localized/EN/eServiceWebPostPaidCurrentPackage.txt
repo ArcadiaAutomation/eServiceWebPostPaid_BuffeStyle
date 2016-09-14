@@ -2,10 +2,18 @@
 ${txtMainPackage}    Main Package
 ${txtOnTopPackage}    On-Top Package
 ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB
-${txtCheckDetailNextPackage}    Main Package
-${txtCheckDetailOnTopNextPackage}    On-Top Package
+${txtNextPackage}    Main Package
+${txtOnTopNextPackage}    On-Top Package
 ${smsCheckChangeOnTopPackageMidNightSale}    แพ็กเสริมเหมา เหมา Midnight Sale ค่าบริการ 5บาท โทรฟรีเบอร์ AIS 00:00-11:00น. ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม08/09/2016 00:00 ถึง 08/09/2016 23:59
 ${txtCheckDetailPackage}    399B/month Internet Non-Stop 2GB + AIS WiFi
 ${txtSelectMainPackage}    Xtra Net
 ${txtSelectSubPackage}    Net SIM
 ${txtCurrentPackage}    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed
+${txtSelectOnTopPackageXtraTalk}    Xtra Talk
+${txtSelectOnTopSubPackageMaoMao}    Mao Mao
+${smsCheckMaoMaoMidNight5B}    แพ็กเสริมเหมา เหมา Midnight Sale ค่าบริการ 5บาท โทรฟรีเบอร์ AIS 00:00-11:00น. ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม14/09/2016 00:00 ถึง 14/09/2016 23:59
+${txtSelectOnTopPackageXtraPack}    Xtra Pack
+${txtSelectOnTopSubPackageMaoMaoCombo}    Mao Mao Combo
+${txtSelectOnTopPackageXtraNet}    Xtra Net
+${txtSelectOnTopSubPackageWifi}    Wifi
+${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 13/09/2016 11:37

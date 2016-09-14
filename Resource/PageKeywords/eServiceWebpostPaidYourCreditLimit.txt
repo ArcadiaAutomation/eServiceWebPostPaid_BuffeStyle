@@ -1,0 +1,12 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebpostPaidYourCreditLimitRepository.txt
+
+*** Keywords ***
+VerifyPage
+    Web Element Should Be Visible    ${lblYourCreditLimitDisplayText}
+    Web Element Should Be Visible    ${lblYourCreditLimit}
+    Web Element Should Be Visible    ${lblYourOutStanndingBalance}
+    Web Element Should Be Visible    ${lblYourUnbilledUsage}
+    Web Element Should Be Visible    ${lblYourRemainCreditBalance}

@@ -1,0 +1,2 @@
+*** Variables ***
+${ldlAirnetNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/div[1]/div[1]/div[1]

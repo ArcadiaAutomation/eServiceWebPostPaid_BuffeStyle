@@ -8,9 +8,16 @@ ${btnPacageNextBill}    xpath=//*[@id="lbChkManagePackNextBilling"]
 ${btnPackageNextDay}    xpath=//*[@id="lbChkManagePackNextDay"]
 ${btnPackageImmediately}    xpath=//*[@id="lbChkManagePackImmediately"]
 ${btnConfirmEffective}    xpath=//*[@id="btnChangePackConfirmDate"]/div
-${btnConfirmChangeMainPackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
+${btnConfirmChangePackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
 ${btnConfirmDialog}    xpath=//*[@id="btnConfirm0"]
 ${ddlMainPackage}    xpath=//*[@id="ddlChangPackGroupA"]
 ${ddlSubPackage}    xpath=//*[@id="ddlChangPackGroupB"]
 ${btnBackToCurrentPackage}    xpath=//*[@id="currentPackage"]/div
 ${txtCheckCurrentPackage}    xpath=//*[@id="txtPackDescription0"]
+${btnChangeOnTopPackage}    xpath=//*[@id="registerPackage"]/div
+${rdoMaoMaoMidNight5B}    xpath=//*[@id="lbPackage_P15053382"]
+${rdoMaoMaoCombo55B}    xpath=//*[@id="lbPackage_P15053316"]
+${rdoAISWIFI1Hour}    xpath=//*[@id="lbPackage_P13075531"]
+${btnNextPackage}    xpath=//*[@id="btnCurrentPackNextPost"]
+${txtCheckNextPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
+${btnCurrentPackage}    xpath=//*[@id="btnCurrentPack"]

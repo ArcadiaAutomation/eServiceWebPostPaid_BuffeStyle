@@ -22,6 +22,10 @@ Verify Your Current Charge Page
     Web Element Should Be Visible    ${btnCurrentBillCycle}
     Web Element Should Be Visible    ${lblInvoiceDate}
     Web Element Should Be Visible    ${lblSummary}
+    Web Element Should Be Visible    ${lblCurrentDomesticCharge}
+    Web Element Should Be Visible    ${lblCurrentChargeBeforeVAT}
+    Web Element Should Be Visible    ${lblCurrentChargesVAT}
+    Web Element Should Be Visible    ${lblTotalCurrentcharge}
 
 Confirm Citizen ID
     Click Web Element    ${btnConfirmCitizenId}
@@ -35,3 +39,7 @@ Verify Previous Billing Cycle
     Web Element Should Be Visible    ${btnPreviosBillCycle}
     Web Element Should Be Visible    ${btnCurrentBillCycle}
     Web Element Should Be Visible    ${panelUsageDetail}
+    Web Element Should Be Visible    ${lblCurrentDomesticCharge}
+    Web Element Should Be Visible    ${lblCurrentChargeBeforeVAT}
+    Web Element Should Be Visible    ${lblCurrentChargesVAT}
+    Web Element Should Be Visible    ${lblTotalCurrentcharge}

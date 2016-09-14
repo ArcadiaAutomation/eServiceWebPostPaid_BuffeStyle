@@ -1,0 +1,2 @@
+*** Variables ***
+${AirnetNumber}    Airnet number

@@ -5,6 +5,7 @@ Resource          ../Config/LocalConfig.txt
 Library           robot.api
 Library           robot.conf.settings
 Library           DateTime
+Library           ExcelLibrary
 
 *** Test Cases ***
 test
@@ -45,7 +46,7 @@ test
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    [Tags]    fail
+    [Tags]    fail    debug
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -58,7 +59,7 @@ test
     [Teardown]
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    [Tags]    fail
+    [Tags]    fail    debug
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -71,7 +72,7 @@ test
     [Teardown]
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
-    [Tags]    fail
+    [Tags]    fail    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}

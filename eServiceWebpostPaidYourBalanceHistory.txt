@@ -80,8 +80,8 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F04-039]eServiceWeb-PO-YourBalanceHistory-VerifyYourBalanceHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+[S04-039]eServiceWeb-PO-YourBalanceHistory-VerifyYourBalanceHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -91,8 +91,8 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    YouBalanceAndCreditLimit    YourBalanceHistory
     Input Citizen ID    ${virtual_3PO_1_CitizenID}
     Confirm Citizen ID
-    Verify View Statement Icon
-    Select View Statement    1
+    Verify Your Balance History Display
+    Select View Statement    2
     Web Element Should Be Visible    ${PdfStatement}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

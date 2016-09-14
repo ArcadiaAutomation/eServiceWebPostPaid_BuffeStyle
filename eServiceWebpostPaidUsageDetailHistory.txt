@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 *** Test Cases ***
 [F04-024]eServiceWeb-PO-UsageDetailHistory-InputCIDLessThan13Digit
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -19,7 +19,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-025]eServiceWeb-PO-UsageDetailHistory-InputWrongCID
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -34,7 +34,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-026]eServiceWeb-PO-UsageDetailHistory-InputCIDWithCharacter
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -49,7 +49,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-027]eServiceWeb-PO-UsageDetailHistory-NotInputCID
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -63,7 +63,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-028]eServiceWeb-PO-UsageDetailHistory-InputWrongCID3Time
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -81,7 +81,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-029]eServiceWeb-PO-UsageDetailHistory-NotSelectCallUsageDetailFilter
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -89,7 +89,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
     Confirm Citizen ID
     Select Bill Cycle
     Clear View All Call Filter
@@ -99,7 +99,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-030]eServiceWeb-PO-UsageDetailHistory-NotSelectInternetAndValueAddServiceUsageDetailFilter
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -107,7 +107,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    InternetAndValueAddedService
@@ -118,7 +118,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-031]eServiceWeb-PO-UsageDetailHistory-NotSelectMySuperPlanUsageDetailFilter
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -126,7 +126,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    MySuperPlan
@@ -137,7 +137,47 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-032]eServiceWeb-PO-UsageDetailHistory-NotSelectGraphUsageDetailFilter
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    GraphTop5
+    Confirm Filter Usage Detail
+    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectGraphFilter}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-040]eServiceWeb-PO-UsageDetailHistory-VerifyUsageDetailHistoryPage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Billing Cycle From Previous Month    2
+    Verify Usage Detail History Page
+    Close Browser
+    Comment    Select Billing Cycle From Previous Month    2
+    Comment    Select Usage Detail Tab    InternetAndValueAddedService
+    Comment    Clear View All InternetAndValueAdd Filter
+    Comment    Select View Internet Condition
+    Comment    Confirm Filter Usage Detail
+    Comment    Print Usage Detail History    1
+    Comment    Verify Usage Detail History PDF
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-041]eServiceWeb-PO-UsageDetailHistory-VerifyViewSpecificConditionCallDetail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -147,8 +187,155 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
     Input Citizen ID    ${CitizenID}
     Confirm Citizen ID
+    Verify Usage Detail History Page
+    Select Billing Cycle From Previous Month    2
+    Select Usage Detail Tab    CallDetail
+    Clear View All Call Filter
+    Select View Call Condition
+    Confirm Filter Usage Detail
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-045]eServiceWeb-PO-UsageDetailHistory-SelectSpecificViewConditionInternetAndValueAddServiceDetailOneCondition
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    InternetAndValueAddedService
+    Clear View All InternetAndValueAdd Filter
+    Select View Internet And Value Added Service By Condition    1
+    Confirm Filter Usage Detail
+    Verify Internet And Value Added Service Page
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-046]eServiceWeb-PO-UsageDetailHistory-SelectSpecificViewConditionInternetAndValueAddServiceDetailMoreThanOneCondition
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    InternetAndValueAddedService
+    Clear View All InternetAndValueAdd Filter
+    Select View Internet And Value Added Service By Condition    1
+    Select View Internet And Value Added Service By Condition    2
+    Select View Internet And Value Added Service By Condition    3
+    Select View Internet And Value Added Service By Condition    4
+    Confirm Filter Usage Detail
+    Verify Internet And Value Added Service Page
+    Close Browser
+    Comment    Confirm Filter Usage Detail
+    Comment    Verify Internet And Value Added Service Page
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-047]eServiceWeb-PO-UsageDetailHistory-SelectAllSpecificViewConditionInternetAndValueAddServiceDetail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    InternetAndValueAddedService
+    Clear View All InternetAndValueAdd Filter
+    Select View Internet And Value Added Service By Condition    1
+    Select View Internet And Value Added Service By Condition    2
+    Select View Internet And Value Added Service By Condition    3
+    Select View Internet And Value Added Service By Condition    4
+    Select View Internet And Value Added Service By Condition    5
+    Confirm Filter Usage Detail
+    Verify Internet And Value Added Service Page
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-048]eServiceWeb-PO-UsageDetailHistory-SelectAllInternetAndValueAddServiceDetail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    InternetAndValueAddedService
+    Confirm Filter Usage Detail
+    Verify Internet And Value Added Service Page
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-050]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithHighestCallingTransactionInGraphTop5Usage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    GraphTop5
+    Select View Graph Top 5 By Condition    1
     Confirm Filter Usage Detail
-    Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectGraphFilter}
+    Comment    Verify Internet And Value Added Service Page
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-051]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithLongestCallingTransactionInGraphTop5Usage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    GraphTop5
+    Select View Graph Top 5 By Condition    2
+    Confirm Filter Usage Detail
+    Comment    Verify Internet And Value Added Service Page
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-052]eServiceWeb-PO-UsageDetailHistory-SelectAllConditionInGraphTop5Usage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    GraphTop5
+    Select View Graph Top 5 By Condition    2
+    Confirm Filter Usage Detail
+    Comment    Verify Internet And Value Added Service Page
+    Comment    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

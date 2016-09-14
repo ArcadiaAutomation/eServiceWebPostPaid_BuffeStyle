@@ -38,3 +38,11 @@ Cancel My Super Plan
 Select Main Package
     [Arguments]    ${MainPackageName}
     Click Web Element    ${rb${MainPackageName}}
+
+VerifyPage
+    Web Element Should Be Visible    ${imgAdvertise}
+    Web Element Should Be Visible    ${imgDetail}
+    Web Element Should Be Visible    ${imgProcessStep}
+    Web Element Should Be Visible    ${imgMySuperPlanPage}
+
+Input Email Addres

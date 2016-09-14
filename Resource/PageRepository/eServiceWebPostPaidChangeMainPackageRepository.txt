@@ -8,7 +8,7 @@ ${rdoISWOPNonStop799}    xpath=//*[@id="lbPackage_P15110497"]
 ${rdoISWOPNonStop999}    xpath=//*[@id="lbPackage_P15110498"]
 ${btnConfirmPackage}    xpath=//*[@id="btnChangePackConfirm"]
 ${btnConfirmEffective}    xpath=//*[@id="btnChangePackConfirmDate"]/div
-${btnConfirmChangMAinPackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
+${btnConfirmChangeMainPackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
 ${rdo1200Voice1720Mins}    xpath=//*[@id="lbPackage_P14121481"]
 ${rdo1500Voice2200Mins}    xpath=//*[@id="lbPackage_P14121482"]
 ${rdo250Voice300Mins}    xpath=//*[@id="lbPackage_P14121476"]
