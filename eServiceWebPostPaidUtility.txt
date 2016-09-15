@@ -20,14 +20,22 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[F05-051]eServiceWeb-PO-Utility-NotCompleteInformation
-    [Documentation]    Pending
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+[F05-051]eServiceWeb-PO-Insurance-BangkokLifeAssurance-NotInput
+    [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
-    Select Language    ${btnLanguage}
+    Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    SelectMenu    Payment/Topup    Utility
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${BangkokLifeAssurance}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
