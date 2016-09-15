@@ -43,6 +43,7 @@ ${mnuAISCould}    xpath=//*[@id="menu-127"]
 ${mnuLuckyNumber}    xpath=//*[@id="menu-126"]
 ${mnuInsurance}    xpath=//*[@id="menu-92"]
 ${mnuPaymentTopUpHistory}    xpath=//*[@id="menu-70"]
+${mnuUtility}     xpath=//*[@id="menu-87" or @id="menu-88"]    # PE use menu 87
 ${mnuYourCreditLimit}    xpath=//*[@id="menu-8"]
 ${mnuChangeMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuLeasing}     xpath=//*[@id="menu-94"]
