@@ -106,7 +106,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-018]eServiceWeb-PO-MysuperPlan-Register
-    [Tags]
+    [Tags]    NeverRegisMySuperplan
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -119,5 +119,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     Select PostPaid Package    XtraTalkMonthValue    PostPaidPackage735Bath
     Select Main Package    MainPacKage250Min
     Select OnTop Package    OnTopExtraTalkPackage    OnTopPackage80Bath
-    Comment    Confirm My Super Plan
+    Confirm My Super Plan
+    Input Email Addres    kannic49@aware.postbox.in.th
+    Accept Term And Condition
+    Confirm My Super Plan
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

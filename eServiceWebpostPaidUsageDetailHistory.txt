@@ -164,19 +164,12 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
     Input Citizen ID    ${virtual_3PO_1_CitizenID}
     Confirm Citizen ID
-    Select Billing Cycle From Previous Month    2
     Verify Usage Detail History Page
     Close Browser
-    Comment    Select Billing Cycle From Previous Month    2
-    Comment    Select Usage Detail Tab    InternetAndValueAddedService
-    Comment    Clear View All InternetAndValueAdd Filter
-    Comment    Select View Internet Condition
-    Comment    Confirm Filter Usage Detail
-    Comment    Print Usage Detail History    1
-    Comment    Verify Usage Detail History PDF
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S04-041]eServiceWeb-PO-UsageDetailHistory-VerifyViewSpecificConditionCallDetail
+[S04-041]eServiceWeb-PO-UsageDetailHistory-SelectOneSpecificViewCallDetailCondition
+    [Tags]    ReqCallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -185,14 +178,92 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
     Confirm Citizen ID
-    Verify Usage Detail History Page
     Select Billing Cycle From Previous Month    2
     Select Usage Detail Tab    CallDetail
     Clear View All Call Filter
-    Select View Call Condition
+    Select Call Detail View By Call Duration    20
+    Comment    Select Call Detail View By Location
+    Comment    Select Call Detail View By Destination Network    Fixedline
+    Comment    Select Call Detail View By Call Duration    20
+    Comment    Select Call Detail View By Destination Number    1234567890
+    Comment    Select Call Detail View By Service Date    29/06/2016    29/07/2559
+    Comment    Confirm Filter Usage Detail
     Confirm Filter Usage Detail
+    Verify View Call Detail
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-042]eServiceWeb-PO-UsageDetailHistory-SelectMoreThanOneSpecificViewCallDetailCondition
+    [Tags]    ReqCallHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Billing Cycle From Previous Month    2
+    Select Usage Detail Tab    CallDetail
+    Clear View All Call Filter
+    Select Call Detail View By Call Duration    20
+    Comment    Select Call Detail View By Location
+    Select Call Detail View By Destination Network    Fixedline
+    Comment    Select Call Detail View By Call Duration    20
+    Comment    Select Call Detail View By Destination Number    1234567890
+    Comment    Select Call Detail View By Service Date    29/06/2016    29/07/2559
+    Comment    Confirm Filter Usage Detail
+    Confirm Filter Usage Detail
+    Verify View Call Detail
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-043]eServiceWeb-PO-UsageDetailHistory-SelectAllSpecificViewCallDetailCondition
+    [Tags]    ReqCallHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Billing Cycle From Previous Month    2
+    Select Usage Detail Tab    CallDetail
+    Clear View All Call Filter
+    Select Call Detail View By Service Date    28/06/2016    25/07/2016
+    Select Call Detail View By Destination Number    0923390004
+    Select Call Detail View By Call Duration    20
+    Select Call Detail View By Destination Network    NetworkAIS
+    Select Call Detail View By Location
+    Confirm Filter Usage Detail
+    Verify View Call Detail
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-044]eServiceWeb-PO-UsageDetailHistory-SelectViewAllCallDetail
+    [Tags]    ReqCallHistory
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Confirm Citizen ID
+    Select Billing Cycle From Previous Month    2
+    Select Usage Detail Tab    CallDetail
+    Confirm Filter Usage Detail
+    Verify View Call Detail
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-045]eServiceWeb-PO-UsageDetailHistory-SelectSpecificViewConditionInternetAndValueAddServiceDetailOneCondition
@@ -284,6 +355,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-050]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithHighestCallingTransactionInGraphTop5Usage
+    [Tags]    ReqCallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -298,11 +370,12 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Usage Detail Tab    GraphTop5
     Select View Graph Top 5 By Condition    1
     Confirm Filter Usage Detail
-    Comment    Verify Internet And Value Added Service Page
-    Comment    Close Browser
+    Verify Highest Calling Number Graph
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-051]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithLongestCallingTransactionInGraphTop5Usage
+    [Tags]    ReqCallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -317,11 +390,12 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Usage Detail Tab    GraphTop5
     Select View Graph Top 5 By Condition    2
     Confirm Filter Usage Detail
-    Comment    Verify Internet And Value Added Service Page
-    Comment    Close Browser
+    Verify Longest Calling Number Graph
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-052]eServiceWeb-PO-UsageDetailHistory-SelectAllConditionInGraphTop5Usage
+    [Tags]    ReqCallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -334,8 +408,9 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    GraphTop5
+    Select View Graph Top 5 By Condition    1
     Select View Graph Top 5 By Condition    2
     Confirm Filter Usage Detail
-    Comment    Verify Internet And Value Added Service Page
-    Comment    Close Browser
+    Verify Highest And Longest Calling Number Graph
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
