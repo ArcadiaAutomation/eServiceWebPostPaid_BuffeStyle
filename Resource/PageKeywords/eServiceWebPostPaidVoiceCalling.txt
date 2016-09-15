@@ -10,8 +10,8 @@ Register Voice
     Select Menu    Service    Voice_Register
     ${result}    Run Keyword And Return Status    Selenium2Library.Wait Until Element Is Visible    ${txtSummaryMessage}    2
     Log To Console    ${result}
-    Run Keyword If    '${result}'=='False'    Sub Register
-    Run Keyword If    '${result}'=='True'    Click Web Element    ${btnRegisterBack}
+    Run Keyword If    '${result}'=='False'    SubRegister
+    Run Keyword If    '${result}'=='True'    Fail
     sleep    1
 
 Cancel Voice
@@ -21,12 +21,6 @@ Cancel Voice
     Run Keyword If    '${result}'=='False'    Sub Cancel    ${TotalSMS}
     Run Keyword If    '${result}'=='True'    Select Menu    Service
     sleep    1
-
-Sub Register
-    Wait Web Until Page Contains Element    ${btnRegister}
-    Click Web Element    ${btnRegister}
-    Wait Web Until Page Contains Element    ${btnRegisterConfirm}
-    Click Web Element    ${btnRegisterConfirm}
 
 Sub Cancel
     [Arguments]    ${TotalSMS}
@@ -41,3 +35,9 @@ Sub Cancel
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    120
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+
+SubRegister
+    Wait Web Until Page Contains Element    ${btnRegister}
+    Click Web Element    ${btnRegister}
+    Wait Web Until Page Contains Element    ${btnRegisterConfirm}
+    Click Web Element    ${btnRegisterConfirm}

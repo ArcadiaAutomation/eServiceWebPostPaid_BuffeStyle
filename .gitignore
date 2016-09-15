@@ -15,3 +15,5 @@ Library/Mobile/Android/GetSMSfromMOOD.pyc
 *.pyc
 *.pyc
 Library/Mobile/chromedriver.exe
+*.pyc
+*.pyc
