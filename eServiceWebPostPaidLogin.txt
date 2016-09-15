@@ -10,9 +10,8 @@ Library           ExcelLibrary
 *** Test Cases ***
 test
     [Tags]    test
-    &{#list_device_name}=    Create Dictionary
-    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    Comment    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Comment    Log    ${virtual_3PO_1_SN}
     Comment    Comment    Log    @{virtual_3PO_1_ExampleList}[1]
     Comment    Comment    Log    &{virtual_3PO_1_ExampleDic}[name1]
@@ -38,12 +37,15 @@ test
     Comment    sleep    3
     Comment    ${#device_name}=    Set Variable    Test
     Comment    Log    ${#device_name}
-    Open Excel    D:\\FileMobileNoOriginal.xls
-    Get Workbook Values
-    Put String To Cell    Sheet1    1    1    0912222222
-    Put String To Cell    Sheet1    1    2    0912222223
-    Save Excel    D:\\new.xls
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    &{#list_device_name}
+    Comment    Open Excel    D:\\FileMobileNoOriginal.xls
+    Comment    Get Workbook Values
+    Comment    Put String To Cell    Sheet1    1    1    0912222222
+    Comment    Put String To Cell    Sheet1    1    2    0912222223
+    Comment    Save Excel    D:\\new.xls
+    @{MessageExpect}    Create List    คุณสมัครบริการต่อสายด้วยเสียงเรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    150
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     [Tags]    fail    debug
