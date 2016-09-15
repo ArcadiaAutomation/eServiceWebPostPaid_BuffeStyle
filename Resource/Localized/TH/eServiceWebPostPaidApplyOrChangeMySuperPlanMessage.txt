@@ -2,3 +2,5 @@
 ${NotSelectMySuperPlanPackage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
 ${NotSelectMainPackage}    กรุณาเลือกแพ็กเกจหลักที่คุณต้องการ
 ${MainPackageExpensiveThanPostPaidPackage}    มูลค่าเงินคงเหลือติดลบได้ไม่เกิน 200 บาท\nกรุณาเลือกแพ็กเกจอื่น
+${MessageEditPackageSuccess}    แพ็กเกจ my Super Plan ที่คุณเลือกสมัครคือ\nเหมาจ่าย 1,000 บาท รับมูลค่าเงิน 1,100 บาท\nโทรฟรีในเครือข่าย AIS 13\.00-18\.00\nโทรทุกเครือข่าย.*\n\nแพ็กเกจ my Super Plan ที่คุณยกเลิก\nเหมาจ่าย 700 บาท รับมูลค่าเงิน 735 บาท\nโทรทุกเครือข่าย.*\n\nดำเนินการสมัครเรียบร้อย กรุณารอรับ SMS ยืนยันการสมัคร\nโดยแพ็กเกจที่คุณเลือกจะเริ่มมีผลตามรอบบิลของคุณ\nในวันที่.*
+${smsRegisterMySuperPlan}    my Super Plan, monthly charge 700 baht get value 735 baht/bill cycle. Valid for 12 bill cycle.à1€à?£à?'à1?à?¡ 08/10/2016 00:00 à?-à??à?? 07/10/2017 23:59

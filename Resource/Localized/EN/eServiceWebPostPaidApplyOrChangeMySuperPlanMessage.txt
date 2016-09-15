@@ -2,3 +2,5 @@
 ${NotSelectMySuperPlanPackage}    Please select my Super Plan that you want.
 ${NotSelectMainPackage}    Please select Main Package that you want.
 ${MainPackageExpensiveThanPostPaidPackage}    You can have negative balance of not more than 200 Baht. Please select other package.
+${MessageEditPackageSuccess}    my Super Plan that you choose are\nMonthly free 1,000 baht Get MaxNet Value of 1,100 baht\nTime period for unlimited voice calls within AIS network 13.00-18.00\nVoice Calls to all network.*\n\nmy Super Plan that you cancel are\nMonthly free 700 baht Get MaxNet Value of 735 baht\nVoice Calls to all network.*\n\nYour subscription is now complete, please wait for SMS confirmation\. Your selected package will be active and your billing cycle will start on.*
+${smsRegisterMySuperPlan}    my Super Plan, monthly charge 700 baht get value 735 baht/bill cycle. Valid for 12 bill cycle.à1€à?£à?'à1?à?¡ 08/10/2016 00:00 à?-à??à?? 07/10/2017 23:59my Super Plan, monthly charge 700 baht get value 735 baht/bill cycle. Valid for 12 bill cycle.à1€à?£à?'à1?à?¡ 08/10/2016 00:00 à?-à??à?? 07/10/2017 23:59

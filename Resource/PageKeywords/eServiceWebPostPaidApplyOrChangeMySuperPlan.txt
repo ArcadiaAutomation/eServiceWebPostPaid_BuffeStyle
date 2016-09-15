@@ -57,3 +57,15 @@ Accept Term And Condition
 
 Confirm Register
     Click Web Element    ${btnConfirmMySuperPlan}
+
+Cancel My Super Plan Package
+    Select Menu    Package    MainPackage
+    Select From Web List By Value    xpath=//*[@id="ddlChangPackGroupA"]    1
+    Select From Web List By Value    xpath=//*[@id="ddlChangPackGroupB"]    1
+    Click Web Element    xpath=//*[@id="lbPackage_P14013668"]    #Select 299
+    Click Web Element    xpath=//*[@id="btnChangePackConfirm"]/div    #Confirm select Package
+    Click Web Element    xpath=//*[@id="lbChkManagePackImmediately"]    #active package now
+    Click Web Element    xpath=//*[@id="btnConfirm0"]    #Close Recommend Dialog
+    Click Web Element    xpath=//*[@id="btnChangePackConfirmDate"]/div    #Confirm Select Time Active
+    Click Web Element    xpath=//*[@id="btnChangePackConfirmPackDate"]    #Confirm Change Package
+    Click Web Element
