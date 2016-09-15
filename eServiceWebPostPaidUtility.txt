@@ -3,9 +3,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidUtility.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[F05-050]eServiceWeb-PO-Utility-NotCompleteInformation
+[F05-050]eServiceWeb-PO-Utility-NotRegisterMpay
     [Documentation]    Pending
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    mPay=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    UnregistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -13,15 +13,262 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    Utility
-    Input Web Text    ${txtPINmpay}    1111
-    Click Web Element    ${btnMPayLogin}
-    Click Web Element    ${btnMPayServiceSubmit}
-    Wait Until Keyword Succeeds    ${general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotSelectPayment}
+    Web Element Should Be Visible    ${btnMpayRegister}
+    Click Web Element    ${btnMpayRegisterCancel}
+    Element Should Not Be Visible    ${btnMpayRegister}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[F05-051]eServiceWeb-PO-Insurance-BangkokLifeAssurance-NotInput
+[F05-051]eServiceWeb-PO-Utility-MetropolitanElectricityAuthority-NotCompleteInformation
+    [Documentation]    Pending
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    Utility
+    Input Web Text    ${txtPINmpay}    ${PINCode}
+    Click Web Element    ${btnMPayLogin}
+    Select From Web List    ${ddlMpayServiceList}    ${MetropolitanElectricityAuthority}
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${lo_general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotCompleteInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-052]eServiceWeb-PO-Utility-MetropolitanElectricityAuthority-InputFakeInformation
+    [Documentation]    Pending
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    Utility
+    Input Web Text    ${txtPINmpay}    ${PINCode}
+    Click Web Element    ${btnMPayLogin}
+    Select From Web List    ${ddlMpayServiceList}    ${MetropolitanElectricityAuthority}
+    Input Web Text    ${txtMetroElecContractAccount}    123123
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${lo_general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageMetropolitanElectricityAuthorityIncompleteRefNo}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-053]eServiceWeb-PO-Utility-MetropolitanWaterworksAuthority-NotCompleteInformation
+    [Documentation]    Pending
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    Utility
+    Input Web Text    ${txtPINmpay}    ${PINCode}
+    Click Web Element    ${btnMPayLogin}
+    Select From Web List    ${ddlMpayServiceList}    ${MetropolitanWaterworksAuthority}
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${lo_general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotCompleteInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-054]eServiceWeb-PO-Utility-MetropolitanWaterworksAuthority-InputFakeInformation
+    [Documentation]    Pending
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    Utility
+    Input Web Text    ${txtPINmpay}    ${PINCode}
+    Click Web Element    ${btnMPayLogin}
+    Select From Web List    ${ddlMpayServiceList}    ${MetropolitanWaterworksAuthority}
+    Input Web Text    ${txtMPayService1}    11
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${lo_general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageMetropolitanWaterworksAuthorityIncompleteRefNo}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-055]eServiceWeb-PO-Utility-PEA-NotCompleteInformation
+    [Documentation]    Pending
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    Utility
+    Input Web Text    ${txtPINmpay}    ${PINCode}
+    Click Web Element    ${btnMPayLogin}
+    Select From Web List    ${ddlMpayServiceList}    ${PEA}
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${lo_general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotCompleteInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-056]eServiceWeb-PO-Utility-PEA-InputFakeInformation
+    [Documentation]    Pending
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    Utility
+    Input Web Text    ${txtPINmpay}    ${PINCode}
+    Click Web Element    ${btnMPayLogin}
+    Select From Web List    ${ddlMpayServiceList}    ${PEA}
+    Input Web Text    ${txtMetroWaterBranchNumber}    123123
+    Click Web Element    ${btnMPayServiceSubmit}
+    Wait Until Keyword Succeeds    ${lo_general_timeout}    1    Web Element Text Should Be    ${lbPopUpMessage}    ${MessagePEAIncompleteRefNo}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-057]eServiceWeb-PO-Utility-TOT-NotInput
     [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TOT}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-058]eServiceWeb-PO-Utility-TOT-InputNotComplete
+    [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TOT}
+    Wait Web Until Page Contains Element    ${txtMPayService1}
+    Input Web Text    ${txtMPayService1}    11111111111111
+    Input Web Text    ${txtMPayService2}    11111111111111
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageTOTIncompleteRefNo}
+    Close Browser
+
+[F05-059]eServiceWeb-PO-Utility-CAT-NotInput
+    [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${CAT}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-060]eServiceWeb-PO-Utility-CAT-InputNotComplete
+    [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${CAT}
+    Wait Web Until Page Contains Element    ${txtMPayService1}
+    Input Web Text    ${txtMPayService1}    11111
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageCATIncompleteRefNo}
+    Close Browser
+
+[F05-061]eServiceWeb-PO-Utility-TT&T-NotInput
+    [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TT&T}
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[F05-062]eServiceWeb-PO-Utility-TT&T-InputNotComplete
+    [Tags]    fail1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO_1=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TT&T}
+    Wait Web Until Page Contains Element    ${txtMPayService1}
+    Input Web Text    ${txtMPayService1}    0982222
+    Input Web Text    ${txtMPayService2}    11111111
+    Click Web Element    ${btnOK}
+    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Element Text Should Be    ${lblDialogMessage}    ${MessageTT&TIncompleteMobileNo}
+    Close Browser
+
+[S05-082]eServiceWeb-PO-Utility-RegistermPayError
+    [Tags]    success2
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CanRegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${FalconInsurance}
+    Element Text Should Be    ${ldlService1}    ${RefNo.}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-083]eServiceWeb-PO-Utility-MetropolitanElectricityAuthority
+    [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -29,13 +276,97 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Payment/TopUp    Insurance
-    Wait Web Until Page Contains Element    ${txtPINCode}
+    Select Menu    Payment/TopUp    Utility
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${BangkokLifeAssurance}
-    Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MetropolitanElectricityAuthority}
+    Element Text Should Be    ${ldlService1}    ${ContractAccount}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-084]eServiceWeb-PO-Utility-MetropolitanWaterworksAuthority
+    [Tags]    success2
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${MetropolitanWaterworksAuthority}
+    Element Text Should Be    ${ldlService1}    ${BranchNo.}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-085]eServiceWeb-PO-Utility-PEA
+    [Tags]    success2
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${PEA}
+    Element Text Should Be    ${ldlService1}    ${No.User}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-086]eServiceWeb-PO-Utility-TOT
+    [Tags]    success2
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TOT}
+    Element Text Should Be    ${ldlService1}    ${TOTAccountNo.}
+    Element Text Should Be    ${ldlService2}    ${TOTInvoiceNo.}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-141]eServiceWeb-PO-Utility-CAT
+    [Tags]    success2
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${CAT}
+    Element Text Should Be    ${ldlService1}    ${CATContractNo.}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-087]eServiceWeb-PO-Utility-TT&T
+    [Tags]    success2
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${TT&T}
+    Element Text Should Be    ${ldlService1}    ${TTServiceNo.}
+    Element Text Should Be    ${ldlService2}    ${TTAccountNo.}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

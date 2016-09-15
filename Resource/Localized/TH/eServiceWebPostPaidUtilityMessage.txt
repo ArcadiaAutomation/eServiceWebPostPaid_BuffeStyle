@@ -1,2 +1,23 @@
 *** Variables ***
 ${MessageNotSelectPayment}    กรุณาเลือกรายการที่ต้องการชำระ
+${MetropolitanElectricityAuthority}    การไฟฟ้านครหลวง
+${MessageNotCompleteInformation}    เลขที่อ้างอิงของคุณไม่ถูกต้อง กรุณาทำรายการใหม่อีกครั้งค่ะ
+${MessageMetropolitanElectricityAuthorityIncompleteRefNo}    กรุณากรอกข้อมูล บัญชีแสดงสัญญาเลขที่ อย่างน้อย 9 หลัก
+${MetropolitanWaterworksAuthority}    การประปานครหลวง
+${MessageMetropolitanWaterworksAuthorityIncompleteRefNo}    กรุณากรอกข้อมูล เลขสาขา 2 หลักแรก ตามด้วยทะเบียนผู้ใช้น้ำ อย่างน้อย 10 หลัก
+${MessagePEAIncompleteRefNo}    กรุณากรอกข้อมูล หมายเลขผู้ใช้ไฟฟ้า อย่างน้อย 12 หลัก
+${MessageTOTIncompleteRefNo}		กรุณากรอกข้อมูล รหัสลูกค้า อย่างน้อย 12 หลัก
+${MessageCATIncompleteRefNo}		กรุณากรอกข้อมูล เลขที่สัญญา อย่างน้อย 6 หลัก
+${MessageTT&TIncompleteMobileNo}		กรุณากรอกข้อมูล หมายเลขโทรศัพท์พื้นฐาน อย่างน้อย 9 หลัก
+${No.User}		หมายเลขผู้ใช้ไฟฟ้า
+${ContractAccount}		บัญชีแสดงสัญญาเลขที่
+${BranchNo.}		เลขสาขา 2 หลักแรก ตามด้วยทะเบียนผู้ใช้น้ำ
+${PEA}            การไฟฟ้าส่วนภูมิภาค
+${TOT}		โทรศัพท์ ทีโอที
+${CAT}		กสท โทรคมนาคม
+${TT&T}		โทรศัพท์ทีทีแอนด์ที
+${TOTAccountNo.}		รหัสลูกค้า
+${TOTInvoiceNo.}		เลขที่ใบแจ้งค่าใช้บริการเดือนล่าสุด
+${CATContractNo.}		เลขที่สัญญา
+${TTServiceNo.}		หมายเลขโทรศัพท์พื้นฐาน
+${TTAccountNo.}		รหัสลูกค้า
