@@ -6,17 +6,11 @@ Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidPreferAndCancelSMS.txt
 
 *** Keywords ***
-Check Status
-    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtConfirmDialog}    2
-    Log To Console    ${result}
-    Run Keyword If    '${result}'=='True'    Click Web Element    ${btnCloseDialogNotChange}
-    Run Keyword If    '${result}'=='False'    Click Web Element    ${btnCloseDialog}
-
-Set Status
+Set Default Status
     Click Web Element    ${btnGetSMS}
     Click Web Element    ${btnGetSMSfromAIS}
     Click Web Element    ${btnConfirmPerferCancelSMS}
-    Check Status
+    Click Web Element    ${btnCloseDialog}
 
 Check Subscriptions
     ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCheckDetailSMSSubscriptions}    2
