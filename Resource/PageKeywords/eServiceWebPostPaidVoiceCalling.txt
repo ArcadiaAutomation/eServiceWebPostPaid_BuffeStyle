@@ -38,6 +38,6 @@ Sub Cancel
 
 SubRegister
     Wait Web Until Page Contains Element    ${btnRegister}
-    Click Web Element \ \ \     ${btnRegister}
+    Click Web Element    ${btnRegister}
     Wait Web Until Page Contains Element    ${btnRegisterConfirm}
-    Click Web Element \ \ \     ${btnRegisterConfirm}
+    Click Web Element    ${btnRegisterConfirm}
