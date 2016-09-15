@@ -30,7 +30,6 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
-    Set Status Inactive Welcome Calls
     Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnCallScreeningStatusRegister}
@@ -131,11 +130,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
-    Set Status Active Welcome Calls
+    Set Status Active
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnCallScreeningStatusRegister}
     Web Element Text Should Be    ${txtAlertDialog}    ${notChangeStatusCallScreening}
+    Click Web Element    ${btnCloseCallScreeningDialog}
+    Clear Status to Inactive
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -247,11 +248,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
-    Set Status Inactive Welcome Calls
     Click Web Element    ${btnSelectStatusActive}
     Click Web Element    ${btnCallScreeningStatusRegister}
     Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtChangeStatusActiveWelcomeCalls}
     Confirm Status
+    Clear Status to Inactive
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -265,7 +266,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
-    Set Status Active Welcome Calls
+    Set Status Active
     Click Web Element    ${btnSelectStatusInactive}
     Click Web Element    ${btnCallScreeningStatusRegister}
     Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtChangeStatusInactiveWelcomeCalls}

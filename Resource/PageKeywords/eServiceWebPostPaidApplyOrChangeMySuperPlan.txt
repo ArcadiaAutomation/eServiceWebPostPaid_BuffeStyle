@@ -46,3 +46,14 @@ VerifyPage
     Web Element Should Be Visible    ${imgMySuperPlanPage}
 
 Input Email Addres
+    [Arguments]    ${EmailAddress}
+    Clear Element Text    ${txtEmailAddress}
+    Input Web Text    ${txtEmailAddress}    ${EmailAddress}
+    Clear Element Text    ${txtEmailAddressConfirm}
+    Input Web Text    ${txtEmailAddressConfirm}    ${EmailAddress}
+
+Accept Term And Condition
+    Click Web Element    ${btnAcceptCondition}
+
+Confirm Register
+    Click Web Element    ${btnConfirmMySuperPlan}

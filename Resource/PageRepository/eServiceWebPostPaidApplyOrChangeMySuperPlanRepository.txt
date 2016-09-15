@@ -16,3 +16,6 @@ ${lblSumMoney}    xpath=//*[@id="sumMoney"]
 ${imgAdvertise}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[1]/td/img
 ${imgDetail}      xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[2]/td/img
 ${imgProcessStep}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[4]/td/img
+${txtEmailAddress}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/div[3]/div[1]/div[2]/input
+${txtEmailAddressConfirm}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/div[3]/div[1]/div[3]/input
+${btnAcceptCondition}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/div[4]/div[2]/table/tbody/tr/td[1]/input
