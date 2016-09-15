@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
 
 *** Test Cases ***
 [F07-241]eServiceWeb-PO-Service-CallScreening-CancelRegister
-    [Tags]    NotRegister    debug    NotTest
+    [Tags]    NotRegister    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    UnRegisterCallScreening=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -21,7 +21,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F07-242]eServiceWeb-PO-Service-CallScreening-NotChangeStatusFromInactive
-    [Tags]    Register    debug    NotTest
+    [Tags]    Register    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegisterCallScreening=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -224,7 +224,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S07-189]eServiceWeb-PO-Service-CallScreening-Register
-    [Tags]    UnRegister    debug
+    [Tags]    NotRegister    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    UnRegisterCallScreening=include=include    UnRecursion=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
