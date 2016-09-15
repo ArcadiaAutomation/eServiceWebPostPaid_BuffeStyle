@@ -5,3 +5,9 @@ ${CharacterSet}    QWERTY
 ${BeginLoop}      0
 ${EndLoop}        3
 ${CitizenID}      D230625574116
+${NetworkAIS_TH}    เครือข่าย AIS
+${NetworkAIS_EN}    Network AIS.
+${OtherNetwork_TH}    เครือข่ายอื่น ๆ
+${OtherNetwork_EN}    Other networks
+${Fixedline_TH}    หมายเลขโทรศัพท์พื้นฐาน
+${Fixedline_EN}    Fixed line.

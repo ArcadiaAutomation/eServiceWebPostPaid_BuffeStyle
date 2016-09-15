@@ -48,7 +48,7 @@ Verify Usage Detail History Page
     Web Element Should Be Visible    ${lblCurrentChargeDetail}
     Web Element Should Be Visible    ${lblCurrentChargesAmount}
     Web Element Should Be Visible    ${lblOutStandingBalanceAmount}
-    Web Element Should Be Visible    ${tbAllViewTypeAndCondition}
+    Comment    Web Element Should Be Visible    ${tbAllViewTypeAndCondition}
 
 Print Usage Detail History
     [Arguments]    ${printType}
@@ -61,8 +61,10 @@ Verify Usage Detail History PDF
     Select Window    url=https://eservice.ais.co.th/exportPDF
     Element Should Be Visible    ${FormPDF}
 
-Select View Call Condition
-    Click Web Element    ${chkCallViewByUsageDate}
+Select View Call Condition By Index
+    [Arguments]    ${index}
+    ${MenuIndex}    Evaluate    ${index}-1
+    Click Web Element    xpath=//*[@id="chkCdrVoice${MenuIndex}"]
 
 Select View Internet And Value Added Service By Condition
     [Arguments]    ${ConditionNumber}
@@ -78,3 +80,59 @@ Select View Graph Top 5 By Condition
     [Arguments]    ${menuIndex}
     ${Index}=    Evaluate    ${menuIndex}-1
     Click Web Element    xpath=//*[@id="chkCdrGraph${index}"]
+
+Verify Longest Calling Number Graph
+    Web Element Should Be Visible    ${lblGraphDisplayText}
+    Web Element Should Be Visible    ${imgChartList}    20
+    Web Element Should Be Visible    ${lblNumberListDisplay}
+    Web Element Should Be Visible    ${tbNumberList}
+
+Verify Highest Calling Number Graph
+    Web Element Should Be Visible    ${lblGraphDisplayText}
+    Web Element Should Be Visible    ${imgChartList}    20
+    Web Element Should Be Visible    ${lblNumberListDisplay}
+    Web Element Should Be Visible    ${tbNumberList}
+
+Verify Highest And Longest Calling Number Graph
+    Web Element Should Be Visible    ${lblGraphDisplayText}
+    Web Element Should Be Visible    ${imgChartList}    20
+    Web Element Should Be Visible    ${lblNumberListDisplay}
+    Web Element Should Be Visible    ${tbNumberList}
+    Web Element Should Be Visible    ${lbLongestCallinglGraphDisplayText}
+    Web Element Should Be Visible    ${imgLongestCallingGraph}
+    Web Element Should Be Visible    ${lblLongestCallingNumber}
+    Web Element Should Be Visible    ${tbLongestCallingNumberList}
+
+Select Call Detail View By Service Date
+    [Arguments]    ${beginDate}    ${endDate}
+    Click Web Element    ${chkViewCallByServiceDate}
+    Clear Element Text    ${txtFromDate}
+    Input Web Text    ${txtFromDate}    ${beginDate}
+    Clear Element Text    ${txtToDate}
+    Input Web Text    ${txtToDate}    ${endDate}
+
+Select Call Detail View By Destination Number
+    [Arguments]    ${DestinationNumber}
+    Click Web Element    ${chkViewCallByDestinationNumber}
+    Input Web Text    ${txtDestinationNumber}    ${DestinationNumber}
+
+Select Call Detail View By Call Duration
+    [Arguments]    ${callDuration}
+    Click Web Element    ${chkViewByCallDuration}
+    Input Web Text    ${txtCallDuration}    ${callDuration}
+
+Select Call Detail View By Destination Network
+    [Arguments]    ${DestinationNetwork}
+    Click Web Element    ${chkViewCallByDestinationNetwork}
+    Select From Web List By Label    ${ddlDestinationNetwork}    ${${DestinationNetwork}_${ar_LANG}}
+
+Select Call Detail View By Location
+    Click Web Element    ${chkViewCallByLocation}
+    Click Web Element    ${chkInternationalCall}
+    Click Web Element    ${chkMarineCall}
+    Comment    Run Keyword If    '${LocationIndex}'=='1' AND    Click Web Element    ${chkDomesticCall}
+    Comment    ElSE IF    '${LocationIndex}'=='2'    Click Web Element    ${chkInternationalCall}
+    ...    ELSE IF    '${LocationIndex}'=='3'    Click Web Element    ${chkMarineCall}
+
+Verify View Call Detail
+    Web Element Should Be Visible    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div[1]/div/div[1]
