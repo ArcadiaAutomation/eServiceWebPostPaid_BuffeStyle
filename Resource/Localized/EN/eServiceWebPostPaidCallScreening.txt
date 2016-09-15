@@ -16,5 +16,5 @@ ${txtConfirmDetailBlockNumberOne}    Your have 1 number(s) in Blocked Calls list
 ${txtComfirmDetailBlockNumberTwo}    Your have 2 number(s) in Blocked Calls list\n1. 0924260605\n2. 0817112145\nPlease click "OK" to confirm your choice of status.
 ${txtConfirmBlockCallScreening}    Your request has been successfully completed.\nThank you.
 ${txtConfirmRemoveBlockCallScreening}    Transaction processed sucessfully.\nThank you for using our service.
-${txtChangeStatusActiveWelcomeCalls}    You would like to change your status to Active Welcome Calls. \nOnly the numbers in the Welcome Calls List can contact you. \nAre you sure you want to change your status to Active \nWelcome Calls?
-${txtChangeStatusInactiveWelcomeCalls}    You would like to change your status to Inactive Welcome \nCalls. All incoming calls, except the calls from Blocked Calls \nlist, will be able to contact you. Are you sure you want to \nchange your status to Inactive Welcome Calls?
+${txtChangeStatusActiveWelcomeCalls}    You would like to change your status to Active Welcome Calls. Only the numbers in the Welcome Calls List can contact you. Are you sure you want to change your status to Active Welcome Calls?
+${txtChangeStatusInactiveWelcomeCalls}    You would like to change your status to Inactive Welcome Calls. All incoming calls, except the calls from Blocked Calls list, will be able to contact you. Are you sure you want to change your status to Inactive Welcome Calls?

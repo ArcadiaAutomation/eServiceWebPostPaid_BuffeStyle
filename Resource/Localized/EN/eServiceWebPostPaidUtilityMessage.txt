@@ -6,4 +6,18 @@ ${MessageMetropolitanElectricityAuthorityIncompleteRefNo}    Please input Contra
 ${MetropolitanWaterworksAuthority}    Metropolitan Waterworks Authority
 ${MessageMetropolitanWaterworksAuthorityIncompleteRefNo}    Please input Branch No. 2 digits and Account No. at least 10 position.
 ${MessagePEAIncompleteRefNo}    Please input หมายเลขผู้ใช้ไฟฟ้า at least 12 position.
+${MessageTOTIncompleteRefNo}		Please input Account No. at least 12 position
+${MessageCATIncompleteRefNo}		Please input Contract No. at least 6 position.
+${MessageTT&TIncompleteMobileNo}		Please input Service No. at least 9 position.
+${No.User}		หมายเลขผู้ใช้ไฟฟ้า
+${ContractAccount}		Contract Account
 ${PEA}            การไฟฟ้าส่วนภูมิภาค
+${TOT}		TOT
+${CAT}		CAT Telecom
+${TT&T}		TT&T
+${BranchNo.}		Branch No. 2 digits and Account No.
+${TOTAccountNo.}		Account No.
+${TOTInvoiceNo.}		Invoice No.
+${CATContractNo.}		Contract No.
+${TTServiceNo.}		Service No.
+${TTAccountNo.}		Account No.
