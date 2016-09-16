@@ -4,6 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
 
 *** Test Cases ***
 [S02-003]eServiceWeb-PO-Home-VerifyPage
+    [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    AisCloudUnregistered=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -47,6 +48,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-004]eServiceWeb-PO-Home-SelectCurrentPackage
+    [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -63,6 +65,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-005]eServiceWeb-PO-Home-SelectCurrentUsage
+    [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -90,7 +93,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-006]eServiceWeb-PO-Home-SelectAISCloud
-    [Tags]    NotRegsiterCloudAIS
+    [Tags]    NotRegsiterCloudAIS    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    AisCloudUnregistered=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -109,7 +112,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-007]eServiceWeb-PO-Home-CloudStorage
-    [Tags]    RegisterCloudAIS
+    [Tags]    RegisterCloudAIS    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    AisCloudRegistered=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -128,6 +131,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S02-008]eServiceWeb-PO-Home-Pay
+    [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -141,8 +145,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 test
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    ${result}=    Set Variable    https://www.aiscloudplus.com/?mobileno=${virtual_3PO_1_Number}
-    Log    ${result}
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Comment    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    ${result}=    Set Variable    https://www.aiscloudplus.com/?mobileno=${virtual_3PO_1_Number}
+    Comment    Log    ${result}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
