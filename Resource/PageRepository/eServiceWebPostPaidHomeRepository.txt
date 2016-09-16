@@ -31,7 +31,7 @@ ${txtCheckVoiceCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[3]/div/table/
 ${txtCheckInternetCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[5]/div/table/tbody/tr/td[1]/span
 ${txtCheckValueAddService}    xpath=//*[@id="inBoxScroll"]/div/div/div[7]/div/table/tbody/tr/td[1]/span
 ${btnPreviousBill}    xpath=//*[@id="btnCqsPreviousBill"]/div/span
-${btnRegisterAISCloud}    xpath=//*[@id="register_btn"]/div[1]
+${btnRegisterAISCloud}    xpath=//*[@id="register_btn"]
 ${titleEService}    AIS eService บริการออนไลน์ ที่ให้คุณจัดการทุกเรื่องได้ง่ายๆ แค่คลิก ตลอด 24 ชั่วโมง
 ${titleAISCloud}    AIS Cloud+ | สมัครเข้าใช้งาน
 ${urlMainWindow}    https://eservice.ais.co.th/eServiceWeb/

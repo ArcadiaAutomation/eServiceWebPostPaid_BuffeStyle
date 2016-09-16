@@ -32,3 +32,9 @@ Check Element Usage MMS
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
     \    Log    ${UsageName}
+
+Check URL
+    [Arguments]    ${expectURL}
+    ${currentURL}    Get Location
+    Log    ${currentURL}
+    Run Keyword If    '${currentURL}'=='${expectURL}'    TRUE

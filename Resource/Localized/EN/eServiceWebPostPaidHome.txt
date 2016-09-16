@@ -9,7 +9,7 @@ ${txtBillPostPaid}    Bill AIS Postpaid
 ${txtCurrentPackage}    Your current package
 ${txtCurrentUsage}    Your current usages
 ${txtUsageInternet}    Internet
-${txtCall}        โทร
+${txtCall}        Call
 ${txtSMS}         SMS
 ${txtMMS}         MMS
 ${txtCurrentCharge}    Your Current Charges (Unbilled)
