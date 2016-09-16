@@ -71,11 +71,12 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    : FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
+    :FOR    ${INDEX}    IN RANGE    ${BeginLoop}    ${EndLoop}
     \    Input Citizen ID    ${WrongCID}
     \    Confirm Citizen ID
     \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Click Web Element    ${btnConfirmWrongCID}
     \    ...    ELSE IF    ${INDEX}>=(${EndLoop}-1)    Web Element Text Should Be    ${txtSummaryMessage}    ${messageWrongInputCIDThan3Time}
+    \    Run Keyword If    ${INDEX}<(${EndLoop}-1)    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
     \    log    'INDEX='${INDEX}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

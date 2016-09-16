@@ -51,3 +51,14 @@ Set Defualt General Information
     Confirm Edit
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Close Browser
+
+Verify Edit Button Visible
+    Wait Until Element Is Visible    ${btnEditGeneralnformation}
+    Element Should Be Visible    ${btnEditGeneralnformation}
+
+Random Name Postfix
+    ${PositionFirst}=    Evaluate    random.randint(0, 9)    random
+    ${PositionSecond}=    Evaluate    random.randint(0, 9)    random
+    ${PositionTri}=    Evaluate    random.randint(0, 9)    random
+    ${random}=    Evaluate    ${PositionFirst}${PositionSecond}${PositionTri}
+    [Return]    ${random}
