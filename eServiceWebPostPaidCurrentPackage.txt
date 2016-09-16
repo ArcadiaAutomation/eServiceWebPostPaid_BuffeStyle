@@ -7,7 +7,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     [Tags]    CurrentPackage
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -20,9 +20,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 
 [S03-010]eServiceWeb-PO-CurrentPackage-CheckNextPackage
     [Tags]    NaxtPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegisterNextPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -37,9 +37,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 
 [S03-011]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-NextBill
     [Tags]    CannotSelectPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -68,9 +68,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 
 [S03-012]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-NextDay
     [Tags]    CannotSelectPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -99,9 +99,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 
 [S03-013]eServiceWeb-PO-CurrentPackage-ChangeMainPackage-Immediately
     [Tags]    CannotSelectPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -131,7 +131,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 [S03-014]eServiceWeb-PO-CurrentPackage-ChangeOnTopPackage-MaoMaoMidNightSale
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -158,7 +158,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 [S03-015]eServiceWeb-PO-CurrentPackage-ChangeOnTopPackage-MaoMaoCombo
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
@@ -185,7 +185,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
 [S03-016]eServiceWeb-PO-CurrentPackage-ChangeOnTopPackage-AISWIFI
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
