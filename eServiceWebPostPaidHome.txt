@@ -86,7 +86,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${txtCheckUsageDetail}    ${txtUsageDetail}
     Web Element Text Should Be    ${txtCheckVoiceCharge}    ${txtVoiceCharge}
     Web Element Text Should Be    ${txtCheckInternetCharge}    ${txtInternetCharge}
-    Web Element Text Should Be    ${txtCheckValueAddService}    ${txtValueAddService}
+    Web Element Text Should Be    ${txtCheckAllService}    ${txtAllService}
     Click Web Element    ${btnPreviousBill}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

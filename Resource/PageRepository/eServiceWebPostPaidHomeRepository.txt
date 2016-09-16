@@ -29,7 +29,7 @@ ${txtCheckSummary}    xpath=//*[@id="divCqsChargeSummaryTable"]/table[4]/tbody/t
 ${txtCheckUsageDetail}    xpath=//*[@id="inBoxScroll"]/div/div/div[1]/table/tbody/tr/td[1]
 ${txtCheckVoiceCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[3]/div/table/tbody/tr/td[1]/span
 ${txtCheckInternetCharge}    xpath=//*[@id="inBoxScroll"]/div/div/div[5]/div/table/tbody/tr/td[1]/span
-${txtCheckValueAddService}    xpath=//*[@id="inBoxScroll"]/div/div/div[7]/div/table/tbody/tr/td[1]/span
+${txtCheckAllService}    xpath=//*[@id="inBoxScroll"]/div/div/div[10]/table/tbody/tr/td[1]
 ${btnPreviousBill}    xpath=//*[@id="btnCqsPreviousBill"]/div/span
 ${btnRegisterAISCloud}    xpath=//*[@id="register_btn"]
 ${titleEService}    AIS eService บริการออนไลน์ ที่ให้คุณจัดการทุกเรื่องได้ง่ายๆ แค่คลิก ตลอด 24 ชั่วโมง

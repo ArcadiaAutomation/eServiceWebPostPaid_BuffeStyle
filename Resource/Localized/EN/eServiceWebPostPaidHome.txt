@@ -24,6 +24,6 @@ ${txtSummary}     Summary
 ${txtUsageDetail}    Usage detail
 ${txtVoiceCharge}    Voice Charges
 ${txtInternetCharge}    Internet Charges
-${txtValueAddService}    Value-Added Services (VAS)
+${txtAllService}    Total Current Charge
 ${txtViewAISCloud}    View
-${txtRegisterCloud}    Register
+${txtRegisterCloud}    Register free
