@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAutomaticPaymentViaCr
 
 *** Test Cases ***
 [S05-160]eServiceWeb-PO-BillAISPostpaid-RegisterToPayWithCreditCard
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -27,5 +27,4 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAutomaticPaymentViaCr
     ${currentURL}    Get Location
     Should Match Regexp    ${currentURL}    ${urlPciPage}
     Close Browser
-    @{LIST}    Get Webelements    xpath=//*[@class="mpay_input ng-pristine ng-valid"]
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
