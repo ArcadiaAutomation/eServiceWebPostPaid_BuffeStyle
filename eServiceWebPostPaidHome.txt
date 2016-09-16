@@ -33,7 +33,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
     Click Web Element    ${btnRegisterFree}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
-    Check URL    ${urlAISCloudLogin}${virtual_3PO_1_Number}
+    Check URL AISCloud    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Wait Until Element Is Visible    ${btnRegisterAISCloud}
     Close Window
     Select Window    url=${urlMainWindow}
@@ -104,9 +104,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${btnRegisterFree}    ${txtRegisterCloud}
     Click Web Element    ${btnRegisterFree}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
-    ${currentURL}    Get Location
-    Log    ${currentURL}
-    Run Keyword If    '${currentURL}'!='${${urlAISCloud}}${virtual_3PO_1_Number}'    Fail
+    Check URL AISCloud    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -123,9 +121,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${btnRegisterFree}    ${txtViewAISCloud}
     Click Web Element    ${btnRegisterFree}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloudLogin}
-    ${currentURL}    Get Location
-    Log    ${currentURL}
-    Run Keyword If    '${currentURL}'!='${urlAISCloudLogin}${virtual_3PO_1_Number}'    Fail
+    Check URL AISCloud    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -144,13 +140,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 test
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Comment    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    ${result}=    Set Variable    https://www.aiscloudplus.com/?mobileno=${virtual_3PO_1_Number}
     Comment    Log    ${result}
     Comment    Log    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Comment    ${number}=    Evaluate    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Comment    Log    ${number}
-    Web Element Text Should Be    https://www.aiscloudplus.com/?mobileno=0923026950    ${urlAISCloudLogin}${virtual_3PO_1_Number}
-    &{#list_device_name}
+    Comment    Web Element Text Should Be    https://www.aiscloudplus.com/?mobileno=0923026950    ${urlAISCloudLogin}${virtual_3PO_1_Number}
+    Comment    &{#list_device_name}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

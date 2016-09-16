@@ -30,8 +30,8 @@ Check Element Usage MMS
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
     \    Log    ${UsageName}
 
-Check URL
+Check URL AISCloud
     [Arguments]    ${expectURL}
     ${currentURL}    Get Location
     Log    ${currentURL}
-    Run Keyword If    '${currentURL}'=='${expectURL}'    TRUE
+    Run Keyword If    '${currentURL}'=='${expectURL}'    FAIL
