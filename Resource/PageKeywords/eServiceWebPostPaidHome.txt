@@ -9,7 +9,6 @@ Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidHome.txt
 Check Element Usage Call
     @{Usage}    Get Webelements    ${txtCheckUsageItem}
     ${UsageExp}=    Set Variable    ${txtCall}
-    Log To Console    ${UsageExp}
     : FOR    ${index}    IN RANGE    0    5
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
@@ -18,7 +17,6 @@ Check Element Usage Call
 Check Element Usage SMS
     @{Usage}    Get Webelements    ${txtCheckUsageItem}
     ${UsageExp}=    Set Variable    ${txtSMS}
-    Log To Console    ${UsageExp}
     : FOR    ${index}    IN RANGE    0    5
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
@@ -27,7 +25,6 @@ Check Element Usage SMS
 Check Element Usage MMS
     @{Usage}    Get Webelements    ${txtCheckUsageItem}
     ${UsageExp}=    Set Variable    ${txtMMS}
-    Log To Console    ${UsageExp}
     : FOR    ${index}    IN RANGE    0    5
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
