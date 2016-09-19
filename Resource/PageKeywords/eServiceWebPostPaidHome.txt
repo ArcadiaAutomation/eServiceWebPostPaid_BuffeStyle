@@ -34,4 +34,17 @@ Check URL AISCloud
     [Arguments]    ${expectURL}
     ${currentURL}    Get Location
     Log    ${currentURL}
-    Run Keyword If    '${currentURL}'=='${expectURL}'    FAIL
+    Run Keyword If    '${currentURL}'!='${expectURL}'    FAIL
+
+Check Element In Detail IDCard
+    Web Element Text Should Be    ${txtCheckYourBalance}    ${txtYourBalance}
+    Web Element Text Should Be    ${txtCheckSummary}    ${txtSummary}
+    Web Element Text Should Be    ${txtCheckUsageDetail}    ${txtUsageDetail}
+    Web Element Text Should Be    ${txtCheckVoiceCharge}    ${txtVoiceCharge}
+    Web Element Text Should Be    ${txtCheckInternetCharge}    ${txtInternetCharge}
+    @{Usage}    Get Webelements    ${txtCheckAllService}
+    ${UsageExp}=    Set Variable    ${txtAllService}
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${UsageName}    Get Text    @{Usage}[${index}]
+    \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
+    \    Log    ${UsageName}

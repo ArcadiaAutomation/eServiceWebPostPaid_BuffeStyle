@@ -81,12 +81,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${txtCheckCurrentCharge}    ${txtCurrentCharge}
     Input Web Text    ${txtInputIDCard}    ${virtual_3PO_1_CitizenID}
     Click Web Element    ${btnConfirmIDCard}
-    Web Element Text Should Be    ${txtCheckYourBalance}    ${txtYourBalance}
-    Web Element Text Should Be    ${txtCheckSummary}    ${txtSummary}
-    Web Element Text Should Be    ${txtCheckUsageDetail}    ${txtUsageDetail}
-    Web Element Text Should Be    ${txtCheckVoiceCharge}    ${txtVoiceCharge}
-    Web Element Text Should Be    ${txtCheckInternetCharge}    ${txtInternetCharge}
-    Web Element Text Should Be    ${txtCheckAllService}    ${txtAllService}
+    Check Element In Detail IDCard
     Click Web Element    ${btnPreviousBill}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
@@ -104,7 +99,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${btnRegisterFree}    ${txtRegisterCloud}
     Click Web Element    ${btnRegisterFree}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
-    Check URL AISCloud    ${urlAISCloudLogin}${virtual_3PO_1_Number}
+    Check URL AISCloud    ${urlAISCloudRegister}${virtual_3PO_1_Number}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
