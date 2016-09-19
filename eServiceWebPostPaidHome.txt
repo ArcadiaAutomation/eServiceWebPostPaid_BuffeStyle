@@ -33,7 +33,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
     Click Web Element    ${btnRegisterFree}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
-    Check URL AISCloud    ${urlAISCloudLogin}${virtual_3PO_1_Number}
+    Check URL AISCloud    ${urlAISCloudRegister}${virtual_3PO_1_Number}
     Wait Until Element Is Visible    ${btnRegisterAISCloud}
     Close Window
     Select Window    url=${urlMainWindow}
