@@ -140,8 +140,10 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     sleep    1
     Click Web Element    ${btnConfirmSuspension}
     Web Element Text Should Be    ${txtSummaryMessage}    ${txtConfirmSuspension}
-    Click Web Element    ${btnCloseDialogSuspension}
+    Click Web Element    ${btnCloseDialogSuspension}    //*[@id="btnCloseFn"]/div
     Close Browser
+    Your request to suspend the service cannot be proceeded because your mobile number has already been suspended.    //*[@id="btnBack"]
+    หมายเลขของคุณได้ทำการระงับบริการชั่วคราวแล้ว ไม่สามารถทำการระงับบริการได้อีก
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S07-204]eServiceWeb-PO-Service-SuspensionNextDay

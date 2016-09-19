@@ -4,5 +4,5 @@ ${notInputReason}    Please select the reason of your service suspension.
 ${notInputDateReconnect}    Please select reconnect date.
 ${inputDateSuspensionYesterday}    Please select suspend date greather than today.
 ${inputDateReconnectYesterday}    Please select suspend date greather than today.
-${txtConfirmSuspension}    กำลังดำเนินการ หมายเลขของคุณจะถูกระงับบริการชั่วคราวภายในไม่เกิน 30 นาที
+${txtConfirmSuspension}    Your mobile number will be temporary suspended within 30 minutes.
 ${txtConfirmSuspensionNextDay}    ระบบได้กำหนดวันระงับบริการล่วงหน้าเรียบร้อยแล้ว
