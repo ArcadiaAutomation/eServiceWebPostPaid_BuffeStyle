@@ -74,7 +74,7 @@ Edit Street
     Clear Element Text    ${txtStreet}
     Selenium2Library.Input Text    ${txtStreet}    ${Street}
 
-Clear NameAndSurName
+Clear Name And SurName
     Wait Until Element Is Visible    ${txtNameAndSurName}
     Clear Element Text    ${txtNameAndSurName}
 
@@ -103,3 +103,19 @@ Set Default Your Address
     Confirm Edit Information Dailog Message
     Back To Your Address
     Close Browser
+
+Verify Your Address Page
+    Web Element Text Should Be    ${lblYourAddressDisplayText}    ${YouAddress${ar_LANG}}
+    Click Web Element    ${btnEditYouAddress}
+    Web Element Should Be Visible    ${txtNameAndSurName}
+    Web Element Should Be Visible    ${txtHouseNumber}
+    Web Element Should Be Visible    ${txtMooban}
+    Web Element Should Be Visible    ${txtRoom}
+    Web Element Should Be Visible    ${txtFloor}
+    Web Element Should Be Visible    ${txtBuilding}
+    Web Element Should Be Visible    ${txtSoi}
+    Web Element Should Be Visible    ${txtStreet}
+    Web Element Should Be Visible    ${ddlProvince}
+    Web Element Should Be Visible    ${ddlDistrict}
+    Web Element Should Be Visible    ${ddlSubDistrict}
+    Web Element Should Be Visible    ${ddlPostCode}

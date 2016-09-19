@@ -4,7 +4,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
 
 *** Test Cases ***
 [F09-276]eServiceWeb-PO-YourAddress-EditNameAndSurName
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -13,14 +14,15 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourAddress
     Edit Your Address
-    Clear NameAndSurName
+    Clear Name And SurName
     Confirm Edit
     Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotInputNameAndSurName}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F09-277]eServiceWeb-PO-YourAddress-NotSelectProvince
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -37,7 +39,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F09-278]eServiceWeb-PO-YourAddress-NotSelectDistrict
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -55,7 +58,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F09-279]eServiceWeb-PO-YourAddress-NotSelectSubDistrict
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -73,7 +77,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F09-280]eServiceWeb-PO-YourAddress-NotSelectPostCode
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -92,7 +97,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S09-218]eServiceWeb-PO-YourAddress-VerifyYourAddress
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Success
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -100,26 +106,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourAddress.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourAddress
-    Web Element Text Should Be    ${lblYourAddressDisplayText}    ${YouAddress${ar_LANG}}
-    Click Web Element    ${btnEditYouAddress}
-    Web Element Should Be Visible    ${txtNameAndSurName}
-    Web Element Should Be Visible    ${txtHouseNumber}
-    Web Element Should Be Visible    ${txtMooban}
-    Web Element Should Be Visible    ${txtRoom}
-    Web Element Should Be Visible    ${txtFloor}
-    Web Element Should Be Visible    ${txtBuilding}
-    Web Element Should Be Visible    ${txtSoi}
-    Web Element Should Be Visible    ${txtStreet}
-    Web Element Should Be Visible    ${ddlProvince}
-    Web Element Should Be Visible    ${ddlDistrict}
-    Web Element Should Be Visible    ${ddlSubDistrict}
-    Web Element Should Be Visible    ${ddlPostCode}
-    Comment    Web Element Should Be Visible    ${btnEditYouAddress}
-    Comment    Close Browser
+    Verify Your Address Page
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S09-221]eServiceWeb-PO-YourAddress-EditYourAddress
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    [Tags]    Success
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window

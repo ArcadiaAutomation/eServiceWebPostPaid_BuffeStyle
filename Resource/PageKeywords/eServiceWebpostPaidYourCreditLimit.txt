@@ -4,7 +4,7 @@ Resource          eServiceWebPostPaidLogin.txt
 Resource          ../PageRepository/eServiceWebpostPaidYourCreditLimitRepository.txt
 
 *** Keywords ***
-VerifyPage
+Verify Your Credit Limit Page
     Web Element Should Be Visible    ${lblYourCreditLimitDisplayText}
     Web Element Should Be Visible    ${lblYourCreditLimit}
     Web Element Should Be Visible    ${lblYourOutStanndingBalance}

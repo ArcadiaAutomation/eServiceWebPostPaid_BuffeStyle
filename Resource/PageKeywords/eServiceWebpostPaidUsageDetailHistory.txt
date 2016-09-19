@@ -104,12 +104,12 @@ Verify Highest And Longest Calling Number Graph
     Web Element Should Be Visible    ${tbLongestCallingNumberList}
 
 Select Call Detail View By Service Date
-    [Arguments]    ${beginDate}    ${endDate}
     Click Web Element    ${chkViewCallByServiceDate}
-    Clear Element Text    ${txtFromDate}
-    Input Web Text    ${txtFromDate}    ${beginDate}
-    Clear Element Text    ${txtToDate}
-    Input Web Text    ${txtToDate}    ${endDate}
+    Comment    Clear Element Text    ${txtFromDate}
+    Comment    Input Web Text    ${txtFromDate}    ${beginDate}
+    Comment    sleep    2
+    Comment    Clear Element Text    ${txtToDate}
+    Comment    Input Web Text    ${txtToDate}    ${endDate}
 
 Select Call Detail View By Destination Number
     [Arguments]    ${DestinationNumber}
@@ -135,4 +135,6 @@ Select Call Detail View By Location
     ...    ELSE IF    '${LocationIndex}'=='3'    Click Web Element    ${chkMarineCall}
 
 Verify View Call Detail
-    Web Element Should Be Visible    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div[1]/div/div[1]
+    Web Element Should Be Visible    ${tbViewCallDetail}
+    Web Element Should Be Visible    ${btnBackToPreviousPage}
+    Web Element Should Be Visible    ${btnPrintDetail}

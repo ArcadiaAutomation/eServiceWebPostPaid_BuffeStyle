@@ -54,3 +54,6 @@ ${chkViewCallByLocation}    xpath=//*[@id="chkCdrVoice4"]
 ${chkDomesticCall}    xpath=//*[@id="chkCdrVoiceDomestic"]
 ${chkInternationalCall}    xpath=//*[@id="chkCdrVoiceInternational"]
 ${chkMarineCall}    xpath=//*[@id="chkCdrVoiceMarine"]
+${tbViewCallDetail}    xpath=//*[@id="inBoxScroll"]/div/div/table
+${btnBackToPreviousPage}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div[3]/div/span[1]/a
+${btnPrintDetail}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div[2]/div/div[1]/div/div/div[3]/div/div[3]/div/span[2]/a

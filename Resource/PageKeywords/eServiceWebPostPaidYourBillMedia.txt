@@ -44,3 +44,11 @@ Set Default Your Bill Media
     Confirm Edit
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Close Browser
+
+Verify Your Bill Media
+    Web Element Should Be Visible    ${YouBillMediaDisplayText}
+    Web Element Should Be Visible    ${txtBillMediaPreferenceDisable}
+    Web Element Should Be Disabled    ${txtBillMediaPreferenceDisable}
+    Web Element Should Be Disabled    ${txtPreferenceStatementLangDisable}
+    Web Element Should Be Visible    ${txtPreferenceStatementLangDisable}
+    Web Element Should Be Visible    ${btnEditBillingInformation}
