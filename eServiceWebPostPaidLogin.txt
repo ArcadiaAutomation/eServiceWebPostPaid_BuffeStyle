@@ -54,7 +54,7 @@ test
     Click Web Element    ${btnLanguage}
     Input Web Text    ${txtMobileNumber}    090546798
     Click Web Element    ${btnGetOTP}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageNumberNotComplete}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNumberNotComplete}
     Click Web Element    ${btnDialogClose}
     Close Browser
     [Teardown]
@@ -68,7 +68,7 @@ test
     Input Web Text    ${txtMobileNumber}    0944835961
     Click Web Element    ${btnGetOTP}
     Wait Web Until Page Contains Element    ${ttMessage}
-    Element Text Should Be    ${ttMessage}    ${MessageNumberDtac}
+    Web Element Text Should Be    ${ttMessage}    ${MessageNumberDtac}
     Close Browser
     [Teardown]
 
@@ -85,7 +85,7 @@ test
     Click Web Element    ${btnGetOTP}
     sleep    5
     Input Web Text    ${txtInputOTP}    123
-    Element Should Be Visible    ${btnOKOTPDisable}
+    Web Element Should Be Visible    ${btnOKOTPDisable}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
@@ -144,7 +144,7 @@ test
     Click Web Element    ${btnGetOTP}
     Wait Until Element Is Enabled    ${txtInputOTP}    30
     Input Web Text    ${txtInputOTP}    a
-    Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageInputOtpWithCharacter}
     Click Web Element    ${btnDialogClose}
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
