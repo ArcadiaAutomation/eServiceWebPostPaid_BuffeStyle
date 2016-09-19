@@ -6,7 +6,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
 [F07-254]eServiceWeb-PO-Service-PreferAndCancelSMSnotChange
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -16,12 +16,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnConfirmPerferCancelSMS}
     Web Element Text Should Be    ${txtConfirmDialog}    ${notInputChange}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-284]eServiceWeb-PO-Service-CancelSMSsubcription
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -37,12 +37,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnConfirmSMSSubscription}
     Web Element Text Should Be    ${txtDetailSuspensionDialog}    ${txtSMSSubscriptionNew}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-198]eServiceWeb-PO-Service-CancelSMSnotAIS
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -58,12 +58,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnCloseDialog}
     Set Default Status
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-199]eServiceWeb-PO-Service-CancelSMS-CancelSMSFromAIS-SomeSMS
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -81,12 +81,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnCloseDialog}
     Set Default Status
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-200]eServiceWeb-PO-Service-CancelSMS
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -102,12 +102,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Click Web Element    ${btnCloseDialog}
     Set Default Status
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-201]eServiceWeb-PO-Service-CheckSMSsubscription
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    notSMSSubscriptions=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -120,4 +120,4 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     Check Subscriptions
     Wait Until Element Is Visible    ${btnDetailMore}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

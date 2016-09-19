@@ -16,4 +16,4 @@ ${txtSelectOnTopPackageXtraPack}    Xtra Pack
 ${txtSelectOnTopSubPackageMaoMaoCombo}    Mao Mao Combo
 ${txtSelectOnTopPackageXtraNet}    Xtra Net
 ${txtSelectOnTopSubPackageWifi}    Wifi
-${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 13/09/2016 11:37
+${smsCheckAISWIFI1Hour}    AIS WiFi ontop package 1 hour, 9 Baht. Get WiFi user/password press*388#. Start\

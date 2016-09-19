@@ -6,7 +6,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
 [F07-256]eServiceWeb-PO-Service-ConfirmNotInput
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -17,12 +17,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtNotInputAlertDialog}    ${notInputDateSuspension}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-257]eServiceWeb-PO-Service-ConfirmNotReason
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -34,12 +34,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtNotInputAlertDialog}    ${notInputReason}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-258]eServiceWeb-PO-Service-ConfirmNotInputDateReconnect
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -56,12 +56,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtNotInputAlertDialog}    ${notInputDateReconnect}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-259]eServiceWeb-PO-Service-ConfirmInputDateYesterdayReconnect
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -80,12 +80,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtNotInputAlertDialog}    ${inputDateReconnectYesterday}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-261]eServiceWeb-PO-Service-ConfirmNotInputDateSuspend
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -97,12 +97,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtNotInputAlertDialog}    ${notInputDateSuspension}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-262]eServiceWeb-PO-Service-ConfirmInputDateYesterdaySuspend
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -118,12 +118,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnConfirmSuspension}
     Web Element Text Should Be    ${txtNotInputAlertDialog}    ${inputDateSuspensionYesterday}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-203]eServiceWeb-PO-Service-SuspensionImmediately
     [Tags]    Suspension    testSuspension
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    UnRecursion=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -144,12 +144,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Close Browser
     Your request to suspend the service cannot be proceeded because your mobile number has already been suspended.    //*[@id="btnBack"]
     หมายเลขของคุณได้ทำการระงับบริการชั่วคราวแล้ว ไม่สามารถทำการระงับบริการได้อีก
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-204]eServiceWeb-PO-Service-SuspensionNextDay
     [Tags]    Suspension
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    UnRecursion=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -171,4 +171,4 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtSummaryMessage}    ${txtConfirmSuspensionNextDay}
     Click Web Element    ${btnCloseDialogSuspension}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

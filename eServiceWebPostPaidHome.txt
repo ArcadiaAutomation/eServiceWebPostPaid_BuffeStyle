@@ -6,7 +6,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
 [S02-003]eServiceWeb-PO-Home-VerifyPage
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    AisCloudUnregistered=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -44,12 +44,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
     Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-004]eServiceWeb-PO-Home-SelectCurrentPackage
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -61,12 +61,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
     Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-005]eServiceWeb-PO-Home-SelectCurrentUsage
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -84,12 +84,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Check Element In Detail IDCard
     Click Web Element    ${btnPreviousBill}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-006]eServiceWeb-PO-Home-SelectAISCloud
     [Tags]    NotRegsiterCloudAIS    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    AisCloudUnregistered=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -101,12 +101,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloud}
     Check URL AISCloud    ${urlAISCloudRegister}${virtual_3PO_1_Number}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-007]eServiceWeb-PO-Home-CloudStorage
     [Tags]    RegisterCloudAIS    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    AisCloudRegistered=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -118,12 +118,12 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    title=${titleAISCloudLogin}
     Check URL AISCloud    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-008]eServiceWeb-PO-Home-Pay
     [Tags]    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -132,16 +132,16 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Click Web Element    ${btnPay}
     Web Element Text Should Be    ${txtCheckBillPostPaid}    ${txtBillPostPaid}
     Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 test
     Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Comment    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    ${result}=    Set Variable    https://www.aiscloudplus.com/?mobileno=${virtual_3PO_1_Number}
     Comment    Log    ${result}
     Comment    Log    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Comment    ${number}=    Evaluate    ${urlAISCloudLogin}${virtual_3PO_1_Number}
     Comment    Log    ${number}
     Comment    Web Element Text Should Be    https://www.aiscloudplus.com/?mobileno=0923026950    ${urlAISCloudLogin}${virtual_3PO_1_Number}
-    Comment    &{#list_device_name}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    Comment    &{#dict_device_name}=
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
