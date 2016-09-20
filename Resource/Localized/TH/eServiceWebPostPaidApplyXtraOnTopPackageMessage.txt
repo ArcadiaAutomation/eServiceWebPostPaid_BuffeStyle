@@ -21,3 +21,5 @@ ${4GInternet488}    แพ็กเสริม 4G Internet 488บ. 4G 5GB
 ${100BFreeStaSun}    100 บ/ด: โทร AIS ฟรี วันเสาร์-อาทิตย์
 ${MessageCancelPackageSuccess}    กำลังดำเนินการ กรุณารอรับ SMS ยืนยันการยกเลิก
 ${100BCall3AISNumber50st}    100 บ/ด: โทร3เบอร์AISนาทีละ 50สต. ในเวลา 22-18 น.
+${MessageRegisterSuccess}    กำลังดำเนินการ \ กรุณารอรับ SMS แจ้งยืนยันการสมัครและวันมีผลเริ่มใช้งานแพ็กเกจ
+${CallAIS3Number10-6PM}    100 บ/ด: โทร3เบอร์AISนาทีละ 50สต. ในเวลา 22-18 น.

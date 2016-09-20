@@ -45,8 +45,8 @@ Edit General Information
 Set Defualt General Information
     Click Web Element    ${btnBack}
     Edit General Information
-    Edit Name And LastName    testerAIS2    retset
-    Edit Email Address    tester@h.com
+    Edit Name And LastName    testerAIS    retset
+    Edit Email Address    tester@gmail.com
     Edit Phone Number    0923164588    0987654321
     Confirm Edit
     Wait Web Until Page Contains Element    ${txtSummaryMessage}

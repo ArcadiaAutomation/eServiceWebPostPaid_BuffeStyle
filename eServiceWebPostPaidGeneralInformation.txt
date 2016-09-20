@@ -106,11 +106,9 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    YourPersonalInformation    GeneralInformation
     Web Element Text Should Be    ${lblGeneralInformationDisplayText}    ${GeneralInformation${ar_LANG}}
     Edit General Information
-    ${PostfixName}=    Random Name Postfix
-    ${PostfixSurName}=    Random Name Postfix
-    Edit Name And LastName    testerAIS23F${PostfixName}    aisAutomation${PostfixSurName}
-    Edit Email Address    Atlast_ENG@gg.com
-    Edit Phone Number    0924567893    0823456789    0987654321
+    Edit Name And LastName    testerAIS    retset
+    Edit Email Address    tester@hotmail.com
+    Edit Phone Number    0923164588    0987654321
     Confirm Edit
     Web Element Text Should Be    ${txtSummaryMessage}    ${MessageEditSuccess}
     [Teardown]    Run Keywords    Set Defualt General Information
