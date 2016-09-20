@@ -5,7 +5,7 @@ Resource          ../Config/LocalConfig.txt
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -22,7 +22,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -38,7 +38,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -53,7 +53,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -72,7 +72,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -92,7 +92,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -114,7 +114,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -134,7 +134,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -153,7 +153,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -175,7 +175,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
     [Tags]    VoiceCalling    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -194,7 +194,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S07-173]eServiceWeb-PO-Service-VoiceCalling-RegisterVoiceCalling
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    1
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -211,7 +211,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S07-174]eServiceWeb-PO-Service-VoiceCalling-NotRegisterEditData
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -226,7 +226,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S07-175]eServiceWeb-PO-Service-VoiceCalling-AddDataOneNumber
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    1
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -237,7 +237,7 @@ Resource          ../Config/LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     Input Web Text    ${txtInputName1}    โตโน่
-    Input Web Text    ${txtInsertMobile1}    ${lo_3PO_2_Number}
+    Input Web Text    ${txtInsertMobile1}    0912223322
     Input Web Text    ${txtSpell1(1)}    โต
     Input Web Text    ${txtSpell1(2)}    โน่
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -252,7 +252,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S07-176]eServiceWeb-PO-Service-VoiceCalling-AddDataMorethanOneNumber
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    1
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -263,11 +263,11 @@ Resource          ../Config/LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     Input Web Text    ${txtInputName1}    โตโน่
-    Input Web Text    ${txtInsertMobile1}    ${lo_3PO_2_Number}
+    Input Web Text    ${txtInsertMobile1}    0911111111
     Input Web Text    ${txtSpell1(1)}    โต
     Input Web Text    ${txtSpell1(2)}    โน่
     Input Web Text    ${txtInputName2}    มาม่า
-    Input Web Text    ${txtInsertMobile2}    ${lo_3PO_3_Number}
+    Input Web Text    ${txtInsertMobile2}    0922222222
     Input Web Text    ${txtSpell2(1)}    มา
     Input Web Text    ${txtSpell2(2)}    ม่า
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -282,7 +282,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S07-177]eServiceWeb-PO-Service-VoiceCalling-EditDataOneNumber
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    4
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -293,7 +293,7 @@ Resource          ../Config/LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     Input Web Text    ${txtInputName1}    โตโน่
-    Input Web Text    ${txtInsertMobile1}    ${lo_3PO_2_Number}
+    Input Web Text    ${txtInsertMobile1}    0911111111
     Input Web Text    ${txtSpell1(1)}    โต
     Input Web Text    ${txtSpell1(2)}    โน่
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -303,7 +303,7 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    VoiceAdd/Edit
     Click Web Element    ${btnEditData}
     Input Web Text    ${txtInputName1}    แตงโม
-    Input Web Text    ${txtInsertMobile1}    ${lo_3PO_2_Number}
+    Input Web Text    ${txtInsertMobile1}    0922222222
     Input Web Text    ${txtSpell1(1)}    แตง
     Input Web Text    ${txtSpell1(2)}    โม
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -312,13 +312,13 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${ldlDisplayName1}
     Element Text Should Be    ${ldlDisplayName1}    แตงโม
     Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
-    Element Text Should Be    ${ldlDisplayNumber1}    ${lo_3PO_2_Number}
+    Element Text Should Be    ${ldlDisplayNumber1}    0933333333
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-178]eServiceWeb-PO-Service-VoiceCalling-EditDataMorethanOneNumber
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    4
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -329,11 +329,11 @@ Resource          ../Config/LocalConfig.txt
     Register Voice
     Select Menu    VoiceAdd/Edit
     Input Web Text    ${txtInputName1}    โตโน่
-    Input Web Text    ${txtInsertMobile1}    ${lo_3PO_2_Number}
+    Input Web Text    ${txtInsertMobile1}    0911111111
     Input Web Text    ${txtSpell1(1)}    โต
     Input Web Text    ${txtSpell1(2)}    โน่
     Input Web Text    ${txtInputName2}    มาม่า
-    Input Web Text    ${txtInsertMobile2}    ${lo_3PO_3_Number}
+    Input Web Text    ${txtInsertMobile2}    0922222222
     Input Web Text    ${txtSpell2(1)}    มา
     Input Web Text    ${txtSpell2(2)}    ม่า
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -343,11 +343,11 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    VoiceAdd/Edit
     Click Web Element    ${btnEditData}
     Input Web Text    ${txtInputName1}    แตงโม
-    Input Web Text    ${txtInsertMobile1}    ${lo_3PO_3_Number}
+    Input Web Text    ${txtInsertMobile1}    0933333333
     Input Web Text    ${txtSpell1(1)}    แตง
     Input Web Text    ${txtSpell1(2)}    โม
     Input Web Text    ${txtInputName2}    ไวไว
-    Input Web Text    ${txtInsertMobile2}    ${lo_3PO_2_Number}
+    Input Web Text    ${txtInsertMobile2}    0944444444
     Input Web Text    ${txtSpell2(1)}    ไว
     Input Web Text    ${txtSpell2(2)}    ไว
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -356,16 +356,16 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${ldlDisplayName1}
     Element Text Should Be    ${ldlDisplayName1}    แตงโม
     Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
-    Element Text Should Be    ${ldlDisplayNumber1}    ${lo_3PO_3_Number}
+    Element Text Should Be    ${ldlDisplayNumber1}    0955555555
     Element Text Should Be    ${ldlDisplayName2}    ไวไว
     Element Text Should Be    ${ldlDisplaySpell2}    ไว-ไว
-    Element Text Should Be    ${ldlDisplayNumber2}    ${lo_3PO_2_Number}
+    Element Text Should Be    ${ldlDisplayNumber2}    0966666666
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-179]eServiceWeb-PO-Service-VoiceCalling-CancelVoiceCalling
     [Tags]    VoiceCalling    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     ${TotalSMS}    Set Variable    2
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -388,7 +388,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 TestXpath
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Click Mobile Element    //*[@resource-id='com.calea.echo:id/new_msg' and ../../../@resource-id='com.calea.echo:id/name']
