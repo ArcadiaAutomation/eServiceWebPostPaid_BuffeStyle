@@ -674,5 +674,11 @@ TestInfo
     Comment    AISAppium Click Element    name=AIS
     Comment    AISAppium Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]    ${App1}
     log    ${CURDIR}
-    Open SMS App    10.239.223.84:4723    Android    5.1.1    0123456789ABCDEF
-    mood Read All Unread SMS
+    Open SMS App    10.239.223.84:4723    Android    5.1.1    8f65cc76
+    Comment    mood Read All Unread SMS
+    Comment    Click Mobile Element    xpath=//*[@resource-id="com.calea.echo:id/new_msg_parent"]/ancestor::*[@resource-id="com.calea.echo:id/infos_layout"]
+    Comment    Click Mobile Element    xpath=//*[@resource-id="com.calea.echo:id/new_msg" and @text="2"]/parent::*/preceding::*[@text="AIS"]
+    Comment    ${att}    Click Mobile Element    xpath=//*[@resource-id="com.calea.echo:id/new_msg_parent"]/ancestor::*[@resource-id="com.calea.echo:id/infos_layout"]    resourceId
+    Comment    log    ${att}
+    Comment    Wait and Read SMS with Sender    2    AIS
+    Wait SMS    Android    2    30    AIS
