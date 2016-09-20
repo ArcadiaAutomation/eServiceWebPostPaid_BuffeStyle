@@ -142,8 +142,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Web Element Text Should Be    ${txtSummaryMessage}    ${txtConfirmSuspension}
     Click Web Element    ${btnCloseDialogSuspension}    //*[@id="btnCloseFn"]/div
     Close Browser
-    Your request to suspend the service cannot be proceeded because your mobile number has already been suspended.    //*[@id="btnBack"]
-    หมายเลขของคุณได้ทำการระงับบริการชั่วคราวแล้ว ไม่สามารถทำการระงับบริการได้อีก
+    Comment    Your request to suspend the service cannot be proceeded because your mobile number has already been suspended.    //*[@id="btnBack"]
+    Comment    หมายเลขของคุณได้ทำการระงับบริการชั่วคราวแล้ว ไม่สามารถทำการระงับบริการได้อีก
+    \    \    //*[@id="btnCloseFn"]
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-204]eServiceWeb-PO-Service-SuspensionNextDay
@@ -156,11 +157,17 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NumberSuspension
-    ${dateSuspension}    Check Local Time Tomorrow
+    Log    Time TH
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${dateTime}    Convert Date    ${date}    datetime
+    ${yearTH}    Evaluate    ${dateTime.year}+543
+    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
+    Log    ${dateTomorrow}${yearTH}
+    Comment    ${dateSuspension}    Check Local Time Tomorrow
     Click Web Element    ${btnStartSuspensionFrom}
     Press Key    ${txtInputSuspensionDate}    \\\13
     Clear Element Text    ${txtInputSuspensionDate}
-    Input Web Text    ${txtInputSuspensionDate}    ${dateSuspension}
+    Input Web Text    ${txtInputSuspensionDate}    ${dateTomorrow}
     sleep    1
     ${dateReconnect}    Check Local Time Tomorrow
     Press Key    ${txtInputReconnectDate}    \\\13

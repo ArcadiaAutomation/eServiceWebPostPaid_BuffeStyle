@@ -17,7 +17,7 @@ Get Date Tomorrow TH
     ${date}    Get Current Date    result_format=%Y/%m/%d
     ${dateTime}    Convert Date    ${date}    datetime
     ${yearTH}    Evaluate    ${dateTime.year}+543
-    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
+    ${dateTomorrow}    Add Time To Date    ${date}    2 day    result_format=%d/%m/
     Log    ${dateTomorrow}${yearTH}
     [Return]    ${dateTomorrow}${yearTH}
 
