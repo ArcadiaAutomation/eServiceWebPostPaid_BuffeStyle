@@ -21,7 +21,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-242]eServiceWeb-PO-Service-CallScreening-NotChangeStatusFromInactive
-    [Tags]    debug    RegisterCallScreening
+    [Tags]    debug    registercallscreening
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegisterCallScreening=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -38,7 +38,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F07-243]eServiceWeb-PO-Service-CallScreening-WelcomeCallsNotNumber
-    [Tags]    debug    RegisterCallScreening
+    [Tags]    debug    registercallscreening
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include    RegisterCallScreening=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
