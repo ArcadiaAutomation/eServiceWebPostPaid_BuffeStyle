@@ -717,7 +717,7 @@ Resource          ../Config/LocalConfig.txt
     Element Should Contain    ${ldlFutureMessage}    ${FutureSMS}
     Click Web Element    ${btnConfrimSendSMS}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Should Contain    ${txtSummaryMessage}    ${MessageSMSMorethanOneNumberComplete}
+    Element Should Contain    ${txtSummaryMessage}    ${MessageSendSMSMorethanOneNumberComplete}
     @{MessageExpect}    Create List    ${Messageสวัสดี}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${MessageExpect}    300
