@@ -21,7 +21,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkPackage
     [Documentation]    --variable ar_Location:Production
-    [Tags]    Fail
+    [Tags]    Fail    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open WebSite Eservice By Location    ${ar_Location}    #Parameter='Production' Or 'TestSite'
@@ -37,7 +37,9 @@ Resource          ../Config/LocalConfig.txt
     Confirm OnTop Package Register
     Comment    Web Element Text Should Be    ${tbRegisterResult}    ${MessageRegisterSuccess}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    AIS    .*    60
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Select Menu    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
@@ -46,32 +48,12 @@ Resource          ../Config/LocalConfig.txt
     Confirm Select Effective Date
     Confirm OnTop Package Register
     Web Element Text Should Be    ${tbRegisterResult}    ${messageRegisterDuplicate}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    AIS    .*    80
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Cancel On-Top Package    ${CallAIS3Number10-6PM}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
-
-[F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkPackage(TestSite)
-    [Tags]    Fail    TestSite
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Web Browser    ${eServiceURLTestSite}    gc    ${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login On Test Site    0937019787
-    Select Menu    Package    OnTopPackage
-    Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Input Web Text    ${txtFriendnumber1TestSite}    0613851334
-    Comment    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
-    Comment    Click Web Element    ${btnChangePackConfirm}
-    Comment    Click Web Element    ${btnChangePackConfirm2}
-    Comment    Click Web Element    ${btnChangePackConfirm3}
-    Comment    Web Element Text Should Be    ${tbSelectPackageStep4}    ${messageRegisterDuplicate}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*    #เนื่องจากยังไม่มีข้อความภาษาอังกฤษ
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -341,3 +323,16 @@ test
     Run Keyword If    '${IsPrimaryVisible}'=='True'    Click Web Element    ${btnPrimary}
     Input Web Text    ${txtInputOTP}    7777
     Click Web Element    ${btnOKOTP}
+
+[F03-018]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisteDuplicaterXtraNetPackage(TestSite)
+    [Tags]    fail
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open WebSite Eservice By Location    ${ar_Location}    #Parameter='Production' Or 'TestSite'
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login WebSite Eservice By Location    ${ar_Location}
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraNet}    ${InternetMonthly}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
