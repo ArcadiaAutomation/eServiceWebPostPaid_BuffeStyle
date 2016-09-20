@@ -139,12 +139,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Input Web Text    ${txtInputReconnectDate}    ${dateReconnect}
     sleep    1
     Click Web Element    ${btnConfirmSuspension}
-    Web Element Text Should Be    ${txtSummaryMessage}    ${txtConfirmSuspension}
-    Click Web Element    ${btnCloseDialogSuspension}    //*[@id="btnCloseFn"]/div
+    Comment    Add timeout for wait
+    Wait Until Element Is Visible    ${txtCheckDialogSuspnsion}    60
+    Element Text Should Be    ${txtCheckDialogSuspnsion}    ${txtConfirmSuspension}
+    Click Web Element    ${btnCloseDialog}
+    Web Element Text Should Be    ${txtCheckDialogSuspnsion}    ${txtCheckBackSuspension}
+    Click Web Element    ${btnBackToSuspension}
     Close Browser
-    Comment    Your request to suspend the service cannot be proceeded because your mobile number has already been suspended.    //*[@id="btnBack"]
-    Comment    หมายเลขของคุณได้ทำการระงับบริการชั่วคราวแล้ว ไม่สามารถทำการระงับบริการได้อีก
-    \    \    //*[@id="btnCloseFn"]
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-204]eServiceWeb-PO-Service-SuspensionNextDay

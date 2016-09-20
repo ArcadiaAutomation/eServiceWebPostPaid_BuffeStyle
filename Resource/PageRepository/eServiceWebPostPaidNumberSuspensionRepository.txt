@@ -2,7 +2,7 @@
 ${btnImmediatelySuspension}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/label
 ${btnStartSuspensionFrom}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/label
 ${btnConfirmSuspension}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div/div[2]/div[2]/div/div[4]/a[1]
-${btnCloseDialogSuspension}    xpath=//*[@id="btnAlertConfirm"]/div/div
+${btnCloseDialogSuspension}    xpath=//*[@id="btnAlertConfirm"]
 ${txtInputSuspensionDate}    xpath=//*[@id="suspensionDate"]
 ${txtInputReconnectDate}    xpath=//*[@id="reconnectDate"]
 ${btnDateCalendarSuspensionTomorrow}    xpath=//*[@id="ui-datepicker-div"]/table/tbody/tr[4]/td[6]/a
@@ -13,3 +13,6 @@ ${btnDateCalendarReconnectTomorrow}    xpath=//*[@id="ui-datepicker-div"]/table/
 ${btnDateCalendarReconnectYesterday}    xpath=//*[@id="ui-datepicker-div"]/table/tbody/tr[4]/td[4]/a
 ${txtMenuSuspension}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div/div[2]/div[2]/div/div[1]
 ${txtNotInputAlertDialog}    xpath=//*[@id="popup_detail"]/div[1]
+${btnCloseDialog}    xpath=//*[@id="btnCloseFn"]
+${btnBackToSuspension}    xpath=//*[@id="btnBack"]/div
+${txtCheckDialogSuspnsion}    xpath=//*[@id="txtAlertMessage"]/div
