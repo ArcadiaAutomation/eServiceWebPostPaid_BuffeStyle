@@ -3,3 +3,4 @@ Resource          ../PageRepository/eServiceWebPostPaidTopUp2AISOne2CallReposito
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidTopUp2AISOne2CallMessage.txt
+Resource          ../PageVariable/eServiceWebPostPaidTopUpToAISOne2Call.txt
