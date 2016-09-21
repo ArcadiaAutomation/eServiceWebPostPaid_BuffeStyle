@@ -37,3 +37,4 @@ ${urlMainWindow}    https://eservice.ais.co.th/eServiceWeb/
 ${titleAISCloudLogin}    AIS Cloud+ | เข้าสู่ระบบ
 ${urlAISCloudLogin}    https://www.aiscloudplus.com/?mobileno=
 ${urlAISCloudRegister}    https://www.aiscloudplus.com/user/register/?mobileno=
+${txtCheckCloudStorage4G}    xpath=//*[@id="txtHeaderCloudPlusFourG"]/label
