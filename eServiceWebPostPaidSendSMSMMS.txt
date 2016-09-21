@@ -764,8 +764,8 @@ Resource          ../Config/LocalConfig.txt
 [S07-185]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Immediate
     [Tags]    success    mms
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_3_Number]    ${virtual_3PO_3_Number}
@@ -835,8 +835,8 @@ Resource          ../Config/LocalConfig.txt
 [S07-187]eServiceWeb-PO-Service-SendMMS-SendMorethanOneNumber-Future
     [Tags]    success    mms
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_2_Number]    ${virtual_3PO_2_Number}
     ${MessageMMSMorethanOneNumberComplete}    Replace String    ${MessageMMSMorethanOneNumberComplete}    [3PO_3_Number]    ${virtual_3PO_3_Number}
