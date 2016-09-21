@@ -1390,26 +1390,6 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S05-135]eServiceWeb-PO-Insurance-ThaiLife
-    [Tags]    success1
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO=include
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Payment/TopUp    Insurance
-    Wait Web Until Page Contains Element    ${txtPINCode}
-    Input Web Text    ${txtPINCode}    ${PINCode}
-    Click Web Element    ${btnOKPINCode}
-    Select From Web List By Label    ${lstMPayServiceList}    ${ThaiLife}
-    Element Text Should Be    ${ldlService1}    ${PolicyNo.}
-    Element Text Should Be    ${ldlService2}    ${IDCardNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
 [S05-134]eServiceWeb-PO-Insurance-ThaiCardifLifeAssurance
     [Tags]    success2
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO=include
@@ -1426,6 +1406,26 @@ Resource          ../Config/LocalConfig.txt
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiCardifLifeAssurance}
     Element Text Should Be    ${ldlService1}    ${CustomerNo./Ref.No.1}
     Element Text Should Be    ${ldlService2}    ${CardifRef.No.2}
+    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-135]eServiceWeb-PO-Insurance-ThaiLife
+    [Tags]    success1
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    RegistermPay=include    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Insurance
+    Wait Web Until Page Contains Element    ${txtPINCode}
+    Input Web Text    ${txtPINCode}    ${PINCode}
+    Click Web Element    ${btnOKPINCode}
+    Select From Web List By Label    ${lstMPayServiceList}    ${ThaiLife}
+    Element Text Should Be    ${ldlService1}    ${PolicyNo.}
+    Element Text Should Be    ${ldlService2}    ${IDCardNo.}
     Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
