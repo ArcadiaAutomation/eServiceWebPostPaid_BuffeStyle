@@ -44,7 +44,17 @@ Check Element In Detail IDCard
     Web Element Text Should Be    ${txtCheckInternetCharge}    ${txtInternetCharge}
     @{Usage}    Get Webelements    ${txtCheckAllService}
     ${UsageExp}=    Set Variable    ${txtAllService}
-    :FOR    ${index}    IN RANGE    0    20
+    : FOR    ${index}    IN RANGE    0    20
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
     \    Log    ${UsageName}
+
+Verify Cloud Storage
+    ${result}    Run Keyword And Return Status    Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Log To Console    ${result}
+    Run Keyword If    '${result}'=='False'    Verify Cloud Storage 4G
+
+Verify Cloud Storage 4G
+    ${result}    Run Keyword And Return Status    Web Element Text Should Be    ${txtCheckCloudStorage}    ${txtCloudStorage}
+    Log To Console    ${result}
+    Run Keyword If    '${result}'=='False'    FAIL
