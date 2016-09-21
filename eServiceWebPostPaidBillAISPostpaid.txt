@@ -4,7 +4,7 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [F05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
-    [Tags]    fail    T1
+    [Tags]    fail    T1    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    ${ff default caps}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.FIREFOX    sys,selenium.webdriver
@@ -24,7 +24,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-002]eServiceWeb-PO-BillAISPostpaid-NotSelectCardType
-    [Tags]    fail    T1
+    [Tags]    fail    T1    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -42,7 +42,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-003]eServiceWeb-PO-BillAISPostpaid-NotSelectBank
-    [Tags]    fail    T1
+    [Tags]    fail    T1    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -60,7 +60,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-004]eServiceWeb-PO-BillAISPostpaid-InputZeroAmount
-    [Tags]    fail    T1
+    [Tags]    fail    T1    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -79,7 +79,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-005]eServiceWeb-PO-BillAISPostpaid-Payment2Another-NotInput10digitNumber
-    [Tags]    fail
+    [Tags]    fail    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -97,7 +97,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-006]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputChar
-    [Tags]    fail
+    [Tags]    fail    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -114,7 +114,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-007]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputPrepaidNumber
-    [Tags]    fail
+    [Tags]    fail    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -132,7 +132,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F05-008]eServiceWeb-PO-BillAISPostpaid-Payment2Another-InputSelfNumber
-    [Tags]    fail
+    [Tags]    fail    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -186,7 +186,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-056]eServiceWeb-PO-BillAISPostpaid-PayWithVISAcard
-    [Tags]    success    Credit
+    [Tags]    success    Credit    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -207,7 +207,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-057]eServiceWeb-PO-BillAISPostpaid-PayWithAMEXcard
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -227,7 +227,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-058]eServiceWeb-PO-BillAISPostpaid-PayWithDebitcard
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -247,7 +247,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-059]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-KTC
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -268,7 +268,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-060]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThanachartBank
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -289,7 +289,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-061]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-SCB
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -310,7 +310,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-062]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-UOB
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -331,7 +331,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-063]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-Krungsriayudhya
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -352,7 +352,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-064]eServiceWeb-PO-BillAISPostpaid-PayWithDirectDebit-ThaiMilitaryBank
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -373,7 +373,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-065]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withMASTER
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -384,8 +384,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    MASTER
@@ -397,7 +398,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-066]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withAMEX
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -408,8 +409,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    AMEX
@@ -419,7 +421,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-067]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withVISA
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -430,8 +432,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${CreditCard}
     Select Card Name    VISA
@@ -443,7 +446,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-068]eServiceWeb-PO-BillAISPostpaid-Payment2Another-withDebit
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -454,8 +457,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DebitCard}
     Click Web Element    ${btnOK}
@@ -466,7 +470,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-069]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-KTC
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -477,8 +481,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungthaiBank}
@@ -490,7 +495,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-070]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-ThanachartBank
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -501,8 +506,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThanachartBank}
@@ -514,7 +520,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-071]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-SCB
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -525,8 +531,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${SiamCommercialBank}
@@ -539,7 +546,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-072]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-UOB
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -550,8 +557,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${UnitedOverseaBank}
@@ -563,7 +571,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-073]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-Krungsriayudhya
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -574,8 +582,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${KrungsriayudhyaBank}
@@ -587,7 +596,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-074]eServiceWeb-PO-BillAISPostpaid-Payment2Another-PayWithDirectDebit-ThaiMilitaryBank
-    [Tags]    success
+    [Tags]    success    Bill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Comment    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -598,8 +607,9 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    BillAISPostpaid
     Click Web Element    ${btnPayment2Another}
-    Input Web Text    ${txtDestinationNumber}    ${lo_Number_3PO}
+    Input Web Text    ${txtDestinationNumber}    ${3PO_Number}
     Click Web Element    ${btnComfirmDesNumber}
+    NoOutstandingBalance
     Input Web Text    ${txtAmount}    1000
     Select Payment Type    ${DirectDebit}
     Select Card Name    ${ThaiMilitaryBank}

@@ -20,3 +20,4 @@ ${txtDestinationNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/d
 ${btnComfirmDesNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div
 ${lbPopUpDialog}    xpath=//*[@id="popup_detail"]/div[1]
 ${lbInputPrepaid}    xpath=//*[@id="txtAlertMessage"]/div
+${btnNoOutstandingBalance}    xpath=//*[@id="btnAction0"]
