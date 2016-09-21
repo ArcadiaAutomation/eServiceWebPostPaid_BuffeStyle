@@ -48,4 +48,4 @@ ${mnuYourCreditLimit}    xpath=//*[@id="menu-8"]
 ${mnuChangeMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuLeasing}     xpath=//*[@id="menu-94"]
 ${mnuAirNet}      xpath=//*[@id="menu-96"]
-${eServiceURLTestSite}    https://10.252.176.155:8445/eServiceWeb/
+${TestSiteEServiceURL}    https://10.252.176.155:8445/eServiceWeb

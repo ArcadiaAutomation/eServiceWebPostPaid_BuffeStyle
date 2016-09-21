@@ -80,8 +80,8 @@ Login On Test Site
     Input Web Text    ${txtMobileNumber}    ${Number}
     Click Web Element    ${btnGetOTP}
     Sleep    2
-    ${IsPrimaryVisible}=    Run Keyword And Return Status    Selenium2Library.Element Should Be Visible    ${btnPrimary}
-    Run Keyword If    '${IsPrimaryVisible}'=='True'    Click Web Element    ${btnPrimary}
+    ${IsPrimaryVisible}    Run Keyword And Return Status    Selenium2Library.Element Should Be Visible    ${btnPrimary}
+    Run Keyword If    ${IsPrimaryVisible}    Click Web Element    ${btnPrimary}
     Input Web Text    ${txtInputOTP}    7777
     Click Web Element    ${btnOKOTP}
 

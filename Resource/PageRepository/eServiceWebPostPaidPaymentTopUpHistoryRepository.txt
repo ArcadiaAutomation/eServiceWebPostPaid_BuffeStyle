@@ -19,3 +19,14 @@ ${lbHeaderTopUpAmount}    xpath=//*[@id="inBoxScroll"]/div/div/div[1]/table/tbod
 ${lbHeaderTypeOfTopUp}    xpath=//*[@id="inBoxScroll"]/div/div/div[1]/table/tbody/tr[1]/th[3]
 ${lbHeaderTopUpToAIS}    xpath=//*[@id="inBoxScroll"]/div/div/div[1]/table/tbody/tr[1]/th[4]
 ${lbPopUpMessage}    xpath=//*[@id="popup_detail"]/div[1]
+${ddlViewInformation}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[3]/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/span/select
+${ddlPaymentType}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[3]/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[4]/div[2]/div/span/select
+${ddlTransactionStatus}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[3]/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[5]/div[2]/div/span/select
+${lbHeaderMpayNo}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[1]
+${lbHeaderMpayDate}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[2]
+${lbHeaderMpayTransactionName}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[3]
+${lbHeaderMpayTransactionID}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[4]
+${lbHeaderMpayAmount}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[5]/div
+${lbHeaderMpayPaymentBy}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[6]
+${lbHeaderMpayStatus}    xpath=//*[@id="inBoxScroll"]/div/div[1]/div/div/table/tbody/tr[1]/th[7]
+${btnConfirmData}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[3]/div/div/div[2]/div[2]/div/div[2]/div/div[3]/div/a

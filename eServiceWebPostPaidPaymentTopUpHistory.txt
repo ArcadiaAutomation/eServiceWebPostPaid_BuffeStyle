@@ -3,6 +3,25 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPaymentTopUpHistory.t
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
+[F05-197]eServiceWeb-PO-PaymentTopUpHistory-RegisterMpay
+    [Tags]    success
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path_test}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${TestSiteEServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login Test Site    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Click Web Element    ${btnUtilityAndOtherServices}
+    Click Web Element    ${btnConfirmData}
+    Comment    Wait Until Element Is Visible    ${lbPopUpMessage}
+    Comment    ${ActText}    Get Text    ${lbPopUpMessage}
+    Comment    Run Keyword If    '${ActText}'!='${MessageNotSelectCondition}'    fail
+    Web Element Text Should Be    ${lbPopUpMessage}    ${MessageNotSelectCondition}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path_test}    ${#dict_device_name}
+
 [F05-198]eServiceWeb-PO-PaymentTopUpHistory-NotSelectMonthInAISOne2CallTopUp
     [Tags]    fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
@@ -68,6 +87,31 @@ Resource          ../Config/LocalConfig.txt
     Web Element Text Should Be    ${lbAlertMessage}    ${MessageNotRegisterMpay}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-167]eServiceWeb-PO-PaymentTopUpHistory-RegisterMpay
+    [Tags]    success
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path_test}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    RegistermPay=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${TestSiteEServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login Test Site    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    PaymentTopUpHistory
+    Click Web Element    ${btnUtilityAndOtherServices}
+    Select From Web List    ${ddlViewInformation}    ${ByDate}
+    Select From Web List    ${ddlPaymentType}    ${All}
+    Select From Web List    ${ddlTransactionStatus}    ${Success}
+    Click Web Element    ${btnConfirmData}
+    Web Element Text Should Be    ${lbHeaderMpayNo}    ${MessageMpayNo}
+    Web Element Text Should Be    ${lbHeaderMpayDate}    ${MessageMpayDate}
+    Web Element Text Should Be    ${lbHeaderMpayTransactionName}    ${MessageMpayTransactionName}
+    Web Element Text Should Be    ${lbHeaderMpayTransactionID}    ${MessageTransactionID}
+    Web Element Text Should Be    ${lbHeaderMpayAmount}    ${MessageMpayAmount}
+    Web Element Text Should Be    ${lbHeaderMpayPaymentBy}    ${MessageMpayPaymentBy}
+    Web Element Text Should Be    ${lbHeaderMpayStatus}    ${MessageMpayStatus}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path_test}    ${#dict_device_name}
 
 [S05-168]eServiceWeb-PO-PaymentTopUpHistory-TopUpHistory
     [Tags]    success

@@ -69,8 +69,8 @@ Resource          ../Config/LocalConfig.txt
 
 [S05-004]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithAISTopUp
     [Tags]    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window

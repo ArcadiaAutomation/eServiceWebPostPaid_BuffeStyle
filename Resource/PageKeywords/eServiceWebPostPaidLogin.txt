@@ -27,3 +27,13 @@ Fake OTP
     \    Run Keyword If    '${realOTP}'!='${fakeOTP}'    Exit For Loop
     \    ${fakeOTP}    Generate Random String    4    [NUMBERS]
     [Return]    ${fakeOTP}
+
+Login Test Site
+    [Arguments]    ${Number}
+    Input Web Text    ${txtMobileNumber}    ${Number}
+    Click Web Element    ${btnGetOTP}
+    Sleep    2
+    ${IsPrimaryVisible}    Run Keyword And Return Status    Selenium2Library.Element Should Be Visible    ${btnPrimary}
+    Run Keyword If    ${IsPrimaryVisible}    Click Web Element    ${btnPrimary}
+    Input Web Text    ${txtInputOTP}    7777
+    Click Web Element    ${btnOKOTP}

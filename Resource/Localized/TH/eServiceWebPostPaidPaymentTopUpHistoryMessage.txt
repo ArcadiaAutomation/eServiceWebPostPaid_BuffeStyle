@@ -13,3 +13,14 @@ ${TextTopUpAmount}    จำนวนเงิน\n(บาท)
 ${TextTypeOfTopUp}    ประเภทการเติมเงิน
 ${TextTopUpToAIS}    หมายเลขเอไอเอส\nวัน-ทู-คอล! ที่เติมให้
 ${MessageNotSelectMonth}    กรุณาเลือกเดือน
+${MessageMpayNo}    ลำดับ
+${MessageMpayDate}    วันที่
+${MessageMpayTransactionName}    รายการ
+${MessageTransactionID}    เลขที่รายการ
+${MessageMpayAmount}    จำนวนเงิน
+${MessageMpayPaymentBy}    ชำระโดย
+${MessageMpayStatus}    สถานะ
+${ByDate}         ระบุวันที่
+${All}            ทั้งหมด
+${Success}        สำเร็จ
+${MessageNotSelectCondition}    กรุณาระบุรายละเอียดที่ต้องการให้ตรวจสอบให้ครบถ้วน
