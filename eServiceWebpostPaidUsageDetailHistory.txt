@@ -142,7 +142,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Confirm Filter Usage Detail
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Web Element Text Should Be    ${lblUsageDetailHistorySummaryMessage}    ${messageNotSelectMySuperPlanFilter}
-    Comment    Close Browser
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F04-032]eServiceWeb-PO-UsageDetailHistory-NotSelectGraphUsageDetailFilter
@@ -161,6 +161,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Select Usage Detail Tab    GraphTop5
     Confirm Filter Usage Detail
     Web Element Text Should Be    ${lblDialogMessage}    ${messageNotSelectGraphFilter}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-040]eServiceWeb-PO-UsageDetailHistory-VerifyUsageDetailHistoryPage
@@ -323,7 +324,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Close Browser
     Comment    Confirm Filter Usage Detail
     Comment    Verify Internet And Value Added Service Page
-    Comment    Close Browser
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-047]eServiceWeb-PO-UsageDetailHistory-SelectAllSpecificViewConditionInternetAndValueAddServiceDetail
