@@ -7,9 +7,8 @@ Resource          ../Config/LocalConfig.txt
 *** Test Cases ***
 [S05-001]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithVISA
     [Tags]    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
-    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -18,7 +17,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoCreditCard}
     Select From List    ${ddlCardType}    VISA
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Input Web Text    ${txtDestinationNumber}    ${3PE_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
@@ -29,9 +28,8 @@ Resource          ../Config/LocalConfig.txt
 
 [S05-002]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithMASTER
     [Tags]    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
-    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -40,7 +38,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoCreditCard}
     Select From List    ${ddlCardType}    MASTER
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Input Web Text    ${txtDestinationNumber}    ${3PE_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
@@ -51,9 +49,8 @@ Resource          ../Config/LocalConfig.txt
 
 [S05-003]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithDebit
     [Tags]    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
-    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -61,7 +58,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoDebitCard}
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Input Web Text    ${txtDestinationNumber}    ${3PE_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlIpayBangkokBank}
@@ -82,7 +79,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoAISTopUp}
-    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citation}
+    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citizen}
     Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
@@ -106,9 +103,8 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-191]eServiceWeb-PO-TopUp2AISOne2Call-NotSelectCard
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
-    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -116,7 +112,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoCreditCard}
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Input Web Text    ${txtDestinationNumber}    ${3PE_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Element Text Should Be    ${popupMessage}    ${MessageNotSelectCardType}
@@ -125,9 +121,8 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-192]eServiceWeb-PO-TopUp2AISOne2Call-InputCharToIDCitation
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
-    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -136,7 +131,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoAISTopUp}
     Input Web Text    ${txtIDCitation}    a
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Input Web Text    ${txtDestinationNumber}    ${3PE_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputCharToIDCitation}
@@ -145,9 +140,8 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-193]eServiceWeb-PO-TopUp2AISOne2Call-InputNotCompleteIDCitation
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE_1=include
-    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -156,7 +150,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoAISTopUp}
     Input Web Text    ${txtIDCitation}    123456
-    Input Web Text    ${txtDestinationNumber}    ${virtual_3PE_1_Number}
+    Input Web Text    ${txtDestinationNumber}    ${3PE_Number}
     Wait Until Keyword Succeeds    10 s    1 s    Select From List    ${ddlTopUpAmount}    100
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputNotCompleteIDCitation}
@@ -165,7 +159,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-194]eServiceWeb-PO-TopUp2AISOne2Call-InputCharToDesNumber
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -181,7 +175,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-195]eServiceWeb-PO-TopUp2AISOne2Call-InputNotCompleteDesNumber
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -198,7 +192,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-196]eServiceWeb-PO-TopUp2AISOne2Call-InputNotAISNumberToDesNumber
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -207,7 +201,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoAISTopUp}
-    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citation}
+    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citizen}
     Input Web Text    ${txtDestinationNumber}    0944835961
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputNotAISNumber}
@@ -216,7 +210,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F05-197]eServiceWeb-PO-TopUp2AISOne2Call-InputAISPostpaidNumber
     [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -225,7 +219,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Payment/Topup    TopUptoAISOne2Call
     Click Web Element    ${rdoAISTopUp}
-    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citation}
+    Input Web Text    ${txtIDCitation}    ${virtual_3PO_1_ID_Citizen}
     Input Web Text    ${txtDestinationNumber}    0613851339
     Click Web Element    ${btnOK}
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbAlertMessage}    ${MessageInputAISPostpaidNumber}
