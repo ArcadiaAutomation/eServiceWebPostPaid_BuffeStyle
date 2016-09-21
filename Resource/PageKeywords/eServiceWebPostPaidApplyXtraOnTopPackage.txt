@@ -35,7 +35,7 @@ Input Friend Number
     Input Web Text    ${txtFriendNumber1}    ${FriendNumber}
 
 Manage Package Immediately
-    Click Web Element    ${chkManagePackImmediately}
+    Click Web Element    ${rdoImmediately}
 
 Confirm Select Effective Date
     Click Web Element    ${btnChangePackConfirm2}
@@ -44,9 +44,8 @@ Confirm OnTop Package Register
     Click Web Element    ${btnChangePackConfirm3}
 
 Open WebSite Eservice By Location
-    [Arguments]    ${runLocation}
-    Run Keyword If    '${runLocation}'=='Production'    Open Browser On Production
-    ...    ELSE IF    '${runLocation}'=='TestSite'    Open Browser On Test Site
+    Run Keyword If    '${ar_Location}'=='Production'    Open Browser On Production
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Open Browser On Test Site
 
 Open Browser On Production
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -55,15 +54,14 @@ Open Browser On Test Site
     Open Web Browser    ${eServiceURLTestSite}    gc    ${lo_IPSelenium}
 
 Login WebSite Eservice By Location
-    [Arguments]    ${location}
-    Run Keyword If    '${location}'=='Production'    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    Run Keyword If    '${ar_Location}'=='Production'    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
     ...    ${virtual_3PO_1_Number}
-    ...    ELSE IF    '${location}'=='TestSite'    Login On Test Site    ${virtual_3PO_1_TestSiteNumber}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login On Test Site    ${virtual_3PO_1_TestSiteNumber}
 
 Register OnTop XtraTalk Call 3 NumberAIS Package
-    [Arguments]    ${location}    ${friendNumber}
-    Run Keyword If    '${location}'=='Production'    Select OnTop XtraTalk Call 3 NumberAIS Package On Production    ${friendNumber}
-    ...    ELSE IF    '${location}'=='TestSite'    Select OnTop XtraTalk Call 3 NumberAIS Package On TestSite    ${friendNumber}
+    [Arguments]    ${friendNumber}
+    Run Keyword If    '${ar_Location}'=='Production'    Select OnTop XtraTalk Call 3 NumberAIS Package On Production    ${friendNumber}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Select OnTop XtraTalk Call 3 NumberAIS Package On TestSite    ${friendNumber}
 
 Select OnTop XtraTalk Call 3 NumberAIS Package On Production
     [Arguments]    ${friendNumber}
@@ -86,3 +84,13 @@ Login On Test Site
     Run Keyword If    '${IsPrimaryVisible}'=='True'    Click Web Element    ${btnPrimary}
     Input Web Text    ${txtInputOTP}    7777
     Click Web Element    ${btnOKOTP}
+
+Register OnTop XtraNet Package
+    Click Web Element    ${chkSelectXtraNetPackage4G488Bath}
+
+Select XtraTalk Monthly Package Special Number
+    Click Web Element    ${chk100BCall50stSpecialNumber}
+
+Input Special Number
+    [Arguments]    ${Number}
+    Input Web Text    ${txtSpecialNumber1}    ${Number}

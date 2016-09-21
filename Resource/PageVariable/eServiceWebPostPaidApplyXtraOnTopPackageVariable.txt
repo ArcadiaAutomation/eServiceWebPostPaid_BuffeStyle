@@ -1,2 +1,3 @@
 *** Variables ***
 ${DtacNumber}     0944835961
+${AISNumber}      0932292294

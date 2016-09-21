@@ -24,14 +24,14 @@ Resource          ../Config/LocalConfig.txt
     [Tags]    Fail    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open WebSite Eservice By Location    ${ar_Location}    #Parameter='Production' Or 'TestSite'
+    Open WebSite Eservice By Location    #Parameter='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login WebSite Eservice By Location    ${ar_Location}
+    Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Register OnTop XtraTalk Call 3 NumberAIS Package    ${ar_Location}    0613851134    #location and friend number
+    Register OnTop XtraTalk Call 3 NumberAIS Package    0613851134    #location and friend number
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register
@@ -43,7 +43,7 @@ Resource          ../Config/LocalConfig.txt
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Select Menu    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Register OnTop XtraTalk Call 3 NumberAIS Package    ${ar_Location}    0613851235
+    Register OnTop XtraTalk Call 3 NumberAIS Package    0613851235
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register
@@ -58,7 +58,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-015]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
-    [Tags]    fail
+    [Tags]    Fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -79,7 +79,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-016]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraTalkPackageFriendNumberLessThan10Digit
-    [Tags]    fail
+    [Tags]    Fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -115,21 +115,40 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-018]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisteDuplicaterXtraNetPackage
-    [Tags]    fail
+    [Tags]    Fail    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Open WebSite Eservice By Location    #Parameter='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
-    Select From Web List By Value    ${ddlXtraPack}    1
-    Click Web Element    ${chkSelectXtraNetPackage4G488Bath}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Select Package    ${XtraNet}    ${InternetMonthly}
+    Register OnTop XtraNet Package
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Select Menu    OnTopPackage
+    Select Package    ${XtraNet}    ${InternetMonthly}
+    Register OnTop XtraNet Package
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Web Element Text Should Be    ${lblSelectPackageResult}    ${MessageRegisterDuplicateXtraNetPackage}
+    Cancel On-Top Package    ${4GInternet488}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*    #เนื่องจากยังไม่มีข้อความภาษาอังกฤษ
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
@@ -148,12 +167,12 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Click Web Element    ${chk100BCall50stSpecialNumber}
-    Input Web Text    ${txtSpecialNumber1}    ${lo_AIS_Number}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoImmediately}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Select XtraTalk Monthly Package Special Number
+    Input Special Number    ${AISNumber}
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -182,10 +201,10 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
     Click Web Element    ${chk100BFreeAISCallStaSun}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoImmediately}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -211,10 +230,10 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MaoMao}
     Click Web Element    ${chkMaoMaoMidnightSaleOnTopPackage5B}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoImmediately}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -237,10 +256,10 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraNet}    ${InternetMonthly}
     Click Web Element    ${chk4GInternetOnTopPackage488B}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoImmediately}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -267,10 +286,10 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraNet}    ${Wifi}
     Click Web Element    ${chkAisSuperWifi20GB}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoImmediately}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_parallel_timeout}
@@ -297,10 +316,10 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraPack}    ${MaoMaoCombo}
     Click Web Element    ${chkMaoMaoComboOnTopPackage55B}
-    Click Web Element    ${btnChangePackConfirm}
-    Click Web Element    ${rdoImmediately}
-    Click Web Element    ${btnChangePackConfirm2}
-    Click Web Element    ${btnChangePackConfirm3}
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
@@ -309,30 +328,3 @@ Resource          ../Config/LocalConfig.txt
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
-test
-    Open Web Browser    ${eServiceURLTestSite}    gc    ${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Input Web Text    ${txtMobileNumber}    0937019815
-    Click Web Element    ${btnGetOTP}
-    Sleep    2
-    ${IsPrimaryVisible}=    Run Keyword And Return Status    Selenium2Library.Element Should Be Visible    ${btnPrimary}
-    Log To Console    PrimaryButton:${IsPrimaryVisible}
-    Run Keyword If    '${IsPrimaryVisible}'=='True'    Click Web Element    ${btnPrimary}
-    Input Web Text    ${txtInputOTP}    7777
-    Click Web Element    ${btnOKOTP}
-
-[F03-018]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisteDuplicaterXtraNetPackage(TestSite)
-    [Tags]    fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open WebSite Eservice By Location    ${ar_Location}    #Parameter='Production' Or 'TestSite'
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login WebSite Eservice By Location    ${ar_Location}
-    Select Menu    Package    OnTopPackage
-    Select Package    ${XtraNet}    ${InternetMonthly}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
