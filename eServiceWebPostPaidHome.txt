@@ -87,7 +87,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-006]eServiceWeb-PO-Home-SelectAISCloud
-    [Tags]    notregsitercloudais    debug
+    [Tags]    notregsitercloudais
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    AisCloudUnregistered=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -104,7 +104,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S02-007]eServiceWeb-PO-Home-CloudStorage
-    [Tags]    debug    regsitercloudais
+    [Tags]    regsitercloudais
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    AisCloudRegistered=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}

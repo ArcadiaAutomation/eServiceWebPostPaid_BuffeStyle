@@ -105,7 +105,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidPerferAndCancelSMS.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-201]eServiceWeb-PO-Service-CheckSMSsubscription
-    [Tags]    debug    notsubscriptions
+    [Tags]    notsubscriptions
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    notSMSSubscriptions=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
