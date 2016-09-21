@@ -11,13 +11,6 @@ Check Detail CurrentPackage
     Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
     Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
 
-Check Detail NextPackage
-    @{checkPackage[0]}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCheckNextPackage}    2
-    @{checkPackage[1]}    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCheckNextOnTopPackage}    2
-    : FOR    ${var}    IN RANGE    2
-    \    Run Keyword If    '@{checkPackage}[${var}]'=='True'    Exit For Loop
-    \    \    \    //*[@id="panelCurrentPack0"]
-
 Select Package
     [Arguments]    ${MainPackage}    ${SubPackage}
     Wait Until Element Is Visible    ${ddlMainPackage}
@@ -25,18 +18,38 @@ Select Package
     Wait Until Element Is Visible    ${ddlSubPackage}
     Selenium2Library.Select From List    ${ddlSubPackage}    ${SubPackage}
 
-Get Date And Time
+Verify SMS Add Date
+    ${Date}=    Get Date
+    @{MessageExpect}    Create List    ${smsCheckAISWIFI1Hour}\ ${Date}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_sms_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    2
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${MessageExpect}
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+
+Check Package
+    [Arguments]    ${txtCheckPackage}
+    @{Usage}    Get Webelements    ${txtAllPackage}
+    ${UsageExp}=    Set Variable    ${txtCheckPackage}
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${UsageName}    Get Text    @{Usage}[${index}]
+    \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
+    \    Log    ${UsageName}
+
+Get Date
     ${date}    Get Current Date    result_format=%d/%m/%Y
     Log    ${date}
-    ${Hour}    Get Current Date    result_format=%H
-    Log    ${Hour}
-    ${Minute}    Get Current Date    result_format=%M
-    Log    ${Minute}
-    Log    Time TH
-    ${date}    Get Current Date    result_format=%Y/%m/%d
-    ${dateTime}    Convert Date    ${date}    datetime
-    Comment    ${yearTH}    Evaluate    ${dateTime.year}+543
-    ${yearTH}    Evaluate    ${dateTime.year}
-    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
-    Log    ${dateTomorrow}${yearTH}
-    Comment     19/09/2016 17:29.
+    Comment    Log    Time TH
+    Comment    ${date}    Get Current Date    result_format=%Y/%m/%d
+    Comment    ${dateTime}    Convert Date    ${date}    datetime
+    Comment    Comment    ${yearTH}    Evaluate    ${dateTime.year}+543
+    Comment    ${yearTH}    Evaluate    ${dateTime.year}
+    Comment    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
+    Comment    Log    ${dateTomorrow}${yearTH}
+    Comment    Comment    19/09/2016 17:29.
+    [Return]    ${date}
+
+Get Time
+    ${Time}    Get Current Date    result_format=%H:%M.
+    Log    ${Time}
+    [Return]    ${time}

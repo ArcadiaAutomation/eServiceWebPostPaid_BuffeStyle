@@ -4,7 +4,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
 
 *** Test Cases ***
 [S02-003]eServiceWeb-PO-Home-VerifyPage
-    [Tags]    notregsitercloudais4Gnot
+    [Tags]    notregsitercloudais
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    AisCloudUnregistered=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -79,7 +79,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidHome.txt
     Check Element Usage MMS
     Click Web Element    ${btnDetailCurrentUsage}
     Web Element Text Should Be    ${txtCheckCurrentCharge}    ${txtCurrentCharge}
-    Input Web Text    ${txtInputIDCard}    ${virtual_3PO_1_CitizenID}
+    Input Web Text    ${txtInputIDCard}    ${virtual_3PO_1_ID_Citizen}
     Click Web Element    ${btnConfirmIDCard}
     Check Element In Detail IDCard
     Click Web Element    ${btnPreviousBill}

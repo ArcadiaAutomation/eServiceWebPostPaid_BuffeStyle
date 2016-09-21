@@ -21,3 +21,6 @@ ${rdoAISWIFI1Hour}    xpath=//*[@id="lbPackage_P13075531"]
 ${btnNextPackage}    xpath=//*[@id="btnCurrentPackNextPost"]
 ${txtCheckNextPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
 ${btnCurrentPackage}    xpath=//*[@id="btnCurrentPack"]
+${txtCheckNamePackage}    xpath=//*[@id="txtSelectedPackageStepFourName"]
+${txtAllPackage}    xpath=//*[@class="ng-binding" and @ng-class="{'font_color_green6':auth.groupType == 'PREPAID'}"]
+${txtCheckPrivilege}    xpath=//*[@id="txtPrivilegeStatusHead"]

@@ -14,6 +14,6 @@ ${txtSelectOnTopSubPackageMaoMao}    เหมา เหมา
 ${smsCheckMaoMaoMidNight5B}    แพ็กเสริมเหมา เหมา Midnight Sale ค่าบริการ 5บาท โทรฟรีเบอร์ AIS 00:00-11:00น. ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม13/09/2016 00:00 ถึง 13/09/2016 23:59
 ${txtSelectOnTopPackageXtraPack}    แพ็กเสริมคุยและเล่นเน็ต
 ${txtSelectOnTopSubPackageMaoMaCombo}    เหมา เหมา คอมโบ
-${txtSelectOnTopPackageXtraNet}    Xtra Net
+${txtSelectOnTopPackageXtraNet}    แพ็กเสริมเล่นเน็ต
 ${txtSelectOnTopSubPackageWifi}    Wifi
-${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 13/09/2016 11:28
+${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม
