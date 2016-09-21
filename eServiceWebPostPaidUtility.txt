@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidUtility.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[F05-050]eServiceWeb-PO-Utility-NotRegisterMpay
+[F05-050]eServiceWeb-PO-Utility-NotRegistermPay
     [Documentation]    Pending
     [Tags]    fail    Utility    UnregistermPay
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    UnregistermPay=include
