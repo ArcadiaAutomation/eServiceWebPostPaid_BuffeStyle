@@ -96,7 +96,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Clear View All Call Filter
@@ -115,7 +115,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    InternetAndValueAddedService
@@ -135,7 +135,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    MySuperPlan
@@ -155,7 +155,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    GraphTop5
@@ -174,14 +174,14 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Verify Usage Detail History Page
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-041]eServiceWeb-PO-UsageDetailHistory-SelectOneSpecificViewCallDetailCondition
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -190,7 +190,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Billing Cycle From Previous Month    2
     Select Usage Detail Tab    CallDetail
@@ -208,7 +208,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-042]eServiceWeb-PO-UsageDetailHistory-SelectMoreThanOneSpecificViewCallDetailCondition
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -217,7 +217,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Billing Cycle From Previous Month    2
     Select Usage Detail Tab    CallDetail
@@ -236,7 +236,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-043]eServiceWeb-PO-UsageDetailHistory-SelectAllSpecificViewCallDetailCondition
     [Documentation]    Select Call Detail View By Service Date=>>> ต้องเลือกวันที่เริ่มต้นที่ใช้บริการตเองไม่น้อยกว่าวันที่เริ่มใช้บริการในรอบบิลที่เลือก
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -245,7 +245,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Billing Cycle From Previous Month    2
     Select Usage Detail Tab    CallDetail
@@ -261,7 +261,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-044]eServiceWeb-PO-UsageDetailHistory-SelectViewAllCallDetail
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -270,7 +270,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Billing Cycle From Previous Month    2
     Select Usage Detail Tab    CallDetail
@@ -289,7 +289,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    InternetAndValueAddedService
@@ -310,7 +310,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    InternetAndValueAddedService
@@ -337,7 +337,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    InternetAndValueAddedService
@@ -362,7 +362,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    InternetAndValueAddedService
@@ -372,7 +372,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-050]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithHighestCallingTransactionInGraphTop5Usage
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -381,7 +381,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    GraphTop5
@@ -392,7 +392,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-051]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithLongestCallingTransactionInGraphTop5Usage
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -401,7 +401,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    GraphTop5
@@ -412,7 +412,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S04-052]eServiceWeb-PO-UsageDetailHistory-SelectAllConditionInGraphTop5Usage
-    [Tags]    ReqCallHistory    Success
+    [Tags]    Success    CallHistory
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -421,7 +421,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Select Bill Cycle
     Select Usage Detail Tab    GraphTop5
