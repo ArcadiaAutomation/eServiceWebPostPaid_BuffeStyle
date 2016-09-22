@@ -168,7 +168,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtSpell1(1)}    อา
     Input Web Text    ${txtSpell1(2)}    ป้
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
+    Wait Web Until Page Contains Element    ${txtSummaryMessage}
     Element Text Should Be    ${txtSummaryMessage}    ${MessageIncorrectSpell}
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
