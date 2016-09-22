@@ -4,23 +4,35 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [S03-021]eServiceWeb-PO-ChangeMainPackage-DefaultPackage-Temp
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    ChangeMainPackage
-    Select Package    Xtra Talk    Basic Package
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageiSWOP}    ${txtSelectSubPackageiSWOPnonStop}
     Click Web Element    ${rdo850Voice1150Mins}
     Click Web Element    ${btnConfirmPackage}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangMAinPackage}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
+[S03-022]eServiceWeb-PO-ChangeMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageiSWOP}    ${txtSelectSubPackageiSWOPnonStop}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
 [S03-023]eServiceWeb-PO-ChangeMainPackage-iSmart
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
