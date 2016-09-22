@@ -27,3 +27,4 @@ ${txtInternetCharge}    ค่า Internet
 ${txtAllService}    รวมค่าใช้บริการทั้งสิ้น
 ${txtViewAISCloud}    ดูข้อมูล
 ${txtRegisterCloud}    สมัครฟรี
+${txtCloudStorage4G}    พื้นที่ใช้งาน Cloud+ (สิทธิพิเศษ CloudPlus_4G_100GB)

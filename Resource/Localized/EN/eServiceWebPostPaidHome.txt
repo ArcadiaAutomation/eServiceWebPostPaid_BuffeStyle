@@ -27,3 +27,4 @@ ${txtInternetCharge}    Internet Charges
 ${txtAllService}    Total Current Charge
 ${txtViewAISCloud}    View
 ${txtRegisterCloud}    Register free
+${txtCloudStorage4G}    Your Cloud+ storage (CloudPlus_4G_100GB)

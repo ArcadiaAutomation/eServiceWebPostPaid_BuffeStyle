@@ -19,8 +19,10 @@ Select Package
     Selenium2Library.Select From List    ${ddlSubPackage}    ${SubPackage}
 
 Verify SMS Add Date
-    ${Date}=    Get Date
-    @{MessageExpect}    Create List    ${smsCheckAISWIFI1Hour}\ ${Date}
+    [Arguments]    ${smsCheck}
+    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
+    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
+    @{MessageExpect}    Create List    ${smsCheck} ${formatDate} ${formatTime}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    2    ${lo_sms_timeout}
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    2
@@ -31,14 +33,12 @@ Check Package
     [Arguments]    ${txtCheckPackage}
     @{Usage}    Get Webelements    ${txtAllPackage}
     ${UsageExp}=    Set Variable    ${txtCheckPackage}
-    :FOR    ${index}    IN RANGE    0    20
+    : FOR    ${index}    IN RANGE    0    20
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
     \    Log    ${UsageName}
 
 Get Date
-    ${date}    Get Current Date    result_format=%d/%m/%Y
-    Log    ${date}
     Comment    Log    Time TH
     Comment    ${date}    Get Current Date    result_format=%Y/%m/%d
     Comment    ${dateTime}    Convert Date    ${date}    datetime
@@ -47,6 +47,8 @@ Get Date
     Comment    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
     Comment    Log    ${dateTomorrow}${yearTH}
     Comment    Comment    19/09/2016 17:29.
+    ${date}    Get Current Date    result_format=%d/%m/%Y
+    Log    ${date}
     [Return]    ${date}
 
 Get Time

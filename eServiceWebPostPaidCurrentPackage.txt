@@ -52,17 +52,15 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${rdo399NET2GB}
     Click Web Element    ${btnConfirmPackage}
     Click Web Element    ${btnPackageNextBill}
-    Click Web Element    ${btnConfirmDialog}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangePackage}
-    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    3
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add Date    ${smsCheck399NET2GB}
     Click Web Element    ${btnBackToCurrentPackage}
-    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
+    Check Detail CurrentPackage
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -86,14 +84,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnConfirmDialog}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangePackage}
-    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    3
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add Date    ${smsCheck399NET2GB}
     Click Web Element    ${btnBackToCurrentPackage}
-    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
+    Check Detail CurrentPackage
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -117,14 +114,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnConfirmDialog}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangePackage}
-    @{MessageExpect}    Create List    ${smsCheck399NET2GB}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    3
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${smsCheck399NET2GB}.*
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add Date    ${smsCheck399NET2GB}
     Click Web Element    ${btnBackToCurrentPackage}
-    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
+    Check Detail CurrentPackage
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -143,16 +139,19 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Select Package    ${txtSelectOnTopPackageXtraTalk}    ${txtSelectOnTopSubPackageMaoMao}
     Click Web Element    ${rdoMaoMaoMidNight5B}
     Click Web Element    ${btnConfirmPackage}
-    Click Web Element    ${btnPackageNextDay}
+    Click Web Element    ${btnPackageNextBill}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangePackage}
-    @{MessageExpect}    Create List    ${smsCheckMaoMaoMidNight5B}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    3    AIS    ${MessageExpect}    150
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add Date    ${smsCheckMaoMaoMidNight5B}
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
     Close Browser
+    Comment
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-015]eServiceWeb-PO-CurrentPackage-ChangeOnTopPackage-MaoMaoCombo
@@ -173,12 +172,14 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Click Web Element    ${btnPackageNextDay}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangePackage}
-    @{MessageExpect}    Create List    ${smsCheckMaoMaoCombo55B}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    3    AIS    ${MessageExpect}    150
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add Date    ${smsCheckMaoMaoCombo55B}
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
-    Check Detail NextPackage
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -203,14 +204,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date
+    Verify SMS Add Date    ${smsCheckAISWIFI1Hour}
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
     Close Browser
-    Comment    Should Match Regexp    ${txtCheckCurrentPackage}    ${txtCurrentPackage}.*
-    Comment    Click Web Element    ${txtCheckMainPackage}
-    Comment    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 test
@@ -221,14 +219,26 @@ test
     Comment    ${Time}    Get Current Date    result_format=%H:%M.
     Comment    Log    ${Time}
     Comment    Log    ${date}\ ${time}
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Wait Until Element Is Visible    ${txtCheckPrivilege}
-    ${txt}    Get Text    ${txtCheckPrivilege}
-    Log    ${txt}
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Comment    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Comment    Maximize Browser Window
+    Comment    Select Frame    ${fraMainIframe}
+    Comment    Click Web Element    ${btnLanguage}
+    Comment    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Comment    Wait Until Element Is Visible    ${txtCheckPrivilege}
+    Comment    ${txt}    Get Text    ${txtCheckPrivilege}
+    Comment    Log    ${txt}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+test Regular Expression
+    Comment    ${txtExpect}=    Set Variable    เทสข้อความ
+    Comment    ${txtExp}=    Set Variable    ครั้ง
+    Comment    ${txtCheck}=    Set Variable    เทสข้อความ 123 ครั้ง
+    Comment    Should Match Regexp    ${txtCheck}    ${txtExpect} \\d\\d\\d ${txtExp}
+    Comment    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
+    Comment    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
+    Comment    ${MessageExpect}=    Set Variable    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
+    Comment    ${smsCheck}=    SetVariable    AIS WiFi ontop package 1 hour, 9 Baht. Get WiFi user/password press*388#. Start 22/09/2559 18:00.
+    Comment    Should Match Regexp    ${smsCheck}    ${MessageExpect} ${formatDate} ${formatTime}
+    [Teardown]
