@@ -5,7 +5,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 *** Test Cases ***
 [F04-019]eServiceWeb-PO-YourCurrentCharge-InputCIDLessThan13Digit
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -21,7 +21,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 
 [F04-020]eServiceWeb-PO-YourCurrentCharge-InputWrongCID
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -37,7 +37,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 
 [F04-021]eServiceWeb-PO-YourCurrentCharge-InputCIDWithCharacter
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -53,7 +53,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 
 [F04-022]eServiceWeb-PO-YourCurrentCharge-NotInputCID
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -68,7 +68,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 
 [F04-023]eServiceWeb-PO-YourCurrentCharge-InputWrongCID3Time
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -87,7 +87,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 
 [S04-037]eServiceWeb-PO-YourCurrentCharge-VerifyYourCurrentChargesPage
     [Tags]    Success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -95,7 +95,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    YourCurrentCharges
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Verify Your Current Charge Page
     Close Browser
@@ -103,7 +103,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
 
 [S04-038]eServiceWeb-PO-YourCurrentCharge-VerifyYourPreviosChargePage
     [Tags]    Success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -111,7 +111,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidYourCurrentCharges.tx
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YouBalanceAndCreditLimit    YourCurrentCharges
-    Input Citizen ID    ${virtual_3PO_1_CitizenID}
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
     Confirm Citizen ID
     Click Web Element    ${btnPreviosBillCycle}
     Verify Previous Billing Cycle
