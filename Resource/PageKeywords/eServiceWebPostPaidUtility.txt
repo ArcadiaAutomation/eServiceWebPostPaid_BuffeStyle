@@ -4,3 +4,14 @@ Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidUtilityMessage.txt
 Resource          eServiceWebPostPaidInsurance.txt
+
+*** Keywords ***
+Input OTP
+    [Arguments]    ${IPAppium}    ${SN}    ${PlatfromName}    ${PlatfromVersion}
+    Open SMS App    ${IPAppium}    ${PlatfromName}    ${PlatfromVersion}    ${SN}
+    Wait SMS    ${PlatfromName}    1    ${lo_sms_timeout}    mPAY
+    ${messages}=    Read SMS    ${PlatfromName}    mPAY    1
+    Log    @{messages}[0]
+    @{OTP}=    Get Regexp Matches    @{messages}[0]    \\d\\d\\d\\d\\d
+    Input Web Text    ${txtRegisterOTP}    @{OTP}[0]
+    Close SMS App    ${PlatfromName}    ${SN}
