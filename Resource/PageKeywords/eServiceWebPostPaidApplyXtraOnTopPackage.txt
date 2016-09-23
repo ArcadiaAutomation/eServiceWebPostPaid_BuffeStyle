@@ -86,7 +86,7 @@ Login On Test Site
     Click Web Element    ${btnOKOTP}
 
 Register OnTop XtraNet 4G 488B Package
-    Run Keyword If     '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
     ...    ELSE    Click Web Element    ${chkInternetPackageTestSite}
 
 Select XtraTalk Monthly Package Special Number
@@ -103,3 +103,12 @@ Verify Register OnTop SMS
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${ExpectSMS}    #ใช้ regular .* เนื่องจากได้รับข้อความเป็นภาษาไทย
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+
+Check Active Package
+    [Arguments]    ${ExpectPackage}
+    @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
+    Comment    ${UsageExp}=    Set Variable    ${txtCheckPackage}
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${ActivePackage}    Get Text    @{AllActivePackage}[${index}]
+    \    Run Keyword If    '${ActivePackage}'=='${ExpectPackage}'    Exit For Loop
+    \    Log To Console    Package Active : ${ActivePackage}
