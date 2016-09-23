@@ -1,9 +1,9 @@
 *** Settings ***
-Resource          ../PageRepository/eServiceWebPostPaidCurrentPackageRepository.txt
+Resource          ../PageRepository/eServiceWebPostPaidYourCurrentPackageRepository.txt
 Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
-Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCurrentPackage.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourCurrentPackage.txt
 Library           ../../../AisRobotBuffet/Library/General/DateTime.py
 
 *** Keywords ***
@@ -20,23 +20,25 @@ Select Package
 
 Verify SMS Add format Date Time
     [Arguments]    ${smsCheck}    ${totalSMS}
-    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
-    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
-    @{MessageExpect}    Create List    ${smsCheck} ${formatDate} ${formatTime}
+    Comment    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
+    Comment    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
+    Comment    @{MessageExpect}    Create List    ${smsCheck} ${formatDate} ${formatTime}
+    @{MessageExpect}    Create List    ${smsCheck}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${totalSMS}    ${lo_sms_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    ${totalSMS}
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${MessageExpect}
+    @{ExpectPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    ${totalSMS}
+    Should Match Regexp    @{ExpectPackageMsg}[0]    @{MessageExpect}[0]
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
 
 Check Package
     [Arguments]    ${txtCheckPackage}
     @{Usage}    Get Webelements    ${txtAllPackage}
+    ${rangeElement}    Get Length    ${Usage}
     ${UsageExp}=    Set Variable    ${txtCheckPackage}
-    : FOR    ${index}    IN RANGE    0    20
+    : FOR    ${index}    IN RANGE    0    ${rangeElement}
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
-    \    Log    ${UsageName}
+    \    Comment    Log    ${UsageName}
 
 Get Date
     Comment    Log    Time TH

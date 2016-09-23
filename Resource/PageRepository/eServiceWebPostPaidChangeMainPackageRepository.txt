@@ -49,3 +49,4 @@ ${smsCheckKuiSaJai40stPackage}    .*
 ${btnBackToCurrentPackage}    xpath=//*[@id="currentPackage"]/div
 ${btnNextPackage}    xpath=//*[@id="btnCurrentPackNextPost"]
 ${txtCheckNextPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
+${smsCheck399NET2GB}    .*

@@ -21,15 +21,16 @@ Verify SMS Add format Date Time
     @{MessageExpect}    Create List    ${smsCheck}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${totalSMS}    ${lo_sms_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    ${totalSMS}
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    @{MessageExpect}[0]
+    @{ExpectPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    ${totalSMS}
+    Should Match Regexp    @{ExpectPackageMsg}[0]    @{MessageExpect}[0]
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
 
 Check Package
     [Arguments]    ${txtCheckPackage}
     @{Usage}    Get Webelements    ${txtAllPackage}
+    ${rangeElement}    Get Length    ${Usage}
     ${UsageExp}=    Set Variable    ${txtCheckPackage}
-    :FOR    ${index}    IN RANGE    0    20
-    \    ${UsageName}    Get Text    @{Usage}[${index}]
-    \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
-    \    Log    ${UsageName}
+    :FOR    ${index}    IN RANGE    0    ${rangeElement}
+    ${UsageName}    Get Text    @{Usage}[${index}]
+    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
+    Comment    Log    ${UsageName}
