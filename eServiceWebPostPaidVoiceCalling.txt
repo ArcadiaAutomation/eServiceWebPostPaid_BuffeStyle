@@ -220,7 +220,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    VoiceAdd/Edit
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageNotRegister}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -301,7 +301,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     Click Web Element    ${btnEditDataConfirm}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     Select Menu    VoiceAdd/Edit
     Click Web Element    ${btnEditData}
     Input Web Text    ${txtInputName1}    แตงโม
@@ -312,9 +312,9 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnEditDataConfirm}
     Click Web Element    ${btnBack}
     Wait Web Until Page Contains Element    ${ldlDisplayName1}
-    Element Text Should Be    ${ldlDisplayName1}    แตงโม
-    Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
-    Element Text Should Be    ${ldlDisplayNumber1}    0933333333
+    Web Element Text Should Be    ${ldlDisplayName1}    แตงโม
+    Web Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
+    Web Element Text Should Be    ${ldlDisplayNumber1}    0922222222
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -341,7 +341,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     Click Web Element    ${btnEditDataConfirm}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageSaveDataComplete}
     Select Menu    VoiceAdd/Edit
     Click Web Element    ${btnEditData}
     Input Web Text    ${txtInputName1}    แตงโม
@@ -356,12 +356,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnEditDataConfirm}
     Click Web Element    ${btnBack}
     Wait Web Until Page Contains Element    ${ldlDisplayName1}
-    Element Text Should Be    ${ldlDisplayName1}    แตงโม
-    Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
-    Element Text Should Be    ${ldlDisplayNumber1}    0955555555
-    Element Text Should Be    ${ldlDisplayName2}    ไวไว
-    Element Text Should Be    ${ldlDisplaySpell2}    ไว-ไว
-    Element Text Should Be    ${ldlDisplayNumber2}    0966666666
+    Web Element Text Should Be    ${ldlDisplayName1}    แตงโม
+    Web Element Text Should Be    ${ldlDisplaySpell1}    แตง-โม
+    Web Element Text Should Be    ${ldlDisplayNumber1}    0933333333
+    Web Element Text Should Be    ${ldlDisplayName2}    ไวไว
+    Web Element Text Should Be    ${ldlDisplaySpell2}    ไว-ไว
+    Web Element Text Should Be    ${ldlDisplayNumber2}    0944444444
     [Teardown]    Run Keywords    Cancel Voice    ${TotalSMS}
     ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -380,7 +380,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${btnCancelConfrim}
     Click Web Element    ${btnCancelConfrim}
     Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Should Contain    ${txtSummaryMessage}    ${MessageCancelComplete}
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageCancelComplete}
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Log    ${TotalSMS}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${TotalSMS}    120
