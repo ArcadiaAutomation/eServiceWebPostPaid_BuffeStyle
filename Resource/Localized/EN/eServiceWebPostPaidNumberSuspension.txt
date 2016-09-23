@@ -5,5 +5,5 @@ ${notInputDateReconnect}    Please select reconnect date.
 ${inputDateSuspensionYesterday}    Please select suspend date greather than today.
 ${inputDateReconnectYesterday}    Please select suspend date greather than today.
 ${txtConfirmSuspension}    Your mobile number will be temporary suspended within 30 minutes.
-${txtConfirmSuspensionNextDay}    ระบบได้กำหนดวันระงับบริการล่วงหน้าเรียบร้อยแล้ว
+${txtConfirmSuspensionNextDay}    Your service suspension date has been successfully set.
 ${txtCheckBackSuspension}    Your request to suspend the service cannot be proceeded because your mobile number has already been suspended.

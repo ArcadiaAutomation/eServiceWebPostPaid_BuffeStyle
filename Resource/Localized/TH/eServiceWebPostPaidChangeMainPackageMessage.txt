@@ -3,3 +3,10 @@ ${txtSelectPackageXtraPack}    แพ็กเกจคุยและเล่�
 ${txtSelectSubPackageiSmart}    iSmart
 ${smsCheckiSmartPackage299Baht}    แพ็กเกจ iSmart 599 บาท. AIS WiFi/Internet (ความเร็วสูงสุดรวม1.5GB จากนั้นใช้ความเร็วสูงสุด128kbps) เริ่มใช้ได้ตั้งแต่ 08/10/2016 00:00 ถึง 07/10/2017 23:59 ขอบคุณค่ะ
 ${smsCancelPackage}    คุณได้ยกเลิกแพ็กเกจ
+${txtSelectPackageiSWOP}    iSWOP NON-Stop package
+${txtSelectSubPackageSerenade}    Serenade Pack
+${txtSelectSubPackageOther}    แพ็กเกจอื่นๆ
+${txtSelectPackageXtraNet}    แพ็กเกจเล่นเน็ต
+${txtSelectSubPackageNetSIM}    Net SIM
+${txtSelectPackageXtraTalk}    แพ็กเกจเน้นคุย
+${txtSelectSubPackageBasic}    แพ็กเริ่มต้น

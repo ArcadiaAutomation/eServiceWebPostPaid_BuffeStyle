@@ -35,3 +35,17 @@ ${rdoSerenadePack2999}    xpath=//*[@id="lbPackage_P16032385"]
 ${rdo3G2100SmartPhonePackage339Baht}    xpath=//*[@id="lbPackage_P13065021"]
 ${rdoiSecond345Package}    xpath=//*[@id="lbPackage_P15022013"]
 ${rdoKuiSaJai40stPackage}    xpath=//*[@id="lbPackage_P13054598"]
+${txtCheckNamePackage}    xpath=//*[@id="txtSelectedPackageStepFourName"]
+${btnConfirmChangePackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
+${btnPackageNextBill}    xpath=//*[@id="lbChkManagePackNextBilling"]
+${btnPackageNextDay}    xpath=//*[@id="lbChkManagePackNextDay"]
+${btnPackageImmediately}    xpath=//*[@id="lbChkManagePackImmediately"]
+${smsCheckSerenadePack899}    .*
+${smsCheckSmartPhonePackage399}    .*
+${rdoNet14GBAISsuperWiFi1099}    //*[@id="lbPackage_P15110386"]
+${smsCheckNet14GBAISsuperWiFi1099}    .*
+${smsCheck1000Voice1380Mins}    .*
+${smsCheckKuiSaJai40stPackage}    .*
+${btnBackToCurrentPackage}    xpath=//*[@id="currentPackage"]/div
+${btnNextPackage}    xpath=//*[@id="btnCurrentPackNextPost"]
+${txtCheckNextPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span

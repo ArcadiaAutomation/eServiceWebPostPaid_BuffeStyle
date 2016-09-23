@@ -57,7 +57,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date    ${smsCheck399NET2GB}
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -87,7 +87,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date    ${smsCheck399NET2GB}
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -117,7 +117,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date    ${smsCheck399NET2GB}
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -145,7 +145,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date    ${smsCheckMaoMaoMidNight5B}
+    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -175,7 +175,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date    ${smsCheckMaoMaoCombo55B}
+    Verify SMS Add format Date Time    ${smsCheckMaoMaoCombo55B}    1
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -204,7 +204,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCurrentPackage.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add Date    ${smsCheckAISWIFI1Hour}
+    Verify SMS Add format Date Time    ${smsCheckAISWIFI1Hour}    1
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
