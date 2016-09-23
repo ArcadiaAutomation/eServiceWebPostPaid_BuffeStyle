@@ -12,3 +12,24 @@ Select Package
     Selenium2Library.Select From List    ${ddlMainPackage}    ${MainPackage}
     Wait Until Element Is Visible    ${ddlSubSetMainPackage}
     Selenium2Library.Select From List    ${ddlSubSetMainPackage}    ${SubSetPackage}
+
+Verify SMS Add format Date Time
+    [Arguments]    ${smsCheck}    ${totalSMS}
+    Comment    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
+    Comment    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
+    Comment    @{MessageExpect}    Create List    ${smsCheck} ${formatDate} ${formatTime}
+    @{MessageExpect}    Create List    ${smsCheck}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    ${totalSMS}    ${lo_sms_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    ${totalSMS}
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    @{MessageExpect}[0]
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+
+Check Package
+    [Arguments]    ${txtCheckPackage}
+    @{Usage}    Get Webelements    ${txtAllPackage}
+    ${UsageExp}=    Set Variable    ${txtCheckPackage}
+    :FOR    ${index}    IN RANGE    0    20
+    \    ${UsageName}    Get Text    @{Usage}[${index}]
+    \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
+    \    Log    ${UsageName}

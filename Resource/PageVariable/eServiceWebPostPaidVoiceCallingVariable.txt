@@ -1,4 +1,4 @@
 *** Variables ***
 ${SMSRegisterVoiceCalling}    คุณสมัครบริการต่อสายด้วยเสียงเรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
-${SMSEditDataConfirmOneNumber}    แก้ไขรายชื่อเป็น โตโน่ ${lo_3PO_2_Number} เรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
-${SMSEditDataComfirmMorethanOneNumber}    แก้ไขรายชื่อเป็น โตโน่ ${lo_3PO_2_Number}, มาม่า ${lo_3PO_3_Number} เรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
+${SMSEditDataConfirmOneNumber}    แก้ไขรายชื่อเป็น โตโน่ 0912223322 เรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
+${SMSEditDataComfirmMorethanOneNumber}    แก้ไขรายชื่อเป็น โตโน่ 0912223322, มาม่า 0922222222 เรียบร้อยแล้ว โทร *144 เพื่อใช้งาน

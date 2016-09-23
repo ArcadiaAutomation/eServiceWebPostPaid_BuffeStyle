@@ -121,7 +121,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-203]eServiceWeb-PO-Service-SuspensionImmediately
-    [Tags]    Suspension    testSuspension
+    [Tags]    nonregression    immediately
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    UnRecursion=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -149,7 +149,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-204]eServiceWeb-PO-Service-SuspensionNextDay
-    [Tags]    Suspension
+    [Tags]    nonregression    nextday
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    UnRecursion=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -158,25 +158,21 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    NumberSuspension
-    Log    Time TH
-    ${date}    Get Current Date    result_format=%Y/%m/%d
-    ${dateTime}    Convert Date    ${date}    datetime
-    ${yearTH}    Evaluate    ${dateTime.year}+543
-    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
-    Log    ${dateTomorrow}${yearTH}
-    Comment    ${dateSuspension}    Check Local Time Tomorrow
+    ${dateSuspension}    Check Local Time Tomorrow
     Click Web Element    ${btnStartSuspensionFrom}
     Press Key    ${txtInputSuspensionDate}    \\\13
     Clear Element Text    ${txtInputSuspensionDate}
-    Input Web Text    ${txtInputSuspensionDate}    ${dateTomorrow}
+    Input Web Text    ${txtInputSuspensionDate}    ${dateSuspension}
     sleep    1
-    ${dateReconnect}    Check Local Time Tomorrow
+    ${dateReconnect}    Check Local Time AfterTomorrow
     Press Key    ${txtInputReconnectDate}    \\\13
     Clear Element Text    ${txtInputReconnectDate}
     Input Web Text    ${txtInputReconnectDate}    ${dateReconnect}
     sleep    1
     Click Web Element    ${btnConfirmSuspension}
+    Comment    Add timeout for wait
+    Wait Until Element Is Visible    ${txtCheckDialogSuspnsion}    60
     Web Element Text Should Be    ${txtSummaryMessage}    ${txtConfirmSuspensionNextDay}
-    Click Web Element    ${btnCloseDialogSuspension}
+    Click Web Element    ${btnCloseDialog}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

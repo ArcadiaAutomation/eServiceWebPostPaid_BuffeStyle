@@ -3,31 +3,46 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidChangeMainPackage.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[S03-021]Test-eServiceWeb-PO-ChangeMainPackage-DefaultPackage-Temp
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+[S03-021]eServiceWeb-PO-ChangeMainPackage-DefaultPackage-Temp
+    [Tags]    noregression
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    ChangeMainPackage
-    Select Package    Xtra Talk    Basic Package
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageiSWOP}    ${txtSelectSubPackageiSWOPnonStop}
     Click Web Element    ${rdo850Voice1150Mins}
     Click Web Element    ${btnConfirmPackage}
     Click Web Element    ${btnConfirmEffective}
     Click Web Element    ${btnConfirmChangMAinPackage}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
+[S03-022]eServiceWeb-PO-ChangeMainPackage
+    [Tags]    noregression
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageiSWOP}    ${txtSelectSubPackageiSWOPnonStop}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
 [S03-023]eServiceWeb-PO-ChangeMainPackage-iSmart
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    [Tags]    noregression
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Package    ChangeMainPackage
+    SelectMenu    Package    ChangeMainPackage
     Select Package    ${txtSelectPackageXtraPack}    ${txtSelectSubPackageiSmart}
     Click Web Element    ${rdoiSmartPackage599Baht}
     Click Web Element    ${btnConfirmPackage}
@@ -39,5 +54,135 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-024]eServiceWeb-PO-ChangeMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageXtraPack}    ${txtSelectSubPackageSerenade}
+    Click Web Element    ${rdoSerenadePack899}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-025]eServiceWeb-PO-ChangeMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageXtraPack}    ${txtSelectSubPackageOther}
+    Click Web Element    ${rdo3G2100SmartPhonePackage339Baht}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheckSmartPhonePackage399}    1
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-026]eServiceWeb-PO-ChangeMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageXtraNet}    ${txtSelectSubPackageNetSIM}
+    Click Web Element    ${rdoNet14GBAISsuperWiFi1099}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheckNet14GBAISsuperWiFi1099}    1
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-027]eServiceWeb-PO-ChangeMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageXtraTalk}    ${txtSelectSubPackageBasic}
+    Click Web Element    ${rdo1000Voice1380Mins}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheck1000Voice1380Mins}    1
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-028]eServiceWeb-PO-ChangeMainPackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    ChangeMainPackage
+    Select Package    ${txtSelectPackageXtraTalk}    ${txtSelectSubPackageOther}
+    Click Web Element    ${rdoKuiSaJai40stPackage}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheckKuiSaJai40stPackage}    1
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
