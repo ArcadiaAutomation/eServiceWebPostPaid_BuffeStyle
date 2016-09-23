@@ -127,7 +127,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [F04-031]eServiceWeb-PO-UsageDetailHistory-NotSelectMySuperPlanUsageDetailFilter
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -182,7 +182,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-041]eServiceWeb-PO-UsageDetailHistory-SelectOneSpecificViewCallDetailCondition
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -209,7 +209,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-042]eServiceWeb-PO-UsageDetailHistory-SelectMoreThanOneSpecificViewCallDetailCondition
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -237,7 +237,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 [S04-043]eServiceWeb-PO-UsageDetailHistory-SelectAllSpecificViewCallDetailCondition
     [Documentation]    Select Call Detail View By Service Date=>>> ต้องเลือกวันที่เริ่มต้นที่ใช้บริการตเองไม่น้อยกว่าวันที่เริ่มใช้บริการในรอบบิลที่เลือก
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -262,7 +262,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-044]eServiceWeb-PO-UsageDetailHistory-SelectViewAllCallDetail
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -373,7 +373,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-050]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithHighestCallingTransactionInGraphTop5Usage
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -393,7 +393,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-051]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithLongestCallingTransactionInGraphTop5Usage
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -413,7 +413,7 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
 
 [S04-052]eServiceWeb-PO-UsageDetailHistory-SelectAllConditionInGraphTop5Usage
     [Tags]    Success    CallHistory
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window

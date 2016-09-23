@@ -23,3 +23,4 @@ ${MessageCancelPackageSuccess}    Thank you. You will get a confirmation SMS whe
 ${100BCall3AISNumber50st}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)
 ${MessageRegisterSuccess}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
 ${CallAIS3Number10-6PM}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)
+${lblInternet20G1799BPackageName}    Internet on-top package 1,799B. Max speed 20 GB

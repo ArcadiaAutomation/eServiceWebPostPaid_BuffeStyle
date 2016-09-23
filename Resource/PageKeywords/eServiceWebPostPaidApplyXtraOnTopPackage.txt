@@ -51,12 +51,12 @@ Open Browser On Production
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
 
 Open Browser On Test Site
-    Open Web Browser    ${eServiceURLTestSite}    gc    ${lo_IPSelenium}
+    Open Web Browser    ${TestSiteEServiceURL}    gc    ${lo_IPSelenium}
 
 Login WebSite Eservice By Location
     Run Keyword If    '${ar_Location}'=='Production'    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
     ...    ${virtual_3PO_1_Number}
-    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login On Test Site    ${virtual_3PO_1_TestSiteNumber}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login On Test Site    ${virtual_3PO_2_Number}
 
 Register OnTop XtraTalk Call 3 NumberAIS Package
     [Arguments]    ${friendNumber}
@@ -85,8 +85,9 @@ Login On Test Site
     Input Web Text    ${txtInputOTP}    7777
     Click Web Element    ${btnOKOTP}
 
-Register OnTop XtraNet Package
-    Click Web Element    ${chkSelectXtraNetPackage4G488Bath}
+Register OnTop XtraNet 4G 488B Package
+    Run Keyword If     '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
+    ...    ELSE    Click Web Element    ${chkInternetPackageTestSite}
 
 Select XtraTalk Monthly Package Special Number
     Click Web Element    ${chk100BCall50stSpecialNumber}
@@ -94,3 +95,11 @@ Select XtraTalk Monthly Package Special Number
 Input Special Number
     [Arguments]    ${Number}
     Input Web Text    ${txtSpecialNumber1}    ${Number}
+
+Verify Register OnTop SMS
+    [Arguments]    ${ExpectSMS}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${ExpectSMS}    #ใช้ regular .* เนื่องจากได้รับข้อความเป็นภาษาไทย
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
