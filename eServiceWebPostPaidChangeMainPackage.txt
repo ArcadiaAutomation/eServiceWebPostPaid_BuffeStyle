@@ -76,7 +76,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -103,7 +103,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add format Date Time    ${smsCheckSmartPhonePackage399}    1
+    Verify SMS Add format Date Time    ${smsCheckSmartPhonePackage399}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -130,10 +130,11 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add format Date Time    ${smsCheckNet14GBAISsuperWiFi1099}    1
+    Verify SMS Add format Date Time    ${smsCheckNet14GBAISsuperWiFi1099}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Comment    1,099B/month Internet Non-Stop 14GB + AIS SUPER WiFi
     Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -147,7 +148,7 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    SelectMenu    Package    ChangeMainPackage
+    SelectMenu    Package    YourCurrentPackage
     Select Package    ${txtSelectPackageXtraTalk}    ${txtSelectSubPackageBasic}
     Click Web Element    ${rdo1000Voice1380Mins}
     Click Web Element    ${btnConfirmPackage}
@@ -157,11 +158,12 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add format Date Time    ${smsCheck1000Voice1380Mins}    1
+    Comment    ${smsCheck1000Voice1380Mins}    \    Basic 1000 Baht package. Monthly fee 1000 Baht. Call all networks 1380 minutes. Exceed rates: call 1.50B./min, Internet 1.50B./MB, SMS 3B., MMS 6B. Start 08/10/2016 00:00 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck1000Voice1380Mins}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
-    Check Package    ${txtNamePackage}
+    Check Package    1000 B/Mth: Voice 1380Mins
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -184,7 +186,8 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add format Date Time    ${smsCheckKuiSaJai40stPackage}    1
+    Comment    ${smsCheckKuiSaJai40stPackage}    \    Welcome to Kui Sa Jai 40st package. Minimum Monthly fee 295B for call all network 360 mins . Exceed mins. charge 2.10B for 3 mins., thereafter 40 satang/min. effective 08/10/2016 00:00 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheckKuiSaJai40stPackage}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}

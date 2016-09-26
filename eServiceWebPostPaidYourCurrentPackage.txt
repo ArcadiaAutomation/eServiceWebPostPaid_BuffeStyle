@@ -57,8 +57,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
+    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    3    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -88,8 +88,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
+    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    3    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -119,8 +119,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1
+    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    3    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -149,7 +149,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1
+    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -180,8 +180,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Comment    ${smsCheckMaoMaoCombo55B}    แพ็กเสริมเหมา เหมา คอมโบ ค่าบริการ 55บ. โทรฟรีเบอร์ AIS 23:00-17:00น. และเน็ตความเร็วสูงสุดจำนวน 160 MB หลังจากนั้นใช้ได้ต่อเนื่องที่ความเร็ว 64Kbps ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม24/09/2016 00:00 ถึง 24/09/2016 23:59
-    Verify SMS Add format Date Time    ${smsCheckMaoMaoCombo55B}    1
+    Comment    ${smsCheckMaoMaoCombo55B}    แพ็กเสริมเหมา เหมา คอมโบ ค่าบริการ 55บ. โทรฟรีเบอร์ AIS 23:00-17:00น. และเน็ตความเร็วสูงสุดจำนวน 160 MB หลังจากนั้นใช้ได้ต่อเนื่องที่ความเร็ว 64Kbps ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม24/09/2016 00:00 ถึง 24/09/2016 23:59    Mao Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start27/09/2016 00:00 to 27/09/2016 23:59.
+    Verify SMS Add format Date Time    ${smsCheckMaoMaoCombo55B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -212,7 +212,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
     Comment    ${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 23/09/2016 17:19    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
-    Verify SMS Add format Date Time    ${smsCheckAISWIFI1Hour}    2
+    Verify SMS Add format Date Time    ${smsCheckAISWIFI1Hour}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}

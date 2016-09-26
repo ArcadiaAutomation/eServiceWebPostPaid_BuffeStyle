@@ -141,10 +141,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidNumberSuspension.txt
     Click Web Element    ${btnConfirmSuspension}
     Comment    Add timeout for wait
     Wait Until Element Is Visible    ${txtCheckDialogSuspnsion}    60
-    Element Text Should Be    ${txtCheckDialogSuspnsion}    ${txtConfirmSuspension}
+    Web Element Text Should Be    ${txtCheckDialogSuspnsion}    ${txtConfirmSuspension}
     Click Web Element    ${btnCloseDialog}
-    Web Element Text Should Be    ${txtCheckDialogSuspnsion}    ${txtCheckBackSuspension}
-    Click Web Element    ${btnBackToSuspension}
+    Comment    Not have dialog
+    Comment    Web Element Text Should Be    ${txtCheckDialogSuspnsion}    ${txtCheckBackSuspension}
+    Comment    Click Web Element    ${btnBackToSuspension}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 

@@ -233,8 +233,13 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallScreening.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Service    CallScreening
-    Check Register
-    Confirm Register
+    Web Element Text Should Be    ${txtCheckConfirmRegister}    ${checkConfirm}
+    Click Web Element    ${btnCallScreeningRegisterConfirm}
+    Click Web Element    ${btnConfirmCallscreenRegister}
+    @{MessageExpect}    Create List    .*
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    AIS    ${MessageExpect}    150
+    Click Web Element    ${btnBackToCallScreeningDialog}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
