@@ -120,7 +120,7 @@ Resource          ../Config/LocalConfig.txt
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
-    Open WebSite Eservice By Location    #Parameter='Production' Or 'TestSite'
+    Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
@@ -133,8 +133,8 @@ Resource          ../Config/LocalConfig.txt
     Confirm Select Effective Date
     Confirm OnTop Package Register
     Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
-    sleep    30    # เปลี่ยนเป็น Check หน้าว่ามี Package แล้วหรือยัง
-    Select Menu    OnTopPackage
+    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
+    Select Menu    Package    OnTopPackage
     Select Package    ${XtraNet}    ${InternetMonthly}
     Register OnTop XtraNet 4G 488B Package
     Confirm Select Package
@@ -142,9 +142,9 @@ Resource          ../Config/LocalConfig.txt
     Confirm Select Effective Date
     Confirm OnTop Package Register
     Web Element Text Should Be    ${lblSelectPackageResult}    ${MessageRegisterDuplicateXtraNetPackage}
-    Comment    Cancel On-Top Package    ${4GInternet488}
-    Comment    Close Browser
-    Comment    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
+    Cancel On-Top Package    ${lblInternet20G1799BPackageName}
+    Close Browser
+    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S03-020]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage-SpecialNumber
@@ -325,14 +325,48 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 testCheckPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open WebSite Eservice By Location    #Parameter='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login WebSite Eservice By Location
     Select Menu    Package    YourCurrentPackage
-    Check Active Package    ${lblInternet20G1799BPackageName}
+    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
+    Select Menu    Package
+    Cancel On-Top Package    ${lblInternet20G1799BPackageName}
     Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+test2
+    @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
+    ${range}    Get Length    ${AllActivePackage}
+
+testReturnfromkeyword
+    ${count}    Set Variable    False
+    Log To Console    1
+    testReturnKey
+    Log To Console    2
+
+New14
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login WebSite Eservice By Location
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MonthlyPackage}
+    Register OnTop XtraTalk Call 3 NumberAIS Package    0613851134
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
+    Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
+    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MonthlyPackage}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}

@@ -16,6 +16,7 @@ Select Package
 Cancel On-Top Package
     [Arguments]    ${PackageExp}
     Click Web Element    ${mnuCancelOnTopPackage}
+    Wait Web Until Page Contains Element    ${PackageName}
     Wait Until Element Is Visible    ${PackageName}
     @{Packages}    Get Webelements    ${PackageName}
     : FOR    ${index}    IN RANGE    0    10
@@ -105,10 +106,38 @@ Verify Register OnTop SMS
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
 
 Check Active Package
-    [Arguments]    ${ExpectPackage}
+    [Arguments]    ${PackageName}
+    ${statusPackage}    Set Variable    False
+    ${OnTopPackageTableIsVisisble}    Run Keyword And Return Status    Wait Until Element Is Visible    ${lblAllActivePackage}
+    Log To Console    Status:'${OnTopPackageTableIsVisisble}'
+    Run Keyword If    '${OnTopPackageTableIsVisisble}'=='False'    Return From Keyword
     @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
-    Comment    ${UsageExp}=    Set Variable    ${txtCheckPackage}
-    :FOR    ${index}    IN RANGE    0    20
+    ${range}    Get Length    ${AllActivePackage}
+    ${ExpectPackage}    Set Variable    ${PackageName}
+    : FOR    ${index}    IN RANGE    0    ${range}
     \    ${ActivePackage}    Get Text    @{AllActivePackage}[${index}]
-    \    Run Keyword If    '${ActivePackage}'=='${ExpectPackage}'    Exit For Loop
-    \    Log To Console    Package Active : ${ActivePackage}
+    \    ${statusPackage}    Evaluate    '${ActivePackage}'=='${ExpectPackage}'
+    \    Comment    Log To Console    'waha status':'${statusPackage}'
+    \    Run Keyword If    ${statusPackage}    Exit For Loop
+    \    Comment    Return From Keyword If    '${ActivePackage}'=='${ExpectPackage}'    True
+    \    Comment    Log To Console    Package Active : ${ActivePackage}
+    [Return]    ${statusPackage}
+
+Check Package Status Until Active
+    [Arguments]    ${Package}
+    [Timeout]    3 minutes
+    Select Menu    YourCurrentPackage
+    : FOR    ${startTime}    IN RANGE    0    ${MaximumLoop}
+    \    ${Status}=    Check Active Package    ${Package}
+    \    Run Keyword If    ${Status}    Exit For Loop
+    \    Comment    Select Menu    Package    Home
+    \    sleep    12
+    \    Select Menu    YourCurrentPackage
+    Select Menu    Home
+
+testReturnKey
+    ${alphabet}    Set Variable    'www'
+    Log To Console    ${alphabet}
+    Log To Console    '2.5'
+    Run Keyword If    ${alphabet}=='ABC'    Return From Keyword
+    Log To Console    'Hello World'
