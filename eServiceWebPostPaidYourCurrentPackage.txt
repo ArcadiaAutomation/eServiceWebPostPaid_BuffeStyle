@@ -37,7 +37,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
 
 [S03-011]eServiceWeb-PO-YourCurrentPackage-ChangeMainPackage-NextBill
     [Tags]    nonregression
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -68,7 +68,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
 
 [S03-012]eServiceWeb-PO-YourCurrentPackage-ChangeMainPackage-NextDay
     [Tags]    nonregression
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -100,7 +100,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
 
 [S03-013]eServiceWeb-PO-YourCurrentPackage-ChangeMainPackage-Immediately
     [Tags]    nonregression
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -131,7 +131,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
 
 [S03-014]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-MaoMaoMidNightSale
     [Tags]    nonregression
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -162,7 +162,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
 
 [S03-015]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-MaoMaoCombo
     [Tags]    nonregression
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -193,7 +193,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
 
 [S03-016]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-AISWIFI
     [Tags]    nonregression
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
