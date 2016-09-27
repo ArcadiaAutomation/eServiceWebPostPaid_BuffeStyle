@@ -1,12 +1,13 @@
 *** Variables ***
 ${txtSelectPackageXtraPack}    Xtra Pack
 ${txtSelectSubPackageiSmart}    iSmart
-${smsCheckiSmartPackage299Baht}    แพ็กเกจ iSmart 299 บาท. AIS WiFi/Internet (ความเร็วสูงสุดรวม500MB จากนั้นใช้ความเร็วสูงสุด128kbps) เริ่มใช้ได้ตั้งแต่ 08/10/2016 00:00 ถึง 07/10/2017 23:59 ขอบคุณค่ะ
 ${smsCancelPackage}    คุณได้ยกเลิกแพ็กเกจ
-${txtSelectPackageiSWOP}    iSWOP NON-Stop package
+${txtSelectPackageiSWOP}    iSWOP
 ${txtSelectSubPackageSerenade}    Serenade Pack
 ${txtSelectSubPackageOther}    Other Packages
 ${txtSelectPackageXtraNet}    Xtra Net
 ${txtSelectSubPackageNetSIM}    Net SIM
 ${txtSelectPackageXtraTalk}    Xtra Talk
 ${txtSelectSubPackageBasic}    Basic Package
+${txtSelectSubPackageiSWOPnonStop}    iSWOP NON-Stop package
+${txtSelectSubPackage4GMaxSpeed}    4G Max Speed

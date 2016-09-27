@@ -14,10 +14,19 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    ChangeMainPackage
     Select Package    ${txtSelectPackageiSWOP}    ${txtSelectSubPackageiSWOPnonStop}
-    Click Web Element    ${rdo850Voice1150Mins}
+    Click Web Element    ${rdoISWOPNonStop399}
     Click Web Element    ${btnConfirmPackage}
     Click Web Element    ${btnConfirmEffective}
-    Click Web Element    ${btnConfirmChangMAinPackage}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheckiSWOPNonStop399}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-022]eServiceWeb-PO-ChangeMainPackage
@@ -30,7 +39,21 @@ Resource          ../Config/LocalConfig.txt
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    ChangeMainPackage
-    Select Package    ${txtSelectPackageiSWOP}    ${txtSelectSubPackageiSWOPnonStop}
+    Select Package    ${txtSelectPackageXtraPack}    ${txtSelectSubPackage4GMaxSpeed}
+    Click Web Element    ${rdo4GMaxSpeedPack488Baht}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Verify SMS Add format Date Time    ${smsCheck4GSpeedPack488}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-023]eServiceWeb-PO-ChangeMainPackage-iSmart
@@ -44,16 +67,20 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    ChangeMainPackage
     Select Package    ${txtSelectPackageXtraPack}    ${txtSelectSubPackageiSmart}
-    Click Web Element    ${rdoiSmartPackage599Baht}
+    Click Web Element    ${rdoiSmartPackage299Baht}
     Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
     Click Web Element    ${btnConfirmEffective}
-    Click Web Element    ${btnConfirmChangeMainPackage}
-    @{MessageExpect}    Create List    ${smsCheckiSmartPackage299Baht}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    2    AIS    ${MessageExpect}    150
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Comment    ${smsCheckiSmartPackage299Baht}    แพ็กเกจ iSmart 299 บาท. AIS WiFi/Internet (ความเร็วสูงสุดรวม500MB จากนั้นใช้ความเร็วสูงสุด128kbps) เริ่มใช้ได้ตั้งแต่ 08/10/2016 00:00 ถึง 07/10/2017 23:59 ขอบคุณค่ะ
+    Verify SMS Add format Date Time    ${smsCheckiSmartPackage299Baht}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -134,7 +161,6 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
-    Comment    1,099B/month Internet Non-Stop 14GB + AIS SUPER WiFi
     Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
@@ -148,7 +174,7 @@ Resource          ../Config/LocalConfig.txt
     Select Frame    ${fraMainIframe}
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    SelectMenu    Package    YourCurrentPackage
+    SelectMenu    Package    ChangeMainPackage
     Select Package    ${txtSelectPackageXtraTalk}    ${txtSelectSubPackageBasic}
     Click Web Element    ${rdo1000Voice1380Mins}
     Click Web Element    ${btnConfirmPackage}
@@ -163,7 +189,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
-    Check Package    1000 B/Mth: Voice 1380Mins
+    Check Package    ${txtNamePackage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 

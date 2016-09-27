@@ -8,7 +8,6 @@ ${rdoISWOPNonStop799}    xpath=//*[@id="lbPackage_P15110497"]
 ${rdoISWOPNonStop999}    xpath=//*[@id="lbPackage_P15110498"]
 ${btnConfirmPackage}    xpath=//*[@id="btnChangePackConfirm"]
 ${btnConfirmEffective}    xpath=//*[@id="btnChangePackConfirmDate"]/div
-${btnConfirmChangeMainPackage}    xpath=//*[@id="btnChangePackConfirmPackDate"]
 ${rdo1200Voice1720Mins}    xpath=//*[@id="lbPackage_P14121481"]
 ${rdo1500Voice2200Mins}    xpath=//*[@id="lbPackage_P14121482"]
 ${rdo250Voice300Mins}    xpath=//*[@id="lbPackage_P14121476"]
@@ -44,10 +43,13 @@ ${smsCheckSerenadePack899}    .*
 ${smsCheckSmartPhonePackage399}    .*
 ${rdoNet14GBAISsuperWiFi1099}    //*[@id="lbPackage_P15110386"]
 ${smsCheckNet14GBAISsuperWiFi1099}    .*
-${smsCheck1000Voice1380Mins}    .*
+${smsCheck1000Voice1380Mins}    Basic 1000 Baht package\\. Monthly fee 1000 Baht\\. Call all networks 1380 minutes\\. Exceed rates: call 1\\.50B\\./min, Internet 1\\.50B\\./MB, SMS 3B\\., MMS 6B\\. Start
 ${smsCheckKuiSaJai40stPackage}    Welcome to Kui Sa Jai 40st package\\. Minimum Monthly fee 295B for call all network 360 mins \\. Exceed mins\\. charge 2\\.10B for 3 mins\\., thereafter 40 satang\\/min\\. effective
 ${btnBackToCurrentPackage}    xpath=//*[@id="currentPackage"]/div
 ${btnNextPackage}    xpath=//*[@id="btnCurrentPackNextPost"]
 ${txtCheckNextPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
 ${smsCheck399NET2GB}    .*
 ${txtAllPackage}    xpath=//*[@class="ng-binding" and @ng-class="{'font_color_green6':auth.groupType == 'PREPAID'}"]
+${smsCheckiSWOPNonStop399}    .*
+${smsCheck4GSpeedPack488}    .*
+${smsCheckiSmartPackage299Baht}    .*

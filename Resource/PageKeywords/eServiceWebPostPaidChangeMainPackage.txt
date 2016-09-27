@@ -32,3 +32,4 @@ Check Package
     \    ${UsageName}    Get Text    @{Usage}[${index}]
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
     \    Comment    Log    ${UsageName}
+    Run Keyword If    '${UsageName}'!='${UsageExp}'    FAIL
