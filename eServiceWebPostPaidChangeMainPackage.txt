@@ -4,7 +4,7 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [S03-021]eServiceWeb-PO-ChangeMainPackage-DefaultPackageiSWOP
-    [Tags]    noregression    iswop
+    [Tags]    iswop    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -31,7 +31,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-022]eServiceWeb-PO-ChangeMainPackage-4GMaxSpeedPack488
-    [Tags]    noregression    4gmaxspeed
+    [Tags]    4gmaxspeed    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -59,7 +59,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-023]eServiceWeb-PO-ChangeMainPackage-iSmartPack299
-    [Tags]    noregression    ismart
+    [Tags]    ismart    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}

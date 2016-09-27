@@ -161,7 +161,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-015]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-MaoMaoCombo
-    [Tags]    nonregression
+    [Tags]    maomaocombo    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
