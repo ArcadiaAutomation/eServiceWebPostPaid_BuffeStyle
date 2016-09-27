@@ -118,7 +118,7 @@ Resource          ../Config/LocalConfig.txt
     Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraNet}    ${InternetMonthly}
-    Select OnTop XtraNet Monthly 4G 488B Package
+    Select OnTop XtraNet Monthly Package 4G 488B
     Confirm Select Package
     Manage Package Immediately
     Confirm Select Effective Date
@@ -394,7 +394,7 @@ testReturnfromkeyword
     testReturnKey
     Log To Console    2
 
-s31
+[S03-031]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraNetInternetMonthly(TestSite)
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -405,16 +405,20 @@ s31
     Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraNet}    ${InternetMonthly}
-    Select OnTop XtraNet Monthly 4G 488B Package
+    Select OnTop XtraNet Monthly Package 4G 488B
     Confirm Select Package
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register
-    Wait Until Keyword Succeeds    30    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Wait Until Keyword Succeeds    45    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
-    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
+    Comment    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
+    Run Keyword If    '${ar_Location}'=='Production'    Check Package Status Until Active    ${4GInternet488}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
     Select Menu    Package
-    Cancel On-Top Package    ${lblXtraTalkMonthly100BCallAIS150Min}
+    Comment    Cancel On-Top Package    ${lblXtraTalkMonthly100BCallAIS150Min}
+    Run Keyword If    '${ar_Location}'=='Production'    Cancel On-Top Package    ${4GInternet488}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Cancel On-Top Package    ${lblXtraTalkMonthly100BCallAIS150Min}
     Close Browser
     Run Keyword If    '${ar_Location}'=='Production'    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
