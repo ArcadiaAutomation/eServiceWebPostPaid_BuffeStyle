@@ -19,42 +19,33 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkPackage
-    [Documentation]    --variable ar_Location:Production
-    [Tags]    Fail    non-recurring
+[F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkMonthlyPackage-SpecialNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open WebSite Eservice By Location    #Parameter='Production' Or 'TestSite'
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Register OnTop XtraTalk Call 3 NumberAIS Package    0613851134    #location and friend number
+    Register OnTop XtraTalk Call 3 NumberAIS Package    0937019787
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register
-    Comment    Web Element Text Should Be    ${tbRegisterResult}    ${MessageRegisterSuccess}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
-    Select Menu    OnTopPackage
+    Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
+    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Register OnTop XtraTalk Call 3 NumberAIS Package    0613851235
+    Register OnTop XtraTalk Call 3 NumberAIS Package    0937019787
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register
-    Web Element Text Should Be    ${tbRegisterResult}    ${messageRegisterDuplicate}
-    Cancel On-Top Package    ${CallAIS3Number10-6PM}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
-    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
-    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*    #เนื่องจากยังไม่มีข้อความภาษาอังกฤษ
-    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Web Element Text Should Be    ${tbRegisterResult}    ${MessageRegisterXtraTalkDuplicate}
+    Cancel On-Top Package    ${lblExtraTalkGank100B3Number10pm-6pm}
     Close Browser
+    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-015]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
@@ -147,7 +138,7 @@ Resource          ../Config/LocalConfig.txt
     Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S03-020]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage-SpecialNumber
+[S03-020]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage-SpecialNumber(OriginalProduction)
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
     ...
     ...
@@ -179,6 +170,30 @@ Resource          ../Config/LocalConfig.txt
     Clear All Unread SMS    ${virtual_3PO_1_Platfrom_Name}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-020]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage-SpecialNumber
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login WebSite Eservice By Location
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraTalk}    ${MonthlyPackage}
+    Register OnTop XtraTalk Call 3 NumberAIS Package    0937019787
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
+    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Select Menu    Package
+    Cancel On-Top Package    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Close Browser
+    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S03-029]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
@@ -349,24 +364,3 @@ testReturnfromkeyword
     Log To Console    1
     testReturnKey
     Log To Console    2
-
-New14
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
-    Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login WebSite Eservice By Location
-    Select Menu    Package    OnTopPackage
-    Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Register OnTop XtraTalk Call 3 NumberAIS Package    0613851134
-    Manage Package Immediately
-    Confirm Select Effective Date
-    Confirm OnTop Package Register
-    Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
-    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
-    Select Menu    Package    OnTopPackage
-    Select Package    ${XtraTalk}    ${MonthlyPackage}
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
