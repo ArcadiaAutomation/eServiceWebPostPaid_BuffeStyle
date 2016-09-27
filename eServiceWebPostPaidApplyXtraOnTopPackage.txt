@@ -22,7 +22,7 @@ Resource          ../Config/LocalConfig.txt
 [F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkMonthlyPackage-SpecialNumber
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -46,7 +46,7 @@ Resource          ../Config/LocalConfig.txt
     Cancel On-Top Package    ${lblExtraTalkGank100B3Number10pm-6pm}
     Close Browser
     Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F03-015]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
     [Tags]    Fail
@@ -110,7 +110,7 @@ Resource          ../Config/LocalConfig.txt
     [Tags]    Fail    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -136,7 +136,7 @@ Resource          ../Config/LocalConfig.txt
     Cancel On-Top Package    ${lblInternet20G1799BPackageName}
     Close Browser
     Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-020]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage-SpecialNumber(OriginalProduction)
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
@@ -369,7 +369,7 @@ testReturnfromkeyword
 s29Pro
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -384,9 +384,10 @@ s29Pro
     Confirm OnTop Package Register
     Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
-    Comment    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
-    Comment    Select Menu    Package
-    Comment    Cancel On-Top Package    ${lblExtraTalkGank100B3Number10pm-6pm}
-    Comment    Close Browser
-    Comment    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
+    Check Package Status Until Active    ${lblXtraTalkMonthly100BCallAIS150Min}
+    Select Menu    Package
+    Cancel On-Top Package    ${lblXtraTalkMonthly100BCallAIS150Min}
+    Close Browser
+    Run Keyword If    '${ar_Location}'=='Production'    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
