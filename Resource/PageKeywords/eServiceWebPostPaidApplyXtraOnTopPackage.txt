@@ -145,3 +145,7 @@ testReturnKey
     Log To Console    '2.5'
     Run Keyword If    ${alphabet}=='ABC'    Return From Keyword
     Log To Console    'Hello World'
+
+Select OnTop XtraTalk Monthly Package 100B CallAIS 150Min
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkXtraTalkMonthly100BCallAIS150MinTestSite}
