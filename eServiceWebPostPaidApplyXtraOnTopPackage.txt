@@ -182,7 +182,7 @@ Resource          ../Config/LocalConfig.txt
     Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Select OnTop XtraTalk Call 3 NumberAIS Package    ${NumberAIS${ar_Location}}
+    Select OnTop XtraTalk Call 3 NumberAIS Package    0937019815
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register

@@ -129,7 +129,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-209]eServiceWeb-PO-Service-NewNumber-OneNumber-Formal-Want
-    [Tags]    success    NN
+    [Tags]    success    NN    209
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -164,7 +164,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-210]eServiceWeb-PO-Service-NewNumber-OneNumber-Formal-NotWant
-    [Tags]    success    NN
+    [Tags]    success    NN    210
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -199,7 +199,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-211]eServiceWeb-PO-Service-NewNumber-MoreThanOneNumber-Informal-NotWant
-    [Tags]    success    NN
+    [Tags]    success    NN    211
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
@@ -238,7 +238,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-212]eServiceWeb-PO-Service-NewNumber-SelectFileOneNumber-Formal
-    [Tags]    success    NN
+    [Tags]    success    NN    212
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -281,7 +281,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-213]eServiceWeb-PO-Service-NewNumber-SelectFileMorethanOneNumber-Informal
-    [Tags]    success    NN
+    [Tags]    success    NN    213
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
