@@ -149,3 +149,7 @@ testReturnKey
 Select OnTop XtraTalk Monthly Package 100B CallAIS 150Min
     Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
     Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkXtraTalkMonthly100BCallAIS150MinTestSite}
+
+Select OnTop \ XtraNet Monthly Package 4G 488B
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chk4GInternetOnTopPackage488B}
