@@ -26,3 +26,4 @@ ${CallAIS3Number10-6PM}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)
 ${lblInternet20G1799BPackageName}    Internet on-top package 1,799B. Max speed 20 GB
 ${lblExtraTalkGank100B3Number10pm-6pm}    Gang on-top package
 ${MessageCancelPackageSuccessTestSite}    You will get a confirmation SMS when the transaction is completed shortly.
+${lblXtraTalkMonthly100BCallAIS150Min}    Smart topping AIS network 100B call free 150 min

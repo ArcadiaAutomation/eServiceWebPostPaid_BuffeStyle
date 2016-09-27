@@ -25,3 +25,4 @@ ${MessageRegisterSuccess}    กำลังดำเนินการ \ กร
 ${CallAIS3Number10-6PM}    100 บ/ด: โทร3เบอร์AISนาทีละ 50สต. ในเวลา 22-18 น.
 ${lblInternet20G1799BPackageName}    P15084935_แพ็กเสริม Internet 1,799บ. ความเร็วสูงสุด 20 GB
 ${lblExtraTalkGank100B3Number10pm-6pm}    แพ็กเสริม แก็งค์
+${lblXtraTalkMonthly100BCallAIS150Min}    แพ็กเสริมคุยในเครือข่ายเอไอเอส 100บ โทรฟรี 150 นาที
