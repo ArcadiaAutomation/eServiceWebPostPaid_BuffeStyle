@@ -4,7 +4,7 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [S03-021]eServiceWeb-PO-ChangeMainPackage-DefaultPackageiSWOP
-    [Tags]    noregression
+    [Tags]    noregression    021
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -21,6 +21,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Verify SMS Add format Date Time    ${smsCheckiSWOPNonStop399}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
@@ -30,7 +31,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-022]eServiceWeb-PO-ChangeMainPackage-4GMaxSpeedPack488
-    [Tags]    noregression
+    [Tags]    noregression    022
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -48,6 +49,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Verify SMS Add format Date Time    ${smsCheck4GSpeedPack488}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
@@ -57,7 +59,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-023]eServiceWeb-PO-ChangeMainPackage-iSmartPack299
-    [Tags]    noregression
+    [Tags]    noregression    023
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -75,6 +77,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Comment    ${smsCheckiSmartPackage299Baht}    แพ็กเกจ iSmart 299 บาท. AIS WiFi/Internet (ความเร็วสูงสุดรวม500MB จากนั้นใช้ความเร็วสูงสุด128kbps) เริ่มใช้ได้ตั้งแต่ 08/10/2016 00:00 ถึง 07/10/2017 23:59 ขอบคุณค่ะ
     Verify SMS Add format Date Time    ${smsCheckiSmartPackage299Baht}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
@@ -85,7 +88,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-024]eServiceWeb-PO-ChangeMainPackage-SerenadePack899
-    [Tags]    nonregression
+    [Tags]    nonregression    024
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -103,6 +106,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
@@ -112,7 +116,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-025]eServiceWeb-PO-ChangeMainPackage-3G2100SmartPhonePack399
-    [Tags]    nonregression
+    [Tags]    nonregression    025
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -130,6 +134,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Verify SMS Add format Date Time    ${smsCheckSmartPhonePackage399}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
@@ -139,7 +144,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-026]eServiceWeb-PO-ChangeMainPackage-Net14GBAISSuperWiFi1099
-    [Tags]    nonregression
+    [Tags]    nonregression    026
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -157,6 +162,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Verify SMS Add format Date Time    ${smsCheckNet14GBAISsuperWiFi1099}    1    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
@@ -166,7 +172,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-027]eServiceWeb-PO-ChangeMainPackage-1000Voice1380Mins
-    [Tags]    nonregression
+    [Tags]    nonregression    027
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -184,6 +190,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Comment    ${smsCheck1000Voice1380Mins}    \    Basic 1000 Baht package. Monthly fee 1000 Baht. Call all networks 1380 minutes. Exceed rates: call 1.50B./min, Internet 1.50B./MB, SMS 3B., MMS 6B. Start 08/10/2016 00:00 to 07/10/2017 23:59.
     Verify SMS Add format Date Time    ${smsCheck1000Voice1380Mins}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
@@ -194,7 +201,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-028]eServiceWeb-PO-ChangeMainPackage-KuiSaJai40stPackage
-    [Tags]    nonregression
+    [Tags]    nonregression    028
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -212,6 +219,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
     Comment    ${smsCheckKuiSaJai40stPackage}    \    Welcome to Kui Sa Jai 40st package. Minimum Monthly fee 295B for call all network 360 mins . Exceed mins. charge 2.10B for 3 mins., thereafter 40 satang/min. effective 08/10/2016 00:00 to 07/10/2017 23:59.
     Verify SMS Add format Date Time    ${smsCheckKuiSaJai40stPackage}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
