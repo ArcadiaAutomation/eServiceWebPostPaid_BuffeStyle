@@ -5,3 +5,4 @@ ${MessageInputOtpWithCharacter}    กรุณาระบุเป็นตั
 ${MessageNotSelectMySuperPlanPacKage}    กรุณาเลือก my Super Plan ที่คุณต้องการ
 ${MessageWrongOTP}    รหัสผ่านไม่ถูกต้อง กรุณาระบุใหม่อีกครั้ง
 ${MessageNotInputOTP}    กรุณาระบุรหัสผ่าน
+${MessageSuspension}    หมายเลขของคุณไม่สามารถใช้บริการ eService ได้ คุณสามารถดำเนินการเรื่องต่าง ๆ เกี่ยวกับโทรศัพท์เคลื่อนที่ได้ ผ่าน AIS Shop และ AIS CALL CENTER 1175

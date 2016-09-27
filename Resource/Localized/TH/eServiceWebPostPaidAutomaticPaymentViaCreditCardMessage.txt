@@ -4,3 +4,4 @@ ${MessageBillingCycle}    รอบบิลของคุณ
 ${MessageCreditCardPaymentCycle}    วันที่ตัดเงินจากบัตรเครดิต
 ${MessageWarning}    *เป็นข้อมูลประมาณการ ทั้งนี้ข้อมูลการจัดการจัดส่งอาจจะถูกปรับเปลี่ยน ซึ่งขึ้นอยู่กับวันหยุดในแต่ละเดือน โดยท่านจะได้รับ SMS แจ้งการตัดบัตรเครดิตในทุกรอบบิล
 ${MessageLinkToPciDss}    กรุณาทำรายการต่อที่ขั้นตอนถัดไปที่หน้า PCI DSS\n(Payment Card Industry Data Security Standard)
+${MessageNotCompleteIDCitizen}    หมายเลขบัตรประจำตัวที่คุณระบุไม่ตรงกับข้อมูลที่เคยให้ไว้กับบริษัท\nกรุณาระบุใหม่อีกครั้ง
