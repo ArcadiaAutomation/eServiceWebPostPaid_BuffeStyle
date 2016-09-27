@@ -3,7 +3,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidChangeMainPackage.txt
 Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
-[S03-021]eServiceWeb-PO-ChangeMainPackage-DefaultPackage-Temp
+[S03-021]eServiceWeb-PO-ChangeMainPackage-DefaultPackageiSWOP
     [Tags]    noregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
@@ -29,7 +29,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-022]eServiceWeb-PO-ChangeMainPackage
+[S03-022]eServiceWeb-PO-ChangeMainPackage-4GMaxSpeedPack488
     [Tags]    noregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
@@ -56,7 +56,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-023]eServiceWeb-PO-ChangeMainPackage-iSmart
+[S03-023]eServiceWeb-PO-ChangeMainPackage-iSmartPack299
     [Tags]    noregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -84,7 +84,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-024]eServiceWeb-PO-ChangeMainPackage
+[S03-024]eServiceWeb-PO-ChangeMainPackage-SerenadePack899
     [Tags]    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -111,7 +111,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-025]eServiceWeb-PO-ChangeMainPackage
+[S03-025]eServiceWeb-PO-ChangeMainPackage-3G2100SmartPhonePack399
     [Tags]    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -138,7 +138,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-026]eServiceWeb-PO-ChangeMainPackage
+[S03-026]eServiceWeb-PO-ChangeMainPackage-Net14GBAISSuperWiFi1099
     [Tags]    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -165,7 +165,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-027]eServiceWeb-PO-ChangeMainPackage
+[S03-027]eServiceWeb-PO-ChangeMainPackage-1000Voice1380Mins
     [Tags]    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -193,7 +193,7 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-028]eServiceWeb-PO-ChangeMainPackage
+[S03-028]eServiceWeb-PO-ChangeMainPackage-KuiSaJai40stPackage
     [Tags]    nonregression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
