@@ -26,7 +26,11 @@ Cancel On-Top Package
     Click Web Element    @{CheckBox}[${index}]
     Click Web Element    ${btnCancelPack}
     Click Web Element    ${ConfirmCancelPack}
-    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${MessageCancelPackageSuccess}
+    Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='Production'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccessTestSite}
 
 Confirm Select Package
     Click Web Element    ${btnChangePackConfirm}
@@ -59,7 +63,7 @@ Login WebSite Eservice By Location
     ...    ${virtual_3PO_1_Number}
     ...    ELSE IF    '${ar_Location}'=='TestSite'    Login On Test Site    ${virtual_3PO_2_Number}
 
-Register OnTop XtraTalk Call 3 NumberAIS Package
+Select OnTop XtraTalk Call 3 NumberAIS Package
     [Arguments]    ${friendNumber}
     Run Keyword If    '${ar_Location}'=='Production'    Select OnTop XtraTalk Call 3 NumberAIS Package On Production    ${friendNumber}
     ...    ELSE IF    '${ar_Location}'=='TestSite'    Select OnTop XtraTalk Call 3 NumberAIS Package On TestSite    ${friendNumber}
