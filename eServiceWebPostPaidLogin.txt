@@ -5,6 +5,8 @@ Resource          ../Config/LocalConfig.txt
 Library           robot.api
 Library           robot.conf.settings
 Library           DateTime
+Library           robot.utils.robottime
+Library           robot.utils
 
 *** Test Cases ***
 test
@@ -41,9 +43,10 @@ test
     Comment    Put String To Cell    Sheet1    1    1    0912222222
     Comment    Put String To Cell    Sheet1    1    2    0912222223
     Comment    Save Excel    D:\\new.xls
-    @{MessageExpect}    Create List    คุณสมัครบริการต่อสายด้วยเสียงเรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
-    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}    150
+    Comment    @{MessageExpect}    Create List    คุณสมัครบริการต่อสายด้วยเสียงเรียบร้อยแล้ว โทร *144 เพื่อใช้งาน
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Comment    Wait and Verify SMS    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}    1    ${lo_SenderName_AIS3G}    ${MessageExpect}
+    ...    150
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
@@ -73,7 +76,7 @@ test
     [Teardown]
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
-    [Tags]    fail
+    [Tags]    fail    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -92,7 +95,7 @@ test
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
-    [Tags]    fail
+    [Tags]    fail    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -152,7 +155,7 @@ test
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
-    [Tags]    fail
+    [Tags]    fail    debug
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
