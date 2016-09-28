@@ -330,11 +330,9 @@ Resource          ../Config/LocalConfig.txt
     Confirm OnTop Package Register
     Wait Until Keyword Succeeds    45    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
-    Comment    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
     Run Keyword If    '${ar_Location}'=='Production'    Check Package Status Until Active    ${4GInternet488}
     Run Keyword If    '${ar_Location}'=='TestSite'    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
     Select Menu    Package
-    Comment    Cancel On-Top Package    ${lblXtraTalkMonthly100BCallAIS150Min}
     Run Keyword If    '${ar_Location}'=='Production'    Cancel On-Top Package    ${4GInternet488}
     Run Keyword If    '${ar_Location}'=='TestSite'    Cancel On-Top Package    ${lblInternet20G1799BPackageName}
     Close Browser
@@ -342,7 +340,7 @@ Resource          ../Config/LocalConfig.txt
     Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-032]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraNetWifi
+[S03-033]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraNetWifi-AISSuperWifi(OriginalProduction)
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
@@ -372,7 +370,35 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S03-033]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkAndNetMaoMaoCombo
+[S03-033]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraNetWifi-AISSuperWifi(TestSite)
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login WebSite Eservice By Location
+    Select Menu    Package    OnTopPackage
+    Select Package    ${XtraNet}    ${Wifi}
+    Select OnTop XtraNet Wifi AIS Super Wifi Package
+    Confirm Select Package
+    Manage Package Immediately
+    Confirm Select Effective Date
+    Confirm OnTop Package Register
+    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
+    Run Keyword If    '${ar_Location}'=='Production'    Check Package Status Until Active    ${AISSUPERWiFi}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Check Package Status Until Active    ${lblXtraInternetWifiAISSuperWifi20GB}
+    Select Menu    Package
+    Run Keyword If    '${ar_Location}'=='Production'    Cancel On-Top Package    ${AISSUPERWiFi}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Cancel On-Top Package    ${lblXtraInternetWifiAISSuperWifi20GB}
+    Close Browser
+    Run Keyword If    '${ar_Location}'=='Production'    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-034]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkAndNetMaoMaoCombo
     [Documentation]    *สมัครแล้วไม่สามารถยกเลิกได้* มีผล 24 ชั่วโมง
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
@@ -397,29 +423,3 @@ Resource          ../Config/LocalConfig.txt
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
-testCheckPackage
-    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
-    Open WebSite Eservice By Location    #Parameter='Production' Or 'TestSite'
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login WebSite Eservice By Location
-    Select Menu    Package    YourCurrentPackage
-    Check Package Status Until Active    ${lblInternet20G1799BPackageName}
-    Select Menu    Package
-    Cancel On-Top Package    ${lblInternet20G1799BPackageName}
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
-test2
-    @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
-    ${range}    Get Length    ${AllActivePackage}
-
-testReturnfromkeyword
-    ${count}    Set Variable    False
-    Log To Console    1
-    testReturnKey
-    Log To Console    2
