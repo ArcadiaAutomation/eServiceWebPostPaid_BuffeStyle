@@ -5,7 +5,7 @@ Resource          ../Config/LocalConfig.txt
 *** Variables ***
 
 *** Test Cases ***
-[S05-001]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithVISA
+[S05-160]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithVISA
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -26,7 +26,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S05-002]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithMASTER
+[S05-161]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithMASTER
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -47,7 +47,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S05-003]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithDebit
+[S05-162]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithDebit
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     ${#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -67,7 +67,7 @@ Resource          ../Config/LocalConfig.txt
     Close All Browsers
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S05-004]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithAISTopUp
+[S05-163]eServiceWeb-PO-TopUp2AISOne2Call-TopUpWithAISTopUp
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE=include

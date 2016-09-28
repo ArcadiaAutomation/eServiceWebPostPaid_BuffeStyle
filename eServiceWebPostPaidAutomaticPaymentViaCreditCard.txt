@@ -3,7 +3,47 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidAutomaticPaymentViaCreditCard.txt
 
 *** Test Cases ***
-[S05-160]eServiceWeb-PO-AutomaticPaymentViaCreditCard-RegisterToPayWithCreditCard
+[S05-157]eServiceWeb-PO-AutomaticPaymentViaCreditCard-Edit
+    [Tags]    test
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path_test}    virtual_3PO_1    ${lo_parallel_timeout}    CreditCard=include    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${TestSiteEServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login Test Site    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    AutomaticPaymentViaCreditCard
+    Input Web Text    ${txtIDCitizen}    ${virtual_3PO_1_IDCitizen}
+    Click Web Element    ${btnSubmitID}
+    Web Element Text Should Be    ${lbCreditCardType}    ${MessageCreditCardType}
+    Web Element Text Should Be    ${lbCreditCardNo}    ${MessageCreditCardNo}
+    Web Element Text Should Be    ${lbExpirationDate}    ${MessageExpirationDate}
+    Web Element Text Should Be    ${lbCardHolderName}    ${MessageCardHolderName}
+    Web Element Text Should Be    ${lbIssuerBankName}    ${MessageIssuerBankName}
+    Web Element Text Should Be    ${lbCountry}    ${MessageCountry}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path_test}    ${#dict_device_name}
+
+[S05-158]eServiceWeb-PO-AutomaticPaymentViaCreditCard-Cancel
+    [Tags]    test
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path_test}    virtual_3PO_1    ${lo_parallel_timeout}    CreditCard=include    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${TestSiteEServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login Test Site    ${virtual_3PO_1_Number}
+    SelectMenu    Payment/Topup    AutomaticPaymentViaCreditCard
+    Input Web Text    ${txtIDCitizen}    ${virtual_3PO_1_IDCitizen}
+    Click Web Element    ${btnSubmitID}
+    Web Element Text Should Be    ${lbCreditCardType}    ${MessageCreditCardType}
+    Web Element Text Should Be    ${lbCreditCardNo}    ${MessageCreditCardNo}
+    Web Element Text Should Be    ${lbExpirationDate}    ${MessageExpirationDate}
+    Web Element Text Should Be    ${lbCardHolderName}    ${MessageCardHolderName}
+    Web Element Text Should Be    ${lbIssuerBankName}    ${MessageIssuerBankName}
+    Web Element Text Should Be    ${lbCountry}    ${MessageCountry}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path_test}    ${#dict_device_name}
+
+[S05-159]eServiceWeb-PO-AutomaticPaymentViaCreditCard-RegisterToPayWithCreditCard
     [Tags]    success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}

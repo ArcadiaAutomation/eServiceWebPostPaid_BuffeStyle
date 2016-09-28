@@ -21,3 +21,7 @@ ${btnComfirmDesNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/di
 ${lbPopUpDialog}    xpath=//*[@id="popup_detail"]/div[1]
 ${lbInputPrepaid}    xpath=//*[@id="txtAlertMessage"]/div
 ${btnNoOutstandingBalance}    xpath=//*[@id="btnAction0"]
+${urlKBank}       https://online.kasikornbankgroup.com/K-Online/preLogin/popupPreLogin.jsp?lang=th&type=
+${urlBangkokBank}    https://ibanking.bangkokbank.com/SignOn.aspx
+${lbMsgNumber}    xpath=//*[@id="lblBILL3GPaymentAnother"]
+${btnEdit}        xpath=//*[@id="lblBILL3GPaymentAnotherEdit"]

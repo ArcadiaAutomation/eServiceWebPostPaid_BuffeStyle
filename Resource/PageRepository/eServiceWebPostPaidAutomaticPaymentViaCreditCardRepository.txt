@@ -14,3 +14,9 @@ ${txtIDCitizen}    xpath=//*[@id="textfield"]
 ${btnSubmitID}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div/div/div[1]/div/div/div[2]/div/div[1]/div[2]/div/a/div
 ${lbAlertMsg}     xpath=//*[@id="txtAlertMessage"]/div
 ${lbAlertMsgByFirebug}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div/div/div[3]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div    # Normal cannot use I dont know why. (Mon)
+${lbCreditCardType}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div[4]/div[1]/div/div[1]
+${lbCreditCardNo}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div[4]/div[2]/div/div[1]
+${lbExpirationDate}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div[4]/div[3]/div/div[1]
+${lbCardHolderName}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div[4]/div[4]/div/div[1]
+${lbIssuerBankName}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div[4]/div[5]/div/div[1]
+${lbCountry}      xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div[4]/div[6]/div/div[1]

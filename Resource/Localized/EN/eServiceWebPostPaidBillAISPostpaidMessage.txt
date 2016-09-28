@@ -16,3 +16,6 @@ ${MessageInputChar}    Please enter numerical data only.
 ${MessageInputZeroAmount}    Please enter the amount you wish to payment.
 ${MessageInputPrepaidNumber}    Destination number you have entered is One-2-Call! number.\nIf you want to top up please click here.
 ${MessageNotInputSelfNumber}    You have entered incorrect phone number. Please check and try again.
+${KBank}          Kasikornbank (Kbank)
+${BangkokBank}    Bangkok Bank (BBL)
+${MessageDesNumber}    Enter destination number you wish to payment.
