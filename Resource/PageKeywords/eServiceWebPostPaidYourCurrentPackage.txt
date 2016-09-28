@@ -1,17 +1,22 @@
 *** Settings ***
-Resource          ../PageRepository/eServiceWebPostPaidChangeMainPackageRepository.txt
+Resource          ../PageRepository/eServiceWebPostPaidYourCurrentPackageRepository.txt
+Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
-Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidChangeMainPackageMessage.txt
-Resource          ../PageRepository/eServiceWebPostPaidRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourCurrentPackage.txt
+Library           ../../../AisRobotBuffet/Library/General/DateTime.py
 
 *** Keywords ***
+Check Detail CurrentPackage
+    Web Element Text Should Be    ${txtCheckMainPackage}    ${txtMainPackage}
+    Web Element Text Should Be    ${txtCheckOnTopPackage}    ${txtOnTopPackage}
+
 Select Package
-    [Arguments]    ${MainPackage}    ${SubSetPackage}
+    [Arguments]    ${MainPackage}    ${SubPackage}
     Wait Until Element Is Visible    ${ddlMainPackage}
     Selenium2Library.Select From List    ${ddlMainPackage}    ${MainPackage}
-    Wait Until Element Is Visible    ${ddlSubSetMainPackage}
-    Selenium2Library.Select From List    ${ddlSubSetMainPackage}    ${SubSetPackage}
+    Wait Until Element Is Visible    ${ddlSubPackage}
+    Selenium2Library.Select From List    ${ddlSubPackage}    ${SubPackage}
 
 Verify SMS Add format Date Time
     [Arguments]    ${smsCheck}    ${totalSMS}    ${formatDate}    ${formatTime}
@@ -33,3 +38,21 @@ Check Package
     \    Run Keyword If    '${UsageName}'=='${UsageExp}'    Exit For Loop
     \    Comment    Log    ${UsageName}
     Run Keyword If    '${UsageName}'!='${UsageExp}'    FAIL
+
+Get Date
+    Comment    Log    Time TH
+    Comment    ${date}    Get Current Date    result_format=%Y/%m/%d
+    Comment    ${dateTime}    Convert Date    ${date}    datetime
+    Comment    Comment    ${yearTH}    Evaluate    ${dateTime.year}+543
+    Comment    ${yearTH}    Evaluate    ${dateTime.year}
+    Comment    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
+    Comment    Log    ${dateTomorrow}${yearTH}
+    Comment    Comment    19/09/2016 17:29.
+    ${date}    Get Current Date    result_format=%d/%m/%Y
+    Log    ${date}
+    [Return]    ${date}
+
+Get Time
+    ${Time}    Get Current Date    result_format=%H:%M.
+    Log    ${Time}
+    [Return]    ${time}

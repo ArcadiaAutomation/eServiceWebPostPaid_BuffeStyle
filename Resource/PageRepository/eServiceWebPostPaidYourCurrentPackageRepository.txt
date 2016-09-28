@@ -4,7 +4,7 @@ ${txtCheckOnTopPackage}    xpath=//*[@id="panelCurrentPack1"]/div/div[1]/span
 ${btnChangeMainPackage}    xpath=//*[@id="changePackage"]/div
 ${rdo399NET2GB}    xpath=//*[@id="lbPackage_P15110383"]
 ${btnConfirmPackage}    xpath=//*[@id="btnChangePackConfirm"]/div
-${btnPacageNextBill}    xpath=//*[@id="lbChkManagePackNextBilling"]
+${btnPackageNextBill}    xpath=//*[@id="lbChkManagePackNextBilling"]
 ${btnPackageNextDay}    xpath=//*[@id="lbChkManagePackNextDay"]
 ${btnPackageImmediately}    xpath=//*[@id="lbChkManagePackImmediately"]
 ${btnConfirmEffective}    xpath=//*[@id="btnChangePackConfirmDate"]/div
@@ -21,3 +21,10 @@ ${rdoAISWIFI1Hour}    xpath=//*[@id="lbPackage_P13075531"]
 ${btnNextPackage}    xpath=//*[@id="btnCurrentPackNextPost"]
 ${txtCheckNextPackage}    xpath=//*[@id="panelCurrentPack0"]/div/div[1]/span
 ${btnCurrentPackage}    xpath=//*[@id="btnCurrentPack"]
+${txtCheckNamePackage}    xpath=//*[@id="txtSelectedPackageStepFourName"]
+${txtAllPackage}    xpath=//*[@class="ng-binding" and @ng-class="{'font_color_green6':auth.groupType == 'PREPAID'}"]
+${txtCheckPrivilege}    xpath=//*[@id="txtPrivilegeStatusHead"]
+${smsCheck399NET2GB}    Net SIM Package Monthly fee 399B\\. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice\\/VDO call 1\\.5B\\./min, SMS 3B\\., MMS 6B\\. Start
+${smsCheckMaoMaoMidNight5B}    .*
+${smsCheckMaoMaoCombo55B}    Mao Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start
+${smsCheckAISWIFI1Hour}    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start

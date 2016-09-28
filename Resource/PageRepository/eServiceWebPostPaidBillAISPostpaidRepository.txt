@@ -10,7 +10,7 @@ ${urlIpayBangkokBank}    https://ipay.bangkokbank.com/b2c/eng/payment/payForm2.j
 ${btnOK}          xpath=//*[@id="btnBILL3GSubmitPayment"]
 ${btnCancel}      xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div[3]/div[2]/div/a[2]/div
 ${imgAMEXCard}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div[3]/div/img
-${urlTMBbank}     https://www.tmbdirect.com/tmb/kdw1.10.5#_frmIBPreLogin
+${urlTMBbank}     https://www.tmbdirect.com/tmb/kdw1.10.7#_frmIBPreLogin
 ${urlKrungsriBank}    https://www.krungsri.com/bank/th/krungsrionline-landing.html
 ${urlUOBbank}     https://pib.uobthailand.com/PIBLogin/appmanager/Login/Public?lang=th_TH
 ${urlSCBbank}     https://www.scbeasy.com/v1.4/site/presignon/index.asp
@@ -20,3 +20,8 @@ ${txtDestinationNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/d
 ${btnComfirmDesNumber}    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div
 ${lbPopUpDialog}    xpath=//*[@id="popup_detail"]/div[1]
 ${lbInputPrepaid}    xpath=//*[@id="txtAlertMessage"]/div
+${btnNoOutstandingBalance}    xpath=//*[@id="btnAction0"]
+${urlKBank}       https://online.kasikornbankgroup.com/K-Online/preLogin/popupPreLogin.jsp?lang=th&type=
+${urlBangkokBank}    https://ibanking.bangkokbank.com/SignOn.aspx
+${lbMsgNumber}    xpath=//*[@id="lblBILL3GPaymentAnother"]
+${btnEdit}        xpath=//*[@id="lblBILL3GPaymentAnotherEdit"]

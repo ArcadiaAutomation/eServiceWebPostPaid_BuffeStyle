@@ -6,3 +6,4 @@ ${inputDateSuspensionYesterday}    กรุณาระบุวันที่
 ${inputDateReconnectYesterday}    กรุณาระบุวันที่ ที่มากกว่าวันปัจจุบัน
 ${txtConfirmSuspension}    กำลังดำเนินการ หมายเลขของคุณจะถูกระงับบริการชั่วคราวภายในไม่เกิน 30 นาที
 ${txtConfirmSuspensionNextDay}    ระบบได้กำหนดวันระงับบริการล่วงหน้าเรียบร้อยแล้ว
+${txtCheckBackSuspension}    หมายเลขของคุณได้ทำการระงับบริการชั่วคราวแล้ว ไม่สามารถทำการระงับบริการได้อีก

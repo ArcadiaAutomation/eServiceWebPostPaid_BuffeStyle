@@ -1,0 +1,153 @@
+*** Settings ***
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidApplyXtraOnTopPackageMessage.txt
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebPostPaidApplyXtraOnTopPackageRepository.txt
+Resource          ../PageVariable/eServiceWebPostPaidApplyXtraOnTopPackageVariable.txt
+
+*** Keywords ***
+Select Package
+    [Arguments]    ${MainType}    ${SubType}
+    Wait Until Element Is Visible    ${ddlMainTypePackage}    20
+    Selenium2Library.Select From List    ${ddlMainTypePackage}    ${MainType}
+    Wait Until Element Is Visible    ${ddlSubTypePackage}    20
+    Selenium2Library.Select From List    ${ddlSubTypePackage}    ${SubType}
+
+Cancel On-Top Package
+    [Arguments]    ${PackageExp}
+    Click Web Element    ${mnuCancelOnTopPackage}
+    Wait Web Until Page Contains Element    ${PackageName}
+    Wait Until Element Is Visible    ${PackageName}
+    @{Packages}    Get Webelements    ${PackageName}
+    : FOR    ${index}    IN RANGE    0    10
+    \    ${PackageNameAct}    Get Text    @{Packages}[${index}]
+    \    Run Keyword If    '${PackageNameAct}'=='${PackageExp}'    Exit For Loop
+    @{CheckBox}    Get Webelements    ${chkPackage}
+    Click Web Element    @{CheckBox}[${index}]
+    Click Web Element    ${btnCancelPack}
+    Click Web Element    ${ConfirmCancelPack}
+    Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='Production'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccessTestSite}
+
+Confirm Select Package
+    Click Web Element    ${btnChangePackConfirm}
+
+Input Friend Number
+    [Arguments]    ${FriendNumber}
+    Input Web Text    ${txtFriendNumber1}    ${FriendNumber}
+
+Manage Package Immediately
+    Click Web Element    ${rdoImmediately}
+
+Confirm Select Effective Date
+    Click Web Element    ${btnChangePackConfirm2}
+
+Confirm OnTop Package Register
+    Click Web Element    ${btnChangePackConfirm3}
+
+Open WebSite Eservice By Location
+    Run Keyword If    '${ar_Location}'=='Production'    Open Browser On Production
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Open Browser On Test Site
+
+Open Browser On Production
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+
+Open Browser On Test Site
+    Open Web Browser    ${TestSiteEServiceURL}    gc    ${lo_IPSelenium}
+
+Login WebSite Eservice By Location
+    Run Keyword If    '${ar_Location}'=='Production'    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    ...    ${virtual_3PO_1_Number}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login On Test Site    ${virtual_3PO_2_Number}
+
+Select OnTop XtraTalk Call 3 NumberAIS Package
+    [Arguments]    ${friendNumber}
+    Run Keyword If    '${ar_Location}'=='Production'    Select OnTop XtraTalk Call 3 NumberAIS Package On Production    ${friendNumber}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Select OnTop XtraTalk Call 3 NumberAIS Package On TestSite    ${friendNumber}
+
+Select OnTop XtraTalk Call 3 NumberAIS Package On Production
+    [Arguments]    ${friendNumber}
+    Input Friend Number    ${friendNumber}
+    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
+    Click Web Element    ${btnChangePackConfirm}
+
+Select OnTop XtraTalk Call 3 NumberAIS Package On TestSite
+    [Arguments]    ${friendNumber}
+    Input Web Text    ${txtFriendnumber1TestSite}    ${friendNumber}
+    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
+    Click Web Element    ${btnChangePackConfirm}
+
+Login On Test Site
+    [Arguments]    ${Number}
+    Input Web Text    ${txtMobileNumber}    ${Number}
+    Click Web Element    ${btnGetOTP}
+    Sleep    2
+    ${IsPrimaryVisible}    Run Keyword And Return Status    Selenium2Library.Element Should Be Visible    ${btnPrimary}
+    Run Keyword If    ${IsPrimaryVisible}    Click Web Element    ${btnPrimary}
+    Input Web Text    ${txtInputOTP}    7777
+    Click Web Element    ${btnOKOTP}
+
+Register OnTop XtraNet 4G 488B Package
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
+    ...    ELSE    Click Web Element    ${chkInternetPackageTestSite}
+
+Select XtraTalk Monthly Package Special Number
+    Click Web Element    ${chk100BCall50stSpecialNumber}
+
+Input Special Number
+    [Arguments]    ${Number}
+    Input Web Text    ${txtSpecialNumber1}    ${Number}
+
+Verify Register OnTop SMS
+    [Arguments]    ${ExpectSMS}
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    ${ExpectSMS}    #ใช้ regular .* เนื่องจากได้รับข้อความเป็นภาษาไทย
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+
+Check Active Package
+    [Arguments]    ${PackageName}
+    ${statusPackage}    Set Variable    False
+    ${OnTopPackageTableIsVisisble}    Run Keyword And Return Status    Wait Until Element Is Visible    ${lblAllActivePackage}
+    Log To Console    Status:'${OnTopPackageTableIsVisisble}'
+    Run Keyword If    '${OnTopPackageTableIsVisisble}'=='False'    Return From Keyword
+    @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
+    ${range}    Get Length    ${AllActivePackage}
+    ${ExpectPackage}    Set Variable    ${PackageName}
+    : FOR    ${index}    IN RANGE    0    ${range}
+    \    ${ActivePackage}    Get Text    @{AllActivePackage}[${index}]
+    \    ${statusPackage}    Evaluate    '${ActivePackage}'=='${ExpectPackage}'
+    \    Comment    Log To Console    'waha status':'${statusPackage}'
+    \    Run Keyword If    ${statusPackage}    Exit For Loop
+    \    Comment    Return From Keyword If    '${ActivePackage}'=='${ExpectPackage}'    True
+    \    Comment    Log To Console    Package Active : ${ActivePackage}
+    [Return]    ${statusPackage}
+
+Check Package Status Until Active
+    [Arguments]    ${Package}
+    [Timeout]    3 minutes
+    Select Menu    YourCurrentPackage
+    : FOR    ${startTime}    IN RANGE    0    ${MaximumLoop}
+    \    ${Status}=    Check Active Package    ${Package}
+    \    Run Keyword If    ${Status}    Exit For Loop
+    \    Comment    Select Menu    Package    Home
+    \    sleep    12
+    \    Select Menu    YourCurrentPackage
+    Select Menu    Home
+
+Select OnTop XtraTalk Monthly Package 100B CallAIS 150Min
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkXtraTalkMonthly100BCallAIS150MinTestSite}
+
+Select OnTop XtraNet Monthly Package 4G 488B
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkInternetPackageTestSite}
+
+Select OnTop XtraNet Wifi AIS Super Wifi Package
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chkAisSuperWifi20GB}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkInternetWifiAISSuperWifi20GBTestSite}
+    Comment    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkInternetWifi69BperMonth}

@@ -7,9 +7,12 @@ ${MessagePleaseYourName}    Please enter your name.
 ${MessagePleaseSelectMessage}    Please select message before goint to next step.
 ${MessagePleaseSelectFile}    Please select the file you would like to upload.
 ${MessageSelectFileXls}    Please select the Excel file (*.xls) you would like to upload
-${MessageBeforeSendFormal}    \ เอ้ \ changes mobile number from \ 0922222222 \ to \ [3PO_1_Number]\ \
-${MessageAfterSendOneNumber}    Do you have any additional new mobile number to add into your list?
+${MessageBeforeSendFormal}    \ Bee \ changes mobile number from \ 0922222222 \ to \ [3PO_1_Number]\ \
+${MessageAfterSend}    Do you have any additional new mobile number to add into your list?
 ${PageNewNumber}    New Number Announcement Service
-${MessageBeforeSendInformal}    Hey guys, get bored with \ 0922222222 , up \ [3PO_1_Number] \ contact to \ เอ้ .
+${MessageBeforeSendInformal}    Hey guys, get bored with \ 0922222222 , up \ [3PO_1_Number]\ \ contact to \ Bee .
 ${SelectMessageFormal}    (Your name) changes mobile number from (Old number) to (New number)
 ${SelectMessageInformal}    Hey guys, get bored with (Old number), up (New number) contact to (Your name).
+${MessageSendCompleteInformal}    Hey guys, get bored with 0922222222, up [3PO_1_Number] contact to
+${MessageSendCompleteFormal}    Bee changes mobile number from 0922222222 to [3PO_1_Number]
+${PageMain}       Welcome

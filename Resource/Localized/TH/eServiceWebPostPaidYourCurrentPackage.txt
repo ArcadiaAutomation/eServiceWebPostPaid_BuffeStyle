@@ -1,0 +1,15 @@
+*** Variables ***
+${txtMainPackage}    แพ็กเกจหลัก
+${txtOnTopPackage}    แพ็กเสริม
+${txtNextPackage}    แพ็กเกจ
+${txtOnTopNextPackage}    แพ็กเสริม
+${txtCheckDetailPackage}    399 บ/เดือน เน็ตต่อเนื่อง 2GB + AIS WiFi
+${txtSelectMainPackage}    แพ็กเกจเล่นเน็ต
+${txtSelectSubPackage}    Net SIM
+${txtCurrentPackage}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB
+${txtSelectOnTopPackageXtraTalk}    แพ็กเสริมเน้นคุย
+${txtSelectOnTopSubPackageMaoMao}    เหมา เหมา
+${txtSelectOnTopPackageXtraPack}    แพ็กเสริมคุยและเล่นเน็ต
+${txtSelectOnTopSubPackageMaoMaCombo}    เหมา เหมา คอมโบ
+${txtSelectOnTopPackageXtraNet}    แพ็กเสริมเล่นเน็ต
+${txtSelectOnTopSubPackageWifi}    Wifi

@@ -13,3 +13,14 @@ ${TextTopUpAmount}    Amount\n(Baht)
 ${TextTypeOfTopUp}    Type of top up
 ${TextTopUpToAIS}    Top up to AIS\nOne-2-Call! number
 ${MessageNotSelectMonth}    please select month
+${MessageMpayNo}    No.
+${MessageMpayDate}    Date
+${MessageMpayTransactionName}    Transaction name
+${MessageTransactionID}    Transaction ID
+${MessageMpayAmount}    Amount
+${MessageMpayPaymentBy}    Payment by
+${MessageMpayStatus}    Status
+${ByDate}         Specify date
+${All}            All
+${Success}        Success
+${MessageNotSelectCondition}    Please fill in completed details of the problem so that we could provide you with the quickest resolution possible.

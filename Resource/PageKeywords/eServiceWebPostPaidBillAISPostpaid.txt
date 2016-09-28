@@ -15,3 +15,7 @@ Select Card Name
     [Arguments]    ${Card}
     Wait Until Element Is Visible    ${ddlCardName}    10
     Selenium2Library.Select From List    ${ddlCardName}    ${Card}
+
+NoOutstandingBalance
+    ${NoBalance}    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnNoOutstandingBalance}    15
+    Run Keyword If    ${NoBalance}    Click Web Element    ${btnNoOutstandingBalance}

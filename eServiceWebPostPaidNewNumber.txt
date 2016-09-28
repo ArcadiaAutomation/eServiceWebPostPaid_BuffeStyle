@@ -5,7 +5,7 @@ Resource          ../Config/LocalConfig.txt
 *** Test Cases ***
 [F07-264]eServiceWeb-PO-Service-NewNumber-NoFillAny
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -21,7 +21,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-265]eServiceWeb-PO-Service-NewNumber-CannotChangNumber
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -38,7 +38,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-266]eServiceWeb-PO-Service-NewNumber-FillCharacterInNumberFrom
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -54,7 +54,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-267]eServiceWeb-PO-Service-NewNumber-NoFilltxtFrom
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -72,7 +72,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-268]eServiceWeb-PO-Service-NewNumber-NotSelectMessage
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -91,7 +91,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-269]eServiceWeb-PO-Service-NewNumber-NotSelectFile
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -111,7 +111,7 @@ Resource          ../Config/LocalConfig.txt
 
 [F07-270]eServiceWeb-PO-Service-NewNumber-NotSelectFileXls
     [Tags]    fail    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -129,12 +129,12 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-209]eServiceWeb-PO-Service-NewNumber-OneNumber-Formal-Want
-    [Tags]    success    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
+    [Tags]    success    NN    209
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
-    ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${MessageSendCompleteFormal}    Replace String    ${MessageSendCompleteFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -144,7 +144,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnFormal}
     Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
@@ -156,7 +156,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageNewNumber}
     Element Should Contain    ${ldlPageNewNumber}    ${PageNewNumber}
-    @{MessageExpect}    Create List    ${MessageSendComplete}
+    @{MessageExpect}    Create List    ${MessageSendCompleteFormal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${MessageExpect}    30
     Close SMS App    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}
@@ -164,12 +164,12 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-210]eServiceWeb-PO-Service-NewNumber-OneNumber-Formal-NotWant
-    [Tags]    success    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
+    [Tags]    success    NN    210
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
-    ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${MessageSendCompleteFormal}    Replace String    ${MessageSendCompleteFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -179,7 +179,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnFormal}
     Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
@@ -191,7 +191,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnNotWantAdd}
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
-    @{MessageExpect}    Create List    ${MessageSendComplete}
+    @{MessageExpect}    Create List    ${MessageSendCompleteFormal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${MessageExpect}    30
     Close SMS App    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}
@@ -199,10 +199,10 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-211]eServiceWeb-PO-Service-NewNumber-MoreThanOneNumber-Informal-NotWant
-    [Tags]    success    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO_3=include
+    [Tags]    success    NN    211
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendCompleteInformal}    Replace String    ${MessageSendCompleteInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
@@ -216,7 +216,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnInformal}
     Select From List    ${ddlSelectMessageInformal}    ${SelectMessageInformal}
     Click Web Element    ${btnOK}
@@ -232,18 +232,20 @@ Resource          ../Config/LocalConfig.txt
     @{MessageExpect}    Create List    ${MessageSendCompleteInformal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${MessageExpect}    30
+    Close SMS App    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}    1    ${MessageExpect}    30
+    Close SMS App    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-212]eServiceWeb-PO-Service-NewNumber-SelectFileOneNumber-Formal
-    [Tags]    success    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
+    [Tags]    success    NN    212
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     ${MessageBeforeSendFormal}    Replace String    ${MessageBeforeSendFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
-    ${MessageSendComplete}    Replace String    ${MessageSendComplete}    [3PO_1_Number]    ${virtual_3PO_1_Number}
+    ${MessageSendCompleteFormal}    Replace String    ${MessageSendCompleteFormal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -260,7 +262,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnSelectFile}
     Choose File    ${btnChooseFile}    ${FileMobileNo}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnFormal}
     Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
@@ -273,7 +275,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${ldlPageMain}
     Element Should Contain    ${ldlPageMain}    ${PageMain}
     Remove File    ${FileMobileNo}
-    @{MessageExpect}    Create List    ${MessageSendComplete}
+    @{MessageExpect}    Create List    ${MessageSendCompleteFormal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${MessageExpect}    30
     Close SMS App    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}
@@ -281,10 +283,10 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S07-213]eServiceWeb-PO-Service-NewNumber-SelectFileMorethanOneNumber-Informal
-    [Tags]    success    NN
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO_2=include
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO_3=include
+    [Tags]    success    NN    213
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    3PO=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_3    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}    ${virtual_3PO_3_#device_name}=${virtual_3PO_3_#timestamp}
     ${MessageBeforeSendInformal}    Replace String    ${MessageBeforeSendInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
     ${MessageSendCompleteInformal}    Replace String    ${MessageSendCompleteInformal}    [3PO_1_Number]    ${virtual_3PO_1_Number}
@@ -305,7 +307,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnSelectFile}
     Choose File    ${btnChooseFile}    ${FileMobileNo}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnInformal}
     Select From List    ${ddlSelectMessageInformal}    ${SelectMessageInformal}
     Click Web Element    ${btnOK}

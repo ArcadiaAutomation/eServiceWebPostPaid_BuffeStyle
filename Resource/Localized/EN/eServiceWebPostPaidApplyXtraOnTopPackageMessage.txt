@@ -1,6 +1,6 @@
 *** Variables ***
 ${NotSelectPackage}    Please select the package that you want.
-${MessageRegisterDuplicate}    You are currently using the selected package.Please select a new package again.
+${MessageRegisterXtraTalkDuplicate}    You are currently using the selected package.Please select a new package again.
 ${MessageInputFriendNumberLessThan10Digit}    You have entered is incorrect mobile number. Please try again.
 ${MessageInputFriendNumberWithCharacter}    Please enter numerical data only.
 ${MessageInputFriendNumberWithDtacNumber}    Please specify your AIS mobile number.
@@ -21,3 +21,11 @@ ${4GInternet488}    4G Internet on-top package 488B. 4G Internet 5GB
 ${100BFreeStaSun}    100 B./Mth: Free AIS call Sat-Sun
 ${MessageCancelPackageSuccess}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
 ${100BCall3AISNumber50st}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)
+${MessageRegisterSuccess}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
+${CallAIS3Number10-6PM}    100B./Mth:Call 3AIS number 50st./Min (10PM-6PM)
+${lblInternet20G1799BPackageName}    Internet on-top package 1,799B. Max speed 20 GB
+${lblExtraTalkGank100B3Number10pm-6pm}    Gang on-top package
+${MessageCancelPackageSuccessTestSite}    You will get a confirmation SMS when the transaction is completed shortly.
+${lblXtraTalkMonthly100BCallAIS150Min}    Smart topping AIS network 100B call free 150 min
+${lblXtraInternetWifi69B/Month}    P13075537 : Unlimited AIS Wifi package, 69 Baht per month
+${lblXtraInternetWifiAISSuperWifi20GB}    AIS SUPER WiFi ontop Pack99B./M 20GB+UnlimitedWiFi

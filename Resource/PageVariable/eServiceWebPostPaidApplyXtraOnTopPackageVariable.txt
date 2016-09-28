@@ -1,0 +1,5 @@
+*** Variables ***
+${DtacNumber}     0944835961
+${AISNumber}      0932292294
+${NumberAISTestSite}    0937019509
+${NumberAISProduction}    0932292294

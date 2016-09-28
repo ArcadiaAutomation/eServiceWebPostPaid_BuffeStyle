@@ -4,7 +4,7 @@ Resource          ../Config/LocalConfig.txt
 
 *** Test Cases ***
 [S03-035]eServiceWeb-PO-Cancel-CancelWithNoOnTopPackage
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -18,7 +18,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S03-037]eServiceWeb-PO-Cancel-CancelOnTopPackage
     [Documentation]    *SMS ที่ส่งมาเป็นภาษาไทย* ทำ work around โดยการไม่สนใจ SMS เนื้อหาของ SMS ที่ส่งเข้ามา
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window

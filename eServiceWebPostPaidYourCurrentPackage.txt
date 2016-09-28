@@ -1,0 +1,258 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.txt
+
+*** Test Cases ***
+[S03-009]eServiceWeb-PO-YourCurrentPackage-CheckCurrentPackage
+    [Tags]    currentpackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-010]eServiceWeb-PO-YourCurrentPackage-CheckNextPackage
+    [Tags]    nextpackage
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    RegisterNextPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-011]eServiceWeb-PO-YourCurrentPackage-ChangeMainPackage-Net2GB-NextBill
+    [Tags]    nonregression    nextbill
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeMainPackage}
+    Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
+    Click Web Element    ${rdo399NET2GB}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
+    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-012]eServiceWeb-PO-YourCurrentPackage-ChangeMainPackage-Net2GB-NextDay
+    [Tags]    nonregression    nextday
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeMainPackage}
+    Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
+    Click Web Element    ${rdo399NET2GB}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextDay}
+    Click Web Element    ${btnConfirmDialog}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
+    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-013]eServiceWeb-PO-YourCurrentPackage-ChangeMainPackage-Net2GB-Immediately
+    [Tags]    nonregression    immediately
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeMainPackage}
+    Select Package    ${txtSelectMainPackage}    ${txtSelectSubPackage}
+    Click Web Element    ${rdo399NET2GB}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageImmediately}
+    Click Web Element    ${btnConfirmDialog}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
+    Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
+    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Check Detail CurrentPackage
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-014]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-MaoMaoMidNightSale
+    [Tags]    nonregression    maomaomidnightsale
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeOnTopPackage}
+    Select Package    ${txtSelectOnTopPackageXtraTalk}    ${txtSelectOnTopSubPackageMaoMao}
+    Click Web Element    ${rdoMaoMaoMidNight5B}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
+    Comment    ${smsCheckMaoMaoMidNight5B}
+    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-015]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-MaoMaoCombo
+    [Tags]    maomaocombo    nonregression
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeOnTopPackage}
+    Select Package    ${txtSelectOnTopPackageXtraPack}    ${txtSelectOnTopSubPackageMaoMaoCombo}
+    Click Web Element    ${rdoMaoMaoCombo55B}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextDay}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Comment    ${smsCheckMaoMaoCombo55B}    แพ็กเสริมเหมา เหมา คอมโบ ค่าบริการ 55บ. โทรฟรีเบอร์ AIS 23:00-17:00น. และเน็ตความเร็วสูงสุดจำนวน 160 MB หลังจากนั้นใช้ได้ต่อเนื่องที่ความเร็ว 64Kbps ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม28/09/2016 00:00 ถึง 28/09/2016 23:59    Mao Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start27/09/2016 00:00 to 27/09/2016 23:59.
+    Verify SMS Add format Date Time    ${smsCheckMaoMaoCombo55B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S03-016]eServiceWeb-PO-YourCurrentPackage-ChangeOnTopPackage-AISWIFI
+    [Tags]    nonregression    aiswifi
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    NonRegressionPackage=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1#device_name}=${virtual_3PO_1#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    SelectMenu    Package    YourCurrentPackage
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeOnTopPackage}
+    Select Package    ${txtSelectOnTopPackageXtraNet}    ${txtSelectOnTopSubPackageWifi}
+    Click Web Element    ${rdoAISWIFI1Hour}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageImmediately}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Comment    ${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 23/09/2016 17:19    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
+    Verify SMS Add format Date Time    ${smsCheckAISWIFI1Hour}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.
+    Click Web Element    ${btnBackToCurrentPackage}
+    Check Detail CurrentPackage
+    Check Package    ${txtNamePackage}
+    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+test
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Comment    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    ${date}    Get Current Date    result_format=%d/%m/%Y
+    Comment    Log    ${date}
+    Comment    ${Time}    Get Current Date    result_format=%H:%M.
+    Comment    Log    ${Time}
+    Comment    Log    ${date}\ ${time}
+    Comment    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    Comment    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Comment    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Comment    Maximize Browser Window
+    Comment    Select Frame    ${fraMainIframe}
+    Comment    Click Web Element    ${btnLanguage}
+    Comment    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Comment    Wait Until Element Is Visible    ${txtCheckPrivilege}
+    Comment    ${txt}    Get Text    ${txtCheckPrivilege}
+    Comment    Log    ${txt}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+test Regular Expression
+    Comment    ${txtExpect}=    Set Variable    เทสข้อความ
+    Comment    ${txtExp}=    Set Variable    ครั้ง
+    Comment    ${txtCheck}=    Set Variable    เทสข้อความ 123 ครั้ง
+    Comment    Should Match Regexp    ${txtCheck}    ${txtExpect} \\d\\d\\d ${txtExp}
+    Comment    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
+    Comment    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
+    Comment    ${MessageExpect}=    Set Variable    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
+    Comment    ${smsCheck}=    SetVariable    AIS WiFi ontop package 1 hour, 9 Baht. Get WiFi user/password press*388#. Start 22/09/2559 18:00.
+    Comment    Should Match Regexp    ${smsCheck}    ${MessageExpect} ${formatDate} ${formatTime}
+    [Teardown]

@@ -17,7 +17,7 @@ Get Date Tomorrow TH
     ${date}    Get Current Date    result_format=%Y/%m/%d
     ${dateTime}    Convert Date    ${date}    datetime
     ${yearTH}    Evaluate    ${dateTime.year}+543
-    ${dateTomorrow}    Add Time To Date    ${date}    2 day    result_format=%d/%m/
+    ${dateTomorrow}    Add Time To Date    ${date}    1 day    result_format=%d/%m/
     Log    ${dateTomorrow}${yearTH}
     [Return]    ${dateTomorrow}${yearTH}
 
@@ -48,3 +48,24 @@ Get Date Yesterday EN
     ${dateYesterday}    Add Time To Date    ${date}    -1 day    result_format=%d/%m/%Y
     Log    ${dateYesterday}
     [Return]    ${dateYesterday}
+
+Get Date AfterTomorrow TH
+    Log    Time TH
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${dateTime}    Convert Date    ${date}    datetime
+    ${yearTH}    Evaluate    ${dateTime.year}+543
+    ${dateAfterTomorrow}    Add Time To Date    ${date}    2 day    result_format=%d/%m/
+    Log    ${dateAfterTomorrow}${yearTH}
+    [Return]    ${dateAfterTomorrow}${yearTH}
+
+Check Local Time AfterTomorrow
+    ${result}    Run Keyword If    '${ar_LANG}'=='TH'    Get Date AfterTomorrow TH
+    ...    ELSE    Get Date AfterTomorrow EN
+    [Return]    ${result}
+
+Get Date AfterTomorrow EN
+    Log    Time EN
+    ${date}    Get Current Date    result_format=%Y/%m/%d
+    ${dateAfterTomorrow}    Add Time To Date    ${date}    2 day    result_format=%d/%m/%Y
+    Log    ${dateAfterTomorrow}
+    [Return]    ${dateAfterTomorrow}

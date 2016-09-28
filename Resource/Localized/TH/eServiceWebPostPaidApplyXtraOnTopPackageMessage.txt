@@ -1,6 +1,6 @@
 *** Variables ***
 ${NotSelectPackage}    กรุณาเลือกแพ็กเกจที่ต้องการ
-${MessageRegisterDuplicate}    หมายเลขของคุณใช้งานแพ็กเกจนี้อยู่แล้ว\nไม่สามารถสมัครซ้ำได้
+${MessageRegisterXtraTalkDuplicate}    หมายเลขของคุณใช้งานแพ็กเกจนี้อยู่แล้ว\nไม่สามารถสมัครซ้ำได้
 ${MessageInputFriendNumberLessThan10Digit}    หมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาระบุใหม่อีกครั้ง
 ${MessageInputFriendNumberWithCharacter}    กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลขเท่านั้น
 ${MessageInputFriendNumberWithDtacNumber}    กรุณาระบุหมายเลขโทรศัพท์ในเครือข่ายเอไอเอส
@@ -21,3 +21,11 @@ ${4GInternet488}    แพ็กเสริม 4G Internet 488บ. 4G 5GB
 ${100BFreeStaSun}    100 บ/ด: โทร AIS ฟรี วันเสาร์-อาทิตย์
 ${MessageCancelPackageSuccess}    กำลังดำเนินการ กรุณารอรับ SMS ยืนยันการยกเลิก
 ${100BCall3AISNumber50st}    100 บ/ด: โทร3เบอร์AISนาทีละ 50สต. ในเวลา 22-18 น.
+${MessageRegisterSuccess}    กำลังดำเนินการ \ กรุณารอรับ SMS แจ้งยืนยันการสมัครและวันมีผลเริ่มใช้งานแพ็กเกจ
+${CallAIS3Number10-6PM}    100 บ/ด: โทร3เบอร์AISนาทีละ 50สต. ในเวลา 22-18 น.
+${lblInternet20G1799BPackageName}    P15084935_แพ็กเสริม Internet 1,799บ. ความเร็วสูงสุด 20 GB
+${lblExtraTalkGank100B3Number10pm-6pm}    แพ็กเสริม แก็งค์
+${MessageCancelPackageSuccessTestSite}    กำลังดำเนินการ กรุณารอรับ SMS ยืนยันการยกเลิก
+${lblXtraTalkMonthly100BCallAIS150Min}    แพ็กเสริมคุยในเครือข่ายเอไอเอส 100บ โทรฟรี 150 นาที
+${lblXtraInternetWifi69B/Month}    P13075537 : แพ็กเสริม AIS Wifi ไม่จำกัด 69 บาท/เดือน(N/A)
+${lblXtraInternetWifiAISSuperWifi20GB}    แพ็กเสริมAIS SUPER WiFi99บ./ด.20GB+AISWiFiไม่จำกัด

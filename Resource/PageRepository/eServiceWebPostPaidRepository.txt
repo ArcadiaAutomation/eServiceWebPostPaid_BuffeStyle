@@ -26,7 +26,7 @@ ${mnuNumberSuspension}    xpath=//*[@id="menu-21"]/span
 ${mnuYourCurrentCharges}    xpath=//*[@id="menu-72"]
 ${mnuUsageDetailHistory}    xpath=//*[@id="menu-7"]
 ${mnuCancelOnTopPackage}    xpath=//*[@id="menu-75"]
-${mnuCurrentPackage}    xpath=//*[@id="menu-3"]/span
+${mnuYourCurrentPackage}    xpath=//*[@id="menu-3"]/span
 ${mnuYourBalanceHistory}    xpath=//*[@id="menu-6"]
 ${mnuGeneralInformation}    xpath=//*[@id="menu-29"]
 ${mnuYourPersonalInformation}    xpath=//*[@id="menu-27"]
@@ -48,3 +48,4 @@ ${mnuYourCreditLimit}    xpath=//*[@id="menu-8"]
 ${mnuChangeMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuLeasing}     xpath=//*[@id="menu-94"]
 ${mnuAirNet}      xpath=//*[@id="menu-96"]
+${TestSiteEServiceURL}    https://10.252.176.155:8445/eServiceWeb

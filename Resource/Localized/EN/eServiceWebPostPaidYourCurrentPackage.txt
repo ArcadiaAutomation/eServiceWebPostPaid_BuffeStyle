@@ -1,0 +1,15 @@
+*** Variables ***
+${txtMainPackage}    Main Package
+${txtOnTopPackage}    On-Top Package
+${txtNextPackage}    Main Package
+${txtOnTopNextPackage}    On-Top Package
+${txtCheckDetailPackage}    399B/month Internet Non-Stop 2GB + AIS WiFi
+${txtSelectMainPackage}    Xtra Net
+${txtSelectSubPackage}    Net SIM
+${txtCurrentPackage}    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed
+${txtSelectOnTopPackageXtraTalk}    Xtra Talk
+${txtSelectOnTopSubPackageMaoMao}    Mao Mao
+${txtSelectOnTopPackageXtraPack}    Xtra Pack
+${txtSelectOnTopSubPackageMaoMaoCombo}    Mao Mao Combo
+${txtSelectOnTopPackageXtraNet}    Xtra Net
+${txtSelectOnTopSubPackageWifi}    Wifi

@@ -5,7 +5,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallingMelody.txt
 *** Test Cases ***
 [S07-188]eServiceWeb-PO-Service-CallingMelody
     [Tags]    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
     Maximize Browser Window
@@ -18,27 +18,3 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidCallingMelody.txt
     Run Keyword if    '${currentURL}' != '${urlCallingMelody}'    Fail
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
-
-[S07-197]eServiceWeb-PO-Service-CallScreening-BlockCalls-RemoveNumber
-    [Tags]    success
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO_1=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
-    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
-    Maximize Browser Window
-    Select Frame    ${fraMainIframe}
-    Click Web Element    ${btnLanguage}
-    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    CallScreening
-    Click Web Element    ${tabBlockCalls}
-    Add Block Number One
-    Add Block Number Two
-    Verify List Number Block Calls
-    Click Web Element    ${btnConfirmBlockCalls}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtComfirmDetailBlockNumberTwo}
-    Click Web Element    ${btnConfirmCallScreeningDialog}
-    Web Element Text Should Be    ${txtDialogConfirmCallScreening}    ${txtConfirmBlockCallScreening}
-    Click Web Element    ${btnBackToCallScreeningDialog}
-    Remove One Number Block
-    Clear Number Block Calls
-    Close Browser
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
