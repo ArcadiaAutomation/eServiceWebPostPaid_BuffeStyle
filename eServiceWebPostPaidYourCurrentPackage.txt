@@ -154,9 +154,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Comment    Log To Console    Ignore Thai SMS
-    Comment    ${smsCheckMaoMaoMidNight5B}    \    Mao Mao Midnight Sale on-top package fee 5 Baht Free call to AIS number during 12:00 AM - 11:00 AM Exceed:Voice call 1B/minute. Valid for 24 hours. Start08/10/2016 00:00 to 08/10/2016 23:59.
-    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Log To Console    Ignore Thai SMS
+    Comment    ${smsCheckMaoMaoMidNight5B}    \    Mao Mao Midnight Sale on-top package fee 5 Baht Free call to AIS number during 12:00 AM - 11:00 AM Exceed:Voice call 1B/minute. Valid for 24 hours. Start
+    Verify SMS Add format Date Time    .*    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -217,7 +217,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Wait Until Element Is Visible    ${txtCheckNamePackage}    20
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
-    Comment    ${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 23/09/2016 17:19    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
+    Comment    ${smsCheckAISWIFI1Hour}    แพ็กเสริม AIS WiFi 1 ชั่วโมง 9 บาท รับ User/Password กด*388#. เริ่ม 23/09/2016 17:19    AIS WiFi ontop package 1 hour, 9 Baht. Get WiFi user/password press*388#. Start
     Verify SMS Add format Date Time    ${smsCheckAISWIFI1Hour}    2    \ \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
