@@ -8,9 +8,9 @@ Resource          ../PageVariable/eServiceWebPostPaidApplyXtraOnTopPackageVariab
 *** Keywords ***
 Select Package
     [Arguments]    ${MainType}    ${SubType}
-    Wait Until Element Is Visible    ${ddlMainTypePackage}    10
+    Wait Until Element Is Visible    ${ddlMainTypePackage}    20
     Selenium2Library.Select From List    ${ddlMainTypePackage}    ${MainType}
-    Wait Until Element Is Visible    ${ddlSubTypePackage}    10
+    Wait Until Element Is Visible    ${ddlSubTypePackage}    20
     Selenium2Library.Select From List    ${ddlSubTypePackage}    ${SubType}
 
 Cancel On-Top Package
@@ -139,13 +139,6 @@ Check Package Status Until Active
     \    Select Menu    YourCurrentPackage
     Select Menu    Home
 
-testReturnKey
-    ${alphabet}    Set Variable    'www'
-    Log To Console    ${alphabet}
-    Log To Console    '2.5'
-    Run Keyword If    ${alphabet}=='ABC'    Return From Keyword
-    Log To Console    'Hello World'
-
 Select OnTop XtraTalk Monthly Package 100B CallAIS 150Min
     Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
     Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkXtraTalkMonthly100BCallAIS150MinTestSite}
@@ -153,3 +146,8 @@ Select OnTop XtraTalk Monthly Package 100B CallAIS 150Min
 Select OnTop XtraNet Monthly Package 4G 488B
     Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk4GInternetOnTopPackage488B}
     Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkInternetPackageTestSite}
+
+Select OnTop XtraNet Wifi AIS Super Wifi Package
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chkAisSuperWifi20GB}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkInternetWifiAISSuperWifi20GBTestSite}
+    Comment    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkInternetWifi69BperMonth}

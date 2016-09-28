@@ -27,3 +27,5 @@ ${lblInternet20G1799BPackageName}    P15084935_แพ็กเสริม Inter
 ${lblExtraTalkGank100B3Number10pm-6pm}    แพ็กเสริม แก็งค์
 ${MessageCancelPackageSuccessTestSite}    กำลังดำเนินการ กรุณารอรับ SMS ยืนยันการยกเลิก
 ${lblXtraTalkMonthly100BCallAIS150Min}    แพ็กเสริมคุยในเครือข่ายเอไอเอส 100บ โทรฟรี 150 นาที
+${lblXtraInternetWifi69B/Month}    P13075537 : แพ็กเสริม AIS Wifi ไม่จำกัด 69 บาท/เดือน(N/A)
+${lblXtraInternetWifiAISSuperWifi20GB}    แพ็กเสริมAIS SUPER WiFi99บ./ด.20GB+AISWiFiไม่จำกัด

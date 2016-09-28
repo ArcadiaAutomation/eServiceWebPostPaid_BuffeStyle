@@ -27,3 +27,5 @@ ${lblInternet20G1799BPackageName}    Internet on-top package 1,799B. Max speed 2
 ${lblExtraTalkGank100B3Number10pm-6pm}    Gang on-top package
 ${MessageCancelPackageSuccessTestSite}    You will get a confirmation SMS when the transaction is completed shortly.
 ${lblXtraTalkMonthly100BCallAIS150Min}    Smart topping AIS network 100B call free 150 min
+${lblXtraInternetWifi69B/Month}    P13075537 : Unlimited AIS Wifi package, 69 Baht per month
+${lblXtraInternetWifiAISSuperWifi20GB}    AIS SUPER WiFi ontop Pack99B./M 20GB+UnlimitedWiFi
