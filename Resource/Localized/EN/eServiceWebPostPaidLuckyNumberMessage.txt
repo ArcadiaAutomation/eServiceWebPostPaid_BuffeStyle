@@ -1,2 +1,3 @@
 *** Variables ***
 ${MessageStepSelectLuckyNumber}    ขั้นตอนการเลือกเบอร์มงคลเสริมชีวิต
+${ldlHeadPage}    เบอร์มงคลเสริมชีวิต

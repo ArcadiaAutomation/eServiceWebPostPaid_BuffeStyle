@@ -1,3 +1,4 @@
 *** Variables ***
 ${btnLuckyNumberOfYour}    xpath=//*[@id="rightBannerImg"]
 ${ldlStepSelectLuckyNumber}    xpath=//*[@id="profile"]/div[3]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[1]
+${txtHeadPage}    xpath=//*[@id="profile"]/div[3]/div/div/div/div/div/div/div/div/div/div/div[1]

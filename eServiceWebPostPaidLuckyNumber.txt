@@ -3,7 +3,7 @@ Resource          ../Config/LocalConfig.txt
 Resource          Resource/PageKeywords/eServiceWebPostPaidLuckyNumber.txt
 
 *** Test Cases ***
-[S08-215]
+[S08-215]eServiceWeb-PO-Service-VerifyPageLuckyNumber
     [Tags]
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include    LuckyNumber=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -12,11 +12,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLuckyNumber.txt
     Select Frame    ${fraMainIframe}
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
-    Select Menu    Service    AISCould
-    ${urlAISCould}    Set Variable    https://www.aiscloudplus.com/user/register/?mobileno=${virtual_3PO_1_Number}
-    Wait Until Keyword Succeeds    10 s    1 s    Select Window    url=${urlAISCould}
-    ${currentURL}    Get Location
-    Run Keyword if    '${currentURL}' != '${urlAISCould}'    Fail
+    Select Menu    LuckyNumber
+    Web Element Text Should Be    ${txtHeadPage}    ${ldlHeadPage}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
