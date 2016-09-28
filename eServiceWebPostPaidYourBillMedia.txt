@@ -71,7 +71,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S09-224]eServiceWeb-PO-YourBillMedia-EditMobileNumberSMSNotification
     [Documentation]    หมายเลขที่ใช้ run test script ต้องเป็นเบอร์ที่มีความสัมพันธ์กับเบอร์อื่นด้วย
-    [Tags]    NumberRelationWithOtherNumber
+    [Tags]    non-regression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
@@ -81,7 +81,7 @@ Resource          ../Config/LocalConfig.txt
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    YourPersonalInformation    YourBillMedia
     Edit Billing Information
-    Edit Mobile Number For Monthly SMS Notification    ${RecieveSMSNumber}
+    Edit Mobile Number For Monthly SMS Notification    ${virtual_3PO_1_Number}
     Confirm Edit
     Web Element Text Should Be    ${txtSummaryMessage}    ${MessageSuccessSelectSMS}
     Close Browser

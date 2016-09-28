@@ -5,3 +5,4 @@ ${MonthlyPackage}    Monthly package
 ${ActualOnTopPackageMsg}    Thank you. You will get a confirmation SMS when the transaction is completed shortly.
 ${MessageCancelPackageSuccess}    You will get a confirmation SMS when the transaction is completed shortly.
 ${PackageExp}     100 B./Mth: Free AIS call Sat-Sun
+${lblExtraTalkGank100B3Number10pm-6pm}    Gang on-top package

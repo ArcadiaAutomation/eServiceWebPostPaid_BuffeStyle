@@ -15,3 +15,5 @@ ${rdoImmediately}    xpath=//*[@id="lbChkManagePackImmediately"]
 ${ChangingStatusMsg}    xpath=//*[@id="lbSelectedPackageResult"]
 ${ddlMainTypePackage}    xpath=//*[@id="ddlChangPackGroupA"]
 ${ddlSubTypePackage}    xpath=//*[@id="ddlChangPackGroupB"]
+${chkSelectXtratalkPackage3Number0.5BathTestSite}    xpath=//*[@id="lbPackage_P12041515"]
+${txtFriendnumber1TestSite}    xpath=/html/body/div[2]/div[2]/section/div/div[3]/div/div/div[2]/div[1]/div[4]/div[1]/div[2]/div/div[1]/div[2]/div/div/div/div/div/div/div[5]/div/div/table/tbody/tr/td[2]/div/div[1]/div[2]/input
