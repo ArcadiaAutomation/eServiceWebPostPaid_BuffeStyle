@@ -144,7 +144,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnFormal}
     Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
@@ -179,7 +179,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtNumber1}
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnFormal}
     Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
@@ -216,7 +216,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtNumber1}    ${virtual_3PO_2_Number}
     Input Web Text    ${txtNumber2}    ${virtual_3PO_3_Number}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnInformal}
     Select From List    ${ddlSelectMessageInformal}    ${SelectMessageInformal}
     Click Web Element    ${btnOK}
@@ -232,8 +232,10 @@ Resource          ../Config/LocalConfig.txt
     @{MessageExpect}    Create List    ${MessageSendCompleteInformal}
     Open SMS App    ${virtual_3PO_2_IPAppium}    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_Platfrom_Version}    ${virtual_3PO_2_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}    1    ${MessageExpect}    30
+    Close SMS App    ${virtual_3PO_2_Platfrom_Name}    ${virtual_3PO_2_SN}
     Open SMS App    ${virtual_3PO_3_IPAppium}    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_Platfrom_Version}    ${virtual_3PO_3_SN}
     Wait and Verify Unread SMS    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}    1    ${MessageExpect}    30
+    Close SMS App    ${virtual_3PO_3_Platfrom_Name}    ${virtual_3PO_3_SN}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -260,7 +262,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnSelectFile}
     Choose File    ${btnChooseFile}    ${FileMobileNo}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnFormal}
     Select From list    ${ldlSelectMessage}    ${SelectMessageFormal}
     Click Web Element    ${btnOK}
@@ -305,7 +307,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnSelectFile}
     Choose File    ${btnChooseFile}    ${FileMobileNo}
     Input Web Text    ${txtNumberFrom}    0922222222
-    Input Web Text    ${txtFromName}    เอ้
+    Input Web Text    ${txtFromName}    Bee
     Click Web Element    ${btnInformal}
     Select From List    ${ddlSelectMessageInformal}    ${SelectMessageInformal}
     Click Web Element    ${btnOK}
