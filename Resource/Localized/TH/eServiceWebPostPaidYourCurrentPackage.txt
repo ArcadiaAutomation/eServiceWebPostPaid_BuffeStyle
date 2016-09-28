@@ -10,6 +10,6 @@ ${txtCurrentPackage}    แพ็กเกจ Net SIM ค่าบริกา�
 ${txtSelectOnTopPackageXtraTalk}    แพ็กเสริมเน้นคุย
 ${txtSelectOnTopSubPackageMaoMao}    เหมา เหมา
 ${txtSelectOnTopPackageXtraPack}    แพ็กเสริมคุยและเล่นเน็ต
-${txtSelectOnTopSubPackageMaoMaCombo}    เหมา เหมา คอมโบ
+${txtSelectOnTopSubPackageMaoMaoCombo}    เหมา เหมา คอมโบ
 ${txtSelectOnTopPackageXtraNet}    แพ็กเสริมเล่นเน็ต
 ${txtSelectOnTopSubPackageWifi}    Wifi
