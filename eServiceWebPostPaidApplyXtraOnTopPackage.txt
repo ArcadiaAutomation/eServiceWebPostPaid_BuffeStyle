@@ -20,6 +20,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkMonthlyPackage-SpecialNumber
+    [Tags]    non-recurring    Fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
