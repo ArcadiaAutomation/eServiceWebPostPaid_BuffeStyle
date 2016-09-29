@@ -49,3 +49,4 @@ ${mnuChangeMainPackage}    xpath=//*[@id="menu-80"]
 ${mnuLeasing}     xpath=//*[@id="menu-94"]
 ${mnuAirNet}      xpath=//*[@id="menu-96"]
 ${TestSiteEServiceURL}    https://10.252.176.155:8443/eServiceWeb/
+${mnuYourBillCycle}    xpath=//*[@id="menu-32"]

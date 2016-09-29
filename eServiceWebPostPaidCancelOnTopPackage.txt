@@ -57,5 +57,8 @@ Resource          ../Config/LocalConfig.txt
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
     Set Default On Top Package Call3 On TestSite    ${NumberAIS${ar_Location}}
-    Comment    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Select Menu    Package
+    Cancel OnTop Package    ${lblExtraTalkGank100B3Number10pm-6pm}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
