@@ -371,9 +371,9 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[S04-049]eServiceWeb-PO-UsageDetailHistory-SelectAllMySuperplanViewDetail
+[S04-049]eServiceWeb-PO-UsageDetailHistory-SelectAllMySuperplanViewDetail(On hold)
     [Documentation]    ต้องการเบอร์ที่มีประวัติ การใช้ *MySuperPlan* ในการ run
-    [Tags]    Success
+    [Tags]    Success    MySuperPlanBill
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
