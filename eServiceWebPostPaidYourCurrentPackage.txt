@@ -155,7 +155,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
     Comment    ${smsCheckMaoMaoMidNight5B}    \    Mao Mao Midnight Sale on-top package fee 5 Baht Free call to AIS number during 12:00 AM - 11:00 AM Exceed:Voice call 1B/minute. Valid for 24 hours. Start
-    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Verify SMS Add format Date Time    .*    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -186,7 +186,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
     Log    ${txtNamePackage}
     Comment    ${smsCheckMaoMaoCombo55B}    แพ็กเสริมเหมา เหมา คอมโบ ค่าบริการ 55บ. โทรฟรีเบอร์ AIS 23:00-17:00น. และเน็ตความเร็วสูงสุดจำนวน 160 MB หลังจากนั้นใช้ได้ต่อเนื่องที่ความเร็ว 64Kbps ส่วนเกิน โทรนาทีละ 1บาท ใช้งานได้นาน 24ชั่วโมง เริ่ม28/09/2016 00:00 ถึง 28/09/2016 23:59    Mao Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start27/09/2016 00:00 to 27/09/2016 23:59.
-    Verify SMS Add format Date Time    ${smsCheckMaoMaoCombo55B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Verify SMS Add format Date Time    .*    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
