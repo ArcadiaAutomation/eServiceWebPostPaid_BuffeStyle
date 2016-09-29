@@ -21,6 +21,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAutomaticPaymentViaCr
     Web Element Text Should Be    ${lbCardHolderName}    ${MessageCardHolderName}
     Web Element Text Should Be    ${lbIssuerBankName}    ${MessageIssuerBankName}
     Web Element Text Should Be    ${lbCountry}    ${MessageCountry}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path_test}    ${#dict_device_name}
 
 [S05-158]eServiceWeb-PO-AutomaticPaymentViaCreditCard-Cancel
