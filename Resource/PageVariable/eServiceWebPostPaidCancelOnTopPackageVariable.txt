@@ -1,0 +1,3 @@
+*** Variables ***
+${NumberAISTestSite}    0937019509
+${NumberAISProduction}    0932292294

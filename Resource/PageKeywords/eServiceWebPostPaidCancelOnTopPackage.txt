@@ -3,6 +3,7 @@ Resource          ../PageRepository/eServiceWebPostPaidCancelOnTopPackageReposit
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCancelOnTopPackageMessage.txt
+Resource          ../PageVariable/eServiceWebPostPaidCancelOnTopPackageVariable.txt
 
 *** Keywords ***
 Select Package
@@ -55,8 +56,8 @@ Verify SMS Cancel Ontop
 Set Default On Top Package Call3 On TestSite
     [Arguments]    ${friendNumber}
     Input Web Text    ${txtFriendnumber1TestSite}    ${friendNumber}
-    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
-    Click Web Element    ${btnChangePackConfirm}
+    Comment    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
+    Comment    Click Web Element    ${btnChangePackConfirm}
     Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
     Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkSelectXtratalkPackage3Number0.5BathTestSite}
     Click Web Element    ${btnChangePackConfirm}
@@ -76,7 +77,7 @@ Check Package Status Until Active
     [Arguments]    ${Package}
     [Timeout]    3 minutes
     Select Menu    YourCurrentPackage
-    :FOR    ${startTime}    IN RANGE    0    ${MaximumLoop}
+    : FOR    ${startTime}    IN RANGE    0    ${MaximumLoop}
     \    ${Status}=    Check Active Package    ${Package}
     \    Run Keyword If    ${Status}    Exit For Loop
     \    Comment    Select Menu    Package    Home
@@ -93,7 +94,7 @@ Check Active Package
     @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
     ${range}    Get Length    ${AllActivePackage}
     ${ExpectPackage}    Set Variable    ${PackageName}
-    :FOR    ${index}    IN RANGE    0    ${range}
+    : FOR    ${index}    IN RANGE    0    ${range}
     \    ${ActivePackage}    Get Text    @{AllActivePackage}[${index}]
     \    ${statusPackage}    Evaluate    '${ActivePackage}'=='${ExpectPackage}'
     \    Comment    Log To Console    'waha status':'${statusPackage}'
@@ -101,3 +102,22 @@ Check Active Package
     \    Comment    Return From Keyword If    '${ActivePackage}'=='${ExpectPackage}'    True
     \    Comment    Log To Console    Package Active : ${ActivePackage}
     [Return]    ${statusPackage}
+
+Cancel OnTop Package
+    [Arguments]    ${PackageExp}
+    Click Web Element    ${mnuCancelOnTopPackage}
+    Wait Web Until Page Contains Element    ${PackageName}
+    Wait Until Element Is Visible    ${PackageName}
+    @{Packages}    Get Webelements    ${PackageName}
+    :FOR    ${index}    IN RANGE    0    10
+    \    ${PackageNameAct}    Get Text    @{Packages}[${index}]
+    \    Run Keyword If    '${PackageNameAct}'=='${PackageExp}'    Exit For Loop
+    @{CheckBox}    Get Webelements    ${chkPackage}
+    Click Web Element    @{CheckBox}[${index}]
+    Click Web Element    ${btnCancelPack}
+    Click Web Element    ${ConfirmCancelPack}
+    Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='Production'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccessTestSite}
