@@ -1,0 +1,8 @@
+*** Variables ***
+${webURL}         https://eservice.ais.co.th/eServiceWeb/
+${fldPhoneNumber}    xpath = //*[@id="textfield"]
+${btnRequestPassword}    xpath = //*[@id="btnLoginGetOtpMethod"]
+${fldOtpNumber}    xpath = //*[@id="inputOtpNumber"]
+${btnOk}          xpath = //*[@id="lnkLoginLoginWithOtp"]/span
+${errorMsg}       You have entered incorrect password. Please try again.
+${lblErrorMsg}    xpath = //*[@id="login_fill"]/div/div[5]/div[3]/div/div[2]
