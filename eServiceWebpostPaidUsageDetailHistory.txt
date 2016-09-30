@@ -125,9 +125,9 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
-[F04-031]eServiceWeb-PO-UsageDetailHistory-NotSelectMySuperPlanUsageDetailFilter
+[F04-031]eServiceWeb-PO-UsageDetailHistory-NotSelectMySuperPlanUsageDetailFilter(No MySuperPlan Usage History)
     [Tags]    Fail
-    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CallHistory=include
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
     Maximize Browser Window
@@ -370,6 +370,28 @@ Resource          Resource/PageKeywords/eServiceWebpostPaidUsageDetailHistory.tx
     Verify Internet And Value Added Service Page
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+[S04-049]eServiceWeb-PO-UsageDetailHistory-SelectAllMySuperplanViewDetail(On hold)
+    [Documentation]    ต้องการเบอร์ที่มีประวัติ การใช้ *MySuperPlan* ในการ run
+    [Tags]    Success    MySuperPlanBill
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}    remote_url=${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
+    Select Menu    YouBalanceAndCreditLimit    UsageDetailHistory
+    Input Citizen ID    ${virtual_3PO_1_ID_Citizen}
+    Confirm Citizen ID
+    Select Bill Cycle
+    Select Usage Detail Tab    MySuperPlan
+    Confirm Filter Usage Detail
+    #รอverify ซิมที่มีประวัติการใช้ MySuperplan Package
+    Comment    Wait Web Until Page Contains Element    ${txtSummaryMessage}
+    Comment    Web Element Text Should Be    ${lblUsageDetailHistorySummaryMessage}    ${messageNotSelectMySuperPlanFilter}
+    Comment    Close Browser
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S04-050]eServiceWeb-PO-UsageDetailHistory-SelectConditionTopNumberWithHighestCallingTransactionInGraphTop5Usage
     [Tags]    Success    CallHistory

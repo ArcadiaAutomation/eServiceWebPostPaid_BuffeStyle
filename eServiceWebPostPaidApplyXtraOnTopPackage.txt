@@ -20,6 +20,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [F03-014]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterDuplicateXtraTalkMonthlyPackage-SpecialNumber
+    [Tags]    non-recurring    Fail
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -49,7 +50,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [F03-015]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraTalkPackageFriendNumberDtac
-    [Tags]    Fail
+    [Tags]    Fail    NonSubscribe3NumberAIS
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -143,7 +144,7 @@ Resource          ../Config/LocalConfig.txt
     ...
     ...
     ...    _*BUG!!!!!!!*_ ไม่มี SMS ส่งมา (ทำ work around โดยการเปลี่ยน on top package)
-    [Tags]    success
+    [Tags]    Success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -172,9 +173,10 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-020]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraTalkMonthlyPackage-SpecialNumber(TestSite)
+    [Tags]    non-recurring    Success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
-    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
     Open WebSite Eservice By Location    #Argument='Production' Or 'TestSite'
     Maximize Browser Window
     Select Frame    ${fraMainIframe}
@@ -182,11 +184,11 @@ Resource          ../Config/LocalConfig.txt
     Login WebSite Eservice By Location
     Select Menu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Select OnTop XtraTalk Call 3 NumberAIS Package    0937019815
+    Select OnTop XtraTalk Call 3 NumberAIS Package    ${NumberAIS${ar_Location}}
     Manage Package Immediately
     Confirm Select Effective Date
     Confirm OnTop Package Register
-    Wait Until Keyword Succeeds    45    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    Wait Until Keyword Succeeds    60    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
     Run Keyword If    '${ar_Location}'=='Production'    Verify Register OnTop SMS    .*
     Run Keyword If    '${ar_Location}'=='Production'    Check Package Status Until Active    ${100BCall3AISNumber50st}
     Run Keyword If    '${ar_Location}'=='TestSite'    Check Package Status Until Active    ${lblExtraTalkGank100B3Number10pm-6pm}
@@ -196,14 +198,14 @@ Resource          ../Config/LocalConfig.txt
     Close Browser
     Run Keyword If    '${ar_Location}'=='Production'    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Run Keyword If    '${ar_Location}'=='Production'    Clear All Unread SMS
-    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-029]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage(OriginalProduction)
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
     ...
     ...
     ...    _*BUG!!!!!!!*_ ไม่มี SMS ส่งมา (ทำ work around โดยการเปลี่ยน on top package)
-    [Tags]    success
+    [Tags]    Success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -231,6 +233,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-029]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMonthlyPackage(TestSite)
+    [Tags]    Success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -258,7 +261,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S03-030]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkMaoMao
     [Documentation]    *สมัครแล้วไม่สามารถยกเลิกได้* มีผล 24 ชั่วโมง
-    [Tags]    success
+    [Tags]    Success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -284,7 +287,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S03-031]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraNetInternetMonthly
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
-    [Tags]    success
+    [Tags]    Success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -313,6 +316,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-031]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraNetInternetMonthly(TestSite)
+    [Tags]    Success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -342,7 +346,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S03-033]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraNetWifi-AISSuperWifi(OriginalProduction)
     [Documentation]    *Recurring Package* ทำให้สามารถยกเลิกได้ 3 ครั้งใน 1 เดือน
-    [Tags]    success
+    [Tags]    success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -371,6 +375,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S03-033]eServiceWeb-PO-ApplyXtraOnTopPackage-RegisterXtraNetWifi-AISSuperWifi(TestSite)
+    [Tags]    non-recurring    Success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_2    ${lo_parallel_timeout}    TestSite=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}    ${virtual_3PO_2_#device_name}=${virtual_3PO_2_#timestamp}
@@ -400,7 +405,7 @@ Resource          ../Config/LocalConfig.txt
 
 [S03-034]eServiceWeb-PO-ApplyXtraOnTopPackage-XtraTalkAndNetMaoMaoCombo
     [Documentation]    *สมัครแล้วไม่สามารถยกเลิกได้* มีผล 24 ชั่วโมง
-    [Tags]    success
+    [Tags]    Success
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Browser    ${eServiceURL}    ${ar_BROWSER}

@@ -3,6 +3,7 @@ Resource          ../PageRepository/eServiceWebPostPaidCancelOnTopPackageReposit
 Resource          eServiceWebPostPaidCommon.txt
 Resource          eServiceWebPostPaidLogin.txt
 Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidCancelOnTopPackageMessage.txt
+Resource          ../PageVariable/eServiceWebPostPaidCancelOnTopPackageVariable.txt
 
 *** Keywords ***
 Select Package
@@ -15,15 +16,108 @@ Select Package
 Set Default On Top Package
     SelectMenu    Package    OnTopPackage
     Select Package    ${XtraTalk}    ${MonthlyPackage}
-    Click Web Element    ${chk100BFreeAISCallStaSun}
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
+    Comment    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkSelectXtratalkPackage3Number0.5BathTestSite}
     Click Web Element    ${btnChangePackConfirm}
     Click Web Element    ${rdoImmediately}
     Click Web Element    ${btnChangePackConfirm2}
     Click Web Element    ${btnChangePackConfirm3}
     Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
-    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    ...    #
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}    #Change to verify sms
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
     @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
     Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
     Click Web Element    ${mnuPackage}
+
+Open Browser On Test Site
+    Open Web Browser    ${TestSiteEServiceURL}    gc    ${lo_IPSelenium}
+
+Open Browser On Production
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+
+Open WebSite Eservice By Location
+    Run Keyword If    '${ar_Location}'=='Production'    Open Browser On Production
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Open Browser On Test Site
+
+Login WebSite Eservice By Location
+    Run Keyword If    '${ar_Location}'=='Production'    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    ...    ${virtual_3PO_1_Number}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login Test Site    ${virtual_3PO_2_Number}
+
+Verify SMS Cancel Ontop
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+
+Set Default On Top Package Call3 On TestSite
+    [Arguments]    ${friendNumber}
+    Input Web Text    ${txtFriendnumber1TestSite}    ${friendNumber}
+    Comment    Click Web Element    ${chkSelectXtratalkPackage3Number0.5Bath}
+    Comment    Click Web Element    ${btnChangePackConfirm}
+    Run Keyword If    '${ar_Location}'=='Production'    Click Web Element    ${chk100BFreeAISCallStaSun}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Click Web Element    ${chkSelectXtratalkPackage3Number0.5BathTestSite}
+    Click Web Element    ${btnChangePackConfirm}
+    Click Web Element    ${rdoImmediately}
+    Click Web Element    ${btnChangePackConfirm2}
+    Click Web Element    ${btnChangePackConfirm3}
+    Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${ChangingStatusMsg}    ${ActualOnTopPackageMsg}
+    ...    #
+    Comment    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}    #Change to verify sms
+    Comment    Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    ${lo_parallel_timeout}
+    Comment    @{ExpectOnTopPackageMsg}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    Comment    Should Match Regexp    @{ExpectOnTopPackageMsg}[0]    .*
+    Comment    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Click Web Element    ${mnuPackage}
+
+Check Package Status Until Active
+    [Arguments]    ${Package}
+    [Timeout]    3 minutes
+    Select Menu    YourCurrentPackage
+    : FOR    ${startTime}    IN RANGE    0    ${MaximumLoop}
+    \    ${Status}=    Check Active Package    ${Package}
+    \    Run Keyword If    ${Status}    Exit For Loop
+    \    Comment    Select Menu    Package    Home
+    \    sleep    12
+    \    Select Menu    YourCurrentPackage
+    Select Menu    Home
+
+Check Active Package
+    [Arguments]    ${PackageName}
+    ${statusPackage}    Set Variable    False
+    ${OnTopPackageTableIsVisisble}    Run Keyword And Return Status    Wait Until Element Is Visible    ${lblAllActivePackage}
+    Log To Console    Status:'${OnTopPackageTableIsVisisble}'
+    Run Keyword If    '${OnTopPackageTableIsVisisble}'=='False'    Return From Keyword
+    @{AllActivePackage}    Get Webelements    ${lblAllActivePackage}
+    ${range}    Get Length    ${AllActivePackage}
+    ${ExpectPackage}    Set Variable    ${PackageName}
+    : FOR    ${index}    IN RANGE    0    ${range}
+    \    ${ActivePackage}    Get Text    @{AllActivePackage}[${index}]
+    \    ${statusPackage}    Evaluate    '${ActivePackage}'=='${ExpectPackage}'
+    \    Comment    Log To Console    'waha status':'${statusPackage}'
+    \    Run Keyword If    ${statusPackage}    Exit For Loop
+    \    Comment    Return From Keyword If    '${ActivePackage}'=='${ExpectPackage}'    True
+    \    Comment    Log To Console    Package Active : ${ActivePackage}
+    [Return]    ${statusPackage}
+
+Cancel OnTop Package
+    [Arguments]    ${PackageExp}
+    Click Web Element    ${mnuCancelOnTopPackage}
+    Wait Web Until Page Contains Element    ${PackageName}
+    Wait Until Element Is Visible    ${PackageName}
+    @{Packages}    Get Webelements    ${PackageName}
+    :FOR    ${index}    IN RANGE    0    10
+    \    ${PackageNameAct}    Get Text    @{Packages}[${index}]
+    \    Run Keyword If    '${PackageNameAct}'=='${PackageExp}'    Exit For Loop
+    @{CheckBox}    Get Webelements    ${chkPackage}
+    Click Web Element    @{CheckBox}[${index}]
+    Click Web Element    ${btnCancelPack}
+    Click Web Element    ${ConfirmCancelPack}
+    Comment    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='Production'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccess}
+    Run Keyword If    '${ar_Location}'=='TestSite'    Wait Until Keyword Succeeds    10    1    Element Text Should Be    ${lbCancelPackage}
+    ...    ${MessageCancelPackageSuccessTestSite}

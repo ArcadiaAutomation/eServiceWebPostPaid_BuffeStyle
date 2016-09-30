@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../PageRepository/eServiceWebPostPaidYourBillCycleRepository.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidYourBillCycleMessage.txt
+Resource          ../PageRepository/eServiceWebPostPaidRepository.txt

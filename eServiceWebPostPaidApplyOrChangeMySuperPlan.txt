@@ -106,7 +106,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S03-018]eServiceWeb-PO-MysuperPlan-Register
-    [Documentation]    รอรันบน test site
+    [Documentation]    ต้องการเบอร์ที่ใช้แพ็จเกจ MySuperPlan เป็น Default
+    ...    เพื่อที่จะมากดเปลี่ยนแพจเกจ(ยกเลิกMySuperPlan)แล้วไป--->สมัครใหม่อีกครั้ง
     [Tags]    Success    non-recurring
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
@@ -133,7 +134,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidApplyOrChangeMySuperP
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S03-019]eServiceWeb-PO-MysuperPlan-EditPackage
-    [Documentation]    รอรันบน test site โดยใช้เบอร์ที่เป็น MySuperPlan package
+    [Documentation]    ต้องการเบอร์ที่ใช้แพ็จเกจ MySuperPlan เป็น Default ถึงจะเปลี่ยนแพ็คเกจสำเร็จ
     [Tags]    Success    RegisterMySuperPlan
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
