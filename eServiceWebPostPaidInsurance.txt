@@ -18,8 +18,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokLifeAssurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -40,8 +39,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtMPayService1}
     Input Web Text    ${txtMPayService1}    1111111111
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -60,8 +58,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -83,8 +80,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -103,8 +99,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${RVP}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -125,8 +120,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -149,8 +143,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ChaoPhaYaInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -171,8 +164,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -191,8 +183,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${CIGNAInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -214,8 +205,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    111111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -238,8 +228,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${DhipayaLifeAssurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -261,8 +250,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -285,8 +273,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(BillPayment)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -308,8 +295,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    1111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -332,8 +318,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(PID)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -355,8 +340,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0911111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -379,8 +363,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(BillPayment)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -402,8 +385,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    1111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -426,8 +408,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(PID)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -449,8 +430,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0923332211
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -473,8 +453,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiCardifLifeAssurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -496,8 +475,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    11111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseTryAgain}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseTryAgain}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -516,6 +494,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiLife}
     Click Web Element    ${btnOK}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Wait Web Until Page Contains Element    ${lblDialogMessage}
     Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
@@ -539,8 +518,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    1111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseTryAgain}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseTryAgain}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -559,8 +537,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(BillPayment)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -582,8 +559,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    11111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -606,8 +582,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(MicroInsurance)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -629,8 +604,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0923334455
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageSorryPleaseTryAgain}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageSorryPleaseTryAgain}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -649,8 +623,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaipiboonInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -672,8 +645,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    1111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -696,8 +668,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThanachartInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -720,8 +691,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService3}    0923345566
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -744,8 +714,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${Prudential}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -767,8 +736,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0923345566
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -787,8 +755,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${FalconInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -809,8 +776,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    11111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -829,8 +795,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Premium)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -852,8 +817,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0923334444
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -876,8 +840,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Loan)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -899,8 +862,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0923334444
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -923,8 +885,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(APL)}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -946,8 +907,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    0923334444
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -970,8 +930,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -992,8 +951,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -1016,8 +974,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1038,8 +995,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -1062,8 +1018,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ACEInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1085,8 +1040,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -1109,8 +1063,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${FWDLifeInsurance}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1131,8 +1084,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    1111111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1151,8 +1103,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${AIA}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1174,8 +1125,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService2}    090916
     Input Web Text    ${txtMPayService3}    0923334455
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageSorryPleaseTryAgainNewline}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageSorryPleaseTryAgainNewline}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1189,8 +1139,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Payment/TopUp    Insurance
-    Wait Web Until Page Contains Element    ${ldlRegisterMPay}
-    Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
+    Web Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1208,8 +1157,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokLifeAssurance}
-    Element Text Should Be    ${ldlService1}    ${Ref.No.1Bangkok}
-    Element Text Should Be    ${ldlService2}    ${Ref.No.2Bangkok}
+    Web Element Text Should Be    ${ldlService1}    ${Ref.No.1Bangkok}
+    Web Element Text Should Be    ${ldlService2}    ${Ref.No.2Bangkok}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1227,8 +1176,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${BangkokInsurance}
-    Element Text Should Be    ${ldlService1}    ${PolicyNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${PolicyNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1246,8 +1195,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${RVP}
-    Element Text Should Be    ${ldlService1}    ${CustomerNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${CustomerNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1265,8 +1214,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ChaoPhaYaInsurance}
-    Element Text Should Be    ${ldlService1}    ${ReferenceNo.2.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${ReferenceNo.2.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1284,9 +1233,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${CIGNAInsurance}
-    Element Text Should Be    ${ldlService1}    ${CustomerNo.CIGNA}
-    Element Text Should Be    ${ldlService2}    ${ReferenceNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${CustomerNo.CIGNA}
+    Web Element Text Should Be    ${ldlService2}    ${ReferenceNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1304,9 +1253,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${DhipayaLifeAssurance}
-    Element Text Should Be    ${ldlService1}    ${Ref.No.1Dip}
-    Element Text Should Be    ${ldlService2}    ${Ref.No.2Dip}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${Ref.No.1Dip}
+    Web Element Text Should Be    ${ldlService2}    ${Ref.No.2Dip}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1324,9 +1273,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(BillPayment)}
-    Element Text Should Be    ${ldlService1}    ${TQMRef.No.1}
-    Element Text Should Be    ${ldlService2}    ${TQMRef.No.2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${TQMRef.No.1}
+    Web Element Text Should Be    ${ldlService2}    ${TQMRef.No.2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1344,9 +1293,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMLifeInsuranceBroker(PID)}
-    Element Text Should Be    ${ldlService1}    ${PersonalIDCustomer}
-    Element Text Should Be    ${ldlService2}    ${MobileNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${PersonalIDCustomer}
+    Web Element Text Should Be    ${ldlService2}    ${MobileNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1364,9 +1313,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(BillPayment)}
-    Element Text Should Be    ${ldlService1}    ${TQMRef.No.1}
-    Element Text Should Be    ${ldlService2}    ${TQMRef.No.2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${TQMRef.No.1}
+    Web Element Text Should Be    ${ldlService2}    ${TQMRef.No.2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1384,9 +1333,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TQMInsuranceBroker(PID)}
-    Element Text Should Be    ${ldlService1}    ${PersonalIDCustomer}
-    Element Text Should Be    ${ldlService2}    ${MobileNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${PersonalIDCustomer}
+    Web Element Text Should Be    ${ldlService2}    ${MobileNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1404,9 +1353,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiCardifLifeAssurance}
-    Element Text Should Be    ${ldlService1}    ${CustomerNo./Ref.No.1}
-    Element Text Should Be    ${ldlService2}    ${CardifRef.No.2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${CustomerNo./Ref.No.1}
+    Web Element Text Should Be    ${ldlService2}    ${CardifRef.No.2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1424,9 +1373,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaiLife}
-    Element Text Should Be    ${ldlService1}    ${PolicyNo.}
-    Element Text Should Be    ${ldlService2}    ${IDCardNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${PolicyNo.}
+    Web Element Text Should Be    ${ldlService2}    ${IDCardNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1444,9 +1393,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(BillPayment)}
-    Element Text Should Be    ${ldlService1}    ${REF.NO1}
-    Element Text Should Be    ${ldlService2}    ${REF.NO2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${REF.NO1}
+    Web Element Text Should Be    ${ldlService2}    ${REF.NO2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1464,9 +1413,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${OceanLifeInsurance(MicroInsurance)}
-    Element Text Should Be    ${ldlService1}    ${PersonalID}
-    Element Text Should Be    ${ldlService2}    ${PhoneNumber}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${PersonalID}
+    Web Element Text Should Be    ${ldlService2}    ${PhoneNumber}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1484,9 +1433,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThaipiboonInsurance}
-    Element Text Should Be    ${ldlService1}    ${CustomerNumber.}
-    Element Text Should Be    ${ldlService2}    ${ProductNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${CustomerNumber.}
+    Web Element Text Should Be    ${ldlService2}    ${ProductNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1504,10 +1453,10 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ThanachartInsurance}
-    Element Text Should Be    ${ldlService1}    ${ThanachartRef.No.1}
-    Element Text Should Be    ${ldlService2}    ${ThanachartRef.No.2}
-    Element Text Should Be    ${ldlService3}    ${PhoneNumberOfCustomer}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${ThanachartRef.No.1}
+    Web Element Text Should Be    ${ldlService2}    ${ThanachartRef.No.2}
+    Web Element Text Should Be    ${ldlService3}    ${PhoneNumberOfCustomer}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1525,9 +1474,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${Prudential}
-    Element Text Should Be    ${ldlService1}    ${RefNo.(121878)}
-    Element Text Should Be    ${ldlService2}    ${PolicyNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${RefNo.(121878)}
+    Web Element Text Should Be    ${ldlService2}    ${PolicyNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1545,8 +1494,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${FalconInsurance}
-    Element Text Should Be    ${ldlService1}    ${RefNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${RefNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1564,9 +1513,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Premium)}
-    Element Text Should Be    ${ldlService1}    ${POLICY}
-    Element Text Should Be    ${ldlService2}    ${TEL}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${POLICY}
+    Web Element Text Should Be    ${ldlService2}    ${TEL}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1584,9 +1533,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(Loan)}
-    Element Text Should Be    ${ldlService1}    ${POLICY}
-    Element Text Should Be    ${ldlService2}    ${TEL}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${POLICY}
+    Web Element Text Should Be    ${ldlService2}    ${TEL}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1604,9 +1553,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiLife(APL)}
-    Element Text Should Be    ${ldlService1}    ${POLICY}
-    Element Text Should Be    ${ldlService2}    ${TEL}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${POLICY}
+    Web Element Text Should Be    ${ldlService2}    ${TEL}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1624,8 +1573,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MuangThaiInsurance}
-    Element Text Should Be    ${ldlService1}    ${MuangThaiRef.No.1}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${MuangThaiRef.No.1}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1643,8 +1592,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${SynMunKongInsurance}
-    Element Text Should Be    ${ldlService1}    ${BillNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${BillNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1662,9 +1611,9 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ACEInsurance}
-    Element Text Should Be    ${ldlService1}    ${Ref.1}
-    Element Text Should Be    ${ldlService2}    ${Ref.2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${Ref.1}
+    Web Element Text Should Be    ${ldlService2}    ${Ref.2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1682,8 +1631,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${FWDLifeInsurance}
-    Element Text Should Be    ${ldlService1}    ${FWDCustomerNo.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${FWDCustomerNo.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -1701,8 +1650,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${AIA}
-    Element Text Should Be    ${ldlService1}    ${CustomerNo./RefNo.1}
-    Element Text Should Be    ${ldlService2}    ${DueDate}
-    Element Text Should Be    ${ldlService3}    ${NumberPhone}
+    Web Element Text Should Be    ${ldlService1}    ${CustomerNo./RefNo.1}
+    Web Element Text Should Be    ${ldlService2}    ${DueDate}
+    Web Element Text Should Be    ${ldlService3}    ${NumberPhone}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

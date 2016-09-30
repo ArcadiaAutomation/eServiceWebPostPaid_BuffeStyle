@@ -18,8 +18,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${KTBLEASING}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -42,8 +41,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtMPayService2}    1111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -66,8 +64,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${NissanLeasing}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -90,8 +87,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtMPayService2}    11111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCodeIncorrect}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -110,8 +106,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ToyotaLeasing}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -134,8 +129,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtMPayService2}    1111111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -158,8 +152,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${AmanahLeasing}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseFillDetails}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -182,8 +175,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtMPayService2}    1111111111
     Input Web Text    ${txtMPayServiceCurrency}    500
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessagePleaseRefillmCASH}
     Close Browser
     Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
     Wait SMS    ${virtual_3PO_1_Platfrom_Name}    1    60
@@ -201,8 +193,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Payment/TopUp    Leasing
-    Wait Web Until Page Contains Element    ${ldlRegisterMPay}
-    Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
+    Web Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -220,9 +211,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${KTBLEASING}
-    Element Text Should Be    ${ldlService1}    ${Ref.No.1}
-    Element Text Should Be    ${ldlService2}    ${Ref.No.2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${Ref.No.1}
+    Web Element Text Should Be    ${ldlService2}    ${Ref.No.2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -240,9 +231,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${NissanLeasing}
-    Element Text Should Be    ${ldlService1}    ${NisRef.1}
-    Element Text Should Be    ${ldlService2}    ${Ref.2 (8 last digits)}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${NisRef.1}
+    Web Element Text Should Be    ${ldlService2}    ${Ref.2 (8 last digits)}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -260,9 +251,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${ToyotaLeasing}
-    Element Text Should Be    ${ldlService1}    ${TOCustomer No.}
-    Element Text Should Be    ${ldlService2}    ${TOReference No.}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${TOCustomer No.}
+    Web Element Text Should Be    ${ldlService2}    ${TOReference No.}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -280,8 +271,8 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidLeasing.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${AmanahLeasing}
-    Element Text Should Be    ${ldlService1}    ${AREF.1}
-    Element Text Should Be    ${ldlService2}    ${AREF.2}
-    Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
+    Web Element Text Should Be    ${ldlService1}    ${AREF.1}
+    Web Element Text Should Be    ${ldlService2}    ${AREF.2}
+    Web Element Text Should Be    ${ldlServiceMoney}    ${Amount(baht)}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}

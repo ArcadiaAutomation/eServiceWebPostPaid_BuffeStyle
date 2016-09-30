@@ -13,11 +13,9 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAISeStatement.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    AISeStatement
-    Wait Web Until Page Contains Element    ${ldlHeadPage}
-    Element Should Contain    ${ldlHeadPage}    ${MessageHeadPage}
+    Web Element Text Should Be    ${ldlHeadPage}    ${MessageHeadPage}
     Click Web Element    ${btnTerms}
-    Wait Web Until Page Contains Element    ${ldlHeadTerms}
-    Element Should Contain    ${ldlHeadTerms}    ${MessageTerms}
+    Web Element Text Should Be    ${ldlHeadTerms}    ${MessageTerms}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -31,14 +29,11 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidAISeStatement.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    AISeStatement
-    Wait Web Until Page Contains Element    ${ldlHeadPage}
-    Element Should Contain    ${ldlHeadPage}    ${MessageHeadPage}
+    Web Element Text Should Be    ${ldlHeadPage}    ${MessageHeadPage}
     Click Web Element    ${btnEdit}
-    Wait Web Until Page Contains Element    ${ldlHeadPage}
-    Element Should Contain    ${ldlHeadPage}    ${MessageBillingInformation}
+    Web Element Text Should Be    ${ldlHeadPage}    ${MessageBillingInformation}
     SelectLanguageBill
-    Wait Web Until Page Contains Element    ${txtSummaryMessage}
-    Element Should Contain    ${txtSummaryMessage}    ${MessageConfrim}
+    Web Element Text Should Be    ${txtSummaryMessage}    ${MessageConfrim}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 

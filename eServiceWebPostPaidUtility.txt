@@ -151,8 +151,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TOT}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -173,8 +172,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    111111111
     Input Web Text    ${txtMPayService2}    11111111111111
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageTOTIncompleteRefNo}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageTOTIncompleteRefNo}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -192,8 +190,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${CAT}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -213,8 +210,7 @@ Resource          ../Config/LocalConfig.txt
     Wait Web Until Page Contains Element    ${txtMPayService1}
     Input Web Text    ${txtMPayService1}    11111
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageCATIncompleteRefNo}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageCATIncompleteRefNo}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -232,8 +228,7 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TT&T}
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageNotCompleteInformation}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -254,8 +249,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtMPayService1}    0982222
     Input Web Text    ${txtMPayService2}    11111111
     Click Web Element    ${btnOK}
-    Wait Web Until Page Contains Element    ${lblDialogMessage}
-    Element Text Should Be    ${lblDialogMessage}    ${MessageTT&TIncompleteMobileNo}
+    Web Element Text Should Be    ${lblDialogMessage}    ${MessageTT&TIncompleteMobileNo}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -269,13 +263,12 @@ Resource          ../Config/LocalConfig.txt
     Click Web Element    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     Select Menu    Payment/TopUp    Utility
-    Wait Web Until Page Contains Element    ${ldlRegisterMPay}
-    Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
+    Web Element Text Should Be    ${ldlRegisterMPay}    ${RegisterMPay}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
-[S05-082]eServiceWeb-PO-Utility-RegistermPay
-    [Tags]    RegistermPay
+[S05-082]eServiceWeb-PO-Utility-RegistermPay(Production)
+    [Tags]    RegistermPay    Production
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CanRegistermPay=include    3PO=include
     &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
     Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
@@ -295,8 +288,32 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtConfirmPIN}    1111
     Input Web Text    ${txtEmail}    Test_123@gmail.com
     Click Web Element    ${btnMPayRegisterOK}
-    Input OTP    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
-    Click Web Element    ${btnSubmitOTP}
+    Comment    Input OTP    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    Comment    Click Web Element    ${btnSubmitOTP}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
+
+[S05-082]eServiceWeb-PO-Utility-RegistermPay(TestSite)
+    [Tags]    RegistermPay    TestSite
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    CanRegistermPay=include    3PO=include
+    &{#dict_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${TestSiteEServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Click Web Element    ${btnLanguage}
+    Login Test Site    ${virtual_3PO_1_Number}
+    Select Menu    Payment/TopUp    Utility
+    Click Web Element    ${btnRegistermPay}
+    Web Element Text Should Be    ${ldlPageRegistermPay}    ${MessagePageRegistermPay}    60
+    Select From Web List    ${lstTitle}    ${Title}    45
+    Input Web Text    ${txtIDCard}    ${virtual_3PO_1_ID_Citizen}    45
+    Input Web Text    ${txtCreatePassword}    test123    45
+    Input Web Text    ${txtConfirmPassword}    test123    45
+    Input Web Text    ${txtCreatePIN}    1111    45
+    Input Web Text    ${txtConfirmPIN}    1111    45
+    Input Web Text    ${txtEmail}    Test_123@gmail.com    45
+    Click Web Element    ${btnMPayRegisterOK}
+    Comment    Input OTP    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    Comment    Click Web Element    ${btnSubmitOTP}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-083]eServiceWeb-PO-Utility-MetropolitanElectricityAuthority
@@ -312,7 +329,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MetropolitanElectricityAuthority}
-    Element Text Should Be    ${ldlService1}    ${ContractAccount}
+    Web Element Text Should Be    ${ldlService1}    ${ContractAccount}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -329,7 +346,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${MetropolitanWaterworksAuthority}
-    Element Text Should Be    ${ldlService1}    ${BranchNo.}
+    Web Element Text Should Be    ${ldlService1}    ${BranchNo.}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -346,7 +363,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${PEA}
-    Element Text Should Be    ${ldlService1}    ${No.User}
+    Web Element Text Should Be    ${ldlService1}    ${No.User}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -363,8 +380,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TOT}
-    Element Text Should Be    ${ldlService1}    ${TOTAccountNo.}
-    Element Text Should Be    ${ldlService2}    ${TOTInvoiceNo.}
+    Web Element Text Should Be    ${ldlService1}    ${TOTAccountNo.}
+    Web Element Text Should Be    ${ldlService2}    ${TOTInvoiceNo.}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -381,7 +398,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${CAT}
-    Element Text Should Be    ${ldlService1}    ${CATContractNo.}
+    Web Element Text Should Be    ${ldlService1}    ${CATContractNo.}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
@@ -398,7 +415,7 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtPINCode}    ${PINCode}
     Click Web Element    ${btnOKPINCode}
     Select From Web List By Label    ${lstMPayServiceList}    ${TT&T}
-    Element Text Should Be    ${ldlService1}    ${TTServiceNo.}
-    Element Text Should Be    ${ldlService2}    ${TTAccountNo.}
+    Web Element Text Should Be    ${ldlService1}    ${TTServiceNo.}
+    Web Element Text Should Be    ${ldlService2}    ${TTAccountNo.}
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
