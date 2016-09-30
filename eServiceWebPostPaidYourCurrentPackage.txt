@@ -142,24 +142,25 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Select Language    ${btnLanguage}
     Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_Number}
     SelectMenu    Package    YourCurrentPackage
-    Comment    Click Web Element    ${btnCurrentPackage}
-    Comment    Check Detail CurrentPackage
-    Comment    Click Web Element    ${btnChangeOnTopPackage}
-    Comment    Select Package    ${txtSelectOnTopPackageXtraTalk}    ${txtSelectOnTopSubPackageMaoMao}
-    Comment    Click Web Element    ${rdoMaoMaoMidNight5B}
-    Comment    Click Web Element    ${btnConfirmPackage}
-    Comment    Click Web Element    ${btnPackageNextBill}
-    Comment    Click Web Element    ${btnConfirmEffective}
-    Comment    Click Web Element    ${btnConfirmChangePackage}
-    Comment    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
-    Comment    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
-    Comment    Log    ${txtNamePackage}
-    Comment    Comment    ${smsCheckMaoMaoMidNight5B}    \    Mao Mao Midnight Sale on-top package fee 5 Baht Free call to AIS number during 12:00 AM - 11:00 AM Exceed:Voice call 1B/minute. Valid for 24 hours. Start
-    Comment    Verify SMS Add format Date Time    ${smsCheckMaoMaoMidNight5B}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
-    Comment    Click Web Element    ${btnBackToCurrentPackage}
-    Comment    Click Web Element    ${btnNextPackage}
-    Comment    Wait Until Element Is Visible    ${txtCheckNextPackage}
-    Comment    Check Package    ${txtNamePackage}
+    Click Web Element    ${btnCurrentPackage}
+    Check Detail CurrentPackage
+    Click Web Element    ${btnChangeOnTopPackage}
+    Select Package    ${txtSelectOnTopPackageXtraTalk}    ${txtSelectOnTopSubPackageMaoMao}
+    Click Web Element    ${rdoMaoMaoMidNight5B}
+    Click Web Element    ${btnConfirmPackage}
+    Click Web Element    ${btnPackageNextBill}
+    Click Web Element    ${btnConfirmEffective}
+    Click Web Element    ${btnConfirmChangePackage}
+    Wait Until Element Is Visible    ${txtCheckNamePackage}    20
+    ${txtNamePackage}    Get Text    ${txtCheckNamePackage}
+    Log    ${txtNamePackage}
+    Log To Console    Ignore Thai SMS
+    Comment    ${smsCheckMaoMaoMidNight5B}    \    Mao Mao Midnight Sale on-top package fee 5 Baht Free call to AIS number during 12:00 AM - 11:00 AM Exceed:Voice call 1B/minute. Valid for 24 hours. Start
+    Verify SMS Add format Date Time    .*    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Click Web Element    ${btnBackToCurrentPackage}
+    Click Web Element    ${btnNextPackage}
+    Wait Until Element Is Visible    ${txtCheckNextPackage}
+    Check Package    ${txtNamePackage}
     sleep    4
     Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
