@@ -250,10 +250,17 @@ test Regular Expression
     Comment    ${txtExpect}=    Set Variable    เทสข้อความ
     Comment    ${txtExp}=    Set Variable    ครั้ง
     Comment    ${txtCheck}=    Set Variable    เทสข้อความ 123 ครั้ง
-    Comment    Should Match Regexp    ${txtCheck}    ${txtExpect} \\d\\d\\d ${txtExp}
+    Comment    Should Match Regexp    ${txtCheck}    ${txtExpect} \\d\\d\\d.${txtExp}
     Comment    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
     Comment    ${formatTime}=    Set Variable    \\d\\d:\\d\\d.
-    Comment    ${MessageExpect}=    Set Variable    AIS WiFi ontop package 1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
+    Comment    ${MessageExpect}=    Set Variable    1 hour, 9 Baht\\. Get WiFi user/password press\\*388#\\. Start
     Comment    ${smsCheck}=    SetVariable    AIS WiFi ontop package 1 hour, 9 Baht. Get WiFi user/password press*388#. Start 22/09/2559 18:00.
-    Comment    Should Match Regexp    ${smsCheck}    ${MessageExpect} ${formatDate} ${formatTime}
+    Comment    Comment    Should Match Regexp    ${smsCheck}    ${MessageExpect} ${formatDate} ${formatTime}
+    Comment    Should Match Regexp    ${smsCheck}    ${MessageExpect} \\d\\d/\\d\\d/\\d\\d\\d\\d \\d\\d:\\d\\d.
+    ${smsCheck}=    Set Variable    Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start
+    ${formatDate}=    Set Variable    \\d\\d/\\d\\d/\\d\\d\\d\\d
+    ${formatTime}=    Set Variable    \ \\d\\d:\\d\\d.*
+    Comment    @{MessageExpect}    Create List    ${smsCheck}${formatDate}${formatTime}
+    @{ExpectPackageMsg}    Create List    Mao Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start27/09/2016 00:00 to 27/09/2016 23:59.
+    Should Match Regexp    @{ExpectPackageMsg}[0]    ${smsCheck}\\d\\d/\\d\\d/\\d\\d\\d\\d\ \\d\\d:\\d\\d.*
     [Teardown]
