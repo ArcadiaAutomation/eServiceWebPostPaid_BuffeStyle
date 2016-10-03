@@ -61,7 +61,7 @@ Open Browser On Test Site
 Login WebSite Eservice By Location
     Run Keyword If    '${ar_Location}'=='Production'    Login    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
     ...    ${virtual_3PO_1_Number}
-    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login On Test Site    ${virtual_3PO_2_Number}
+    ...    ELSE IF    '${ar_Location}'=='TestSite'    Login Test Site    ${virtual_3PO_2_Number}
 
 Select OnTop XtraTalk Call 3 NumberAIS Package
     [Arguments]    ${friendNumber}

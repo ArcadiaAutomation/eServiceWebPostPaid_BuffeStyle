@@ -70,7 +70,7 @@ Resource          ../Config/LocalConfig.txt
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 [S09-224]eServiceWeb-PO-YourBillMedia-EditMobileNumberSMSNotification
-    [Documentation]    หมายเลขที่ใช้ run test script ต้องเป็นเบอร์ที่มีความสัมพันธ์กับเบอร์อื่นด้วย
+    [Documentation]    *รันได้เบอร์ละครั้ง*
     [Tags]    non-regression
     Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
     &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
