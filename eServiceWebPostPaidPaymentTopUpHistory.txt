@@ -146,7 +146,7 @@ Resource          ../Config/LocalConfig.txt
     SelectMenu    Payment/Topup    PaymentTopUpHistory
     Click Web Element    ${btnAISOne2CallTopUp}
     Wait Until Element Is Visible    ${ddlTopUpHistoryMount}
-    Select From List By Index    ${ddlTopUpHistoryMount}    3
+    Select From List By Index    ${ddlTopUpHistoryMount}    4
     Click Web Element    ${btnSelectMount}
     Web Element Text Should Be    ${lbNoTopUpHistory}    ${TextNoTopUpHistory}
     Close Browser
