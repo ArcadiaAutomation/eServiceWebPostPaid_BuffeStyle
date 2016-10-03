@@ -312,8 +312,8 @@ Resource          ../Config/LocalConfig.txt
     Input Web Text    ${txtConfirmPIN}    1111    45
     Input Web Text    ${txtEmail}    Test_123@gmail.com    45
     Click Web Element    ${btnMPayRegisterOK}
-    Comment    Input OTP    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
-    Comment    Click Web Element    ${btnSubmitOTP}
+    Input OTP    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_SN}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}
+    Click Web Element    ${btnSubmitOTP}
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#dict_device_name}
 
 [S05-083]eServiceWeb-PO-Utility-MetropolitanElectricityAuthority
