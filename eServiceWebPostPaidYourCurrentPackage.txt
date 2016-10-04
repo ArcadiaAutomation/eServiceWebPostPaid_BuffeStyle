@@ -59,7 +59,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Log    ${txtNamePackage}
     Log To Console    Ignore Thai SMS
     Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Verify SMS Add format Date Time    ^${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -92,7 +92,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Log    ${txtNamePackage}
     Log To Console    Ignore Thai SMS
     Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Verify SMS Add format Date Time    ^${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Click Web Element    ${btnNextPackage}
     Wait Until Element Is Visible    ${txtCheckNextPackage}
@@ -125,7 +125,7 @@ Resource          Resource/PageKeywords/eServiceWebPostPaidYourCurrentPackage.tx
     Log    ${txtNamePackage}
     Log To Console    Ignore Thai SMS
     Comment    ${smsCheck399NET2GB}    แพ็กเกจ Net SIM ค่าบริการรายเดือน 399บ. Internet ความเร็วสูงสุดจำนวน 2 GB    Net SIM Package Monthly fee 399B. Internet 2 GB at max speed, and continue at 128Kpbs afterward and Unlimited AIS WiFi, Exceed: Voice/VDO call 1.5B./min, SMS 3B., MMS 6B. Start26/09/2016 12:12 to 07/10/2017 23:59.
-    Verify SMS Add format Date Time    ${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
+    Verify SMS Add format Date Time    ^${smsCheck399NET2GB}    1    \\d\\d/\\d\\d/\\d\\d\\d\\d    \ \\d\\d:\\d\\d.*
     Click Web Element    ${btnBackToCurrentPackage}
     Check Detail CurrentPackage
     Check Package    ${txtNamePackage}
@@ -262,5 +262,5 @@ test Regular Expression
     ${formatTime}=    Set Variable    \ \\d\\d:\\d\\d.*
     Comment    @{MessageExpect}    Create List    ${smsCheck}${formatDate}${formatTime}
     @{ExpectPackageMsg}    Create List    Mao Mao Combo on-top package fee 55B. Free call to AIS number during 11:00PM-5:00PM and Internet 160MB at max speed, and continue at 64Kpbs afterward, Exceed:Voice call 1B/minute Valid for 24 hours. Start27/09/2016 00:00 to 27/09/2016 23:59.
-    Should Match Regexp    @{ExpectPackageMsg}[0]    ^${smsCheck}\\d\\d/\\d\\d/\\d\\d\\d\\d\ \\d\\d:\\d\\d.*
+    Should Match Regexp    @{ExpectPackageMsg}[0]    ^${smsCheck}\\d\\d/\\d\\d/\\d\\d\\d\\d\ \\d\\d:\\d\\d$
     [Teardown]
