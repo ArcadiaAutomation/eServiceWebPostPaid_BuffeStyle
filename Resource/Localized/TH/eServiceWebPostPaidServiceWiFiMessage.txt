@@ -1,0 +1,2 @@
+*** Variables ***
+${urlServiceWiFi}    https://ext-activities.ais.co.th/apps/wifigen/main.aspx?lang=th

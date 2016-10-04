@@ -1,0 +1,4 @@
+*** Settings ***
+Resource          eServiceWebPostPaidCommon.txt
+Resource          eServiceWebPostPaidLogin.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidServiceWiFiMessage.txt
