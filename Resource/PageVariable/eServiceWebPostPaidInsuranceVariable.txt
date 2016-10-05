@@ -1,2 +1,2 @@
 *** Variables ***
-${PINCode}        7777
+${PINCode}        1234
