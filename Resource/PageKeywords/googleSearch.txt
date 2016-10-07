@@ -1,0 +1,40 @@
+*** Settings ***
+Resource          ../PageRepository/TestGoogleOum_Repository.txt
+Library           Selenium2Library
+Resource          ../Localized/${ar_LANG}/GoogleSearch.txt
+
+*** Keywords ***
+Open Web Browser
+    Open Browser    ${webURL}    gc
+
+Input KeyWord For Google Search
+    [Arguments]    ${txtSearch}
+    Input Text    ${fldSearch}    ${txtSearch}
+
+Click Search Button
+    [Arguments]    ${btnSearch}
+    Click Button    ${btnSearch}
+    Sleep    ${timeDelay}
+
+Verify Google Show Result
+    Page Should Contain Element    ${verifyGoogleLogo}
+    Page Should Contain    ${txtSearch}
+
+Click Go Back
+    Go Back
+    Sleep    ${timeDelay}
+
+Verify Web Page
+    Page Should Contain    ${txtSearch}
+
+Click Link
+    Click Element    ${link}
+
+OpenLink
+    [Arguments]    ${getNumber}
+    @{listOfLink}    Get Webelements    //*[@class="r"]/a
+    ${getNumber}    Evaluate    ${getNumber}-1
+    :FOR    ${number}    IN RANGE    ${getNumber}    -1    -1
+    \    @{listOfLink}    Get Webelements    //*[@class="r"]/a
+    \    Click Element    @{listOfLink}[${number}]
+    \    Click Go Back
