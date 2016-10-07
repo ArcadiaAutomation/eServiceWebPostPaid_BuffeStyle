@@ -1,0 +1,8 @@
+*** Variables ***
+${webURL}         https://www.google.co.th
+${timeDelay}      5
+${btnSearch}      xpath = //*[@id="sblsbb"]/button
+${fldSearch}      xpath = //*[@id="lst-ib"]
+${verifyGoogleLogo}    xpath = //*[@id="logo"]    # Verify Google banner at the top left
+${allLink}        xpath = //*[@id="rso"]
+${frame}          id = viewport
