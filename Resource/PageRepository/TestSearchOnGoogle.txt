@@ -1,0 +1,5 @@
+*** Variables ***
+${GoogleURL}      https://www.google.co.th/
+${txtSearch}      lst-ib
+${btnSearch}      btnG
+${Link3}          xpath=//*[@id="rso"]/div[1]/div[3]/div/h3/a

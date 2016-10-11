@@ -1,0 +1,6 @@
+*** Variables ***
+${txtMobileNumber}    xpath=//*[@id="textfield"]
+${txtOTPNumber}    xpath=//*[@id="inputOtpNumber"]
+${btnGetRequestPassword}    xpath=//*[@id="btnLoginGetOtpMethod"]
+${btnLoginWithOTP}    xpath=//*[@id="lnkLoginLoginWithOtp"]
+${lblAlertErrorMsg}    xpath=//*[@id="login_fill"]/div/div[5]/div[3]/div/div[2]
