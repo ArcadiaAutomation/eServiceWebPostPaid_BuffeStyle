@@ -1,0 +1,28 @@
+*** Settings ***
+Resource          ../PageRepository/TestLoginInputWrongOTP.txt
+Library           String
+Resource          eServiceWebPostPaidCommon.txt
+Resource          ../Localized/${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
+
+*** Keywords ***
+Input Mobile Number
+    [Arguments]    ${MobileNumber}
+    Selenium2Library.Input Text    ${txtMobileNumber}    ${MobileNumber}
+
+Input OTP
+    [Arguments]    ${OTP}
+    Wait Until Element Is Visible    ${txtOTPNumber}    5
+    Selenium2Library.Input Text    ${txtOTPNumber}    ${OTP}
+
+Request password
+    Selenium2Library.Click Element    ${btnGetRequestPassword}
+
+Choose Language
+    Selenium2Library.Click Element    ${btnLanguage}
+
+Click OK Button
+    Selenium2Library.Click Element    ${btnLoginWithOTP}
+
+Verify Error Message
+    Selenium2Library.Wait Until Element Is Visible    ${lblAlertErrorMsg}    5
+    Element Text Should Be    ${lblAlertErrorMsg}    ${MessageWrongOTP}

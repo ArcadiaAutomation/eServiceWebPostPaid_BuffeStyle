@@ -1,0 +1,21 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../PageRepository/TestSearchOnGoogle.txt
+Library           Collections
+
+*** Keywords ***
+Input Search Text
+    [Arguments]    ${textSearch}
+    Input Text    ${txtSearch}    ${textSearch}
+
+Open Link
+    [Arguments]    ${number}
+    Comment    ${number}    Set Variable    3
+    Click Element    xpath=//*[@id="rso"]/descendant::h3[${number}]/a
+
+Verify Search Result
+    Title Should Be    ${Title}
+    Wait Until Element Is Visible    ${Logo}    5
+
+Search
+    Click Button    ${btnSearch}
