@@ -1,0 +1,41 @@
+*** Settings ***
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/TestLoginInputWrongOTP.txt
+Resource          ../AisRobotBuffet/Mobile/Andriod/Keywords/GeneralFunctionKeywords.txt
+
+*** Test Cases ***
+TestInputWrongOTP
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PO_1    ${lo_parallel_timeout}    3PO=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PO_1_#device_name}=${virtual_3PO_1_#timestamp}
+    Open Web Browser    ${eServiceURL}    ${ar_BROWSER}    ${lo_IPSelenium}
+    Maximize Browser Window
+    Select Frame    ${fraMainIframe}
+    Select Language    ${btnLanguage}
+    Input Mobile Number    ${virtual_3PO_1_Number}
+    Request password
+    Open SMS App    ${virtual_3PO_1_IPAppium}    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_Platfrom_Version}    ${virtual_3PO_1_SN}
+    ${OTP}=    Read OTP SMS
+    ${RandomOTP}=    Random OTP
+    Verify Wrong OTP    ${OTP}    ${RandomOTP}
+    Input OTP    ${RandomOTP}
+    Click OK Button
+    Verify Error Message
+    Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+*** Keywords ***
+Random OTP
+    ${RandomOTP}    Generate Random String    4    [NUMBERS]
+    Comment    Log To Console    ${RandomOTP}
+    [Return]    ${RandomOTP}
+
+Verify Wrong OTP
+    [Arguments]    ${OTP}    ${WrongOTP}
+    : FOR    ${INDEX}    IN RANGE    0    10    1
+    \    Run Keyword If    "${OTP}"=="${WrongOTP}"    Random OTP
+    \    Run Keyword If    "${OTP}"!="${WrongOTP}"    Exit For Loop
+    [Return]    ${WrongOTP}
+
+Read OTP SMS
+    ${sms}=    Read SMS    ${virtual_3PO_1_Platfrom_Name}    AIS    1
+    ${OTP}=    Get Regexp Matches    @{sms}[0]    \\d\\d\\d\\d

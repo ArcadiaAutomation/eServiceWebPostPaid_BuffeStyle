@@ -1,0 +1,16 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          Resource/PageKeywords/TestSearchOnGoogle.txt
+Resource          Resource/PageRepository/TestSearchOnGoogle.txt
+Resource          Resource/Localized/${ar_LANG}/TestSearchOnGoogle.txt
+
+*** Test Cases ***
+TestSearch2Language
+    Open Browser    ${GoogleURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Input Search Text    ${WordSearch}
+    Search
+    Sleep    3
+    Open Link    3
+    Verify Search Result
+    Close Browser
