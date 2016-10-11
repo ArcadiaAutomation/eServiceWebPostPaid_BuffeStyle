@@ -1,0 +1,4 @@
+*** Variables ***
+${WordSearch}     ข้าว
+${Title}          10 พันธฺุ์ข้าวไทยไม่ขัดสี เปี่ยมคุณค่าอย่างนี้ต้องทาน
+${Logo}           xpath=//*[@id="header"]/a/img
