@@ -1,0 +1,4 @@
+*** Variables ***
+${WordSearch}     rice
+${Title}          RICE is Everyday Magic for your home
+${Logo}           xpath=//*[@id="ctl14_logo"]
