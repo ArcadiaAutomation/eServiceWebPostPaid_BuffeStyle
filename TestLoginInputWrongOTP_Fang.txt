@@ -21,6 +21,7 @@ TestInputWrongOTP
     Click OK Button
     Verify Error Message
     Close SMS App    ${virtual_3PO_1_Platfrom_Name}    ${virtual_3PO_1_SN}
+    Close Browser
     [Teardown]    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
 
 *** Keywords ***
