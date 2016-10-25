@@ -1,0 +1,30 @@
+*** Settings ***
+Library           Selenium2Library
+Library           String
+
+*** Keywords ***
+RandomFakeOTP
+    ${RandomOTP}=    Generate Random String    4    [NUMBERS]
+    [Return]    ${RandomOTP}
+
+GetFakeOTP
+    [Arguments]    ${OTP}    ${FakeOTP}
+    : FOR    ${INDEX}    IN RANGE    0    100    1
+    \    Run Keyword If    @{OTP} != ${FakeOTP}    Exit For Loop
+    \    Run Keyword If    @{OTP} == ${FakeOTP}    RandomFakeOTP
+
+SelectLang
+    Run Keyword If    ar
+
+Open Browser With Select Frame
+    Open Browser    ${lblEServicesUrl}    ${ar_BROWSER}
+    Select Frame    id=MainIframe
+
+GetOTP
+    [Arguments]    ${message}
+    ${OTP}=    Get Regexp Matches    @{message}[0]    \\d\\d\\d\\d
+    [Return]    ${OTP}
+
+VertifyWrongOTP
+    Sleep    3
+    Element Should Contain    ${VertifyAfterFakeOtp}    ${wrongMessage}

@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../PageRepository/TestLogin_NowResource.txt
+
+*** Keywords ***
+InputMoblieNumber
+    [Arguments]    ${phoneNum}
+    Selenium2Library.Input Text    ${fldPhoneNumber}    ${phoneNum}
+    Sleep    2
+    Selenium2Library.Click Element    ${cmdRequestNumBtn}
+
+InputOTP
+    [Arguments]    ${OTP}
+    Selenium2Library.Input Text    ${fldOTP}    ${OTP}
+    Selenium2Library.Click Element    ${cmdOkBtn}
