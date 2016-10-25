@@ -1,0 +1,2 @@
+*** Variables ***
+${wrongMessage}    You have entered incorrect password. Please try again.
