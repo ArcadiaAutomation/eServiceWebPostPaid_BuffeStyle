@@ -1,0 +1,11 @@
+*** Settings ***
+
+*** Variables ***
+${lblEServicesUrl}    https://eservice.ais.co.th/eServiceWeb/
+${fldPhoneNumber}    //*[@id="textfield"]
+${cmdRequestNumBtn}    //*[@id="btnLoginGetOtpMethod"]
+${fldOTP}         //*[@id="inputOtpNumber"]
+${cmdOkBtn}       //*[@id="lnkLoginLoginWithOtp"]
+${VertifyAfterOTp}    //*[@id="welcomeBox"]/div/div/ul/li[1]/div/span
+${VertifyAfterFakeOtp}    //*[@id="login_fill"]/div/div[5]/div[3]/div/div[2]
+@{lblSelectLanguage}    //*[@id="toppage"]/div/div[2]/ul/li[2]/div    //*[@id="toppage"]/div/div[2]/ul/li[1]/div    # 0 is thai 1 is eng
