@@ -1,0 +1,47 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Config/LocalConfig.txt
+Resource          Resource/PageKeywords/TestLoginKeywor_Now.txt
+Resource          Resource/PageKeywords/TestWrongOTP_Now.txt
+Resource          Resource/Localized/${ar_LANG}/TestLoginLocalized_Now.txt
+Resource          Resource/PageRepository/eServiceWebPostPaidRepository.txt
+Resource          Resource/PageKeywords/eServiceWebPostPaidLogin.txt
+Resource          Resource/PageRepository/TestLogin_NowResource.txt
+
+*** Test Cases ***
+TestInputTrueOTP
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Open Browser With Select Frame
+    Select Language    ${btnLanguage}
+    InputMoblieNumber    ${virtual_3PE_1_Number}
+    Open SMS App    ${virtual_3PE_1_IPAppium}    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_Platfrom_Version}    ${virtual_3PE_1_SN}
+    ${message}=    Read SMS    ${virtual_3PE_1_Platfrom_Name}    AIS    1
+    ${OTP}=    Get Regexp Matches    @{message}[0]    \\d\\d\\d\\d
+    InputOTP    ${OTP}
+    sleep    3
+    Element Should Be Visible    ${VertifyAfterOTp}
+    Close SMS App    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_SN}
+    [Teardown]    Run Keywords    Close Web Browser
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+TestInputWrongOTP
+    Take And Define Virtual Local Configuration    ${lo_local_config_file_path}    virtual_3PE_1    ${lo_parallel_timeout}    3PE=include
+    &{#list_device_name}=    Create Dictionary    ${virtual_3PE_1_#device_name}=${virtual_3PE_1_#timestamp}
+    Open Browser With Select Frame
+    Select Language    ${btnLanguage}
+    InputMoblieNumber    ${virtual_3PE_1_Number}
+    Open SMS App    ${virtual_3PE_1_IPAppium}    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_Platfrom_Version}    ${virtual_3PE_1_SN}
+    ${message}=    Read SMS    ${virtual_3PE_1_Platfrom_Name}    AIS    1
+    ${OTP}=    GetOTP    ${message}
+    ${FakeOTP}=    RandomFakeOTP
+    GetFakeOTP    ${OTP}    ${FakeOTP}
+    InputOTP    ${FakeOTP}
+    VertifyWrongOTP
+    Close SMS App    ${virtual_3PE_1_Platfrom_Name}    ${virtual_3PE_1_SN}
+    [Teardown]    Run Keywords    Close Web Browser
+    ...    AND    Release Virtual Local Configurations    ${lo_local_config_file_path}    ${#list_device_name}
+
+*** Keywords ***
+Close Web Browser
+    Close Browser
